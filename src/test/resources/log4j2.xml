@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%d{HH:mm:ss.SSS} [%t] %highlight{%-5level:} %logger{36} - %msg%n"/>
+        </Console>
+        <Routing name="routingAppender">
+            <Routes pattern="$${ctx:scenarioName}">
+                <Route>
+                    <RollingFile fileName="logs/${ctx:scenarioName}.log" name="appender-${ctx:scenarioName}"
+                                 filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
+                                 append="false">
+                        <PatternLayout>
+                            <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+                        </PatternLayout>
+                        <TimeBasedTriggeringPolicy />
+                    </RollingFile>
+                </Route>
+
+                <!-- Default log name when scenarioName is undefined -->
+                <Route key="$${ctx:scenarioName}">
+                    <RollingFile fileName="logs/default.log" name="Rolling-default"
+                                 filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
+                                 append="false">
+                        <PatternLayout>
+                            <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+                        </PatternLayout>
+                        <TimeBasedTriggeringPolicy />
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+    </appenders>
+
+    <loggers>
+        <root level="debug">
+            <appender-ref ref="Console" level="debug"/>
+            <appender-ref ref="routingAppender" level="debug"/>
+        </root>
+    </loggers>
+</configuration>

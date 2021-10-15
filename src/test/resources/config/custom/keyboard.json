@@ -1,0 +1,8 @@
+{
+  "Home": "HOME",
+  "PgUp": "PAGE_UP",
+  "Key_LCtrl+Key_LAlt": ["LEFT_CONTROL", "LEFT_ALT"],
+  "Key_RCtrl+Key_B": ["RIGHT_CONTROL", "B"],
+  "Key_enter": ["ENTER"],
+  "Key_TAB":["TAB"]
+}

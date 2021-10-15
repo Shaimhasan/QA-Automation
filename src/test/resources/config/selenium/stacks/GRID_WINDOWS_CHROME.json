@@ -1,0 +1,8 @@
+[
+  {
+    "seleniumServer": "grid",
+    "browserName": "chrome",
+    "platformName": "Windows"
+  }
+]
+

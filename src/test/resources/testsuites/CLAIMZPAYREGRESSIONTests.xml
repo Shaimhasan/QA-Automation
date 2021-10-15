@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="suite1" parallel="classes" thread-count="2" data-provider-thread-count="10">
+    <test name="Regression Test">
+        <classes>
+            <class name="runners.ClaimzPayRegressionSuiteRunner"/>
+        </classes>
+    </test>
+</suite>
