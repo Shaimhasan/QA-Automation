@@ -3,6 +3,6 @@ package runners;
 import core.AutoEngBaseTest;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(tags = {"@user_Mgmt_Update_User_Insurers", "not @ignore"})
+@CucumberOptions(tags = {"@validate_dine_in_cash_basic_order_entry", "not @ignore"})
 public class AdoraExecuteRunner extends AutoEngBaseTest {
 }

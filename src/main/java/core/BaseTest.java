@@ -84,7 +84,7 @@ public class BaseTest extends common.BaseTest implements En {
     }
 
     public void login() {
-        naviagetUrl("Claimzpay_Desktop_URL", "NewWindow");
+        naviagetUrl("Adora_Desktop_URL", "NewWindow");
     }
 
     public void naviagetUrl(String appName, String location) {
