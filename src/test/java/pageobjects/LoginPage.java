@@ -13,6 +13,11 @@ public class LoginPage extends BasePO {
     private By password = By.id("txtEmployeePassword");
     private By stationKey = By.id("txtStationKey");
     private By connect = By.xpath("//button[@type='submit']");
+    private By continueToLogin = By.xpath("//button[text()='Continue to Login']");
+
+    public Element continueToLogin() throws IOException, InterruptedException {
+        return $(continueToLogin);
+    }
 
     public Element storeKey() throws IOException, InterruptedException {
         return $(storeKey);

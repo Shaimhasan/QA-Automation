@@ -84,7 +84,7 @@ public class BaseTest extends common.BaseTest implements En {
     }
 
     public void login() {
-        naviagetUrl("Adora_Desktop_URL", "NewWindow");
+        naviagetUrl("Adora_Web_URL", "NewWindow");
     }
 
     public void naviagetUrl(String appName, String location) {

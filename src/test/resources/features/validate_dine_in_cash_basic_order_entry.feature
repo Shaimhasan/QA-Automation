@@ -5,7 +5,7 @@ Feature: Dine in cash basic order entry
   @validate_dine_in_cash_basic_order_entry @RegressionSuite
   Scenario: validate_dine_in_cash_basic_order_entry_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
-    Given the web application "Adora_Desktop_URL" is launched in a "NewWindow"
+    Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
     When the user enters the user credential "#(Store_Key)" into the "storeKey" textbox at the "LoginPage" page
     #Comment: Enter the Station_Key into Station_Key textbox present on Login Page
@@ -17,4 +17,12 @@ Feature: Dine in cash basic order entry
     When the user enters the user credential "#(Employee_Id)" into the "employee_Id" textbox at the "LoginPage" page
     #Comment: Enter the Password into Password textbox present on Login Page
     When the user enters the secure credential "#(Password)" into the "password" textbox at the "LoginPage" page
+    #Comment: The user enter at passsword field
+    And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
+    #Comment: user click On the continueToLogin Button
+    And the user clicks the "continueToLogin" element at the "LoginPage" page
+    #Comment: the user validate the Title of the page
+    And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
+
+
 
