@@ -12,7 +12,8 @@ Feature: Dine in cash basic order entry
     When the user enters the secure credential "#(Station_Key)" into the "stationKey" textbox at the "LoginPage" page
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
-    And the user waits "30000" seconds
+    #Comment: The user wait until page is loading
+    And the user validates the "waitTillLoading" element is present at the "LoginPage" page "wait_Untill_Loading" "HardStopOnFailure"
     #Comment: Enter the Employee_Id into username textbox present on Login Page
     When the user enters the user credential "#(Employee_Id)" into the "employee_Id" textbox at the "LoginPage" page
     #Comment: Enter the Password into Password textbox present on Login Page

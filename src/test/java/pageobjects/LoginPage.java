@@ -13,7 +13,12 @@ public class LoginPage extends BasePO {
     private By password = By.id("txtEmployeePassword");
     private By stationKey = By.id("txtStationKey");
     private By connect = By.xpath("//button[@type='submit']");
+    private By waitTillLoading = By.xpath("//div[text()='Loading Items Availability (32 of 32)... Please wait.']");
     private By continueToLogin = By.xpath("//button[text()='Continue to Login']");
+
+    public Element waitTillLoading() throws IOException, InterruptedException {
+        return $(waitTillLoading);
+    }
 
     public Element continueToLogin() throws IOException, InterruptedException {
         return $(continueToLogin);
