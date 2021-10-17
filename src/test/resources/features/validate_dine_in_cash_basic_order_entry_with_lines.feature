@@ -58,5 +58,9 @@ Feature: Dine in cash basic order entry with lines
     And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: user click on makeLine
+    And the user clicks the "makeLine" element at the "OrderEntry" page
 
 

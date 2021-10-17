@@ -24,9 +24,19 @@ public class OrderEntry extends BasePO {
     private By close = By.id("btnClosePrintReceipt");
     private By amount = By.xpath("//td[text()='Amount Due']//following-sibling::td");
     private By transactionNum = By.id("lblEndOfOrderID");
+    private By adoraHeaderSVG = By.xpath("(//*[local-name()='svg' and @id='Layer_1'])[2]");
+    private By makeLine = By.xpath("//div[text()='Make Line']");
 
     public Element cash() throws IOException, InterruptedException {
         return $(cash);
+    }
+
+    public Element makeLine() throws IOException, InterruptedException {
+        return $(makeLine);
+    }
+
+    public Element adoraHeaderSVG() throws IOException, InterruptedException {
+        return $(adoraHeaderSVG);
     }
 
     public Element transactionNum() throws IOException, InterruptedException {

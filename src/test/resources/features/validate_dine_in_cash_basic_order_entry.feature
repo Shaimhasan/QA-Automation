@@ -58,3 +58,4 @@ Feature: Dine in cash basic order entry
     And the user clicks the "close" element at the "OrderEntry" page
 
 
+
