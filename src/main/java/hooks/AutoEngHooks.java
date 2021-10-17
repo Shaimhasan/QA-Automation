@@ -62,7 +62,6 @@ public class AutoEngHooks implements En {
 
     public AutoEngHooks() {
         Before(15, (Scenario scenario) -> {
-            FileUtils.deleteDirectory(new File("target/allure-results"));
             //add test data to current thread
             List<Map<String, Object>> dataPermutations = DataSpecHelper.getInstance().processDataSpec(scenario.getName());
             if (!dataPermutations.isEmpty()) {

@@ -68,9 +68,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class BaseTest extends common.BaseTest implements En {
 
     private TestNGCucumberRunner testNGCucumberRunner;
+    Map<Boolean, Boolean> cache = new ConcurrentHashMap<>();
 
     @BeforeClass(alwaysRun = true)
     public void setUpClass() throws IOException {
+        FileUtils.deleteDirectory(new File("target/allure-results"));
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
