@@ -8,9 +8,11 @@ import java.io.IOException;
 
 public class OrderEntry extends BasePO {
 
-    private By dinInColor = By.id("divOrderBody");
+    private By dinInColor = By.id("divOrder");
     private By suprimePizza = By.xpath("//label[text()='Supreme Pizza']");
+    private By paperroniPizza = By.xpath("//label[text()='Pepperoni Pizza']");
     private By suprimePizzaSelected = By.xpath("//div[text()='1) Supreme Pizza']");
+    private By paperroniPizzaSelected = By.xpath("//div[text()='3) Pepperoni Pizza']");
     private By veggiePizza = By.xpath("//label[text()='Veggie Pizza']");
     private By veggiePizzaSelected = By.xpath("//div[text()='2) Veggie Pizza']");
     private By finishBtn = By.xpath("//label[text()='Finish']");
@@ -20,9 +22,27 @@ public class OrderEntry extends BasePO {
     private By cash = By.id("btn2CASHPAYMENT_1_");
     private By headerPopUpChangeDue = By.xpath("//span[text()='Change Due']");
     private By close = By.id("btnClosePrintReceipt");
+    private By amount = By.xpath("//td[text()='Amount Due']//following-sibling::td");
+    private By transactionNum = By.id("lblEndOfOrderID");
 
     public Element cash() throws IOException, InterruptedException {
         return $(cash);
+    }
+
+    public Element transactionNum() throws IOException, InterruptedException {
+        return $(transactionNum);
+    }
+
+    public Element amount() throws IOException, InterruptedException {
+        return $(amount);
+    }
+
+    public Element paperroniPizza() throws IOException, InterruptedException {
+        return $(paperroniPizza);
+    }
+
+    public Element paperroniPizzaSelected() throws IOException, InterruptedException {
+        return $(paperroniPizzaSelected);
     }
 
     public Element headerPopUpChangeDue() throws IOException, InterruptedException {

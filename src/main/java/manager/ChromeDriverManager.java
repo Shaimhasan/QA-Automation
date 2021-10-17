@@ -62,6 +62,7 @@ public class ChromeDriverManager extends DriverManager {
         if(props.getString("options.headless.chrome").equalsIgnoreCase("true")){
             options.addArguments("--headless");
         }
+        options.addArguments("--incognito");
         driver = new ChromeDriver(options);
     }
 

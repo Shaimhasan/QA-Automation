@@ -30,16 +30,16 @@ public class Hooks implements En {
                     takeScreenShotOnFailure();
                     if (!DriverContext.getInstance().getKeepBrowserOpen())
                         System.out.println("abc");
-                      //  DriverFactory.getInstance().quit();
+                        DriverFactory.getInstance().quit();
                    // theUserClosesTheBrowsers("IE");
 
             }else{
-                  //  DriverFactory.getInstance().quit();
+                    DriverFactory.getInstance().quit();
                  //   theUserClosesTheBrowsers("IE");
                 }
 
             if (!DriverContext.getInstance().getKeepBrowserOpen())
-              //  DriverFactory.getInstance().quit();
+                DriverFactory.getInstance().quit();
 
             DriverFactory.getInstance().driverManager().updateResults(scenario.isFailed() ? "failed" : "passed");
         }

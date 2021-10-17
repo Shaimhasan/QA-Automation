@@ -68,28 +68,15 @@ import java.util.concurrent.ConcurrentHashMap;
 public class BaseTest extends common.BaseTest implements En {
 
     private TestNGCucumberRunner testNGCucumberRunner;
-    Map<Boolean, Boolean> cache = new ConcurrentHashMap<>();
 
     @BeforeClass(alwaysRun = true)
     public void setUpClass() throws IOException {
-        FileUtils.deleteDirectory(new File("target/allure-results"));
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-        TestContext.getInstance().setOfPO().addAll(FetchPageObjects.populateListOfPO());
     }
 
     @Test(groups = "cucumber", description = "Run Cucumber Scenarios", dataProvider = "techStackWithScenarioList")
     public void scenario(Map<String, String> map, PickleEventWrapper pickle, CucumberFeatureWrapper cucumberFeature) throws Throwable {
-        login();
         testNGCucumberRunner.runScenario(pickle.getPickleEvent());
-    }
-
-    public void login() {
-        naviagetUrl("Adora_Web_URL", "NewWindow");
-    }
-
-    public void naviagetUrl(String appName, String location) {
-        launchApplicationURL(appName, location);
-        TestContext.getInstance().pushWindowHandle(getDriver().getWindowHandle());
     }
 
     @DataProvider(name = "techStackWithScenarioList")
@@ -124,27 +111,7 @@ public class BaseTest extends common.BaseTest implements En {
 
     @AfterClass(alwaysRun = true)
     public void tearDownClass() {
-        onGenerateAllureReport();
         testNGCucumberRunner.finish();
-        if (DriverContext.getInstance().getTechStack() != null &&
-                !DriverContext.getInstance().getKeepBrowserOpen()) {
-            DriverFactory.getInstance().quit();
-        }
     }
 
-    private void onGenerateAllureReport() {
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-            public void run() {
-                try {
-                    final List<Extension> extensions = Arrays.asList(new JacksonContext(), new MarkdownContext(), new FreemarkerContext(), new RandomUidContext(), new MarkdownDescriptionsPlugin(), new RetryPlugin(), new RetryTrendPlugin(), new TagsPlugin(), new SeverityPlugin(), new OwnerPlugin(), new IdeaLinksPlugin(), new CategoriesPlugin(), new CategoriesTrendPlugin(), new HistoryPlugin(), new HistoryTrendPlugin(), new DurationPlugin(), new DurationTrendPlugin(), new StatusChartPlugin(), new TimelinePlugin(), new SuitesPlugin(), new TestsResultsPlugin(), new AttachmentsPlugin(), new MailPlugin(), new InfluxDbExportPlugin(), new PrometheusExportPlugin(), new SummaryPlugin(), new ExecutorPlugin(), new LaunchPlugin(), new Allure1Plugin(), new Allure1EnvironmentPlugin(), new Allure2Plugin(), new ReportWebPlugin());
-                    Configuration configuration = (new ConfigurationBuilder()).fromExtensions(extensions).build();
-                    Path resultDi = Paths.get("target/allure-results");
-                    Path outDir = Paths.get("target/allure-report");
-                    new ReportGenerator(configuration).generate(outDir, resultDi);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 }

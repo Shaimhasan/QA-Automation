@@ -8,7 +8,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 public class AutoEngAppLaunch extends BaseWebSteps {
     @Given("^the web application \"([^\"]*)\" is launched in a \"([^\"]*)\"$")
     public void theWebApplicationIsLaunchedInA(String appName, String location) {
-        launchApplication(appName, location);
+        launchApplicationURL(appName, location);
         TestContext.getInstance().pushWindowHandle(getDriver().getWindowHandle());
     }
 

@@ -9,7 +9,7 @@ public class AutoEngHooksWeb implements En {
 
     public AutoEngHooksWeb() {
         Before(35, (Scenario scenario) -> {
-
+            TestContext.getInstance().setOfPO().addAll(FetchPageObjects.populateListOfPO());
         });
 
         After(30, (Scenario scenario) -> {

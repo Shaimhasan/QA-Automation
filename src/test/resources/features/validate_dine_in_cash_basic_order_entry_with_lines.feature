@@ -1,9 +1,9 @@
-@dineInCashBasicOrderEntry
-Feature: Dine in cash basic order entry
-  This script is to validate Dine in cash basic order entry
+@dineInCashBasicOrderEntryWithLines
+Feature: Dine in cash basic order entry with lines
+  This script is to validate Dine in cash basic order entry with lines
 
-  @validate_dine_in_cash_basic_order_entry @RegressionSuite
-  Scenario: validate_dine_in_cash_basic_order_entry_Testcase
+  @validate_dine_in_cash_basic_order_entry_with_lines @RegressionSuite
+  Scenario: validate_dine_in_cash_basic_order_entry_with_lines_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -54,6 +54,8 @@ Feature: Dine in cash basic order entry
     And the user clicks the "cash" element at the "OrderEntry" page
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
+    #Comment: The user save the transaction number into dictionary key
+    And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
 
