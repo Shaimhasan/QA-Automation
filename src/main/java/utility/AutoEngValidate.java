@@ -317,7 +317,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                          String validationID,
                                                                          String onFailureFlag)  {
 
-        dictionaryKeyValueExpected = parseDictionaryKey(dictionaryKeyValueExpected);
+        dictionaryKeyValueExpected = parseValue(dictionaryKeyValueExpected);
         String actualValue = getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).getText();
         AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_STRINGS, ComparisonOperator.valueOfLabel(comparisonOperator), onFailureFlag);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue, dictionaryKeyValueExpected));
