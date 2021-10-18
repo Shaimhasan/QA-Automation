@@ -89,7 +89,7 @@ Feature: Dine in cash basic order entry without lines
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
-
-    And the user validates the cell at row "<string>" and column "<string>" of the "<string>" table at the "<string>" page "<string>" "<string>" "<string>" "<string>"
+    #Comment: user validate the transaction Number
+    And the user validates based on dictionary key as expected Value at cell at row "7" and column "0" of the "tableOrderList" table at the "OrderListPage" page "OrderListPage" "<string>" "validate" "HardStopOnFailure"
 
 

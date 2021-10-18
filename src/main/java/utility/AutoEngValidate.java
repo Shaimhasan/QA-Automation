@@ -306,7 +306,24 @@ public class AutoEngValidate extends BaseWebSteps {
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue, expectedValue));
         validator.performValidation(actualValue, expectedValue);
     }
-    
+
+    @Then("^the user validates based on dictionary key as expected Value at cell at row \"([^\"]*)\" and column \"([^\"]*)\" of the \"([^\"]*)\" table at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserValidatesDictionaryKeyAsExpectedValueAtTheCellAtRowAndColumnOfTheTableAtThePage(String rowNum,
+                                                                         String colNum,
+                                                                         String tableName,
+                                                                         String pageName,
+                                                                         String comparisonOperator,
+                                                                         String dictionaryKeyValueExpected,
+                                                                         String validationID,
+                                                                         String onFailureFlag)  {
+
+        dictionaryKeyValueExpected = parseDictionaryKey(dictionaryKeyValueExpected);
+        String actualValue = getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).getText();
+        AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_STRINGS, ComparisonOperator.valueOfLabel(comparisonOperator), onFailureFlag);
+        TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue, dictionaryKeyValueExpected));
+        validator.performValidation(actualValue, dictionaryKeyValueExpected);
+    }
+
 
     @Then("^the user validates the color of the \"([^\"]*)\" element is \"([^\"]*)\" at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheColorOfTheElementIsAtThePage(String objectName,
