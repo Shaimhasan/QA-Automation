@@ -306,6 +306,7 @@ public class AutoEngValidate extends BaseWebSteps {
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue, expectedValue));
         validator.performValidation(actualValue, expectedValue);
     }
+    
 
     @Then("^the user validates the color of the \"([^\"]*)\" element is \"([^\"]*)\" at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheColorOfTheElementIsAtThePage(String objectName,

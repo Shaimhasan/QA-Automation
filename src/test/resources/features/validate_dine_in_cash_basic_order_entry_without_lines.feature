@@ -1,9 +1,9 @@
-@dineInCashBasicOrderEntry
-Feature: Dine in cash basic order entry
-  This script is to validate Dine in cash basic order entry
+@dineInCashBasicOrderEntryWithoutLines
+Feature: Dine in cash basic order entry without lines
+  This script is to validate Dine in cash basic order entry without lines
 
-  @validate_dine_in_cash_basic_order_entry @RegressionSuite
-  Scenario: validate_dine_in_cash_basic_order_entry_Testcase
+  @validate_dine_in_cash_basic_order_entry_without_lines @RegressionSuite
+  Scenario: validate_dine_in_cash_basic_order_entry_without_lines_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -50,12 +50,46 @@ Feature: Dine in cash basic order entry
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
-    #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    #Comment: user click on credit
+    And the user clicks the "credit" element at the "PaymentPage" page
+
+    #Comment: User switches to the frame
+    And the user switches to frame "cardNumber"
+     #Comment: the user enter the CreditCard Number
+    Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+
+    #Comment: User switches to the frame
+    And the user switches to frame "cardExpiration"
+     #Comment: the user enter the expiration
+    Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+
+    #Comment: User switches to the frame
+    And the user switches to frame "cardCvv"
+    #Comment: the user enter the cvv
+    Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+
+    #Comment: user click on chargeBtn
+    And the user clicks the "chargeBtn" element at the "CreditCardPage" page
+
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
+    #Comment: The user save the transaction number into dictionary key
+    And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
+    #Comment: The user save the order number into dictionary key
+    And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: user click on Order List
+    And the user clicks the "orderList" element at the "AdoraHeaderPage" page
 
+    And the user validates the cell at row "<string>" and column "<string>" of the "<string>" table at the "<string>" page "<string>" "<string>" "<string>" "<string>"
 
 

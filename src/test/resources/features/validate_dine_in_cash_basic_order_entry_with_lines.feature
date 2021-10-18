@@ -51,7 +51,7 @@ Feature: Dine in cash basic order entry with lines
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
     #Comment: user click on Cash
-    And the user clicks the "cash" element at the "OrderEntry" page
+    And the user clicks the "cash" element at the "PaymentPage" page
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
@@ -61,6 +61,6 @@ Feature: Dine in cash basic order entry with lines
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: user click on makeLine
-    And the user clicks the "makeLine" element at the "OrderEntry" page
+    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
 
 

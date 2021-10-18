@@ -19,20 +19,21 @@ public class OrderEntry extends BasePO {
     private By tableNoPopUpMenu = By.xpath("//span[text()='Table No. / Customer Name']");
     private By tableNo = By.id("txtTableNo");
     private By OK = By.id("btnTableNo");
-    private By cash = By.id("btn2CASHPAYMENT_1_");
     private By headerPopUpChangeDue = By.xpath("//span[text()='Change Due']");
     private By close = By.id("btnClosePrintReceipt");
     private By amount = By.xpath("//td[text()='Amount Due']//following-sibling::td");
     private By transactionNum = By.id("lblEndOfOrderID");
+    private By orderNum = By.id("lblEndOfOrderNo");
     private By adoraHeaderSVG = By.xpath("(//*[local-name()='svg' and @id='Layer_1'])[2]");
     private By makeLine = By.xpath("//div[text()='Make Line']");
 
-    public Element cash() throws IOException, InterruptedException {
-        return $(cash);
-    }
 
     public Element makeLine() throws IOException, InterruptedException {
         return $(makeLine);
+    }
+
+    public Element orderNum() throws IOException, InterruptedException {
+        return $(orderNum);
     }
 
     public Element adoraHeaderSVG() throws IOException, InterruptedException {
