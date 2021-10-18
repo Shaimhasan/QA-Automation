@@ -90,6 +90,6 @@ Feature: Dine in cash basic order entry without lines
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user validate the transaction Number
-    And the user validates based on dictionary key as expected Value at cell at row "7" and column "0" of the "tableOrderList" table at the "OrderListPage" page "OrderListPage" "<string>" "validate" "HardStopOnFailure"
+    And the user validates based on dictionary key as expected Value at cell at row "7" and column "0" of the "tableOrderList" table at the "OrderListPage" page "Compare" "transaction_Number" "validate_transaction_Number" "HardStopOnFailure"
 
 
