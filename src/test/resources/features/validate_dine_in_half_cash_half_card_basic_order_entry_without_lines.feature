@@ -3,7 +3,7 @@ Feature: Dine in cash half cash half card basic order entry
   This script is to validate Dine in cash half cash half basic order entry
 
   @validate_dine_in_half_cash_half_card_basic_order_entry @RegressionSuite
-  Scenario: validate_dine_in_half_cash_half_card_basic_order_entry_Testcase
+  Scenario: validate_dine_in_half_cash_half_card_basic_order_entry_without_lines_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
