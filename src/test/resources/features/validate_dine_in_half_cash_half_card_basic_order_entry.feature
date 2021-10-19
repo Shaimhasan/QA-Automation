@@ -112,4 +112,7 @@ Feature: Dine in cash half cash half card basic order entry
     And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: User validate data dictionary values
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
-
+    #Comment: user validate the Cash type
+    Then the user validates "Compare_Strings" that the "cash" element is "Equal To" "#(CashType)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"
+    #Comment: user validate the card type
+    Then the user validates "Compare_Strings" that the "creditCard" element is "Equal To" "#(cardType)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"

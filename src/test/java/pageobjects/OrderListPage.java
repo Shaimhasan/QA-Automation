@@ -10,9 +10,19 @@ public class OrderListPage extends BasePO {
 
     private By tableOrderList = By.id("tblOrdersListOrders");
     private By orderNum = By.id("txtSearch");
+    private By creditCard = By.xpath("(//tr[@style='display: table-row;']//following-sibling::td)[11]//div[text()='Credit Card']");
+    private By cash = By.xpath("(//tr[@style='display: table-row;']//following-sibling::td)[11]//div[text()='Cash']");
 
     public Element tableOrderList() throws IOException, InterruptedException {
         return $(tableOrderList);
+    }
+
+    public Element cash() throws IOException, InterruptedException {
+        return $(cash);
+    }
+
+    public Element creditCard() throws IOException, InterruptedException {
+        return $(creditCard);
     }
 
     public Element orderNum() throws IOException, InterruptedException {
