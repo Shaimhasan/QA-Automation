@@ -6,21 +6,11 @@ import org.openqa.selenium.By;
 
 import java.io.IOException;
 
-public class PaymentPage extends BasePO {
+public class CustomerInfoPage extends BasePO {
 
-    private By cash = By.id("btn2CASHPAYMENT_1_");
-    private By credit = By.xpath("//label[text()='Credit Card']");
-    private By send = By.xpath("//span[text()='Send']");
+    private By close = By.id("btnCustomerInfoClose");
 
-    public Element cash() throws IOException, InterruptedException {
-        return $(cash);
-    }
-
-    public Element send() throws IOException, InterruptedException {
-        return $(send);
-    }
-
-    public Element credit() throws IOException, InterruptedException {
-        return $(credit);
+    public Element close() throws IOException, InterruptedException {
+        return $(close);
     }
 }

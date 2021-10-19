@@ -150,6 +150,20 @@ public class AutoEngStoreValue extends BaseWebSteps {
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
         logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
     }
+    @When("^store text of the cell having unique rowVal comes from Data Dictionary \"([^\"]*)\" and columnHeader \"([^\"]*)\" from the \"([^\"]*)\" table at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
+    public void storeTextOfTheCellHavingUniqueRowValAsDataDictionaryAndColumnHeaderFromTheTableAtThePageIntoTheDataDictionaryWithKey(String rowValue,
+                                                                                                                                     String colHeader,
+                                                                                                                                     String tableName,
+                                                                                                                                     String pageName,
+                                                                                                                                     String dictionaryKey)  {
+        rowValue=parseValue(rowValue);
+        dictionaryKey = parseDictionaryKey(dictionaryKey);
+        String valToStore = getObject(tableName, pageName).findMatchingCellinTable(rowValue,
+                colHeader).getText();
+
+        TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
+        logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
+    }
 
     @When("^store text of the matching cell in the column \"([^\"]*)\" where the column \"([^\"]*)\" contains unique value \"([^\"]*)\" in the \"([^\"]*)\" table at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
     public void storeTextOfTheMatchingCellInTheColumnWhereTheColumnContainsUniqueInTheTableAtThePageIntoTheDataDictionaryWithKey(String colHeader1,
