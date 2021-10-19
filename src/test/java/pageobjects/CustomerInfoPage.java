@@ -11,16 +11,6 @@ public class PaymentPage extends BasePO {
     private By cash = By.id("btn2CASHPAYMENT_1_");
     private By credit = By.xpath("//label[text()='Credit Card']");
     private By send = By.xpath("//span[text()='Send']");
-    private By finish = By.xpath("//span[text()='Finish']");
-    private By half = By.xpath("//span[text()='1/2']");
-
-    public Element finish() throws IOException, InterruptedException {
-        return $(finish);
-    }
-
-    public Element half() throws IOException, InterruptedException {
-        return $(half);
-    }
 
     public Element cash() throws IOException, InterruptedException {
         return $(cash);

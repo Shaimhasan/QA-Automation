@@ -12,8 +12,9 @@ Feature: Dine in cash basic order entry without lines
     When the user enters the secure credential "#(Station_Key)" into the "stationKey" textbox at the "LoginPage" page
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
+    And the user waits "25000" seconds
     #Comment: The user wait until page is loading
-    And the user validates the "waitTillLoading" element is present at the "LoginPage" page "wait_Untill_Loading" "HardStopOnFailure"
+    #And the user validates the "waitTillLoading" element is present at the "LoginPage" page "wait_Untill_Loading" "HardStopOnFailure"
     #Comment: Enter the Employee_Id into username textbox present on Login Page
     When the user enters the user credential "#(Employee_Id)" into the "employee_Id" textbox at the "LoginPage" page
     #Comment: Enter the Password into Password textbox present on Login Page
@@ -76,6 +77,15 @@ Feature: Dine in cash basic order entry without lines
 
     #Comment: user click on chargeBtn
     And the user clicks the "chargeBtn" element at the "CreditCardPage" page
+    And the user waits "10000" seconds
+   #Comment: user click on Send
+    And the user clicks the "send" element at the "PaymentPage" page
+    #Comment: user click on close
+    And the user clicks the "close" element at the "CustomerInfoPage" page
+    #Comment: user click on Finish
+    And the user clicks the "`finishBtn`" element at the "OrderEntry" page
+    #Comment: user click on Finish on payment page
+    And the user clicks the "finish" element at the "PaymentPage" page
 
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
@@ -89,9 +99,14 @@ Feature: Dine in cash basic order entry without lines
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
-    #Comment: The user click on at somewhere to show the order list
-    And the user clicks on the cell at row "9" and column "0" from the "tableOrderList" table at the "OrderListPage" page
     #Comment: user validate the transaction Number
-    And the user validates based on dictionary key as expected Value at cell at row "9" and column "0" of the "tableOrderList" table at the "OrderListPage" page "Equal To" "#(transaction_Number)" "validate_transaction_Number" "HardStopOnFailure"
-
+    And store text of the cell having unique rowVal comes from Data Dictionary "#(transaction_Number)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
+    #Comment: user validate the transaction Number
+    And store text of the cell having unique rowVal comes from Data Dictionary "#(order_Number)" and columnHeader " Order#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "order_Num"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: User enter the order Number
+    Then the user enters "#(order_Number)" into the "orderNum" textbox at the "OrderListPage" page
 

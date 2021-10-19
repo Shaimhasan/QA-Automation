@@ -12,8 +12,9 @@ Feature: Dine in cash basic order entry with lines
     When the user enters the secure credential "#(Station_Key)" into the "stationKey" textbox at the "LoginPage" page
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
+    And the user waits "25000" seconds
     #Comment: The user wait until page is loading
-    And the user validates the "waitTillLoading" element is present at the "LoginPage" page "wait_Untill_Loading" "HardStopOnFailure"
+    #And the user validates the "waitTillLoading" element is present at the "LoginPage" page "wait_Untill_Loading" "HardStopOnFailure"
     #Comment: Enter the Employee_Id into username textbox present on Login Page
     When the user enters the user credential "#(Employee_Id)" into the "employee_Id" textbox at the "LoginPage" page
     #Comment: Enter the Password into Password textbox present on Login Page
@@ -52,6 +53,16 @@ Feature: Dine in cash basic order entry with lines
     And the user clicks the "OK" element at the "OrderEntry" page
     #Comment: user click on Cash
     And the user clicks the "cash" element at the "PaymentPage" page
+
+    #Comment: user click on Send
+    And the user clicks the "send" element at the "PaymentPage" page
+    #Comment: user click on close
+    And the user clicks the "close" element at the "CustomerInfoPage" page
+    #Comment: user click on Finish
+    And the user clicks the "`finishBtn`" element at the "OrderEntry" page
+    #Comment: user click on Finish on payment page
+    And the user clicks the "finish" element at the "PaymentPage" page
+
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
