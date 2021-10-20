@@ -1,9 +1,9 @@
-@dineInCashBasicOrderEntryWithoutLines
-Feature: Dine in cash basic order entry without lines
-  This script is to validate Dine in cash basic order entry without lines
+@dineInCashBasicCustomizeOrderWithoutLines
+Feature: Dine in cash basic customize order entry without lines
+  This script is to validate Dine in cash basic customize order without lines
 
-  @validate_dine_in_cash_basic_order_entry_without_lines @RegressionSuite
-  Scenario: validate_dine_in_cash_basic_order_entry_without_lines_Testcase
+  @validate_dine_in_cash_basic_customize_order_without_lines @RegressionSuite
+  Scenario: validate_dine_in_cash_basic_customize_order_without_lines_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -31,16 +31,61 @@ Feature: Dine in cash basic order entry without lines
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select suprimePizza
     And the user clicks the "suprimePizza" element at the "OrderEntry" page
-    #Comment: user select veggiePizza
-    And the user clicks the "veggiePizza" element at the "OrderEntry" page
-    #Comment: user select peperoni pizza
-    And the user clicks the "paperroniPizza" element at the "OrderEntry" page
+
+    #Comment: user select panCrust
+    And the user clicks the "panCrust" element at the "OrderEntry" page
+    #Comment: user select whiteSauce
+    And the user clicks the "whiteSauce" element at the "OrderEntry" page
+     #Comment: user select toppingChicken
+    And the user clicks the "toppingChicken" element at the "OrderEntry" page
+
     #Comment: The user selected Supreme Pizza
     And the user validates the "suprimePizzaSelected" element is present at the "OrderEntry" page "validate_Supreme_Pizza_Selected" "HardStopOnFailure"
+    #Comment: The user selected panCrustSelected Pizza
+    And the user validates the "panCrustSelected" element is present at the "OrderEntry" page "validate_pan_Crust_Pizza_Selected" "HardStopOnFailure"
+    #Comment: The user selected whiteSauceSelected Pizza
+    And the user validates the "whiteSauceSelected" element is present at the "OrderEntry" page "validate_white_Sauce_Pizza_Selected" "HardStopOnFailure"
+    #Comment: The user selected toppingChickenSelected Pizza
+    And the user validates the "toppingChickenSelected" element is present at the "OrderEntry" page "validate_topping_chicken_Pizza_Selected" "HardStopOnFailure"
+
+    #Comment: user select veggiePizza
+    And the user clicks the "veggiePizza" element at the "OrderEntry" page
+
+    #Comment: user select panCrust
+    And the user clicks the "panCrust" element at the "OrderEntry" page
+    #Comment: user select whiteSauce
+    And the user clicks the "whiteSauce" element at the "OrderEntry" page
+     #Comment: user select toppingChicken
+    And the user clicks the "toppingChicken" element at the "OrderEntry" page
+
     #Comment: The user selected Veggie Pizza
     And the user validates the "veggiePizzaSelected" element is present at the "OrderEntry" page "validate_Supreme_Pizza_Selected" "HardStopOnFailure"
+    #Comment: The user selected panCrustSelected Pizza
+    And the user validates the "panCrustSelected" element is present at the "OrderEntry" page "validate_pan_Crust_Pizza_Selected" "HardStopOnFailure"
+    #Comment: The user selected whiteSauceSelected Pizza
+    And the user validates the "whiteSauceSelected" element is present at the "OrderEntry" page "validate_white_Sauce_Pizza_Selected" "HardStopOnFailure"
+    #Comment: The user selected toppingChickenSelected Pizza
+    And the user validates the "toppingChickenSelected" element is present at the "OrderEntry" page "validate_topping_chicken_Pizza_Selected" "HardStopOnFailure"
+
+    #Comment: user select peperoni pizza
+    And the user clicks the "paperroniPizza" element at the "OrderEntry" page
+
+    #Comment: user select panCrust
+    And the user clicks the "panCrust" element at the "OrderEntry" page
+    #Comment: user select whiteSauce
+    And the user clicks the "whiteSauce" element at the "OrderEntry" page
+     #Comment: user select toppingChicken
+    And the user clicks the "toppingChicken" element at the "OrderEntry" page
+
     #Comment: The user selected pepperoni Pizza
     And the user validates the "paperroniPizzaSelected" element is present at the "OrderEntry" page "validate_Supreme_Pizza_Selected" "HardStopOnFailure"
+    #Comment: The user selected panCrustSelected Pizza
+    And the user validates the "panCrustSelected" element is present at the "OrderEntry" page "validate_pan_Crust_Pizza_Selected" "HardStopOnFailure"
+    #Comment: The user selected whiteSauceSelected Pizza
+    And the user validates the "whiteSauceSelected" element is present at the "OrderEntry" page "validate_white_Sauce_Pizza_Selected" "HardStopOnFailure"
+    #Comment: The user selected toppingChickenSelected Pizza
+    And the user validates the "toppingChickenSelected" element is present at the "OrderEntry" page "validate_topping_chicken_Pizza_Selected" "HardStopOnFailure"
+
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
@@ -54,26 +99,21 @@ Feature: Dine in cash basic order entry without lines
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
 
-    #Comment: User switches to the frame
-    And the user switches to frame "cardNumber"
      #Comment: the user enter the CreditCard Number
     Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
+     #Comment: the user enter the expiration month
+    Then the user enters "#(expirationMonth)" into the "expirationMonth" textbox at the "CreditCardPage" page
+    #Comment: the user enter the expiration year
+    Then the user enters "#(expirationYear)" into the "expirationYear" textbox at the "CreditCardPage" page
     #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
+   # And the user switches to the default window content
 
     #Comment: User switches to the frame
-    And the user switches to frame "cardExpiration"
-     #Comment: the user enter the expiration
-    Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-
-    #Comment: User switches to the frame
-    And the user switches to frame "cardCvv"
+  #  And the user switches to frame "cardCvv"
     #Comment: the user enter the cvv
     Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
     #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
+   # And the user switches to the default window content
 
     #Comment: user click on chargeBtn
     And the user clicks the "chargeBtn" element at the "CreditCardPage" page

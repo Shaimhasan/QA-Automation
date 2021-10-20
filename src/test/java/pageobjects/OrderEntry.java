@@ -12,6 +12,9 @@ public class OrderEntry extends BasePO {
     private By suprimePizza = By.xpath("//label[text()='Supreme Pizza']");
     private By paperroniPizza = By.xpath("//label[text()='Pepperoni Pizza']");
     private By suprimePizzaSelected = By.xpath("//div[text()='1) Supreme Pizza']");
+    private By panCrustSelected = By.xpath("//div[text()='Pan Crust']");
+    private By whiteSauceSelected = By.xpath("//div[text()='White Sauce']");
+    private By toppingChickenSelected = By.xpath("//div[text()='Chicken']");
     private By paperroniPizzaSelected = By.xpath("//div[text()='3) Pepperoni Pizza']");
     private By veggiePizza = By.xpath("//label[text()='Veggie Pizza']");
     private By veggiePizzaSelected = By.xpath("//div[text()='2) Veggie Pizza']");
@@ -26,10 +29,42 @@ public class OrderEntry extends BasePO {
     private By orderNum = By.id("lblEndOfOrderNo");
     private By adoraHeaderSVG = By.xpath("//div[@class='AdoraTopArrow']//*[local-name()='svg' and @id='Layer_1']");
     private By makeLine = By.xpath("//div[text()='Make Line']");
+    private By delivery = By.xpath("//label[text()='Delivery']");
+    private By panCrust = By.xpath("//label[text()='Pan Crust']");
+    private By whiteSauce = By.xpath("//label[text()='White Sauce']");
+    private By toppingChicken = By.xpath("//label[text()='Chicken']");
 
 
     public Element makeLine() throws IOException, InterruptedException {
         return $(makeLine);
+    }
+
+    public Element panCrustSelected() throws IOException, InterruptedException {
+        return $(panCrustSelected);
+    }
+
+    public Element whiteSauceSelected() throws IOException, InterruptedException {
+        return $(whiteSauceSelected);
+    }
+
+    public Element toppingChickenSelected() throws IOException, InterruptedException {
+        return $(toppingChickenSelected);
+    }
+
+    public Element toppingChicken() throws IOException, InterruptedException {
+        return $(toppingChicken);
+    }
+
+    public Element whiteSauce() throws IOException, InterruptedException {
+        return $(whiteSauce);
+    }
+
+    public Element panCrust() throws IOException, InterruptedException {
+        return $(panCrust);
+    }
+
+    public Element delivery() throws IOException, InterruptedException {
+        return $(delivery);
     }
 
     public Element orderNum() throws IOException, InterruptedException {

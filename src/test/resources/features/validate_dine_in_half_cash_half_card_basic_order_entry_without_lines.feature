@@ -59,26 +59,14 @@ Feature: Dine in cash half cash half card basic order entry
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
 
-    #Comment: User switches to the frame
-    And the user switches to frame "cardNumber"
      #Comment: the user enter the CreditCard Number
     Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
 
-    #Comment: User switches to the frame
-    And the user switches to frame "cardExpiration"
      #Comment: the user enter the expiration
     Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
 
-    #Comment: User switches to the frame
-    And the user switches to frame "cardCvv"
     #Comment: the user enter the cvv
     Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
 
     #Comment: user click on chargeBtn
     And the user clicks the "chargeBtn" element at the "CreditCardPage" page

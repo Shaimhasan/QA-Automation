@@ -1,9 +1,9 @@
-@dineInCashBasicOrderEntryWithLines
-Feature: Dine in cash basic order entry with lines
-  This script is to validate Dine in cash basic order entry with lines
+@dineInCardBasicOrderEntryWithoutLines
+Feature: Dine in card basic order entry without lines
+  This script is to validate Dine in card basic order entry without lines
 
-  @validate_dine_in_cash_basic_order_entry_with_lines @RegressionSuite
-  Scenario: validate_dine_in_cash_basic_order_entry_with_lines_Testcase
+  @validate_dine_in_card_basic_order_entry_without_lines @RegressionSuite
+  Scenario: validate_dine_in_card_basic_order_entry_without_lines_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -51,10 +51,34 @@ Feature: Dine in cash basic order entry with lines
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
-    #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    #Comment: user click on credit
+    And the user clicks the "credit" element at the "PaymentPage" page
 
-    #Comment: user click on Send
+    #Comment: User switches to the frame
+    And the user switches to frame "cardNumber"
+     #Comment: the user enter the CreditCard Number
+    Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+
+    #Comment: User switches to the frame
+    And the user switches to frame "cardExpiration"
+     #Comment: the user enter the expiration
+    Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+
+    #Comment: User switches to the frame
+    And the user switches to frame "cardCvv"
+    #Comment: the user enter the cvv
+    Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+
+    #Comment: user click on chargeBtn
+    And the user clicks the "chargeBtn" element at the "CreditCardPage" page
+    And the user waits "10000" seconds
+   #Comment: user click on Send
     And the user clicks the "send" element at the "PaymentPage" page
     #Comment: user click on close
     And the user clicks the "close" element at the "CustomerInfoPage" page
@@ -67,11 +91,24 @@ Feature: Dine in cash basic order entry with lines
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
     And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
+    #Comment: The user save the order number into dictionary key
+    And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: user click on makeLine
-    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
-
+    #Comment: user click on Order List
+    And the user clicks the "orderList" element at the "AdoraHeaderPage" page
+    #Comment: user validate the transaction Number
+    And store text of the cell having unique rowVal comes from Data Dictionary "#(transaction_Number)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
+    #Comment: user validate the transaction Number
+    And store text of the cell having unique rowVal comes from Data Dictionary "#(order_Number)" and columnHeader " Order#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "order_Num"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: User enter the order Number
+    Then the user enters "#(order_Number)" into the "orderNum" textbox at the "OrderListPage" page
+    #Comment: user validate the card type
+    Then the user validates "Compare_Strings" that the "creditCard" element is "Equal To" "#(cardType)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"
 

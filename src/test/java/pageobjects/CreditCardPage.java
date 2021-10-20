@@ -8,9 +8,10 @@ import java.io.IOException;
 
 public class CreditCardPage extends BasePO {
 
-    private By cardNum = By.xpath("//input[@name='cardNumber']");
-    private By expiration = By.xpath("//input[@name='cardExpiration']");
-    private By cvv = By.xpath("//input[@name='cardCvv']");
+    private By cardNum = By.id("txtCC");
+    private By expirationMonth = By.id("txtCCExp1");
+    private By expirationYear = By.id("txtCCExp2");
+    private By cvv = By.id("txtCCCVV");
     private By chargeBtn = By.xpath("//button[text()='Charge']");
 
     public Element cardNum() throws IOException, InterruptedException {
@@ -21,8 +22,12 @@ public class CreditCardPage extends BasePO {
         return $(chargeBtn);
     }
 
-    public Element expiration() throws IOException, InterruptedException {
-        return $(expiration);
+    public Element expirationMonth() throws IOException, InterruptedException {
+        return $(expirationMonth);
+    }
+
+    public Element expirationYear() throws IOException, InterruptedException {
+        return $(expirationYear);
     }
 
     public Element cvv() throws IOException, InterruptedException {

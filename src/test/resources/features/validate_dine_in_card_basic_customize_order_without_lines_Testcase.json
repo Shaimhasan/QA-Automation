@@ -3,8 +3,13 @@
     "sharedAttributes": {
     },
     "staticData": {
+      "amount": "90.67",
       "tableNo": "automation",
-      "amount": "83.50"
+      "cardNum": "5454545454545454",
+      "expirationMonth": "05",
+      "expirationYear": "2025",
+      "cvv": "858",
+      "cardType": "Credit Card"
     },
     "dataCriteria": {
     },

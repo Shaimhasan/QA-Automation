@@ -1,0 +1,22 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "amount": "83.50",
+      "tableNo": "automation",
+      "cardNum": "5454545454545454",
+      "expiration": "052025",
+      "cvv": "858",
+      "cardType": "Credit Card",
+      "CashType": "Cash",
+      "textPhone": "(212) 854-5852"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
