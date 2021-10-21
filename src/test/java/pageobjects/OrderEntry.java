@@ -33,10 +33,20 @@ public class OrderEntry extends BasePO {
     private By panCrust = By.xpath("//label[text()='Pan Crust']");
     private By whiteSauce = By.xpath("//label[text()='White Sauce']");
     private By toppingChicken = By.xpath("//label[text()='Chicken']");
+    private By takeOut = By.xpath("//button[@data-text='Take Out']");
+    private By takeOutColor = By.id("divOrder");
 
 
     public Element makeLine() throws IOException, InterruptedException {
         return $(makeLine);
+    }
+
+    public Element takeOut() throws IOException, InterruptedException {
+        return $(takeOut);
+    }
+
+    public Element takeOutColor() throws IOException, InterruptedException {
+        return $(takeOutColor);
     }
 
     public Element panCrustSelected() throws IOException, InterruptedException {
