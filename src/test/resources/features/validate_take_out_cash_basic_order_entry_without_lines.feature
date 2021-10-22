@@ -56,15 +56,6 @@ Feature: Take out cash basic order entry
     #Comment: user click on Cash
     And the user clicks the "cash" element at the "PaymentPage" page
 
-    #Comment: user click on Send
-    And the user clicks the "send" element at the "PaymentPage" page
-    #Comment: user click on close
-    And the user clicks the "close" element at the "CustomerInfoPage" page
-    #Comment: user click on Finish
-    And the user clicks the "`finishBtn`" element at the "OrderEntry" page
-    #Comment: user click on Finish on payment page
-    And the user clicks the "finish" element at the "PaymentPage" page
-
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
     #Comment: user click on Close
