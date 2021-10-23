@@ -6,8 +6,10 @@
       "amount": "83.50",
       "tableNo": "automation",
       "cardNum": "5454545454545454",
-      "expiration": "052025",
+      "expirationMonth": "05",
+      "expirationYear": "2025",
       "cvv": "858",
+      "zipCode": "85856",
       "cardType": "Credit Card",
       "CashType": "Cash"
     },

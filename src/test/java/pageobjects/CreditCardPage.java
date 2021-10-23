@@ -13,9 +13,14 @@ public class CreditCardPage extends BasePO {
     private By expirationYear = By.id("txtCCExp2");
     private By cvv = By.id("txtCCCVV");
     private By chargeBtn = By.xpath("//button[text()='Charge']");
+    private By zipCode = By.id("txtCCZip");
 
     public Element cardNum() throws IOException, InterruptedException {
         return $(cardNum);
+    }
+
+    public Element zipCode() throws IOException, InterruptedException {
+        return $(zipCode);
     }
 
     public Element chargeBtn() throws IOException, InterruptedException {

@@ -1,9 +1,9 @@
-@dineInHalfCashHalfCardCashBasicOrderEntry
-Feature: Dine in cash half cash half card basic order entry
-  This script is to validate Dine in cash half cash half basic order entry
+@dineInFiftyDollarCashRemainingCardBasicOrderEntry
+Feature: Dine in fifty dollar cash remaining card basic order entry
+  This script is to validate Dine in fifty dollar cash remaining card basic order entry
 
-  @validate_dine_in_half_cash_half_card_basic_order_entry @RegressionSuite
-  Scenario: validate_dine_in_half_cash_half_card_basic_order_entry_without_lines_Testcase
+  @validate_dine_in_fifty_dollar_cash_remaining_card_basic_order_entry_without_lines @RegressionSuite
+  Scenario: validate_dine_in_fifty_dollar_cash_remaining_card_basic_order_entry_without_lines_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -52,33 +52,24 @@ Feature: Dine in cash half cash half card basic order entry
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
 
-    #Comment: user click on half cash1
+    #Comment: user click on fifty dollar
     And the user clicks the "fiftyDollar" element at the "PaymentPage" page
-    #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
 
      #Comment: the user enter the CreditCard Number
     Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
-
-     #Comment: the user enter the expiration
-    Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
-
+     #Comment: the user enter the expiration month
+    Then the user enters "#(expirationMonth)" into the "expirationMonth" textbox at the "CreditCardPage" page
+    #Comment: the user enter the expiration year
+    Then the user enters "#(expirationYear)" into the "expirationYear" textbox at the "CreditCardPage" page
     #Comment: the user enter the cvv
     Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
+    #Comment: the user enter the zip code
+    Then the user enters "#(zipCode)" into the "zipCode" textbox at the "CreditCardPage" page
 
     #Comment: user click on chargeBtn
     And the user clicks the "chargeBtn" element at the "CreditCardPage" page
-    And the user waits "10000" seconds
-   #Comment: user click on Send
-    And the user clicks the "send" element at the "PaymentPage" page
-    #Comment: user click on close
-    And the user clicks the "close" element at the "CustomerInfoPage" page
-    #Comment: user click on Finish
-    And the user clicks the "`finishBtn`" element at the "OrderEntry" page
-    #Comment: user click on Finish on payment page
-    And the user clicks the "finish" element at the "PaymentPage" page
 
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
