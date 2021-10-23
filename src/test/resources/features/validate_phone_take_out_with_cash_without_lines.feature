@@ -75,6 +75,6 @@ Feature: Phone take out with cash without lines
     #Comment: User validate data dictionary values
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: User enter the order Number
-    Then the user enters "#(order_Number)" into the "orderNum" textbox at the "OrderListPage" page
+    Then the user enters "#(transaction_Number)" into the "orderNum" textbox at the "OrderListPage" page
     #Comment: user validate the card type
-    Then the user validates "Compare_Strings" that the "creditCard" element is "Equal To" "#(cardType)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"
+    Then the user validates "Compare_Strings" that the "cash" element is "Equal To" "#(cash)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"

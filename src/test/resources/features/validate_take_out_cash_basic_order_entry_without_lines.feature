@@ -70,8 +70,8 @@ Feature: Take out cash basic order entry without lines
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: User enter the order Number
     Then the user enters "#(transaction_Number)" into the "orderNum" textbox at the "OrderListPage" page
-    #Comment: The user enter at passsword field
-    And the user sends keys "Key_enter" to the "orderNum" element on the "OrderListPage" page
+#    #Comment: The user enter at passsword field
+#    And the user sends keys "Key_enter" to the "orderNum" element on the "OrderListPage" page
 
     #Comment: user validate the transaction Number
     And store text of the cell having unique rowVal comes from Data Dictionary "#(transaction_Number)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"

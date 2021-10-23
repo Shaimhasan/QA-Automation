@@ -12,7 +12,7 @@ public class CreditCardPage extends BasePO {
     private By expirationMonth = By.id("txtCCExp1");
     private By expirationYear = By.id("txtCCExp2");
     private By cvv = By.id("txtCCCVV");
-    private By chargeBtn = By.xpath("//button[text()='Charge']");
+    private By chargeBtn = By.id("btnCreditCardCharge");
     private By zipCode = By.id("txtCCZip");
 
     public Element cardNum() throws IOException, InterruptedException {
