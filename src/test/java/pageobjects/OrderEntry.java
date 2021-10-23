@@ -24,6 +24,7 @@ public class OrderEntry extends BasePO {
     private By OK = By.id("btnTableNo");
     private By headerPopUpChangeDue = By.xpath("//span[text()='Change Due']");
     private By close = By.id("btnClosePrintReceipt");
+    private By closeForPhoneTakeOut = By.id("btnOrderEndOK");
     private By amount = By.xpath("//td[text()='Amount Due']//following-sibling::td");
     private By transactionNum = By.id("lblEndOfOrderID");
     private By orderNum = By.id("lblEndOfOrderNo");
@@ -34,11 +35,21 @@ public class OrderEntry extends BasePO {
     private By whiteSauce = By.xpath("//label[text()='White Sauce']");
     private By toppingChicken = By.xpath("//label[text()='Chicken']");
     private By takeOut = By.xpath("//button[@data-text='Take Out']");
+    private By phoneTakeOut = By.xpath("//button[@data-text='Phone Take-Out']");
     private By takeOutColor = By.id("divOrder");
+    private By phoneTakeOutColor = By.id("divOrder");
 
 
     public Element makeLine() throws IOException, InterruptedException {
         return $(makeLine);
+    }
+
+    public Element phoneTakeOut() throws IOException, InterruptedException {
+        return $(phoneTakeOut);
+    }
+
+    public Element phoneTakeOutColor() throws IOException, InterruptedException {
+        return $(phoneTakeOutColor);
     }
 
     public Element takeOut() throws IOException, InterruptedException {
