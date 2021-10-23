@@ -67,8 +67,11 @@ Feature: Phone take out with cash without lines
     And the user clicks the "closeForPhoneTakeOut" element at the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
+    And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
+
     #Comment: user validate the transaction Number
     And store text of the cell having unique rowVal comes from Data Dictionary "#(transaction_Number)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
     #Comment: user validate the transaction Number
