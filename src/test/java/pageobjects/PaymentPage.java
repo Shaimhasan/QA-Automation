@@ -13,9 +13,13 @@ public class PaymentPage extends BasePO {
     private By send = By.xpath("//span[text()='Send']");
     private By finish = By.xpath("//span[text()='Finish']");
     private By half = By.xpath("//span[text()='1/2']");
+    private By fiftyDollar = By.id("btn2CASHBILL_1_50");
 
     public Element finish() throws IOException, InterruptedException {
         return $(finish);
+    }
+    public Element fiftyDollar() throws IOException, InterruptedException {
+        return $(fiftyDollar);
     }
 
     public Element half() throws IOException, InterruptedException {

@@ -3,9 +3,13 @@
     "sharedAttributes": {
     },
     "staticData": {
-      "tableNo": "automation",
       "amount": "83.50",
-      "cash": "Cash"
+      "tableNo": "automation",
+      "cardNum": "5454545454545454",
+      "expiration": "052025",
+      "cvv": "858",
+      "cardType": "Credit Card",
+      "CashType": "Cash"
     },
     "dataCriteria": {
     },
