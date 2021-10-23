@@ -9,7 +9,8 @@
       "expiration": "052025",
       "cvv": "858",
       "cash": "Cash",
-      "textPhone": "(916) 555-4444"
+      "textPhone": "(916) 555-4444",
+      "customerName": "Automation"
     },
     "dataCriteria": {
     },

@@ -44,6 +44,10 @@ public class OrderEntry extends BasePO {
         return $(makeLine);
     }
 
+    public Element closeForPhoneTakeOut() throws IOException, InterruptedException {
+        return $(closeForPhoneTakeOut);
+    }
+
     public Element phoneTakeOut() throws IOException, InterruptedException {
         return $(phoneTakeOut);
     }

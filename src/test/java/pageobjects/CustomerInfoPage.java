@@ -12,9 +12,14 @@ public class CustomerInfoPage extends BasePO {
     private By textPhone = By.id("txtPhone");
     private By OK = By.xpath("//button[text()='OK']");
     private By address = By.xpath("//div[text()='55 1st St']");
+    private By customerName = By.id("txtName");
 
     public Element close() throws IOException, InterruptedException {
         return $(close);
+    }
+
+    public Element customerName() throws IOException, InterruptedException {
+        return $(customerName);
     }
 
     public Element address() throws IOException, InterruptedException {

@@ -47,7 +47,10 @@ Feature: Phone take out with cash without lines
     Then the user enters "#(textPhone)" into the "textPhone" textbox at the "CustomerInfoPage" page
     #Comment: The user enter at textPhone field
     And the user sends keys "Key_enter" to the "textPhone" element on the "CustomerInfoPage" page
-    #Comment: user click on Finish
+
+    And the user waits "5000" seconds
+
+    #Comment: user click on OK
     And the user clicks the "`OK`" element at the "CustomerInfoPage" page
     #Comment: validate background color
     And the user validates the background color of the "phoneTakeOutColor" element is "rgba(141, 179, 226, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
