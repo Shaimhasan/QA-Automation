@@ -150,9 +150,29 @@ public class AutoEngClick extends BaseWebSteps {
                                                                                        String firstColValue,
                                                                                        String tableName,
                                                                                        String pageName)  {
-
         Element tableCellToClick = findMatchingTableCell(firstColName, parseValue(firstColValue),
                                                          getObject(tableName, pageName));
+
+        if (tableCellToClick != null && tableCellToClick.element() != null) {
+            log.debug(CLICKING_ELEMENT, tableCellToClick.getAttribute(OUTER_HTML));
+            tableCellToClick.click();
+        } else
+            log.warn("Could not find unique row with {} having {}", firstColName, firstColValue);
+
+    }
+
+    @When("^the user clicks on the customize matching cell in the \"([^\"]*)\" column containing \"([^\"]*)\" with sequence \"([^\"]*)\" from the \"([^\"]*)\" table at the \"([^\"]*)\" page$")
+    public void theUserClicksOnTheMatchingCustomizeCellInTheColumnContainsFromTheTableAtThePage(String firstColName,
+                                                                                       String firstColValue,
+                                                                                       String orderSeq,
+                                                                                       String tableName,
+                                                                                       String pageName)  {
+
+        firstColValue=parseValue(firstColValue);
+        orderSeq=parseValue(orderSeq);
+        firstColValue=firstColValue+" - " + orderSeq;
+        Element tableCellToClick = findMatchingTableCell(firstColName, firstColValue,
+                getObject(tableName, pageName));
 
         if (tableCellToClick != null && tableCellToClick.element() != null) {
             log.debug(CLICKING_ELEMENT, tableCellToClick.getAttribute(OUTER_HTML));

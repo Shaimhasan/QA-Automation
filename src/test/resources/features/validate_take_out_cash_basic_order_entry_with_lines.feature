@@ -70,6 +70,32 @@ Feature: Take out cash basic order entry with lines
     And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
     #Comment: user click on prep Station
     And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
-    #Comment: user click click until found the order
+
+    #Comment: user click  until found the order
     And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "PrepStationPage"
+
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "adoraHeaderSVG" element is present at the "OrderEntry" page "validate_Adora_Svg_Present" "HardStopOnFailure"
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: user click on makeLine
+    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    #Comment: user click click until found the order
+    And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "adoraHeaderSVG" element is present at the "OrderEntry" page "validate_Adora_Svg_Present" "HardStopOnFailure"
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user clicks on the customize matching cell in the " Order No" column containing "#(order_Number)" with sequence "1" from the "table" table at the "CutAndWrapPage" page
+    #Comment: user click on cut wrap based on order Number
+    And the user clicks on the customize matching cell in the " Order No" column containing "#(order_Number)" with sequence "1" from the "table" table at the "CutAndWrapPage" page
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "cutAndWrap" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: User click on cut and wrap on order Number
+    And the user clicks on the customize matching cell in the " Order No" column containing "#(order_Number)" with sequence "2" from the "table" table at the "CutAndWrapPage" page
 
