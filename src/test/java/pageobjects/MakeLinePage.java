@@ -6,9 +6,9 @@ import org.openqa.selenium.By;
 
 import java.io.IOException;
 
-public class PrepStationPage extends BasePO {
+public class MakeLinePage extends BasePO {
 
-    private By order = By.xpath("//div[@class='ps-item-main ps-item-expanding gridCol1']");
+    private By order = By.xpath("//div[@class='ml-selected ml-item-expanding']");
 
     public Element order() throws IOException, InterruptedException {
         return $(order);

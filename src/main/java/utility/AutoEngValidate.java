@@ -752,6 +752,7 @@ public class AutoEngValidate extends BaseWebSteps {
             getObject(objectName, pageName).click();
         } else {
             getObject(objectName, pageName).click();
+            theUserClickUntilElementFound(objectName,expectedValue,attributeName,pageName);
         }
 
     }
