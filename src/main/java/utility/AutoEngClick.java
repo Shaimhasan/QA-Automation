@@ -172,7 +172,7 @@ public class AutoEngClick extends BaseWebSteps {
         orderSeq=parseValue(orderSeq);
         firstColValue=firstColValue+" - " + orderSeq;
         Element tableCellToClick = findMatchingTableCell(firstColName, firstColValue,
-                getObject(tableName, pageName));
+                getObject(tableName, pageName).scroll());
 
         if (tableCellToClick != null && tableCellToClick.element() != null) {
             log.debug(CLICKING_ELEMENT, tableCellToClick.getAttribute(OUTER_HTML));
@@ -195,7 +195,7 @@ public class AutoEngClick extends BaseWebSteps {
 
         if (tableCellToClick != null && tableCellToClick.element() != null) {
             log.debug(CLICKING_ELEMENT, tableCellToClick.getAttribute(OUTER_HTML));
-            tableCellToClick.click();
+            tableCellToClick.clickJS();
         } else
             log.warn("Could not find unique row with {} having {} and {} having {}", firstColName, firstColValue, secondColName, secondColValue);
 

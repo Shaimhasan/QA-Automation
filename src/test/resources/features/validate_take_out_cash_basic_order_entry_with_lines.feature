@@ -73,9 +73,11 @@ Feature: Take out cash basic order entry with lines
 
     #Comment: user click  until found the order
     And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "PrepStationPage"
+    And the user waits "3000" seconds
 
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user validates the "adoraHeaderSVG" element is present at the "OrderEntry" page "validate_Adora_Svg_Present" "HardStopOnFailure"
+
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: user click on makeLine
@@ -90,8 +92,7 @@ Feature: Take out cash basic order entry with lines
     And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
-    #Comment: user click on cut wrap based on order Number
-    And the user clicks on the customize matching cell in the " Order No" column containing "#(order_Number)" with sequence "1" from the "table" table at the "CutAndWrapPage" page
+
     #Comment: user click on cut wrap based on order Number
     And the user clicks on the customize matching cell in the " Order No" column containing "#(order_Number)" with sequence "1" from the "table" table at the "CutAndWrapPage" page
     #Comment: User validate the adoraHeaderSVG element is present.
