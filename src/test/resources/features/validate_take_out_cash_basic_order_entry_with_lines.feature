@@ -70,5 +70,6 @@ Feature: Take out cash basic order entry with lines
     And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
     #Comment: user click on prep Station
     And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
-    And the user click "def" element until "#(transaction_Number)" expected value based on attribute "abc" found at the page "PrepStationPage"
+    #Comment: user click click until found the order
+    And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "PrepStationPage"
 
