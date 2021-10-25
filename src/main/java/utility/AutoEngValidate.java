@@ -27,7 +27,7 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesTheElementIsDisabledAtThePage(String objectName,
                                                               String pageName,
                                                               String validationID,
-                                                              String onFailureFlag)  {
+                                                              String onFailureFlag) {
 
         final boolean isElementEnabled = getObject(objectName, pageName).element().isEnabled();
         final String compareDescription = String.format("Expected %s to be disabled at the %s page", objectName, pageName);
@@ -48,7 +48,7 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesTheElementIsEnabledAtThePage(String objectName,
                                                              String pageName,
                                                              String validationID,
-                                                             String onFailureFlag)  {
+                                                             String onFailureFlag) {
 
         final boolean isElementEnabled = getObject(objectName, pageName).element().isEnabled();
         final String compareDescription = String.format("Expecting %s to be enabled at the %s page", objectName, pageName);
@@ -69,7 +69,7 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesTheElementIsNotVisibleAtThePage(String objectName,
                                                                 String pageName,
                                                                 String validationID,
-                                                                String onFailureFlag)  {
+                                                                String onFailureFlag) {
 
         final boolean isElementVisible = getObject(objectName, pageName).element().isDisplayed();
         final String compareDescription = String.format("Expecting %s to not be visible at the %s page", objectName, pageName);
@@ -90,7 +90,7 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesTheElementIsVisibleAtThePage(String objectName,
                                                              String pageName,
                                                              String validationID,
-                                                             String onFailureFlag)  {
+                                                             String onFailureFlag) {
 
         final boolean isElementVisible = getObject(objectName, pageName).element().isDisplayed();
         final String compareDescription = String.format("Expecting %s to be visible at the %s page", objectName, pageName);
@@ -106,37 +106,37 @@ public class AutoEngValidate extends BaseWebSteps {
             }
         }
     }
-    
+
     @Then("^the user validates the \"([^\"]*)\" element is not clickable at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheElementIsNotClickableAtThePage(String objectName, String pageName,
-           String validationID, String onFailureFlag)  {
+                                                                  String validationID, String onFailureFlag) {
 
-       final boolean isElementNotClickable = getObject(objectName, pageName).isNotClickable();
-       final String compareDescription = String.format("Expecting %s to be not clickable at the %s page", objectName,
-              pageName);
+        final boolean isElementNotClickable = getObject(objectName, pageName).isNotClickable();
+        final String compareDescription = String.format("Expecting %s to be not clickable at the %s page", objectName,
+                pageName);
 
-       TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID,
-              compareDescription + ": " + isElementNotClickable);
+        TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID,
+                compareDescription + ": " + isElementNotClickable);
 
-       if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
-           assertThat(isElementNotClickable).as(compareDescription).isFalse();
-       } else {
-           sa().assertThat(isElementNotClickable).as(compareDescription).isFalse();
-           if (isElementNotClickable) {
-              Reporter.addStepLog(STATUS_FAIL, VALIDATION_FAILED + compareDescription);
-           }
-       }
+        if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
+            assertThat(isElementNotClickable).as(compareDescription).isFalse();
+        } else {
+            sa().assertThat(isElementNotClickable).as(compareDescription).isFalse();
+            if (isElementNotClickable) {
+                Reporter.addStepLog(STATUS_FAIL, VALIDATION_FAILED + compareDescription);
+            }
+        }
     }
 
     @Then("^the user validates the data dictionary list \"([^\"]*)\" contains \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheDataDictionaryListContains(String dictionaryKey,
                                                               String expectedValue,
                                                               String validationID,
-                                                              String onFailureFlag)  {
+                                                              String onFailureFlag) {
 
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         expectedValue = parseValue(expectedValue);
-        List<String> expectedList=new ArrayList<>();
+        List<String> expectedList = new ArrayList<>();
         expectedList.add(expectedValue);
         if (TestContext.getInstance().testdata().containsKey(dictionaryKey)) {
             List<String> actualList = TestContext.getInstance().testdataToClass(dictionaryKey, List.class);
@@ -152,11 +152,11 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesTheDataDictionaryListDoesNotContain(String dictionaryKey,
                                                                     String expectedValue,
                                                                     String validationID,
-                                                                    String onFailureFlag)  {
+                                                                    String onFailureFlag) {
 
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         expectedValue = parseValue(expectedValue);
-        List<String> expectedList=new ArrayList<>();
+        List<String> expectedList = new ArrayList<>();
         expectedList.add(expectedValue);
 
         if (TestContext.getInstance().testdata().containsKey(dictionaryKey)) {
@@ -176,7 +176,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                  String expectedValue,
                                                  String pageName,
                                                  String validationID,
-                                                 String onFailureFlag)  {
+                                                 String onFailureFlag) {
 
         String actualValue = getTextFromElement(getObject(objectName, pageName));
         expectedValue = parseValue(expectedValue);
@@ -191,15 +191,15 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                          String expectedValues,
                                                                          String pageName,
                                                                          String validationID,
-                                                                         String onFailureFlag)  {
+                                                                         String onFailureFlag) {
         //route to existing comparison method
         theUserValidatesThatTheElementIs("Compare_Strings",
-                                         objectName,
-                                         "Equal To",
-                                         getConcatenatedVal(expectedValues, "\\|", " "),
-                                         pageName,
-                                         validationID,
-                                         onFailureFlag);
+                objectName,
+                "Equal To",
+                getConcatenatedVal(expectedValues, "\\|", " "),
+                pageName,
+                validationID,
+                onFailureFlag);
     }
 
     @Then("^the user validates \"([^\"]*)\" that the data dictionary value of \"([^\"]*)\" is \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
@@ -208,7 +208,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                              String comparisonOperator,
                                                              String expectedValue,
                                                              String validationID,
-                                                             String onFailureFlag)  {
+                                                             String onFailureFlag) {
 
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         expectedValue = parseValue(expectedValue);
@@ -227,7 +227,7 @@ public class AutoEngValidate extends BaseWebSteps {
     @Then("^the user validates that \"([^\"]*)\" is present in the system dialog pop up \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesThatIsPresentInTheSystemDialogPopUp(String textToValidate,
                                                                     String validationID,
-                                                                    String onFailureFlag)  {
+                                                                    String onFailureFlag) {
 
         textToValidate = parseValue(textToValidate);
         String actualAlertText = getDriver().switchTo().alert().getText();
@@ -241,13 +241,13 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesTheTableIsPresentOnThePage(String tableName,
                                                            String pageName,
                                                            String validationID,
-                                                           String onFailureFlag)  {
+                                                           String onFailureFlag) {
 
         final String compareDesc = String.format("Expecting the %s table to be present on the page: %s. ",
-                                                 tableName, pageName);
+                tableName, pageName);
 
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID,
-                                                 compareDesc + (getObject(tableName, pageName) != null));
+                compareDesc + (getObject(tableName, pageName) != null));
 
         if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
             assertThat(getObject(tableName, pageName).refind()).as(compareDesc).isNotNull();
@@ -265,7 +265,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                           String pageName,
                                                           String sortOrder,
                                                           String validationID,
-                                                          String onFailureFlag)  {
+                                                          String onFailureFlag) {
         List<Element> theList = getObject(tableName, pageName).getAllRows();
 
         String compareDesc = "Expecting the %s table to be sorted in %s order. ";
@@ -298,7 +298,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                          String comparisonOperator,
                                                                          String expectedValue,
                                                                          String validationID,
-                                                                         String onFailureFlag)  {
+                                                                         String onFailureFlag) {
 
         expectedValue = parseValue(expectedValue);
         String actualValue = getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).getText();
@@ -309,13 +309,13 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user validates based on dictionary key as expected Value at cell at row \"([^\"]*)\" and column \"([^\"]*)\" of the \"([^\"]*)\" table at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesDictionaryKeyAsExpectedValueAtTheCellAtRowAndColumnOfTheTableAtThePage(String rowNum,
-                                                                         String colNum,
-                                                                         String tableName,
-                                                                         String pageName,
-                                                                         String comparisonOperator,
-                                                                         String dictionaryKeyValueExpected,
-                                                                         String validationID,
-                                                                         String onFailureFlag)  {
+                                                                                                       String colNum,
+                                                                                                       String tableName,
+                                                                                                       String pageName,
+                                                                                                       String comparisonOperator,
+                                                                                                       String dictionaryKeyValueExpected,
+                                                                                                       String validationID,
+                                                                                                       String onFailureFlag) {
 
         dictionaryKeyValueExpected = parseValue(dictionaryKeyValueExpected);
         String actualValue = getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).getText();
@@ -330,7 +330,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                 String expectedColor,
                                                                 String pageName,
                                                                 String validationID,
-                                                                String onFailureFlag)  {
+                                                                String onFailureFlag) {
 
         expectedColor = parseValue(expectedColor);
         String actualColor = getObject(objectName, pageName).element().getCssValue("color");
@@ -345,20 +345,20 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                            String objectName,
                                                                            String pageName,
                                                                            String validationID,
-                                                                           String onFailureFlag)  {
+                                                                           String onFailureFlag) {
         rdoBtnVal = parseValue(rdoBtnVal);
 
         List<Element> radios = getObjects(objectName, pageName);
         boolean radioValSelected = false;
         for (Element radioItem : radios) {
             if (radioItem.findMatchingRadioButtonExact(rdoBtnVal) &&
-                radioItem.element().isSelected()) {
+                    radioItem.element().isSelected()) {
                 radioValSelected = true;
             }
         }
 
         final String compareDesc = String.format("Expecting radio button value of '%s' to be selected in the '%s' radio button.",
-                                                 rdoBtnVal, objectName);
+                rdoBtnVal, objectName);
         Reporter.addStepLog(compareDesc);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc + ": " + radioValSelected);
 
@@ -377,19 +377,19 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                        String objectName,
                                                                        String pageName,
                                                                        String validationID,
-                                                                       String onFailureFlag)  {
+                                                                       String onFailureFlag) {
         chkBoxVal = parseValue(chkBoxVal);
 
         List<Element> checkbox = getObjects(objectName, pageName);
         boolean checkBoxValSelected = false;
         for (Element checkboxItem : checkbox) {
-            if (checkboxItem.getText().equals(chkBoxVal) || checkboxItem.getAttribute("value").equals(chkBoxVal) || checkboxItem.getAttribute("title").equals(chkBoxVal)){
+            if (checkboxItem.getText().equals(chkBoxVal) || checkboxItem.getAttribute("value").equals(chkBoxVal) || checkboxItem.getAttribute("title").equals(chkBoxVal)) {
                 checkBoxValSelected = checkboxItem.element().isSelected();
             }
         }
 
         final String compareDesc = String.format("Expecting checkbox item of '%s' to be selected in the '%s' checkbox.",
-                                                 chkBoxVal, objectName);
+                chkBoxVal, objectName);
         Reporter.addStepLog(compareDesc);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc + ": " + checkBoxValSelected);
 
@@ -406,10 +406,10 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user validates the \"([^\"]*)\" item in the \"([^\"]*)\" checkbox is not checked at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheItemInTheCheckboxIsNotCheckedAtThePage(String chkBoxVal,
-                                                                       String objectName,
-                                                                       String pageName,
-                                                                       String validationID,
-                                                                       String onFailureFlag)  {
+                                                                          String objectName,
+                                                                          String pageName,
+                                                                          String validationID,
+                                                                          String onFailureFlag) {
         chkBoxVal = parseValue(chkBoxVal);
 
         List<Element> checkbox = getObjects(objectName, pageName);
@@ -435,6 +435,7 @@ public class AutoEngValidate extends BaseWebSteps {
         }
 
     }
+
     @Then("^^the user validates the value of the \"([^\"]*)\" element at the \"([^\"]*)\" page is formatted as \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheValueOfTheElementIsFormattedAs(String objectName,
                                                                   String pageName,
@@ -456,14 +457,14 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                      String comparisonOperator,
                                                                      String expectedValue,
                                                                      String validationID,
-                                                                     String onFailureFlag)  {
+                                                                     String onFailureFlag) {
         expectedValue = parseValue(expectedValue);
         String actualValue = getTextFromElement(getObject(objectName, pageName));
 
         //If Equal To, set to a Contains comparison. Otherwise, use Not Contains
         ComparisonOperator comparisonOp = (ComparisonOperator.valueOfLabel(comparisonOperator).equals(ComparisonOperator.EQ)) ?
-                                          ComparisonOperator.CONTAINS :
-                                          ComparisonOperator.NOT_CONTAINS;
+                ComparisonOperator.CONTAINS :
+                ComparisonOperator.NOT_CONTAINS;
 
         AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_STRINGS, comparisonOp, onFailureFlag);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue, expectedValue));
@@ -474,7 +475,7 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesThatTheTitleAtThePageIs(String comparisonOperator,
                                                         String expectedValue,
                                                         String validationID,
-                                                        String onFailureFlag)  {
+                                                        String onFailureFlag) {
         expectedValue = parseValue(expectedValue);
         String actualTitle = getDriver().getTitle();
         AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_STRINGS, ComparisonOperator.valueOfLabel(comparisonOperator), onFailureFlag);
@@ -487,7 +488,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                           String expectedColor,
                                                                           String pageName,
                                                                           String validationID,
-                                                                          String onFailureFlag)  {
+                                                                          String onFailureFlag) {
 
         expectedColor = parseValue(expectedColor);
         final String actualBackgroundColor = getObject(objectName, pageName).element().getCssValue("background-color");
@@ -500,7 +501,7 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesTheElementIsPresentAtThePage(String objectName,
                                                              String pageName,
                                                              String validationID,
-                                                             String onFailureFlag)  {
+                                                             String onFailureFlag) {
 
         final Element elementPresent = getObject(objectName, pageName);
 
@@ -522,12 +523,12 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesTheElementIsNotPresenteAtThePage(String objectName,
                                                                  String pageName,
                                                                  String validationID,
-                                                                 String onFailureFlag)  {
+                                                                 String onFailureFlag) {
 
         final Element elementPresent = getObjectAllowNull(objectName, pageName);
 
         final String compareDesc = String.format("Expecting the '%s' element to not be present on the '%s' page. ",
-                                           objectName, pageName) ;
+                objectName, pageName);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc);
 
         if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
@@ -535,7 +536,7 @@ public class AutoEngValidate extends BaseWebSteps {
         } else {
             sa().assertThat(elementPresent.element()).as(compareDesc).isNull();
             if (elementPresent.element() != null) {
-               Reporter.addStepLog(STATUS_FAIL, compareDesc);
+                Reporter.addStepLog(STATUS_FAIL, compareDesc);
             }
         }
     }
@@ -545,8 +546,8 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                           String pageName,
                                                                           String expectedSequence,
                                                                           String validationID,
-                                                                          String onFailureFlag)  {
-    	String expectedColumnListValue=parseValue(expectedSequence);
+                                                                          String onFailureFlag) {
+        String expectedColumnListValue = parseValue(expectedSequence);
         List<String> actualColumnList = getObject(tableName, pageName).getHeaderColumnsWithGivenAttribute();
         List<String> expectedColumnList = Arrays.asList(expectedColumnListValue.split("\\|"));
 
@@ -561,7 +562,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                                  String expectedColValue,
                                                                                  String colHeader,
                                                                                  String validationID,
-                                                                                 String onFailureFlag)  {
+                                                                                 String onFailureFlag) {
         List<String> actualValues = getObject(tableName, pageName).getRowValuesForGivenColumn(colHeader);
         expectedColValue = parseValue(expectedColValue);
         AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_LISTS, ComparisonOperator.EQ, onFailureFlag);
@@ -575,7 +576,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                       String objectName,
                                                                       String pageName,
                                                                       String validationID,
-                                                                      String onFailureFlag)  {
+                                                                      String onFailureFlag) {
         String selectedText = getObject(objectName, pageName).dropdown().getFirstSelectedOption().getText();
         expectedValue = parseValue(expectedValue);
         AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_STRINGS, ComparisonOperator.EQ, onFailureFlag);
@@ -588,7 +589,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                                 String comparisonOperator,
                                                                                 String dataDictionaryVal2,
                                                                                 String validationID,
-                                                                                String onFailureFlag)  {
+                                                                                String onFailureFlag) {
         dataDictionaryVal1 = parseValue(dataDictionaryVal1);
         dataDictionaryVal2 = parseValue(dataDictionaryVal2);
 
@@ -603,7 +604,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                                               String tableName,
                                                                                               String pageName,
                                                                                               String validationID,
-                                                                                              String onFailureFlag)  {
+                                                                                              String onFailureFlag) {
         expectedValue = parseValue(expectedValue);
         Element table = getObject(tableName, pageName);
         String actualValue = table.getDataCellElement(table.getDataRowCount() - 1, table.getDataColumnCount(0) - 1).getText();
@@ -619,14 +620,14 @@ public class AutoEngValidate extends BaseWebSteps {
                                                         String tableName,
                                                         String pageName,
                                                         String validationID,
-                                                        String onFailureFlag)  {
+                                                        String onFailureFlag) {
 
         Element matchingTableCell = findMatchingTableCell(colName,
-                                                          parseValue(expectedValue),
-                                                          getObject(tableName, pageName));
+                parseValue(expectedValue),
+                getObject(tableName, pageName));
 
         final String compareDesc = String.format("Expecting %s to be found in the %s column of the %s table at the %s page",
-                                                 expectedValue, colName, tableName, pageName);
+                expectedValue, colName, tableName, pageName);
 
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc);
 
@@ -645,7 +646,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                   String pageName,
                                                                   String expectedSequence,
                                                                   String validationID,
-                                                                  String onFailureFlag)  {
+                                                                  String onFailureFlag) {
 
         List<String> actualList = getObject(dropdown, pageName).dropdown().getOptions().stream().map(WebElement::getText).collect(Collectors.toList());
 
@@ -660,7 +661,7 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserValidatesThatAllElementsThatMatchThePatternOfTheElementAreDisabledAtThePage(String objectName,
                                                                                                    String pageName,
                                                                                                    String validationID,
-                                                                                                   String onFailureFlag)  {
+                                                                                                   String onFailureFlag) {
         List<Element> els = getObjects(objectName, pageName);
         boolean isElementEnabled = true;
         for (Element el : els) {
@@ -690,20 +691,20 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                  String pageName,
                                                                  String expectedSequence,
                                                                  String validationID,
-                                                                 String onFailureFlag)  {
+                                                                 String onFailureFlag) {
 
         List<String> objectOrderOnPage = getObjects(listOfObjects, pageName).stream()
-                                                                            .map(this::getTextFromElement)
-                                                                            .collect(Collectors.toList());
+                .map(this::getTextFromElement)
+                .collect(Collectors.toList());
 
         List<String> expectedObjectOrder = Arrays.asList(expectedSequence.split("\\|"));
         AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_LISTS, ComparisonOperator.EQ, onFailureFlag);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID,
-                                                 validator.getResultMessage(objectOrderOnPage.toString(), expectedObjectOrder.toString()));
+                validator.getResultMessage(objectOrderOnPage.toString(), expectedObjectOrder.toString()));
         validator.performValidation(objectOrderOnPage, expectedObjectOrder);
 
     }
-    
+
     @Then("^the user validates that the stored data dictionary map \"([^\"]*)\" has a key equal to \"([^\"]*)\" where the value is \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheKeyCorrespondsValueOfIsDataDictionaryMap(String storedMapDictionaryKey,
                                                                             String expectedRate,
@@ -726,5 +727,32 @@ public class AutoEngValidate extends BaseWebSteps {
         AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_STRINGS, ComparisonOperator.CONTAINS, onFailureFlag);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(expectedRate, key));
         validator.performValidation(expectedRate, key);
+    }
+
+    @Then("^the user click \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
+    public void theUserClickUntilElementFound(String objectName,
+                                              String expectedValue,
+                                              String attributeName,
+                                              String pageName
+    ) {
+        attributeName = parseValue(attributeName);
+        expectedValue = parseValue(expectedValue);
+        String expectedValueOne = expectedValue + "_1" + "_1";
+        String expectedValueTwo = expectedValue + "_1" + "_2";
+        String expectedValueThreee = expectedValue + "_1" + "_3";
+        String transactionOne = getObject(objectName, pageName).getAttribute(attributeName);
+        String transactionTwo = getObject(objectName, pageName).getAttribute(attributeName);
+        String transactionThree = getObject(objectName, pageName).getAttribute(attributeName);
+
+        if (expectedValueOne.equalsIgnoreCase(transactionOne)) {
+            getObject(objectName, pageName).click();
+        } else if (expectedValueTwo.equalsIgnoreCase(transactionTwo)) {
+            getObject(objectName, pageName).click();
+        } else if (expectedValueThreee.equalsIgnoreCase(transactionThree)) {
+            getObject(objectName, pageName).click();
+        } else {
+            getObject(objectName, pageName).click();
+        }
+
     }
 }

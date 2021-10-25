@@ -12,7 +12,7 @@ Feature: Take out cash basic order entry with lines
     When the user enters the secure credential "#(Station_Key)" into the "stationKey" textbox at the "LoginPage" page
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
-    And the user waits "25000" seconds
+    And the user waits "20000" seconds
     #Comment: The user wait until page is loading
     #And the user validates the "waitTillLoading" element is present at the "LoginPage" page "wait_Untill_Loading" "HardStopOnFailure"
     #Comment: Enter the Employee_Id into username textbox present on Login Page
@@ -70,4 +70,5 @@ Feature: Take out cash basic order entry with lines
     And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
     #Comment: user click on prep Station
     And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
+    And the user click "def" element until "#(transaction_Number)" expected value based on attribute "abc" found at the page "PrepStationPage"
 
