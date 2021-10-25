@@ -10,9 +10,19 @@ public class AdoraHeaderPage extends BasePO {
 
     private By makeLine = By.xpath("//div[text()='Make Line']");
     private By orderList = By.xpath("//div[text()='Order List']");
+    private By prepStation = By.xpath("//div[text()='Prep Station']");
+    private By cutAndWrap = By.xpath("//div[text()='Cut & Wrap']");
 
     public Element makeLine() throws IOException, InterruptedException {
         return $(makeLine);
+    }
+
+    public Element cutAndWrap() throws IOException, InterruptedException {
+        return $(cutAndWrap);
+    }
+
+    public Element prepStation() throws IOException, InterruptedException {
+        return $(prepStation);
     }
 
     public Element orderList() throws IOException, InterruptedException {
