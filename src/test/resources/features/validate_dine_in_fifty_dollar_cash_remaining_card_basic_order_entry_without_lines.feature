@@ -81,6 +81,8 @@ Feature: Dine in fifty dollar cash remaining card basic order entry
     And the user clicks the "close" element at the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: User validate the order list element is present.
+    And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user validate the transaction Number
