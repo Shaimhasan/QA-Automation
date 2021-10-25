@@ -746,13 +746,15 @@ public class AutoEngValidate extends BaseWebSteps {
 
         if (expectedValueOne.equalsIgnoreCase(transactionOne)) {
             getObject(objectName, pageName).click();
-        } else if (expectedValueTwo.equalsIgnoreCase(transactionTwo)) {
+        }
+        if (expectedValueTwo.equalsIgnoreCase(transactionTwo)) {
             getObject(objectName, pageName).click();
-        } else if (expectedValueThreee.equalsIgnoreCase(transactionThree)) {
+        }
+        if (expectedValueThreee.equalsIgnoreCase(transactionThree)) {
             getObject(objectName, pageName).click();
         } else {
             getObject(objectName, pageName).click();
-            theUserClickUntilElementFound(objectName,expectedValue,attributeName,pageName);
+            theUserClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
 
     }
