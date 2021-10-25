@@ -95,7 +95,7 @@ Feature: Take out cash basic order entry with lines
     #Comment: user click on cut wrap based on order Number
     And the user clicks on the customize matching cell in the " Order No" column containing "#(order_Number)" with sequence "1" from the "table" table at the "CutAndWrapPage" page
     #Comment: User validate the adoraHeaderSVG element is present.
-    And the user validates the "cutAndWrap" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    And the user validates the "cutAndWrap" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
     #Comment: User click on cut and wrap on order Number
     And the user clicks on the customize matching cell in the " Order No" column containing "#(order_Number)" with sequence "2" from the "table" table at the "CutAndWrapPage" page
 
