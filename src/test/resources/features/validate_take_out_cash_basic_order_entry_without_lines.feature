@@ -68,8 +68,10 @@ Feature: Take out cash basic order entry without lines
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
+    And the user waits "2000" seconds
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
+    And the user waits "2000" seconds
     #Comment: User enter the order Number
     Then the user enters "#(transaction_Number)" into the "orderNum" textbox at the "OrderListPage" page
 #    #Comment: The user enter at passsword field
@@ -86,7 +88,7 @@ Feature: Take out cash basic order entry without lines
     #Comment: user validate the card type
     Then the user validates "Compare_Strings" that the "cash" element is "Equal To" "#(cash)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"
     #Comment: validate background color
-    And the user validates the background color of the "cash" element is "rgba(255, 255, 224, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
+    And the user validates the background color of the "cash" element is "rgba(255, 255, 224, 1)" at the "OrderListPage" page "validate_background_color" "HardStopOnFailure"
 
 
 
