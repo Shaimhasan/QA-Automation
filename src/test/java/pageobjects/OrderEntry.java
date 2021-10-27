@@ -28,7 +28,7 @@ public class OrderEntry extends BasePO {
     private By amount = By.xpath("//td[text()='Amount Due']//following-sibling::td");
     private By transactionNum = By.id("lblEndOfOrderID");
     private By orderNum = By.id("lblEndOfOrderNo");
-    private By adoraHeaderSVG = By.xpath("//div[@class='AdoraTopArrow']//*[local-name()='svg' and @id='Layer_1']");
+    private By adoraHeaderSVG = By.xpath("//div[normalize-space(@class)='AdoraTopArrow']");
     private By makeLine = By.xpath("//div[text()='Make Line']");
     private By delivery = By.xpath("//label[text()='Delivery']");
     private By panCrust = By.xpath("//label[text()='Pan Crust']");
