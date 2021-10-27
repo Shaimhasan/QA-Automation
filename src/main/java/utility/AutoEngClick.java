@@ -75,6 +75,15 @@ public class AutoEngClick extends BaseWebSteps {
         getObject(tableName, pageName).getRow(Integer.parseInt(rowNum)).click();
     }
 
+    @When("^the user custom clicks on row \"([^\"]*)\" from the \"([^\"]*)\" table on the \"([^\"]*)\" page$")
+    public void theUserCustomClicksOnRowFromTheTableOnThePage(String orderNum,
+                                                        String tableName,
+                                                        String pageName)  {
+        orderNum=parseValue(orderNum);
+
+        getObject(tableName, pageName).getRowValue(orderNum).click();
+    }
+
     @When("^the user clicks \"([^\"]*)\" element on the \"([^\"]*)\" page if the \"([^\"]*)\" meets \"([^\"]*)\"$")
     public void theUserClicksElementOnThePageIfTheMeets(String objectName,
                                                         String pageName,
@@ -178,13 +187,13 @@ public class AutoEngClick extends BaseWebSteps {
         orderSeq=parseValue(orderSeq);
         firstColValue=firstColValue+" - " + orderSeq;
         Element tableCellToClick = findMatchingTableCell(firstColName, firstColValue,
-                getObject(tableName, pageName));
+                getObject(tableName, pageName).click());
 
-        if (tableCellToClick != null && tableCellToClick.element() != null) {
-            log.debug(CLICKING_ELEMENT, tableCellToClick.getAttribute(OUTER_HTML));
-            tableCellToClick.click();
-        } else
-            log.warn("Could not find unique row with {} having {}", firstColName, firstColValue);
+//        if (tableCellToClick != null && tableCellToClick.element() != null) {
+//            log.debug(CLICKING_ELEMENT, tableCellToClick.getAttribute(OUTER_HTML));
+//            tableCellToClick.click();
+//        } else
+//            log.warn("Could not find unique row with {} having {}", firstColName, firstColValue);
 
     }
 

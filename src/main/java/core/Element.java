@@ -948,6 +948,11 @@ public class Element {
     public Element getRow(int row) {
         return this.findElements(By.tagName("tr")).get(row);
     }
+    public Element getRowValue(String orderN) {
+        String xpathValue="//td[text()="+"'"+orderN+" - 1"+"'"+"]";
+        System.out.println(xpathValue);
+        return this.findElement(By.xpath(xpathValue));
+    }
 
     /**
      * Get table data cell based on row index and column index
