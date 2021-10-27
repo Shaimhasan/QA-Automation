@@ -75,9 +75,6 @@ Feature: Take out cash basic order entry with lines
     #Comment: user click  until found the order
     And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "PrepStationPage"
     And the user waits "2000" seconds
-    #Comment: User validate the adoraHeaderSVG element is present.
-    #And the user validates the "adoraHeaderSVG" element is present at the "OrderEntry" page "validate_Adora_Svg_Present" "HardStopOnFailure"
-
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     And the user waits "2000" seconds
