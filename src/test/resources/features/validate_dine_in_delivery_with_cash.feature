@@ -49,7 +49,8 @@ Feature: Dine in delivery with cash
     Then the user enters "#(textPhone)" into the "textPhone" textbox at the "CustomerInfoPage" page
     #Comment: The user enter at textPhone field
     And the user sends keys "Key_enter" to the "textPhone" element on the "CustomerInfoPage" page
-    #Comment: user click on Finish
-    And the user clicks the "`OK`" element at the "CustomerInfoPage" page
+    And the user waits "3000" seconds
     #Comment: The user save the address into dictionary key
     And store the displayed text of the "address" element at the "CustomerInfoPage" page into the data dictionary with key "address_value"
+    #Comment: user click on Finish
+    And the user clicks the "OK" element at the "CustomerInfoPage" page
