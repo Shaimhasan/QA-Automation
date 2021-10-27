@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class AdoraHeaderPage extends BasePO {
 
-    private By makeLine = By.xpath("//div[text()='Make Line']");
+    private By makeLine = By.xpath("//div[text()='Make Line']/..");
     private By orderList = By.xpath("//div[text()='Order List']");
     private By prepStation = By.xpath("//div[text()='Prep Station']");
     private By cutAndWrap = By.xpath("//div[text()='Cut & Wrap']");

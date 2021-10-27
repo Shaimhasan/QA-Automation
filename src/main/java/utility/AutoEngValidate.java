@@ -740,21 +740,53 @@ public class AutoEngValidate extends BaseWebSteps {
         String expectedValueOne = expectedValue + "_1" + "_1";
         String expectedValueTwo = expectedValue + "_1" + "_2";
         String expectedValueThreee = expectedValue + "_1" + "_3";
-        String transactionOne = getObject(objectName, pageName).getAttribute(attributeName);
-        String transactionTwo = getObject(objectName, pageName).getAttribute(attributeName);
-        String transactionThree = getObject(objectName, pageName).getAttribute(attributeName);
+        System.out.println(attributeName);
+        String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
 
-        if (expectedValueOne.equalsIgnoreCase(transactionOne)) {
+        if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
+          //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
-        if (expectedValueTwo.equalsIgnoreCase(transactionTwo)) {
-            getObject(objectName, pageName).click();
-        }
-        if (expectedValueThreee.equalsIgnoreCase(transactionThree)) {
-            getObject(objectName, pageName).click();
-        } else {
+//        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+//        }
+//        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//        }
+        else {
             getObject(objectName, pageName).click();
             theUserClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
+        }
+
+    }
+    @Then("^the users click \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
+    public void theUsersClickUntilElementFound(String objectName,
+                                              String expectedValue,
+                                              String attributeName,
+                                              String pageName
+    ) {
+        attributeName = parseValue(attributeName);
+        expectedValue = parseValue(expectedValue);
+        String expectedValueOne = expectedValue + "_1" + "_1";
+        String expectedValueTwo = expectedValue + "_1" + "_2";
+        String expectedValueThreee = expectedValue + "_1" + "_3";
+        String actualTransactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+
+        if (expectedValueOne.equalsIgnoreCase(actualTransactionNumber)) {
+            getObject(objectName, pageName).click();
+          //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        }
+//        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+//        }
+//        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//        }
+        else {
+            getObject(objectName, pageName).click();
+            theUsersClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
 
     }

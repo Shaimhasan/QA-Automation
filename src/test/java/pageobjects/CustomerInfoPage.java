@@ -11,11 +11,16 @@ public class CustomerInfoPage extends BasePO {
     private By close = By.id("btnCustomerInfoClose");
     private By textPhone = By.id("txtPhone");
     private By OK = By.xpath("//button[text()='OK']");
-    private By address = By.xpath("//div[text()='55 1st St']");
+    private By address = By.id("divAddressInfo");
     private By customerName = By.id("txtName");
+    private By custInfoId = By.xpath("//span[text()='Customer Info']");
 
     public Element close() throws IOException, InterruptedException {
         return $(close);
+    }
+
+    public Element custInfoId() throws IOException, InterruptedException {
+        return $(custInfoId);
     }
 
     public Element customerName() throws IOException, InterruptedException {

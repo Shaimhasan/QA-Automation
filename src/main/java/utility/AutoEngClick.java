@@ -18,7 +18,13 @@ public class AutoEngClick extends BaseWebSteps {
                                                  String pageName)  {
         getObject(objectName, pageName).click();
     }
-
+    @When("^the user custom clicks the \"([^\"]*)\" element with order number \"([^\"]*)\" at the \"([^\"]*)\" page$")
+    public void theUserCustomClicksTheElementAtThePage(String objectName,
+                                                 String orderNum,
+                                                 String pageName)  {
+        orderNum=parseValue(orderNum);
+        getObject(objectName, pageName).customClick(orderNum);
+    }
     @When("^the user doubleclicks the \"([^\"]*)\" element at the \"([^\"]*)\" page$")
     public void theUserDoubleclicksTheElementAtThePage(String objectName,
                                                        String pageName)  {
@@ -172,7 +178,7 @@ public class AutoEngClick extends BaseWebSteps {
         orderSeq=parseValue(orderSeq);
         firstColValue=firstColValue+" - " + orderSeq;
         Element tableCellToClick = findMatchingTableCell(firstColName, firstColValue,
-                getObject(tableName, pageName).scroll());
+                getObject(tableName, pageName));
 
         if (tableCellToClick != null && tableCellToClick.element() != null) {
             log.debug(CLICKING_ELEMENT, tableCellToClick.getAttribute(OUTER_HTML));
@@ -233,6 +239,18 @@ public class AutoEngClick extends BaseWebSteps {
                                                                                                 String tableName,
                                                                                                 String pageName)  {
         rowValue = parseValue(rowValue);
+        getObject(tableName, pageName).findMatchingAnchorLinkCellinTable(rowValue, colHeader).click();
+    }
+
+    @When("^the user clicks on the cell link having unique rowVal from data dictionary \"([^\"]*)\" with sequence \"([^\"]*)\" at columnHeader \"([^\"]*)\" from the \"([^\"]*)\" table at the \"([^\"]*)\" page$")
+    public void theUserClicksOnTheCellLinkHavingUniqueRowValFromDataDictionaryAtColumnHeaderFromTheTableAtThePage(String rowValue,
+                                                                                                String orderSeq,
+                                                                                                String colHeader,
+                                                                                                String tableName,
+                                                                                                String pageName)  {
+        orderSeq=parseValue(orderSeq);
+        rowValue = parseValue(rowValue);
+        rowValue=rowValue+" - " + orderSeq;
         getObject(tableName, pageName).findMatchingAnchorLinkCellinTable(rowValue, colHeader).click();
     }
 
