@@ -1,9 +1,9 @@
-@takeOutCashBasicOrderEntryWithoutLines
-Feature: Take out cash basic order entry without lines
-  This script is to validate Take out cash basic order entry
+@dineInCardBasicOrderEntryWithoutLines
+Feature: Basic Order Entry - Dine In Credit Card - with all lines disabled
+  This script is to validate Dine in card basic order entry without lines
 
-  @validate_take_out_cash_basic_order_entry_without_lines @RegressionSuite
-  Scenario: validate_take_out_cash_basic_order_entry_without_lines_Testcase
+  @Basic_Order_Entry_Dine_In_Credit_Card_with_all_lines_disabled @RegressionSuite
+  Scenario: Basic_Order_Entry_Dine_In_Credit_Card_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -27,13 +27,8 @@ Feature: Take out cash basic order entry without lines
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
-
-
-
-    #Comment: user click on Take Out
-    And the user clicks the "takeOut" element at the "OrderEntry" page
     #Comment: validate background color
-    And the user validates the background color of the "takeOutColor" element is "rgba(255, 255, 224, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
+    And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select suprimePizza
     And the user clicks the "suprimePizza" element at the "OrderEntry" page
     #Comment: user select veggiePizza
@@ -56,8 +51,41 @@ Feature: Take out cash basic order entry without lines
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
-    #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    #Comment: user click on credit
+    And the user clicks the "credit" element at the "PaymentPage" page
+
+    #Comment: User switches to the frame
+    And the user switches to frame "cardNumber"
+     #Comment: the user enter the CreditCard Number
+    Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+
+    #Comment: User switches to the frame
+    And the user switches to frame "cardExpiration"
+     #Comment: the user enter the expiration
+    Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+
+    #Comment: User switches to the frame
+    And the user switches to frame "cardCvv"
+    #Comment: the user enter the cvv
+    Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+
+    #Comment: user click on chargeBtn
+    And the user clicks the "chargeBtn" element at the "CreditCardPage" page
+    And the user waits "10000" seconds
+   #Comment: user click on Send
+    And the user clicks the "send" element at the "PaymentPage" page
+    #Comment: user click on close
+    And the user clicks the "close" element at the "CustomerInfoPage" page
+    #Comment: user click on Finish
+    And the user clicks the "`finishBtn`" element at the "OrderEntry" page
+    #Comment: user click on Finish on payment page
+    And the user clicks the "finish" element at the "PaymentPage" page
 
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
@@ -71,15 +99,8 @@ Feature: Take out cash basic order entry without lines
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
-    And the user waits "2000" seconds
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
-    And the user waits "2000" seconds
-    #Comment: User enter the order Number
-    Then the user enters "#(transaction_Number)" into the "orderNum" textbox at the "OrderListPage" page
-#    #Comment: The user enter at passsword field
-#    And the user sends keys "Key_enter" to the "orderNum" element on the "OrderListPage" page
-
     #Comment: user validate the transaction Number
     And store text of the cell having unique rowVal comes from Data Dictionary "#(transaction_Number)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
     #Comment: user validate the transaction Number
@@ -88,10 +109,8 @@ Feature: Take out cash basic order entry without lines
     And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: User validate data dictionary values
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: User enter the order Number
+    Then the user enters "#(transaction_Number)" into the "orderNum" textbox at the "OrderListPage" page
     #Comment: user validate the card type
-    Then the user validates "Compare_Strings" that the "cash" element is "Equal To" "#(cash)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"
-    #Comment: validate background color
-    And the user validates the background color of the "cash" element is "rgba(255, 255, 224, 1)" at the "OrderListPage" page "validate_background_color" "HardStopOnFailure"
-
-
+    Then the user validates "Compare_Strings" that the "creditCard" element is "Equal To" "#(cardType)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"
 

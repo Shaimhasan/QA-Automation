@@ -1,9 +1,9 @@
-@dineInCashBasicOrderEntry
-Feature: Dine in cash basic order entry
-  This script is to validate Dine in cash basic order entry
+@takeOutCashBasicOrderEntryWithoutLines
+Feature: Basic Order Entry - Take Out Cash  - with all lines disabled
+  This script is to validate Take out cash basic order entry
 
-  @Basic_Order_Entry_Dine_In_Cash_with_all_lines_disabled @RegressionSuite
-  Scenario: Basic_Order_Entry_Dine_In_Cash_with_all_lines_disabled_Testcase
+  @Basic_Order_Entry_Take_Out_Cash_with_all_lines_disabled_Testcase @RegressionSuite
+  Scenario: Basic_Order_Entry_Take_Out_Cash_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -27,8 +27,13 @@ Feature: Dine in cash basic order entry
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+
+
+
+    #Comment: user click on Take Out
+    And the user clicks the "takeOut" element at the "OrderEntry" page
     #Comment: validate background color
-    And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
+    And the user validates the background color of the "takeOutColor" element is "rgba(255, 255, 224, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select suprimePizza
     And the user clicks the "suprimePizza" element at the "OrderEntry" page
     #Comment: user select veggiePizza
@@ -66,10 +71,15 @@ Feature: Dine in cash basic order entry
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
-    #Comment: user click on Order List
     And the user waits "2000" seconds
+    #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     And the user waits "2000" seconds
+    #Comment: User enter the order Number
+    Then the user enters "#(transaction_Number)" into the "orderNum" textbox at the "OrderListPage" page
+#    #Comment: The user enter at passsword field
+#    And the user sends keys "Key_enter" to the "orderNum" element on the "OrderListPage" page
+
     #Comment: user validate the transaction Number
     And store text of the cell having unique rowVal comes from Data Dictionary "#(transaction_Number)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
     #Comment: user validate the transaction Number
@@ -78,10 +88,10 @@ Feature: Dine in cash basic order entry
     And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: User validate data dictionary values
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
-    #Comment: User enter the order Number
-    Then the user enters "#(transaction_Number)" into the "orderNum" textbox at the "OrderListPage" page
     #Comment: user validate the card type
     Then the user validates "Compare_Strings" that the "cash" element is "Equal To" "#(cash)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"
+    #Comment: validate background color
+    And the user validates the background color of the "cash" element is "rgba(255, 255, 224, 1)" at the "OrderListPage" page "validate_background_color" "HardStopOnFailure"
 
 
 
