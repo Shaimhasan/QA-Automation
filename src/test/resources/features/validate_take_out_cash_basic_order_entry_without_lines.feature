@@ -27,6 +27,9 @@ Feature: Take out cash basic order entry without lines
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+
+
+
     #Comment: user click on Take Out
     And the user clicks the "takeOut" element at the "OrderEntry" page
     #Comment: validate background color

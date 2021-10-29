@@ -26,7 +26,7 @@ Feature: Take out cash basic order entry with lines
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
-    And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+    And the user clicks the "orderEntry" element at the "AdoraHeaderPage" page
     #Comment: user click on Take Out
     And the user clicks the "takeOut" element at the "OrderEntry" page
     #Comment: validate background color
@@ -72,8 +72,9 @@ Feature: Take out cash basic order entry with lines
     And the user waits "2000" seconds
     And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
     And the user waits "2000" seconds
-    #Comment: user click  until found the order
-    And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "PrepStationPage"
+    And the users custom click "order" element until "#(order_Number)" expected value based on attribute "1" found at the page "MakeLinePage"
+    #Comment: user click until found the order
+    #And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "PrepStationPage"
     And the user waits "2000" seconds
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
@@ -81,8 +82,11 @@ Feature: Take out cash basic order entry with lines
     #Comment: user click on makeLine
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     And the user waits "2000" seconds
+    #And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
     #Comment: user click click until found the order
-    And the users click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    And the users custom click "order" element until "#(order_Number)" expected value based on attribute "1" found at the page "MakeLinePage"
+
+
     And the user waits "2000" seconds
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
@@ -93,7 +97,7 @@ Feature: Take out cash basic order entry with lines
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
     #Comment: user click on cut wrap based on order Number
-    And the user custom clicks on row "#(order_Number)" from the "table" table on the "CutAndWrapPage" page
+    And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
     And the user waits "2000" seconds
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user validates the "cutAndWrap" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"

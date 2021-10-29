@@ -745,7 +745,7 @@ public class AutoEngValidate extends BaseWebSteps {
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
-          //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
 //        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
 //            getObject(objectName, pageName).click();
@@ -760,11 +760,27 @@ public class AutoEngValidate extends BaseWebSteps {
         }
 
     }
+
+    @Then("^the user custom click and clear all prep station Or Make Line item \"([^\"]*)\" element found at the page \"([^\"]*)\"$")
+    public void theUserCustomClickUntilElementFound(String objectName,
+                                                    String pageName) {
+
+        boolean value = getObject(objectName, pageName).isDisplayed();
+
+        if (value) {
+            getObject(objectName, pageName).click();
+            theUserCustomClickUntilElementFound(objectName, pageName);
+        } else {
+            System.out.println("please proceed");
+        }
+
+    }
+
     @Then("^the users click \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
     public void theUsersClickUntilElementFound(String objectName,
-                                              String expectedValue,
-                                              String attributeName,
-                                              String pageName
+                                               String expectedValue,
+                                               String attributeName,
+                                               String pageName
     ) {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
@@ -775,7 +791,7 @@ public class AutoEngValidate extends BaseWebSteps {
 
         if (expectedValueOne.equalsIgnoreCase(actualTransactionNumber)) {
             getObject(objectName, pageName).click();
-          //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
 //        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
 //            getObject(objectName, pageName).click();
@@ -787,6 +803,40 @@ public class AutoEngValidate extends BaseWebSteps {
         else {
             getObject(objectName, pageName).click();
             theUsersClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
+        }
+
+    }
+
+    @Then("^the users custom click \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
+    public void theUsersCustomClickUntilElementFound(String objectName,
+                                                     String orderNum,
+                                                     String categoryValue1,
+                                                     String categoryValue2,
+                                                     String categoryValue3,
+                                                     String pageName
+    ) {
+        orderNum = parseValue(orderNum);
+        String orderNum1 = orderNum + "-" + categoryValue1;
+        String orderNum2 = orderNum + "-" + categoryValue2;
+        String orderNum3 = orderNum + "-" + categoryValue3;
+        categoryValue1 = parseValue(categoryValue1);
+        categoryValue2 = parseValue(categoryValue2);
+        categoryValue3 = parseValue(categoryValue3);
+        String textValue1 = getObject(objectName, pageName).getRowValueText(orderNum, categoryValue1).getText();
+        String textValue2 = getObject(objectName, pageName).getRowValueText(orderNum, categoryValue2).getText();
+        String textValue3 = getObject(objectName, pageName).getRowValueText(orderNum, categoryValue3).getText();
+
+        if (textValue1.equalsIgnoreCase(orderNum1)) {
+            getObject(objectName, pageName).getRowValueText(orderNum, categoryValue1).click();
+        }
+        if (textValue2.equalsIgnoreCase(orderNum2)) {
+            getObject(objectName, pageName).getRowValueText(orderNum, categoryValue1).click();
+        }
+        if (textValue3.equalsIgnoreCase(orderNum3)) {
+            getObject(objectName, pageName).getRowValueText(orderNum, categoryValue1).click();
+        } else {
+            getObject(objectName, pageName).click();
+            theUsersCustomClickUntilElementFound(objectName, orderNum, categoryValue1, categoryValue2, categoryValue3, pageName);
         }
 
     }

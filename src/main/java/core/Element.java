@@ -208,6 +208,21 @@ public class Element {
             return this;
         }
     }
+    public Element isVisible(int... retries) {
+        {
+            try {
+                wait.until(ExpectedConditions.visibilityOf(this.element));
+            } catch (Exception e) {
+                if (!(retries.length > 0 && retries[0] == 0)) {
+                    this.refind(retries);
+                    return this.visible(0);
+                } else {
+                    throw e;
+                }
+            }
+            return this;
+        }
+    }
 
     /**
      * wait for the element to become invisible
@@ -283,6 +298,23 @@ public class Element {
             }
             return this;
         }
+    }
+    public Boolean isDisplayed(int... retries) {
+        boolean value;
+        {
+            try {
+                value=this.element.isDisplayed();
+            } catch (Exception e) {
+                if (!(retries.length > 0 && retries[0] == 0)) {
+                    this.refind(retries);
+                    return this.isDisplayed(0) != null;
+                } else {
+                    throw e;
+                }
+            }
+
+        }
+        return value;
     }
 
     /**
@@ -948,8 +980,13 @@ public class Element {
     public Element getRow(int row) {
         return this.findElements(By.tagName("tr")).get(row);
     }
-    public Element getRowValue(String orderN) {
-        String xpathValue="//td[text()="+"'"+orderN+" - 1"+"'"+"]";
+    public Element getRowValue(String orderN,String category) {
+        String xpathValue="//td[text()="+"'"+orderN+" - "+category+"'"+"]";
+        System.out.println(xpathValue);
+        return this.findElement(By.xpath(xpathValue));
+    }
+    public Element getRowValueText(String orderN,String category) {
+        String xpathValue="//td[text()="+"'"+orderN+"-"+category+"'"+"]";
         System.out.println(xpathValue);
         return this.findElement(By.xpath(xpathValue));
     }

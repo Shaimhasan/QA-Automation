@@ -75,13 +75,14 @@ public class AutoEngClick extends BaseWebSteps {
         getObject(tableName, pageName).getRow(Integer.parseInt(rowNum)).click();
     }
 
-    @When("^the user custom clicks on row \"([^\"]*)\" from the \"([^\"]*)\" table on the \"([^\"]*)\" page$")
+    @When("^the user custom clicks on row with order number \"([^\"]*)\" and category value \"([^\"]*)\" from the \"([^\"]*)\" table on the \"([^\"]*)\" page$")
     public void theUserCustomClicksOnRowFromTheTableOnThePage(String orderNum,
+                                                        String categoryValue,
                                                         String tableName,
                                                         String pageName)  {
         orderNum=parseValue(orderNum);
-
-        getObject(tableName, pageName).getRowValue(orderNum).click();
+        categoryValue=parseValue(categoryValue);
+        getObject(tableName, pageName).getRowValue(orderNum,categoryValue).click();
     }
 
     @When("^the user clicks \"([^\"]*)\" element on the \"([^\"]*)\" page if the \"([^\"]*)\" meets \"([^\"]*)\"$")
