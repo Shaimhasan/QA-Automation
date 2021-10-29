@@ -2,8 +2,8 @@
 Feature: Dine in cash basic order entry
   This script is to validate Dine in cash basic order entry
 
-  @validate_dine_in_cash_basic_order_entry_without_lines @RegressionSuite
-  Scenario: validate_dine_in_cash_basic_order_entry_without_lines_Testcase
+  @Basic_Order_Entry_Dine_In_Cash_with_all_lines_disabled @RegressionSuite
+  Scenario: Basic_Order_Entry_Dine_In_Cash_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
