@@ -208,6 +208,7 @@ public class Element {
             return this;
         }
     }
+
     public Element isVisible(int... retries) {
         {
             try {
@@ -299,11 +300,12 @@ public class Element {
             return this;
         }
     }
+
     public Boolean isDisplayed(int... retries) {
         boolean value;
         {
             try {
-                value=this.element.isDisplayed();
+                value = this.element.isDisplayed();
             } catch (Exception e) {
                 if (!(retries.length > 0 && retries[0] == 0)) {
                     this.refind(retries);
@@ -426,6 +428,11 @@ public class Element {
 
     public String getAttribute(String attr, int... retries) {
         try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        try {
             return this.element.getAttribute(attr);
         } catch (Exception e) {
             if (!(retries.length > 0 && retries[0] == 0)) {
@@ -509,11 +516,12 @@ public class Element {
         }
         return this;
     }
-    public Element customClick(String orderNumber,int... retries) {
+
+    public Element customClick(String orderNumber, int... retries) {
         try {
             try {
-                String orderNum="//td[text()="+"'"+orderNumber+" - 1"+"'"+"]";
-                System.out.println("Order Number  >"+orderNum);
+                String orderNum = "//td[text()=" + "'" + orderNumber + " - 1" + "'" + "]";
+                System.out.println("Order Number  >" + orderNum);
                 Element element = this.findElement(By.xpath(orderNum));
                 element.click();
 
@@ -980,13 +988,21 @@ public class Element {
     public Element getRow(int row) {
         return this.findElements(By.tagName("tr")).get(row);
     }
-    public Element getRowValue(String orderN,String category) {
-        String xpathValue="//td[text()="+"'"+orderN+" - "+category+"'"+"]";
+
+    public Element getRowValue(String orderN, String category) {
+        String xpathValue = "//td[text()=" + "'" + orderN + " - " + category + "'" + "]";
         System.out.println(xpathValue);
         return this.findElement(By.xpath(xpathValue));
     }
-    public Element getRowValueText(String orderN,String category) {
-        String xpathValue="//td[text()="+"'"+orderN+"-"+category+"'"+"]";
+
+    public Element getRowValueCutAndWrap(String orderN, String category) {
+        String xpathValue = "//td[text()=" + "'" + orderN + " - " + category + "'" + "]//following-sibling::td[text()='Cut & Wrapped']";
+        System.out.println(xpathValue);
+        return this.findElement(By.xpath(xpathValue));
+    }
+
+    public Element getRowValueText(String orderN, String category) {
+        String xpathValue = "//td[text()=" + "'" + orderN + "-" + category + "'" + "]";
         System.out.println(xpathValue);
         return this.findElement(By.xpath(xpathValue));
     }
@@ -1261,13 +1277,13 @@ public class Element {
         String attribForTableHeader = Property.getVariable(Constants.ATTRIBUTE_FOR_TABLE_HEADER_COMPARE);
 
         int colIndex = headRowElements.stream().map(element1 -> element1.getText().toLowerCase())
-                                      .collect(Collectors.toList())
-                                      .indexOf(colName.toLowerCase());
+                .collect(Collectors.toList())
+                .indexOf(colName.toLowerCase());
 
         if (colIndex == -1 && attribForTableCompare != null) {
             colIndex = headRowElements.stream().map(element1 -> element1.getAttribute(attribForTableCompare).toLowerCase())
-                                      .collect(Collectors.toList())
-                                      .indexOf(colName.toLowerCase());
+                    .collect(Collectors.toList())
+                    .indexOf(colName.toLowerCase());
         }
         if (colIndex == -1 && attribForTableHeader != null) {
             List<Element> headerElements = this.findElements(By.tagName("th"));
@@ -1300,10 +1316,10 @@ public class Element {
             List<Element> dataCellChildElements = dataCellElement.findElements(By.xpath(".//*"));
             for (Element childEle : dataCellChildElements) {
                 if (childEle.element != null &&
-                    (childEle.getAttribute(attribForTableCompare) != null &&
-                     childEle.getAttribute(attribForTableCompare).equalsIgnoreCase(valToFind) ||
-                     childEle.getCurrentElementTextOnly().equalsIgnoreCase(valToFind) ||
-                     childEle.getCurrentElementTextOnly().contains(valToFind))) {
+                        (childEle.getAttribute(attribForTableCompare) != null &&
+                                childEle.getAttribute(attribForTableCompare).equalsIgnoreCase(valToFind) ||
+                                childEle.getCurrentElementTextOnly().equalsIgnoreCase(valToFind) ||
+                                childEle.getCurrentElementTextOnly().contains(valToFind))) {
                     return childEle;
                 }
             }
@@ -1350,8 +1366,8 @@ public class Element {
                 eleToClick = checkForMatchInRow(i, firstColNum, firstValToMatch);
 
                 if (eleToClick != null &&
-                    checkForMatchInRow(i, secondColNum, secondValToMatch) != null &&
-                    checkForMatchInRow(i, thirdColNum, thirdValToMatch) != null) {
+                        checkForMatchInRow(i, secondColNum, secondValToMatch) != null &&
+                        checkForMatchInRow(i, thirdColNum, thirdValToMatch) != null) {
                     return eleToClick;
                 }
             }
@@ -1420,8 +1436,8 @@ public class Element {
                 List<Element> rdoLabel = this.findElements(By.xpath(xPath));
 
                 if (!rdoLabel.isEmpty() &&
-                    rdoLabel.get(0).getAttribute(attribToSearch) != null &&
-                    !rdoLabel.get(0).getAttribute(attribToSearch).isEmpty()) {
+                        rdoLabel.get(0).getAttribute(attribToSearch) != null &&
+                        !rdoLabel.get(0).getAttribute(attribToSearch).isEmpty()) {
                     return rdoLabel.get(0).getAttribute(attribToSearch);
                 }
             }
@@ -1523,10 +1539,10 @@ public class Element {
      */
     public Element findRadioButtonInTableRow() {
         List<String> xPathPatterns = Arrays.asList(".//input",
-                                                   "preceding-sibling::td//input",
-                                                   "following-sibling::td//input",
-                                                   "parent::div//parent::td//preceding-sibling::td//input",
-                                                   "parent::td//preceding-sibling::td//input[2]");
+                "preceding-sibling::td//input",
+                "following-sibling::td//input",
+                "parent::div//parent::td//preceding-sibling::td//input",
+                "parent::td//preceding-sibling::td//input[2]");
 
         List<Element> rdoButtons;
 
@@ -1546,8 +1562,8 @@ public class Element {
      */
     public Element findButtonInTableRow(String buttonText) {
         List<String> xPathPatterns = Arrays.asList(".//button",
-                                                   "preceding-sibling::td//button",
-                                                   "following-sibling::td//button");
+                "preceding-sibling::td//button",
+                "following-sibling::td//button");
 
         List<Element> buttons;
 
@@ -1596,8 +1612,8 @@ public class Element {
             File jsFile = new File(Element.class.getResource("/jsFiles/dragAndDrop.js").getFile());
             String dragAndDropJS = FileHelper.getFileAsString(jsFile.getAbsolutePath(), " ");
             String jsArgument = String.format("%s.simulateDragDrop({ dropTarget: %s});",
-                                              getjQueryStringfromLocator(this.by.toString()),
-                                              getjQueryStringfromLocator(destinationObject.by.toString()));
+                    getjQueryStringfromLocator(this.by.toString()),
+                    getjQueryStringfromLocator(destinationObject.by.toString()));
             ((JavascriptExecutor) driver).executeScript(String.format("%s %s", dragAndDropJS, jsArgument));
         } catch (IOException e) {
             log.error("Support JavaScript function not found. Skipping drag and drop");
@@ -1665,8 +1681,8 @@ public class Element {
 
     public Element findDropDownInTableRow() {
         List<String> xPathPatterns = Arrays.asList(".//select",
-                                                   "preceding-sibling::td//select",
-                                                   "parent::div//parent::td//preceding-sibling::td//select");
+                "preceding-sibling::td//select",
+                "parent::div//parent::td//preceding-sibling::td//select");
 
         List<Element> dropDowns;
 

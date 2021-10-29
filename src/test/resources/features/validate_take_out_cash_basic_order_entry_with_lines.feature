@@ -72,9 +72,8 @@ Feature: Take out cash basic order entry with lines
     And the user waits "2000" seconds
     And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
     And the user waits "2000" seconds
-    And the users custom click "order" element until "#(order_Number)" expected value based on attribute "1" found at the page "MakeLinePage"
-    #Comment: user click until found the order
-    #And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "PrepStationPage"
+     #Comment: user click prepstation until order comes on console
+    And the user click prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
     And the user waits "2000" seconds
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
@@ -82,11 +81,8 @@ Feature: Take out cash basic order entry with lines
     #Comment: user click on makeLine
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     And the user waits "2000" seconds
-    #And the user click "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
-    #Comment: user click click until found the order
-    And the users custom click "order" element until "#(order_Number)" expected value based on attribute "1" found at the page "MakeLinePage"
-
-
+    #Comment: user click makeline until order comes on console
+    And the user click makeline "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
     And the user waits "2000" seconds
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
@@ -98,6 +94,14 @@ Feature: Take out cash basic order entry with lines
     And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
     #Comment: user click on cut wrap based on order Number
     And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
-    And the user waits "2000" seconds
+    #Comment: user click on cut wrap based on order Number
     #Comment: User validate the adoraHeaderSVG element is present.
-    And the user validates the "cutAndWrap" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    And the user waits "800" seconds
+    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    And the user custom clicks on row with order number "#(order_Number)" and category value "2" from the "table" table on the "CutAndWrapPage" page
+    And the user waits "800" seconds
+    And the user order number "#(order_Number)" category value "2" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(order_Number)" and category value "3" from the "table" table on the "CutAndWrapPage" page
+    And the user waits "800" seconds
+    And the user order number "#(order_Number)" category value "3" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"

@@ -519,6 +519,32 @@ public class AutoEngValidate extends BaseWebSteps {
 
     }
 
+    @Then("^the user order number \"([^\"]*)\" category value \"([^\"]*)\" cut and wrap validates the \"([^\"]*)\" element is present at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserCutAndWrapValidatesTheElementIsPresentAtThePage(String orderNum,
+                                                                       String categoryValue,
+                                                                       String tableName,
+                                                                       String pageName,
+                                                                       String validationID,
+                                                                       String onFailureFlag) {
+
+        orderNum=parseValue(orderNum);
+        categoryValue=parseValue(categoryValue);
+        final Element elementPresent = getObject(tableName, pageName).getRowValueCutAndWrap(orderNum,categoryValue);
+
+        final String compareDesc = String.format("Expecting the '%s' element to be present on the '%s' page. ", tableName, pageName);
+        TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc);
+
+        if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
+            assertThat(elementPresent).as(compareDesc).isNotNull();
+        } else {
+            sa().assertThat(elementPresent).as(compareDesc).isNotNull();
+            if (elementPresent == null) {
+                Reporter.addStepLog(STATUS_FAIL, compareDesc);
+            }
+        }
+
+    }
+
     @Then("^the user validates the \"([^\"]*)\" element is not present at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheElementIsNotPresenteAtThePage(String objectName,
                                                                  String pageName,
@@ -729,11 +755,42 @@ public class AutoEngValidate extends BaseWebSteps {
         validator.performValidation(expectedRate, key);
     }
 
-    @Then("^the user click \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
+    @Then("^the user click prepstation \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
     public void theUserClickUntilElementFound(String objectName,
                                               String expectedValue,
                                               String attributeName,
                                               String pageName
+    ) {
+        attributeName = parseValue(attributeName);
+        expectedValue = parseValue(expectedValue);
+        String expectedValueOne = "div_PS_item_" + expectedValue + "_1" + "_1";
+        String expectedValueTwo = "div_PS_item_" + expectedValue + "_1" + "_2";
+        String expectedValueThreee = "div_PS_item_" + expectedValue + "_1" + "_3";
+        System.out.println(attributeName);
+        String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+
+        if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).click();
+            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        }
+        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).click();
+            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        }
+        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).click();
+        } else {
+            getObject(objectName, pageName).click();
+            theUserClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
+        }
+
+    }
+
+    @Then("^the user click makeline \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
+    public void theUserClickMakelineUntilElementFound(String objectName,
+                                                      String expectedValue,
+                                                      String attributeName,
+                                                      String pageName
     ) {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
@@ -745,18 +802,17 @@ public class AutoEngValidate extends BaseWebSteps {
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
-            //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
-//        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
-//            getObject(objectName, pageName).click();
-//            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-//        }
-//        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
-//            getObject(objectName, pageName).click();
-//        }
-        else {
+        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
-            theUserClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
+            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        }
+        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).click();
+        } else {
+            getObject(objectName, pageName).click();
+            theUserClickMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
 
     }
@@ -807,7 +863,7 @@ public class AutoEngValidate extends BaseWebSteps {
 
     }
 
-    @Then("^the users custom click \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
+    @Then("^the users custom click \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" attribute \"([^\"]*)\" attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
     public void theUsersCustomClickUntilElementFound(String objectName,
                                                      String orderNum,
                                                      String categoryValue1,
