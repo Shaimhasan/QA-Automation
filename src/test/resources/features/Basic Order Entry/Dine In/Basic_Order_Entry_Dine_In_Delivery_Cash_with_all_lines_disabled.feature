@@ -1,9 +1,9 @@
 @dineInDeliveryWithCash
-Feature: Dine in delivery with cash
+Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
   This script is to validate Dine in delivery with cash
 
-  @validate_dine_in_delivery_with_cash @RegressionSuite
-  Scenario: validate_dine_in_delivery_with_cash_Testcase
+  @Basic_Order_Entry_Dine_In_Delivery_Cash_with_all_lines_disabled @RegressionSuite
+  Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page

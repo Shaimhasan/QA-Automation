@@ -1,9 +1,9 @@
 @dineInDeliveryWithCard
-Feature: Dine in delivery with card
+Feature: Basic Order Entry - Delivery Credit Card  - with all lines disabled
   This script is to validate Dine in delivery with card
 
-  @validate_dine_in_delivery_with_card @RegressionSuite
-  Scenario: validate_dine_in_delivery_with_card_Testcase
+  @Basic_Order_Entry_Dine_In_Delivery_Credit_Card_with_all_lines_disabled @RegressionSuite
+  Scenario: Basic_Order_Entry_Dine_In_Delivery_Credit_Card_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
