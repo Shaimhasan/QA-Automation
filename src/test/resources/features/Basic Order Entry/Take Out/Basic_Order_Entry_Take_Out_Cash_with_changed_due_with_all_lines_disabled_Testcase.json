@@ -1,0 +1,18 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "tableNo": "automation",
+      "amount": "83.50",
+      "cash": "Cash",
+      "changedDueAmt": "-16.50"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}

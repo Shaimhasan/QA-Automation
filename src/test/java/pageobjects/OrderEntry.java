@@ -38,10 +38,14 @@ public class OrderEntry extends BasePO {
     private By phoneTakeOut = By.xpath("//button[@data-text='Phone Take-Out']");
     private By takeOutColor = By.id("divOrder");
     private By phoneTakeOutColor = By.id("divOrder");
+    private By changeDueAmt = By.xpath("//p[text()='Change Due']//following-sibling::div");
 
 
     public Element makeLine() throws IOException, InterruptedException {
         return $(makeLine);
+    }
+    public Element changeDueAmt() throws IOException, InterruptedException {
+        return $(changeDueAmt);
     }
 
     public Element closeForPhoneTakeOut() throws IOException, InterruptedException {
