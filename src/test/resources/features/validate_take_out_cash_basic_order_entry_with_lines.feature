@@ -86,10 +86,10 @@ Feature: Take out cash basic order entry with lines
     And the user waits "2000" seconds
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    And the user waits "2000" seconds
+    And the user waits "3000" seconds
     #Comment: user click on Cut and Wrap
     And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
-    And the user waits "2000" seconds
+    And the user waits "3000" seconds
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
     #Comment: user click on cut wrap based on order Number
