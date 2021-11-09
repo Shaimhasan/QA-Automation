@@ -1,0 +1,20 @@
+package pageobjects;
+
+import core.BasePO;
+import core.Element;
+import org.openqa.selenium.By;
+
+import java.io.IOException;
+
+public class DispatchPage extends BasePO {
+    private By table = By.xpath("//div[@class='divHeader']/table");
+    private By driverOliveGreene = By.xpath("//div[text()='2000']");
+
+    public Element table() throws IOException, InterruptedException {
+        return $(table);
+    }
+
+    public Element driverOliveGreene() throws IOException, InterruptedException {
+        return $(driverOliveGreene);
+    }
+}

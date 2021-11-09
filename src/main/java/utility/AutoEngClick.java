@@ -32,6 +32,13 @@ public class AutoEngClick extends BaseWebSteps {
         orderNum = parseValue(orderNum);
         getObject(objectName, pageName).customClick(orderNum);
     }
+    @When("^the user custom clicks dispatch the \"([^\"]*)\" element with order number \"([^\"]*)\" at the \"([^\"]*)\" page$")
+    public void theUserCustomClicksDispatchTheElementAtThePage(String objectName,
+                                                       String orderNum,
+                                                       String pageName) {
+        orderNum = parseValue(orderNum);
+        getObject(objectName, pageName).customClickDispatch(orderNum);
+    }
 
     @When("^the user doubleclicks the \"([^\"]*)\" element at the \"([^\"]*)\" page$")
     public void theUserDoubleclicksTheElementAtThePage(String objectName,

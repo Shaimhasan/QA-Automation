@@ -545,6 +545,34 @@ public class Element {
         return this;
     }
 
+    public Element customClickDispatch(String orderNumber, int... retries) {
+        try {
+            try {
+                String orderNum = "//b[text()='" + orderNumber + "']";
+                System.out.println("Order Number  >" + orderNum);
+                Element element = this.findElement(By.xpath(orderNum));
+                element.click();
+
+            } catch (ElementClickInterceptedException e) {
+                if (checkClickJS()) {
+                    clickJS();
+                }
+            } catch (Exception e) {
+                if (!(retries.length > 0 && retries[0] == 0)) {
+                    this.refind(retries);
+                    this.click(0);
+                } else {
+                    throw e;
+                }
+            }
+        } catch (Exception e) {
+            if (checkClickJS()) {
+                clickJS();
+            }
+        }
+        return this;
+    }
+
     public Element doubleClick(int... retries) {
         Actions action = new Actions(driver);
         try {
