@@ -54,8 +54,7 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines enabled
     And store the displayed text of the "address" element at the "CustomerInfoPage" page into the data dictionary with key "address_value"
     #Comment: user click on Finish
     And the user clicks the "OK" element at the "CustomerInfoPage" page
-    #Comment: Validate the amount
-    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
+
     #Comment: user click on Finish
     And the user clicks the "`finishBtn`" element at the "OrderEntry" page
     #Comment: user click on Cash
@@ -65,7 +64,7 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines enabled
     #Comment: The user save the transaction number into dictionary key
     And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: user click on Close
-    And the user clicks the "close" element at the "OrderEntry" page
+    And the user clicks the "closeForDelivery" element at the "OrderEntry" page
 
 
     #Comment: user click on Adora Header
@@ -136,8 +135,14 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines enabled
     And the user waits "2000" seconds
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
-    #Comment: user enter employee Number
-    And the user enters "#(employeeNumber)" into the "empoloyeeNumber" textbox at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "twoDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
     #Comment: user click on Driver
@@ -153,5 +158,38 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines enabled
     And the user waits "2000" seconds
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
+    And the user waits "2000" seconds
+    #Comment : user click on orderNumber and dispatch
+    And the user custom clicks dispatch the "table" element with order number "#(order_Number)" at the "DispatchPage" page
+    #Comment: user click on Driver o Dispatch page
+    And the user clicks the "driverOliveGreene" element at the "DispatchPage" page
+    #Comment: user click on Driver o Dispatch page
+    And the user clicks the "driverOliveGreene" element at the "DispatchPage" page
+
+    #Comment: user click on Adora Header
+    And the user waits "2000" seconds
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    And the user waits "2000" seconds
+    #Comment: user click on ClockOut
+    And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
+    And the user waits "2000" seconds
+    #Comment: user click on two digit
+    And the user clicks the "twoDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on Enter
+    And the user clicks the "enter" element at the "ClockOutPage" page
+    #Comment: the user enter gratuity amount
+    Then the user enters "#(gatuityAmt)" into the "gratuityAmt" textbox at the "ClockOutPage" page
+    #Comment: user click on ClockOut
+    And the user clicks the "clockOut" element at the "ClockOutPage" page
+    #Comment: user validate clock out message successfully
+    And the user validates "Compare_Strings" that the "clockOutSuccessMsg" element is "Equal To" "#(timeClockOutSuccessMsg)" at the "ClockOutPage" page "validate_Clock_Out_Successfully" "HardStopOnFailure"
+    #Comment: user click on Driver
+    And the user clicks the "OKBtn" element at the "ClockOutPage" page
 
 
