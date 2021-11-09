@@ -24,6 +24,7 @@ public class OrderEntry extends BasePO {
     private By OK = By.id("btnTableNo");
     private By headerPopUpChangeDue = By.xpath("//span[text()='Change Due']");
     private By close = By.id("btnClosePrintReceipt");
+    private By closeForDelivery = By.id("btnOrderEndOK");
     private By closeForPhoneTakeOut = By.id("btnOrderEndOK");
     private By amount = By.xpath("//td[text()='Amount Due']//following-sibling::td");
     private By transactionNum = By.id("lblEndOfOrderID");
@@ -44,6 +45,11 @@ public class OrderEntry extends BasePO {
     public Element makeLine() throws IOException, InterruptedException {
         return $(makeLine);
     }
+
+    public Element closeForDelivery() throws IOException, InterruptedException {
+        return $(closeForDelivery);
+    }
+
     public Element changeDueAmt() throws IOException, InterruptedException {
         return $(changeDueAmt);
     }

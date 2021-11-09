@@ -8,8 +8,9 @@ import java.io.IOException;
 
 public class ClockInPage extends BasePO {
 
-    private By empoloyeeNumber = By.id("//div[@id='divNumericKeyPadValue']");
-    private By enter = By.id("//button[text()='Enter']");
+    private By twoDigit = By.xpath("//div[@class='gridCols3']//button[@class='gridCol2']");
+    private By zeroDigit = By.xpath("//div[@class='gridCols2X1X']//button[@class='gridCol1']");
+    private By enter = By.xpath("//button[text()='Enter']");
     private By timeCardRecordSuccessMsg = By.xpath("//div[text()='Your time card recorded successfully.']");
     private By OKBtn = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='OK']");
 
@@ -17,8 +18,12 @@ public class ClockInPage extends BasePO {
         return $(OKBtn);
     }
 
-    public Element empoloyeeNumber() throws IOException, InterruptedException {
-        return $(empoloyeeNumber);
+    public Element zeroDigit() throws IOException, InterruptedException {
+        return $(zeroDigit);
+    }
+
+    public Element twoDigit() throws IOException, InterruptedException {
+        return $(twoDigit);
     }
 
     public Element timeCardRecordSuccessMsg() throws IOException, InterruptedException {

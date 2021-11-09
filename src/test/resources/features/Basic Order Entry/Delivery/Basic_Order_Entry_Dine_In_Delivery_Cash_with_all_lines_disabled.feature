@@ -54,3 +54,44 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     And store the displayed text of the "address" element at the "CustomerInfoPage" page into the data dictionary with key "address_value"
     #Comment: user click on Finish
     And the user clicks the "OK" element at the "CustomerInfoPage" page
+
+    #Comment: user click on Finish
+    And the user clicks the "`finishBtn`" element at the "OrderEntry" page
+    #Comment: user click on Cash
+    And the user clicks the "cash" element at the "PaymentPage" page
+    #Comment: The user save the order number into dictionary key
+    And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
+    #Comment: The user save the transaction number into dictionary key
+    And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
+    #Comment: user click on Close
+    And the user clicks the "closeForDelivery" element at the "OrderEntry" page
+
+    #Comment: user click on Adora Header
+    And the user waits "2000" seconds
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    And the user waits "2000" seconds
+    #Comment: user click on ClockIn
+    And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on two digit
+    And the user clicks the "twoDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on Enter
+    And the user clicks the "enter" element at the "ClockInPage" page
+    #Comment: user click on Driver
+    And the user clicks the "driver" element at the "SelectPostionPage" page
+    #Comment: user validate time record message successfully
+    And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
+    #Comment: user click on Driver
+    And the user clicks the "OKBtn" element at the "ClockInPage" page
+
+    #Comment: user click on Adora Header
+    And the user waits "2000" seconds
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    And the user waits "2000" seconds
+    #Comment: user click on dispatch
+    And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
