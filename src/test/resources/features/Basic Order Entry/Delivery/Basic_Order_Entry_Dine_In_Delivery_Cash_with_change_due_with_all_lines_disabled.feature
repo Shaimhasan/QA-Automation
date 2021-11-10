@@ -97,9 +97,10 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with all lines d
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
     And the user waits "2000" seconds
     #Comment : user click on orderNumber and dispatch
-    And the user custom clicks dispatch the "table" element with order number "#(order_Number)" at the "DispatchPage" page
+    And the user clicks the "table" element with dictionary key "#(order_Number)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "driverOliveGreene" element at the "DispatchPage" page
+    And the user waits "2000" seconds
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "driverOliveGreene" element at the "DispatchPage" page
 
