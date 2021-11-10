@@ -21,7 +21,7 @@ public class AutoEngClick extends BaseWebSteps {
 
     @When("^the user clicks JS the \"([^\"]*)\" element at the \"([^\"]*)\" page$")
     public void theUserClicksJSTheElementAtThePage(String objectName,
-                                                 String pageName) {
+                                                   String pageName) {
         getObject(objectName, pageName).clickJS();
     }
 
@@ -32,12 +32,25 @@ public class AutoEngClick extends BaseWebSteps {
         orderNum = parseValue(orderNum);
         getObject(objectName, pageName).customClick(orderNum);
     }
+
     @When("^the user custom clicks dispatch the \"([^\"]*)\" element with order number \"([^\"]*)\" at the \"([^\"]*)\" page$")
     public void theUserCustomClicksDispatchTheElementAtThePage(String objectName,
-                                                       String orderNum,
-                                                       String pageName) {
+                                                               String orderNum,
+                                                               String pageName) {
         orderNum = parseValue(orderNum);
         getObject(objectName, pageName).customClickDispatch(orderNum);
+    }
+
+    @When("^the user clicks the \"([^\"]*)\" element with dictionary key \"([^\"]*)\" at the \"([^\"]*)\" page with xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\"$")
+    public void theUserClicksBasedOnXpathTheElementAtThePage(String objectName,
+                                                             String dictionaryKey,
+                                                             String pageName,
+                                                             String xpath1,
+                                                             String xpath2) {
+        dictionaryKey = parseValue(dictionaryKey);
+        xpath1 = parseValue(xpath1);
+        xpath2 = parseValue(xpath2);
+        getObject(objectName, pageName).clickBasedOnXpath(dictionaryKey, xpath1, xpath2);
     }
 
     @When("^the user doubleclicks the \"([^\"]*)\" element at the \"([^\"]*)\" page$")
