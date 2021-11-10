@@ -551,6 +551,7 @@ public class Element {
                 String orderNum = "//b[text()='" + orderNumber + "']";
                 System.out.println("Order Number  >" + orderNum);
                 Element element = this.findElement(By.xpath(orderNum));
+                element.isDisplayed();
                 element.click();
 
             } catch (ElementClickInterceptedException e) {
