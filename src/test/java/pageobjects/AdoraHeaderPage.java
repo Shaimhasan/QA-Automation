@@ -16,9 +16,14 @@ public class AdoraHeaderPage extends BasePO {
     private By clockIn = By.xpath("//div[text()='Clock In']");
     private By dispatch = By.xpath("//div[text()='Dispatch']");
     private By clockOut = By.xpath("//div[text()='Clock Out']");
+    private By backOffice = By.xpath("//div[text()='Back Office']");
 
     public Element orderEntry() throws IOException, InterruptedException {
         return $(orderEntry);
+    }
+
+    public Element backOffice() throws IOException, InterruptedException {
+        return $(backOffice);
     }
 
     public Element clockOut() throws IOException, InterruptedException {

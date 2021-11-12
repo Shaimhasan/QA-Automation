@@ -1,0 +1,24 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "nameUS": "Automation Testing",
+      "webNameUS": "Automation Testing",
+      "descriptionUS": "Automation Testing",
+      "webDescriptionUS": "Automation Testing",
+      "nameSpanish": "Automation Testing",
+      "webNameSpanish": "Automation Testing",
+      "descriptionSpanish": "Automation Testing",
+      "webDescriptionSpanish": "Automation Testing",
+      "ItemNumberXpath1": "//td[text()='",
+      "ItemNumberXpath2": "']"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
