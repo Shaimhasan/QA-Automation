@@ -2,6 +2,7 @@ package utility;
 
 import common.TestContext;
 import core.BaseWebSteps;
+import core.Element;
 import io.cucumber.java.en.When;
 import org.xml.sax.SAXException;
 
@@ -21,7 +22,7 @@ public class AutoEngStoreValue extends BaseWebSteps {
     @When("^store tooltip value of the \"([^\"]*)\" element at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
     public void storeTooltipValueOfTheElementAtThePageIntoTheDataDictionaryWithKey(String objectName,
                                                                                    String pageName,
-                                                                                   String dictionaryKey)  {
+                                                                                   String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = getObject(objectName, pageName).getAttribute("title");
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
@@ -31,17 +32,35 @@ public class AutoEngStoreValue extends BaseWebSteps {
     @When("^store the displayed text of the \"([^\"]*)\" element at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
     public void storeTheDisplayedTextOfTheElementAtThePageIntoTheDataDictionaryWithKey(String objectName,
                                                                                        String pageName,
-                                                                                       String dictionaryKey)  {
+                                                                                       String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = getTextFromElement(getObject(objectName, pageName));
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
         logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
     }
 
+    @When("^store the displayed text of the \"([^\"]*)\" element at the \"([^\"]*)\" page and get the dictionary key value \"([^\"]*)\" based on xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\" store at dictionary with key \"([^\"]*)\"$")
+    public void storeTheDisplayedTextOfTheElementAtThePageIntoTheDataDictionaryWithKeyBasedOnXpath1AndXpath2(String objectName,
+                                                                                                             String pageName,
+                                                                                                             String dictionaryKey,
+                                                                                                             String xpath1,
+                                                                                                             String xpath2,
+                                                                                                             String dictionarykey2) {
+        dictionarykey2=parseValue(dictionarykey2);
+        xpath1=parseValue(xpath1);
+        xpath2=parseValue(xpath2);
+        dictionaryKey = parseValue(dictionaryKey);
+        Element element = getObject(objectName, pageName);
+        Element object = element.getTextBasedOnXpath1AndXpath2AndDictionaryKey(xpath1, dictionaryKey,xpath2);
+        String valToStore = object.getText();
+        TestContext.getInstance().testdataPut(dictionarykey2, valToStore);
+        logStepMessage(String.format(STORED_VALUE, valToStore, dictionarykey2));
+    }
+
     @When("^store the value of the \"([^\"]*)\" element at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
     public void storeTheValueOfTheElementAtThePageIntoTheDataDictionaryWithKey(String objectName,
                                                                                String pageName,
-                                                                               String dictionaryKey)  {
+                                                                               String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = getObject(objectName, pageName).getValue();
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
@@ -51,7 +70,7 @@ public class AutoEngStoreValue extends BaseWebSteps {
     @When("^store list values from the \"([^\"]*)\" dropdown at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
     public void storeListValuesFromTheDropdownAtTheIntoTheDataDictionaryWithKey(String objectName,
                                                                                 String pageName,
-                                                                                String dictionaryKey)  {
+                                                                                String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         List<String> valToStore = getObject(objectName, pageName).getDropdownOptionsValues();
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
@@ -61,7 +80,7 @@ public class AutoEngStoreValue extends BaseWebSteps {
     @When("^store list values from the \"([^\"]*)\" combobox at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
     public void storeListValuesFromTheComboboxAtTheIntoTheDataDictionaryWithKey(String objectName,
                                                                                 String pageName,
-                                                                                String dictionaryKey)  {
+                                                                                String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = getObject(objectName, pageName).element().getText();
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
@@ -69,7 +88,7 @@ public class AutoEngStoreValue extends BaseWebSteps {
     }
 
     @When("^store the current page URL into the data dictionary with key \"([^\"]*)\"$")
-    public void storeTheCurrentPageURLIntoTheDataDictionaryWithKey(String dictionaryKey)  {
+    public void storeTheCurrentPageURLIntoTheDataDictionaryWithKey(String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = getDriver().getCurrentUrl();
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
@@ -81,10 +100,10 @@ public class AutoEngStoreValue extends BaseWebSteps {
                                                                                             String colNum,
                                                                                             String tableName,
                                                                                             String pageName,
-                                                                                            String dictionaryKey)  {
+                                                                                            String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum),
-                                                                              Integer.parseInt(colNum)).getText();
+                Integer.parseInt(colNum)).getText();
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
         logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
     }
@@ -93,7 +112,7 @@ public class AutoEngStoreValue extends BaseWebSteps {
     public void storeTheValueOfThePhoneElementAndElementAtThePageIntoTheDataDictionaryWithKey(String countryCodeEle,
                                                                                               String phoneNumEle,
                                                                                               String pageName,
-                                                                                              String dictionaryKey)  {
+                                                                                              String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String countryCode = getObject(countryCodeEle, pageName).getValue();
         String phoneNum = getObject(phoneNumEle, pageName).getValue();
@@ -104,7 +123,7 @@ public class AutoEngStoreValue extends BaseWebSteps {
 
     @When("^store the current system time into the data dictionary with key \"([^\"]*)\" as timezone \"([^\"]*)\"$")
     public void storeTheCurrentSystemTimeIntoTheDataDictionaryWithKeyAsTimezone(String dictionaryKey,
-                                                                                String timezone)  {
+                                                                                String timezone) {
 
         dictionaryKey = parseDictionaryKey(dictionaryKey);
 
@@ -119,7 +138,7 @@ public class AutoEngStoreValue extends BaseWebSteps {
     @When("^store the current system date and time into the data dictionary with key \"([^\"]*)\" and \"([^\"]*)\" timezone \"([^\"]*)\"$")
     public void storeTheCurrentSystemDateAndTimeIntoTheDataDictionaryWithKeyAndTimezone(String dateDictionaryKey,
                                                                                         String timeDictionaryKey,
-                                                                                        String timezone)  {
+                                                                                        String timezone) {
         dateDictionaryKey = parseDictionaryKey(dateDictionaryKey);
         timeDictionaryKey = parseDictionaryKey(timeDictionaryKey);
 
@@ -142,21 +161,22 @@ public class AutoEngStoreValue extends BaseWebSteps {
                                                                                                                      String colHeader,
                                                                                                                      String tableName,
                                                                                                                      String pageName,
-                                                                                                                     String dictionaryKey)  {
+                                                                                                                     String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = getObject(tableName, pageName).findMatchingCellinTable(rowValue,
-                                                                                   colHeader).getText();
+                colHeader).getText();
 
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
         logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
     }
+
     @When("^store text of the cell having unique rowVal comes from Data Dictionary \"([^\"]*)\" and columnHeader \"([^\"]*)\" from the \"([^\"]*)\" table at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
     public void storeTextOfTheCellHavingUniqueRowValAsDataDictionaryAndColumnHeaderFromTheTableAtThePageIntoTheDataDictionaryWithKey(String rowValue,
                                                                                                                                      String colHeader,
                                                                                                                                      String tableName,
                                                                                                                                      String pageName,
-                                                                                                                                     String dictionaryKey)  {
-        rowValue=parseValue(rowValue);
+                                                                                                                                     String dictionaryKey) {
+        rowValue = parseValue(rowValue);
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = getObject(tableName, pageName).findMatchingCellinTable(rowValue,
                 colHeader).getText();
@@ -171,12 +191,12 @@ public class AutoEngStoreValue extends BaseWebSteps {
                                                                                                                                  String colValue2,
                                                                                                                                  String tableName,
                                                                                                                                  String pageName,
-                                                                                                                                 String dictionaryKey)  {
+                                                                                                                                 String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         colValue2 = parseValue(colValue2);
         String valToStore = getObject(tableName, pageName).findMatchingCellValueinTableForGivenColumnHeaderAndValue(colValue2,
-                                                                                                                    colHeader2,
-                                                                                                                    colHeader1).getText();
+                colHeader2,
+                colHeader1).getText();
         TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
         logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
     }
@@ -185,7 +205,7 @@ public class AutoEngStoreValue extends BaseWebSteps {
     public void storeConcatenatedValueandElementValue(String valsToConcat,
                                                       String objectName,
                                                       String pageName,
-                                                      String dictionaryKey)  {
+                                                      String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         valsToConcat = String.join("|", valsToConcat, getTextFromElement(getObject(objectName, pageName)));
         String combinedString = getConcatenatedVal(valsToConcat, "\\|", " ");
@@ -197,14 +217,14 @@ public class AutoEngStoreValue extends BaseWebSteps {
 
     @When("^store the concatenated value of \"([^\"]*)\" into the data dictionary with key \"([^\"]*)\"$")
     public void storeConcatenatedValue(String valsToConcat,
-                                       String dictionaryKey)  {
+                                       String dictionaryKey) {
         storeConcatenatedValueWithDelimeter(valsToConcat, " ", dictionaryKey);
     }
 
     @When("^store the concatenated value of \"([^\"]*)\" with delimiter \"([^\"]*)\" into the data dictionary with key \"([^\"]*)\"$")
     public void storeConcatenatedValueWithDelimeter(String valsToConcat,
                                                     String joinDelimiter,
-                                                    String dictionaryKey)  {
+                                                    String dictionaryKey) {
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String combinedString = getConcatenatedVal(valsToConcat, "\\|", joinDelimiter);
         TestContext.getInstance().testdataPut(dictionaryKey, combinedString);
@@ -214,40 +234,41 @@ public class AutoEngStoreValue extends BaseWebSteps {
     @When("^store substring \"([^\"]*)\" of the data dictionary value at \"([^\"]*)\" into the data dictionary with key \"([^\"]*)\"$")
     public void storeSubstringVal(String substringPattern,
                                   String dictionaryKeyToSubstring,
-                                  String dictionaryKeyToStore)  {
+                                  String dictionaryKeyToStore) {
         dictionaryKeyToSubstring = parseDictionaryKey(dictionaryKeyToSubstring);
         dictionaryKeyToStore = parseDictionaryKey(dictionaryKeyToStore);
         Object dictionaryValToSubstring = TestContext.getInstance().testdataGet(dictionaryKeyToSubstring);
 
-        if(dictionaryValToSubstring != null) {
+        if (dictionaryValToSubstring != null) {
             String subStringVal = getSubstringVal(TestContext.getInstance().testdataGet(dictionaryKeyToSubstring).toString(),
-                                                  substringPattern);
+                    substringPattern);
             TestContext.getInstance().testdataPut(dictionaryKeyToStore, subStringVal);
             logStepMessage(String.format(STORED_VALUE, subStringVal, dictionaryKeyToStore));
         } else {
             log.warn("Value not found at dictionary key: {}. Skipping substring.", dictionaryKeyToSubstring);
         }
     }
+
     @When("^store text from the corresponding cell in all rows of the \"([^\"]*)\" column in the \"([^\"]*)\" table at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
     public void storeTextOfAllTheCellInTheColumnInTheTableAtThePageIntoTheDataDictionaryWithKey(String colHeader,
-           String tableName, String pageName, String dictionaryKey)  {
-       dictionaryKey = parseDictionaryKey(dictionaryKey);
-       List<String> valToStore = getObject(tableName, pageName).getRowValuesForGivenColumn(colHeader);
-       TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
-       logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
+                                                                                                String tableName, String pageName, String dictionaryKey) {
+        dictionaryKey = parseDictionaryKey(dictionaryKey);
+        List<String> valToStore = getObject(tableName, pageName).getRowValuesForGivenColumn(colHeader);
+        TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
+        logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
     }
 
     @When("^store xmlValue present in the attribute \"([^\"]*)\" of the data dictionary value at \"([^\"]*)\" into the data dictionary with key \"([^\"]*)\"$")
     public void storeXMLValuePresentInTheAttributeOfTheDataDictionaryValueAtIntoTheDataDictionaryWithKey(String attributeName,
-                                                                                                          String storedDictionaryKey,
-                                                                                                          String dictionaryKeyToStore) throws IOException, SAXException, ParserConfigurationException {
+                                                                                                         String storedDictionaryKey,
+                                                                                                         String dictionaryKeyToStore) throws IOException, SAXException, ParserConfigurationException {
         storedDictionaryKey = parseDictionaryKey(storedDictionaryKey);
         dictionaryKeyToStore = parseDictionaryKey(dictionaryKeyToStore);
         String valToStore = getXMLAttributeVal(TestContext.getInstance().testdataGet(storedDictionaryKey).toString(), attributeName);
         TestContext.getInstance().testdataPut(dictionaryKeyToStore, valToStore);
         logStepMessage(String.format(STORED_VALUE, attributeName, dictionaryKeyToStore));
     }
-    
+
     @When("^stores list of values from column \"([^\"]*)\" and \"([^\"]*)\" where the \"([^\"]*)\" column contains \"([^\"]*)\" and \"([^\"]*)\" column contains \"([^\"]*)\" from the \"([^\"]*)\" table at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
     public void storeTextOfTheMatchingCellInTheColumnWhereTheColumnContainsUniqueInTheTableAtThePageIntoTheDataDictionaryWithKey(String colHeader1,
                                                                                                                                  String colHeader2,
@@ -262,19 +283,19 @@ public class AutoEngStoreValue extends BaseWebSteps {
         colValue4 = parseValue(colValue4);
         dictionaryKey = parseDictionaryKey(dictionaryKey);
 
-        int rowNumber = getObject(tableName, pageName).getMatchingRowNumber(colHeader3,colValue3,colHeader4,colValue4);
+        int rowNumber = getObject(tableName, pageName).getMatchingRowNumber(colHeader3, colValue3, colHeader4, colValue4);
         List<String> colName1 = getObject(tableName, pageName).getTopNineSubRowValuesForGivenColumn(colHeader1, rowNumber);
-        List<String> colName2 = getObject(tableName, pageName).getTopNineSubRowValuesForGivenColumn(colHeader2,rowNumber);
-        Map<String,String> map =new LinkedHashMap<>();
-        for (int i=2;i<colName1.size();i++) {
+        List<String> colName2 = getObject(tableName, pageName).getTopNineSubRowValuesForGivenColumn(colHeader2, rowNumber);
+        Map<String, String> map = new LinkedHashMap<>();
+        for (int i = 2; i < colName1.size(); i++) {
             map.put(colName1.get(i), colName2.get(i));
         }
         TestContext.getInstance().testdataPut(dictionaryKey, map);
         logStepMessage(String.format(STORED_VALUE, map, dictionaryKey));
     }
-    
+
     @When("^the user loads user credential into the data dictionary at key \"([^\"]*)\"$")
-    public void theUserLoadsUserCredIntoDataDictionary(String dictionaryKey)  {
+    public void theUserLoadsUserCredIntoDataDictionary(String dictionaryKey) {
 
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = parseUser(dictionaryKey);
@@ -282,7 +303,7 @@ public class AutoEngStoreValue extends BaseWebSteps {
     }
 
     @When("^the user loads secure credential into the data dictionary at key \"([^\"]*)\"$")
-    public void theUserLoadsSecureCredIntoDataDictionary(String dictionaryKey)  {
+    public void theUserLoadsSecureCredIntoDataDictionary(String dictionaryKey) {
 
         dictionaryKey = parseDictionaryKey(dictionaryKey);
         String valToStore = parseSecureText(dictionaryKey);

@@ -577,7 +577,7 @@ public class Element {
     public Element clickBasedOnXpath(String dictionaryKeyValue, String xpath1Value1, String xpathValue2, int... retries) {
         try {
             try {
-                String xpathValue=xpath1Value1 + dictionaryKeyValue + xpathValue2;
+                String xpathValue = xpath1Value1 + dictionaryKeyValue + xpathValue2;
                 System.out.println("xpathValue print  >" + xpathValue);
                 Element element = this.findElement(By.xpath(xpathValue));
                 element.isDisplayed();
@@ -1061,6 +1061,12 @@ public class Element {
 
     public Element getRowValueText(String orderN, String category) {
         String xpathValue = "//td[text()=" + "'" + orderN + "-" + category + "'" + "]";
+        System.out.println(xpathValue);
+        return this.findElement(By.xpath(xpathValue));
+    }
+
+    public Element getTextBasedOnXpath1AndXpath2AndDictionaryKey(String xpath1, String dictionaryKey, String xpath2) {
+        String xpathValue = xpath1 + dictionaryKey + xpath2;
         System.out.println(xpathValue);
         return this.findElement(By.xpath(xpathValue));
     }

@@ -186,6 +186,31 @@ public class AutoEngValidate extends BaseWebSteps {
 
     }
 
+    @Then("^the user validates \"([^\"]*)\" that the \"([^\"]*)\" element is \"([^\"]*)\" \"([^\"]*)\" at the \"([^\"]*)\" page based on datadictionary \"([^\"]*)\" and xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserValidatesThatTheElementBasedOnXpathIs(String comparisonType,
+                                                             String objectName,
+                                                             String comparisonOperator,
+                                                             String expectedValue,
+                                                             String pageName,
+                                                             String datadictionarykey,
+                                                             String xpath1,
+                                                             String xpath2,
+                                                             String validationID,
+                                                             String onFailureFlag) {
+        xpath1 = parseValue(xpath1);
+        xpath2=parseValue(xpath2);
+        datadictionarykey = parseValue(datadictionarykey);
+        Element element = getObject(objectName, pageName);
+        Element object = element.getTextBasedOnXpath1AndXpath2AndDictionaryKey(xpath1, datadictionarykey, xpath2);
+        String actualValue = object.getText();
+        expectedValue = parseValue(expectedValue);
+        expectedValue = datadictionarykey + expectedValue;
+        AssertHelper validator = new AssertHelper(comparisonType, comparisonOperator, onFailureFlag);
+        TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue, expectedValue));
+        validator.performValidation(actualValue, expectedValue);
+
+    }
+
     @Then("^the user validates that the \"([^\"]*)\" element is equal to the concatenated string of \"([^\"]*)\" at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesThatTheElementIsEqualToConcatnatedString(String objectName,
                                                                          String expectedValues,
@@ -363,7 +388,7 @@ public class AutoEngValidate extends BaseWebSteps {
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc + ": " + radioValSelected);
 
         if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
-            assertThat(radioValSelected).as(compareDesc).isTrue();
+            assertThat(radioValSelected).as(compareDesc).isFalse();
         } else {
             sa().assertThat(radioValSelected).as(compareDesc).isTrue();
             if (!radioValSelected) {
@@ -394,7 +419,31 @@ public class AutoEngValidate extends BaseWebSteps {
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc + ": " + checkBoxValSelected);
 
         if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
-            assertThat(checkBoxValSelected).as(compareDesc).isTrue();
+            assertThat(checkBoxValSelected).as(compareDesc).isFalse();
+        } else {
+            sa().assertThat(checkBoxValSelected).as(compareDesc).isTrue();
+            if (!checkBoxValSelected) {
+                Reporter.addStepLog(STATUS_FAIL, compareDesc);
+            }
+        }
+
+    }
+
+    @Then("^the user validates the item in the \"([^\"]*)\" checkbox is checked at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserValidatesBasedOnObjectTheItemInTheCheckboxIsCheckedAtThePage(String objectName,
+                                                                                    String pageName,
+                                                                                    String validationID,
+                                                                                    String onFailureFlag) {
+        Element checkbox = getObject(objectName, pageName);
+        boolean checkBoxValSelected = false;
+        checkBoxValSelected = checkbox.element().isSelected();
+        final String compareDesc = String.format("Expecting checkbox item of to be selected in the '%s' checkbox.",
+                objectName);
+        Reporter.addStepLog(compareDesc);
+        TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc + ": " + checkBoxValSelected);
+
+        if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
+            assertThat(checkBoxValSelected).as(compareDesc).isFalse();
         } else {
             sa().assertThat(checkBoxValSelected).as(compareDesc).isTrue();
             if (!checkBoxValSelected) {
@@ -426,7 +475,7 @@ public class AutoEngValidate extends BaseWebSteps {
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc + ": " + checkBoxValSelected);
 
         if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
-            assertThat(checkBoxValSelected).as(compareDesc).isFalse();
+            assertThat(checkBoxValSelected).as(compareDesc).isTrue();
         } else {
             sa().assertThat(checkBoxValSelected).as(compareDesc).isFalse();
             if (checkBoxValSelected) {
@@ -527,9 +576,9 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                        String validationID,
                                                                        String onFailureFlag) {
 
-        orderNum=parseValue(orderNum);
-        categoryValue=parseValue(categoryValue);
-        final Element elementPresent = getObject(tableName, pageName).getRowValueCutAndWrap(orderNum,categoryValue);
+        orderNum = parseValue(orderNum);
+        categoryValue = parseValue(categoryValue);
+        final Element elementPresent = getObject(tableName, pageName).getRowValueCutAndWrap(orderNum, categoryValue);
 
         final String compareDesc = String.format("Expecting the '%s' element to be present on the '%s' page. ", tableName, pageName);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc);
