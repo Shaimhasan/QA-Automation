@@ -13,7 +13,7 @@ public class EditMenuItemsPage extends BasePO {
     private By webNameUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebName'])[1]");
     private By descriptionUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_Desc'])[1]");
     private By webDescriptionUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebDesc'])[1]");
-    private By nameSpanish = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_Name'])[2]");
+    private By nameSpanish = By.xpath("(//input[@data-cult='sp-mx'])[1]");
     private By webNameSpanish = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebName'])[2]");
     private By descriptionSpanish = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_Desc'])[2]");
     private By webDescriptionSpanish = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebDesc'])[2]");

@@ -13,6 +13,11 @@ public class MenuItemsPage extends BasePO {
     private By search = By.xpath("//input[@id='txtSearch']");
     private By table = By.id("tbl_BO_List_MN_ITM");
     private By history = By.id("btn_BO_HISTORY");
+    private By actAndDeact = By.id("btn_BO_MN_ITM_AVAL");
+
+    public Element actAndDeact() throws IOException, InterruptedException {
+        return $(actAndDeact);
+    }
 
     public Element history() throws IOException, InterruptedException {
         return $(history);

@@ -89,6 +89,7 @@ Feature: Basic Add Menu Items
     
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "MenuItemsPage" page
+    And the user waits "5000" seconds
 
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "EditMenuItemsPage" page into the data dictionary with key "nameUS_value2"

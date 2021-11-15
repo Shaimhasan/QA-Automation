@@ -24,11 +24,31 @@ public class AddMenuItemsPage extends BasePO {
     private By dineInSizeChkBx = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_DineIn_235']");
     private By takeOutSizeChkBx = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_TakeOut_235']");
     private By deliverySizeChkBx = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_Delivery_235']");
+    private By dineInMediumSizeChkBx = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_DineIn_236']");
+    private By takeOutMediumSizeChkBx = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_TakeOut_236']");
+    private By deliveryMediumSizeChkBx = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_Delivery_236']");
+    private By defualtMedium = By.xpath("//input[@id='rdo_BO_MN_ITM_ADDEDT_Sizes_Default_236']");
     private By defualt = By.xpath("//input[@id='rdo_BO_MN_ITM_ADDEDT_Sizes_Default_235']");
     private By save = By.xpath("//button[@onclick='BO_MN_ITM_ADDEDT_Save();']");
 
     public Element save() throws IOException, InterruptedException {
         return $(save);
+    }
+
+    public Element dineInMediumSizeChkBx() throws IOException, InterruptedException {
+        return $(dineInMediumSizeChkBx);
+    }
+
+    public Element takeOutMediumSizeChkBx() throws IOException, InterruptedException {
+        return $(takeOutMediumSizeChkBx);
+    }
+
+    public Element deliveryMediumSizeChkBx() throws IOException, InterruptedException {
+        return $(deliveryMediumSizeChkBx);
+    }
+
+    public Element defualtMedium() throws IOException, InterruptedException {
+        return $(defualtMedium);
     }
 
     public Element defualt() throws IOException, InterruptedException {

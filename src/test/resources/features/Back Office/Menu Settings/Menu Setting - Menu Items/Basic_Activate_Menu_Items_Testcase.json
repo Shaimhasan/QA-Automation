@@ -1,0 +1,42 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "nameUS": "Automation Testing US",
+      "webNameUS": "Automation Testing Web US",
+      "descriptionUS": "Automation Testing Description US",
+      "webDescriptionUS": "Automation Testing Web Desc US",
+      "nameSpanish": "Automation Testing Spanish",
+      "webNameSpanish": "Automation Testing Web Spanish",
+      "descriptionSpanish": "Automation Testing Desc Spanish",
+      "webDescriptionSpanish": "Automation Testing web Spanish",
+      "ItemNumberXpath1": "//td[text()='",
+      "ItemNumberXpath2": "']",
+      "IdNumberXpath1": "//td[text()='",
+      "IdNumberXpath2": "']/preceding-sibling::td",
+      "IdNumberExpectedValue": ": Automation Testing US",
+      "ActionExpectedValue": "Activate / Deactivate",
+      "IDNumberXpath3": "//td[text()='",
+      "IdNumberXpath4": ": Automation Testing US']",
+      "ActionXpath1": "((//td[text()='",
+      "ActionXpath2": ": Automation Testing US']//preceding-sibling::td[text()='Activate / Deactivate'])[1]//following-sibling::td)[5]/button",
+      "ActionXpath3": ": Automation Testing US']//preceding-sibling::td[text()='Activate / Deactivate'])[1]",
+      "ActionXpath4": "(//td[text()='",
+      "SizeSmallActive": "Size: Small - Active",
+      "SizeSmallActiveChanged": "Changed",
+      "SizeSmallActiveChangedOldValue": "False",
+      "SizeSmallActiveChangedNewValue": "True",
+      "SizeSmallAvailable": "Size: Small - Available",
+      "SizeSmallAvailableChanged": "Changed",
+      "SizeSmallAvailableChangedOldValue": "False",
+      "SizeSmallAvailableChangedNewValue": "True"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
