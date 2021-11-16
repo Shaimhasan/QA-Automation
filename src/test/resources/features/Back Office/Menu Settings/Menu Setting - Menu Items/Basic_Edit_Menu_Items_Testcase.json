@@ -20,7 +20,9 @@
       "IdNumberExpectedValueChanged": ": Automation Testing US Changed TO America",
       "IDNumberXpath3": "//td[text()='",
       "IdNumberXpath4": ": Automation Testing US']",
-      "IdNumberXpath4Changed": ": Automation Testing US Changed TO America']"
+      "IdNumberXpath4Changed": ": Automation Testing US Changed TO America']",
+      "DetailsClickXpath1": "((//td[text()='",
+      "DetailsClickActionXpath2": ": Automation Testing US Changed TO America']//preceding-sibling::td[text()='Edit'])[1]//following-sibling::td)[5]/button"
     },
     "dataCriteria": {
     },

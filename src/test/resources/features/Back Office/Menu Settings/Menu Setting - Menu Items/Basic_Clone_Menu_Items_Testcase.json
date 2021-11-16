@@ -17,7 +17,12 @@
       "IdNumberXpath2": "']/preceding-sibling::td",
       "IdNumberExpectedValue": ": Automation Testing US",
       "IDNumberXpath3": "//td[text()='",
-      "IdNumberXpath4": ": Automation Testing US']"
+      "IdNumberXpath4": ": Automation Testing US']",
+      "ActionXpath1": "((//td[text()='",
+      "ActionXpath2": ": Automation Testing US']//preceding-sibling::td[text()='Activate / Deactivate'])[1]//following-sibling::td)[5]/button",
+      "ActionXpath3": ": Automation Testing US']//preceding-sibling::td[text()='Clone'])[1]//following-sibling::td)[5]/button[text()='Details']",
+      "ItemNumberXpath3": "(//td[text()='",
+      "ItemNumberXpath4": "']//following-sibling::td)[1]"
     },
     "dataCriteria": {
     },

@@ -1,9 +1,8 @@
-@BasicEditMenuItems
-Feature: Basic Edit Menu Items
-  This script is to validate Edit Menu Items
+Feature: Basic Deactivate Menu Items
+  This script is to validate Deactivate Menu Items
 
-  @Basic_Edit_Menu_Items @RegressionSuite
-  Scenario: Basic_Edit_Menu_Items_Testcase
+  @Basic_Deactivate_Menu_Items @RegressionSuite
+  Scenario: Basic_Deactivate_Menu_Items_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -55,6 +54,7 @@ Feature: Basic Edit Menu Items
     And the user clicks the "takeOutChkBx" element at the "AddMenuItemsPage" page
     #Comment: the user select the delivery check box
     And the user clicks the "deliveryChkBx" element at the "AddMenuItemsPage" page
+
     #Cooment: the user click on small size dine in
     And the user clicks the "dineInSizeChkBx" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size take out
@@ -64,62 +64,67 @@ Feature: Basic Edit Menu Items
     #Cooment: the user click on small size default
     And the user clicks the "defualt" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size default
+
+    #Cooment: the user click on small size dine in
+    And the user clicks the "dineInMediumSizeChkBx" element at the "AddMenuItemsPage" page
+    #Cooment: the user click on small size take out
+    And the user clicks the "takeOutMediumSizeChkBx" element at the "AddMenuItemsPage" page
+    #Cooment: the user click on small size delivery
+    And the user clicks the "deliveryMediumSizeChkBx" element at the "AddMenuItemsPage" page
+    #Cooment: the user click on small size default
+    And the user clicks the "defualtMedium" element at the "AddMenuItemsPage" page
+    #Cooment: the user click on small size default
+
     And the user clicks the "save" element at the "AddMenuItemsPage" page
+
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
-    #Comment: the user store the Id Number at Menu item Page
-    And store the displayed text of the "table" element at the "MenuItemsPage" page and get the dictionary key value "#(item_Number_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
 
-    #Comment: the user click on Edit Button
-    And the user clicks the "editBtn" element at the "MenuItemsPage" page
-    #Comment: the user enters the name On ADD Item
-    And the user enters "#(nameUSChangedValue)" into the "nameUS" textbox at the "AddMenuItemsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "nameUS" element at the "EditMenuItemsPage" page into the data dictionary with key "nameUS_value1"
-    #Comment: the user uncheck the dine in check box
-    And the user clicks the "dineInChkBx" element at the "EditMenuItemsPage" page
-    #Cooment: the user uncheck on small size dine in checkbox
-    And the user clicks the "dineInSizeChkBx" element at the "EditMenuItemsPage" page
-     #Cooment: the user click on small size default
-    And the user clicks the "save" element at the "EditMenuItemsPage" page
-     #Comment: the user click on the item number row
+    And store the displayed text of the "table" element at the "MenuItemsPage" page and get the dictionary key value "#(item_Number_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
+    
+    #Comment: the user click on activate Button
+    And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
+    #Comment: the user click small Active CheckBox
+    And the user clicks the "smallActiveChkBx" element at the "ActivateDeActicateMenuItemsPage" page
+    #Comment: the user click save Button
+    And the user clicks the "save" element at the "ActivateDeActicateMenuItemsPage" page
+    #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
-    #Comment: User store the ID value
-    And store the displayed text of the "table" element at the "MenuItemsPage" page and get the dictionary key value "#(item_Number_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
+    #Comment: the user click on activate Button
+    And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
+    And the user waits "2000" seconds
+    #Comment: user validate the check box is selected
+    And the user validates the item in the "smallActiveChkBx" checkbox is checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Edit Button
-    And the user clicks the "editBtn" element at the "MenuItemsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "nameUS" element at the "EditMenuItemsPage" page into the data dictionary with key "nameUS_value2"
-    #Comment: user validate Name US Value
-    And the user validates the data dictionary value of "#(nameUS_value1)" is "Equal To" data dictionary value of "#(nameUS_value2)" "validate_nameUS_value" "HardStopOnFailure"
-    #Comment: user validate the check box is selected
-    And the user validates the "Dine In" item in the "dineInCheckBoxIsSelected" checkbox is not checked at the "EditMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
-    #Comment: user validate the check box is selected
-    And the user validates the item in the "dineInCheckBoxIsSelectedSize" checkbox is Not checked at the "EditMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
-    #Comment: the user click on Cancel Button
-    And the user clicks the "cancelBtn" element at the "EditMenuItemsPage" page
+    And the user clicks the "cancel" element at the "ActivateDeActicateMenuItemsPage" page
 
+    #Comment: the user click on deactivate Button
+    And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
+    #Comment: the user click small Active CheckBox
+    And the user clicks the "smallActiveChkBx" element at the "ActivateDeActicateMenuItemsPage" page
+    #Comment: the user click save Button
+    And the user clicks the "save" element at the "ActivateDeActicateMenuItemsPage" page
+    #Comment: the user click on the item number row
+    And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
+    #Comment: the user click on activate Button
+    And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
+    And the user waits "2000" seconds
+    #Comment: user validate the check box is selected
+    And the user validates the item in the "smallActiveChkBx" checkbox is Not checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
+    #Comment: the user click on Edit Button
+    And the user clicks the "cancel" element at the "ActivateDeActicateMenuItemsPage" page
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
-    #Comment: the user validate the ID number in History
-    And the user validates "Compare_Strings" that the "table" element is "Equal To" "#(IdNumberExpectedValueChanged)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(IdNumberXpath4Changed)" "validate_ID_Number" "HardStopOnFailure"
+    #Comment: the user validate the Activate and Deactivate
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "#(ActionExpectedValue)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(ActionXpath4)" and xpath2 "#(ActionXpath3)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements
-    And the user clicks the "table" element with dictionary key "#(Id_Number)" at the "HistoryPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickActionXpath2)"
+    And the user clicks the "table" element with dictionary key "#(Id_Number)" at the "HistoryPage" page with xpath1 "#(ActionXpath1)" and xpath2 "#(ActionXpath2)"
 
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Dine In" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Size: Small - Active" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
     And the user validates the cell at row "1" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
     And the user validates the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "True" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
     And the user validates the cell at row "1" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "False" "validate_Item_Changed_Details" "HardStopOnFailure"
-
-    #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "2" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Name: English - United States - Text" "validate_Item_Changed_Details" "HardStopOnFailure"
-    #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "2" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
-    #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "2" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Automation Testing US" "validate_Item_Changed_Details" "HardStopOnFailure"
-    #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "2" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Automation Testing US Changed TO America" "validate_Item_Changed_Details" "HardStopOnFailure"
