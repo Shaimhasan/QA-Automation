@@ -6,9 +6,9 @@
       "priceForSmall": "35",
       "priceForMedium": "40",
       "priceForLarge": "50",
-      "priceForSmallRevoke": "15",
-      "priceForMediumRevoke": "20",
-      "priceForLargeRevoke": "30"
+      "priceForSmallRevoke": "15.00",
+      "priceForMediumRevoke": "20.00",
+      "priceForLargeRevoke": "30.00"
     },
     "dataCriteria": {
     },

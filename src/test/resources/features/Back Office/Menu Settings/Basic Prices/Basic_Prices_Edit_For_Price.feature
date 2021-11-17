@@ -33,6 +33,9 @@ Feature: Basic Prices Edit for Price
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "PricesPage" page
     #Comment: the user enter price
+    #Comment: the user store the text Value
+    And store the displayed text of the "priceForLarge" element at the "PricesRegularPage" page into the data dictionary with key "price_Large_value"
+    #Comment: the user enter price
     And the user enters "#(priceForSmall)" into the "priceForSmall" textbox at the "PricesRegularPage" page
     #Comment: the user store the text Value
     And store the displayed text of the "priceForSmall" element at the "PricesRegularPage" page into the data dictionary with key "price_1"
@@ -77,7 +80,10 @@ Feature: Basic Prices Edit for Price
     #Comment: user validate the details model popup
     And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(price_1)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_Large_value)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "1" and column "3" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_3)" "validate_Item_Changed_Details" "HardStopOnFailure"
+
     #Comment: the user click on Edit Button
     And the user clicks the "close" element at the "HistoryPage" page
     #Comment: the user click on Edit Button
