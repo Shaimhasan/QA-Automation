@@ -1,0 +1,20 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "priceForSmall": "35",
+      "priceForMedium": "40",
+      "priceForLarge": "50",
+      "priceForSmallRevoke": "15",
+      "priceForMediumRevoke": "20",
+      "priceForLargeRevoke": "30"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}

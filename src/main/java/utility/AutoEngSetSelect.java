@@ -6,6 +6,7 @@ import core.Element;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NotFoundException;
+import org.testng.Assert;
 
 import java.awt.*;
 import java.util.List;
@@ -63,6 +64,26 @@ public class AutoEngSetSelect extends BaseWebSteps {
                 break;
             }
         }
+        if (!dropDownFound) {
+            log.warn("Matching dropdown not found: {}", valueToFind);
+        }
+    }
+
+    @When("^the user selects value from the \"([^\"]*)\" dropdown equal to given value \"([^\"]*)\" at the \"([^\"]*)\" page$")
+    public void theUserValidatedSelectedValueFromTheDropDownAtThePage(String objectName,
+                                                                      String valueToFind,
+                                                                      String pageName) {
+        valueToFind = parseValue(valueToFind);
+        boolean dropDownFound = false;
+        String firstSelectedDrpDownValue = getObject(objectName, pageName).getFirstDropdownOptionsValues();
+        if (firstSelectedDrpDownValue.equalsIgnoreCase(valueToFind)) {
+            dropDownFound = true;
+            logStepMessage(String.format(SELECTED_VALUE, firstSelectedDrpDownValue));
+        } else {
+            Assert.fail("Matching dropdown not found: {}" + valueToFind);
+            log.warn("Matching dropdown not found: {}", valueToFind);
+        }
+
         if (!dropDownFound) {
             log.warn("Matching dropdown not found: {}", valueToFind);
         }
@@ -355,9 +376,9 @@ public class AutoEngSetSelect extends BaseWebSteps {
     public void theUserSavedGeneratedTheRandomNumberDictionaryKeyAtPage(String objectName,
                                                                         String pageName,
                                                                         String dictionaryKey) {
-        dictionaryKey=parseValue(dictionaryKey);
+        dictionaryKey = parseValue(dictionaryKey);
         Element textBox = getObject(objectName, pageName);
-        int randomNumber=generateRandomNumberAndEnter(textBox);
+        int randomNumber = generateRandomNumberAndEnter(textBox);
         TestContext.getInstance().testdataPut(dictionaryKey, randomNumber);
         logStepMessage(String.format(STORED_VALUE, randomNumber, dictionaryKey));
     }

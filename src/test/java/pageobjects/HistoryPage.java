@@ -15,6 +15,11 @@ public class HistoryPage extends BasePO {
     private By tableDetails = By.id("tbl_BO_HIDDEN_DETAILS");
     private By newCloneIdNumber = By.xpath("(//td[text()='Cloned']//following-sibling::td)[3]");
     private By detailsText = By.xpath("//span[text()='Details']");
+    private By detailsBtn = By.xpath("(//button[text()='Details'])[1]");
+
+    public Element detailsBtn() throws IOException, InterruptedException {
+        return $(detailsBtn);
+    }
 
     public Element detailsText() throws IOException, InterruptedException {
         return $(detailsText);

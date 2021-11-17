@@ -787,6 +787,13 @@ public class Element {
         return optionsText;
     }
 
+    public String getFirstDropdownOptionsValues() {
+        String firstValue;
+        WebElement options = this.dropdown().getFirstSelectedOption();
+        firstValue = options.getText();
+        return firstValue;
+    }
+
     /**
      * Return all options within a dropdown as string array
      */
