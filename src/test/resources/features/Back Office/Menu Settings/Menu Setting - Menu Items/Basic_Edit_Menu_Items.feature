@@ -105,9 +105,10 @@ Feature: Basic Edit Menu Items
     And the user validates "Compare_Strings" that the "table" element is "Equal To" "#(IdNumberExpectedValueChanged)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(IdNumberXpath4Changed)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements
     And the user clicks the "table" element with dictionary key "#(Id_Number)" at the "HistoryPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickActionXpath2)"
-
+    #Comment: user validate the details model popup
+    And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Dine In" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Order Type: Dine In" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
     And the user validates the cell at row "1" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page

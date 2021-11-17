@@ -14,7 +14,7 @@
       "webDescriptionSpanish": "Automation Testing web Spanish",
       "ItemNumberXpath1": "//td[text()='",
       "ItemNumberXpath2": "']",
-      "IdNumberXpath1": "//td[text()='",
+      "IdNumberXpath1": "//td[normalize-space(text())='",
       "IdNumberXpath2": "']/preceding-sibling::td",
       "IdNumberExpectedValue": ": Automation Testing US",
       "IdNumberExpectedValueChanged": ": Automation Testing US Changed TO America",
