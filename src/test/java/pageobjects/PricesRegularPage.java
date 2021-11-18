@@ -11,6 +11,9 @@ public class PricesRegularPage extends BasePO {
     private By selectSmallSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_235_Options']");
     private By selectMediumSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_236_Options']");
     private By selectLargeSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_237_Options']");
+    private By selectOptModSmallSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_235_FreeMods']");
+    private By selectOptModMediumSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_236_FreeMods']");
+    private By selectOptModLargeSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_237_FreeMods']");
     private By saveBtn = By.xpath("//button[@onclick='BO_MN_PRC_EDT_Save();']");
     private By cancelBtn = By.xpath("//button[@onclick='BO_MN_PRC_EDT_Close();']");
     private By table = By.id("tbl_BO_MN_PRC_EDT_252_947");
@@ -23,6 +26,18 @@ public class PricesRegularPage extends BasePO {
 
     public Element largePriceForModifier() throws IOException, InterruptedException {
         return $(largePriceForModifier);
+    }
+
+    public Element selectOptModLargeSize() throws IOException, InterruptedException {
+        return $(selectOptModLargeSize);
+    }
+
+    public Element selectOptModMediumSize() throws IOException, InterruptedException {
+        return $(selectOptModMediumSize);
+    }
+
+    public Element selectOptModSmallSize() throws IOException, InterruptedException {
+        return $(selectOptModSmallSize);
     }
 
     public Element mediumPriceForModifier() throws IOException, InterruptedException {
