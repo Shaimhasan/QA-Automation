@@ -9,14 +9,14 @@ import java.util.List;
 
 public class EditMenuItemsPage extends BasePO {
 
-    private By nameUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_Name'])[1]");
-    private By webNameUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebName'])[1]");
-    private By descriptionUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_Desc'])[1]");
-    private By webDescriptionUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebDesc'])[1]");
-    private By nameSpanish = By.xpath("(//input[@data-cult='sp-mx'])[1]");
-    private By webNameSpanish = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebName'])[2]");
-    private By descriptionSpanish = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_Desc'])[2]");
-    private By webDescriptionSpanish = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebDesc'])[2]");
+    private By nameUS = By.id("txt_BO_MN_ITM_ADDEDT_Name_en-us");
+    private By webNameUS = By.id("txt_BO_MN_ITM_ADDEDT_WebName_en-us");
+    private By descriptionUS = By.id("txt_BO_MN_ITM_ADDEDT_Desc_en-us");
+    private By webDescriptionUS = By.id("txt_BO_MN_ITM_ADDEDT_WebDesc_en-us");
+    private By nameSpanish = By.id("txt_BO_MN_ITM_ADDEDT_Name_sp-mx");
+    private By webNameSpanish = By.id("txt_BO_MN_ITM_ADDEDT_WebName_sp-mx");
+    private By descriptionSpanish = By.id("txt_BO_MN_ITM_ADDEDT_Desc_sp-mx");
+    private By webDescriptionSpanish = By.id("txt_BO_MN_ITM_ADDEDT_WebDesc_sp-mx");
     private By itemNumber = By.id("txt_BO_MN_ITM_ADDEDT_ItemNumber");
     private By dineInChkBx = By.id("chk_BO_MN_ITM_ADDEDT_DineIn");
     private By takeOutChkBx = By.id("chk_BO_MN_ITM_ADDEDT_TakeOut");
@@ -120,19 +120,19 @@ public class EditMenuItemsPage extends BasePO {
     }
 
     public Element nameSpanish() throws IOException, InterruptedException {
-        return $(nameUS);
+        return $(nameSpanish);
     }
 
     public Element webNameSpanish() throws IOException, InterruptedException {
-        return $(webNameUS);
+        return $(webNameSpanish);
     }
 
     public Element descriptionSpanish() throws IOException, InterruptedException {
-        return $(descriptionUS);
+        return $(descriptionSpanish);
     }
 
     public Element webDescriptionSpanish() throws IOException, InterruptedException {
-        return $(webDescriptionUS);
+        return $(webDescriptionSpanish);
     }
 
 

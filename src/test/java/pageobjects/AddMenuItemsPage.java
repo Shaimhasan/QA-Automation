@@ -9,14 +9,14 @@ import java.util.List;
 
 public class AddMenuItemsPage extends BasePO {
 
-    private By nameUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_Name'])[1]");
-    private By webNameUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebName'])[1]");
-    private By descriptionUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_Desc'])[1]");
-    private By webDescriptionUS = By.xpath("(//input[@name='txt_BO_MN_ITM_ADDEDT_WebDesc'])[1]");
-    private By nameSpanish = By.xpath("(//div[text()='Spanish - Mexico'])[1]/following::input[@name='txt_BO_MN_ITM_ADDEDT_Name']");
-    private By webNameSpanish = By.xpath("(//div[text()='Spanish - Mexico'])[2]/following::input[@name='txt_BO_MN_ITM_ADDEDT_WebName']");
-    private By descriptionSpanish = By.xpath("(//div[text()='Spanish - Mexico'])[3]/following::input[@name='txt_BO_MN_ITM_ADDEDT_Desc']");
-    private By webDescriptionSpanish = By.xpath("(//div[text()='Spanish - Mexico'])[4]/following::input[@name='txt_BO_MN_ITM_ADDEDT_WebDesc']");
+    private By nameUS = By.id("txt_BO_MN_ITM_ADDEDT_Name_en-us");
+    private By webNameUS = By.id("txt_BO_MN_ITM_ADDEDT_WebName_en-us");
+    private By descriptionUS = By.id("txt_BO_MN_ITM_ADDEDT_Desc_en-us");
+    private By webDescriptionUS = By.id("txt_BO_MN_ITM_ADDEDT_WebDesc_en-us");
+    private By nameSpanish = By.id("txt_BO_MN_ITM_ADDEDT_Name_sp-mx");
+    private By webNameSpanish = By.id("txt_BO_MN_ITM_ADDEDT_WebName_sp-mx");
+    private By descriptionSpanish = By.id("txt_BO_MN_ITM_ADDEDT_Desc_sp-mx");
+    private By webDescriptionSpanish = By.id("txt_BO_MN_ITM_ADDEDT_WebDesc_sp-mx");
     private By itemNumber = By.id("txt_BO_MN_ITM_ADDEDT_ItemNumber");
     private By dineInChkBx = By.xpath("//input[normalize-space(@id)='chk_BO_MN_ITM_ADDEDT_DineIn']");
     private By takeOutChkBx = By.xpath("//input[normalize-space(@id)='chk_BO_MN_ITM_ADDEDT_TakeOut']");

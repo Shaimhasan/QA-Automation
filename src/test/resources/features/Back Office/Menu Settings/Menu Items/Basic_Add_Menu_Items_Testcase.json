@@ -10,7 +10,7 @@
       "nameSpanish": "Automation Testing Spanish",
       "webNameSpanish": "Automation Testing Web Spanish",
       "descriptionSpanish": "Automation Testing Desc Spanish",
-      "webDescriptionSpanish": "Automation Testing web Spanish",
+      "webDescriptionSpanish": "Automation Testing web Desc Spanish",
       "ItemNumberXpath1": "//td[text()='",
       "ItemNumberXpath2": "']",
       "IdNumberXpath1": "//td[text()='",
