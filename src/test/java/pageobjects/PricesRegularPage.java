@@ -17,6 +17,21 @@ public class PricesRegularPage extends BasePO {
     private By priceForSmall = By.id("txt_BO_MN_PRC_EDT_947_235_0_Price");
     private By priceForMedium = By.id("txt_BO_MN_PRC_EDT_947_236_0_Price");
     private By priceForLarge = By.id("txt_BO_MN_PRC_EDT_947_237_0_Price");
+    private By smallPriceForModifier = By.id("txt_BO_MN_PRC_EDT_947_235_0_PricePerMod");
+    private By mediumPriceForModifier = By.id("txt_BO_MN_PRC_EDT_947_236_0_PricePerMod");
+    private By largePriceForModifier = By.id("txt_BO_MN_PRC_EDT_947_237_0_PricePerMod");
+
+    public Element largePriceForModifier() throws IOException, InterruptedException {
+        return $(largePriceForModifier);
+    }
+
+    public Element mediumPriceForModifier() throws IOException, InterruptedException {
+        return $(mediumPriceForModifier);
+    }
+
+    public Element smallPriceForModifier() throws IOException, InterruptedException {
+        return $(smallPriceForModifier);
+    }
 
     public Element priceForSmall() throws IOException, InterruptedException {
         return $(priceForSmall);

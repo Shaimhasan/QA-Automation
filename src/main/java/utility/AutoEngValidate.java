@@ -356,6 +356,24 @@ public class AutoEngValidate extends BaseWebSteps {
         validator.performValidation(actualValue, expectedValue);
     }
 
+    @Then("^the user validates append Dot Zero Zero with Number value at the cell at row \"([^\"]*)\" and column \"([^\"]*)\" of the \"([^\"]*)\" table at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserCustomizeValidatesTheCellAtRowAndColumnOfTheTableAtThePage(String rowNum,
+                                                                         String colNum,
+                                                                         String tableName,
+                                                                         String pageName,
+                                                                         String comparisonOperator,
+                                                                         String expectedValue,
+                                                                         String validationID,
+                                                                         String onFailureFlag) {
+
+        expectedValue = parseValue(expectedValue);
+        String actualValue = getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).getText();
+        String actualValue1= actualValue + ".00";
+        AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_STRINGS, ComparisonOperator.valueOfLabel(comparisonOperator), onFailureFlag);
+        TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue1, expectedValue));
+        validator.performValidation(actualValue1, expectedValue);
+    }
+
     @Then("^the user validates based on dictionary key as expected Value at cell at row \"([^\"]*)\" and column \"([^\"]*)\" of the \"([^\"]*)\" table at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesDictionaryKeyAsExpectedValueAtTheCellAtRowAndColumnOfTheTableAtThePage(String rowNum,
                                                                                                        String colNum,

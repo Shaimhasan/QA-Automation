@@ -1,0 +1,20 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "smallPriceForModifier": "7",
+      "mediumPriceForModifier": "8",
+      "largePriceForModifier": "9",
+      "smallPriceForModifierRevoke": "1.00",
+      "mediumPriceForModifierRevoke": "2.00",
+      "largePriceForModifierRevoke": "3.00"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
