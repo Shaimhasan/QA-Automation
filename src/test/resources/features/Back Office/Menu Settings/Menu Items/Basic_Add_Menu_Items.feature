@@ -2,7 +2,7 @@
 Feature: Basic Add Menu Items
   This script is to validate Add Menu Items
 
-  @Basic_Add_Menu_Items @RegressionSuite
+  @Basic_Add_Menu_Items @RegressionSuite @BO_MenuItems
   Scenario: Basic_Add_Menu_Items_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

@@ -1,7 +1,7 @@
 Feature: Basic Prices Edit for Price
   This script is to validate Basic Prices Edit for Price
 
-  @Basic_Prices_Edit_For_Price @RegressionSuite
+  @Basic_Prices_Edit_For_Price @RegressionSuite @BO_Prices
   Scenario: Basic_Prices_Edit_For_Only_Prices_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
