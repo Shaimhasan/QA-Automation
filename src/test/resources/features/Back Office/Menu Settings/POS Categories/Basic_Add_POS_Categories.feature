@@ -91,10 +91,14 @@ Feature: Basic Add POS Categories
 
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditPOSCategoriesPage" page
-#    #Comment: the user click on History Button
-#    And the user clicks the "history" element at the "MenuItemsPage" page
-#    #Comment: the user validate the ID number in History
-#    And the user validates "Compare_Strings" that the "table" element is "Equal To" "#(IdNumberExpectedValue)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(IdNumberXpath4)" "validate_ID_Number" "HardStopOnFailure"
-#    #Comment: the user click on close button
-#    And the user clicks the "close" element at the "HistoryPage" page
-#    And the user waits "5000" seconds
+    #Comment: the user click on History Button
+    And the user clicks the "history" element at the "POSCategoriesPage" page
+    #Comment append value with dictionary
+    And the user validates and append at leading any value ": " with data dictionary key "#(nameUS_value1)" and store with new dictionary key "nameUS_value1_Latest"
+    #Comment append value with dictionary
+    And the user validates and append at trailing any value "']" with data dictionary key "#(nameUS_value1_Latest)" and store with new dictionary key "nameUS_value1_Latest_1"
+    #Comment: the user validate the ID number in History
+    And the user validates "Compare_Strings" that the "table" element is "Equal To" "#(nameUS_value1_Latest)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(nameUS_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
+    #Comment: the user click on close button
+    And the user clicks the "close" element at the "HistoryPage" page
+    And the user waits "5000" seconds

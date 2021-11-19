@@ -198,32 +198,57 @@ public class AutoEngValidate extends BaseWebSteps {
                                                              String validationID,
                                                              String onFailureFlag) {
         xpath1 = parseValue(xpath1);
-        xpath2=parseValue(xpath2);
+        xpath2 = parseValue(xpath2);
         datadictionarykey = parseValue(datadictionarykey);
         Element element = getObject(objectName, pageName);
         Element object = element.getTextBasedOnXpath1AndXpath2AndDictionaryKey(xpath1, datadictionarykey, xpath2);
         String actualValue = object.getText();
         expectedValue = parseValue(expectedValue);
         expectedValue = datadictionarykey + expectedValue;
+        System.out.println("Expected Value -->" + expectedValue);
         AssertHelper validator = new AssertHelper(comparisonType, comparisonOperator, onFailureFlag);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue, expectedValue));
         validator.performValidation(actualValue, expectedValue);
 
     }
 
+    @Then("^the user validates and append at leading any value \"([^\"]*)\" with data dictionary key \"([^\"]*)\" and store with new dictionary key \"([^\"]*)\"$")
+    public void theUserValidatesAndAppendAnyValueWithDictionaryKeyThatTheElementBasedOnXpathIs(String value,
+                                                                                               String dictionarykey,
+                                                                                               String newDictionarykey) {
+        value = parseValue(value);
+        dictionarykey = parseValue(dictionarykey);
+        newDictionarykey = parseDictionaryKey(newDictionarykey);
+        String valToStore = value + dictionarykey;
+        TestContext.getInstance().testdataPut(newDictionarykey, valToStore);
+        logStepMessage(String.format(STORED_VALUE, valToStore, newDictionarykey));
+    }
+
+    @Then("^the user validates and append at trailing any value \"([^\"]*)\" with data dictionary key \"([^\"]*)\" and store with new dictionary key \"([^\"]*)\"$")
+    public void theUserValidatesAndAppendTrailingAnyValueWithDictionaryKeyThatTheElementBasedOnXpathIs(String value,
+                                                                                                       String dictionarykey,
+                                                                                                       String newDictionarykey) {
+        value = parseValue(value);
+        dictionarykey = parseValue(dictionarykey);
+        newDictionarykey = parseDictionaryKey(newDictionarykey);
+        String valToStore = dictionarykey + value;
+        TestContext.getInstance().testdataPut(newDictionarykey, valToStore);
+        logStepMessage(String.format(STORED_VALUE, valToStore, newDictionarykey));
+    }
+
     @Then("^the user validates Exact expected value \"([^\"]*)\" that the \"([^\"]*)\" element is \"([^\"]*)\" \"([^\"]*)\" at the \"([^\"]*)\" page based on datadictionary \"([^\"]*)\" and xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesThatTheElementBasedOnXpathExpIs(String comparisonType,
-                                                             String objectName,
-                                                             String comparisonOperator,
-                                                             String expectedValue,
-                                                             String pageName,
-                                                             String datadictionarykey,
-                                                             String xpath1,
-                                                             String xpath2,
-                                                             String validationID,
-                                                             String onFailureFlag) {
+                                                                String objectName,
+                                                                String comparisonOperator,
+                                                                String expectedValue,
+                                                                String pageName,
+                                                                String datadictionarykey,
+                                                                String xpath1,
+                                                                String xpath2,
+                                                                String validationID,
+                                                                String onFailureFlag) {
         xpath1 = parseValue(xpath1);
-        xpath2=parseValue(xpath2);
+        xpath2 = parseValue(xpath2);
         datadictionarykey = parseValue(datadictionarykey);
         Element element = getObject(objectName, pageName);
         Element object = element.getTextBasedOnXpath1AndXpath2AndDictionaryKey(xpath1, datadictionarykey, xpath2);
@@ -358,17 +383,17 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user validates append Dot Zero Zero with Number value at the cell at row \"([^\"]*)\" and column \"([^\"]*)\" of the \"([^\"]*)\" table at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserCustomizeValidatesTheCellAtRowAndColumnOfTheTableAtThePage(String rowNum,
-                                                                         String colNum,
-                                                                         String tableName,
-                                                                         String pageName,
-                                                                         String comparisonOperator,
-                                                                         String expectedValue,
-                                                                         String validationID,
-                                                                         String onFailureFlag) {
+                                                                                  String colNum,
+                                                                                  String tableName,
+                                                                                  String pageName,
+                                                                                  String comparisonOperator,
+                                                                                  String expectedValue,
+                                                                                  String validationID,
+                                                                                  String onFailureFlag) {
 
         expectedValue = parseValue(expectedValue);
         String actualValue = getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).getText();
-        String actualValue1= actualValue + ".00";
+        String actualValue1 = actualValue + ".00";
         AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_STRINGS, ComparisonOperator.valueOfLabel(comparisonOperator), onFailureFlag);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue1, expectedValue));
         validator.performValidation(actualValue1, expectedValue);
@@ -485,7 +510,7 @@ public class AutoEngValidate extends BaseWebSteps {
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc + ": " + checkBoxValSelected);
 
         if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
-            if(false){
+            if (false) {
                 assertThat(checkBoxValSelected).as(compareDesc).isFalse();
             }
         } else {
@@ -499,9 +524,9 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user validates the item in the \"([^\"]*)\" checkbox is Not checked at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesBasedOnObjectTheItemInTheNotCheckboxIsCheckedAtThePage(String objectName,
-                                                                                    String pageName,
-                                                                                    String validationID,
-                                                                                    String onFailureFlag) {
+                                                                                       String pageName,
+                                                                                       String validationID,
+                                                                                       String onFailureFlag) {
         Element checkbox = getObject(objectName, pageName);
         boolean checkBoxValSelected = false;
         checkBoxValSelected = checkbox.element().isSelected();
