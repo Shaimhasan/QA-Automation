@@ -58,7 +58,8 @@ Feature: Basic Prices Edit for Price
     And the user waits "3000" seconds
     #Comment: the user click on row
     And the user clicks the "regularTextClick" element at the "PricesPage" page
-    And the user waits "2000" seconds
+    #Comment: the user wait element to be clickble
+    And the user waits for the "CLICKABLE" element to be "editBtn" on the "PricesPage" page
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "PricesPage" page
     #Comment: the user store the text Value
@@ -108,7 +109,8 @@ Feature: Basic Prices Edit for Price
 
     #Comment: the user click on row
     And the user clicks the "regularTextClick" element at the "PricesPage" page
-    And the user waits "2000" seconds
+    #Comment: the user wait element to be clickble
+    And the user waits for the "CLICKABLE" element to be "editBtn" on the "PricesPage" page
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "PricesPage" page
 
