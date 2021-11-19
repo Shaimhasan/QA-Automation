@@ -381,8 +381,9 @@ public class AutoEngValidate extends BaseWebSteps {
         validator.performValidation(actualValue, expectedValue);
     }
 
-    @Then("^the user validates append Dot Zero Zero with Number value at the cell at row \"([^\"]*)\" and column \"([^\"]*)\" of the \"([^\"]*)\" table at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
-    public void theUserCustomizeValidatesTheCellAtRowAndColumnOfTheTableAtThePage(String rowNum,
+    @Then("^the user validates append value \"([^\"]*)\" at the cell at row \"([^\"]*)\" and column \"([^\"]*)\" of the \"([^\"]*)\" table at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserCustomizeValidatesTheCellAtRowAndColumnOfTheTableAtThePage(String value,
+                                                                                  String rowNum,
                                                                                   String colNum,
                                                                                   String tableName,
                                                                                   String pageName,
@@ -391,9 +392,10 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                                   String validationID,
                                                                                   String onFailureFlag) {
 
+        value=parseValue(value);
         expectedValue = parseValue(expectedValue);
         String actualValue = getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).getText();
-        String actualValue1 = actualValue + ".00";
+        String actualValue1 = actualValue + value;
         AssertHelper validator = new AssertHelper(ComparisonType.COMPARE_STRINGS, ComparisonOperator.valueOfLabel(comparisonOperator), onFailureFlag);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue1, expectedValue));
         validator.performValidation(actualValue1, expectedValue);

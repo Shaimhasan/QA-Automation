@@ -3,9 +3,9 @@
     "sharedAttributes": {
     },
     "staticData": {
-      "priceForSmall": "35",
-      "priceForMedium": "40",
-      "priceForLarge": "50",
+      "priceForSmall": "35.01",
+      "priceForMedium": "40.02",
+      "priceForLarge": "50.03",
       "priceForSmallRevoke": "15.00",
       "priceForMediumRevoke": "20.00",
       "priceForLargeRevoke": "30.00"

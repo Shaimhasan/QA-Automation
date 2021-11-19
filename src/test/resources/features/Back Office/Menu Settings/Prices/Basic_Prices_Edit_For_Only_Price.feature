@@ -86,19 +86,19 @@ Feature: Basic Prices Edit for Price
     And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
 
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates append Dot Zero Zero with Number value at the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_Large_value)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_Large_value)" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates append Dot Zero Zero with Number value at the cell at row "1" and column "3" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_6)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "3" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_6)" "validate_Item_Changed_Details" "HardStopOnFailure"
 
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates append Dot Zero Zero with Number value at the cell at row "4" and column "2" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_Small_value)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "4" and column "2" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_Small_value)" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates append Dot Zero Zero with Number value at the cell at row "4" and column "3" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_4)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "4" and column "3" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_4)" "validate_Item_Changed_Details" "HardStopOnFailure"
 
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates append Dot Zero Zero with Number value at the cell at row "7" and column "2" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_Medium_value)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "7" and column "2" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_Medium_value)" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates append Dot Zero Zero with Number value at the cell at row "7" and column "3" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_5)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "7" and column "3" of the "tableDetails" table at the "HistoryPage" page "Contains" "#(price_5)" "validate_Item_Changed_Details" "HardStopOnFailure"
 
     #Comment: the user click on Edit Button
     And the user clicks the "close" element at the "HistoryPage" page
