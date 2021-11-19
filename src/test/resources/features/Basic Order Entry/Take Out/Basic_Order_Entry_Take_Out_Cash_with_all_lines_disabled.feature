@@ -2,7 +2,7 @@
 Feature: Basic Order Entry - Take Out Cash  - with all lines disabled
   This script is to validate Take out cash basic order entry
 
-  @Basic_Order_Entry_Take_Out_Cash_with_all_lines_disabled_Testcase @RegressionSuite
+  @Basic_Order_Entry_Take_Out_Cash_with_all_lines_disabled_Testcase @RegressionSuite @BOE_TakeOut
   Scenario: Basic_Order_Entry_Take_Out_Cash_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

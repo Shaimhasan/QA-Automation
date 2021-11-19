@@ -2,7 +2,7 @@
 Feature: Basic Order Entry - Dine In Cash - with all lines disabled
   This script is to validate Dine in cash basic order entry
 
-  @Basic_Order_Entry_Dine_In_Cash_with_all_lines_disabled @RegressionSuite
+  @Basic_Order_Entry_Dine_In_Cash_with_all_lines_disabled @RegressionSuite @BOE_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Cash_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
