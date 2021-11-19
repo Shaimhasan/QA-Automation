@@ -100,5 +100,4 @@ Feature: Basic Add POS Categories
     #Comment: the user validate the ID number in History
     And the user validates "Compare_Strings" that the "table" element is "Equal To" "#(nameUS_value1_Latest)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(nameUS_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on close button
-    And the user clicks the "close" element at the "HistoryPage" page
-    And the user waits "5000" seconds
+    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
