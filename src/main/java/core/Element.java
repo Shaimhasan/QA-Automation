@@ -603,6 +603,35 @@ public class Element {
         return this;
     }
 
+    public Element clickBasedOnOnlyXpath(String xpath1Value1, String xpathValue2, int... retries) {
+        try {
+            try {
+                String xpathValue = xpath1Value1  + xpathValue2;
+                System.out.println("xpathValue print  >" + xpathValue);
+                Element element = this.findElement(By.xpath(xpathValue));
+                element.isDisplayed();
+                element.click();
+
+            } catch (ElementClickInterceptedException e) {
+                if (checkClickJS()) {
+                    clickJS();
+                }
+            } catch (Exception e) {
+                if (!(retries.length > 0 && retries[0] == 0)) {
+                    this.refind(retries);
+                    this.click(0);
+                } else {
+                    throw e;
+                }
+            }
+        } catch (Exception e) {
+            if (checkClickJS()) {
+                clickJS();
+            }
+        }
+        return this;
+    }
+
     public Element doubleClick(int... retries) {
         Actions action = new Actions(driver);
         try {
@@ -1074,6 +1103,11 @@ public class Element {
 
     public Element getTextBasedOnXpath1AndXpath2AndDictionaryKey(String xpath1, String dictionaryKey, String xpath2) {
         String xpathValue = xpath1 + dictionaryKey + xpath2;
+        System.out.println(xpathValue);
+        return this.findElement(By.xpath(xpathValue));
+    }
+    public Element getTextBasedOnXpath1AndXpath2(String xpath1, String xpath2) {
+        String xpathValue = xpath1 + xpath2;
         System.out.println(xpathValue);
         return this.findElement(By.xpath(xpathValue));
     }

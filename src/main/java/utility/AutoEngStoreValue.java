@@ -46,12 +46,28 @@ public class AutoEngStoreValue extends BaseWebSteps {
                                                                                                              String xpath1,
                                                                                                              String xpath2,
                                                                                                              String dictionarykey2) {
-        dictionarykey2=parseValue(dictionarykey2);
-        xpath1=parseValue(xpath1);
-        xpath2=parseValue(xpath2);
+        dictionarykey2 = parseValue(dictionarykey2);
+        xpath1 = parseValue(xpath1);
+        xpath2 = parseValue(xpath2);
         dictionaryKey = parseValue(dictionaryKey);
         Element element = getObject(objectName, pageName);
-        Element object = element.getTextBasedOnXpath1AndXpath2AndDictionaryKey(xpath1, dictionaryKey,xpath2);
+        Element object = element.getTextBasedOnXpath1AndXpath2AndDictionaryKey(xpath1, dictionaryKey, xpath2);
+        String valToStore = object.getText();
+        TestContext.getInstance().testdataPut(dictionarykey2, valToStore);
+        logStepMessage(String.format(STORED_VALUE, valToStore, dictionarykey2));
+    }
+
+    @When("^store the displayed text of the \"([^\"]*)\" element at the \"([^\"]*)\" page based on xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\" store at dictionary with key \"([^\"]*)\"$")
+    public void storeTheDisplayedTextOfTheElementAtThePageIntoTheDataDictionaryBasedOnXpath1AndXpath2(String objectName,
+                                                                                                      String pageName,
+                                                                                                      String xpath1,
+                                                                                                      String xpath2,
+                                                                                                      String dictionarykey2) {
+        dictionarykey2 = parseValue(dictionarykey2);
+        xpath1 = parseValue(xpath1);
+        xpath2 = parseValue(xpath2);
+        Element element = getObject(objectName, pageName);
+        Element object = element.getTextBasedOnXpath1AndXpath2(xpath1, xpath2);
         String valToStore = object.getText();
         TestContext.getInstance().testdataPut(dictionarykey2, valToStore);
         logStepMessage(String.format(STORED_VALUE, valToStore, dictionarykey2));

@@ -42,15 +42,25 @@ public class AutoEngClick extends BaseWebSteps {
     }
 
     @When("^the user clicks the \"([^\"]*)\" element with dictionary key \"([^\"]*)\" at the \"([^\"]*)\" page with xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\"$")
-    public void theUserClicksBasedOnXpathTheElementAtThePage(String objectName,
-                                                             String dictionaryKey,
-                                                             String pageName,
-                                                             String xpath1,
-                                                             String xpath2) {
+    public void theUserClicksBasedOnXpathDictKeyTheElementAtThePage(String objectName,
+                                                                    String dictionaryKey,
+                                                                    String pageName,
+                                                                    String xpath1,
+                                                                    String xpath2) {
         dictionaryKey = parseValue(dictionaryKey);
         xpath1 = parseValue(xpath1);
         xpath2 = parseValue(xpath2);
         getObject(objectName, pageName).clickBasedOnXpath(dictionaryKey, xpath1, xpath2);
+    }
+
+    @When("^the user clicks the \"([^\"]*)\" element at the \"([^\"]*)\" page with xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\"$")
+    public void theUserClicksBasedOnXpathTheElementAtThePage(String objectName,
+                                                             String pageName,
+                                                             String xpath1,
+                                                             String xpath2) {
+        xpath1 = parseValue(xpath1);
+        xpath2 = parseValue(xpath2);
+        getObject(objectName, pageName).clickBasedOnOnlyXpath(xpath1, xpath2);
     }
 
     @When("^the user doubleclicks the \"([^\"]*)\" element at the \"([^\"]*)\" page$")
