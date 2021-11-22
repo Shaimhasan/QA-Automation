@@ -55,7 +55,7 @@ Feature: Basic Add POS Categories
     And the user clicks the "save" element at the "AddPOSCategoriesPage" page
     And the user waits "3000" seconds
 
-    #Comment: the user click on the item number row
+    #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(nameUS_value1)" at the "POSCategoriesPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
 
     And store the displayed text of the "table" element at the "POSCategoriesPage" page and get the dictionary key value "#(nameUS_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
@@ -101,3 +101,9 @@ Feature: Basic Add POS Categories
     And the user validates "Compare_Strings" that the "table" element is "Equal To" "#(nameUS_value1_Latest)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(nameUS_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on close button
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
+     #Comment: the user click on the ID number row
+    And the user clicks the "table" element with dictionary key "#(nameUS_value1)" at the "POSCategoriesPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
+    #Comment: the user click on Delete Button
+    And the user clicks the "delete" element at the "POSCategoriesPage" page
+    #Comment: the user click on Delete Button on Warning popup
+    And the user clicks the "deleteOnWarning" element at the "POSCategoriesPage" page

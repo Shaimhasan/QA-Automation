@@ -16,6 +16,16 @@ public class POSCategoriesPage extends BasePO {
     private By actAndDeact = By.id("btn_BO_MN_ITM_AVAL");
     private By cloneBtn = By.id("btn_BO_MN_ITM_Clone");
     private By cloneConfirmationBtn = By.xpath("//div[contains(text(),'Are you sure you want to clone')]/..//following-sibling::div//button[text()='Clone']");
+    private By delete = By.id("btn_BO_MN_CAT_Del");
+    private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+
+    public Element deleteOnWarning() throws IOException, InterruptedException {
+        return $(deleteOnWarning);
+    }
+
+    public Element delete() throws IOException, InterruptedException {
+        return $(delete);
+    }
 
     public Element cloneConfirmationBtn() throws IOException, InterruptedException {
         return $(cloneConfirmationBtn);

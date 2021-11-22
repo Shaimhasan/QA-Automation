@@ -532,7 +532,7 @@ public class AutoEngValidate extends BaseWebSteps {
         Element checkbox = getObject(objectName, pageName);
         boolean checkBoxValSelected = false;
         checkBoxValSelected = checkbox.element().isSelected();
-        final String compareDesc = String.format("Expecting checkbox item of to be selected in the '%s' checkbox.",
+        final String compareDesc = String.format("Expecting checkbox item of to be Not selected in the '%s' checkbox.",
                 objectName);
         Reporter.addStepLog(compareDesc);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc + ": " + checkBoxValSelected);
