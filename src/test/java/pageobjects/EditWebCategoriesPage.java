@@ -16,7 +16,7 @@ public class EditWebCategoriesPage extends BasePO {
     private By activeChkBx = By.xpath("//input[normalize-space(@id)='chk_BO_MN_WCT_ADDEDT_Active']");
     private By save = By.xpath("//button[@onclick='BO_MN_WCT_ADDEDT_Save();']");
     private By activeCheckBoxIsSelected = By.xpath("//label[@for='chk_BO_MN_WCT_ADDEDT_Active']");
-    private By activeCheckBoxIsSelectedValidate = By.xpath("//label[@for='chk_BO_MN_CAT_ADDEDT_Active']");
+    private By activeCheckBoxIsSelectedValidate = By.xpath("//label[@for='chk_BO_MN_WCT_ADDEDT_Active']");
     private By cancelBtn = By.xpath("//button[@onclick='BO_MN_WCT_ADDEDT_Close();']");
 
     public Element activeCheckBoxIsSelectedValidate() throws IOException, InterruptedException {
