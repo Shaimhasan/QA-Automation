@@ -7,9 +7,9 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines enabled
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
-    When the user enters the user credential "#(Store_Key)" into the "storeKey" textbox at the "LoginPage" page
+    When the user enters the user credential "#(Store_Key_AutomationStore)" into the "storeKey" textbox at the "LoginPage" page
     #Comment: Enter the Station_Key into Station_Key textbox present on Login Page
-    When the user enters the secure credential "#(Station_Key)" into the "stationKey" textbox at the "LoginPage" page
+    When the user enters the secure credential "#(Station_Key_AutomationStore)" into the "stationKey" textbox at the "LoginPage" page
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
     And the user waits "20000" seconds

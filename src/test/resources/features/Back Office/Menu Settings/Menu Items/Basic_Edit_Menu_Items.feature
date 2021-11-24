@@ -82,10 +82,10 @@ Feature: Basic Edit Menu Items
     And the user clicks the "dineInSizeChkBx" element at the "EditMenuItemsPage" page
      #Cooment: the user click on small size default
     And the user clicks the "save" element at the "EditMenuItemsPage" page
+    And the user waits "4000" seconds
      #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
-    #Comment: User store the ID value
-    And store the displayed text of the "table" element at the "MenuItemsPage" page and get the dictionary key value "#(item_Number_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
+
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "MenuItemsPage" page
     #Comment: the user store the text on data dictionary

@@ -580,7 +580,7 @@ public class Element {
                 String xpathValue = xpath1Value1 + dictionaryKeyValue + xpathValue2;
                 System.out.println("xpathValue print  >" + xpathValue);
                 Element element = this.findElement(By.xpath(xpathValue));
-                element.isDisplayed();
+                wait.until(ExpectedConditions.visibilityOf(this.element));
                 element.click();
 
             } catch (ElementClickInterceptedException e) {
