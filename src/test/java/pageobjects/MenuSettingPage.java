@@ -13,6 +13,11 @@ public class MenuSettingPage extends BasePO {
     private By posCategories = By.xpath("//li[text()='POS Categories']");
     private By webCategories = By.xpath("//li[text()='Web Categories']");
     private By subCategories = By.xpath("//li[text()='Sub Categories']");
+    private By sizes = By.xpath("//li[text()='Sizes']");
+
+    public Element sizes() throws IOException, InterruptedException {
+        return $(sizes);
+    }
 
     public Element subCategories() throws IOException, InterruptedException {
         return $(subCategories);

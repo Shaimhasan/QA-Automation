@@ -1,0 +1,26 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "nameUS": "Automation Testing US",
+      "size": "Auto",
+      "descriptionUS": "Automation Testing Description US",
+      "nameSpanish": "Automation Testing Spanish",
+      "descriptionSpanish": "Automation Testing Desc Spanish",
+      "ItemNumberXpath1": "//td[text()='",
+      "ItemNumberXpath2": "']",
+      "IdNumberXpath1": "//td[text()='",
+      "IdNumberXpath2": "']//preceding-sibling::td[text()='Auto']//preceding-sibling::td",
+      "IdNumberExpectedValue": ": Automation Testing US",
+      "IDNumberXpath3": "//td[text()='",
+      "IdNumberXpath4": ": Automation Testing US']"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
