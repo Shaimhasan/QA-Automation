@@ -1,8 +1,8 @@
-Feature: Basic Add Sizes Categories
-  This script is to validate Add Sizes Categories
+Feature: Basic Add Sizes
+  This script is to validate Add Sizes
 
-  @Basic_Add_Sizes_Categories @RegressionSuite @BO_Sizes_Categories
-  Scenario: Basic_Add_Sizes_Categories_Testcase
+  @Basic_Add_Sizes_Categories @RegressionSuite @BO_Sizes
+  Scenario: Basic_Add_Sizes_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
