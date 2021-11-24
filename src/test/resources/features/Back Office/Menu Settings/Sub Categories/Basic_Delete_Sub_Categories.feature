@@ -22,6 +22,8 @@ Feature: Basic Delete Sub Categories
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
+    #Coment: validate the title
+    And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click on Menu Items
