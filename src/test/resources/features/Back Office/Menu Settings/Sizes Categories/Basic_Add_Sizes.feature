@@ -1,7 +1,7 @@
 Feature: Basic Add Sizes
   This script is to validate Add Sizes
 
-  @Basic_Add_Sizes_Categories @RegressionSuite @BO_Sizes
+  @Basic_Add_Sizes_Categories @RegressionSuite @BO_Sizes @Back_Office
   Scenario: Basic_Add_Sizes_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
@@ -11,9 +11,8 @@ Feature: Basic Add Sizes
     When the user enters the secure credential "#(Station_Key_AutomationStore)" into the "stationKey" textbox at the "LoginPage" page
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
-    And the user waits "20000" seconds
     #Comment: The user wait until page is loading
-    #And the user validates the "waitTillLoading" element is present at the "LoginPage" page "wait_Untill_Loading" "HardStopOnFailure"
+    And the user waits for the page to load
     #Comment: Enter the Employee_Id into username textbox present on Login Page
     When the user enters the user credential "#(Employee_Id)" into the "employee_Id" textbox at the "LoginPage" page
     #Comment: Enter the Password into Password textbox present on Login Page
@@ -22,6 +21,8 @@ Feature: Basic Add Sizes
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
+    #Comment: the user validate the Title of the page
+    And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click on Menu Items
@@ -48,43 +49,42 @@ Feature: Basic Add Sizes
     And store the displayed text of the "sizeCode" element at the "AddSizesPage" page into the data dictionary with key "size_value1"
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddSizesPage" page
-    And the user waits "3000" seconds
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(nameUS_value1)" at the "SizesPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id
     And store the displayed text of the "table" element at the "SizesPage" page and get the dictionary key value "#(nameUS_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "SizesPage" page
-    And the user waits "5000" seconds
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "EditSizesPage" page into the data dictionary with key "nameUS_value2"
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "descriptionUS" element at the "EditSizesPage" page into the data dictionary with key "descriptionUS_value2"
-
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameSpanish" element at the "EditSizesPage" page into the data dictionary with key "nameSpanish_value2"
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "descriptionSpanish" element at the "EditSizesPage" page into the data dictionary with key "descriptionSpanish_value2"
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "sizeCode" element at the "EditSizesPage" page into the data dictionary with key "size_value2"
-
     #Comment: user validate Name US Value
     And the user validates the data dictionary value of "#(nameUS_value1)" is "Equal To" data dictionary value of "#(nameUS_value2)" "validate_nameUS_value" "HardStopOnFailure"
     #Comment: user validate descriptionUS Value
     And the user validates the data dictionary value of "#(descriptionUS_value1)" is "Equal To" data dictionary value of "#(descriptionUS_value2)" "validate_descriptionUS_value" "HardStopOnFailure"
-
     #Comment: user validate Name Spanish Value
     And the user validates the data dictionary value of "#(nameSpanish_value1)" is "Equal To" data dictionary value of "#(nameSpanish_value2)" "validate_Spanish_value" "HardStopOnFailure"
     #Comment: user validate descriptionSpanish Value
     And the user validates the data dictionary value of "#(descriptionSpanish_value1)" is "Equal To" data dictionary value of "#(descriptionSpanish_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
     #Comment: user validate descriptionSpanish Value
     And the user validates the data dictionary value of "#(size_value1)" is "Equal To" data dictionary value of "#(size_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
-
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditSizesPage" page
-
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "SizesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
     #Comment append value with dictionary
     And the user validates and append at leading any value ": " with data dictionary key "#(nameUS_value1)" and store with new dictionary key "nameUS_value1_Latest"
     #Comment append value with dictionary
