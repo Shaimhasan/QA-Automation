@@ -28,7 +28,8 @@ Feature: Basic Deactivate Menu Items
     And the user clicks the "menuItems" element at the "MenuSettingPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "MenuItemsPage" page
-
+    #Comment: the user validate the Menu Item Text
+    And the user validates "Compare_Strings" that the "MenuItemText" element is "Equal To" "Menu Item" at the "MenuItemsPage" page "validate_text" "HardStopOnFailure"
     #Comment: the user enters the name On ADD Item
     And the user enters "#(nameUS)" into the "nameUS" textbox at the "AddMenuItemsPage" page
     #Comment: the user enters the name
