@@ -382,6 +382,16 @@ public class AutoEngSetSelect extends BaseWebSteps {
         TestContext.getInstance().testdataPut(dictionaryKey, randomNumber);
         logStepMessage(String.format(STORED_VALUE, randomNumber, dictionaryKey));
     }
+    @When("^the user enters random number with decimal into the \"([^\"]*)\" textbox at the \"([^\"]*)\" page and store at dictionary key \"([^\"]*)\"$")
+    public void theUserSavedGeneratedTheRandomNumberWithDecimalDictionaryKeyAtPage(String objectName,
+                                                                        String pageName,
+                                                                        String dictionaryKey) {
+        dictionaryKey = parseValue(dictionaryKey);
+        Element textBox = getObject(objectName, pageName);
+        int randomNumber = generateDecimalRandomNumberAndEnter(textBox);
+        TestContext.getInstance().testdataPut(dictionaryKey, randomNumber);
+        logStepMessage(String.format(STORED_VALUE, randomNumber, dictionaryKey));
+    }
 
     @When("^the user enters the secure user credential \"([^\"]*)\" into the authentication popup$")
     public void theUserEntersSecureInAuthenticationPopup(String value) throws AWTException {
