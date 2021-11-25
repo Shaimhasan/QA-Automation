@@ -29,7 +29,8 @@ Feature: Basic Clone Menu Items
     And the user clicks the "menuItems" element at the "MenuSettingPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "MenuItemsPage" page
-
+    #Comment: the user validate the Menu Item Text
+    And the user validates "Compare_Strings" that the "MenuItemText" element is "Equal To" "Menu Item" at the "MenuItemsPage" page "validate_text" "HardStopOnFailure"
     #Comment: the user enters the name On ADD Item
     And the user enters "#(nameUS)" into the "nameUS" textbox at the "AddMenuItemsPage" page
     #Comment: the user store the text on data dictionary
@@ -89,11 +90,15 @@ Feature: Basic Clone Menu Items
     
     #Comment: the user click on Clone Button
     And the user clicks the "cloneBtn" element at the "MenuItemsPage" page
+    #Comment: the user validate the clone warning Text
+    And the user validates "Compare_Strings" that the "cloneWarningTxt" element is "Equal To" "Warning" at the "MenuItemsPage" page "validate_text" "HardStopOnFailure"
     #Comment: the user click on Clone Button
     And the user clicks the "cloneConfirmationBtn" element at the "MenuItemsPage" page
 
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
+    #Comment: user validate history text
+    And the user validates "Compare_Strings" that the "historyText" element is "Equal To" "History" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
     #Comment: the user click on Details Elements
     And the user clicks the "table" element with dictionary key "#(Id_Number)" at the "HistoryPage" page with xpath1 "#(ActionXpath1)" and xpath2 "#(ActionXpath3)"
      #Comment: user validate the details model popup
@@ -117,7 +122,8 @@ Feature: Basic Clone Menu Items
 
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "MenuItemsPage" page
-
+    #Comment: the user validate the Menu Item Text
+    And the user validates "Compare_Strings" that the "MenuItemText" element is "Equal To" "Menu Item" at the "MenuItemsPage" page "validate_text" "HardStopOnFailure"
 
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "EditMenuItemsPage" page into the data dictionary with key "nameUS_value2"
@@ -139,23 +145,23 @@ Feature: Basic Clone Menu Items
     #Comment: the user store Item Number
     And store the displayed text of the "itemNumber" element at the "EditMenuItemsPage" page into the data dictionary with key "Item_Number_value2"
 
-#    #Comment: user validate Name US Value
-#    And the user validates the data dictionary value of "#(nameUS_value1)" is "Equal To" data dictionary value of "#(nameUS_value2)" "validate_nameUS_value" "HardStopOnFailure"
-#    #Comment: user validate webNameUS Value
-#    And the user validates the data dictionary value of "#(webNameUS_value1)" is "Equal To" data dictionary value of "#(webNameUS_value2)" "validate_webNameUS_value" "HardStopOnFailure"
-#    #Comment: user validate descriptionUS Value
-#    And the user validates the data dictionary value of "#(descriptionUS_value1)" is "Equal To" data dictionary value of "#(descriptionUS_value2)" "validate_descriptionUS_value" "HardStopOnFailure"
-#    #Comment: user validate webDescriptionUS Value
-#    And the user validates the data dictionary value of "#(webDescriptionUS_value1)" is "Equal To" data dictionary value of "#(webDescriptionUS_value2)" "validate_descriptionUS_value" "HardStopOnFailure"
-#
-#    #Comment: user validate Name Spanish Value
-#    And the user validates the data dictionary value of "#(nameSpanish_value1)" is "Equal To" data dictionary value of "#(nameSpanish_value2)" "validate_Spanish_value" "HardStopOnFailure"
-#    #Comment: user validate webNameSpanish Value
-#    And the user validates the data dictionary value of "#(webNameSpanish_value1)" is "Equal To" data dictionary value of "#(webNameSpanish_value2)" "validate_webNameSpanish_value" "HardStopOnFailure"
-#    #Comment: user validate descriptionSpanish Value
-#    And the user validates the data dictionary value of "#(descriptionSpanish_value1)" is "Equal To" data dictionary value of "#(descriptionSpanish_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
-#    #Comment: user validate webDescriptionSpanish Value
-#    And the user validates the data dictionary value of "#(webDescriptionSpanish_value1)" is "Equal To" data dictionary value of "#(webDescriptionSpanish_value2)" "validate_WebDescriptionSpanish_value" "HardStopOnFailure"
+    #Comment: user validate Name US Value
+    And the user validates the data dictionary value of "#(nameUS_value1)" is "Equal To" data dictionary value of "#(nameUS_value2)" "validate_nameUS_value" "HardStopOnFailure"
+    #Comment: user validate webNameUS Value
+    And the user validates the data dictionary value of "#(webNameUS_value1)" is "Equal To" data dictionary value of "#(webNameUS_value2)" "validate_webNameUS_value" "HardStopOnFailure"
+    #Comment: user validate descriptionUS Value
+    And the user validates the data dictionary value of "#(descriptionUS_value1)" is "Equal To" data dictionary value of "#(descriptionUS_value2)" "validate_descriptionUS_value" "HardStopOnFailure"
+    #Comment: user validate webDescriptionUS Value
+    And the user validates the data dictionary value of "#(webDescriptionUS_value1)" is "Equal To" data dictionary value of "#(webDescriptionUS_value2)" "validate_descriptionUS_value" "HardStopOnFailure"
+
+    #Comment: user validate Name Spanish Value
+    And the user validates the data dictionary value of "#(nameSpanish_value1)" is "Equal To" data dictionary value of "#(nameSpanish_value2)" "validate_Spanish_value" "HardStopOnFailure"
+    #Comment: user validate webNameSpanish Value
+    And the user validates the data dictionary value of "#(webNameSpanish_value1)" is "Equal To" data dictionary value of "#(webNameSpanish_value2)" "validate_webNameSpanish_value" "HardStopOnFailure"
+    #Comment: user validate descriptionSpanish Value
+    And the user validates the data dictionary value of "#(descriptionSpanish_value1)" is "Equal To" data dictionary value of "#(descriptionSpanish_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
+    #Comment: user validate webDescriptionSpanish Value
+    And the user validates the data dictionary value of "#(webDescriptionSpanish_value1)" is "Equal To" data dictionary value of "#(webDescriptionSpanish_value2)" "validate_WebDescriptionSpanish_value" "HardStopOnFailure"
 
     #Comment: user validate Item Number
     And the user validates the data dictionary value of "#(Item_Number)" is "Equal To" data dictionary value of "#(Item_Number_value2)" "validate_Item_Number_value" "HardStopOnFailure"

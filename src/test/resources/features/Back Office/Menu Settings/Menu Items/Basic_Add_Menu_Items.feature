@@ -29,7 +29,8 @@ Feature: Basic Add Menu Items
     And the user clicks the "menuItems" element at the "MenuSettingPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "MenuItemsPage" page
-
+    #Comment: the user validate the Menu Item Text
+    And the user validates "Compare_Strings" that the "MenuItemText" element is "Equal To" "Menu Item" at the "MenuItemsPage" page "validate_text" "HardStopOnFailure"
     #Comment: the user enters the name On ADD Item
     And the user enters "#(nameUS)" into the "nameUS" textbox at the "AddMenuItemsPage" page
     #Comment: the user store the text on data dictionary
@@ -89,7 +90,8 @@ Feature: Basic Add Menu Items
     
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "MenuItemsPage" page
-    And the user waits "5000" seconds
+    #Comment: the user validate the Menu Item Text
+    And the user validates "Compare_Strings" that the "MenuItemText" element is "Equal To" "Menu Item" at the "MenuItemsPage" page "validate_text" "HardStopOnFailure"
 
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "EditMenuItemsPage" page into the data dictionary with key "nameUS_value2"
@@ -151,8 +153,9 @@ Feature: Basic Add Menu Items
     And the user clicks the "cancelBtn" element at the "EditMenuItemsPage" page
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
+    #Comment: user validate history text
+    And the user validates "Compare_Strings" that the "historyText" element is "Equal To" "History" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
     #Comment: the user validate the ID number in History
     And the user validates "Compare_Strings" that the "table" element is "Equal To" "#(IdNumberExpectedValue)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(IdNumberXpath4)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on close button
     And the user clicks the "close" element at the "HistoryPage" page
-    And the user waits "5000" seconds

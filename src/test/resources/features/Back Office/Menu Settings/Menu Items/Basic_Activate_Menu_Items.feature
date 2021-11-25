@@ -28,7 +28,8 @@ Feature: Basic Activate Menu Items
     And the user clicks the "menuItems" element at the "MenuSettingPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "MenuItemsPage" page
-
+    #Comment: the user validate the Menu Item Text
+    And the user validates "Compare_Strings" that the "MenuItemText" element is "Equal To" "Menu Item" at the "MenuItemsPage" page "validate_text" "HardStopOnFailure"
     #Comment: the user enters the name On ADD Item
     And the user enters "#(nameUS)" into the "nameUS" textbox at the "AddMenuItemsPage" page
     #Comment: the user enters the name
@@ -99,6 +100,8 @@ Feature: Basic Activate Menu Items
     And the user clicks the "cancel" element at the "ActivateDeActicateMenuItemsPage" page
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
+    #Comment: user validate history text
+    And the user validates "Compare_Strings" that the "historyText" element is "Equal To" "History" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
     #Comment: the user validate the Activate and Deactivate
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "#(ActionExpectedValue)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(ActionXpath4)" and xpath2 "#(ActionXpath3)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements

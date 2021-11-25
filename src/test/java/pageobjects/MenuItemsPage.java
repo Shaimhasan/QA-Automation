@@ -16,6 +16,16 @@ public class MenuItemsPage extends BasePO {
     private By actAndDeact = By.id("btn_BO_MN_ITM_AVAL");
     private By cloneBtn = By.id("btn_BO_MN_ITM_Clone");
     private By cloneConfirmationBtn = By.xpath("//div[contains(text(),'Are you sure you want to clone')]/..//following-sibling::div//button[text()='Clone']");
+    private By cloneWarningTxt = By.xpath("//span[text()='Warning']");
+    private By MenuItemText = By.xpath("//span[text()='Menu Item']");
+
+    public Element cloneWarningTxt() throws IOException, InterruptedException {
+        return $(cloneWarningTxt);
+    }
+
+    public Element MenuItemText() throws IOException, InterruptedException {
+        return $(MenuItemText);
+    }
 
     public Element cloneConfirmationBtn() throws IOException, InterruptedException {
         return $(cloneConfirmationBtn);
