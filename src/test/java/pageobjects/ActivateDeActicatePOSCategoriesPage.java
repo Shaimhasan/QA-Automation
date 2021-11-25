@@ -12,6 +12,11 @@ public class ActivateDeActicatePOSCategoriesPage extends BasePO {
     private By save = By.xpath("//button[@onclick='BO_MN_CAT_AVAL_Save();']");
     private By cancel = By.xpath("//button[@onclick='BO_MN_CAT_AVAL_Save();']//preceding-sibling::button[text()='Cancel']");
     private By availabelChkBoxIsSelected = By.xpath("//label[@for='chk_BO_MN_CAT_AVAL_Aval']");
+    private By posCatTextPopUp = By.xpath("//div[@id='div_BO_MN_CAT_AVAL_DIALOG_modal_view']//span[text()='POS Category']");
+
+    public Element posCatTextPopUp() throws IOException, InterruptedException {
+        return $(posCatTextPopUp);
+    }
 
     public Element cancel() throws IOException, InterruptedException {
         return $(cancel);

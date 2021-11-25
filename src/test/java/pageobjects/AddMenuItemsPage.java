@@ -30,6 +30,11 @@ public class AddMenuItemsPage extends BasePO {
     private By defualtMedium = By.xpath("//input[@id='rdo_BO_MN_ITM_ADDEDT_Sizes_Default_236']");
     private By defualt = By.xpath("//input[@id='rdo_BO_MN_ITM_ADDEDT_Sizes_Default_235']");
     private By save = By.xpath("//button[@onclick='BO_MN_ITM_ADDEDT_Save();']");
+    private By addMenuItemText = By.xpath("//div[@id='div_BO_MN_ITM_ADDEDT_DIALOG_modal_view']//span[text()='Menu Item']");
+
+    public Element addMenuItemText() throws IOException, InterruptedException {
+        return $(addMenuItemText);
+    }
 
     public Element save() throws IOException, InterruptedException {
         return $(save);

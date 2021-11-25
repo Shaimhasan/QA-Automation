@@ -16,6 +16,11 @@ public class AddPOSCategoriesPage extends BasePO {
     private By selectMergeCatDrpDwn = By.xpath("//select[@id='ddl_BO_MN_CAT_ADDEDT_SharedCategory']");
     private By activeChkBx = By.xpath("//input[normalize-space(@id)='chk_BO_MN_CAT_ADDEDT_Active']");
     private By save = By.xpath("//button[@onclick='BO_MN_CAT_ADDEDT_Save();']");
+    private By posCatTextPopUp = By.xpath("//div[@id='div_BO_MN_CAT_ADDEDT_DIALOG_modal_view']//span[text()='POS Category']");
+
+    public Element posCatTextPopUp() throws IOException, InterruptedException {
+        return $(posCatTextPopUp);
+    }
 
     public Element save() throws IOException, InterruptedException {
         return $(save);

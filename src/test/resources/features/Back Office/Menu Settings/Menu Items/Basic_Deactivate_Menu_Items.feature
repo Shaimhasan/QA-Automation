@@ -1,7 +1,7 @@
 Feature: Basic Deactivate Menu Items
   This script is to validate Deactivate Menu Items
 
-  @Basic_Deactivate_Menu_Items @RegressionSuite @BO_MenuItems
+  @Basic_Deactivate_Menu_Items @RegressionSuite @BO_MenuItems @Back_Office
   Scenario: Basic_Deactivate_Menu_Items_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
@@ -11,9 +11,8 @@ Feature: Basic Deactivate Menu Items
     When the user enters the secure credential "#(Station_Key_AutomationStore)" into the "stationKey" textbox at the "LoginPage" page
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
-    And the user waits "20000" seconds
     #Comment: The user wait until page is loading
-    #And the user validates the "waitTillLoading" element is present at the "LoginPage" page "wait_Untill_Loading" "HardStopOnFailure"
+    And the user waits for the page to load
     #Comment: Enter the Employee_Id into username textbox present on Login Page
     When the user enters the user credential "#(Employee_Id)" into the "employee_Id" textbox at the "LoginPage" page
     #Comment: Enter the Password into Password textbox present on Login Page
@@ -22,14 +21,16 @@ Feature: Basic Deactivate Menu Items
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "addMenuItemText" element to be "VISIBLE" on the "AddMenuItemsPage" page
     #Comment: the user click on back office
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click on Menu Items
     And the user clicks the "menuItems" element at the "MenuSettingPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "MenuItemsPage" page
-    #Comment: the user validate the Menu Item Text
-    And the user validates "Compare_Strings" that the "MenuItemText" element is "Equal To" "Menu Item" at the "MenuItemsPage" page "validate_text" "HardStopOnFailure"
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "addMenuItemText" element to be "VISIBLE" on the "AddMenuItemsPage" page
     #Comment: the user enters the name On ADD Item
     And the user enters "#(nameUS)" into the "nameUS" textbox at the "AddMenuItemsPage" page
     #Comment: the user enters the name
@@ -75,14 +76,11 @@ Feature: Basic Deactivate Menu Items
     #Cooment: the user click on small size default
     And the user clicks the "defualtMedium" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size default
-
     And the user clicks the "save" element at the "AddMenuItemsPage" page
-
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
-
+    #Comment: the user store id
     And store the displayed text of the "table" element at the "MenuItemsPage" page and get the dictionary key value "#(item_Number_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
-    
     #Comment: the user click on activate Button
     And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
     #Comment: the user click small Active CheckBox
@@ -98,7 +96,6 @@ Feature: Basic Deactivate Menu Items
     And the user validates the item in the "smallActiveChkBx" checkbox is checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Edit Button
     And the user clicks the "cancel" element at the "ActivateDeActicateMenuItemsPage" page
-
     #Comment: the user click on deactivate Button
     And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
     #Comment: the user click small Active CheckBox
@@ -116,6 +113,8 @@ Feature: Basic Deactivate Menu Items
     And the user clicks the "cancel" element at the "ActivateDeActicateMenuItemsPage" page
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
     #Comment: the user validate the Activate and Deactivate
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "#(ActionExpectedValue)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(ActionXpath4)" and xpath2 "#(ActionXpath3)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements

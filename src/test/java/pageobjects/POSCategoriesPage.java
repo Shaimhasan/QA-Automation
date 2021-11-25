@@ -16,7 +16,11 @@ public class POSCategoriesPage extends BasePO {
     private By actAndDeact = By.id("btn_BO_MN_CAT_AVAL");
     private By delete = By.id("btn_BO_MN_CAT_Del");
     private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+    private By posCatText = By.xpath("//span[text()='POS Category']");
 
+    public Element posCatText() throws IOException, InterruptedException {
+        return $(posCatText);
+    }
 
     public Element deleteOnWarning() throws IOException, InterruptedException {
         return $(deleteOnWarning);
