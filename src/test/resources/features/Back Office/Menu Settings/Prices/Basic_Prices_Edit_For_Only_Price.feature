@@ -87,7 +87,8 @@ Feature: Basic Prices Edit for Price
     And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
     #Comment: the user click on Deatils Button First Row
     And the user clicks the "detailsBtn" element at the "HistoryPage" page
-    #Comment: the user validates on Details page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "detailsText" element to be "VISIBLE" on the "HistoryPage" page
     #Comment: user validate the details model popup
     And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
 
