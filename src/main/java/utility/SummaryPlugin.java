@@ -16,7 +16,7 @@ public class SummaryPlugin extends CommonJsonAggregator {
     }
 
     protected SummaryData getData(List<LaunchResults> launches) {
-        SummaryData data = (new SummaryData()).setStatistic(new Statistic()).setTime(new GroupTime()).setReportName("CLAIMZPAY REPORT");
+        SummaryData data = (new SummaryData()).setStatistic(new Statistic()).setTime(new GroupTime()).setReportName("Adora Report");
         launches.stream().flatMap((launch) -> {
             return launch.getResults().stream();
         }).forEach((result) -> {
