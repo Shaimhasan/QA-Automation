@@ -95,8 +95,6 @@ Feature: Basic Activate Menu Items
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
     #Comment: the user click on Edit Button
     And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: user validate the check box is selected
     And the user validates the item in the "smallActiveChkBx" checkbox is checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Edit Button

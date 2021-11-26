@@ -61,8 +61,6 @@ Feature: Basic Prices Edit for Price Per Modifier
     And the user waits for the page to load
     #Comment: the user click on row
     And the user clicks the "regularTextClick" element at the "PricesPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "PricesPage" page
     #Comment: the user store the text Value
@@ -92,8 +90,6 @@ Feature: Basic Prices Edit for Price Per Modifier
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
     #Comment: the user click on row
     And the user clicks the "regularTextClick" element at the "PricesPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "PricesPage" page
     #Comment: the user enter price

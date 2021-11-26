@@ -49,8 +49,6 @@ Feature: Basic Prices Edit for Price for Free Optional Modifiers
     And the user waits for the page to load
     #Comment: the user click on row
     And the user clicks the "regularTextClick" element at the "PricesPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "PricesPage" page
     #Comment: the user validate the selected value
@@ -63,8 +61,6 @@ Feature: Basic Prices Edit for Price for Free Optional Modifiers
     And the user clicks the "cancelBtn" element at the "PricesRegularPage" page
     #Comment: the user click on row
     And the user clicks the "regularTextClick" element at the "PricesPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "PricesPage" page
     #Comment: the user select the dropdown values
