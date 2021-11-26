@@ -21,6 +21,8 @@ Feature: Basic Edit Web Categories
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -87,7 +89,6 @@ Feature: Basic Edit Web Categories
     And the user validates the item in the "activeCheckBoxIsSelectedValidate" checkbox is Not checked at the "EditWebCategoriesPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditWebCategoriesPage" page
-
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "WebCategoriesPage" page
     #Comment: the user validate the visibility of popup

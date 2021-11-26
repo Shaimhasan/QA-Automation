@@ -21,6 +21,8 @@ Feature: Basic Deactivate Menu Items
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user validate the visibility of popup
     And the user waits for the "addMenuItemText" element to be "VISIBLE" on the "AddMenuItemsPage" page
     #Comment: the user click on back office
