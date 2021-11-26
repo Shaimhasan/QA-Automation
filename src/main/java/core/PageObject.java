@@ -68,8 +68,8 @@ public class PageObject extends CommonPageObject {
      */
     public PageObject waitPageToLoad() {
         domLoaded();
-        jqueryLoaded();
-        //angularLoaded();
+      //  jqueryLoaded();
+      //  angularLoaded();
         return this;
     }
     public PageObject staticWait(String time) {
