@@ -95,6 +95,8 @@ Feature: Basic Clone Menu Items
     And the user waits for the "cloneWarningTxt" element to be "VISIBLE" on the "MenuItemsPage" page
     #Comment: the user click on Clone Button
     And the user clicks the "cloneConfirmationBtn" element at the "MenuItemsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup

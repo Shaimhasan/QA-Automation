@@ -23,8 +23,8 @@ Feature: Basic Deactivate Menu Items
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "addMenuItemText" element to be "VISIBLE" on the "AddMenuItemsPage" page
+    #Comment: the user validate the Title of the page
+    And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click on Menu Items
