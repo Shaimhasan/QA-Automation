@@ -11,7 +11,6 @@ Feature: Basic Edit Web Categories
     When the user enters the secure credential "#(Station_Key_AutomationStore)" into the "stationKey" textbox at the "LoginPage" page
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
-    And the user waits "20000" seconds
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: Enter the Employee_Id into username textbox present on Login Page
@@ -30,6 +29,8 @@ Feature: Basic Edit Web Categories
     And the user clicks the "webCategories" element at the "MenuSettingPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "WebCategoriesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "webCatTxt" element to be "VISIBLE" on the "WebCategoriesPage" page
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(nameUS)" into the "nameUS" textbox at the "AddWebCategoriesPage" page
     #Comment: the user store the text on data dictionary
@@ -56,6 +57,8 @@ Feature: Basic Edit Web Categories
     And store the displayed text of the "table" element at the "WebCategoriesPage" page and get the dictionary key value "#(nameUS_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "WebCategoriesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "webCatTxt" element to be "VISIBLE" on the "WebCategoriesPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user enters the name On ADD Item
@@ -72,6 +75,8 @@ Feature: Basic Edit Web Categories
     And the user clicks the "table" element with dictionary key "#(nameUS_value1_Updated_1)" at the "WebCategoriesPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "WebCategoriesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "webCatTxt" element to be "VISIBLE" on the "WebCategoriesPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user store the text on data dictionary

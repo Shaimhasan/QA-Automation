@@ -27,12 +27,16 @@ Feature: Basic Prices Edit for Price
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click on prices Menu Items
     And the user clicks the "prices" element at the "MenuSettingPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "priceTxt" element to be "VISIBLE" on the "Prices" page
     #Comment: the user validate the price text
     And the user validates "Compare_Strings" that the "priceTxt" element is "Equal To" "Prices" at the "PricesPage" page "validate_Price_Text" "HardStopOnFailure"
     #Comment: the user click on row
     And the user clicks on the cell at row "1" and column "1" from the "table" table at the "PricesPage" page
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "PricesPage" page
+    #Comment: the user validate popup open
+    And the user validates "Compare_Strings" that the "pricesTxt" element is "Equal To" "Prices" at the "PricesPage" page "validate_Price_Text" "HardStopOnFailure"
     #Comment: the user store the text Value
     And store the displayed text of the "priceForLarge" element at the "PricesRegularPage" page into the data dictionary with key "price_Large_value"
     #Comment: the user store the text Value

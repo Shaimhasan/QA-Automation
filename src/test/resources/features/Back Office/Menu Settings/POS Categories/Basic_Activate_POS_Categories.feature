@@ -53,6 +53,8 @@ Feature: Basic Activate POS Categories
     And the user selects value "Pizza" from the "selectMergeCatDrpDwn" dropdown at the "AddPOSCategoriesPage" page
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddPOSCategoriesPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(nameUS_value1)" at the "POSCategoriesPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store ID
@@ -65,8 +67,12 @@ Feature: Basic Activate POS Categories
     And the user validates "Compare_Strings" that the "posCatTextPopUp" element is "Equal To" "POS Category" at the "POSCategoriesPage" page "validate_text" "HardStopOnFailure"
     #Comment: the user select the availbale check box
     And the user clicks the "availabelChkBox" element at the "ActivateDeActicatePOSCategoriesPage" page
+    #Comment: user validate the check box is selected
+    And the user validates the item in the "availabelChkBoxIsSelected" checkbox is checked at the "ActivateDeActicatePOSCategoriesPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click save Button
     And the user clicks the "save" element at the "ActivateDeActicatePOSCategoriesPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(nameUS_value1)" at the "POSCategoriesPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user click on Edit Button

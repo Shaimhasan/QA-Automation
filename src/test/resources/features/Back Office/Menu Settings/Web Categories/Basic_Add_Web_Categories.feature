@@ -29,6 +29,8 @@ Feature: Basic Add Web Categories
     And the user clicks the "webCategories" element at the "MenuSettingPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "WebCategoriesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "webCatTxt" element to be "VISIBLE" on the "WebCategoriesPage" page
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(nameUS)" into the "nameUS" textbox at the "AddWebCategoriesPage" page
     #Comment: the user store the text on data dictionary
@@ -55,6 +57,8 @@ Feature: Basic Add Web Categories
     And store the displayed text of the "table" element at the "WebCategoriesPage" page and get the dictionary key value "#(nameUS_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "WebCategoriesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "webCatTxt" element to be "VISIBLE" on the "WebCategoriesPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user store the text on data dictionary

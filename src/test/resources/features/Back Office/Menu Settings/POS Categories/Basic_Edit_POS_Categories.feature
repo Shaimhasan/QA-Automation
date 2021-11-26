@@ -73,7 +73,8 @@ Feature: Basic Edit POS Categories
     And the user selects value "Appetizer" from the "selectMergeCatDrpDwn" dropdown at the "AddPOSCategoriesPage" page
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddPOSCategoriesPage" page
-    And the user waits "3000" seconds
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(nameUS_value1_Updated_1)" at the "POSCategoriesPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user click on Edit Button

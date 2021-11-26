@@ -12,6 +12,11 @@ public class PricesPage extends BasePO {
     private By table = By.id("tbl_BO_List_MN_PRC");
     private By priceTxt = By.xpath("//div[text()='Prices']");
     private By regularTextClick = By.xpath("//td[text()='Regular']");
+    private By pricesTxt = By.xpath("//div[@id='div_BO_MN_PRC_EDT_DIALOG_modal_view']//span[text()='Prices']");
+
+    public Element pricesTxt() throws IOException, InterruptedException {
+        return $(pricesTxt);
+    }
 
     public Element regularTextClick() throws IOException, InterruptedException {
         return $(regularTextClick);

@@ -29,6 +29,8 @@ Feature: Basic Delete Web Categories
     And the user clicks the "webCategories" element at the "MenuSettingPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "WebCategoriesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "webCatTxt" element to be "VISIBLE" on the "WebCategoriesPage" page
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(nameUS)" into the "nameUS" textbox at the "AddWebCategoriesPage" page
     #Comment: the user store the text on data dictionary

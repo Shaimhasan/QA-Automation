@@ -27,6 +27,8 @@ Feature: Basic Prices Edit for Price for Free Optional Modifiers
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click on prices Menu Items
     And the user clicks the "prices" element at the "MenuSettingPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "priceTxt" element to be "VISIBLE" on the "Prices" page
     #Comment: the user validate the price text
     And the user validates "Compare_Strings" that the "priceTxt" element is "Equal To" "Prices" at the "PricesPage" page "validate_Price_Text" "HardStopOnFailure"
     #Comment: the user click on row

@@ -16,6 +16,11 @@ public class WebCategoriesPage extends BasePO {
     private By actAndDeact = By.id("btn_BO_MN_WCT_AVAL");
     private By delete = By.id("btn_BO_MN_WCT_Del");
     private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+    private By webCatTxt = By.xpath("//div[@id='div_BO_MN_WCT_ADDEDT_DIALOG_modal_view']//span[text()='Web Category']");
+
+    public Element webCatTxt() throws IOException, InterruptedException {
+        return $(webCatTxt);
+    }
 
 
     public Element deleteOnWarning() throws IOException, InterruptedException {

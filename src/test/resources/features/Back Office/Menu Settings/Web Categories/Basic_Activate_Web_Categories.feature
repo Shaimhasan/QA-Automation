@@ -29,6 +29,8 @@ Feature: Basic Activate Web Categories
     And the user clicks the "webCategories" element at the "MenuSettingPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "WebCategoriesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "webCatTxt" element to be "VISIBLE" on the "WebCategoriesPage" page
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(nameUS)" into the "nameUS" textbox at the "AddWebCategoriesPage" page
     #Comment: the user store the text on data dictionary
@@ -57,6 +59,8 @@ Feature: Basic Activate Web Categories
     And store the displayed text of the "table" element at the "WebCategoriesPage" page and get the dictionary key value "#(nameUS_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Activate Button
     And the user clicks the "actAndDeact" element at the "WebCategoriesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "webCatTextVal" element to be "VISIBLE" on the "ActivateDeActicateWebCategoriesPage" page
     #Comment: the user validate the Web model text
     And the user validates "Compare_Strings" that the "webCatTextVal" element is "Equal To" "Web Category" at the "ActivateDeActicateWebCategoriesPage" page "validate_Text" "HardStopOnFailure"
     #Comment: the user select the availbale check box
@@ -69,6 +73,8 @@ Feature: Basic Activate Web Categories
     And the user clicks the "table" element with dictionary key "#(nameUS_value1)" at the "WebCategoriesPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user click on Edit Button
     And the user clicks the "actAndDeact" element at the "WebCategoriesPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "webCatTextVal" element to be "VISIBLE" on the "ActivateDeActicateWebCategoriesPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user validate the check box is selected
