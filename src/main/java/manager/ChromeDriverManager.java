@@ -60,7 +60,8 @@ public class ChromeDriverManager extends DriverManager {
             options.addArguments("--kiosk");
         }
         if(props.getString("options.headless.chrome").equalsIgnoreCase("true")){
-            options.addArguments("--headless");
+            options.setHeadless(true);
+            options.addArguments("--window-size=1552x840");
         }
         options.addArguments("--incognito");
         driver = new ChromeDriver(options);
