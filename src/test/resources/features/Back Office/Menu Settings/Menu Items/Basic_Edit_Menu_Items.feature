@@ -69,6 +69,8 @@ Feature: Basic Edit Menu Items
     And the user clicks the "defualt" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size default
     And the user clicks the "save" element at the "AddMenuItemsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
     #Comment: the user store the Id Number at Menu item Page
@@ -87,6 +89,8 @@ Feature: Basic Edit Menu Items
     And the user clicks the "dineInSizeChkBx" element at the "EditMenuItemsPage" page
      #Cooment: the user click on small size default
     And the user clicks the "save" element at the "EditMenuItemsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
      #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
     #Comment: the user click on Edit Button
