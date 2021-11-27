@@ -81,7 +81,7 @@ public class BaseTest extends common.BaseTest implements En {
         testNGCucumberRunner.runScenario(pickle.getPickleEvent());
     }
 
-    @DataProvider(name = "techStackWithScenarioList")
+    @DataProvider(name = "techStackWithScenarioList", parallel = true)
     public Object[][] combineDataProvider(Method method) {
         List<Object[]> techStackList = Lists.newArrayList();
         List<Object[]> scenarios = Lists.newArrayList();
@@ -116,6 +116,7 @@ public class BaseTest extends common.BaseTest implements En {
         onGenerateAllureReport();
         testNGCucumberRunner.finish();
     }
+
     private void onGenerateAllureReport() {
         Runtime.getRuntime().addShutdownHook(new Thread() {
             public void run() {
