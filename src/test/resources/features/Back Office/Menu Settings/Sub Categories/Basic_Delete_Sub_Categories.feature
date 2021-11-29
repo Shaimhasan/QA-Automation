@@ -57,6 +57,8 @@ Feature: Basic Delete Sub Categories
     And the user clicks the "delete" element at the "SubCategoriesPage" page
     #Comment: the user click on Delete Button on Warning popup
     And the user clicks the "deleteOnWarning" element at the "SubCategoriesPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "SubCategoriesPage" page
     #Comment: the user validate the visibility of popup

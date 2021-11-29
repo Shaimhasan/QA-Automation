@@ -81,7 +81,7 @@ public class BaseTest extends common.BaseTest implements En {
         testNGCucumberRunner.runScenario(pickle.getPickleEvent());
     }
 
-    @DataProvider(name = "techStackWithScenarioList", parallel = true)
+    @DataProvider(name = "techStackWithScenarioList")
     public Object[][] combineDataProvider(Method method) {
         List<Object[]> techStackList = Lists.newArrayList();
         List<Object[]> scenarios = Lists.newArrayList();
