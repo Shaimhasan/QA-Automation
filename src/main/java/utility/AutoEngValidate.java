@@ -212,6 +212,32 @@ public class AutoEngValidate extends BaseWebSteps {
 
     }
 
+    @Then("^the user exact validates \"([^\"]*)\" that the \"([^\"]*)\" element is \"([^\"]*)\" \"([^\"]*)\" at the \"([^\"]*)\" page based on datadictionary \"([^\"]*)\" and xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserExactValidatesThatTheElementBasedOnXpathIs(String comparisonType,
+                                                             String objectName,
+                                                             String comparisonOperator,
+                                                             String expectedValue,
+                                                             String pageName,
+                                                             String datadictionarykey,
+                                                             String xpath1,
+                                                             String xpath2,
+                                                             String validationID,
+                                                             String onFailureFlag) {
+        xpath1 = parseValue(xpath1);
+        xpath2 = parseValue(xpath2);
+        datadictionarykey = parseValue(datadictionarykey);
+        Element element = getObject(objectName, pageName);
+        Element object = element.getTextBasedOnXpath1AndXpath2AndDictionaryKey(xpath1, datadictionarykey, xpath2);
+        String actualValue = object.getText();
+        expectedValue = parseValue(expectedValue);
+        System.out.println("Expected Value -->" + expectedValue);
+        AssertHelper validator = new AssertHelper(comparisonType, comparisonOperator, onFailureFlag);
+        TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, validator.getResultMessage(actualValue, expectedValue));
+        validator.performValidation(actualValue, expectedValue);
+
+    }
+
+
     @Then("^the user validates and append at leading any value \"([^\"]*)\" with data dictionary key \"([^\"]*)\" and store with new dictionary key \"([^\"]*)\"$")
     public void theUserValidatesAndAppendAnyValueWithDictionaryKeyThatTheElementBasedOnXpathIs(String value,
                                                                                                String dictionarykey,

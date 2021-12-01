@@ -1,0 +1,35 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "nameUS": "Automation Testing US",
+      "nameUSChangedValue": "Automation Testing US Changed TO America",
+      "webNameUS": "Automation Testing Web US",
+      "descriptionUS": "Automation Testing Description US",
+      "webDescriptionUS": "Automation Testing Web Desc US",
+      "nameSpanish": "Automation Testing Spanish",
+      "webNameSpanish": "Automation Testing Web Spanish",
+      "descriptionSpanish": "Automation Testing Desc Spanish",
+      "webDescriptionSpanish": "Automation Testing web Spanish",
+      "ItemNumberXpath1": "//td[text()='",
+      "ItemNumberXpath2": "']",
+      "IdNumberXpath1": "//td[normalize-space(text())='",
+      "IdNumberXpath2": "']/preceding-sibling::td",
+      "IdNumberExpectedValue": ": Automation Testing US",
+      "IdNumberExpectedValueChanged": ": Automation Testing US Changed TO America",
+      "IDNumberXpath3": "//td[text()='",
+      "IdNumberXpath4": ": Automation Testing US']",
+      "IdNumberXpath4Changed": ": Automation Testing US Changed TO America']",
+      "DetailsClickXpath1": "(//td[text()='",
+      "DetailsClickActionXpath2": ": Automation Testing US Changed TO America']//preceding-sibling::td[text()='Edit'])[1]//following-sibling::td)[5]/button",
+      "modifiersCode": "Auto"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
