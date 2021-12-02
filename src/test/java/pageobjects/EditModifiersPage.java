@@ -9,14 +9,14 @@ import java.util.List;
 
 public class EditModifiersPage extends BasePO {
 
-    private By nameUS = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_Name']//div[text()='English - United States']//following-sibling::input[@data-cult='en-us']");
-    private By webNameUS = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_Web_Name']//div[text()='English - United States']//following-sibling::input[@data-cult='en-us']");
-    private By descriptionUS = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_Desc']//div[text()='English - United States']//following-sibling::input[@data-cult='en-us']");
-    private By webDescriptionUS = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_Web_Desc']//div[text()='English - United States']//following-sibling::input[@data-cult='en-us']");
-    private By nameSpanish = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_Name']//div[text()='Spanish - Mexico']//following-sibling::input[@data-cult='sp-mx']");
-    private By webNameSpanish = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_Web_Name']//div[text()='Spanish - Mexico']//following-sibling::input[@data-cult='sp-mx']");
-    private By descriptionSpanish = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_Desc']//div[text()='Spanish - Mexico']//following-sibling::input[@data-cult='sp-mx']");
-    private By webDescriptionSpanish = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_Web_Desc']//div[text()='Spanish - Mexico']//following-sibling::input[@data-cult='sp-mx']");
+    private By nameUS = By.id("txt_BO_MN_MOD_ADDEDT_Name_en-us");
+    private By webNameUS = By.id("txt_BO_MN_MOD_ADDEDT_Web_Name_en-us");
+    private By descriptionUS = By.id("txt_BO_MN_MOD_ADDEDT_Desc_en-us");
+    private By webDescriptionUS = By.id("txt_BO_MN_MOD_ADDEDT_Web_Desc_en-us");
+    private By nameSpanish = By.id("txt_BO_MN_MOD_ADDEDT_Name_sp-mx");
+    private By webNameSpanish = By.id("txt_BO_MN_MOD_ADDEDT_Web_Name_sp-mx");
+    private By descriptionSpanish = By.id("txt_BO_MN_MOD_ADDEDT_Desc_sp-mx");
+    private By webDescriptionSpanish = By.id("txt_BO_MN_MOD_ADDEDT_Web_Desc_sp-mx");
     private By activeChkBx = By.xpath("//input[normalize-space(@id)='chk_BO_MN_MOD_ADDEDT_Active']");
     private By save = By.xpath("//button[@onclick='BO_MN_MOD_ADDEDT_Save();']");
     private By activeCheckBoxIsSelected = By.xpath("//label[@for='chk_BO_MN_MOD_ADDEDT_Active']");

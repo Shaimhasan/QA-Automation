@@ -65,7 +65,6 @@ Feature: Basic Add Modifiers
     And the user enters "#(webDescriptionSpanish)" into the "webDescriptionSpanish" textbox at the "AddModifiersPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "webDescriptionSpanish" element at the "AddModifiersPage" page into the data dictionary with key "webDescriptionSpanish_value1"
-
     #Comment: the user select the dine in check box
     And the user clicks the "activeChkBx" element at the "AddModifiersPage" page
     #Comment: the user enters the name
@@ -85,7 +84,6 @@ Feature: Basic Add Modifiers
     #Comment: the user validate the visibility of popup
     And the user waits for the "addModifiersText" element to be "VISIBLE" on the "EditModifiersPage" page
     #Comment: the user store the text on data dictionary
-
     And store the displayed text of the "nameUS" element at the "EditModifiersPage" page into the data dictionary with key "nameUS_value2"
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "webNameUS" element at the "EditModifiersPage" page into the data dictionary with key "webNameUS_value2"
@@ -93,7 +91,6 @@ Feature: Basic Add Modifiers
     And store the displayed text of the "descriptionUS" element at the "EditModifiersPage" page into the data dictionary with key "descriptionUS_value2"
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "webDescriptionUS" element at the "EditModifiersPage" page into the data dictionary with key "webDescriptionUS_value2"
-
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameSpanish" element at the "EditModifiersPage" page into the data dictionary with key "nameSpanish_value2"
     #Comment: the user store the text on data dictionary
@@ -104,7 +101,6 @@ Feature: Basic Add Modifiers
     And store the displayed text of the "webDescriptionSpanish" element at the "EditModifiersPage" page into the data dictionary with key "webDescriptionSpanish_value2"
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "modifiersCode" element at the "EditModifiersPage" page into the data dictionary with key "modifiersCode_2"
-
 
     #Comment: user validate Name US Value
     And the user validates the data dictionary value of "#(nameUS_value1)" is "Equal To" data dictionary value of "#(nameUS_value2)" "validate_nameUS_value" "HardStopOnFailure"
@@ -139,4 +135,10 @@ Feature: Basic Add Modifiers
     #Comment: the user validate the ID number in History
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Add" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(nameUS_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on close button
-    And the user clicks the "close" element at the "HistoryPage" page
+    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
+    #Comment: the user click on the ID number row
+    And the user clicks the "table" element with dictionary key "#(nameUS_value1)" at the "ModifiersPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
+    #Comment: the user click on Delete Button
+    And the user clicks the "delete" element at the "ModifiersPage" page
+    #Comment: the user click on Delete Button on Warning popup
+    And the user clicks the "deleteOnWarning" element at the "ModifiersPage" page
