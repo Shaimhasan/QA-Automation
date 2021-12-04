@@ -18,6 +18,11 @@ public class MenuSettingPage extends BasePO {
     private By modifierWebCategories = By.xpath("//li[text()='Modifier Web Categories']");
     private By modifiers = By.xpath("//li[text()='Modifiers']");
     private By modifiersDispGrp = By.xpath("//li[text()='Modifier Display Groups']");
+    private By majorMenus = By.xpath("//li[text()='Major Menus']");
+
+    public Element majorMenus() throws IOException, InterruptedException {
+        return $(majorMenus);
+    }
 
     public Element modifiersDispGrp() throws IOException, InterruptedException {
         return $(modifiersDispGrp);
