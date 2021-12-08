@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="suite1" parallel="classes" thread-count="2" data-provider-thread-count="10">
-    <test name="Regression Test">
+    <test name="Regression Testing">
         <classes>
             <class name="runners.AdoraExecuteRunner"/>
         </classes>
