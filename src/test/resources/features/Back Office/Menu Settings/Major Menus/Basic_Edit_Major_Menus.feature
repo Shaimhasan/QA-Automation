@@ -83,21 +83,15 @@ Feature: Basic Edit Major Menus
     And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
 
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "0" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Name: English - United States - Text" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Name" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "0" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "0" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(menuName_value1)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(menuName_value1)" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "0" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(menuName_value1_updated_1)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(menuName_value1_updated_1)" "validate_Item_Changed_Details" "HardStopOnFailure"
 
     #Comment: the user click on close button
     And the user clicks the "close" element at the "HistoryPage" page
     #Comment: the user click on close button
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
-     #Comment: the user click on the ID number row
-    And the user clicks the "table" element with dictionary key "#(menuName_value1_updated_1)" at the "MajorMenusPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
-    #Comment: the user click on Delete Button
-    And the user clicks the "delete" element at the "MajorMenusPage" page
-    #Comment: the user click on Delete Button on Warning popup
-    And the user clicks the "deleteOnWarning" element at the "MajorMenusPage" page

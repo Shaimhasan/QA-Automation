@@ -107,7 +107,7 @@ Feature: Basic Edit Modifiers
     #Comment: user validate the details model popup
     And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Order Type: Active" "validate_Item_Changed_Details" "HardStopOnFailure"
+    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Active" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
     And the user validates the cell at row "1" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
