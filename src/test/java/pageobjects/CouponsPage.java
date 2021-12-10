@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class CouponsPage extends BasePO {
 
-    private By addBtn = By.id("btn_BO_CP_CPN_AddNew");
+    private By addBtn = By.xpath("//button[normalize-space(@id)='btn_BO_CP_CPN_AddNew']");
     private By editBtn = By.id("btn_BO_CP_CPN_Edit");
     private By table = By.id("tbl_BO_List_CP_CPN");
     private By history = By.id("btn_BO_HISTORY");
