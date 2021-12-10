@@ -35,9 +35,11 @@ Feature: Basic Delete Sub Categories
     And the user enters dynamic UserName "#(nameUS)" into the "nameUS" textbox at the "AddSubCategoriesPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "AddSubCategoriesPage" page into the data dictionary with key "nameUS_value1"
+    #Comment: the user store value
     And the user enters "#(descriptionUS)" into the "descriptionUS" textbox at the "AddSubCategoriesPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "descriptionUS" element at the "AddSubCategoriesPage" page into the data dictionary with key "descriptionUS_value1"
+    #Comment: the user enter the name spanish
     And the user enters "#(nameSpanish)" into the "nameSpanish" textbox at the "AddSubCategoriesPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameSpanish" element at the "AddSubCategoriesPage" page into the data dictionary with key "nameSpanish_value1"
@@ -45,6 +47,8 @@ Feature: Basic Delete Sub Categories
     And the user enters "#(descriptionSpanish)" into the "descriptionSpanish" textbox at the "AddSubCategoriesPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "descriptionSpanish" element at the "AddSubCategoriesPage" page into the data dictionary with key "descriptionSpanish_value1"
+    #Comment: the user select menu dropdown
+    And the user selects value "Main Menu - Active" from the "selectMenuDrpDwn" dropdown at the "AddSubCategoriesPage" page
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddSubCategoriesPage" page
     #Comment: The user wait until page is loading

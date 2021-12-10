@@ -12,7 +12,7 @@ public class AddWebCategoriesPage extends BasePO {
     private By descriptionUS = By.id("txt_BO_MN_WCT_ADDEDT_Desc_en-us");
     private By nameSpanish = By.id("txt_BO_MN_WCT_ADDEDT_Name_sp-mx");
     private By descriptionSpanish = By.id("txt_BO_MN_WCT_ADDEDT_Desc_sp-mx");
-    private By selectMenuDrpDwn = By.id("ddl_BO_MN_CAT_ADDEDT_Menus");
+    private By selectMenuDrpDwn = By.xpath("//select[@id='ddl_BO_MN_WCT_ADDEDT_Menus']");
     private By activeChkBx = By.xpath("//input[normalize-space(@id)='chk_BO_MN_WCT_ADDEDT_Active']");
     private By save = By.xpath("//button[@onclick='BO_MN_WCT_ADDEDT_Save();']");
 

@@ -47,6 +47,8 @@ Feature: Basic Edit Web Categories
     And the user enters "#(descriptionSpanish)" into the "descriptionSpanish" textbox at the "AddWebCategoriesPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "descriptionSpanish" element at the "AddWebCategoriesPage" page into the data dictionary with key "descriptionSpanish_value1"
+    #Comment: the user select menu dropdown
+    And the user selects value "Main Menu - Active" from the "selectMenuDrpDwn" dropdown at the "AddWebCategoriesPage" page
     #Comment: the user select the actiiveChkBx check box
     And the user clicks the "actiiveChkBx" element at the "AddWebCategoriesPage" page
     #Cooment: the user click save

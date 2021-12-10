@@ -12,11 +12,15 @@ public class AddPOSCategoriesPage extends BasePO {
     private By descriptionUS = By.id("txt_BO_MN_CAT_ADDEDT_Desc_en-us");
     private By nameSpanish = By.id("txt_BO_MN_CAT_ADDEDT_Name_sp-mx");
     private By descriptionSpanish = By.id("txt_BO_MN_CAT_ADDEDT_Desc_sp-mx");
-    private By selectMenuDrpDwn = By.id("ddl_BO_MN_CAT_ADDEDT_Menus");
+    private By selectMenuDrpDwn = By.xpath("//select[@id='ddl_BO_MN_CAT_ADDEDT_Menus']");
     private By selectMergeCatDrpDwn = By.xpath("//select[@id='ddl_BO_MN_CAT_ADDEDT_SharedCategory']");
     private By activeChkBx = By.xpath("//input[normalize-space(@id)='chk_BO_MN_CAT_ADDEDT_Active']");
     private By save = By.xpath("//button[@onclick='BO_MN_CAT_ADDEDT_Save();']");
     private By posCatTextPopUp = By.xpath("//div[@id='div_BO_MN_CAT_ADDEDT_DIALOG_modal_view']//span[text()='POS Category']");
+
+    public Element selectMenuDrpDwn() throws IOException, InterruptedException {
+        return $(selectMenuDrpDwn);
+    }
 
     public Element posCatTextPopUp() throws IOException, InterruptedException {
         return $(posCatTextPopUp);
@@ -26,13 +30,10 @@ public class AddPOSCategoriesPage extends BasePO {
         return $(save);
     }
 
-    public Element selectMenuDrpDwn() throws IOException, InterruptedException {
-        return $(selectMenuDrpDwn);
-    }
-
     public Element activeChkBx() throws IOException, InterruptedException {
         return $(activeChkBx);
     }
+
     public Element selectMergeCatDrpDwn() throws IOException, InterruptedException {
         return $(selectMergeCatDrpDwn);
     }

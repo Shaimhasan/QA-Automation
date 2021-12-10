@@ -12,7 +12,12 @@ public class AddSubCategoriesPage extends BasePO {
     private By descriptionUS = By.id("txt_BO_MN_SCT_ADDEDT_Desc_en-us");
     private By nameSpanish = By.id("txt_BO_MN_SCT_ADDEDT_Name_sp-mx");
     private By descriptionSpanish = By.id("txt_BO_MN_SCT_ADDEDT_Desc_sp-mx");
+    private By selectMenuDrpDwn = By.xpath("//select[@id='ddl_BO_MN_SCT_ADDEDT_Menus']");
     private By save = By.xpath("//button[@onclick='BO_MN_SCT_ADDEDT_Save();']");
+
+    public Element selectMenuDrpDwn() throws IOException, InterruptedException {
+        return $(selectMenuDrpDwn);
+    }
 
     public Element save() throws IOException, InterruptedException {
         return $(save);
