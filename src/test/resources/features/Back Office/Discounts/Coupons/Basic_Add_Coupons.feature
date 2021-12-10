@@ -31,6 +31,8 @@ Feature: Basic Add Coupons
     And the user clicks the "discount" element at the "DiscountsPage" page
     #Comment: the user click on Menu Items
     And the user clicks the "coupons" element at the "DiscountsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "CouponsPage" page
     #Comment: the user validate the visibility of popup
