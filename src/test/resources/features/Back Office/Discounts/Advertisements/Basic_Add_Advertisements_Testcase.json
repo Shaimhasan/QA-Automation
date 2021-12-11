@@ -1,0 +1,25 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "name": "Automation Testing US",
+      "ItemNumberXpath1": "//td[text()='",
+      "ItemNumberXpath2": "']",
+      "IdNumberXpath1": "//td[text()='",
+      "IdNumberXpath2": "']/preceding-sibling::td",
+      "IdNumberExpectedValue": ": Automation Testing US",
+      "IDNumberXpath3": "//td[text()='",
+      "IdNumberXpath4": ": Automation Testing US']",
+      "cost": "10",
+      "quantity": "100",
+      "expDate": "2025"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
