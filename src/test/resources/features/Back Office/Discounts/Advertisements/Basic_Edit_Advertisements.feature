@@ -101,15 +101,43 @@ Feature: Basic Edit Advertisements
     And the user validates the data dictionary value of "#(quantity_value2)" is "Equal To" data dictionary value of "#(quantity_value3)" "validate_descriptionSpanish_value" "HardStopOnFailure"
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditAdvertisementsPage" page
-#    #Comment: the user click on History Button
-#    And the user clicks the "history" element at the "CouponsPage" page
-#    #Comment: the user validate the visibility of popup
-#    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
-#    #Comment append value with dictionary
-#    And the user validates and append at leading any value ": " with data dictionary key "#(nameUS_value1)" and store with new dictionary key "nameUS_value1_Latest"
-#    #Comment append value with dictionary
-#    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Add']" with data dictionary key "#(nameUS_value1_Latest)" and store with new dictionary key "nameUS_value1_Latest_1"
-#    #Comment: the user validate the ID number in History
-#    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Add" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(nameUS_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
-#    #Comment: the user click on close button
-#    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
+    #Comment: the user click on History Button
+    And the user clicks the "history" element at the "AdvertisementsPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
+    #Comment append value with dictionary
+    And the user validates and append at leading any value ": " with data dictionary key "#(name_value2)" and store with new dictionary key "name_value2_Latest"
+    #Comment append value with dictionary
+    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Edit']//following-sibling::td)[5]" with data dictionary key "#(name_value2_Latest)" and store with new dictionary key "name_value2_Latest_1"
+    #Comment: the user click on Details Elements
+    And the user clicks the "table" element with dictionary key "#(Id_Number)" at the "HistoryPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(name_value2_Latest_1)"
+    #Comment: user validate the details model popup
+    And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Name" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "1" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(name_value1)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "1" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(name_value2)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "2" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Cost" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "2" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "2" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(cost_value1)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "2" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(cost_value2)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "3" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Quantity" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "3" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "3" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(quantity_value1)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "3" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(quantity_value2)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: the user click on close button
+    And the user clicks the "close" element at the "HistoryPage" page
+    #Comment: the user click on close button
+    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page

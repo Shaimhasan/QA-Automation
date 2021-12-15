@@ -90,16 +90,12 @@ Feature: Basic Clone Coupons
     And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
     #Comment: user validate history text
     And the user validates "Compare_Strings" that the "historyText" element is "Equal To" "History" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
-
-
     #Comment append value with dictionary
     And the user validates and append at leading any value ": " with data dictionary key "#(nameUS_value1)" and store with new dictionary key "nameUS_value1_Latest"
     #Comment append value with dictionary
     And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Clone']//following-sibling::td)[5]" with data dictionary key "#(nameUS_value1_Latest)" and store with new dictionary key "nameUS_value1_Latest_1"
     #Comment: the user click on Details Elements
     And the user clicks the "table" element with dictionary key "#(Id_Number)" at the "HistoryPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(nameUS_value1_Latest_1)"
-
-
     #Comment: user validate the details model popup
     And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
     #Comment: The user validate the changes on Hisotry Page

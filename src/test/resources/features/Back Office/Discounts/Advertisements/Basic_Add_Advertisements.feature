@@ -85,15 +85,15 @@ Feature: Basic Add Advertisements
     And the user validates the data dictionary value of "#(quantity_value1)" is "Equal To" data dictionary value of "#(quantity_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditAdvertisementsPage" page
-#    #Comment: the user click on History Button
-#    And the user clicks the "history" element at the "CouponsPage" page
-#    #Comment: the user validate the visibility of popup
-#    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
-#    #Comment append value with dictionary
-#    And the user validates and append at leading any value ": " with data dictionary key "#(nameUS_value1)" and store with new dictionary key "nameUS_value1_Latest"
-#    #Comment append value with dictionary
-#    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Add']" with data dictionary key "#(nameUS_value1_Latest)" and store with new dictionary key "nameUS_value1_Latest_1"
-#    #Comment: the user validate the ID number in History
-#    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Add" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(nameUS_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
-#    #Comment: the user click on close button
-#    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
+    #Comment: the user click on History Button
+    And the user clicks the "history" element at the "AdvertisementsPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
+    #Comment append value with dictionary
+    And the user validates and append at leading any value ": " with data dictionary key "#(name_value1)" and store with new dictionary key "name_value1_Latest"
+    #Comment append value with dictionary
+    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Add']" with data dictionary key "#(name_value1_Latest)" and store with new dictionary key "name_value1_Latest_1"
+    #Comment: the user validate the ID number in History
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Add" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(name_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
+    #Comment: the user click on close button
+    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page

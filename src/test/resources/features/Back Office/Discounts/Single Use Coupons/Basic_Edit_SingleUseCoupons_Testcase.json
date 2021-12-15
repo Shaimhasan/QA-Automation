@@ -12,7 +12,8 @@
       "IDNumberXpath3": "//td[text()='",
       "IdNumberXpath4": ": Automation Testing US']",
       "startDate": "2021",
-      "expDate": "2025"
+      "expDate": "2025",
+      "DetailsClickXpath1": "(//td[text()='"
     },
     "dataCriteria": {
     },

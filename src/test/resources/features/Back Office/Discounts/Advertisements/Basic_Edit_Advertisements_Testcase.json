@@ -13,7 +13,8 @@
       "IdNumberXpath4": ": Automation Testing US']",
       "cost": "10",
       "quantity": "100",
-      "expDate": "2025"
+      "expDate": "2025",
+      "DetailsClickXpath1": "(//td[text()='"
     },
     "dataCriteria": {
     },

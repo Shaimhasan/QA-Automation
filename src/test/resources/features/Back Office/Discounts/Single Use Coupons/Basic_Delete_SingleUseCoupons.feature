@@ -59,18 +59,8 @@ Feature: Basic Delete SingleUseCoupons
     And the user clicks the "save" element at the "AddSingleUseCouponsPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-#    #Comment: the user click on History Button
-#    And the user clicks the "history" element at the "CouponsPage" page
-#    #Comment: the user validate the visibility of popup
-#    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
-#    #Comment append value with dictionary
-#    And the user validates and append at leading any value ": " with data dictionary key "#(nameUS_value1)" and store with new dictionary key "nameUS_value1_Latest"
-#    #Comment append value with dictionary
-#    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Add']" with data dictionary key "#(nameUS_value1_Latest)" and store with new dictionary key "nameUS_value1_Latest_1"
-#    #Comment: the user validate the ID number in History
-#    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Add" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(nameUS_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
-#    #Comment: the user click on close button
-#    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
+    #Comment: the user store the id
+    And store the displayed text of the "table" element at the "SingleUseCouponsPage" page and get the dictionary key value "#(name_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Delete Button
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(name_value1)" at the "SingleUseCouponsPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
@@ -78,3 +68,17 @@ Feature: Basic Delete SingleUseCoupons
     And the user clicks the "delete" element at the "SingleUseCouponsPage" page
     #Comment: the user click on Delete Button on Warning popup
     And the user clicks the "deleteOnWarning" element at the "SingleUseCouponsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: the user click on History Button
+    And the user clicks the "history" element at the "CouponsPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
+    #Comment append value with dictionary
+    And the user validates and append at leading any value ": " with data dictionary key "#(name_value1)" and store with new dictionary key "name_value1_Latest"
+    #Comment append value with dictionary
+    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Delete']" with data dictionary key "#(name_value1_Latest)" and store with new dictionary key "name_value1_Latest_1"
+    #Comment: the user validate the ID number in History
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Delete" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(name_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
+    #Comment: the user click on close button
+    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
