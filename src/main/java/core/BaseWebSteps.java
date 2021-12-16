@@ -367,6 +367,20 @@ public class BaseWebSteps extends BaseStepsEngine {
         return randomNumber;
     }
 
+    protected int generateRandomNumberBasicOnDigitAndEnter(Element textBox,String digit) {
+        int randomNumber=generateDynamicNumberBasedOnDigit(digit);
+        if (textBox.getValue() != null) {
+            if (textBox.getValue().isEmpty()) {
+                textBox.sendKeys(String.valueOf(randomNumber));
+            } else {
+                textBox.sendKeysChord(String.valueOf(randomNumber));
+            }
+        } else {
+            textBox.sendKeysChord(String.valueOf(randomNumber));
+        }
+        return randomNumber;
+    }
+
     protected int generateDecimalRandomNumberAndEnter(Element textBox) {
         int randomNumber=generateDynamicNumber();
         String decimalNum=randomNumber + ".01";

@@ -527,6 +527,11 @@ public class BaseStepsEngine implements En {
         return randomGenerator.nextInt(10000);
     }
 
+    public int generateDynamicNumberBasedOnDigit(String digitValue) {
+        Random randomGenerator = new Random();
+        return randomGenerator.nextInt(Integer.parseInt(digitValue));
+    }
+
     public String generateRandomAlphabeticString() {
         return RandomStringUtils.randomAlphabetic(3);
     }

@@ -382,10 +382,24 @@ public class AutoEngSetSelect extends BaseWebSteps {
         TestContext.getInstance().testdataPut(dictionaryKey, randomNumber);
         logStepMessage(String.format(STORED_VALUE, randomNumber, dictionaryKey));
     }
+
+    @When("^the user enters random number based on Digit \"([^\"]*)\" into the \"([^\"]*)\" textbox at the \"([^\"]*)\" page and store at dictionary key \"([^\"]*)\"$")
+    public void theUserSavedGeneratedTheRandomNumberBasedOnDigitDictionaryKeyAtPage(String digit,
+                                                                                    String objectName,
+                                                                                    String pageName,
+                                                                                    String dictionaryKey) {
+        digit = parseValue(digit);
+        dictionaryKey = parseValue(dictionaryKey);
+        Element textBox = getObject(objectName, pageName);
+        int randomNumber = generateRandomNumberBasicOnDigitAndEnter(textBox, digit);
+        TestContext.getInstance().testdataPut(dictionaryKey, randomNumber);
+        logStepMessage(String.format(STORED_VALUE, randomNumber, dictionaryKey));
+    }
+
     @When("^the user enters random number with decimal into the \"([^\"]*)\" textbox at the \"([^\"]*)\" page and store at dictionary key \"([^\"]*)\"$")
     public void theUserSavedGeneratedTheRandomNumberWithDecimalDictionaryKeyAtPage(String objectName,
-                                                                        String pageName,
-                                                                        String dictionaryKey) {
+                                                                                   String pageName,
+                                                                                   String dictionaryKey) {
         dictionaryKey = parseValue(dictionaryKey);
         Element textBox = getObject(objectName, pageName);
         int randomNumber = generateDecimalRandomNumberAndEnter(textBox);
