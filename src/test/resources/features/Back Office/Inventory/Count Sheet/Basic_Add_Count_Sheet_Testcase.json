@@ -1,0 +1,27 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "invoiceNum": "14",
+      "ItemNumberXpath1": "//td[text()='",
+      "ItemNumberXpath2": "']",
+      "IdNumberXpath1": "//td[text()='",
+      "IdNumberXpath2": "']/preceding-sibling::td",
+      "IdNumberExpectedValue": ": Automation Testing US",
+      "IDNumberXpath3": "//td[text()='",
+      "IdNumberXpath4": ": Automation Testing US']",
+      "tax": "15",
+      "freight": "10",
+      "others": "45",
+      "date": "2025",
+      "Weekly": "Weekly"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
