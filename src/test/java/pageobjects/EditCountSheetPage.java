@@ -14,7 +14,7 @@ public class EditCountSheetPage extends BasePO {
     private By items = By.xpath("//input[normalize-space(@id)='chk_BO_IN_CNT_ADDEDT_CountSheet_342']");
     private By countSheetTxtPopup = By.xpath("//div[@id='div_BO_IN_CNT_ADDEDT_DIALOG_modal_view']//span[text()='Count Sheet']");
     private By save = By.xpath("//button[@onclick='BO_IN_CNT_ADDEDT_Save();']");
-    private By cancel = By.xpath("//button[@onclick='BO_IN_CNT_ADDEDT_Close();']");
+    private By cancel = By.xpath("//div[@id='div_BO_IN_CNT_ADDEDT_DIALOG']//button[text()='Save']");
 
     public Element cancel() throws IOException, InterruptedException {
         return $(cancel);

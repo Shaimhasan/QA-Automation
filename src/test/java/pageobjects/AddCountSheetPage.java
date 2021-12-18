@@ -13,7 +13,7 @@ public class AddCountSheetPage extends BasePO {
     private By allItems = By.xpath("//input[normalize-space(@id)='chk_BO_IN_CNT_ADDEDT_Items_Active']");
     private By items = By.xpath("//input[normalize-space(@id)='chk_BO_IN_CNT_ADDEDT_CountSheet_342']");
     private By countSheetTxtPopup = By.xpath("//div[@id='div_BO_IN_CNT_ADDEDT_DIALOG_modal_view']//span[text()='Count Sheet']");
-    private By save = By.xpath("//button[@onclick='BO_IN_CNT_ADDEDT_Save();']");
+    private By save = By.xpath("//div[@id='div_BO_IN_CNT_ADDEDT_DIALOG']//button[text()='Save']");
 
 
     public Element items() throws IOException, InterruptedException {
