@@ -1,0 +1,28 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "ItemNumberXpath1": "//td[text()='",
+      "ItemNumberXpath2": "']",
+      "IdNumberXpath1": "//td[text()='",
+      "IdNumberXpath2": "']/preceding-sibling::td",
+      "IdNumberExpectedValue": ": Automation Testing US",
+      "IDNumberXpath3": "//td[text()='",
+      "IdNumberXpath4": ": Automation Testing US']",
+      "receivingUnit": "15",
+      "receivingUnitNew": "78",
+      "inventoryUnit": "10",
+      "usageUnit": "45",
+      "date": "2025",
+      "Weekly": "Weekly",
+      "DetailsClickXpath1": "(//td[text()='"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
