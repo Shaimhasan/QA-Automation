@@ -53,14 +53,12 @@ Feature: Basic Deactivate Menu Items
     And the user enters "#(webDescriptionSpanish)" into the "webDescriptionSpanish" textbox at the "AddMenuItemsPage" page
     #Cooment: the user enters the random Number and stored at data dictionary
     And the user enters random number into the "itemNumber" textbox at the "AddMenuItemsPage" page and store at dictionary key "item_Number_value1"
-
     #Comment: the user select the dine in check box
     And the user clicks the "dineInChkBx" element at the "AddMenuItemsPage" page
     #Comment: the user select the Take out check box
     And the user clicks the "takeOutChkBx" element at the "AddMenuItemsPage" page
     #Comment: the user select the delivery check box
     And the user clicks the "deliveryChkBx" element at the "AddMenuItemsPage" page
-
     #Cooment: the user click on small size dine in
     And the user clicks the "dineInSizeChkBx" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size take out
@@ -70,7 +68,6 @@ Feature: Basic Deactivate Menu Items
     #Cooment: the user click on small size default
     And the user clicks the "defualt" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size default
-
     #Cooment: the user click on small size dine in
     And the user clicks the "dineInMediumSizeChkBx" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size take out
@@ -81,36 +78,50 @@ Feature: Basic Deactivate Menu Items
     And the user clicks the "defualtMedium" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size default
     And the user clicks the "save" element at the "AddMenuItemsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
     #Comment: the user store id
     And store the displayed text of the "table" element at the "MenuItemsPage" page and get the dictionary key value "#(item_Number_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on activate Button
     And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
-    #Comment: the user click small Active CheckBox
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
+    #Comment: the user click small Active CheckBox smallActiveChkBx
     And the user clicks the "smallActiveChkBx" element at the "ActivateDeActicateMenuItemsPage" page
     #Comment: the user click save Button
     And the user clicks the "save" element at the "ActivateDeActicateMenuItemsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
     #Comment: the user click on activate Button
     And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
-    And the user waits "2000" seconds
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
     #Comment: user validate the check box is selected
     And the user validates the item in the "smallActiveChkBx" checkbox is checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Edit Button
     And the user clicks the "cancel" element at the "ActivateDeActicateMenuItemsPage" page
     #Comment: the user click on deactivate Button
     And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
     #Comment: the user click small Active CheckBox
     And the user clicks the "smallActiveChkBx" element at the "ActivateDeActicateMenuItemsPage" page
     #Comment: the user click save Button
     And the user clicks the "save" element at the "ActivateDeActicateMenuItemsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
     #Comment: the user click on activate Button
     And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
-    And the user waits "2000" seconds
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
+    #Comment: the user click small Active CheckBox
+    And the user clicks the "smallActiveChkBx" element at the "ActivateDeActicateMenuItemsPage" page
     #Comment: user validate the check box is selected
     And the user validates the item in the "smallActiveChkBx" checkbox is Not checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Edit Button

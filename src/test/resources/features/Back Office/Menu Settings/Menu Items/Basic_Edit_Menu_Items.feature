@@ -54,7 +54,6 @@ Feature: Basic Edit Menu Items
     And the user enters "#(webDescriptionSpanish)" into the "webDescriptionSpanish" textbox at the "AddMenuItemsPage" page
     #Cooment: the user enters the random Number and stored at data dictionary
     And the user enters random number into the "itemNumber" textbox at the "AddMenuItemsPage" page and store at dictionary key "item_Number_value1"
-
     #Comment: the user select the dine in check box
     And the user clicks the "dineInChkBx" element at the "AddMenuItemsPage" page
     #Comment: the user select the Take out check box
@@ -109,7 +108,6 @@ Feature: Basic Edit Menu Items
     And the user validates the item in the "dineInCheckBoxIsSelectedSize" checkbox is Not checked at the "EditMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditMenuItemsPage" page
-
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup
@@ -128,7 +126,6 @@ Feature: Basic Edit Menu Items
     And the user validates the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "True" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
     And the user validates the cell at row "1" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "False" "validate_Item_Changed_Details" "HardStopOnFailure"
-
     #Comment: The user validate the chages on Hisotry Page
     And the user validates the cell at row "2" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Name: English - United States - Text" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page

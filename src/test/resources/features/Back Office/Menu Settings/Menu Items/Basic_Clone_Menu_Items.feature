@@ -70,7 +70,6 @@ Feature: Basic Clone Menu Items
     And store the displayed text of the "webDescriptionSpanish" element at the "AddMenuItemsPage" page into the data dictionary with key "webDescriptionSpanish_value1"
     #Cooment: the user enters the random Number and stored at data dictionary
     And the user enters random number into the "itemNumber" textbox at the "AddMenuItemsPage" page and store at dictionary key "item_Number_value1"
-
     #Comment: the user select the dine in check box
     And the user clicks the "dineInChkBx" element at the "AddMenuItemsPage" page
     #Comment: the user select the Take out check box
@@ -87,6 +86,8 @@ Feature: Basic Clone Menu Items
     And the user clicks the "defualt" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size default
     And the user clicks the "save" element at the "AddMenuItemsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
     #Comment: the user store id
@@ -125,7 +126,6 @@ Feature: Basic Clone Menu Items
     And store the displayed text of the "table" element at the "MenuItemsPage" page and get the dictionary key value "#(Id_Number_Clone)" based on xpath1 "#(ItemNumberXpath3)" and xpath2 "#(ItemNumberXpath4)" store at dictionary with key "Item_Number"
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(Id_Number_Clone)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
-
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup
@@ -138,7 +138,6 @@ Feature: Basic Clone Menu Items
     And store the displayed text of the "descriptionUS" element at the "EditMenuItemsPage" page into the data dictionary with key "descriptionUS_value2"
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "webDescriptionUS" element at the "EditMenuItemsPage" page into the data dictionary with key "webDescriptionUS_value2"
-
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameSpanish" element at the "EditMenuItemsPage" page into the data dictionary with key "nameSpanish_value2"
     #Comment: the user store the text on data dictionary
@@ -149,7 +148,6 @@ Feature: Basic Clone Menu Items
     And store the displayed text of the "webDescriptionSpanish" element at the "EditMenuItemsPage" page into the data dictionary with key "webDescriptionSpanish_value2"
     #Comment: the user store Item Number
     And store the displayed text of the "itemNumber" element at the "EditMenuItemsPage" page into the data dictionary with key "Item_Number_value2"
-
     #Comment: user validate Name US Value
     And the user validates the data dictionary value of "#(nameUS_value1)" is "Equal To" data dictionary value of "#(nameUS_value2)" "validate_nameUS_value" "HardStopOnFailure"
     #Comment: user validate webNameUS Value
@@ -158,7 +156,6 @@ Feature: Basic Clone Menu Items
     And the user validates the data dictionary value of "#(descriptionUS_value1)" is "Equal To" data dictionary value of "#(descriptionUS_value2)" "validate_descriptionUS_value" "HardStopOnFailure"
     #Comment: user validate webDescriptionUS Value
     And the user validates the data dictionary value of "#(webDescriptionUS_value1)" is "Equal To" data dictionary value of "#(webDescriptionUS_value2)" "validate_descriptionUS_value" "HardStopOnFailure"
-
     #Comment: user validate Name Spanish Value
     And the user validates the data dictionary value of "#(nameSpanish_value1)" is "Equal To" data dictionary value of "#(nameSpanish_value2)" "validate_Spanish_value" "HardStopOnFailure"
     #Comment: user validate webNameSpanish Value
@@ -167,17 +164,14 @@ Feature: Basic Clone Menu Items
     And the user validates the data dictionary value of "#(descriptionSpanish_value1)" is "Equal To" data dictionary value of "#(descriptionSpanish_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
     #Comment: user validate webDescriptionSpanish Value
     And the user validates the data dictionary value of "#(webDescriptionSpanish_value1)" is "Equal To" data dictionary value of "#(webDescriptionSpanish_value2)" "validate_WebDescriptionSpanish_value" "HardStopOnFailure"
-
     #Comment: user validate Item Number
     And the user validates the data dictionary value of "#(Item_Number)" is "Equal To" data dictionary value of "#(Item_Number_value2)" "validate_Item_Number_value" "HardStopOnFailure"
-
     #Comment: user validate the check box is selected
     And the user validates the "Dine In" item in the "dineInCheckBoxIsSelected" checkbox is checked at the "EditMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: user validate the Take Out is selected
     And the user validates the "Take Out" item in the "TakeOutCheckBoxIsSelected" checkbox is checked at the "EditMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: user validate the delivery is selected
     And the user validates the "Delivery" item in the "deliveryCheckBoxIsSelected" checkbox is checked at the "EditMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
-
     #Comment: user validate the check box is selected
     And the user validates the item in the "dineInCheckBoxIsSelectedSize" checkbox is checked at the "EditMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: user validate the Take Out is selected
