@@ -606,7 +606,7 @@ public class Element {
     public Element clickBasedOnOnlyXpath(String xpath1Value1, String xpathValue2, int... retries) {
         try {
             try {
-                String xpathValue = xpath1Value1  + xpathValue2;
+                String xpathValue = xpath1Value1 + xpathValue2;
                 System.out.println("xpathValue print  >" + xpathValue);
                 Element element = this.findElement(By.xpath(xpathValue));
                 element.isDisplayed();
@@ -1106,6 +1106,7 @@ public class Element {
         System.out.println(xpathValue);
         return this.findElement(By.xpath(xpathValue));
     }
+
     public Element getTextBasedOnXpath1AndXpath2(String xpath1, String xpath2) {
         String xpathValue = xpath1 + xpath2;
         System.out.println(xpathValue);
@@ -1189,6 +1190,25 @@ public class Element {
                 Element dataCellElement = getDataCellElement(i, colIndex);
                 listOfRows.add(dataCellElement.getText());
             }
+        }
+        return listOfRows;
+    }
+
+    public List<String> getListORows(String colName) {
+        List<Element> rows = getAllRows();
+        boolean booleanValue = rows.isEmpty();
+        List<String> listOfRows = null;
+        if(booleanValue){
+             listOfRows = new ArrayList<>();
+            int colIndex = getMatchingColumnNum(colName);
+            if (colIndex != -1) {
+                for (int i = 1; i <= rows.size() - 1; i++) {
+                    Element dataCellElement = getDataCellElement(i, colIndex);
+                    listOfRows.add(dataCellElement.getText());
+                }
+            }
+        }else {
+            System.out.println("Rows is not present");
         }
         return listOfRows;
     }

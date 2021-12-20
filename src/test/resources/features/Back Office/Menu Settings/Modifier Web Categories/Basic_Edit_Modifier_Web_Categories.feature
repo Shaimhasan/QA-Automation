@@ -68,7 +68,7 @@ Feature: Basic Edit Modifier Web Categories
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "EditModifierWebCategoriesPage" page into the data dictionary with key "nameUS_value1_Updated_1"
     #Cooment: the user click save
-    And the user clicks the "save" element at the "EditModifierPOSCategoriesPage" page
+    And the user clicks the "save" element at the "EditModifierWebCategoriesPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user click on the ID number row

@@ -115,7 +115,7 @@ Feature: Basic DeActivate Coupons
     And the user validates the item in the "activeChkBx" checkbox is Not checked at the "ActDeactCouponsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Edit Button
     And the user clicks the "cancel" element at the "ActDeactCouponsPage" page
-#Comment: the user click on History Button
+    #Comment: the user click on History Button
     And the user clicks the "history" element at the "CouponsPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page

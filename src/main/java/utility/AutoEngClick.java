@@ -4,7 +4,9 @@ import core.BaseWebSteps;
 import core.Element;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NotFoundException;
+import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
@@ -51,6 +53,35 @@ public class AutoEngClick extends BaseWebSteps {
         xpath1 = parseValue(xpath1);
         xpath2 = parseValue(xpath2);
         getObject(objectName, pageName).clickBasedOnXpath(dictionaryKey, xpath1, xpath2);
+    }
+
+    @When("^the user custom clicks If element present the \"([^\"]*)\" element with Column Name \"([^\"]*)\" and value \"([^\"]*)\" at the \"([^\"]*)\" page with element 1 \"([^\"]*)\" and element 2 \"([^\"]*)\"$")
+    public void theUserClicksIfElementPresentInTableAtThePage(String table,
+                                                              String colName,
+                                                              String value,
+                                                              String pageName,
+                                                              String objectName1,
+                                                              String objectName2) {
+        colName = parseValue(colName);
+        value = parseValue(value);
+        List<String> allRowsWithValue = getObject(table, pageName).getRowValuesForGivenColumn(colName);
+        if(!allRowsWithValue.isEmpty()){
+            List<WebElement> element=getDriver().findElements(By.xpath("//tr[contains(@id,'"+value+"')]"));
+            for(WebElement el:element){
+                el.click();
+                getObject(objectName1, pageName).click();
+                getObject(objectName2, pageName).click();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        else {
+            System.out.println("Row is empty");
+        }
+
     }
 
     @When("^the user clicks the \"([^\"]*)\" element at the \"([^\"]*)\" page with xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\"$")

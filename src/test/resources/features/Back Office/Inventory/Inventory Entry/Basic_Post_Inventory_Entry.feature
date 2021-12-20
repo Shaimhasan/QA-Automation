@@ -1,8 +1,8 @@
-Feature: Basic Add Inventory Entry
-  This script is to validate Add Inventory Entry
+Feature: Basic Post Inventory Entry
+  This script is to validate Post Inventory Entry
 
-  @Basic_Add_Inventory_Entry @RegressionSuite @BO_Inventory_Entry @Back_Office
-  Scenario: Basic_Add_Inventory_Entry_Testcase
+  @Basic_Post_Inventory_Entry @RegressionSuite @BO_Inventory_Entry @Back_Office
+  Scenario: Basic_Post_Inventory_Entry_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -73,28 +73,16 @@ Feature: Basic Add Inventory Entry
     And the user clicks the "table" element with dictionary key "#(Weekly)" at the "InventoryEntryPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id
     And store the displayed text of the "table" element at the "InventoryEntryPage" page and get the dictionary key value "#(Weekly)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
-    #Comment: the user click on Edit Button
-    And the user clicks the "editBtn" element at the "InventoryEntryPage" page
+    #Comment: the user click on Delete Button
+    And the user clicks the "post" element at the "InventoryEntryPage" page
     #Comment: the user validate the visibility of popup
-    And the user waits for the "inventoryEntryTxtPopup" element to be "VISIBLE" on the "EditInventoryEntryPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "date" element at the "EditInventoryEntryPage" page into the data dictionary with key "date_value2"
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "receivingUnit" element at the "EditInventoryEntryPage" page into the data dictionary with key "receivingUnit_value2"
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "inventoryUnit" element at the "EditInventoryEntryPage" page into the data dictionary with key "inventoryUnit_value2"
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "usageUnit" element at the "EditInventoryEntryPage" page into the data dictionary with key "usageUnit_value2"
-    #Comment: user validate Name US Value
-    And the user validates the data dictionary value of "#(date_value1)" is "Equal To" data dictionary value of "#(date_value2)" "validate_invoiceNum_value" "HardStopOnFailure"
-    #Comment: user validate descriptionUS Value
-    And the user validates the data dictionary value of "#(receivingUnit_value3)" is "Equal To" data dictionary value of "#(receivingUnit_value2)" "validate_date_value" "HardStopOnFailure"
-    #Comment: user validate Name Spanish Value
-    And the user validates the data dictionary value of "#(inventoryUnit_value3)" is "Equal To" data dictionary value of "#(inventoryUnit_value2)" "validate_tax_value" "HardStopOnFailure"
-    #Comment: user validate descriptionSpanish Value
-    And the user validates the data dictionary value of "#(usageUnit_value3)" is "Equal To" data dictionary value of "#(usageUnit_value2)" "validate_freight_value" "HardStopOnFailure"
-    #Comment: the user click on Cancel Button
-    And the user clicks the "cancelBtn" element at the "EditInventoryEntryPage" page
+    And the user waits for the "warningTxt" element to be "VISIBLE" on the "PostUnPostInventoryEntryPage" page
+    #Comment: the user click on Delete Button on Warning popup
+    And the user clicks the "post" element at the "PostUnPostInventoryEntryPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: the user validate post
+    And the user validates the "validatePost" element is present at the "PostUnPostInventoryEntryPage" page "validate_Post_Value" "HardStopOnFailure"
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "InventoryEntryPage" page
     #Comment: the user validate the visibility of popup
@@ -102,15 +90,19 @@ Feature: Basic Add Inventory Entry
     #Comment append value with dictionary
     And the user validates and append at leading any value ": " with data dictionary key "#(Id_Number)" and store with new dictionary key "Id_Number_Latest"
     #Comment append value with dictionary
-    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Add']" with data dictionary key "#(Id_Number_Latest)" and store with new dictionary key "Id_Number_Latest_1"
+    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Post']" with data dictionary key "#(Id_Number_Latest)" and store with new dictionary key "Id_Number_Latest_1"
     #Comment: the user validate the ID number in History
-    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Add" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(Id_Number_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Post" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(Id_Number_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on close button
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(Weekly)" at the "InventoryEntryPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user click on Delete Button
-    And the user clicks the "delete" element at the "InventoryEntryPage" page
+    And the user clicks the "unPost" element at the "InventoryEntryPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "warningTxt" element to be "VISIBLE" on the "PostUnPostInventoryEntryPage" page
     #Comment: the user click on Delete Button on Warning popup
-    And the user clicks the "deleteOnWarning" element at the "InventoryEntryPage" page
+    And the user clicks the "unPost" element at the "PostUnPostInventoryEntryPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
 

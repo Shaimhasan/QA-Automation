@@ -35,6 +35,8 @@ Feature: Basic Edit Count Sheet
     And the user clicks the "countSheet" element at the "InventoryPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
+    #Comment : the user clicks and check If element present
+    And the user custom clicks If element present the "table" element with Column Name " Frequency" and value "tblRowXIN_CNT" at the "CountSheetPage" page with element 1 "delete" and element 2 "deleteOnWarning"
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "CountSheetPage" page
     #Comment: the user validate the visibility of popup
@@ -56,7 +58,7 @@ Feature: Basic Edit Count Sheet
     #Comment: the user validate check box selected
     And the user validates the item in the "items" checkbox is checked at the "AddCountSheetPage" page "validate_checkbox_Selected" "HardStopOnFailure"
     #Comment: the user click save
-    And the user clicks the "save" element at the "AddRecievingPage" page
+    And the user clicks the "save" element at the "AddCountSheetPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user click on the ID number row
@@ -76,7 +78,7 @@ Feature: Basic Edit Count Sheet
     #Comment: the user validate check box selected
     And the user validates the item in the "items" checkbox is checked at the "EditCountSheetPage" page "validate_checkbox_Selected" "HardStopOnFailure"
     #Comment: the user click save
-    And the user clicks the "save" element at the "AddRecievingPage" page
+    And the user clicks the "save" element at the "EditCountSheetPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user click on the ID number row
@@ -119,8 +121,4 @@ Feature: Basic Edit Count Sheet
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(Yearly)" at the "CountSheetPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
-    #Comment: the user click on Delete Button
-    And the user clicks the "delete" element at the "CountSheetPage" page
-    #Comment: the user click on Delete Button on Warning popup
-    And the user clicks the "deleteOnWarning" element at the "CountSheetPage" page
 
