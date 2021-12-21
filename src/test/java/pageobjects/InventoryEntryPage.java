@@ -15,7 +15,12 @@ public class InventoryEntryPage extends BasePO {
     private By delete = By.id("btn_BO_IN_ENT_Del");
     private By post = By.id("btn_BO_IN_ENT_Post");
     private By unPost = By.id("btn_BO_IN_ENT_UnPost");
+    private By copyTo = By.id("btn_BO_IN_ENT_CopyTo");
     private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+
+    public Element copyTo() throws IOException, InterruptedException {
+        return $(copyTo);
+    }
 
     public Element unPost() throws IOException, InterruptedException {
         return $(unPost);

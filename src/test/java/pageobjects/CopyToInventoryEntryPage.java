@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class CopyToInventoryEntryPage extends BasePO {
 
-    private By newWeekly = By.xpath("//div[@id='div_BO_IN_ENT_CopyTo_Frequencies']//div[text()='New Weekly']");
+    private By newYearly = By.xpath("//div[@id='div_BO_IN_ENT_CopyTo_Frequencies']//div[text()='New Yearly']");
     private By date = By.id("txt_INPUT");
     private By save = By.xpath("//div[@data-title='Copy To']//button[text()='Save']");
     private By copyToTxt = By.xpath("//div[@class='modal-view' and starts-with(@id,'div_Input_Box')]//span[text()='Copy To']");
@@ -21,8 +21,8 @@ public class CopyToInventoryEntryPage extends BasePO {
         return $(copyToTxt);
     }
 
-    public Element newWeekly() throws IOException, InterruptedException {
-        return $(newWeekly);
+    public Element newYearly() throws IOException, InterruptedException {
+        return $(newYearly);
     }
 
     public Element date() throws IOException, InterruptedException {

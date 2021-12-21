@@ -16,6 +16,7 @@
       "usageUnit": "45",
       "date": "2025",
       "Weekly": "Weekly",
+      "Yearly": "Yearly",
       "DetailsClickXpath1": "(//td[text()='"
     },
     "dataCriteria": {
