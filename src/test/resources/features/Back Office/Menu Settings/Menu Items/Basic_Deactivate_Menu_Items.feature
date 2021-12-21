@@ -67,7 +67,6 @@ Feature: Basic Deactivate Menu Items
     And the user clicks the "deliverySizeChkBx" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size default
     And the user clicks the "defualt" element at the "AddMenuItemsPage" page
-    #Cooment: the user click on small size default
     #Cooment: the user click on small size dine in
     And the user clicks the "dineInMediumSizeChkBx" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size take out
@@ -96,14 +95,6 @@ Feature: Basic Deactivate Menu Items
     And the user waits for the page to load
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
-    #Comment: the user click on activate Button
-    And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
-    #Comment: user validate the check box is selected
-    And the user validates the item in the "smallActiveChkBx" checkbox is checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
-    #Comment: the user click on Edit Button
-    And the user clicks the "cancel" element at the "ActivateDeActicateMenuItemsPage" page
     #Comment: the user click on deactivate Button
     And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup
