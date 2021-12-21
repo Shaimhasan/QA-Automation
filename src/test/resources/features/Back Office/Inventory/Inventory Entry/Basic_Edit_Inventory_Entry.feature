@@ -67,6 +67,8 @@ Feature: Basic Edit Inventory Entry
     And the user clicks the "inventory" element at the "InventoryPage" page
     #Comment: the user click on Menu Items
     And the user clicks the "invetoryEntry" element at the "InventoryPage" page
+    #Comment : the user clicks and check If element present
+    And the user custom clicks If element present the "table" element with Column Name " Frequency" and value "tblRowXIN_ENT" at the "InventoryEntryPage" page with element 1 "delete" and element 2 "deleteOnWarning"
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user click on Add
