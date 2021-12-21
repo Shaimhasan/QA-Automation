@@ -16,7 +16,8 @@
       "IdNumberXpath4": ": Automation Testing US']",
       "couponNumber": "Auto",
       "discount": "10",
-      "backGroundColor": "#4f81bd"
+      "backGroundColor": "#4f81bd",
+      "DetailsClickXpath1": "(//td[text()='"
     },
     "dataCriteria": {
     },
