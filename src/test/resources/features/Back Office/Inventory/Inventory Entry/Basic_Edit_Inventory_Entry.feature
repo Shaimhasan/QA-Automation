@@ -31,6 +31,40 @@ Feature: Basic Edit Inventory Entry
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click Discounts
     And the user clicks the "inventory" element at the "InventoryPage" page
+
+    #Comment: the user click on Menu Items
+    And the user clicks the "countSheet" element at the "InventoryPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment : the user clicks and check If element present
+    And the user custom clicks If element present the "table" element with Column Name " Frequency" and value "tblRowXIN_CNT" at the "CountSheetPage" page with element 1 "delete" and element 2 "deleteOnWarning"
+    #Comment: the user click on Add
+    And the user clicks the "addBtn" element at the "CountSheetPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "countSheetTxtPopup" element to be "VISIBLE" on the "AddCountSheetPage" page
+    #Comment: the user select the dropdown values
+    And the user selects value "Weekly" from the "frequency" dropdown at the "AddCountSheetPage" page
+    #Comment: the user validate the drop down value selected
+    And the user selects value from the "frequency" dropdown equal to given value "Weekly" at the "AddCountSheetPage" page
+    #Comment: the user select the dropdown values
+    And the user selects value "Freezer" from the "location" dropdown at the "AddCountSheetPage" page
+    #Comment: the user validate the drop down value selected
+    And the user selects value from the "location" dropdown equal to given value "Freezer" at the "AddCountSheetPage" page
+    #Comment: the user click on checkbox
+    And the user clicks the "allItems" element at the "AddCountSheetPage" page
+    #Comment: the user validate check box selected
+    And the user validates the item in the "allItems" checkbox is checked at the "AddCountSheetPage" page "validate_checkbox_Selected" "HardStopOnFailure"
+    #Comment: the user click on checkbox
+    And the user clicks the "items" element at the "AddCountSheetPage" page
+    #Comment: the user validate check box selected
+    And the user validates the item in the "items" checkbox is checked at the "AddCountSheetPage" page "validate_checkbox_Selected" "HardStopOnFailure"
+    #Comment: the user click save
+    And the user clicks the "save" element at the "AddCountSheetPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+
+    #Comment: the user click Discounts
+    And the user clicks the "inventory" element at the "InventoryPage" page
     #Comment: the user click on Menu Items
     And the user clicks the "invetoryEntry" element at the "InventoryPage" page
     #Comment: The user wait until page is loading

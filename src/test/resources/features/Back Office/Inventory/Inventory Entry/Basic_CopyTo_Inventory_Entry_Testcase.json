@@ -5,7 +5,7 @@
     "staticData": {
       "ItemNumberXpath1": "//td[text()='",
       "ItemNumberXpath2": "']",
-      "IdNumberXpath1": "//td[text()='",
+      "IdNumberXpath1": "//tr[contains(@id,'tblRowXIN_ENT')]//td[text()='",
       "IdNumberXpath2": "']/preceding-sibling::td",
       "IdNumberExpectedValue": ": Automation Testing US",
       "IDNumberXpath3": "//td[text()='",

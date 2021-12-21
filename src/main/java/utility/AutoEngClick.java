@@ -72,7 +72,7 @@ public class AutoEngClick extends BaseWebSteps {
                 getObject(objectName1, pageName).click();
                 getObject(objectName2, pageName).click();
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
