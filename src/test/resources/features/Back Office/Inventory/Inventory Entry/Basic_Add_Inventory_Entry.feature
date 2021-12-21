@@ -1,6 +1,8 @@
 Feature: Basic Add Inventory Entry
   This script is to validate Add Inventory Entry
 
+  @Background: 
+
   @Basic_Add_Inventory_Entry @RegressionSuite @BO_Inventory_Entry @Back_Office
   Scenario: Basic_Add_Inventory_Entry_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
@@ -41,6 +43,8 @@ Feature: Basic Add Inventory Entry
     And the user clicks the "addBtn" element at the "InventoryEntryPage" page
     #Comment: the user click on list
     And the user clicks the "weekly" element at the "AddInventoryEntryPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user validate the visibility of popup
     And the user waits for the "inventoryEntryTxtPopup" element to be "VISIBLE" on the "AddInventoryEntryPage" page
     #Comment: the user enter text

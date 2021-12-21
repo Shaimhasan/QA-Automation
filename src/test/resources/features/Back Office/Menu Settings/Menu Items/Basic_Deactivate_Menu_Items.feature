@@ -120,8 +120,6 @@ Feature: Basic Deactivate Menu Items
     And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
-    #Comment: the user click small Active CheckBox
-    And the user clicks the "smallActiveChkBx" element at the "ActivateDeActicateMenuItemsPage" page
     #Comment: user validate the check box is selected
     And the user validates the item in the "smallActiveChkBx" checkbox is Not checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Edit Button
