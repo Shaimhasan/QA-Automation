@@ -1,8 +1,8 @@
-Feature: Basic Delete Receiving Items
-  This script is to validate Delete Receiving Items
+Feature: Basic Delete Inventory Items
+  This script is to validate Delete Inventory Items
 
-  @Basic_Delete_Receiving_Items @RegressionSuite @BO_Receiving_Items @Back_Office
-  Scenario: Basic_Delete_Receiving_Items_Testcase
+  @Basic_Delete_Inventory_Items @RegressionSuite @BO_Inventory_Items @Back_Office
+  Scenario: Basic_Delete_Inventory_Items_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -32,41 +32,41 @@ Feature: Basic Delete Receiving Items
     #Comment: the user click Discounts
     And the user clicks the "inventory" element at the "InventoryPage" page
     #Comment: the user click on Menu Items
-    And the user clicks the "receivingItems" element at the "InventoryPage" page
+    And the user clicks the "inventoryItems" element at the "InventoryPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user click on Add
-    And the user clicks the "addBtn" element at the "ReceivingItemsPage" page
+    And the user clicks the "addBtn" element at the "InventoryItemsPage" page
     #Comment: the user validate the visibility of popup
-    And the user waits for the "receivingItemText" element to be "VISIBLE" on the "AddReceivingItemsPage" page
+    And the user waits for the "inventoryItemText" element to be "VISIBLE" on the "AddInventoryItemsPage" page
     #Comment: the user enters the name On ADD Item
-    And the user enters dynamic UserName "#(name)" into the "name" textbox at the "AddReceivingItemsPage" page
+    And the user enters dynamic UserName "#(name)" into the "name" textbox at the "AddInventoryItemsPage" page
     #Comment: the user store the text on data dictionary
-    And store the displayed text of the "name" element at the "AddReceivingItemsPage" page into the data dictionary with key "name_value1"
+    And store the displayed text of the "name" element at the "AddInventoryItemsPage" page into the data dictionary with key "name_value1"
     #Comment: the user enter text
-    And the user enters "#(yieldFactor)" into the "yieldFactor" textbox at the "AddReceivingItemsPage" page
+    And the user enters "#(conversionFactor)" into the "conversionFactor" textbox at the "AddInventoryItemsPage" page
     #Comment: the user store the text on data dictionary
-    And store the displayed text of the "yieldFactor" element at the "AddReceivingItemsPage" page into the data dictionary with key "yieldFactor_value1"
+    And store the displayed text of the "conversionFactor" element at the "AddInventoryItemsPage" page into the data dictionary with key "conversionFactor_value1"
     #Comment: the user enter text
-    And the user enters "#(InvUnitConFactor)" into the "InvUnitConFactor" textbox at the "AddReceivingItemsPage" page
+    And the user enters "#(InvUnitConFactor)" into the "InvUnitConFactor" textbox at the "AddInventoryItemsPage" page
     #Comment: the user store the text on data dictionary
-    And store the displayed text of the "InvUnitConFactor" element at the "AddReceivingItemsPage" page into the data dictionary with key "InvUnitConFactor_value1"
+    And store the displayed text of the "InvUnitConFactor" element at the "AddInventoryItemsPage" page into the data dictionary with key "InvUnitConFactor_value1"
     #Cooment: the user click save
-    And the user clicks the "save" element at the "AddReceivingItemsPage" page
+    And the user clicks the "save" element at the "AddInventoryItemsPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user click on the ID number row
-    And the user clicks the "table" element with dictionary key "#(name_value1)" at the "ReceivingItemsPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
+    And the user clicks the "table" element with dictionary key "#(name_value1)" at the "InventoryItemsPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id
-    And store the displayed text of the "table" element at the "ReceivingItemsPage" page and get the dictionary key value "#(name_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
+    And store the displayed text of the "table" element at the "InventoryItemsPage" page and get the dictionary key value "#(name_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Delete Button
-    And the user clicks the "delete" element at the "ReceivingItemsPage" page
+    And the user clicks the "delete" element at the "InventoryItemsPage" page
     #Comment: the user click on Delete Button on Warning popup
-    And the user clicks the "deleteOnWarning" element at the "ReceivingItemsPage" page
+    And the user clicks the "deleteOnWarning" element at the "InventoryItemsPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user click on History Button
-    And the user clicks the "history" element at the "ReceivingItemsPage" page
+    And the user clicks the "history" element at the "InventoryItemsPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
     #Comment: user validate the details model popup
