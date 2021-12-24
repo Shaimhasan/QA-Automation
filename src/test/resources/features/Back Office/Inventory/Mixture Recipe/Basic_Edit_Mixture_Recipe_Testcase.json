@@ -17,7 +17,8 @@
       "iteventoryUnit1TxtBx": "1",
       "iteventoryUnit2TxtBx": "1",
       "usageUnit1TxtBx": "1",
-      "usageUnit2TxtBx": "1"
+      "usageUnit2TxtBx": "1",
+      "DetailsClickXpath1": "(//td[text()='"
     },
     "dataCriteria": {
     },

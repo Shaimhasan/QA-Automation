@@ -10,6 +10,7 @@ public class InventoryEntryPage extends BasePO {
 
     private By addBtn = By.id("btn_BO_IN_ENT_AddNew");
     private By editBtn = By.id("btn_BO_IN_ENT_Edit");
+    private By editBtnDisable = By.xpath("//button[@id='btn_BO_IN_ENT_Edit' and @class='button-disabled ui-state-disabled']");
     private By table = By.id("tbl_BO_List_IN_ENT");
     private By history = By.id("btn_BO_HISTORY");
     private By delete = By.id("btn_BO_IN_ENT_Del");
@@ -20,6 +21,10 @@ public class InventoryEntryPage extends BasePO {
 
     public Element copyTo() throws IOException, InterruptedException {
         return $(copyTo);
+    }
+
+    public Element editBtnDisable() throws IOException, InterruptedException {
+        return $(editBtnDisable);
     }
 
     public Element unPost() throws IOException, InterruptedException {

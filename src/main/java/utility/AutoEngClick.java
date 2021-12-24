@@ -10,6 +10,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class AutoEngClick extends BaseWebSteps {
     private static final String CLICKED_VALUE = "Clicked value: \"%s\"";
     private static final String CLICKING_ELEMENT = "Clicking element: {}";
@@ -55,13 +57,14 @@ public class AutoEngClick extends BaseWebSteps {
         getObject(objectName, pageName).clickBasedOnXpath(dictionaryKey, xpath1, xpath2);
     }
 
-    @When("^the user custom clicks If element present the \"([^\"]*)\" element with Column Name \"([^\"]*)\" and value \"([^\"]*)\" at the \"([^\"]*)\" page with element 1 \"([^\"]*)\" and element 2 \"([^\"]*)\"$")
+    @When("^the user custom clicks If element present the \"([^\"]*)\" element with Column Name \"([^\"]*)\" and value \"([^\"]*)\" at the \"([^\"]*)\" page with element 1 \"([^\"]*)\" and element 2 \"([^\"]*)\" element 3 \"([^\"]*)\"$")
     public void theUserClicksIfElementPresentInTableAtThePage(String table,
                                                               String colName,
                                                               String value,
                                                               String pageName,
                                                               String objectName1,
-                                                              String objectName2) {
+                                                              String objectName2,
+                                                              String objectName3) {
         colName = parseValue(colName);
         value = parseValue(value);
         List<String> allRowsWithValue = getObject(table, pageName).getRowValuesForGivenColumn(colName);
@@ -70,7 +73,9 @@ public class AutoEngClick extends BaseWebSteps {
             for(WebElement el:element){
                 el.click();
                 getObject(objectName1, pageName).click();
+                getObject(objectName2, pageName).visible();
                 getObject(objectName2, pageName).click();
+                getObject(objectName3, pageName).visible();
             }
         }
         else {
