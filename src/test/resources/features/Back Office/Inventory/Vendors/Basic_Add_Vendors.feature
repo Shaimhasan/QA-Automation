@@ -63,4 +63,10 @@ Feature: Basic Add Vendors
     And store the displayed text of the "zipCode" element at the "AddVendorsPage" page into the data dictionary with key "zipCode_value1"
     #Comment : the User select the state
     And the user selects value "Arkansas" from the "state" dropdown at the "AddVendorsPage" page
+    #Comment : the User click on save
+    And the user clicks the "save" element at the "AddVendorsPage" page
+    #Comment : the User wait to page load
+    And the user waits for the page to load
+    #Comment: the user click on the ID number row
+    And the user clicks the "table" element with dictionary key "#(vendorName_value1)" at the "VendorsPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
 

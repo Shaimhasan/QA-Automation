@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 import java.io.IOException;
 
-public class AddVendorsPage extends BasePO {
+public class EditVendorsPage extends BasePO {
 
     private By vendorTxt = By.xpath("//span[@class='modal-header-text']");
     private By vendorName = By.id("txt_BO_IN_VDN_ADDEDT_Name");
@@ -17,6 +17,7 @@ public class AddVendorsPage extends BasePO {
     private By zipCode = By.id("txt_BO_IN_VDN_ADDEDT_Zip");
     private By state = By.xpath("//select[@id='ddl_BO_IN_VDN_ADDEDT_State']");
     private By save = By.xpath("//div[@id='div_BO_IN_VND_ADDEDT_DIALOG_modal_view']//button[text()='Save']");
+    private By cancel = By.xpath("//div[@id='div_BO_IN_VND_ADDEDT_DIALOG_modal_view']//button[text()='Cancel']");
 
     public Element vendorTxt() throws IOException, InterruptedException {
         return $(vendorTxt);
@@ -52,6 +53,9 @@ public class AddVendorsPage extends BasePO {
 
     public Element save() throws IOException, InterruptedException {
         return $(save);
+    }
+    public Element cancel() throws IOException, InterruptedException {
+        return $(cancel);
     }
 
 
