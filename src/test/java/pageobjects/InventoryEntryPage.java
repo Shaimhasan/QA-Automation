@@ -18,6 +18,11 @@ public class InventoryEntryPage extends BasePO {
     private By unPost = By.id("btn_BO_IN_ENT_UnPost");
     private By copyTo = By.id("btn_BO_IN_ENT_CopyTo");
     private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+    private By inventoryEntryTxt = By.xpath("//div[text()='Inventory Entry' and @id='div_Page_Title']");
+
+    public Element inventoryEntryTxt() throws IOException, InterruptedException {
+        return $(inventoryEntryTxt);
+    }
 
     public Element copyTo() throws IOException, InterruptedException {
         return $(copyTo);

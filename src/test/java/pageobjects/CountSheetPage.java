@@ -15,6 +15,11 @@ public class CountSheetPage extends BasePO {
     private By history = By.id("btn_BO_HISTORY");
     private By delete = By.id("btn_BO_IN_CNT_Del");
     private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+    private By countSheetTxt = By.xpath("//div[text()='Count Sheet']");
+
+    public Element countSheetTxt() throws IOException, InterruptedException {
+        return $(countSheetTxt);
+    }
 
     public Element editBtnDisable() throws IOException, InterruptedException {
         return $(editBtnDisable);
