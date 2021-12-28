@@ -70,12 +70,16 @@ public class AutoEngClick extends BaseWebSteps {
         List<String> allRowsWithValue = getObject(table, pageName).getRowValuesForGivenColumn(colName);
         if(!allRowsWithValue.isEmpty()){
             List<WebElement> element=getDriver().findElements(By.xpath("//tr[contains(@id,'"+value+"')]"));
-            for(WebElement el:element){
-                el.click();
-                getObject(objectName1, pageName).click();
-                getObject(objectName2, pageName).visible();
-                getObject(objectName2, pageName).click();
-                getObject(objectName3, pageName).visible();
+            try{
+                for(WebElement el:element){
+                    el.click();
+                    getObject(objectName1, pageName).click();
+                    getObject(objectName2, pageName).visible();
+                    getObject(objectName2, pageName).click();
+                    getObject(objectName3, pageName).visible();
+                }
+            }catch (Exception e){
+                theUserClicksIfElementPresentInTableAtThePage(table,colName,value,pageName,objectName1,objectName2,objectName3);
             }
         }
         else {
