@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         plugin = {"core.AutoEngineFormatter",
                 "io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm",
                 "json:target/cucumber-reports/runReport.json"},
-        features = {"@target/rerun.txt"}
+        features = {"@failScenarios/rerun.txt"}
 )
 public class FailedScenariosRunner extends BaseTest {
 }
