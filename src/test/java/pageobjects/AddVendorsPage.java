@@ -9,8 +9,8 @@ import java.io.IOException;
 public class AddVendorsPage extends BasePO {
 
     private By vendorTxt = By.xpath("//span[@class='modal-header-text']");
-    private By vendorName = By.id("txt_BO_IN_VDN_ADDEDT_Name");
-    private By vendorPhoneNum = By.id("txt_BO_IN_VDN_ADDEDT_Phone");
+    private By name = By.id("txt_BO_IN_VDN_ADDEDT_Name");
+    private By phoneNo = By.id("txt_BO_IN_VDN_ADDEDT_Phone");
     private By email = By.id("txt_BO_IN_VDN_ADDEDT_Email");
     private By address = By.id("txt_BO_IN_VDN_ADDEDT_Addr1");
     private By city = By.id("txt_BO_IN_VDN_ADDEDT_City");
@@ -26,12 +26,12 @@ public class AddVendorsPage extends BasePO {
         return $(email);
     }
 
-    public Element vendorName() throws IOException, InterruptedException {
-        return $(vendorName);
+    public Element name() throws IOException, InterruptedException {
+        return $(name);
     }
 
-    public Element vendorPhoneNum() throws IOException, InterruptedException {
-        return $(vendorPhoneNum);
+    public Element phoneNo() throws IOException, InterruptedException {
+        return $(phoneNo);
     }
 
     public Element address() throws IOException, InterruptedException {

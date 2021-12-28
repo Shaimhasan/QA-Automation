@@ -119,6 +119,9 @@ public class AutoEngClick extends BaseWebSteps {
                 checkboxItem.click();
                 logStepMessage(String.format(CLICKED_VALUE, valueToClick));
             }
+            else {
+                checkboxItem.click();
+            }
         }
     }
 

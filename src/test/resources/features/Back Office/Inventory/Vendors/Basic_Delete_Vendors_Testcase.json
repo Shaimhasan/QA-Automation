@@ -17,7 +17,8 @@
       "IDNumberXpath3": "//td[text()='",
       "IdNumberXpath4": ": Automation Testing US']",
       "InvUnitConFactor": "15",
-      "yieldFactor": "90"
+      "yieldFactor": "90",
+      "DetailsClickXpath1": "(//td[text()='"
     },
     "dataCriteria": {
     },
