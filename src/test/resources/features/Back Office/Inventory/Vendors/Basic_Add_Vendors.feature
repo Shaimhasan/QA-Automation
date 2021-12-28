@@ -1,7 +1,7 @@
 Feature: Basic Add Vendors
   This script is to validate Add Vendors
 
-  @Basic_Add_Vendors @RegressionSuite @BO_Vendors
+  @Basic_Add_Vendors @RegressionSuite @BO_Vendors @Back_Office
   Scenario: Basic_Add_Vendors_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
