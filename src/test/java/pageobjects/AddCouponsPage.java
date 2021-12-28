@@ -15,7 +15,7 @@ public class AddCouponsPage extends BasePO {
     private By couponNumber = By.id("txtCouponNo");
     private By backGroundColor = By.id("txtCouponBackgroundColor");
     private By discount = By.id("txtCouponDiscount");
-    private By couponsTxtPopup = By.xpath("//span[@class='ui-dialog-title']");
+    private By couponsTxtPopup = By.xpath("//span[contains(@id,'ui-id')]");
     private By save = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='Save']");
 
     public Element couponsTxtPopup() throws IOException, InterruptedException {
