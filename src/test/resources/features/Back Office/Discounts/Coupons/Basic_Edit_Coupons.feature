@@ -37,8 +37,8 @@ Feature: Basic Edit Coupons
     And the user waits for the page to load
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "CouponsPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "couponsTxtPopup" element to be "VISIBLE" on the "AddCouponsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(nameUS)" into the "nameUS" textbox at the "AddCouponsPage" page
     #Comment: the user store the text on data dictionary
@@ -77,8 +77,8 @@ Feature: Basic Edit Coupons
     And store the displayed text of the "table" element at the "CouponsPage" page and get the dictionary key value "#(nameUS_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "CouponsPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "couponsTxtPopup" element to be "VISIBLE" on the "EditCouponsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(nameUS)" into the "nameUS" textbox at the "EditCouponsPage" page
     #Comment: the user store the text on data dictionary
@@ -93,8 +93,8 @@ Feature: Basic Edit Coupons
     And store the displayed text of the "table" element at the "CouponsPage" page and get the dictionary key value "#(nameUS_value2)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "CouponsPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "couponsTxtPopup" element to be "VISIBLE" on the "EditCouponsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "EditCouponsPage" page into the data dictionary with key "nameUS_value3"
     #Comment: user validate Name US Value
