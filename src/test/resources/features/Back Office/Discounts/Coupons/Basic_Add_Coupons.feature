@@ -77,8 +77,8 @@ Feature: Basic Add Coupons
     And store the displayed text of the "table" element at the "CouponsPage" page and get the dictionary key value "#(nameUS_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "CouponsPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "couponsTxtPopup" element to be "VISIBLE" on the "EditCouponsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "EditCouponsPage" page into the data dictionary with key "nameUS_value2"
     #Comment: the user store the text on data dictionary
