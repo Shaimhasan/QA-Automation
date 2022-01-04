@@ -4,8 +4,9 @@
     },
     "staticData": {
       "tableNo": "automation",
-      "amount": "83.50",
-      "cash": "Cash"
+      "amount": "63.00",
+      "cash": "Cash",
+      "orderIdXpath": "(//b[text()='"
     },
     "dataCriteria": {
     },

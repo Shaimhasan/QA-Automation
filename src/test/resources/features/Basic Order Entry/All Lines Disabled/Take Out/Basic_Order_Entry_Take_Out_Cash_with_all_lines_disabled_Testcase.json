@@ -4,9 +4,9 @@
     },
     "staticData": {
       "tableNo": "automation",
-      "amount": "83.50",
+      "amount": "63.00",
       "cash": "Cash",
-      "changedDueAmt": "-16.50"
+      "orderIdXpath": "(//b[text()='"
     },
     "dataCriteria": {
     },

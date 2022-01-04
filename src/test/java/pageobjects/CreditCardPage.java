@@ -8,10 +8,9 @@ import java.io.IOException;
 
 public class CreditCardPage extends BasePO {
 
-    private By cardNum = By.id("txtCC");
-    private By expirationMonth = By.id("txtCCExp1");
-    private By expirationYear = By.id("txtCCExp2");
-    private By cvv = By.id("txtCCCVV");
+    private By cardNum = By.name("cardNumber");
+    private By expiration = By.name("cardExpiration");
+    private By cvv = By.name("cardCvv");
     private By chargeBtn = By.id("btnCreditCardCharge");
     private By zipCode = By.id("txtCCZip");
 
@@ -27,12 +26,8 @@ public class CreditCardPage extends BasePO {
         return $(chargeBtn);
     }
 
-    public Element expirationMonth() throws IOException, InterruptedException {
-        return $(expirationMonth);
-    }
-
-    public Element expirationYear() throws IOException, InterruptedException {
-        return $(expirationYear);
+    public Element expiration() throws IOException, InterruptedException {
+        return $(expiration);
     }
 
     public Element cvv() throws IOException, InterruptedException {

@@ -12,6 +12,11 @@ public class OrderListPage extends BasePO {
     private By orderNum = By.id("txtSearch");
     private By creditCard = By.xpath("(//tr[@style='display: table-row;']//following-sibling::td)[11]//div[text()='Credit Card']");
     private By cash = By.xpath("(//tr[@style='display: table-row;']//following-sibling::td)[11]//div[text()='Cash']");
+    private By table = By.xpath("//table[@id='tblOrdersListOrders']");
+
+    public Element table() throws IOException, InterruptedException {
+        return $(table);
+    }
 
     public Element tableOrderList() throws IOException, InterruptedException {
         return $(tableOrderList);

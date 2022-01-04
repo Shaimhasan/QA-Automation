@@ -9,15 +9,10 @@ import java.io.IOException;
 public class OrderEntry extends BasePO {
 
     private By dinInColor = By.id("divOrder");
-    private By suprimePizza = By.xpath("//label[text()='Supreme Pizza']");
-    private By paperroniPizza = By.xpath("//label[text()='Pepperoni Pizza']");
-    private By suprimePizzaSelected = By.xpath("//div[text()='1) Supreme Pizza']");
-    private By panCrustSelected = By.xpath("//div[text()='Pan Crust']");
-    private By whiteSauceSelected = By.xpath("//div[text()='White Sauce']");
-    private By toppingChickenSelected = By.xpath("//div[text()='Chicken']");
-    private By paperroniPizzaSelected = By.xpath("//div[text()='3) Pepperoni Pizza']");
-    private By veggiePizza = By.xpath("//label[text()='Veggie Pizza']");
-    private By veggiePizzaSelected = By.xpath("//div[text()='2) Veggie Pizza']");
+    private By automationPizzaPMC = By.xpath("//label[text()='Automation Pizza (P-M-C)']");
+    private By chicagoSylPizzaM = By.xpath("//label[text()='Chicago Style Pizza (M)']");
+    private By automationPizzaPMCSelected = By.xpath("//div[text()='1) Automation Pizza (P-M-C)']");
+    private By chicagoSylPizzaMSelected = By.xpath("//div[text()='2) Chicago Style Pizza (M)']");
     private By finishBtn = By.xpath("//label[text()='Finish']");
     private By tableNoPopUpMenu = By.xpath("//span[text()='Table No. / Customer Name']");
     private By tableNo = By.id("txtTableNo");
@@ -74,16 +69,8 @@ public class OrderEntry extends BasePO {
         return $(takeOutColor);
     }
 
-    public Element panCrustSelected() throws IOException, InterruptedException {
-        return $(panCrustSelected);
-    }
-
-    public Element whiteSauceSelected() throws IOException, InterruptedException {
-        return $(whiteSauceSelected);
-    }
-
-    public Element toppingChickenSelected() throws IOException, InterruptedException {
-        return $(toppingChickenSelected);
+    public Element chicagoSylPizzaMSelected() throws IOException, InterruptedException {
+        return $(chicagoSylPizzaMSelected);
     }
 
     public Element toppingChicken() throws IOException, InterruptedException {
@@ -118,12 +105,8 @@ public class OrderEntry extends BasePO {
         return $(amount);
     }
 
-    public Element paperroniPizza() throws IOException, InterruptedException {
-        return $(paperroniPizza);
-    }
-
-    public Element paperroniPizzaSelected() throws IOException, InterruptedException {
-        return $(paperroniPizzaSelected);
+    public Element chicagoSylPizzaM() throws IOException, InterruptedException {
+        return $(chicagoSylPizzaM);
     }
 
     public Element headerPopUpChangeDue() throws IOException, InterruptedException {
@@ -154,19 +137,11 @@ public class OrderEntry extends BasePO {
         return $(dinInColor);
     }
 
-    public Element suprimePizza() throws IOException, InterruptedException {
-        return $(suprimePizza);
+    public Element automationPizzaPMC() throws IOException, InterruptedException {
+        return $(automationPizzaPMC);
     }
 
-    public Element suprimePizzaSelected() throws IOException, InterruptedException {
-        return $(suprimePizzaSelected);
-    }
-
-    public Element veggiePizza() throws IOException, InterruptedException {
-        return $(veggiePizza);
-    }
-
-    public Element veggiePizzaSelected() throws IOException, InterruptedException {
-        return $(veggiePizzaSelected);
+    public Element automationPizzaPMCSelected() throws IOException, InterruptedException {
+        return $(automationPizzaPMCSelected);
     }
 }
