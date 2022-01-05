@@ -41,7 +41,7 @@ Feature: Basic Order Entry - Dine In Cash - with all lines disabled
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
-    And the user clicks the "`finishBtn`" element at the "OrderEntry" page
+    And the user clicks the "finishBtn" element at the "OrderEntry" page
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number

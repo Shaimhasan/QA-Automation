@@ -1,9 +1,8 @@
-@dineInCardBasicOrderEntryWithoutLines
-Feature: Basic Order Entry - Dine In Credit Card - with all lines disabled
-  This script is to validate Dine in card basic order entry without lines
+Feature: Basic Order Entry - Take Out Credit Card  - with all lines disabled
+  This script is to validate Take out Credit Card basic order entry
 
-  @Basic_Order_Entry_Dine_In_Credit_Card_with_all_lines_disabled @RegressionSuite @BOE_DineIn @BOE_With_All_Lines_Disabled
-  Scenario: Basic_Order_Entry_Dine_In_Credit_Card_with_all_lines_disabled_Testcase
+  @Basic_Order_Entry_Take_Out_Credit_Card_with_all_lines_disabled @RegressionSuite @BOE_TakeOut
+  Scenario: Basic_Order_Entry_Take_Out_Credit_Card_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -28,20 +27,24 @@ Feature: Basic Order Entry - Dine In Credit Card - with all lines disabled
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+    #Comment: user click on Take Out
+    And the user clicks the "takeOut" element at the "OrderEntry" page
     #Comment: validate background color
-    And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
-    #Comment: user select pizza
+    And the user validates the background color of the "takeOutColor" element is "rgba(255, 255, 224, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
+    #Comment: user select suprimePizza
     And the user clicks the "automationPizzaPMC" element at the "OrderEntry" page
-    #Comment: user select pizza
+    #Comment: user select veggiePizza
     And the user clicks the "chicagoSylPizzaM" element at the "OrderEntry" page
-    #Comment: The user selected pizza
+    #Comment: The user selected Supreme Pizza
     And the user validates the "automationPizzaPMC" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
-    #Comment: The user selected pizza
+    #Comment: The user selected Veggie Pizza
     And the user validates the "chicagoSylPizzaM" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
-    And the user clicks the "`finishBtn`" element at the "OrderEntry" page
+    And the user clicks the "finishBtn" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number
@@ -102,4 +105,3 @@ Feature: Basic Order Entry - Dine In Credit Card - with all lines disabled
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: the user validate the ID number in History
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Credit Card" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Credit Card']" "validate_ID_Number" "HardStopOnFailure"
-

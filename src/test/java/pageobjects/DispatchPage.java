@@ -8,13 +8,13 @@ import java.io.IOException;
 
 public class DispatchPage extends BasePO {
     private By table = By.xpath("//div[@class='divHeader']/table");
-    private By driverOliveGreene = By.xpath("//div[text()='2000']");
+    private By bobTheDriver = By.xpath("//div[text()='Bob TheDriver']");
 
     public Element table() throws IOException, InterruptedException {
         return $(table);
     }
 
-    public Element driverOliveGreene() throws IOException, InterruptedException {
-        return $(driverOliveGreene);
+    public Element bobTheDriver() throws IOException, InterruptedException {
+        return $(bobTheDriver);
     }
 }
