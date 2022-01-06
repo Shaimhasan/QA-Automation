@@ -9,7 +9,9 @@
       "cardNum": "5454545454545454",
       "expiration": "052025",
       "cvv": "858",
-      "orderIdXpath": "(//b[text()='"
+      "orderIdXpath": "(//b[text()='",
+      "DetailsClickXpath1": "(//b[text()='",
+      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
     },
     "dataCriteria": {
     },

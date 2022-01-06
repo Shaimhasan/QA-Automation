@@ -2,7 +2,7 @@
 Feature: Basic Order Entry - Dine In Credit Card - with all lines disabled
   This script is to validate Dine in card basic order entry without lines
 
-  @Basic_Order_Entry_Dine_In_Credit_Card_with_all_lines_disabled @RegressionSuite @BOE_DineIn @BOE_With_All_Lines_Disabled
+  @Basic_Order_Entry_Dine_In_Credit_Card_with_all_lines_disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Credit_Card_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
@@ -41,7 +41,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with all lines disabled
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
-    And the user clicks the "`finishBtn`" element at the "OrderEntry" page
+    And the user clicks the "finishBtn" element at the "OrderEntry" page
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number
@@ -102,4 +102,20 @@ Feature: Basic Order Entry - Dine In Credit Card - with all lines disabled
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: the user validate the ID number in History
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Credit Card" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Credit Card']" "validate_ID_Number" "HardStopOnFailure"
+    #Comment: the user click on Details Elements
+    And the user clicks the "table" element with dictionary key "#(order_Number)" at the "OrderListPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickXpath2)"
+    #Comment: the user validate the visibility of Page
+    And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
+    #Comment: Validate the amount
+    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
+    #Comment: The user save the transaction number into dictionary key
+    And store the displayed text of the "transactionNum" element at the "OrderDetailsPage" page into the data dictionary with key "transaction_Number2"
+    #Comment: The user save the order number into dictionary key
+    And store the displayed text of the "orderNum" element at the "OrderDetailsPage" page into the data dictionary with key "order_Number2"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: user click Close Button
+    And the user clicks the "close" element at the "OrderDetailsPage" page
 

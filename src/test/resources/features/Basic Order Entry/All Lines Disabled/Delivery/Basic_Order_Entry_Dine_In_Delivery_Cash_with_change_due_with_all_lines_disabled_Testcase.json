@@ -9,9 +9,13 @@
       "expiration": "052025",
       "cvv": "858",
       "cardType": "Credit Card",
-      "orderIdXpath": "(//b[text()='",
-      "DetailsClickXpath1": "(//b[text()='",
-      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
+      "CashType": "Cash",
+      "textPhone": "(916) 555-4444",
+      "timeRecordSuccessMsg": "Your time card recorded successfully.",
+      "timeClockOutSuccessMsg": "You have clocked out successfully.",
+      "gatuityAmt": "0",
+      "orderNumberXpath1": "//b[text()='",
+      "orderNumberXpath2": "']"
     },
     "dataCriteria": {
     },

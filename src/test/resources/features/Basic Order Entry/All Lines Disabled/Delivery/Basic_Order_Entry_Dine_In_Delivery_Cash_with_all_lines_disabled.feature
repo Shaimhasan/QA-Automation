@@ -2,7 +2,7 @@
 Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
   This script is to validate Dine in delivery with cash
 
-  @Basic_Order_Entry_Dine_In_Delivery_Cash_with_all_lines_disabled @RegressionSuite @BOE_Delivery
+  @Basic_Order_Entry_Dine_In_Delivery_Cash_with_all_lines_disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_Delivery
   Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_with_all_lines_disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
@@ -86,8 +86,6 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
     And the user clicks the "OKBtn" element at the "ClockInPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: The user click on Adore header page
