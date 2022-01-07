@@ -1,8 +1,8 @@
-Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with all lines disabled
-  This script is to validate Dine in cash half cash half basic order entry
+Feature: Basic Order Entry - Dine-in fifty dollar cash and Credit Card  - with all lines disabled
+  This script is to validate Dine in fifty dollar cash and credit card basic order entry
 
-  @Basic_Order_Entry_Dine_in_with_half_cash_and_half_Credit_Card_with_all_lines_disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
-  Scenario: Basic_Order_Entry_Dine_in_with_half_cash_and_half_Credit_Card_with_all_lines_disabled_Testcase
+  @Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_All_Lines_Disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
+  Scenario: Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_All_Lines_Disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -49,10 +49,8 @@ Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
-    #Comment: user click on half cash
-    And the user clicks the "half" element at the "PaymentPage" page
-    #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    #Comment: user click on fifty dollar
+    And the user clicks the "fiftyDollar" element at the "PaymentPage" page
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
     #Comment: User switches to the frame
