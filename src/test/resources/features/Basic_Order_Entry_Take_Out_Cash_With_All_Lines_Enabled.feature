@@ -1,9 +1,8 @@
-@dineInFiftyDollarCashRemainingCardBasicOrderEntry
-Feature: Dine in fifty dollar cash remaining card basic order entry
-  This script is to validate Dine in fifty dollar cash remaining card basic order entry
-
-  @validate_dine_in_fifty_dollar_cash_remaining_card_basic_order_entry_without_lines @RegressionSuite
-  Scenario: validate_dine_in_fifty_dollar_cash_remaining_card_basic_order_entry_without_lines_Testcase
+@takeOutCashBasicOrderEntryWithLines
+Feature: Take out cash basic order entry with lines
+  This script is to validate Take out cash basic order entry with line
+  @validate_take_out_cash_basic_order_entry_with_lines @RegressionSuite
+  Scenario: validate_take_out_cash_basic_order_entry_with_lines_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -26,9 +25,11 @@ Feature: Dine in fifty dollar cash remaining card basic order entry
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
-    And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+    And the user clicks the "orderEntry" element at the "AdoraHeaderPage" page
+    #Comment: user click on Take Out
+    And the user clicks the "takeOut" element at the "OrderEntry" page
     #Comment: validate background color
-    And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
+    And the user validates the background color of the "takeOutColor" element is "rgba(255, 255, 224, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select suprimePizza
     And the user clicks the "suprimePizza" element at the "OrderEntry" page
     #Comment: user select veggiePizza
@@ -51,25 +52,8 @@ Feature: Dine in fifty dollar cash remaining card basic order entry
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
-
-    #Comment: user click on fifty dollar
-    And the user clicks the "fiftyDollar" element at the "PaymentPage" page
-    #Comment: user click on credit
-    And the user clicks the "credit" element at the "PaymentPage" page
-
-     #Comment: the user enter the CreditCard Number
-    Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
-     #Comment: the user enter the expiration month
-    Then the user enters "#(expirationMonth)" into the "expirationMonth" textbox at the "CreditCardPage" page
-    #Comment: the user enter the expiration year
-    Then the user enters "#(expirationYear)" into the "expirationYear" textbox at the "CreditCardPage" page
-    #Comment: the user enter the cvv
-    Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
-    #Comment: the user enter the zip code
-    Then the user enters "#(zipCode)" into the "zipCode" textbox at the "CreditCardPage" page
-
-    #Comment: user click on chargeBtn
-    And the user clicks the "chargeBtn" element at the "CreditCardPage" page
+    #Comment: user click on Cash
+    And the user clicks the "cash" element at the "PaymentPage" page
 
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
@@ -79,23 +63,45 @@ Feature: Dine in fifty dollar cash remaining card basic order entry
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
+
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: User validate the order list element is present.
-    And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
-    #Comment: user click on Order List
-    And the user clicks the "orderList" element at the "AdoraHeaderPage" page
-    #Comment: user validate the transaction Number
-    And store text of the cell having unique rowVal comes from Data Dictionary "#(transaction_Number)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
-    #Comment: user validate the transaction Number
-    And store text of the cell having unique rowVal comes from Data Dictionary "#(order_Number)" and columnHeader " Order#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "order_Num"
-    #Comment: User validate data dictionary values
-    And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
-    #Comment: User validate data dictionary values
-    And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
-    #Comment: User enter the order Number
-    Then the user enters "#(transaction_Number)" into the "orderNum" textbox at the "OrderListPage" page
-    #Comment: user validate the Cash type
-    Then the user validates "Compare_Strings" that the "cash" element is "Equal To" "#(CashType)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"
-    #Comment: user validate the card type
-    Then the user validates "Compare_Strings" that the "creditCard" element is "Equal To" "#(cardType)" at the "OrderListPage" page "validate_Card_Type" "HardStopOnFailure"
+    And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
+    #Comment: user click on prep Station
+    And the user waits "2000" seconds
+    And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
+    And the user waits "2000" seconds
+     #Comment: user click prepstation until order comes on console
+    And the user click prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
+    And the user waits "2000" seconds
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    And the user waits "2000" seconds
+    #Comment: user click on makeLine
+    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    And the user waits "2000" seconds
+    #Comment: user click makeline until order comes on console
+    And the user click makeline "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    And the user waits "2000" seconds
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    And the user waits "3000" seconds
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
+    And the user waits "3000" seconds
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
+    #Comment: user click on cut wrap based on order Number
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user waits "800" seconds
+    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    And the user custom clicks on row with order number "#(order_Number)" and category value "2" from the "table" table on the "CutAndWrapPage" page
+    And the user waits "800" seconds
+    And the user order number "#(order_Number)" category value "2" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(order_Number)" and category value "3" from the "table" table on the "CutAndWrapPage" page
+    And the user waits "800" seconds
+    And the user order number "#(order_Number)" category value "3" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"

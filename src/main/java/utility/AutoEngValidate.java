@@ -214,15 +214,15 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user exact validates \"([^\"]*)\" that the \"([^\"]*)\" element is \"([^\"]*)\" \"([^\"]*)\" at the \"([^\"]*)\" page based on datadictionary \"([^\"]*)\" and xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserExactValidatesThatTheElementBasedOnXpathIs(String comparisonType,
-                                                             String objectName,
-                                                             String comparisonOperator,
-                                                             String expectedValue,
-                                                             String pageName,
-                                                             String datadictionarykey,
-                                                             String xpath1,
-                                                             String xpath2,
-                                                             String validationID,
-                                                             String onFailureFlag) {
+                                                                  String objectName,
+                                                                  String comparisonOperator,
+                                                                  String expectedValue,
+                                                                  String pageName,
+                                                                  String datadictionarykey,
+                                                                  String xpath1,
+                                                                  String xpath2,
+                                                                  String validationID,
+                                                                  String onFailureFlag) {
         xpath1 = parseValue(xpath1);
         xpath2 = parseValue(xpath2);
         datadictionarykey = parseValue(datadictionarykey);
@@ -418,7 +418,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                                   String validationID,
                                                                                   String onFailureFlag) {
 
-        value=parseValue(value);
+        value = parseValue(value);
         expectedValue = parseValue(expectedValue);
         String actualValue = getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).getText();
         String actualValue1 = actualValue + value;
@@ -700,7 +700,6 @@ public class AutoEngValidate extends BaseWebSteps {
         orderNum = parseValue(orderNum);
         categoryValue = parseValue(categoryValue);
         final Element elementPresent = getObject(tableName, pageName).getRowValueCutAndWrap(orderNum, categoryValue);
-
         final String compareDesc = String.format("Expecting the '%s' element to be present on the '%s' page. ", tableName, pageName);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc);
 
@@ -934,22 +933,22 @@ public class AutoEngValidate extends BaseWebSteps {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
         String expectedValueOne = "div_PS_item_" + expectedValue + "_1" + "_1";
-        String expectedValueTwo = "div_PS_item_" + expectedValue + "_1" + "_2";
-        String expectedValueThreee = "div_PS_item_" + expectedValue + "_1" + "_3";
-        System.out.println(attributeName);
+//        String expectedValueTwo = "div_PS_item_" + expectedValue + "_1" + "_2";
+//        String expectedValueThreee = "div_PS_item_" + expectedValue + "_1" + "_3";
         String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
-            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        //    transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
-        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
-            getObject(objectName, pageName).click();
-            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-        }
-        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
-            getObject(objectName, pageName).click();
-        } else {
+//        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+//        }
+//        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//        }
+        else {
             getObject(objectName, pageName).click();
             theUserClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
@@ -965,22 +964,23 @@ public class AutoEngValidate extends BaseWebSteps {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
         String expectedValueOne = expectedValue + "_1" + "_1";
-        String expectedValueTwo = expectedValue + "_1" + "_2";
-        String expectedValueThreee = expectedValue + "_1" + "_3";
+//        String expectedValueTwo = expectedValue + "_1" + "_2";
+//        String expectedValueThreee = expectedValue + "_1" + "_3";
         System.out.println(attributeName);
         String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
-            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+          //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
-        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
-            getObject(objectName, pageName).click();
-            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-        }
-        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
-            getObject(objectName, pageName).click();
-        } else {
+//        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+//        }
+//        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//        }
+        else {
             getObject(objectName, pageName).click();
             theUserClickMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
@@ -1039,8 +1039,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                      String categoryValue1,
                                                      String categoryValue2,
                                                      String categoryValue3,
-                                                     String pageName
-    ) {
+                                                     String pageName) {
         orderNum = parseValue(orderNum);
         String orderNum1 = orderNum + "-" + categoryValue1;
         String orderNum2 = orderNum + "-" + categoryValue2;

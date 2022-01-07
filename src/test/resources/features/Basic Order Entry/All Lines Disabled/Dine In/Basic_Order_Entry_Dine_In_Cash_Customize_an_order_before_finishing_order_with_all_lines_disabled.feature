@@ -56,7 +56,7 @@ Feature: Basic Order Entry - Customize an order before finishing order - with al
     And the user clicks the "OK" element at the "OrderEntry" page
     #Comment: user click on credit
     And the user clicks the "cash" element at the "PaymentPage" page
-     #Comment: the user validate the visibility of popup
+    #Comment: the user validate the visibility of popup
     And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user validate change due popuo is present
     And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
