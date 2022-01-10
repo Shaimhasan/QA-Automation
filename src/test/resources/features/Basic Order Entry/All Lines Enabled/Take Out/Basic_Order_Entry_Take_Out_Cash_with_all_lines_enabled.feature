@@ -1,8 +1,8 @@
-Feature: Basic Order Entry - Dine In Credit Card - with all lines enabled
-  This script is to validate Basic Order Entry - Dine In Credit Card - with all lines enabled
+Feature: Basic Order Entry - Take Out Cash  - with all lines enabled
+  This script is to validate Take out cash basic order entry
 
-  @Basic_Order_Entry_Dine_In_Credit_Card_With_All_Lines_Enabled @RegressionSuite @BOE @BOE_ALE @BOE_ALE_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_Credit_Card_With_All_Lines_Enabled_Testcase
+  @Basic_Order_Entry_Take_Out_Cash_with_all_lines_enabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_TakeOut
+  Scenario: Basic_Order_Entry_Take_Out_Cash_with_all_lines_enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -27,50 +27,32 @@ Feature: Basic Order Entry - Dine In Credit Card - with all lines enabled
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+    #Comment: user click on Take Out
+    And the user clicks the "takeOut" element at the "OrderEntry" page
     #Comment: validate background color
-    And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
-    #Comment: user select pizza
+    And the user validates the background color of the "takeOutColor" element is "rgba(255, 255, 224, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
+    #Comment: user select suprimePizza
     And the user clicks the "automationPizzaPMC" element at the "OrderEntry" page
-    #Comment: user select pizza
+    #Comment: user select veggiePizza
     And the user clicks the "chicagoSylPizzaM" element at the "OrderEntry" page
-    #Comment: The user selected pizza
+    #Comment: The user selected Supreme Pizza
     And the user validates the "automationPizzaPMC" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
-    #Comment: The user selected pizza
+    #Comment: The user selected Veggie Pizza
     And the user validates the "chicagoSylPizzaM" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
-    #Comment: user click on credit
-    And the user clicks the "credit" element at the "PaymentPage" page
-    #Comment: User switches to the frame
-    And the user switches to frame "cardNumber"
-     #Comment: the user enter the CreditCard Number
-    Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
-    #Comment: The user Switches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardExpiration"
-     #Comment: the user enter the expiration
-    Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardCvv"
-    #Comment: the user enter the cvv
-    Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: user click on chargeBtn
-    And the user clicks the "chargeBtn" element at the "CreditCardPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment: user click on Cash
+    And the user clicks the "cash" element at the "PaymentPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user validate change due popuo is present
