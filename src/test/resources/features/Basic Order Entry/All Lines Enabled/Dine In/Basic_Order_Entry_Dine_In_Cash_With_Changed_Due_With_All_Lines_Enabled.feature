@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines enabled
   This script is to validate Basic Order Entry - Dine In Cash - with Change Due  - with all lines enabled
 
-  @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_All_Lines_Enabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
+  @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_All_Lines_Enabled @RegressionSuite @BOE @BOE_ALE @BOE_ALE_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_All_Lines_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
