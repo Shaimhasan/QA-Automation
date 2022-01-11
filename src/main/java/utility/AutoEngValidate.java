@@ -933,18 +933,18 @@ public class AutoEngValidate extends BaseWebSteps {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
         String expectedValueOne = "div_PS_item_" + expectedValue + "_1" + "_1";
-//        String expectedValueTwo = "div_PS_item_" + expectedValue + "_1" + "_2";
+        String expectedValueTwo = "div_PS_item_" + expectedValue + "_1" + "_2";
 //        String expectedValueThreee = "div_PS_item_" + expectedValue + "_1" + "_3";
         String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
-        //    transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
-//        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
-//            getObject(objectName, pageName).click();
-//            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-//        }
+        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).click();
+           // transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        }
 //        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
 //            getObject(objectName, pageName).click();
 //        }
@@ -964,19 +964,19 @@ public class AutoEngValidate extends BaseWebSteps {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
         String expectedValueOne = expectedValue + "_1" + "_1";
-//        String expectedValueTwo = expectedValue + "_1" + "_2";
+        String expectedValueTwo = expectedValue + "_1" + "_2";
 //        String expectedValueThreee = expectedValue + "_1" + "_3";
         System.out.println(attributeName);
         String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
-          //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
-//        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
-//            getObject(objectName, pageName).click();
-//            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-//        }
+        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).click();
+            //transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        }
 //        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
 //            getObject(objectName, pageName).click();
 //        }

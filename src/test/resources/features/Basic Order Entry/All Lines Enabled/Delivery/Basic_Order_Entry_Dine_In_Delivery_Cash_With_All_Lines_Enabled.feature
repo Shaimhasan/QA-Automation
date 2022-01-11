@@ -32,11 +32,11 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines enabled
     #Comment: user select suprimePizza
     And the user clicks the "automationPizzaPMC" element at the "OrderEntry" page
     #Comment: user select veggiePizza
-    And the user clicks the "chicagoSylPizzaM" element at the "OrderEntry" page
+    And the user clicks the "cheesePizzaPMC" element at the "OrderEntry" page
     #Comment: The user selected Supreme Pizza
-    And the user validates the "automationPizzaPMC" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
+    And the user validates the "automationPizzaPMCSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: The user selected Veggie Pizza
-    And the user validates the "chicagoSylPizzaM" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
+    And the user validates the "cheesePizzaPMCSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Devilery
@@ -103,6 +103,14 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines enabled
     And the user waits for the page to load
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: the user click on the row
+    And the user custom clicks on row with order number "#(order_Number)" and category value "2" from the "table" table on the "CutAndWrapPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: the user validate the cut and wrap
+    And the user order number "#(order_Number)" category value "2" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: The user click on Adora header
