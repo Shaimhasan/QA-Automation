@@ -67,6 +67,8 @@ Feature: Basic Delete Vendors
     And the user clicks the "deleteOnWarning" element at the "VendorsPage" page
     #Comment : the User wait to page load
     And the user waits for the page to load
+    #Comment: the user wait the element is disabled
+    And the user waits for the "delete" element to be "DISABLED" on the "VendorsPage" page
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "VendorsPage" page
     #Comment: the user validate the visibility of popup

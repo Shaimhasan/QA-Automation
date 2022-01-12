@@ -67,8 +67,8 @@ Feature: Basic Delete Web Categories
     And the user clicks the "deleteOnWarning" element at the "WebCategoriesPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment: the user wait the element is disabled
+    And the user waits for the "delete" element to be "DISABLED" on the "WebCategoriesPage" page
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "WebCategoriesPage" page
     #Comment: the user validate the visibility of popup
