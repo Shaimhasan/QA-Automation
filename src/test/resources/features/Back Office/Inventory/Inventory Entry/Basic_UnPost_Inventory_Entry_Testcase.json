@@ -14,7 +14,8 @@
       "inventoryUnit": "10",
       "usageUnit": "45",
       "date": "2025",
-      "Weekly": "Weekly"
+      "Weekly": "Weekly",
+      "xpathValue": "//table[@id='tbl_BO_List_IN_ENT']//*[local-name()='svg' and @class='fixed_header_SelectedRow_CheckBox']/*[local-name()='path']"
     },
     "dataCriteria": {
     },

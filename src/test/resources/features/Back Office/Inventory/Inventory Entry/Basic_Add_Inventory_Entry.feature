@@ -69,6 +69,8 @@ Feature: Basic Add Inventory Entry
     And the user clicks the "invetoryEntry" element at the "InventoryPage" page
     #Comment: The user wait until page is visible
     And the user waits for the "inventoryEntryTxt" element to be "VISIBLE" on the "InventoryEntryPage" page
+    #Comment: the user custom click if element present
+    And the user delete all rows If element present the "table" table with Column Name " Frequency" and value "#(xpathValue)" at the "InventoryEntryPage" page with FirstObjectName "unPost" and SecondObjectName "unPostOnWarning" ThirdObjectName "editBtnDisable"
     #Comment : the user clicks and check If element present
     And the user custom clicks If element present the "table" element with Column Name " Frequency" and value "tblRowXIN_ENT" at the "InventoryEntryPage" page with element 1 "delete" and element 2 "deleteOnWarning" element 3 "editBtnDisable"
     #Comment: the user click on Add

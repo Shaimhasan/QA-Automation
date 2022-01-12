@@ -19,6 +19,31 @@ public class InventoryEntryPage extends BasePO {
     private By copyTo = By.id("btn_BO_IN_ENT_CopyTo");
     private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
     private By inventoryEntryTxt = By.xpath("//div[text()='Inventory Entry' and @id='div_Page_Title']");
+    private By validatePostPresent = By.xpath("//table[@id='tbl_BO_List_IN_ENT']//*[local-name()='svg' and @class='fixed_header_SelectedRow_CheckBox']/*[local-name()='path']");
+    private By postOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Post']");
+    private By unPostOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Un-Post']");
+    private By warningTxt = By.xpath("//div[contains(@id,'div_Message')]//span[text()='Warning']");
+    private By validatePost = By.xpath("//*[local-name()='svg' and @class='fixed_header_SelectedRow_CheckBox']/*[local-name()='path']");
+
+    public Element validatePost() throws IOException, InterruptedException {
+        return $(validatePost);
+    }
+
+    public Element warningTxt() throws IOException, InterruptedException {
+        return $(warningTxt);
+    }
+
+    public Element postOnWarning() throws IOException, InterruptedException {
+        return $(postOnWarning);
+    }
+
+    public Element unPostOnWarning() throws IOException, InterruptedException {
+        return $(unPostOnWarning);
+    }
+
+    public Element validatePostPresent() throws IOException, InterruptedException {
+        return $(validatePostPresent);
+    }
 
     public Element inventoryEntryTxt() throws IOException, InterruptedException {
         return $(inventoryEntryTxt);

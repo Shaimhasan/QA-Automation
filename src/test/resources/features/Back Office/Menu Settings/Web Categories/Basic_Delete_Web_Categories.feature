@@ -1,5 +1,5 @@
 Feature: Basic Delete Web Categories
-  This script is to validate Add Web Categories
+  This script is to validate Delete Web Categories
 
   @Basic_Delete_Web_Categories @RegressionSuite @BO_Web_Categories @Back_Office
   Scenario: Basic_Delete_Web_Categories_Testcase

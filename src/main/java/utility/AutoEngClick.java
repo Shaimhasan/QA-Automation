@@ -68,21 +68,57 @@ public class AutoEngClick extends BaseWebSteps {
         colName = parseValue(colName);
         value = parseValue(value);
         List<String> allRowsWithValue = getObject(table, pageName).getRowValuesForGivenColumn(colName);
-        if(!allRowsWithValue.isEmpty()){
-            List<WebElement> element=getDriver().findElements(By.xpath("//tr[contains(@id,'"+value+"')]"));
-            try{
-                for(WebElement el:element){
+        if (!allRowsWithValue.isEmpty()) {
+            List<WebElement> element = getDriver().findElements(By.xpath("//tr[contains(@id,'" + value + "')]"));
+            try {
+                for (WebElement el : element) {
                     el.click();
                     getObject(objectName1, pageName).click();
                     getObject(objectName2, pageName).visible();
                     getObject(objectName2, pageName).click();
                     getObject(objectName3, pageName).visible();
                 }
-            }catch (Exception e){
-                theUserClicksIfElementPresentInTableAtThePage(table,colName,value,pageName,objectName1,objectName2,objectName3);
+            } catch (Exception e) {
+                theUserClicksIfElementPresentInTableAtThePage(table, colName, value, pageName, objectName1, objectName2, objectName3);
             }
+        } else {
+            System.out.println("Row is empty");
         }
-        else {
+
+    }
+
+    @When("^the user delete all rows If element present the \"([^\"]*)\" table with Column Name \"([^\"]*)\" and value \"([^\"]*)\" at the \"([^\"]*)\" page with FirstObjectName \"([^\"]*)\" and SecondObjectName \"([^\"]*)\" ThirdObjectName \"([^\"]*)\"$")
+    public void theUserDeleteAllRowsElementPresentInTableAtThePage(String table,
+                                                                   String colName,
+                                                                   String value,
+                                                                   String pageName,
+                                                                   String FirstObjectName,
+                                                                   String SecondObjectName,
+                                                                   String ThirdObjectName) {
+        colName = parseValue(colName);
+        value = parseValue(value);
+        List<String> allRowsWithValue = getObject(table, pageName).getRowValuesForGivenColumn(colName);
+        if (!allRowsWithValue.isEmpty()) {
+            List<WebElement> element = getDriver().findElements(By.xpath(value));
+            if (element.isEmpty()) {
+                System.out.println("Element is not found in table");
+            } else {
+                try {
+                    for (WebElement el : element) {
+                        el.isDisplayed();
+                        WebElement elementRow = getDriver().findElement(By.xpath(value + "/../../../.."));
+                        elementRow.click();
+                        getObject(FirstObjectName, pageName).click();
+                        getObject(SecondObjectName, pageName).visible();
+                        getObject(SecondObjectName, pageName).click();
+                        getObject(ThirdObjectName, pageName).visible();
+                    }
+                } catch (Exception e) {
+                    theUserDeleteAllRowsElementPresentInTableAtThePage(table, colName, value, pageName, FirstObjectName, SecondObjectName, ThirdObjectName);
+                }
+            }
+
+        } else {
             System.out.println("Row is empty");
         }
 
@@ -122,8 +158,7 @@ public class AutoEngClick extends BaseWebSteps {
             if (checkboxItem.findMatchingCheckboxValToClick(valueToClick)) {
                 checkboxItem.click();
                 logStepMessage(String.format(CLICKED_VALUE, valueToClick));
-            }
-            else {
+            } else {
                 checkboxItem.click();
             }
         }
