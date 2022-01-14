@@ -38,8 +38,6 @@ Feature: Basic Add Coupons
     And the user waits for the page to load
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "CouponsPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(nameUS)" into the "nameUS" textbox at the "AddCouponsPage" page
     #Comment: the user store the text on data dictionary
