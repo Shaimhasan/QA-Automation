@@ -1,6 +1,7 @@
 Feature: Basic Add Coupons
   This script is to validate Add Coupons
 
+  @issue=1518
   @Basic_Add_Coupons @RegressionSuite @BO_Coupons @Back_Office
   Scenario: Basic_Add_Coupons_Testcase
     #Comment: Launch Adora Web URL in CHROME browser

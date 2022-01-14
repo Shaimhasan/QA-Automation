@@ -1,9 +1,8 @@
-@dineInCashBasicOrderEntry
-Feature: Basic Order Entry - Dine In Cash - with all lines disabled
-  This script is to validate Dine in cash basic order entry
+Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines disabled
+  This script is to validate Dine in cash with changed due basic order entry with 100 $Dollar
 
-  @Basic_Order_Entry_Dine_In_Cash_with_all_lines_disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_Cash_with_all_lines_disabled_Testcase
+  @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_All_Lines_Disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
+  Scenario: Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_All_Lines_Disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -20,6 +19,8 @@ Feature: Basic Order Entry - Dine In Cash - with all lines disabled
     When the user enters the secure credential "#(Password)" into the "password" textbox at the "LoginPage" page
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
@@ -49,7 +50,7 @@ Feature: Basic Order Entry - Dine In Cash - with all lines disabled
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
     #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    And the user clicks the "hundreadDollar" element at the "PaymentPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user validate change due popuo is present
@@ -58,6 +59,8 @@ Feature: Basic Order Entry - Dine In Cash - with all lines disabled
     And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
+    #Comment: Validate Changed Due Amount
+    Then the user validates "Compare_Strings" that the "changeDueAmt" element is "Equal To" "#(changedDueAmt)" at the "OrderEntry" page "validate_Changed_Due_Amount" "HardStopOnFailure"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -66,7 +69,7 @@ Feature: Basic Order Entry - Dine In Cash - with all lines disabled
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
-    #Comment: the user click on Order List
+    #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load

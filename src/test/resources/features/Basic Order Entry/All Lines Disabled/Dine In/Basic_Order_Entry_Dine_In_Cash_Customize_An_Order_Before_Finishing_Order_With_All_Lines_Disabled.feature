@@ -1,9 +1,8 @@
-@dineInCashWithChangedDueBasicOrderEntry
-Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines disabled
-  This script is to validate Dine in cash with changed due basic order entry with 100 $Dollar
+Feature: Basic Order Entry - Customize an order before finishing order - with all lines disabled
+  This script is to validate Dine in cash basic customize order without lines
 
-  @Basic_Order_Entry_Dine_In_Cash_with_changed_due_with_all_lines_disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_Cash_with_changed_due_with_all_lines_disabled_Testcase
+  @Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_With_All_Lines_Disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
+  Scenario: Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_With_All_Lines_Disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -34,6 +33,8 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines di
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select suprimePizza
     And the user clicks the "automationPizzaPMC" element at the "OrderEntry" page
+    #Comment: user select panCrust
+    And the user clicks the "mediumSize" element at the "OrderEntry" page
     #Comment: user select veggiePizza
     And the user clicks the "chicagoSylPizzaM" element at the "OrderEntry" page
     #Comment: The user selected Supreme Pizza
@@ -44,14 +45,16 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines di
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
-    #Comment: user click on Cash
-    And the user clicks the "hundreadDollar" element at the "PaymentPage" page
+    #Comment: user click on credit
+    And the user clicks the "cash" element at the "PaymentPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user validate change due popuo is present
@@ -60,8 +63,6 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines di
     And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
-    #Comment: Validate Changed Due Amount
-    Then the user validates "Compare_Strings" that the "changeDueAmt" element is "Equal To" "#(changedDueAmt)" at the "OrderEntry" page "validate_Changed_Due_Amount" "HardStopOnFailure"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -100,6 +101,4 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines di
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: user click Close Button
     And the user clicks the "close" element at the "OrderDetailsPage" page
-
-
 

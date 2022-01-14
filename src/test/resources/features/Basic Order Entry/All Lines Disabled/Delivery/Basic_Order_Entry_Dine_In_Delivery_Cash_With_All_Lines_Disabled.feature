@@ -1,9 +1,8 @@
-@dineInDeliveryWithCard
-Feature: Basic Order Entry - Delivery Credit Card  - with all lines disabled
-  This script is to validate Dine in delivery with card
+Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
+  This script is to validate Dine in delivery with cash
 
-  @Basic_Order_Entry_Dine_In_Delivery_Credit_Card_with_all_lines_disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_Delivery
-  Scenario: Basic_Order_Entry_Dine_In_Delivery_Credit_Card_with_all_lines_disabled_Testcase
+  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_All_Lines_Disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_Delivery
+  Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_All_Lines_Disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -48,38 +47,14 @@ Feature: Basic Order Entry - Delivery Credit Card  - with all lines disabled
     And the user sends keys "Key_enter" to the "textPhone" element on the "CustomerInfoPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: user click on Finish
-    And the user clicks the "OK" element at the "CustomerInfoPage" page
     #Comment: The user save the address into dictionary key
     And store the displayed text of the "address" element at the "CustomerInfoPage" page into the data dictionary with key "address_value"
     #Comment: user click on Finish
     And the user clicks the "OK" element at the "CustomerInfoPage" page
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
-    #Comment: user click on credit
-    And the user clicks the "credit" element at the "PaymentPage" page
-    #Comment: User switches to the frame
-    And the user switches to frame "cardNumber"
-     #Comment: the user enter the CreditCard Number
-    Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
-    #Comment: The user Switches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardExpiration"
-     #Comment: the user enter the expiration
-    Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardCvv"
-    #Comment: the user enter the cvv
-    Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: user click on chargeBtn
-    And the user clicks the "chargeBtn" element at the "CreditCardPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment: user click on Cash
+    And the user clicks the "cash" element at the "PaymentPage" page
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
     #Comment: The user save the transaction number into dictionary key
@@ -110,8 +85,6 @@ Feature: Basic Order Entry - Delivery Credit Card  - with all lines disabled
     And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
     And the user clicks the "OKBtn" element at the "ClockInPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: The user click on Adore header page
@@ -160,3 +133,5 @@ Feature: Basic Order Entry - Delivery Credit Card  - with all lines disabled
     And the user validates "Compare_Strings" that the "clockOutSuccessMsg" element is "Equal To" "#(timeClockOutSuccessMsg)" at the "ClockOutPage" page "validate_Clock_Out_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
     And the user clicks the "OKBtn" element at the "ClockOutPage" page
+
+
