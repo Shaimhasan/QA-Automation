@@ -1,4 +1,3 @@
-@dineInCardBasicOrderEntryWithoutLines
 Feature: Basic Order Entry - Dine In Credit Card - with Make Line Only
   This script is to validate Basic Order Entry - Dine In Credit Card - with Make Line Only
 

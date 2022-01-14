@@ -1,4 +1,3 @@
-@dineInCashWithChangedDueBasicOrderEntry
 Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line Only
   This script is to validate Basic Order Entry - Dine In Cash - with Change Due  - with Make Line Only
 
