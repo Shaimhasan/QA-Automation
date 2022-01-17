@@ -1,6 +1,7 @@
 Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line Only
   This script is to validate Basic Order Entry - Dine In Cash - with Change Due  - with Make Line Only
 
+  @issue=1620
   @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Make_Line_Only @RegressionSuite @BOE @BOE_Make_Line_Only @BOE_Make_Line_Only_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Make_Line_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
