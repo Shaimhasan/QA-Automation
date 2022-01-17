@@ -987,6 +987,38 @@ public class AutoEngValidate extends BaseWebSteps {
 
     }
 
+    @Then("^the user click makeline single pizza \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
+    public void theUserClickSinglePizzaMakelineUntilElementFound(String objectName,
+                                                      String expectedValue,
+                                                      String attributeName,
+                                                      String pageName
+    ) {
+        attributeName = parseValue(attributeName);
+        expectedValue = parseValue(expectedValue);
+        String expectedValueOne = expectedValue + "_1" + "_1";
+      //  String expectedValueTwo = expectedValue + "_1" + "_2";
+//        String expectedValueThreee = expectedValue + "_1" + "_3";
+        System.out.println(attributeName);
+        String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+
+        if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).click();
+          //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        }
+//        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//            //transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+//        }
+//        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
+//            getObject(objectName, pageName).click();
+//        }
+        else {
+            getObject(objectName, pageName).click();
+            theUserClickSinglePizzaMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+        }
+
+    }
+
     @Then("^the user custom click and clear all prep station Or Make Line item \"([^\"]*)\" element found at the page \"([^\"]*)\"$")
     public void theUserCustomClickUntilElementFound(String objectName,
                                                     String pageName) {
