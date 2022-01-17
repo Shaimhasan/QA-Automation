@@ -2,7 +2,7 @@ Feature: Basic Order Entry - Customize an order before finishing order - with Ma
   This script is to validate Basic Order Entry - Customize an order before finishing order - with Make Line Only for Cash Only
 
   @issue=1623
-  @Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_With_Make_Line_Only @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
+  @Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_With_Make_Line_Only @RegressionSuite @BOE @BOE_Make_Line_Only @BOE_Make_Line_Only_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_With_Make_Line_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
