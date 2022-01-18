@@ -167,3 +167,60 @@ Feature: Basic Order Entry - Dine In Cash - with Make Line Only
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: user click Close Button
     And the user clicks the "close" element at the "OrderDetailsPage" page
+
+    #Comment: the user visible element
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user visible element
+    And the user waits for the "backOffice" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: the user click on back office
+    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
+    #Comment: the user click Setting
+    And the user clicks the "settings" element at the "SettingsPage" page
+    #Comment: the user click on Setting change
+    And the user clicks the "settingsChange" element at the "SettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "prepStationConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "makeLineConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "cutAndWrapConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user refresh Page
+    And the user refreshes the page
