@@ -3,7 +3,8 @@
     "sharedAttributes": {
     },
     "staticData": {
-      "amount": "63.00",
+      "amount": "33.00",
+      "amtVal": "35.20",
       "tableNo": "automation",
       "cardNum": "5454545454545454",
       "expiration": "052025",
