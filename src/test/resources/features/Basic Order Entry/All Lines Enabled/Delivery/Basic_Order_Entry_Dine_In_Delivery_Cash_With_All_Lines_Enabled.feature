@@ -242,4 +242,43 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines enabled
     #Comment: user click on Driver
     And the user clicks the "OKBtn" element at the "ClockOutPage" page
 
+    #Comment: the user visible element
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: User validate the order list element is present.
+    And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
+    #Comment: user click on Order List
+    And the user clicks the "orderList" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user validate the transaction Number
+    And store text of the cell having unique rowVal comes from Data Dictionary "#(transaction_Number)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
+    #Comment: user validate the transaction Number
+    And store text of the cell having unique rowVal comes from Data Dictionary "#(order_Number)" and columnHeader " Order#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "order_Num"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: the user validate the ID number in History
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Cash" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Cash']" "validate_ID_Number" "HardStopOnFailure"
+    #Comment: the user click on Details Elements
+    And the user clicks the "table" element with dictionary key "#(order_Number)" at the "OrderListPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickXpath2)"
+    #Comment: the user validate the visibility of Page
+    And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
+    #Comment: Validate the amount
+    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amtVal)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
+    #Comment: The user save the transaction number into dictionary key
+    And store the displayed text of the "transactionNum" element at the "OrderDetailsPage" page into the data dictionary with key "transaction_Number2"
+    #Comment: The user save the order number into dictionary key
+    And store the displayed text of the "orderNum" element at the "OrderDetailsPage" page into the data dictionary with key "order_Number2"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: User validate data dictionary values
+    And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
+    #Comment: user click Close Button
+    And the user clicks the "close" element at the "OrderDetailsPage" page
+
 
