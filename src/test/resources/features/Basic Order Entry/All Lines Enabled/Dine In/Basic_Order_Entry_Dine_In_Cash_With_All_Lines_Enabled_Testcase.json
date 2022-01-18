@@ -5,7 +5,10 @@
     "staticData": {
       "tableNo": "automation",
       "amount": "63.00",
-      "cash": "Cash"
+      "cash": "Cash",
+      "orderIdXpath": "(//b[text()='",
+      "DetailsClickXpath1": "(//b[text()='",
+      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
     },
     "dataCriteria": {
     },

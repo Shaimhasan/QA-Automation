@@ -4,7 +4,10 @@
     },
     "staticData": {
       "tableNo": "automation",
-      "amount": "63.00"
+      "amount": "63.00",
+      "orderIdXpath": "(//b[text()='",
+      "DetailsClickXpath1": "(//b[text()='",
+      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
     },
     "dataCriteria": {
     },
