@@ -13,6 +13,8 @@ public class OrderEntry extends BasePO {
     private By cheesePizzaPMC = By.xpath("//label[text()='Cheese Pizza (P-M-C)']");
     private By mediumSize = By.xpath("//label[text()='Medium']");
     private By chicagoSylPizzaM = By.xpath("//label[text()='Chicago Style Pizza (M)']");
+    private By pepperoniPizzaMC = By.xpath("//label[text()='Pepperoni Pizza (M-C)']");
+    private By pepperoniPizzaMCIsSelected = By.xpath("//div[text()='1) Pepperoni Pizza (M-C)']");
     private By automationPizzaPMCSelected = By.xpath("//div[text()='1) Automation Pizza (P-M-C)']");
     private By chicagoSylPizzaMSelected = By.xpath("//div[text()='2) Chicago Style Pizza (M)']");
     private By cheesePizzaPMCSelected = By.xpath("//div[text()='2) Cheese Pizza (P-M-C)']");
@@ -39,6 +41,14 @@ public class OrderEntry extends BasePO {
     private By phoneTakeOutColor = By.id("divOrder");
     private By changeDueAmt = By.xpath("//p[text()='Change Due']//following-sibling::div");
 
+
+    public Element pepperoniPizzaMCIsSelected() throws IOException, InterruptedException {
+        return $(pepperoniPizzaMCIsSelected);
+    }
+
+    public Element pepperoniPizzaMC() throws IOException, InterruptedException {
+        return $(pepperoniPizzaMC);
+    }
 
     public Element cheesePizzaPMCSelected() throws IOException, InterruptedException {
         return $(cheesePizzaPMCSelected);
