@@ -85,14 +85,10 @@ Feature: Basic Order Entry - Delivery Cash  - with Make Line and Cut and Wrap en
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
     #Comment: validate background color
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
-    #Comment: user select suprimePizza
-    And the user clicks the "automationPizzaPMC" element at the "OrderEntry" page
     #Comment: user select veggiePizza
-    And the user clicks the "chicagoSylPizzaM" element at the "OrderEntry" page
-    #Comment: The user selected Supreme Pizza
-    And the user validates the "automationPizzaPMC" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
+    And the user clicks the "pepperoniPizzaMC" element at the "OrderEntry" page
     #Comment: The user selected Veggie Pizza
-    And the user validates the "chicagoSylPizzaM" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
+    And the user validates the "pepperoniPizzaMCIsSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Devilery
