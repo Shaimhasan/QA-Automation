@@ -1,8 +1,10 @@
-Feature: Basic Order Entry - Take Out Cash  - with Make Line and Cut and Wrap enabled
-  This script is to validate Basic Order Entry - Take Out Cash  - with Make Line and Cut and Wrap enabled
+Feature: Basic Order Entry - Take Out Cash - with Change Due  - with Make Line and Cut and Wrap enabled
+  This script is to validate Basic Order Entry - Take Out Cash - with Change Due  - with Make Line and Cut and Wrap enabled
+  and Customer pays $100
 
-  @Basic_Order_Entry_Take_Out_Cash_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_TakeOut
-  Scenario: Basic_Order_Entry_Take_Out_Cash_With_Make_Line_And_Cut_And_Wrap_Enabled_Testcase
+  @issue=1652
+  @Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_TakeOut
+  Scenario: Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -81,7 +83,6 @@ Feature: Basic Order Entry - Take Out Cash  - with Make Line and Cut and Wrap en
     #Comment: the user wait the element disable
     And the user waits for the "orderEntry" element to be "VISIBLE" on the "HomeScreenPage" page
 
-
     #Comment: user click On the orderEntry Button
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
     #Comment: user click on Take Out
@@ -96,8 +97,6 @@ Feature: Basic Order Entry - Take Out Cash  - with Make Line and Cut and Wrap en
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number
@@ -105,7 +104,7 @@ Feature: Basic Order Entry - Take Out Cash  - with Make Line and Cut and Wrap en
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
     #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    And the user clicks the "hundreadDollar" element at the "PaymentPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user validate change due popuo is present
@@ -114,6 +113,8 @@ Feature: Basic Order Entry - Take Out Cash  - with Make Line and Cut and Wrap en
     And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
+    #Comment: Validate Changed Due Amount
+    Then the user validates "Compare_Strings" that the "changeDueAmt" element is "Equal To" "#(changedDueAmt)" at the "OrderEntry" page "validate_Changed_Due_Amount" "HardStopOnFailure"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
 
@@ -244,3 +245,5 @@ Feature: Basic Order Entry - Take Out Cash  - with Make Line and Cut and Wrap en
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
+
+

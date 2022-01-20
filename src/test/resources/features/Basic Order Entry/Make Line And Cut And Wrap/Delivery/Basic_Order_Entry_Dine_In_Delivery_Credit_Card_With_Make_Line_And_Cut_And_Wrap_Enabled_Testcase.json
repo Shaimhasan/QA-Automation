@@ -3,7 +3,8 @@
     "sharedAttributes": {
     },
     "staticData": {
-      "amount": "63.00",
+      "amount": "33.00",
+      "amtVal": "35.20",
       "tableNo": "automation",
       "cardNum": "5454545454545454",
       "expiration": "052025",
@@ -15,10 +16,7 @@
       "timeClockOutSuccessMsg": "You have clocked out successfully.",
       "gatuityAmt": "0",
       "orderNumberXpath1": "//b[text()='",
-      "orderNumberXpath2": "']",
-      "orderIdXpath": "(//b[text()='",
-      "DetailsClickXpath1": "(//b[text()='",
-      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
+      "orderNumberXpath2": "']"
     },
     "dataCriteria": {
     },
