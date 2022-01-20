@@ -11,7 +11,7 @@ public class EditVendorDeliveryDaysPage extends BasePO {
 
     private By vendorDeliveryDaysTxt = By.xpath("//div[@id='div_BO_IN_VDD_EDT_DIALOG_modal_view']//span[text()='Vendor Delivery Days']");
     private By save = By.xpath("//div[@id='div_BO_IN_VDD_EDT_DIALOG_modal_view']//button[text()='Save']");
-    private By checkBox = By.xpath("//td[text()='Automation Testing1730']/..//input[contains(@id,'chk_BO_IN_VDD_EDT')]");
+    private By checkBox = By.xpath("//td[text()='Automation Vendor']/..//input[contains(@id,'chk_BO_IN_VDD_EDT')]");
     private By cancel = By.xpath("//div[@id='div_BO_IN_VDD_EDT_DIALOG_modal_view']//button[text()='Cancel']");
 
     public List<Element> checkBox() throws IOException, InterruptedException {
