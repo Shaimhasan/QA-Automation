@@ -131,3 +131,20 @@ Feature: Basic Activate Menu Items
     And the user validates the cell at row "2" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(SizeSmallAvailableChangedOldValue)" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
     And the user validates the cell at row "2" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(SizeSmallAvailableChangedNewValue)" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: the user click on close button
+    And the user clicks the "close" element at the "HistoryPage" page
+    #Comment: the user click on close button
+    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
+
+    #Comment: the user click on the item number row
+    And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
+    #Comment: the user store id
+    And store the displayed text of the "table" element at the "MenuItemsPage" page and get the dictionary key value "#(item_Number_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
+    #Comment: the user click on activate Button
+    And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
+    #Comment: the user click small Active CheckBox smallActiveChkBx
+    And the user clicks the "smallActiveChkBx" element at the "ActivateDeActicateMenuItemsPage" page
+    #Comment: the user click save Button
+    And the user clicks the "save" element at the "ActivateDeActicateMenuItemsPage" page

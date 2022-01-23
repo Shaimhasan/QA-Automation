@@ -134,3 +134,7 @@ Feature: Basic Edit Menu Items
     And the user validates the cell at row "2" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Automation Testing US" "validate_Item_Changed_Details" "HardStopOnFailure"
     #Comment: The user validate the chages on Hisotry Page
     And the user validates the cell at row "2" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Automation Testing US Changed TO America" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: the user click on close button
+    And the user clicks the "close" element at the "HistoryPage" page
+    #Comment: the user click on close button
+    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page

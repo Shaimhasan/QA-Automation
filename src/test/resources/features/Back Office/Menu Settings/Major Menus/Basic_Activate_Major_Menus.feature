@@ -95,3 +95,17 @@ Feature: Basic Activate Major Menus
     And the user clicks the "close" element at the "HistoryPage" page
     #Comment: the user click on close button
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
+    #Comment: the user click on the ID number row
+    And the user clicks the "table" element with dictionary key "#(menuName_value1)" at the "MajorMenusPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
+    #Comment: the user click on Edit Button
+    And the user clicks the "actAndDeact" element at the "MajorMenusPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "majorMenusTextVal" element to be "VISIBLE" on the "ActDeactMajorMenusPage" page
+    #Comment: the user select the availbale check box
+    And the user clicks the "availabelChkBox" element at the "ActDeactMajorMenusPage" page
+    #Comment: user validate the check box is selected
+    And the user validates the item in the "availabelChkBoxIsSelected" checkbox is Not checked at the "ActDeactModifiersPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
+    #Comment: the user click save Button
+    And the user clicks the "save" element at the "ActDeactMajorMenusPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load

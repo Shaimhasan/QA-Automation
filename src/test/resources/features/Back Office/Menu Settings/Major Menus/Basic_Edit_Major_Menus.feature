@@ -97,3 +97,4 @@ Feature: Basic Edit Major Menus
     And the user clicks the "close" element at the "HistoryPage" page
     #Comment: the user click on close button
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
+
