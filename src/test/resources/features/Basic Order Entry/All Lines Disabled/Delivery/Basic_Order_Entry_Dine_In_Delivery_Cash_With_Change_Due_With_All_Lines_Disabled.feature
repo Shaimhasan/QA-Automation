@@ -67,7 +67,7 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with all lines d
     And the user waits for the page to load
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on two digit
@@ -160,7 +160,7 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with all lines d
     #Comment: the user validate the visibility of Page
     And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
     #Comment: Validate the amount
-    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
+    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amtVal)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
     And store the displayed text of the "transactionNum" element at the "OrderDetailsPage" page into the data dictionary with key "transaction_Number2"
     #Comment: The user save the order number into dictionary key
@@ -171,5 +171,8 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with all lines d
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: user click Close Button
     And the user clicks the "close" element at the "OrderDetailsPage" page
+
+
+
 
 

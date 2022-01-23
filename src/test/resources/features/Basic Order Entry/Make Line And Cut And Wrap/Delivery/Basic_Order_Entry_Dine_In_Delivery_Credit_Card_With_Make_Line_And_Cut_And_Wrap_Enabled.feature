@@ -178,7 +178,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line and Cut and 
     #Comment: The user click on Adora header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on two digit
@@ -222,7 +222,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line and Cut and 
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading

@@ -4,6 +4,7 @@
     },
     "staticData": {
       "amount": "63.00",
+      "amtVal": "65.20",
       "tableNo": "automation",
       "textPhone": "(916) 555-4444",
       "timeRecordSuccessMsg": "Your time card recorded successfully.",
