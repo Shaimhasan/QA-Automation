@@ -65,9 +65,14 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with all lines d
     And the user clicks the "closeForDelivery" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
+    #Comment: The user wait until page is loading
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: The user click on adora
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
     And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on two digit

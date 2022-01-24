@@ -68,6 +68,8 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     #Comment: The user wait until page is loading
     And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
+    And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockInPage" page

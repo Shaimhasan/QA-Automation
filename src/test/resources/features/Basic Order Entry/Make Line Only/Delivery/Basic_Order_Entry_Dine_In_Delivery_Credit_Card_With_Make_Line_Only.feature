@@ -159,7 +159,8 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     And the user waits for the page to load
     #Comment: the user validate the visibility of popup
     And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
-
+    #Comment: user click on ClockIn
+    And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on two digit

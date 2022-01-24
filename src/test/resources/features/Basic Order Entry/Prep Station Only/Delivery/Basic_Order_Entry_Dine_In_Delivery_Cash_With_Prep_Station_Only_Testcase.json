@@ -1,0 +1,26 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "amount": "66.00",
+      "amtVal": "68.20",
+      "tableNo": "automation",
+      "textPhone": "(916) 555-4444",
+      "timeRecordSuccessMsg": "Your time card recorded successfully.",
+      "timeClockOutSuccessMsg": "You have clocked out successfully.",
+      "gatuityAmt": "0",
+      "orderNumberXpath1": "//b[text()='",
+      "orderNumberXpath2": "']",
+      "orderIdXpath": "(//b[text()='",
+      "DetailsClickXpath1": "(//b[text()='",
+      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}

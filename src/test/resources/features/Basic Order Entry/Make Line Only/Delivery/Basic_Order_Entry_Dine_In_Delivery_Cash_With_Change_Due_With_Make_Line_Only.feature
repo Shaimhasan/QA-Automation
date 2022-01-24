@@ -137,6 +137,8 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Make Line O
     #Comment: the user validate the visibility of popup
     And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
+    And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockInPage" page

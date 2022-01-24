@@ -1,0 +1,20 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "tableNo": "automation",
+      "amount": "66.00",
+      "cash": "Cash",
+      "orderIdXpath": "(//b[text()='",
+      "DetailsClickXpath1": "(//b[text()='",
+      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}

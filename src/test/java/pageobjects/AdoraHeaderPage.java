@@ -13,7 +13,7 @@ public class AdoraHeaderPage extends BasePO {
     private By orderList = By.xpath("//div[text()='Order List']");
     private By prepStation = By.xpath("//div[text()='Prep Station']");
     private By cutAndWrap = By.xpath("//div[text()='Cut & Wrap']");
-    private By clockIn = By.xpath("//div[text()='Clock In']");
+    private By clockIn = By.xpath("//div[normalize-space(text())='Clock In']");
     private By dispatch = By.xpath("//div[text()='Dispatch']");
     private By clockOut = By.xpath("//div[text()='Clock Out']");
     private By backOffice = By.xpath("//div[text()='Back Office']");
