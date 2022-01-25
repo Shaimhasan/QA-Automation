@@ -1,8 +1,8 @@
-Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
-  This script is to validate Basic Order Entry - Delivery Cash  - with Prep Station Only
+Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Prep Station Only
+  This script is to validate Basic Order Entry - Delivery Cash - With Change Due  - with Prep Station Only
 
-  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Prep_Station_Only @RegressionSuite @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_Delivery
-  Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_Prep_Station_Only_Testcase
+  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Change_Due_With_Prep_Station_Only @RegressionSuite @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_Delivery
+  Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_Change_Due_With_Prep_Station_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -19,6 +19,8 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     When the user enters the secure credential "#(Password)" into the "password" textbox at the "LoginPage" page
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
@@ -105,8 +107,8 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user clicks the "OK" element at the "CustomerInfoPage" page
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
-    #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    #Comment: user click on hundread dollar
+    And the user clicks the "hundreadDollar" element at the "PaymentPage" page
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
     #Comment: The user save the transaction number into dictionary key
@@ -133,7 +135,7 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
 
     #Comment: The user wait until page is loading
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: The user click on Adora header
+    #Comment: The user click on adora
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
     And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
@@ -141,8 +143,6 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
-    #Comment: the user visible txt
-    And the user waits for the "clockInTxtPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
@@ -153,7 +153,7 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
-     #Comment: The user wait until page is loading
+    #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user validate time record message successfully
     And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
@@ -161,10 +161,10 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user clicks the "OKBtn" element at the "ClockInPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: The user click on Adore header page
+    #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "dispatch" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
@@ -173,15 +173,13 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user clicks the "table" element with dictionary key "#(order_Number)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "bobTheDriver" element to be "VISIBLE" on the "DispatchPage" page
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: The user wait until page is loading
+    #Comment: the user validate the visibility of popup
     And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
@@ -197,12 +195,12 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockOutPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: the user enter gratuity amount
     Then the user enters "#(gatuityAmt)" into the "gratuityAmt" textbox at the "ClockOutPage" page
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "ClockOutPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: user validate clock out message successfully
     And the user validates "Compare_Strings" that the "clockOutSuccessMsg" element is "Equal To" "#(timeClockOutSuccessMsg)" at the "ClockOutPage" page "validate_Clock_Out_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
@@ -303,5 +301,8 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
+
+
+
 
 

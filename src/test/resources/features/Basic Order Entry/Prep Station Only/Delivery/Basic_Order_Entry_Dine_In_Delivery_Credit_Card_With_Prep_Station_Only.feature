@@ -1,8 +1,8 @@
-Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
-  This script is to validate Basic Order Entry - Delivery Cash  - with Prep Station Only
+Feature: Basic Order Entry - Delivery Credit Card  - with Prep Station Only
+  This script is to validate Basic Order Entry - Delivery Credit Card  - with Prep Station Only
 
-  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Prep_Station_Only @RegressionSuite @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_Delivery
-  Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_Prep_Station_Only_Testcase
+  @Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_Prep_Station_Only @RegressionSuite @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_Delivery
+  Scenario: Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_Prep_Station_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -99,14 +99,38 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user sends keys "Key_enter" to the "textPhone" element on the "CustomerInfoPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
+    #Comment: user click on Finish
+    And the user clicks the "OK" element at the "CustomerInfoPage" page
     #Comment: The user save the address into dictionary key
     And store the displayed text of the "address" element at the "CustomerInfoPage" page into the data dictionary with key "address_value"
     #Comment: user click on Finish
     And the user clicks the "OK" element at the "CustomerInfoPage" page
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
-    #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    #Comment: user click on credit
+    And the user clicks the "credit" element at the "PaymentPage" page
+    #Comment: User switches to the frame
+    And the user switches to frame "cardNumber"
+     #Comment: the user enter the CreditCard Number
+    Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
+    #Comment: The user Switches out side the frame
+    And the user switches to the default window content
+    #Comment: User switches to the frame
+    And the user switches to frame "cardExpiration"
+     #Comment: the user enter the expiration
+    Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+    #Comment: User switches to the frame
+    And the user switches to frame "cardCvv"
+    #Comment: the user enter the cvv
+    Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+    #Comment: user click on chargeBtn
+    And the user clicks the "chargeBtn" element at the "CreditCardPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
     #Comment: The user save the transaction number into dictionary key
@@ -141,8 +165,6 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
-    #Comment: the user visible txt
-    And the user waits for the "clockInTxtPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
@@ -159,6 +181,8 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
     And the user clicks the "OKBtn" element at the "ClockInPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: The user click on Adore header page
@@ -182,7 +206,7 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
-    And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    And the user waits for the page to load
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
@@ -229,7 +253,7 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     #Comment: User validate data dictionary values
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: the user validate the ID number in History
-    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Cash" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Cash']" "validate_ID_Number" "HardStopOnFailure"
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Credit Card" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Credit Card']" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements
     And the user clicks the "table" element with dictionary key "#(order_Number)" at the "OrderListPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickXpath2)"
     #Comment: the user validate the visibility of Page
@@ -303,5 +327,3 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
-
-
