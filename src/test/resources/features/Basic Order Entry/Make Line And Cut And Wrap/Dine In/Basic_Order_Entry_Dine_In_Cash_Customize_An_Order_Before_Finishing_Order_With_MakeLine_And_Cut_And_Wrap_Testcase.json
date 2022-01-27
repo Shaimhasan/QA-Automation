@@ -3,13 +3,13 @@
     "sharedAttributes": {
     },
     "staticData": {
-      "amount": "66.00",
+      "amount": "60.50",
       "tableNo": "automation",
       "cardNum": "5454545454545454",
-      "expiration": "052025",
+      "expirationMonth": "05",
+      "expirationYear": "2025",
       "cvv": "858",
-      "cardType": "Credit Card",
-      "CashType": "Cash",
+      "cash": "Cash",
       "orderIdXpath": "(//b[text()='",
       "DetailsClickXpath1": "(//b[text()='",
       "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"

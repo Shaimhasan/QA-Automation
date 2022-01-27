@@ -1,8 +1,8 @@
-Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
-  This script is to validate Basic Order Entry - Dine In Credit Card - with Prep Station Only
+Feature: Basic Order Entry - Dine-in with cash and Credit Card  - with Prep Station Only
+  This script is to validate Basic Order Entry - Dine-in 50 Dollar cash and Credit Card  - with Prep Station Only
 
-  @Basic_Order_Entry_Dine_In_Credit_Card_With_Prep_Station_Only @RegressionSuite @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_Credit_Card_With_Prep_Station_Only_Testcase
+  @Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_Prep_Station_Only @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
+  Scenario: Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_Prep_Station_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -19,6 +19,8 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     When the user enters the secure credential "#(Password)" into the "password" textbox at the "LoginPage" page
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
@@ -99,6 +101,8 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
+    #Comment: user click on fifty dollar
+    And the user clicks the "fiftyDollar" element at the "PaymentPage" page
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
     #Comment: User switches to the frame
@@ -149,7 +153,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: user click prepstation until order comes on console
     And the user click prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
 
-    #Comment: user wait for visible of element
+    #Comment: the user visible element
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
@@ -171,6 +175,8 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: the user validate the ID number in History
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Credit Card" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Credit Card']" "validate_ID_Number" "HardStopOnFailure"
+    #Comment: the user validate the ID number in History
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Cash" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Cash']" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements
     And the user clicks the "table" element with dictionary key "#(order_Number)" at the "OrderListPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickXpath2)"
     #Comment: the user validate the visibility of Page

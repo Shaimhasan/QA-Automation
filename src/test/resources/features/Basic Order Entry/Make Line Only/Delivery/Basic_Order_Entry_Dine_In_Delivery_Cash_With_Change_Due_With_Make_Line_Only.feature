@@ -178,6 +178,8 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Make Line O
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user hovers over the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading

@@ -89,8 +89,10 @@ Feature: Basic Order Entry - Dine-in with cash and Credit Card  - with Make Line
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select veggiePizza
     And the user clicks the "chicagoSylPizzaM" element at the "OrderEntry" page
+    #Comment: user select veggiePizza
+    And the user clicks the "chickenBaconNone" element at the "OrderEntry" page
     #Comment: The user selected Veggie Pizza
-    And the user validates the "chicagoSylPizzaM" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
+    And the user validates the "chickenBaconNoneIsSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish

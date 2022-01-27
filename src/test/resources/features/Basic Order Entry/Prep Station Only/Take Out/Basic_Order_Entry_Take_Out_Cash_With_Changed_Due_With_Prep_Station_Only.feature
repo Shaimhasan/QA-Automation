@@ -88,9 +88,9 @@ Feature: Basic Order Entry - Take Out Cash - with Change Due  - with Prep Statio
     #Comment: validate background color
     And the user validates the background color of the "takeOutColor" element is "rgba(255, 255, 224, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select veggiePizza
-    And the user clicks the "hawaiianPizzaM" element at the "OrderEntry" page
+    And the user clicks the "hawaiianPizzaP" element at the "OrderEntry" page
     #Comment: The user selected Veggie Pizza
-    And the user validates the "hawaiianPizzaMSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
+    And the user validates the "hawaiianPizzaPSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish

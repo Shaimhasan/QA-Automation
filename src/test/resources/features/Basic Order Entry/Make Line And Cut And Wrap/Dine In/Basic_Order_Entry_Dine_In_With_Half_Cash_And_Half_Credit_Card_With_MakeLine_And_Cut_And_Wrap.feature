@@ -1,8 +1,8 @@
-Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
-  This script is to validate Basic Order Entry - Dine In Credit Card - with Prep Station Only
+Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with Make Line and Cut and Wrap enabled
+  This script is to validate Basic Order Entry - Dine-in with half cash and half Credit Card  - with Make Line and Cut and Wrap enabled
 
-  @Basic_Order_Entry_Dine_In_Credit_Card_With_Prep_Station_Only @RegressionSuite @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_Credit_Card_With_Prep_Station_Only_Testcase
+  @Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_MakeLine_And_Cut_And_Wrap @RegressionSuite @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_DineIn
+  Scenario: Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_MakeLine_And_Cut_And_Wrap_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -19,6 +19,8 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     When the user enters the secure credential "#(Password)" into the "password" textbox at the "LoginPage" page
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
@@ -39,7 +41,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "Not utilizing prep station" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -53,7 +55,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "Not utilizing make line monitor" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -67,7 +69,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "Not utilizing cut and wrap monitor" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -86,9 +88,9 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: validate background color
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select veggiePizza
-    And the user clicks the "hawaiianPizzaP" element at the "OrderEntry" page
+    And the user clicks the "pepperoniPizzaMC" element at the "OrderEntry" page
     #Comment: The user selected Veggie Pizza
-    And the user validates the "hawaiianPizzaPSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
+    And the user validates the "pepperoniPizzaMCIsSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
@@ -99,6 +101,10 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
+    #Comment: user click on half cash
+    And the user clicks the "half" element at the "PaymentPage" page
+    #Comment: user click on Cash
+    And the user clicks the "cash" element at the "PaymentPage" page
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
     #Comment: User switches to the frame
@@ -134,22 +140,39 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
 
-    #Comment: user wait for visible of element
+    #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
-    And the user waits for the "prepStation" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: User validate the order list element is present.
-    And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
-    #Comment: user click on prep Station
-    And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
+    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on makeLine
+    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: user click prepstation until order comes on console
-    And the user click prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
+    #Comment: user click makeline until order comes on console
+    And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
-    #Comment: user wait for visible of element
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+
+    #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
@@ -171,6 +194,8 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: the user validate the ID number in History
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Credit Card" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Credit Card']" "validate_ID_Number" "HardStopOnFailure"
+    #Comment: the user validate the ID number in History
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Cash" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Cash']" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements
     And the user clicks the "table" element with dictionary key "#(order_Number)" at the "OrderListPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickXpath2)"
     #Comment: the user validate the visibility of Page
@@ -244,4 +269,3 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
-

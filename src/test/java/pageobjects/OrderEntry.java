@@ -11,15 +11,17 @@ public class OrderEntry extends BasePO {
     private By dinInColor = By.id("divOrder");
     private By automationPizzaPMC = By.xpath("//label[text()='Automation Pizza (P-M-C)']");
     private By cheesePizzaPMC = By.xpath("//label[text()='Cheese Pizza (P-M-C)']");
-    private By hawaiianPizzaM = By.xpath("//label[text()='Hawaiian Pizza (P)']");
+    private By hawaiianPizzaP = By.xpath("//label[text()='Hawaiian Pizza (P)']");
     private By mediumSize = By.xpath("//label[text()='Medium']");
     private By chicagoSylPizzaM = By.xpath("//label[text()='Chicago Style Pizza (M)']");
     private By pepperoniPizzaMC = By.xpath("//label[text()='Pepperoni Pizza (M-C)']");
+    private By chickenBaconNone = By.xpath("//label[text()='Chicken Bacon Ranch (None)']");
+    private By chickenBaconNoneIsSelected = By.xpath("//div[text()='2) Chicken Bacon Ranch (None)']");
     private By pepperoniPizzaMCIsSelected = By.xpath("//div[text()='1) Pepperoni Pizza (M-C)']");
     private By automationPizzaPMCSelected = By.xpath("//div[text()='1) Automation Pizza (P-M-C)']");
     private By chicagoSylPizzaMSelected = By.xpath("//div[text()='2) Chicago Style Pizza (M)']");
     private By cheesePizzaPMCSelected = By.xpath("//div[text()='2) Cheese Pizza (P-M-C)']");
-    private By hawaiianPizzaMSelected = By.xpath("//div[text()='1) Hawaiian Pizza (P)']");
+    private By hawaiianPizzaPSelected = By.xpath("//div[text()='1) Hawaiian Pizza (P)']");
     private By finishBtn = By.xpath("//label[text()='Finish']");
     private By tableNoPopUpMenu = By.xpath("//span[text()='Table No. / Customer Name']");
     private By tableNo = By.id("txtTableNo");
@@ -44,12 +46,20 @@ public class OrderEntry extends BasePO {
     private By changeDueAmt = By.xpath("//p[text()='Change Due']//following-sibling::div");
 
 
-    public Element hawaiianPizzaMSelected() throws IOException, InterruptedException {
-        return $(hawaiianPizzaMSelected);
+    public Element chickenBaconNoneIsSelected() throws IOException, InterruptedException {
+        return $(chickenBaconNoneIsSelected);
     }
 
-    public Element hawaiianPizzaM() throws IOException, InterruptedException {
-        return $(hawaiianPizzaM);
+    public Element chickenBaconNone() throws IOException, InterruptedException {
+        return $(chickenBaconNone);
+    }
+
+    public Element hawaiianPizzaPSelected() throws IOException, InterruptedException {
+        return $(hawaiianPizzaPSelected);
+    }
+
+    public Element hawaiianPizzaP() throws IOException, InterruptedException {
+        return $(hawaiianPizzaP);
     }
 
     public Element pepperoniPizzaMCIsSelected() throws IOException, InterruptedException {
