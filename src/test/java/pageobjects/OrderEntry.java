@@ -16,7 +16,9 @@ public class OrderEntry extends BasePO {
     private By chicagoSylPizzaM = By.xpath("//label[text()='Chicago Style Pizza (M)']");
     private By pepperoniPizzaMC = By.xpath("//label[text()='Pepperoni Pizza (M-C)']");
     private By chickenBaconNone = By.xpath("//label[text()='Chicken Bacon Ranch (None)']");
+    private By veggiePizzaC = By.xpath("//label[text()='Veggie Pizza (C)']");
     private By chickenBaconNoneIsSelected = By.xpath("//div[text()='2) Chicken Bacon Ranch (None)']");
+    private By veggiePizzaCIsSelected = By.xpath("//div[text()='1) Veggie Pizza (C)']");
     private By pepperoniPizzaMCIsSelected = By.xpath("//div[text()='1) Pepperoni Pizza (M-C)']");
     private By automationPizzaPMCSelected = By.xpath("//div[text()='1) Automation Pizza (P-M-C)']");
     private By chicagoSylPizzaMSelected = By.xpath("//div[text()='2) Chicago Style Pizza (M)']");
@@ -45,6 +47,14 @@ public class OrderEntry extends BasePO {
     private By phoneTakeOutColor = By.id("divOrder");
     private By changeDueAmt = By.xpath("//p[text()='Change Due']//following-sibling::div");
 
+
+    public Element veggiePizzaCIsSelected() throws IOException, InterruptedException {
+        return $(veggiePizzaCIsSelected);
+    }
+
+    public Element veggiePizzaC() throws IOException, InterruptedException {
+        return $(veggiePizzaC);
+    }
 
     public Element chickenBaconNoneIsSelected() throws IOException, InterruptedException {
         return $(chickenBaconNoneIsSelected);
