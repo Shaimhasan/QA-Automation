@@ -3,13 +3,20 @@
     "sharedAttributes": {
     },
     "staticData": {
-      "amount": "66.00",
+      "amount": "33.00",
+      "amtVal": "35.20",
       "tableNo": "automation",
       "cardNum": "5454545454545454",
       "expiration": "052025",
       "cvv": "858",
       "cardType": "Credit Card",
       "CashType": "Cash",
+      "textPhone": "(916) 555-4444",
+      "timeRecordSuccessMsg": "Your time card recorded successfully.",
+      "timeClockOutSuccessMsg": "You have clocked out successfully.",
+      "gatuityAmt": "0",
+      "orderNumberXpath1": "//b[text()='",
+      "orderNumberXpath2": "']",
       "orderIdXpath": "(//b[text()='",
       "DetailsClickXpath1": "(//b[text()='",
       "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
