@@ -1,9 +1,9 @@
-Feature: Basic Order Entry - Dine In Cash - with Make Line Only
-  This script is to validate Basic Order Entry - Dine In Cash - with Make Line Only
+Feature: Basic Order Entry - Dine In Cash - with Prep Station and Make Line enabled
+  This script is to validate Basic Order Entry - Dine In Cash - with Prep Station and Make Line enabled
 
-  @issue=1614
-  @Basic_Order_Entry_Dine_In_Cash_With_Make_Line_Only @RegressionSuite @BOE @BOE_Make_Line_Only @BOE_Make_Line_Only_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_Cash_With_Make_Line_Only_Testcase
+  @issue=1648
+  @Basic_Order_Entry_Dine_In_Cash_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
+  Scenario: Basic_Order_Entry_Dine_In_Cash_With_Prep_Station_And_Make_Line_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -20,8 +20,6 @@ Feature: Basic Order Entry - Dine In Cash - with Make Line Only
     When the user enters the secure credential "#(Password)" into the "password" textbox at the "LoginPage" page
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
@@ -42,7 +40,7 @@ Feature: Basic Order Entry - Dine In Cash - with Make Line Only
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "Not utilizing prep station" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -85,19 +83,21 @@ Feature: Basic Order Entry - Dine In Cash - with Make Line Only
     And the user waits for the "orderEntry" element to be "VISIBLE" on the "HomeScreenPage" page
 
     #Comment: user click On the orderEntry Button
-    And the user clicks the "orderEntry" element at the "AdoraHeaderPage" page
+    And the user clicks the "orderEntry" element at the "HomeScreenPage" page
     #Comment: validate background color
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
+    #Comment: user select suprimePizza
+    And the user clicks the "hawaiianPizzaP" element at the "OrderEntry" page
     #Comment: user select veggiePizza
     And the user clicks the "chicagoSylPizzaM" element at the "OrderEntry" page
+    #Comment: The user selected Supreme Pizza
+    And the user validates the "hawaiianPizzaPSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: The user selected Veggie Pizza
-    And the user validates the "chicagoSylPizzaM" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
+    And the user validates the "chicagoSylPizzaMSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number
@@ -117,6 +117,21 @@ Feature: Basic Order Entry - Dine In Cash - with Make Line Only
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
 
+    #Comment: user wait for visible of element
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "prepStation" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: User validate the order list element is present.
+    And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
+    #Comment: user click on prep Station
+    And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click prepstation until order comes on console
+    And the user click prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -130,15 +145,13 @@ Feature: Basic Order Entry - Dine In Cash - with Make Line Only
     #Comment: user click makeline until order comes on console
     And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
-    #Comment: the user visible element
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
-    #Comment: user click on Order List
+    #Comment: the user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
@@ -225,3 +238,6 @@ Feature: Basic Order Entry - Dine In Cash - with Make Line Only
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
+
+
+
