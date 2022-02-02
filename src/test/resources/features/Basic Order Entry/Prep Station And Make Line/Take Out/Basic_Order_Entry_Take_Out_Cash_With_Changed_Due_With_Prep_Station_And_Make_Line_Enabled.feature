@@ -1,9 +1,9 @@
-Feature: Basic Order Entry - Dine In Cash - with Prep Station and Make Line enabled
-  This script is to validate Basic Order Entry - Dine In Cash - with Prep Station and Make Line enabled
+Feature: Basic Order Entry - Take Out Cash - with Change Due  - with Prep Station and Make Line enabled
+  This script is to validate Basic Order Entry - Take Out Cash - with Change Due  - with Prep Station and Make Line enabled
+  with 100 $Dollar
 
-  @issue=1648
-  @Basic_Order_Entry_Dine_In_Cash_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_Cash_With_Prep_Station_And_Make_Line_Enabled_Testcase
+  @Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_TakeOut
+  Scenario: Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -84,8 +84,10 @@ Feature: Basic Order Entry - Dine In Cash - with Prep Station and Make Line enab
 
     #Comment: user click On the orderEntry Button
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+    #Comment: user click on Take Out
+    And the user clicks the "takeOut" element at the "OrderEntry" page
     #Comment: validate background color
-    And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
+    And the user validates the background color of the "takeOutColor" element is "rgba(255, 255, 224, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select suprimePizza
     And the user clicks the "supremePizzaPM" element at the "OrderEntry" page
     #Comment: The user selected Supreme Pizza
@@ -101,7 +103,7 @@ Feature: Basic Order Entry - Dine In Cash - with Prep Station and Make Line enab
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
     #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    And the user clicks the "hundreadDollar" element at the "PaymentPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user validate change due popuo is present
@@ -110,6 +112,8 @@ Feature: Basic Order Entry - Dine In Cash - with Prep Station and Make Line enab
     And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
+    #Comment: Validate Changed Due Amount
+    Then the user validates "Compare_Strings" that the "changeDueAmt" element is "Equal To" "#(changedDueAmt)" at the "OrderEntry" page "validate_Changed_Due_Amount" "HardStopOnFailure"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
 
@@ -141,13 +145,14 @@ Feature: Basic Order Entry - Dine In Cash - with Prep Station and Make Line enab
     #Comment: user click makeline until order comes on console
     And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
+
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
-    #Comment: the user click on Order List
+    #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
@@ -159,7 +164,7 @@ Feature: Basic Order Entry - Dine In Cash - with Prep Station and Make Line enab
     And the user validates the data dictionary value of "#(transaction_Number)" is "Equal To" data dictionary value of "#(transaction_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: User validate data dictionary values
     And the user validates the data dictionary value of "#(order_Number)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
-    #Comment: the user validate the ID number in History
+   #Comment: the user validate the ID number in History
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Cash" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Cash']" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements
     And the user clicks the "table" element with dictionary key "#(order_Number)" at the "OrderListPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickXpath2)"
@@ -234,6 +239,5 @@ Feature: Basic Order Entry - Dine In Cash - with Prep Station and Make Line enab
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
-
 
 

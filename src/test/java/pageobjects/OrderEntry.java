@@ -17,6 +17,7 @@ public class OrderEntry extends BasePO {
     private By pepperoniPizzaMC = By.xpath("//label[text()='Pepperoni Pizza (M-C)']");
     private By chickenBaconNone = By.xpath("//label[text()='Chicken Bacon Ranch (None)']");
     private By veggiePizzaC = By.xpath("//label[text()='Veggie Pizza (C)']");
+    private By supremePizzaPM = By.xpath("//label[text()='Supreme Pizza (P-M)']");
     private By chickenBaconNoneIsSelected = By.xpath("//div[text()='2) Chicken Bacon Ranch (None)']");
     private By veggiePizzaCIsSelected = By.xpath("//div[text()='1) Veggie Pizza (C)']");
     private By pepperoniPizzaMCIsSelected = By.xpath("//div[text()='1) Pepperoni Pizza (M-C)']");
@@ -24,6 +25,7 @@ public class OrderEntry extends BasePO {
     private By chicagoSylPizzaMSelected = By.xpath("//div[text()='2) Chicago Style Pizza (M)']");
     private By cheesePizzaPMCSelected = By.xpath("//div[text()='2) Cheese Pizza (P-M-C)']");
     private By hawaiianPizzaPSelected = By.xpath("//div[text()='1) Hawaiian Pizza (P)']");
+    private By supremePizzaPMSelected = By.xpath("//div[text()='1) Supreme Pizza (P-M)']");
     private By finishBtn = By.xpath("//label[text()='Finish']");
     private By tableNoPopUpMenu = By.xpath("//span[text()='Table No. / Customer Name']");
     private By tableNo = By.id("txtTableNo");
@@ -47,6 +49,14 @@ public class OrderEntry extends BasePO {
     private By phoneTakeOutColor = By.id("divOrder");
     private By changeDueAmt = By.xpath("//p[text()='Change Due']//following-sibling::div");
 
+
+    public Element supremePizzaPMSelected() throws IOException, InterruptedException {
+        return $(supremePizzaPMSelected);
+    }
+
+    public Element supremePizzaPM() throws IOException, InterruptedException {
+        return $(supremePizzaPM);
+    }
 
     public Element veggiePizzaCIsSelected() throws IOException, InterruptedException {
         return $(veggiePizzaCIsSelected);
