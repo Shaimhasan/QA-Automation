@@ -4,9 +4,9 @@
     },
     "staticData": {
       "tableNo": "automation",
-      "amount": "63.00",
+      "amount": "33.00",
       "cash": "Cash",
-      "changedDueAmt": "-37.00",
+      "changedDueAmt": "-67.00",
       "orderIdXpath": "(//b[text()='",
       "DetailsClickXpath1": "(//b[text()='",
       "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"

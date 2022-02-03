@@ -1,4 +1,3 @@
-@BasicEditMenuItems
 Feature: Basic Edit Modifiers
   This script is to validate Edit Modifiers
 
