@@ -39,6 +39,20 @@ public class AutoEngStoreValue extends BaseWebSteps {
         logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
     }
 
+    @When("^store the sub string \"([^\"]*)\" of text with start index \"([^\"]*)\" and last index \"([^\"]*)\" into the data dictionary with key \"([^\"]*)\"$")
+    public void storeTheSubStringDisplayedTextOfTheElementAtThePageIntoTheDataDictionaryWithKey(String text,
+                                                                                                String startIndex,
+                                                                                                String lastIndex,
+                                                                                                String dictionaryKey) {
+        startIndex = parseValue(startIndex);
+        lastIndex = parseValue(lastIndex);
+        text = parseValue(text);
+        dictionaryKey = parseValue(dictionaryKey);
+        String valToStore = subStringText(text,startIndex,lastIndex);
+        TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
+        logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
+    }
+
     @When("^store the displayed text of the \"([^\"]*)\" element at the \"([^\"]*)\" page and get the dictionary key value \"([^\"]*)\" based on xpath1 \"([^\"]*)\" and xpath2 \"([^\"]*)\" store at dictionary with key \"([^\"]*)\"$")
     public void storeTheDisplayedTextOfTheElementAtThePageIntoTheDataDictionaryWithKeyBasedOnXpath1AndXpath2(String objectName,
                                                                                                              String pageName,

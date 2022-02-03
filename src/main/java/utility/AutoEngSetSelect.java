@@ -372,6 +372,15 @@ public class AutoEngSetSelect extends BaseWebSteps {
         enterValueRandomNumberInTextBox(textBox);
     }
 
+    @When("^the user enters random \"([^\"]*)\" digit number into the \"([^\"]*)\" textbox at the \"([^\"]*)\" page$")
+    public void theUserGenerateTenDigitTheRandomNumberAtPage(String number,
+                                                             String objectName,
+                                                             String pageName) {
+        number=parseValue(number);
+        Element textBox = getObject(objectName, pageName);
+        enterAnyDigitRandomNumber(textBox,number);
+    }
+
     @When("^the user enters random number into the \"([^\"]*)\" textbox at the \"([^\"]*)\" page and store at dictionary key \"([^\"]*)\"$")
     public void theUserSavedGeneratedTheRandomNumberDictionaryKeyAtPage(String objectName,
                                                                         String pageName,

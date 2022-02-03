@@ -938,10 +938,12 @@ public class AutoEngValidate extends BaseWebSteps {
         String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).displayed();
             getObject(objectName, pageName).click();
             transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
         if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).displayed();
             getObject(objectName, pageName).click();
            // transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
@@ -949,7 +951,13 @@ public class AutoEngValidate extends BaseWebSteps {
 //            getObject(objectName, pageName).click();
 //        }
         else {
+            getObject(objectName, pageName).displayed();
             getObject(objectName, pageName).click();
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             theUserClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
 
@@ -1015,6 +1023,29 @@ public class AutoEngValidate extends BaseWebSteps {
         else {
             getObject(objectName, pageName).click();
             theUserClickSinglePizzaMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+        }
+
+    }
+
+    @Then("^the user click Single prepstation \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
+    public void theUserClickSingleUntilElementFound(String objectName,
+                                              String expectedValue,
+                                              String attributeName,
+                                              String pageName
+    ) {
+        attributeName = parseValue(attributeName);
+        expectedValue = parseValue(expectedValue);
+        String expectedValueOne = "div_PS_item_" + expectedValue + "_1" + "_1";
+        String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+
+        if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).displayed();
+            getObject(objectName, pageName).click();
+        }
+        else {
+            getObject(objectName, pageName).displayed();
+            getObject(objectName, pageName).click();
+            theUserClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
 
     }

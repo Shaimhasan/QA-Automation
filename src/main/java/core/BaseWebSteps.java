@@ -86,6 +86,7 @@ public class BaseWebSteps extends BaseStepsEngine {
         }
 
     }
+
     protected void launchApplicationURL(String appName, String location) {
         final String propsFilePath = ENVIRONMENTPATH + Property.getVariable(ENV_PROP) + PROPERTIES_EXT;
         String url = Property.getProperty(propsFilePath, appName);
@@ -152,13 +153,22 @@ public class BaseWebSteps extends BaseStepsEngine {
         Screenshot.saveScreenshot(screenShotFile, Constants.SCREENSHOTPATH);
     }
 
+    protected String subStringText(String text, String startIndex, String lastIndex) {
+        int startValue = Integer.parseInt(startIndex);
+        int lastValue = Integer.parseInt(lastIndex);
+        String Str = text;
+        System.out.println("String value: " + text);
+        System.out.println("SubString value: " + Str.substring(startValue, lastValue));
+        return Str.substring(startValue, lastValue);
+    }
+
     protected String getTextFromElement(Element object) {
         String valToReturn = "";
 
         if (object.element().getTagName().equalsIgnoreCase("select")) {
             valToReturn = object.dropdown().getFirstSelectedOption().getText();
         } else if (object.element().getTagName().equalsIgnoreCase("input") &&
-                   object.getAttribute("type").equalsIgnoreCase("radio")) {
+                object.getAttribute("type").equalsIgnoreCase("radio")) {
             valToReturn = object.getRadioLabelText();
         } else {
             valToReturn = findElementText(object);
@@ -198,12 +208,12 @@ public class BaseWebSteps extends BaseStepsEngine {
                                             Element table) {
 
         return findMatchingTableCell(firstColName,
-                                     firstColValue,
-                                     null,
-                                     null,
-                                     null,
-                                     null,
-                                     table);
+                firstColValue,
+                null,
+                null,
+                null,
+                null,
+                table);
     }
 
     protected Element findMatchingTableCell(String firstColName,
@@ -213,12 +223,12 @@ public class BaseWebSteps extends BaseStepsEngine {
                                             Element table) {
 
         return findMatchingTableCell(firstColName,
-                                     firstColValue,
-                                     secondColName,
-                                     secondColValue,
-                                     null,
-                                     null,
-                                     table);
+                firstColValue,
+                secondColName,
+                secondColValue,
+                null,
+                null,
+                table);
     }
 
     protected Element findMatchingTableCell(String firstColName,
@@ -236,29 +246,29 @@ public class BaseWebSteps extends BaseStepsEngine {
             tableCellToClick = table.getMatchingRowNum(firstColName, firstColValue);
         } else if (thirdColName == null) {
             Reporter.addStepLog(String.format("Looking in the \"%s\" column for matching value: \"%s\", and in the \"%s\" column for match value \"%s\"",
-                                              firstColName,
-                                              firstColValue,
-                                              secondColName,
-                                              secondColValue));
+                    firstColName,
+                    firstColValue,
+                    secondColName,
+                    secondColValue));
 
             tableCellToClick = table.getMatchingRowNum(firstColName,
-                                                       firstColValue,
-                                                       secondColName,
-                                                       secondColValue);
+                    firstColValue,
+                    secondColName,
+                    secondColValue);
 
         } else {
             Reporter.addStepLog(String.format("Looking in the \"%s\" column for matching value: \"%s\", and in the \"%s\" column for match value \"%s\", " +
-                                              "and in the \"%s\" column for matching value \"%s\"",
-                                              firstColName,
-                                              firstColValue,
-                                              secondColName,
-                                              secondColValue,
-                                              thirdColName,
-                                              thirdColValue));
+                            "and in the \"%s\" column for matching value \"%s\"",
+                    firstColName,
+                    firstColValue,
+                    secondColName,
+                    secondColValue,
+                    thirdColName,
+                    thirdColValue));
 
             tableCellToClick = table.getMatchingRowNum(firstColName, firstColValue,
-                                                       secondColName, secondColValue,
-                                                       thirdColName, thirdColValue);
+                    secondColName, secondColValue,
+                    thirdColName, thirdColValue);
 
         }
 
@@ -282,8 +292,9 @@ public class BaseWebSteps extends BaseStepsEngine {
             textBox.sendKeysChord(value);
         }
     }
-    protected void enterValueDynamicEmailIdInTextBox(String val1,String val2,Element textBox) {
-        int randomNumber=generateDynamicNumber();
+
+    protected void enterValueDynamicEmailIdInTextBox(String val1, String val2, Element textBox) {
+        int randomNumber = generateDynamicNumber();
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
                 textBox.sendKeys(val1 + randomNumber + val2);
@@ -294,8 +305,9 @@ public class BaseWebSteps extends BaseStepsEngine {
             textBox.sendKeysChord(val1 + randomNumber + val2);
         }
     }
-    protected void enterValueDynamicUserNameInTextBox(String val1,Element textBox) {
-        int randomNumber=generateDynamicNumber();
+
+    protected void enterValueDynamicUserNameInTextBox(String val1, Element textBox) {
+        int randomNumber = generateDynamicNumber();
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
                 textBox.sendKeys(val1 + randomNumber);
@@ -306,8 +318,9 @@ public class BaseWebSteps extends BaseStepsEngine {
             textBox.sendKeysChord(val1 + randomNumber);
         }
     }
-    protected void enterValueDynamicAlphabeticUserNameInTextBox(String val1,Element textBox) {
-        String randomAlphabeticString=generateRandomAlphabeticString();
+
+    protected void enterValueDynamicAlphabeticUserNameInTextBox(String val1, Element textBox) {
+        String randomAlphabeticString = generateRandomAlphabeticString();
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
                 textBox.sendKeys(val1 + randomAlphabeticString);
@@ -318,8 +331,9 @@ public class BaseWebSteps extends BaseStepsEngine {
             textBox.sendKeysChord(val1 + randomAlphabeticString);
         }
     }
-    protected void enterDateInTextBox(String val1,Element textBox) {
-        String pastDates=getPastDate(val1);
+
+    protected void enterDateInTextBox(String val1, Element textBox) {
+        String pastDates = getPastDate(val1);
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
                 textBox.sendKeys(pastDates);
@@ -330,6 +344,7 @@ public class BaseWebSteps extends BaseStepsEngine {
             textBox.sendKeysChord(pastDates);
         }
     }
+
     protected void performTabOperation(Element textBox) {
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
@@ -341,8 +356,9 @@ public class BaseWebSteps extends BaseStepsEngine {
             textBox.sendKeysChord(String.valueOf(Keys.TAB));
         }
     }
+
     protected void enterValueRandomNumberInTextBox(Element textBox) {
-        int randomNumber=generateDynamicNumber();
+        int randomNumber = generateDynamicNumber();
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
                 textBox.sendKeys(String.valueOf(randomNumber));
@@ -353,8 +369,22 @@ public class BaseWebSteps extends BaseStepsEngine {
             textBox.sendKeysChord(String.valueOf(randomNumber));
         }
     }
+
+    protected void enterAnyDigitRandomNumber(Element textBox, String number) {
+        long randomNumber = generateRandomANyNumber(number);
+        if (textBox.getValue() != null) {
+            if (textBox.getValue().isEmpty()) {
+                textBox.sendKeys(String.valueOf(randomNumber));
+            } else {
+                textBox.sendKeysChord(String.valueOf(randomNumber));
+            }
+        } else {
+            textBox.sendKeysChord(String.valueOf(randomNumber));
+        }
+    }
+
     protected int generateRandomNumberAndEnter(Element textBox) {
-        int randomNumber=generateDynamicNumber();
+        int randomNumber = generateDynamicNumber();
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
                 textBox.sendKeys(String.valueOf(randomNumber));
@@ -367,8 +397,8 @@ public class BaseWebSteps extends BaseStepsEngine {
         return randomNumber;
     }
 
-    protected int generateRandomNumberBasicOnDigitAndEnter(Element textBox,String digit) {
-        int randomNumber=generateDynamicNumberBasedOnDigit(digit);
+    protected int generateRandomNumberBasicOnDigitAndEnter(Element textBox, String digit) {
+        int randomNumber = generateDynamicNumberBasedOnDigit(digit);
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
                 textBox.sendKeys(String.valueOf(randomNumber));
@@ -382,8 +412,8 @@ public class BaseWebSteps extends BaseStepsEngine {
     }
 
     protected int generateDecimalRandomNumberAndEnter(Element textBox) {
-        int randomNumber=generateDynamicNumber();
-        String decimalNum=randomNumber + ".01";
+        int randomNumber = generateDynamicNumber();
+        String decimalNum = randomNumber + ".01";
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
                 textBox.sendKeys(decimalNum);
@@ -399,7 +429,8 @@ public class BaseWebSteps extends BaseStepsEngine {
     protected void switchToNextWindow(int retries) throws InterruptedException {
         if (retries > 0) {
             try {
-                String currentWindowHandle = getDriver().getWindowHandle();long windowSwitchDelay = Integer.parseInt(System.getProperty(WINDOW_SWITCH_DELAY));
+                String currentWindowHandle = getDriver().getWindowHandle();
+                long windowSwitchDelay = Integer.parseInt(System.getProperty(WINDOW_SWITCH_DELAY));
                 log.debug("Next window not found. Waiting {}ms and trying again. Number of retries left: {}", windowSwitchDelay, retries);
                 Thread.sleep(windowSwitchDelay);
                 Set<String> windowHandles = getDriver().getWindowHandles();
@@ -422,18 +453,19 @@ public class BaseWebSteps extends BaseStepsEngine {
         }
     }
 
-    protected void switchToNamedWindow(String windowName, String matchPattern, int retries) throws InterruptedException{
+    protected void switchToNamedWindow(String windowName, String matchPattern, int retries) throws InterruptedException {
         if (retries > 0) {
             long windowSwitchDelay = Integer.parseInt(System.getProperty(WINDOW_SWITCH_DELAY));
             log.debug("Next window not found. Waiting {}ms and trying again. Number of retries left: {}", windowSwitchDelay, retries);
-            Thread.sleep(windowSwitchDelay); Set<String> windowHandles = getDriver().getWindowHandles();
+            Thread.sleep(windowSwitchDelay);
+            Set<String> windowHandles = getDriver().getWindowHandles();
             String windowHandleToSwitchTo = null;
 
             for (String windowHandleName : windowHandles) {
                 getDriver().switchTo().window(windowHandleName);
 
                 if ((matchPattern.equals("EXACT") && getDriver().getTitle().equalsIgnoreCase(windowName)) ||
-                    (matchPattern.equals("PARTIAL") && getDriver().getTitle().contains(windowName))) {
+                        (matchPattern.equals("PARTIAL") && getDriver().getTitle().contains(windowName))) {
                     windowHandleToSwitchTo = windowHandleName;
                 }
             }
@@ -503,63 +535,63 @@ public class BaseWebSteps extends BaseStepsEngine {
                     robot.keyPress(KeyEvent.VK_SPACE);
                     robot.keyRelease(KeyEvent.VK_SPACE);
                     break;
-                
+
                 case "DOWN":
-                	robot.keyPress(KeyEvent.VK_DOWN);
-                	robot.keyRelease(KeyEvent.VK_DOWN);
-                	break;
+                    robot.keyPress(KeyEvent.VK_DOWN);
+                    robot.keyRelease(KeyEvent.VK_DOWN);
+                    break;
 
                 case "SPACETAB":
-                	robot.keyPress(KeyEvent.VK_SPACE);
-                	robot.keyPress(KeyEvent.VK_TAB);
-                	robot.keyRelease(KeyEvent.VK_SPACE);
-                	robot.keyRelease(KeyEvent.VK_TAB);
-                	break;
+                    robot.keyPress(KeyEvent.VK_SPACE);
+                    robot.keyPress(KeyEvent.VK_TAB);
+                    robot.keyRelease(KeyEvent.VK_SPACE);
+                    robot.keyRelease(KeyEvent.VK_TAB);
+                    break;
 
                 case "ALT_DOWN":
-                	robot.keyPress(KeyEvent.VK_ALT);
-                	robot.keyPress(KeyEvent.VK_DOWN);
-                	robot.keyRelease(KeyEvent.VK_DOWN);
-                	robot.keyRelease(KeyEvent.VK_ALT);
-                	break;
+                    robot.keyPress(KeyEvent.VK_ALT);
+                    robot.keyPress(KeyEvent.VK_DOWN);
+                    robot.keyRelease(KeyEvent.VK_DOWN);
+                    robot.keyRelease(KeyEvent.VK_ALT);
+                    break;
 
-				case "SHIFT_TAB":
-					robot.keyPress(KeyEvent.VK_SHIFT);
-					robot.keyPress(KeyEvent.VK_TAB);
-					robot.keyRelease(KeyEvent.VK_TAB);
-					robot.keyRelease(KeyEvent.VK_SHIFT);
-					break;
+                case "SHIFT_TAB":
+                    robot.keyPress(KeyEvent.VK_SHIFT);
+                    robot.keyPress(KeyEvent.VK_TAB);
+                    robot.keyRelease(KeyEvent.VK_TAB);
+                    robot.keyRelease(KeyEvent.VK_SHIFT);
+                    break;
 
-				case "UP":
-					robot.keyPress(KeyEvent.VK_UP);
-					robot.keyRelease(KeyEvent.VK_UP);
-					break;	
+                case "UP":
+                    robot.keyPress(KeyEvent.VK_UP);
+                    robot.keyRelease(KeyEvent.VK_UP);
+                    break;
 
-				case "CONTROL_A":
-					robot.keyPress(KeyEvent.VK_CONTROL);
-					robot.keyPress(KeyEvent.VK_A);
-					robot.keyRelease(KeyEvent.VK_A);
-					robot.keyRelease(KeyEvent.VK_CONTROL);
-					break;
+                case "CONTROL_A":
+                    robot.keyPress(KeyEvent.VK_CONTROL);
+                    robot.keyPress(KeyEvent.VK_A);
+                    robot.keyRelease(KeyEvent.VK_A);
+                    robot.keyRelease(KeyEvent.VK_CONTROL);
+                    break;
 
-				case "CONTROL_X":
-					robot.keyPress(KeyEvent.VK_CONTROL);
-					robot.keyPress(KeyEvent.VK_X);
-					robot.keyRelease(KeyEvent.VK_X);
-					robot.keyRelease(KeyEvent.VK_CONTROL);
-					break;
+                case "CONTROL_X":
+                    robot.keyPress(KeyEvent.VK_CONTROL);
+                    robot.keyPress(KeyEvent.VK_X);
+                    robot.keyRelease(KeyEvent.VK_X);
+                    robot.keyRelease(KeyEvent.VK_CONTROL);
+                    break;
 
-				case "CONTROL_V":
-					robot.keyPress(KeyEvent.VK_CONTROL);
-					robot.keyPress(KeyEvent.VK_V);
-					robot.keyRelease(KeyEvent.VK_V);
-					robot.keyRelease(KeyEvent.VK_CONTROL);
-					break;
+                case "CONTROL_V":
+                    robot.keyPress(KeyEvent.VK_CONTROL);
+                    robot.keyPress(KeyEvent.VK_V);
+                    robot.keyRelease(KeyEvent.VK_V);
+                    robot.keyRelease(KeyEvent.VK_CONTROL);
+                    break;
 
-				case "F4":
-					robot.keyPress(KeyEvent.VK_F4);
-					robot.keyRelease(KeyEvent.VK_F4);
-					break;
+                case "F4":
+                    robot.keyPress(KeyEvent.VK_F4);
+                    robot.keyRelease(KeyEvent.VK_F4);
+                    break;
 
                 default:
                     enterStringWithRobot(val, robot);

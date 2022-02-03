@@ -129,7 +129,7 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click prepstation until order comes on console
-    And the user click prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
+    And the user click Single prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
 
     #Comment: The user wait until page is loading
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
