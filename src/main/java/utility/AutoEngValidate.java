@@ -945,7 +945,7 @@ public class AutoEngValidate extends BaseWebSteps {
         if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).displayed();
             getObject(objectName, pageName).click();
-           // transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            // transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
 //        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
 //            getObject(objectName, pageName).click();
@@ -997,21 +997,21 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user click makeline single pizza \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
     public void theUserClickSinglePizzaMakelineUntilElementFound(String objectName,
-                                                      String expectedValue,
-                                                      String attributeName,
-                                                      String pageName
+                                                                 String expectedValue,
+                                                                 String attributeName,
+                                                                 String pageName
     ) {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
         String expectedValueOne = expectedValue + "_1" + "_1";
-      //  String expectedValueTwo = expectedValue + "_1" + "_2";
+        //  String expectedValueTwo = expectedValue + "_1" + "_2";
 //        String expectedValueThreee = expectedValue + "_1" + "_3";
         System.out.println(attributeName);
         String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
-          //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
         }
 //        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
 //            getObject(objectName, pageName).click();
@@ -1029,9 +1029,9 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user click Single prepstation \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
     public void theUserClickSingleUntilElementFound(String objectName,
-                                              String expectedValue,
-                                              String attributeName,
-                                              String pageName
+                                                    String expectedValue,
+                                                    String attributeName,
+                                                    String pageName
     ) {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
@@ -1041,11 +1041,10 @@ public class AutoEngValidate extends BaseWebSteps {
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).displayed();
             getObject(objectName, pageName).click();
-        }
-        else {
+        } else {
             getObject(objectName, pageName).displayed();
             getObject(objectName, pageName).click();
-            theUserClickUntilElementFound(objectName, expectedValue, attributeName, pageName);
+            theUserClickSingleUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
 
     }
