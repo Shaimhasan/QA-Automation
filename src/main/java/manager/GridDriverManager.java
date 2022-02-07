@@ -43,6 +43,7 @@ public class GridDriverManager extends DriverManager {
 			}
 			else {
 				driver = new RemoteWebDriver(new URL(Property.getVariable(CUKES_SELENIUM_GRID)), cap.getCap());
+				driver.manage().window().maximize();
 			}
 		} catch (MalformedURLException e) {
 			log.error("Could not connect to Selenium Grid: url invalid", e);
