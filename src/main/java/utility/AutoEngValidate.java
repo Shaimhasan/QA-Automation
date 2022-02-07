@@ -4,7 +4,9 @@ import common.TestContext;
 import core.BaseWebSteps;
 import core.Element;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import reporting.Reporter;
 import validator.AssertHelper;
 import validator.ComparisonOperator;
@@ -1047,6 +1049,40 @@ public class AutoEngValidate extends BaseWebSteps {
             theUserClickSingleUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
 
+    }
+
+    @Then("^the user click All Single Pizza prepstation \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" should not found at the page \"([^\"]*)\"$")
+    public void theUserClickAllSingleUntilElementFound(String objectName,
+                                                       String expectedValue,
+                                                       String attributeName,
+                                                       String pageName
+    ) {
+        attributeName = parseValue(attributeName);
+        expectedValue = parseValue(expectedValue);
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        String expectedValueOne = "div_PS_item_" + expectedValue + "_1" + "_1";
+        List<WebElement> element = getDriver().findElements(By.xpath("(//div[@name='psdisplayitem'])[1]"));
+        if (!element.isEmpty()) {
+            String transactionNumber = getDriver().findElement(By.xpath("(//div[@name='psdisplayitem'])[1]")).getAttribute(attributeName);
+            if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+                try {
+                    throw new Exception("Script Fail Element present at prep station");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                getObject(objectName, pageName).displayed();
+                getObject(objectName, pageName).click();
+                theUserClickAllSingleUntilElementFound(objectName, expectedValue, attributeName, pageName);
+            }
+
+        } else {
+            System.out.println("Element is not present");
+        }
     }
 
     @Then("^the user custom click and clear all prep station Or Make Line item \"([^\"]*)\" element found at the page \"([^\"]*)\"$")
