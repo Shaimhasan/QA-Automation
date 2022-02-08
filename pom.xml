@@ -28,12 +28,12 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testsuites/ADORATest.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <properties>
-                        <property>
-                            <name>dataproviderthreadcount</name>
-                            <value>2</value>
-                        </property>
-                    </properties>
+<!--                    <properties>-->
+<!--                        <property>-->
+<!--                            <name>dataproviderthreadcount</name>-->
+<!--                            <value>2</value>-->
+<!--                        </property>-->
+<!--                    </properties>-->
                 </configuration>
             </plugin>
             <plugin>

@@ -713,6 +713,30 @@ public class AutoEngValidate extends BaseWebSteps {
                 Reporter.addStepLog(STATUS_FAIL, compareDesc);
             }
         }
+    }
+
+    @Then("^the user order number \"([^\"]*)\" category value \"([^\"]*)\" cut and wrap validates the \"([^\"]*)\" element is Not present at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserCutAndWrapValidatesNotPresentTheElementIsPresentAtThePage(String orderNum,
+                                                                       String categoryValue,
+                                                                       String tableName,
+                                                                       String pageName,
+                                                                       String validationID,
+                                                                       String onFailureFlag) {
+
+        orderNum = parseValue(orderNum);
+        categoryValue = parseValue(categoryValue);
+        final List<Element> elementPresent = getObject(tableName, pageName).getAllRowValueCutAndWrap(orderNum, categoryValue);
+        if(!elementPresent.isEmpty()){
+            try {
+                final String compareDesc = String.format("Expecting the '%s' element should not be present on the '%s' page. ", tableName, pageName);
+                throw new Exception("Element present at cut and wrap");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("Element Not Present at Cut and Wrap");
+        }
 
     }
 
@@ -1029,6 +1053,38 @@ public class AutoEngValidate extends BaseWebSteps {
 
     }
 
+    @Then("^the user click All makeline single pizza \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" should not found at the page \"([^\"]*)\"$")
+    public void theUserClickSinglePizzaNotFoundMakelineUntilElementFound(String objectName,
+                                                                 String expectedValue,
+                                                                 String attributeName,
+                                                                 String pageName
+    ) {
+        attributeName = parseValue(attributeName);
+        expectedValue = parseValue(expectedValue);
+        waitOnce();
+        String expectedValueOne = expectedValue + "_1" + "_1";
+        List<WebElement> element = getDriver().findElements(By.xpath("(//div[@name='mldisplayitem'])[1]"));
+        if (!element.isEmpty()){
+           String transactionNumber =getDriver().findElement(By.xpath("(//div[@name='mldisplayitem'])[1]")).getAttribute(attributeName);
+            if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+                try {
+                    throw new Exception("Scripts faild due to element present");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else {
+                getObject(objectName, pageName).displayed();
+                getObject(objectName, pageName).click();
+                theUserClickSinglePizzaNotFoundMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+            }
+        }
+        else {
+            System.out.println("Element is Not Found");
+        }
+
+    }
+
     @Then("^the user click Single prepstation \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
     public void theUserClickSingleUntilElementFound(String objectName,
                                                     String expectedValue,
@@ -1059,11 +1115,7 @@ public class AutoEngValidate extends BaseWebSteps {
     ) {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        waitOnce();
         String expectedValueOne = "div_PS_item_" + expectedValue + "_1" + "_1";
         List<WebElement> element = getDriver().findElements(By.xpath("(//div[@name='psdisplayitem'])[1]"));
         if (!element.isEmpty()) {

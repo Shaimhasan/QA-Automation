@@ -17,17 +17,30 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static core.Constants.ENVIRONMENTPATH;
 
 
 public class BaseWebSteps extends BaseStepsEngine {
     private static final String WINDOW_SWITCH_DELAY = "fw.windowSwitchDelay";
+    Map<Boolean, Boolean> cache = new ConcurrentHashMap<>();
     private BasePO po;
 
     public BaseWebSteps() {
         //base web steps
+    }
+    public void waitOnce() {
+        cache.computeIfAbsent(true, x -> {
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return true;
+        });
     }
 
 

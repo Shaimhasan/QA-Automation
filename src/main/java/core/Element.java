@@ -1095,6 +1095,12 @@ public class Element {
         return this.findElement(By.xpath(xpathValue));
     }
 
+    public List<Element> getAllRowValueCutAndWrap(String orderN, String category) {
+        String xpathValue = "//td[text()=" + "'" + orderN + " - " + category + "'" + "]//following-sibling::td[text()='Cut & Wrapped']";
+        System.out.println(xpathValue);
+        return this.findElements(By.xpath(xpathValue));
+    }
+
     public Element getRowValueText(String orderN, String category) {
         String xpathValue = "//td[text()=" + "'" + orderN + "-" + category + "'" + "]";
         System.out.println(xpathValue);
