@@ -730,7 +730,7 @@ public class AutoEngValidate extends BaseWebSteps {
         if (!elementPresent.isEmpty()) {
             try {
                 final String compareDesc = String.format("Expecting the '%s' element should not be present on the '%s' page. ", tableName, pageName);
-                Assert.fail("Scripts faild due to element present");
+                Assert.fail("Scripts failed due to element present");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -1074,7 +1074,7 @@ public class AutoEngValidate extends BaseWebSteps {
             System.out.println("Transaction Number : " + transactionNumber);
             if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
                 try {
-                    Assert.fail("Scripts faild due to element present");
+                    Assert.fail("Scripts failed due to element present");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
