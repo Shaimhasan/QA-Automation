@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import reporting.Reporter;
 import validator.AssertHelper;
 import validator.ComparisonOperator;
@@ -717,24 +718,23 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user order number \"([^\"]*)\" category value \"([^\"]*)\" cut and wrap validates the \"([^\"]*)\" element is Not present at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserCutAndWrapValidatesNotPresentTheElementIsPresentAtThePage(String orderNum,
-                                                                       String categoryValue,
-                                                                       String tableName,
-                                                                       String pageName,
-                                                                       String validationID,
-                                                                       String onFailureFlag) {
+                                                                                 String categoryValue,
+                                                                                 String tableName,
+                                                                                 String pageName,
+                                                                                 String validationID,
+                                                                                 String onFailureFlag) {
 
         orderNum = parseValue(orderNum);
         categoryValue = parseValue(categoryValue);
         final List<Element> elementPresent = getObject(tableName, pageName).getAllRowValueCutAndWrap(orderNum, categoryValue);
-        if(!elementPresent.isEmpty()){
+        if (!elementPresent.isEmpty()) {
             try {
                 final String compareDesc = String.format("Expecting the '%s' element should not be present on the '%s' page. ", tableName, pageName);
-                throw new Exception("Element present at cut and wrap");
+                Assert.fail("Scripts faild due to element present");
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-        else {
+        } else {
             System.out.println("Element Not Present at Cut and Wrap");
         }
 
@@ -1055,31 +1055,35 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user click All makeline single pizza \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" should not found at the page \"([^\"]*)\"$")
     public void theUserClickSinglePizzaNotFoundMakelineUntilElementFound(String objectName,
-                                                                 String expectedValue,
-                                                                 String attributeName,
-                                                                 String pageName
+                                                                         String expectedValue,
+                                                                         String attributeName,
+                                                                         String pageName
     ) {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
         waitOnce();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String expectedValueOne = expectedValue + "_1" + "_1";
         List<WebElement> element = getDriver().findElements(By.xpath("(//div[@name='mldisplayitem'])[1]"));
-        if (!element.isEmpty()){
-           String transactionNumber =getDriver().findElement(By.xpath("(//div[@name='mldisplayitem'])[1]")).getAttribute(attributeName);
+        if (!element.isEmpty()) {
+            String transactionNumber = getDriver().findElement(By.xpath("(//div[@name='mldisplayitem'])[1]")).getAttribute(attributeName);
+            System.out.println("Transaction Number : " + transactionNumber);
             if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
                 try {
-                    throw new Exception("Scripts faild due to element present");
+                    Assert.fail("Scripts faild due to element present");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else {
+            } else {
                 getObject(objectName, pageName).displayed();
                 getObject(objectName, pageName).click();
                 theUserClickSinglePizzaNotFoundMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
             }
-        }
-        else {
+        } else {
             System.out.println("Element is Not Found");
         }
 
@@ -1116,6 +1120,11 @@ public class AutoEngValidate extends BaseWebSteps {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
         waitOnce();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String expectedValueOne = "div_PS_item_" + expectedValue + "_1" + "_1";
         List<WebElement> element = getDriver().findElements(By.xpath("(//div[@name='psdisplayitem'])[1]"));
         if (!element.isEmpty()) {
