@@ -114,6 +114,22 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station and Make Line en
     #Comment: user click on Close
     And the user clicks the "closeForDelivery" element at the "OrderEntry" page
 
+    #Comment: the user check order should not present on Makeline
+
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on makeLine
+    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click makeline until order comes on console
+    And the user click All makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
+
+
     #Comment: user wait for visible of element
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
