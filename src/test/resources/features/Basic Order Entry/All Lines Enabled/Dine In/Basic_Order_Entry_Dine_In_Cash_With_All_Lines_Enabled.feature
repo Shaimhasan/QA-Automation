@@ -130,7 +130,7 @@ Feature: Basic Order Entry - Dine In Cash - with all lines enabled
     And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on makeLine
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
-    And the user waits "4000" seconds
+
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click makeline until order comes on console

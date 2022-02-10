@@ -119,6 +119,45 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines en
     Then the user validates "Compare_Strings" that the "changeDueAmt" element is "Equal To" "#(changedDueAmt)" at the "OrderEntry" page "validate_Changed_Due_Amount" "HardStopOnFailure"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
+
+    #Comment: the user check order should not present on Makeline
+
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on makeLine
+    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click makeline until order comes on console
+    And the user click All makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
+
+    #Comment: the user check order should not present at Cut and Wrap
+
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+
+
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
@@ -131,6 +170,26 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines en
     And the user waits for the page to load
     #Comment: user click prepstation until order comes on console
     And the user click prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
+
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -143,6 +202,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines en
     And the user waits for the page to load
     #Comment: user click makeline until order comes on console
     And the user click makeline "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
