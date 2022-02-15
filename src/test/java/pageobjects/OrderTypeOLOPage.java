@@ -10,8 +10,13 @@ public class OrderTypeOLOPage extends BasePO {
 
     private By orderType = By.id("divOrderType_Title");
     private By dineIn = By.id("spanOrderType_1_Name");
+    private By takeOut = By.id("spanOrderType_2_Name");
     private By yesProceedOrder = By.id("btnMsgBoxYesNo_Yes");
     private By continueBtn = By.id("btnOrderType_Continue");
+
+    public Element takeOut() throws IOException, InterruptedException {
+        return $(takeOut);
+    }
 
     public Element continueBtn() throws IOException, InterruptedException {
         return $(continueBtn);

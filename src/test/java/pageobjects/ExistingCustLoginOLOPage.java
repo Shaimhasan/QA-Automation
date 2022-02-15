@@ -18,6 +18,36 @@ public class ExistingCustLoginOLOPage extends BasePO {
     private By payInStore = By.id("rdo_CHKOUT_Store");
     private By termsAndCondition = By.id("chk_CHKOUT_PrivTerm");
     private By placeYourOrder = By.id("btn_CHKOUT_Submit");
+    private By creditCard = By.id("rdo_CHKOUT_Credit");
+    private By cardNumber = By.xpath("//input[@name='cardNumber']");
+    private By cardExpiration = By.xpath("//input[@name='cardExpiration']");
+    private By cardCvv = By.name("cardCvv");
+    private By zipCode = By.id("txt_CHKOUT_CCZip");
+    private By billingAddress = By.id("txt_CHKOUT_CCAddr");
+
+    public Element cardCvv() throws IOException, InterruptedException {
+        return $(cardCvv);
+    }
+
+    public Element billingAddress() throws IOException, InterruptedException {
+        return $(billingAddress);
+    }
+
+    public Element zipCode() throws IOException, InterruptedException {
+        return $(zipCode);
+    }
+
+    public Element cardExpiration() throws IOException, InterruptedException {
+        return $(cardExpiration);
+    }
+
+    public Element cardNumber() throws IOException, InterruptedException {
+        return $(cardNumber);
+    }
+
+    public Element creditCard() throws IOException, InterruptedException {
+        return $(creditCard);
+    }
 
     public Element placeYourOrder() throws IOException, InterruptedException {
         return $(placeYourOrder);

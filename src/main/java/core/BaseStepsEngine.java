@@ -533,6 +533,10 @@ public class BaseStepsEngine implements En {
         return theRandomNum;
     }
 
+    public long generateRandomAnyNum() {
+        return (long) Math.floor(Math.random() * 9_000_000_000L) + 1_000_000_000L;
+    }
+
     public int generateDynamicNumberBasedOnDigit(String digitValue) {
         Random randomGenerator = new Random();
         return randomGenerator.nextInt(Integer.parseInt(digitValue));
