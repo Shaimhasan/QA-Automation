@@ -1,9 +1,9 @@
-Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
-  This script is to validate Basic Online Order - Take Out Cash - with all lines enabled - Guest
+Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest
+  This script is to validate Basic Online Order - Delivery Cash - with all lines enabled - Guest
 
-  @issue=1782
-  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_TakeOut
-  Scenario: Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest_Testcase
+  @issue=1780
+  @Basic_Online_Order_Delivery_Cash_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_Delivery
+  Scenario: Basic_Online_Order_Delivery_Cash_With_All_Lines_Enabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -12,12 +12,16 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And the user clicks the "continueAsGuest" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user wait hover element
-    And the user hovers over the "takeOut" element at the "OrderTypeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "takeOut" element at the "OrderTypeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: the user enter the address
+    And the user enters "#(address)" into the "address" textbox at the "OrderTypeOLOPage" page
+    And the user waits "5000" seconds
+#    And the user sends keys "Key_Down" to the "address" element on the "OrderTypeOLOPage" page
+    #And the user sends keys "Key_enter" to the "address" element on the "OrderTypeOLOPage" page
+#    #Comment: user wait for address
+    And the user waits for the "addressDisplay" element to be "DISPLAYED" on the "OrderTypeOLOPage" page
+#    #Comment: User click on dine in
+    #And the user hovers and click over the "addressDisplay" element at the "OrderTypeOLOPage" page
+    And the user clicks the "addressDisplay" element at the "OrderTypeOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
@@ -57,9 +61,9 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     #Comment: the user enter re enter phone
     And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
     #comment: the user click on Pay In Store
-    And the user clicks the "payInStore" element at the "ExistingCustLoginOLOPage" page
+    And the user clicks the "cash" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "payInStore" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
+    And the user validates the item in the "cash" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
     #comment: the user click on termsAndCondition
     And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user click on termsAndCondition
@@ -74,7 +78,6 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
     #Comment: the user click on OrderModelPopupOLOPage
     And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
-    And the user waits "5000" seconds
 
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewTab"
@@ -207,6 +210,85 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     #Comment: the user validate the cut and wrap
     And the user order number "#(orderNum1)" category value "2" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: The user click on Adora header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on two digit
+    And the user clicks the "oneDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on Enter
+    And the user clicks the "enter" element at the "ClockInPage" page
+     #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user validate time record message successfully
+    And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
+    #Comment: user click on Driver
+    And the user clicks the "OKBtn" element at the "ClockInPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: The user click on Adore header page
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on dispatch
+    And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment : user click on orderNumber and dispatch
+    And the user clicks the "table" element with dictionary key "#(orderNum1)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
+    #Comment: user click on Driver o Dispatch page
+    And the user clicks the "bobTheDriver" element at the "DispatchPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on Driver o Dispatch page
+    And the user clicks the "bobTheDriver" element at the "DispatchPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user hovers over the "clockOut" element at the "AdoraHeaderPage" page
+    #Comment: user click on ClockOut
+    And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on two digit
+    And the user clicks the "oneDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on Enter
+    And the user clicks the "enter" element at the "ClockOutPage" page
+    #Comment: the user enter gratuity amount
+    Then the user enters "#(gatuityAmt)" into the "gratuityAmt" textbox at the "ClockOutPage" page
+    #Comment: user click on ClockOut
+    And the user clicks the "clockOut" element at the "ClockOutPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user validate clock out message successfully
+    And the user validates "Compare_Strings" that the "clockOutSuccessMsg" element is "Equal To" "#(timeClockOutSuccessMsg)" at the "ClockOutPage" page "validate_Clock_Out_Successfully" "HardStopOnFailure"
+    #Comment: user click on Driver
+    And the user clicks the "OKBtn" element at the "ClockOutPage" page
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -217,8 +299,8 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
-    #Comment: the user refresh the page
-    And the user refreshes the page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: user validate the transaction Number
     And store text of the cell having unique rowVal comes from Data Dictionary "#(transactionNum)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
     #Comment: user validate the transaction Number
@@ -232,7 +314,7 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     #Comment: the user validate the visibility of Page
     And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
     #Comment: Validate the amount
-    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
+    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amtVal)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
     And store the displayed text of the "transactionNum" element at the "OrderDetailsPage" page into the data dictionary with key "transaction_Number2"
     #Comment: The user save the order number into dictionary key
@@ -243,5 +325,7 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And the user validates the data dictionary value of "#(orderNum1)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: user click Close Button
     And the user clicks the "close" element at the "OrderDetailsPage" page
+
+
 
 

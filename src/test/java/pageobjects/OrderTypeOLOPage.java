@@ -11,8 +11,28 @@ public class OrderTypeOLOPage extends BasePO {
     private By orderType = By.id("divOrderType_Title");
     private By dineIn = By.id("spanOrderType_1_Name");
     private By takeOut = By.id("spanOrderType_2_Name");
+    private By delivery = By.id("spanOrderType_3_Name");
+    private By address = By.id("txtOrderType_Address");
     private By yesProceedOrder = By.id("btnMsgBoxYesNo_Yes");
     private By continueBtn = By.id("btnOrderType_Continue");
+    private By unit = By.id("txtOrderType_Apt");
+    private By addressDisplay = By.xpath("//option[@value='1234 Elm St Roseville CA 95678']");
+
+    public Element addressDisplay() throws IOException, InterruptedException {
+        return $(addressDisplay);
+    }
+
+    public Element unit() throws IOException, InterruptedException {
+        return $(unit);
+    }
+
+    public Element address() throws IOException, InterruptedException {
+        return $(address);
+    }
+
+    public Element delivery() throws IOException, InterruptedException {
+        return $(delivery);
+    }
 
     public Element takeOut() throws IOException, InterruptedException {
         return $(takeOut);

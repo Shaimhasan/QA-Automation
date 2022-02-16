@@ -235,6 +235,12 @@ public class AutoEngUtility extends BaseWebSteps {
         getObject(objectName, pageName).hover();
     }
 
+    @When("^the user hovers and click over the \"([^\"]*)\" element at the \"([^\"]*)\" page$")
+    public void theUserHoversOverAndClickTheElementAtThePage(String objectName,
+                                                     String pageName) {
+        getObject(objectName, pageName).hover().click();
+    }
+
     @When("^the user refreshes the page$")
     public void theUserRefreshesThePage() {
         getDriver().navigate().refresh();

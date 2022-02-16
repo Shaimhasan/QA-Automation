@@ -16,6 +16,7 @@ public class ExistingCustLoginOLOPage extends BasePO {
     private By phoneNo = By.id("tel_CHKOUT_phone1");
     private By reEnterPhoneNo = By.id("tel_CHKOUT_phone2");
     private By payInStore = By.id("rdo_CHKOUT_Store");
+    private By cash = By.id("rdo_CHKOUT_Cash");
     private By termsAndCondition = By.id("chk_CHKOUT_PrivTerm");
     private By placeYourOrder = By.id("btn_CHKOUT_Submit");
     private By creditCard = By.id("rdo_CHKOUT_Credit");
@@ -24,6 +25,10 @@ public class ExistingCustLoginOLOPage extends BasePO {
     private By cardCvv = By.name("cardCvv");
     private By zipCode = By.id("txt_CHKOUT_CCZip");
     private By billingAddress = By.id("txt_CHKOUT_CCAddr");
+
+    public Element cash() throws IOException, InterruptedException {
+        return $(cash);
+    }
 
     public Element cardCvv() throws IOException, InterruptedException {
         return $(cardCvv);

@@ -236,6 +236,15 @@ public class AutoEngSetSelect extends BaseWebSteps {
         }
     }
 
+    @When("^the user sends keys Custom \"([^\"]*)\" to the \"([^\"]*)\" element on the \"([^\"]*)\" page$")
+    public void theUserSendsKeysCustomToTheElementOnThePage(String keySequence,
+                                                      String objectName,
+                                                      String pageName) {
+
+        getObject(objectName, pageName).sendKeys(Keys.chord(Keys.ARROW_DOWN));
+        getObject(objectName, pageName).sendKeys(Keys.chord(Keys.ENTER));
+    }
+
     @When("^the user sets focus on the \"([^\"]*)\" element at the \"([^\"]*)\" page$")
     public void theUserSetsFocusOnTheTextboxAtThePage(String objectName,
                                                       String pageName) {

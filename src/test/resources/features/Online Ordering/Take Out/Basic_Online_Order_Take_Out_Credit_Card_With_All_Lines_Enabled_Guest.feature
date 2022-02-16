@@ -1,9 +1,9 @@
-Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
-  This script is to validate Basic Online Order - Take Out Cash - with all lines enabled - Guest
+Feature: Basic Online Order - Take Out Credit Card - with all lines enabled - Guest
+  This script is to validate Basic Online Order - Take Out Credit Card - with all lines enabled - Guest
 
-  @issue=1782
-  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_TakeOut
-  Scenario: Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest_Testcase
+  @issue=1783
+  @Basic_Online_Order_Take_Out_Credit_Card_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_TakeOut
+  Scenario: Basic_Online_Order_Take_Out_Credit_Card_With_All_Lines_Enabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -50,16 +50,41 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter re-email
     And the user enters "#(reEnterEmail)" into the "reEnterEmail" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter ten digit Number
+    #Comment: the user enter phone number
     And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter 10 digit number
     And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
     #Comment: the user enter re enter phone
     And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
-    #comment: the user click on Pay In Store
-    And the user clicks the "payInStore" element at the "ExistingCustLoginOLOPage" page
+
+    #Comment: the user click on Credit Card Information
+    And the user clicks the "creditCard" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "payInStore" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
+    And the user validates the item in the "creditCard" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
+    #Comment: the user switched to the frame
+    And the user switches to frame "cardNumber"
+    #Comment: the user enter Card Number
+    And the user enters "#(cardNumber)" into the "cardNumber" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: The user Switches out side the frame
+    And the user switches to the default window content
+    #Comment: User switches to the frame
+    And the user switches to frame "cardExpiration"
+    #Comment: the user enter Expiration date
+    And the user enters "#(cardExpiration)" into the "cardExpiration" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+    #Comment: User switches to the frame
+    And the user switches to frame "cardCvv"
+    #Comment: the user enter CVV
+    And the user enters "#(cardCvv)" into the "cardCvv" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+    #Comment: the user enter Billing Address
+    And the user enters "#(billingAddress)" into the "billingAddress" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: the user enter Billing Address
+    And the user enters "#(zipCode)" into the "zipCode" textbox at the "ExistingCustLoginOLOPage" page
+
+
     #comment: the user click on termsAndCondition
     And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user click on termsAndCondition
@@ -74,7 +99,6 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
     #Comment: the user click on OrderModelPopupOLOPage
     And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
-    And the user waits "5000" seconds
 
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewTab"
@@ -217,8 +241,8 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
-    #Comment: the user refresh the page
-    And the user refreshes the page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: user validate the transaction Number
     And store text of the cell having unique rowVal comes from Data Dictionary "#(transactionNum)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
     #Comment: user validate the transaction Number
