@@ -4,8 +4,11 @@ import common.TestContext;
 import core.BaseWebSteps;
 import core.Element;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NotFoundException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import java.awt.*;
@@ -238,11 +241,18 @@ public class AutoEngSetSelect extends BaseWebSteps {
 
     @When("^the user sends keys Custom \"([^\"]*)\" to the \"([^\"]*)\" element on the \"([^\"]*)\" page$")
     public void theUserSendsKeysCustomToTheElementOnThePage(String keySequence,
-                                                      String objectName,
-                                                      String pageName) {
+                                                            String objectName,
+                                                            String pageName) {
 
         getObject(objectName, pageName).sendKeys(Keys.chord(Keys.ARROW_DOWN));
         getObject(objectName, pageName).sendKeys(Keys.chord(Keys.ENTER));
+    }
+
+    @When("^the user sends keys page$")
+    public void theUserSendsKeysCustomsToTheElementOnThePage() {
+        getDriver().findElement(By.id("txtOrderType_Address")).sendKeys(Keys.PAGE_DOWN);
+        getDriver().findElement(By.id("txtOrderType_Address")).sendKeys(Keys.ENTER);
+
     }
 
     @When("^the user sets focus on the \"([^\"]*)\" element at the \"([^\"]*)\" page$")

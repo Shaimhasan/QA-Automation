@@ -14,9 +14,13 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines enabled - Gu
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user enter the address
     And the user enters "#(address)" into the "address" textbox at the "OrderTypeOLOPage" page
-    #Comment: User click on dine in
+    #Comment: the user click continue button
+    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: the user click continue button
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
-    #Comment: User click on dine in
+    #Comment: the user click continue button
+    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: the user click continue button
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "automationPizzaPMC" element to be "VISIBLE" on the "HomeOLOPage" page

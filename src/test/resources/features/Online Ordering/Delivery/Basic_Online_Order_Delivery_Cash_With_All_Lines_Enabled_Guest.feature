@@ -14,15 +14,13 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user enter the address
     And the user enters "#(address)" into the "address" textbox at the "OrderTypeOLOPage" page
-    And the user waits "5000" seconds
-#    And the user sends keys "Key_Down" to the "address" element on the "OrderTypeOLOPage" page
-    #And the user sends keys "Key_enter" to the "address" element on the "OrderTypeOLOPage" page
-#    #Comment: user wait for address
-    And the user waits for the "addressDisplay" element to be "DISPLAYED" on the "OrderTypeOLOPage" page
-#    #Comment: User click on dine in
-    #And the user hovers and click over the "addressDisplay" element at the "OrderTypeOLOPage" page
-    And the user clicks the "addressDisplay" element at the "OrderTypeOLOPage" page
-    #Comment: User click on dine in
+    #Comment: the user click continue button
+    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: the user click continue button
+    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
+    #Comment: the user click continue button
+    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: the user click continue button
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "automationPizzaPMC" element to be "VISIBLE" on the "HomeOLOPage" page
