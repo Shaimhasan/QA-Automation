@@ -1,21 +1,25 @@
-Feature: Basic Online Order - Dine In Credit Card - with all lines enabled - Guest
-  This script is to validate Basic Online Order - Dine In Credit Card - with all lines enabled - Guest
+Feature: Basic Online Order - Take Out Credit Card - with all lines enabled - Existing User
+  This script is to validate Basic Online Order - Take Out Credit Card - with all lines enabled - Existing User
 
-  @issue=1781
-  @Basic_Online_Order_Dine_In_Credit_Card_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_DineIn
-  Scenario: Basic_Online_Order_Dine_In_Credit_Card_With_All_Lines_Enabled_Guest_Testcase
+  @issue=1840
+  @Basic_Online_Order_Take_Out_Credit_Card_With_All_Lines_Enabled_Existing_User @RegressionSuite @OLO @OLO_ALE @OLO_ALE_TakeOut @OLO_ALE_TakeOut_Existing_User
+  Scenario: Basic_Online_Order_Take_Out_Credit_Card_With_All_Lines_Enabled_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
     And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
-    #Comment: User click on continue as guest
-    And the user clicks the "continueAsGuest" element at the "LoginOLOPage" page
+    #Comment: Enter the Customer Email into username textbox present on Login Page
+    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
+    #Comment: Enter the Password into Station_Key textbox present on Login Page
+    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
+    #Comment: User click on Login Button
+    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user wait hover element
-    And the user hovers over the "dineIn" element at the "OrderTypeOLOPage" page
+    And the user hovers over the "takeOut" element at the "OrderTypeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "dineIn" element at the "OrderTypeOLOPage" page
+    And the user clicks the "takeOut" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: User click on dine in
@@ -41,21 +45,7 @@ Feature: Basic Online Order - Dine In Credit Card - with all lines enabled - Gue
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "existingCustLogin" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(lastName)" into the "lastName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter email
-    And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter re-email
-    And the user enters "#(reEnterEmail)" into the "reEnterEmail" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter phone number
-    And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter 10 digit number
-    And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
-    #Comment: the user enter re enter phone
-    And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
+    And the user waits for the "customerInfo" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
 
     #Comment: the user click on Credit Card Information
     And the user clicks the "creditCard" element at the "ExistingCustLoginOLOPage" page

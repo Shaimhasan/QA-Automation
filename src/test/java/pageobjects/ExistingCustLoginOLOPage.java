@@ -25,6 +25,11 @@ public class ExistingCustLoginOLOPage extends BasePO {
     private By cardCvv = By.name("cardCvv");
     private By zipCode = By.id("txt_CHKOUT_CCZip");
     private By billingAddress = By.id("txt_CHKOUT_CCAddr");
+    private By customerInfo = By.xpath("//label[text()='Contact Information']");
+
+    public Element customerInfo() throws IOException, InterruptedException {
+        return $(customerInfo);
+    }
 
     public Element cash() throws IOException, InterruptedException {
         return $(cash);

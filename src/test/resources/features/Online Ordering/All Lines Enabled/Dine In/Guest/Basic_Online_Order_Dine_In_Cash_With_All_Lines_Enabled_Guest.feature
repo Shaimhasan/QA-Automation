@@ -1,9 +1,9 @@
-Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
-  This script is to validate Basic Online Order - Take Out Cash - with all lines enabled - Guest
+Feature: Basic Online Order - Dine In Cash - with all lines enabled - Guest
+  This script is to validate Basic Online Order - Dine In Cash - with all lines enabled - Guest
 
-  @issue=1782
-  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_TakeOut
-  Scenario: Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest_Testcase
+  @issue=1780
+  @Basic_Online_Order_Dine_In_Cash_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_DineIn @OLO_ALE_DineIn_Guest
+  Scenario: Basic_Online_Order_Dine_In_Cash_With_All_Lines_Enabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -13,9 +13,9 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user wait hover element
-    And the user hovers over the "takeOut" element at the "OrderTypeOLOPage" page
+    And the user hovers over the "dineIn" element at the "OrderTypeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "takeOut" element at the "OrderTypeOLOPage" page
+    And the user clicks the "dineIn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: User click on dine in
@@ -74,7 +74,6 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
     #Comment: the user click on OrderModelPopupOLOPage
     And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
-    And the user waits "5000" seconds
 
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewTab"
@@ -217,8 +216,8 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
-    #Comment: the user refresh the page
-    And the user refreshes the page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: user validate the transaction Number
     And store text of the cell having unique rowVal comes from Data Dictionary "#(transactionNum)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
     #Comment: user validate the transaction Number
