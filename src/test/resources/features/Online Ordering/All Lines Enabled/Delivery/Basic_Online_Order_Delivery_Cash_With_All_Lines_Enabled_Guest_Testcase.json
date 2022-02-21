@@ -18,7 +18,9 @@
       "orderNumberXpath1": "//b[text()='",
       "orderNumberXpath2": "']",
       "gatuityAmt": "0",
-      "unit": "1"
+      "unit": "2",
+      "orderTypeValidate": "Order Type",
+      "ASAP": "ASAP"
     },
     "dataCriteria": {
     },
