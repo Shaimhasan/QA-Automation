@@ -1,9 +1,9 @@
-Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
-  This script is to validate Basic Online Order - Take Out Cash - with all lines enabled - Guest
+Feature: Basic Online Order - Dine In Cash - with all lines disabled - Guest
+  This script is to validate Basic Online Order - Dine In Cash - with all lines disabled - Guest
 
-  @issue=1782
-  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_TakeOut @OLO_ALE_TakeOut_Guest
-  Scenario: Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest_Testcase
+  @Issue=1748
+  @Basic_Order_Entry_Dine_In_Cash_With_All_Lines_Disabled_Guest @RegressionSuite @OLO @OLO_ALD @OLO_ALD_DineIn @OLO_ALD_DineIn_Guest
+  Scenario: Basic_Order_Entry_Dine_In_Cash_With_All_Lines_Disabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -13,9 +13,9 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user wait hover element
-    And the user hovers over the "takeOut" element at the "OrderTypeOLOPage" page
+    And the user hovers over the "dineIn" element at the "OrderTypeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "takeOut" element at the "OrderTypeOLOPage" page
+    And the user clicks the "dineIn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: User click on dine in
@@ -91,8 +91,6 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     When the user enters the secure credential "#(Password)" into the "password" textbox at the "LoginPage" page
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
@@ -100,122 +98,14 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
-    #Comment: the user click on back office
-    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
-    #Comment: the user click Setting
-    And the user clicks the "settings" element at the "SettingsPage" page
-    #Comment: the user click on Setting change
-    And the user clicks the "settingsChange" element at the "SettingsPage" page
-    #Comment: the user click on make line row
-    And the user clicks the "prepStationConfig" element at the "SettingsChangePage" page
-    #Comment: the user wait the element enable
-    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-    #Comment: the user click on Edit
-    And the user clicks the "edit" element at the "EditSettingsPage" page
-    #Comment: the user click on Make Line
-    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-    #Comment: the user click on Save
-    And the user clicks the "save" element at the "EditSettingsPage" page
-    #Comment: the user load the page
-    And the user waits for the page to load
-    #Comment: the user wait the element disable
-    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-    #Comment: the user click on make line row
-    And the user clicks the "makeLineConfig" element at the "SettingsChangePage" page
-    #Comment: the user wait the element enable
-    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-    #Comment: the user click on Edit
-    And the user clicks the "edit" element at the "EditSettingsPage" page
-    #Comment: the user click on Make Line
-    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-    #Comment: the user click on Save
-    And the user clicks the "save" element at the "EditSettingsPage" page
-    #Comment: the user load the page
-    And the user waits for the page to load
-    #Comment: the user wait the element disable
-    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-    #Comment: the user click on make line row
-    And the user clicks the "cutAndWrapConfig" element at the "SettingsChangePage" page
-    #Comment: the user wait the element enable
-    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-    #Comment: the user click on Edit
-    And the user clicks the "edit" element at the "EditSettingsPage" page
-    #Comment: the user click on Make Line
-    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-    #Comment: the user click on Save
-    And the user clicks the "save" element at the "EditSettingsPage" page
-    #Comment: the user load the page
-    And the user waits for the page to load
-    #Comment: the user wait the element disable
-    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-    #Comment: the user refresh Page
-    And the user refreshes the page
-
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: user click on Adora Header
-    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "prepStation" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: User validate the order list element is present.
-    And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
-    #Comment: user click on prep Station
-    And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: user click prepstation until order comes on console
-    And the user click prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" found at the page "PrepStationPage"
-
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: user click on Adora Header
-    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: user click on makeLine
-    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: user click makeline until order comes on console
-    And the user click makeline "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
-
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: user click on Adora Header
-    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: user click on Cut and Wrap
-    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: User validate the adoraHeaderSVG element is present.
-    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
-    #Comment: user click on cut wrap based on order Number
-    And the user custom clicks on row with order number "#(orderNum1)" and category value "1" from the "table" table on the "CutAndWrapPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: User validate the adoraHeaderSVG element is present.
-    And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: the user click on the row
-    And the user custom clicks on row with order number "#(orderNum1)" and category value "2" from the "table" table on the "CutAndWrapPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: the user validate the cut and wrap
-    And the user order number "#(orderNum1)" category value "2" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
-
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: user click on Adora Header
-    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: user validate the transaction Number
     And store text of the cell having unique rowVal comes from Data Dictionary "#(transactionNum)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
     #Comment: user validate the transaction Number
@@ -240,5 +130,6 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     And the user validates the data dictionary value of "#(orderNum1)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: user click Close Button
     And the user clicks the "close" element at the "OrderDetailsPage" page
+
 
 

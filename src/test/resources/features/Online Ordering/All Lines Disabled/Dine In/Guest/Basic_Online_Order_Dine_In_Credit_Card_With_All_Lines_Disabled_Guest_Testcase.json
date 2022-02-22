@@ -1,0 +1,28 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "firstName": "Automation",
+      "amount": "63.00",
+      "lastName": "Online Order",
+      "email": "onlineorder@gmail.com",
+      "reEnterEmail": "onlineorder@gmail.com",
+      "orderIdXpath": "(//b[text()='",
+      "DetailsClickXpath1": "(//b[text()='",
+      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button",
+      "cardNumber": "5454545454545454",
+      "cardExpiration": "022025",
+      "cardCvv": "545",
+      "billingAddress": "1234 Blue Oaks Blvd, Roseville",
+      "zipCode": "95678",
+      "phoneNo": "7999466130"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
