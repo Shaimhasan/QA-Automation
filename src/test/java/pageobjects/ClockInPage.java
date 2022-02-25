@@ -15,6 +15,11 @@ public class ClockInPage extends BasePO {
     private By timeCardRecordSuccessMsg = By.xpath("//div[text()='Your time card recorded successfully.']");
     private By OKBtn = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='OK']");
     private By clockInTxtPopup = By.xpath("//div[text()='Please Enter Employee No.:']");
+    private By employeeNo = By.xpath("//div[text()='1000']");
+
+    public Element employeeNo() throws IOException, InterruptedException {
+        return $(employeeNo);
+    }
 
     public Element clockInTxtPopup() throws IOException, InterruptedException {
         return $(clockInTxtPopup);

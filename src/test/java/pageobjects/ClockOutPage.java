@@ -17,6 +17,11 @@ public class ClockOutPage extends BasePO {
     private By gratuityAmt = By.id("txtClockOutGratuity");
     private By clockOut = By.xpath("//button[text()='Clock Out']");
     private By clockOutSuccessMsg = By.xpath("//div[text()='You have clocked out successfully.']");
+    private By employeeNo = By.xpath("//div[text()='1000']");
+
+    public Element employeeNo() throws IOException, InterruptedException {
+        return $(employeeNo);
+    }
 
     public Element oneDigit() throws IOException, InterruptedException {
         return $(oneDigit);

@@ -242,6 +242,8 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest
     And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: the user validate the visibility of EmployeeNum
+    And the user waits for the "employeeNo" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user click on enter
     And the user hovers over the "enter" element at the "ClockInPage" page
     #Comment: user click on Enter
