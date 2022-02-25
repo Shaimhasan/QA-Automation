@@ -257,12 +257,20 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines enabled - Ex
     And the user hovers over the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on enter
+    And the user hovers over the "enter" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
      #Comment: The user wait until page is loading
