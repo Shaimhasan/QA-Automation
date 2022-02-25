@@ -174,12 +174,20 @@ Feature: Basic Online Order - Delivery Cash - with all lines disabled - Guest
     And the user hovers over the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "enter" element at the "ClockOutPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockOutPage" page
     #Comment: the user enter gratuity amount
