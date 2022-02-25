@@ -306,6 +306,8 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Existing 
     And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: the user validate the visibility of employeeNo
+    And the user waits for the "employeeNo" element to be "VISIBLE" on the "ClockOutPage" page
     #Comment: user click on oneDigit
     And the user hovers over the "enter" element at the "ClockOutPage" page
     #Comment: user click on Enter
