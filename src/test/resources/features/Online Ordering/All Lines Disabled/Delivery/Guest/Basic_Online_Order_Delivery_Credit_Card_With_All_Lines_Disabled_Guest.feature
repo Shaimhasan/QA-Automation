@@ -139,6 +139,8 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
@@ -185,6 +187,8 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
@@ -214,6 +218,8 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
+    #Comment: the user hover the Order List
+    And the user hovers over the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading

@@ -204,6 +204,8 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Existing 
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
+    #Comment: the user hover the Order List
+    And the user hovers over the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user validate the transaction Number

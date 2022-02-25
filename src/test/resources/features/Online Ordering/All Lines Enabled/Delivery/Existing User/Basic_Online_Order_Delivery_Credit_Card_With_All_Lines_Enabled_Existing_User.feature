@@ -12,8 +12,10 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines enabled - Ex
     And the user clicks the "continueAsGuest" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user enter the address
-    And the user enters "#(address)" into the "address" textbox at the "OrderTypeOLOPage" page
+    #comment: the user click on existingAddressSelect
+    And the user clicks the "existingAddressSelect" element at the "OrderTypeOLOPage" page
+    #Comment: the user validates the checkbox is selected
+    And the user validates the item in the "existingAddressSelect" checkbox is checked at the "OrderTypeOLOPage" page "validate_Text" "HardStopOnFailure"
     #Comment: the user click continue button
     And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user validate the text
@@ -251,6 +253,8 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines enabled - Ex
     And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
@@ -297,6 +301,8 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines enabled - Ex
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit

@@ -19,6 +19,11 @@ public class OrderTypeOLOPage extends BasePO {
     private By addressDisplay = By.xpath("//option[@value='1234 Elm St Roseville CA 95678']");
     private By orderTypeValidate = By.xpath("//div[text()='Order Type']");
     private By asap = By.xpath("//label[@id='lblOrderType_FD_Now']");
+    private By existingAddressSelect = By.xpath("//input[@id='rdoOrderType_Address_36165']");
+
+    public Element existingAddressSelect() throws IOException, InterruptedException {
+        return $(existingAddressSelect);
+    }
 
     public Element orderTypeValidate() throws IOException, InterruptedException {
         return $(orderTypeValidate);

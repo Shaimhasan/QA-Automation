@@ -1,9 +1,9 @@
-Feature: Basic Online Order - Take Out Credit Card - with all lines disabled - Existing User
-  This script is to validate Basic Online Order - Take Out Credit Card - with all lines disabled - Existing User
+Feature: Basic Online Order - Delivery Cash - with all lines disabled - Existing User
+  This script is to validate Basic Online Order - Delivery Cash - with all lines disabled - Existing User
 
-  @issue=1816
-  @Basic_Online_Order_Take_Out_Credit_Card_With_All_Lines_Disabled_Existing_User @RegressionSuite @OLO @OLO_ALD @OLO_ALD_TakeOut @OLO_ALD_TakeOut_Existing_User
-  Scenario: Basic_Online_Order_Take_Out_Credit_Card_With_All_Lines_Disabled_Existing_User_Testcase
+  @issue=1817
+  @Basic_Online_Order_Delivery_Cash_With_All_Lines_Disabled_Existing_User @RegressionSuite @OLO @OLO_ALD @OLO_ALD_Delivery @OLO_ALD_Delivery_Existing_User
+  Scenario: Basic_Online_Order_Delivery_Cash_With_All_Lines_Disabled_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -16,13 +16,23 @@ Feature: Basic Online Order - Take Out Credit Card - with all lines disabled - E
     And the user clicks the "loginBtn" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user wait hover element
-    And the user hovers over the "takeOut" element at the "OrderTypeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "takeOut" element at the "OrderTypeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: User click on dine in
+    #comment: the user click on existingAddressSelect
+    And the user clicks the "existingAddressSelect" element at the "OrderTypeOLOPage" page
+    #Comment: the user validates the checkbox is selected
+    And the user validates the item in the "existingAddressSelect" checkbox is checked at the "OrderTypeOLOPage" page "validate_Text" "HardStopOnFailure"
+    #Comment: the user click continue button
+    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: the user validate the text
+    And the user validates "Compare_Strings" that the "orderTypeValidate" element is "Equal To" "#(orderTypeValidate)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
+    #Comment: the user validate the text
+    And the user validates "Compare_Strings" that the "asap" element is "Equal To" "#(ASAP)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
+    #Comment: the user click continue button
+    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
+    #Comment: the user enter the address
+    And the user enters "#(unit)" into the "unit" textbox at the "OrderTypeOLOPage" page
+    #Comment: the user click continue button
+    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: the user click continue button
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "automationPizzaPMC" element to be "VISIBLE" on the "HomeOLOPage" page
@@ -45,36 +55,25 @@ Feature: Basic Online Order - Take Out Credit Card - with all lines disabled - E
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "customerInfo" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
-
-    #Comment: the user click on Credit Card Information
-    And the user clicks the "creditCard" element at the "ExistingCustLoginOLOPage" page
+    And the user waits for the "existingCustLogin" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
+    #Comment: the user enter text
+    And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: the user enter text
+    And the user enters "#(lastName)" into the "lastName" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: the user enter email
+    And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: the user enter re-email
+    And the user enters "#(reEnterEmail)" into the "reEnterEmail" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: the user enter ten digit Number
+    And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: the user enter 10 digit number
+    And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
+    #Comment: the user enter re enter phone
+    And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
+    #comment: the user click on Pay In Store
+    And the user clicks the "cash" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "creditCard" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
-    #Comment: the user switched to the frame
-    And the user switches to frame "cardNumber"
-    #Comment: the user enter Card Number
-    And the user enters "#(cardNumber)" into the "cardNumber" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: The user Switches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardExpiration"
-    #Comment: the user enter Expiration date
-    And the user enters "#(cardExpiration)" into the "cardExpiration" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardCvv"
-    #Comment: the user enter CVV
-    And the user enters "#(cardCvv)" into the "cardCvv" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: the user enter Billing Address
-    And the user enters "#(billingAddress)" into the "billingAddress" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter Billing Address
-    And the user enters "#(zipCode)" into the "zipCode" textbox at the "ExistingCustLoginOLOPage" page
-
-
+    And the user validates the item in the "cash" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
     #comment: the user click on termsAndCondition
     And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user click on termsAndCondition
@@ -116,6 +115,87 @@ Feature: Basic Online Order - Take Out Credit Card - with all lines disabled - E
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
     #Comment: the user validate the visibility of popup
+    And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "oneDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on Enter
+    And the user clicks the "enter" element at the "ClockInPage" page
+     #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user validate time record message successfully
+    And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
+    #Comment: user click on Driver
+    And the user clicks the "OKBtn" element at the "ClockInPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: The user click on Adore header page
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on dispatch
+    And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment : user click on orderNumber and dispatch
+    And the user clicks the "table" element with dictionary key "#(orderNum1)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
+    #Comment: user click on Driver o Dispatch page
+    And the user clicks the "bobTheDriver" element at the "DispatchPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on Driver o Dispatch page
+    And the user clicks the "bobTheDriver" element at the "DispatchPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user hovers over the "clockOut" element at the "AdoraHeaderPage" page
+    #Comment: user click on ClockOut
+    And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "oneDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on Enter
+    And the user clicks the "enter" element at the "ClockOutPage" page
+    #Comment: the user enter gratuity amount
+    Then the user enters "#(gatuityAmt)" into the "gratuityAmt" textbox at the "ClockOutPage" page
+    #Comment: user click on ClockOut
+    And the user clicks the "clockOut" element at the "ClockOutPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user validate clock out message successfully
+    And the user validates "Compare_Strings" that the "clockOutSuccessMsg" element is "Equal To" "#(timeClockOutSuccessMsg)" at the "ClockOutPage" page "validate_Clock_Out_Successfully" "HardStopOnFailure"
+    #Comment: user click on Driver
+    And the user clicks the "OKBtn" element at the "ClockOutPage" page
+
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
@@ -138,7 +218,7 @@ Feature: Basic Online Order - Take Out Credit Card - with all lines disabled - E
     #Comment: the user validate the visibility of Page
     And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
     #Comment: Validate the amount
-    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
+    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amtVal)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
     And store the displayed text of the "transactionNum" element at the "OrderDetailsPage" page into the data dictionary with key "transaction_Number2"
     #Comment: The user save the order number into dictionary key
@@ -149,5 +229,7 @@ Feature: Basic Online Order - Take Out Credit Card - with all lines disabled - E
     And the user validates the data dictionary value of "#(orderNum1)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: user click Close Button
     And the user clicks the "close" element at the "OrderDetailsPage" page
+
+
 
 
