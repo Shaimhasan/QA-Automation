@@ -29,7 +29,7 @@ Feature: Basic Online Order - Delivery Cash - with all lines disabled - Existing
     #Comment: the user click continue button
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: the user enter the address
-    And the user enters "#(unit)" into the "unit" textbox at the "OrderTypeOLOPage" page
+    #And the user enters "#(unit)" into the "unit" textbox at the "OrderTypeOLOPage" page
     #Comment: the user click continue button
     And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user click continue button
