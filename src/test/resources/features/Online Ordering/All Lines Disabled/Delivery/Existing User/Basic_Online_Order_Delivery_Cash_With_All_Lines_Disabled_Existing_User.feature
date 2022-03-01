@@ -28,12 +28,6 @@ Feature: Basic Online Order - Delivery Cash - with all lines disabled - Existing
     And the user validates "Compare_Strings" that the "asap" element is "Equal To" "#(ASAP)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
     #Comment: the user click continue button
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
-    #Comment: the user enter the address
-    #And the user enters "#(unit)" into the "unit" textbox at the "OrderTypeOLOPage" page
-    #Comment: the user click continue button
-    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user click continue button
-    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "automationPizzaPMC" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
@@ -54,22 +48,7 @@ Feature: Basic Online Order - Delivery Cash - with all lines disabled - Existing
     And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "existingCustLogin" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(lastName)" into the "lastName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter email
-    And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter re-email
-    And the user enters "#(reEnterEmail)" into the "reEnterEmail" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter ten digit Number
-    And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter 10 digit number
-    And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
-    #Comment: the user enter re enter phone
-    And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
+
     #comment: the user click on Pay In Store
     And the user clicks the "cash" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
