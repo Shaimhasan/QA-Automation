@@ -726,8 +726,8 @@ public class AutoEngValidate extends BaseWebSteps {
 
         orderNum = parseValue(orderNum);
         categoryValue = parseValue(categoryValue);
-        final List<Element> elementPresent = getObject(tableName, pageName).getAllRowValueCutAndWrap(orderNum, categoryValue);
-        if (!elementPresent.isEmpty()) {
+        Boolean elementPresent = getObject(tableName, pageName).getAllRowValueCutAndWrap(orderNum, categoryValue);
+        if (!elementPresent) {
             try {
                 final String compareDesc = String.format("Expecting the '%s' element should not be present on the '%s' page. ", tableName, pageName);
                 Assert.fail("Scripts failed due to element present");

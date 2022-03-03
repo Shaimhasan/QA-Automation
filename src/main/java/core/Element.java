@@ -1095,10 +1095,16 @@ public class Element {
         return this.findElement(By.xpath(xpathValue));
     }
 
-    public List<Element> getAllRowValueCutAndWrap(String orderN, String category) {
+    public Boolean getAllRowValueCutAndWrap(String orderN, String category) {
         String xpathValue = "//td[text()=" + "'" + orderN + " - " + category + "'" + "]//following-sibling::td[text()='Cut & Wrapped']";
         System.out.println(xpathValue);
-        return this.findElements(By.xpath(xpathValue));
+        try {
+            boolean value = new WebDriverWait(driver, 10).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpathValue)));
+            System.out.println("Return Value > " + value);
+            return value;
+        } catch (Exception e) {
+            return true;
+        }
     }
 
     public Element getRowValueText(String orderN, String category) {
@@ -1204,8 +1210,8 @@ public class Element {
         List<Element> rows = getAllRows();
         boolean booleanValue = rows.isEmpty();
         List<String> listOfRows = null;
-        if(booleanValue){
-             listOfRows = new ArrayList<>();
+        if (booleanValue) {
+            listOfRows = new ArrayList<>();
             int colIndex = getMatchingColumnNum(colName);
             if (colIndex != -1) {
                 for (int i = 1; i <= rows.size() - 1; i++) {
@@ -1213,7 +1219,7 @@ public class Element {
                     listOfRows.add(dataCellElement.getText());
                 }
             }
-        }else {
+        } else {
             System.out.println("Rows is not present");
         }
         return listOfRows;
