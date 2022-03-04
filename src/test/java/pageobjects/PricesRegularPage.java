@@ -17,12 +17,12 @@ public class PricesRegularPage extends BasePO {
     private By saveBtn = By.xpath("//button[@onclick='BO_MN_PRC_EDT_Save();']");
     private By cancelBtn = By.xpath("//button[@onclick='BO_MN_PRC_EDT_Close();']");
     private By table = By.id("tbl_BO_MN_PRC_EDT_252_947");
-    private By priceForSmall = By.id("txt_BO_MN_PRC_EDT_947_235_0_Price");
-    private By priceForMedium = By.id("txt_BO_MN_PRC_EDT_947_236_0_Price");
-    private By priceForLarge = By.id("txt_BO_MN_PRC_EDT_947_237_0_Price");
-    private By smallPriceForModifier = By.id("txt_BO_MN_PRC_EDT_947_235_0_PricePerMod");
-    private By mediumPriceForModifier = By.id("txt_BO_MN_PRC_EDT_947_236_0_PricePerMod");
-    private By largePriceForModifier = By.id("txt_BO_MN_PRC_EDT_947_237_0_PricePerMod");
+    private By priceForSmall = By.xpath("//input[@id='txt_BO_MN_PRC_EDT_1410_235_0_Price']");
+    private By priceForMedium = By.xpath("//input[@id='txt_BO_MN_PRC_EDT_1410_236_0_Price']");
+    private By priceForLarge = By.xpath("//input[@id='txt_BO_MN_PRC_EDT_1410_237_0_Price']");
+    private By smallPriceForModifier = By.xpath("//input[@id='txt_BO_MN_PRC_EDT_1410_235_0_PricePerMod']");
+    private By mediumPriceForModifier = By.xpath("//input[@id='txt_BO_MN_PRC_EDT_1410_236_0_PricePerMod']");
+    private By largePriceForModifier = By.xpath("//input[@id='txt_BO_MN_PRC_EDT_1410_237_0_PricePerMod']");
 
     public Element largePriceForModifier() throws IOException, InterruptedException {
         return $(largePriceForModifier);
