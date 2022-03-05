@@ -1,5 +1,5 @@
-Feature: Basic Order Entry - Dine-in fifty dollar cash and Credit Card  - with all lines disabled
-  This script is to validate Dine in fifty dollar cash and credit card basic order entry
+Feature: Basic Order Entry - Dine-in with cash and Credit Card  - with Prep Station and Make Line enabled
+  This script is to validate Basic Order Entry - Dine-in with Fifty Dollar cash and Credit Card  - with Prep Station and Make Line enabled
 
   @Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_Prep_Station_Make_Line_Enabled @RegressionSuite @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
   Scenario: Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_Prep_Station_Make_Line_Enabled_Testcase

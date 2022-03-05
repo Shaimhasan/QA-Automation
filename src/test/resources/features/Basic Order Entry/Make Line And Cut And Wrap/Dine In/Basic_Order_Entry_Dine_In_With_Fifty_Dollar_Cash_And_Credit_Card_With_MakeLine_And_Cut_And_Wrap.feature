@@ -1,8 +1,8 @@
 Feature: Basic Order Entry - Dine-in fifty dollar cash and Credit Card  - with all lines disabled
   This script is to validate Dine in fifty dollar cash and credit card basic order entry
 
-  @Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_All_Lines_Disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_All_Lines_Disabled_Testcase
+  @Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_MakeLine_And_Cut_And_Wrap @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
+  Scenario: Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_MakeLine_And_Cut_And_Wrap_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -89,8 +89,6 @@ Feature: Basic Order Entry - Dine-in fifty dollar cash and Credit Card  - with a
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select veggiePizza
     And the user clicks the "pepperoniPizzaMC" element at the "OrderEntry" page
-    #Comment: user select veggiePizza
-    And the user clicks the "chickenBaconNone" element at the "OrderEntry" page
     #Comment: The user selected Veggie Pizza
     And the user validates the "pepperoniPizzaMCIsSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
@@ -115,7 +113,7 @@ Feature: Basic Order Entry - Dine-in fifty dollar cash and Credit Card  - with a
     And the user switches to the default window content
     #Comment: User switches to the frame
     And the user switches to frame "cardExpiration"
-     #Comment: the user enter the expiration
+    #Comment: the user enter the expiration
     Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
     #Comment: The user swtiches out side the frame
     And the user switches to the default window content
