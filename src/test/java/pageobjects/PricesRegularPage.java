@@ -8,12 +8,12 @@ import java.io.IOException;
 
 public class PricesRegularPage extends BasePO {
 
-    private By selectSmallSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_235_Options']");
-    private By selectMediumSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_236_Options']");
-    private By selectLargeSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_237_Options']");
-    private By selectOptModSmallSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_235_FreeMods']");
-    private By selectOptModMediumSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_236_FreeMods']");
-    private By selectOptModLargeSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_947_237_FreeMods']");
+    private By selectSmallSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_1410_235_Options']");
+    private By selectMediumSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_1410_236_Options']");
+    private By selectLargeSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_1410_237_Options']");
+    private By selectOptModSmallSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_1410_235_FreeMods']");
+    private By selectOptModMediumSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_1410_236_FreeMods']");
+    private By selectOptModLargeSize = By.xpath("//select[@id='ddl_BO_MN_PRC_EDT_1410_237_FreeMods']");
     private By saveBtn = By.xpath("//button[@onclick='BO_MN_PRC_EDT_Save();']");
     private By cancelBtn = By.xpath("//button[@onclick='BO_MN_PRC_EDT_Close();']");
     private By table = By.id("tbl_BO_MN_PRC_EDT_252_947");
