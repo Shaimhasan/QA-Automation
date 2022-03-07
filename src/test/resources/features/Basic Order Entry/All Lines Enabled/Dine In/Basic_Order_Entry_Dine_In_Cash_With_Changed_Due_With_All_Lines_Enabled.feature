@@ -167,6 +167,8 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines en
     #Comment: user click prepstation until order comes on console
     And the user click prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
 
+    #Comment: the user validate the order should not present at the cut and wrap page
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -177,12 +179,8 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with all lines en
     And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: User validate the adoraHeaderSVG element is present.
-    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
-    #Comment: user click on cut wrap based on order Number
-    And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment the user wait
+    And the user waits "7000" seconds
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 

@@ -201,12 +201,8 @@ Feature: Basic Order Entry - Delivery Credit Card  - with all lines enabled
     And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: User validate the adoraHeaderSVG element is present.
-    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
-    #Comment: user click on cut wrap based on order Number
-    And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment the user wait
+    And the user waits "7000" seconds
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
