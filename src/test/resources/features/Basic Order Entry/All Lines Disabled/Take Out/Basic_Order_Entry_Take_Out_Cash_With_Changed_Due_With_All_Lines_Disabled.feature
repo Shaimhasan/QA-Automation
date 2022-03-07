@@ -1,5 +1,5 @@
-Feature: Basic Order Entry - Take Out Cash  - with all lines disabled
-  This script is to validate Take out cash with changed due basic order entry with 100 $Dollar
+Feature: Basic Order Entry - Take Out Cash - with Change Due  - with all lines disabled
+  This script is to validate Basic Order Entry - Take Out Cash - with Change Due  - with all lines disabled with 100 $Dollar
 
   @Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_All_Lines_Disabled @RegressionSuite @BOE @BOE_ALD @BOE_ALD_TakeOut
   Scenario: Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_All_Lines_Disabled_Testcase
