@@ -144,17 +144,17 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on oneDigit
-    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
+    And the user hovers over the "zeroDigitLatest" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    And the user clicks the "zeroDigitLatest" element at the "ClockInPage" page
     #Comment: user click on oneDigit
-    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
+    And the user hovers over the "zeroDigitLatest" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    And the user clicks the "zeroDigitLatest" element at the "ClockInPage" page
     #Comment: user click on oneDigit
-    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
+    And the user hovers over the "zeroDigitLatest" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    And the user clicks the "zeroDigitLatest" element at the "ClockInPage" page
     #Comment: the user validate the visibility of EmployeeNum
     And the user waits for the "employeeNo" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user click on enter
@@ -202,17 +202,17 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on oneDigit
-    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
+    And the user hovers over the "zeroDigitLatest" element at the "ClockOutPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    And the user clicks the "zeroDigitLatest" element at the "ClockOutPage" page
     #Comment: user click on oneDigit
-    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
+    And the user hovers over the "zeroDigitLatest" element at the "ClockOutPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    And the user clicks the "zeroDigitLatest" element at the "ClockOutPage" page
     #Comment: user click on oneDigit
-    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
+    And the user hovers over the "zeroDigitLatest" element at the "ClockOutPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    And the user clicks the "zeroDigitLatest" element at the "ClockOutPage" page
     #Comment: the user validate the visibility of employeeNo
     And the user waits for the "employeeNo" element to be "VISIBLE" on the "ClockOutPage" page
     #Comment: user click on oneDigit
