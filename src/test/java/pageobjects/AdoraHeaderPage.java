@@ -15,8 +15,13 @@ public class AdoraHeaderPage extends BasePO {
     private By cutAndWrap = By.xpath("//div[text()='Cut & Wrap']");
     private By clockIn = By.xpath("//div[normalize-space(text())='Clock In']");
     private By dispatch = By.xpath("//div[text()='Dispatch']");
+    private By dispatchLatest = By.xpath("(//div[text()='Dispatch'])[2]");
     private By clockOut = By.xpath("//div[text()='Clock Out']");
     private By backOffice = By.xpath("//div[text()='Back Office']");
+
+    public Element dispatchLatest() throws IOException, InterruptedException {
+        return $(dispatchLatest);
+    }
 
     public Element orderEntry() throws IOException, InterruptedException {
         return $(orderEntry);
