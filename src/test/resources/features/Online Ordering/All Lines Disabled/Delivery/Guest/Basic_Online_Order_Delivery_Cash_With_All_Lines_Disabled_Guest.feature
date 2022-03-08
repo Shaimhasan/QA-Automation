@@ -133,9 +133,9 @@ Feature: Basic Online Order - Delivery Cash - with all lines disabled - Guest
     #Comment: the user validate the visibility of EmployeeNum
     And the user waits for the "employeeNo" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user click on enter
-    And the user hovers over the "enter" element at the "ClockInPage" page
+    And the user hovers over the "enterLatest" element at the "ClockInPage" page
     #Comment: user click on Enter
-    And the user clicks the "enter" element at the "ClockInPage" page
+    And the user clicks the "enterLatest" element at the "ClockInPage" page
      #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user validate time record message successfully
@@ -191,9 +191,9 @@ Feature: Basic Online Order - Delivery Cash - with all lines disabled - Guest
     #Comment: the user validate the visibility of employeeNo
     And the user waits for the "employeeNo" element to be "VISIBLE" on the "ClockOutPage" page
     #Comment: user click on oneDigit
-    And the user hovers over the "enter" element at the "ClockOutPage" page
+    And the user hovers over the "enterLatest" element at the "ClockOutPage" page
     #Comment: user click on Enter
-    And the user clicks the "enter" element at the "ClockOutPage" page
+    And the user clicks the "enterLatest" element at the "ClockOutPage" page
     #Comment: the user enter gratuity amount
     Then the user enters "#(gatuityAmt)" into the "gratuityAmt" textbox at the "ClockOutPage" page
     #Comment: user click on ClockOut

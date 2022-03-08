@@ -14,12 +14,17 @@ public class ClockOutPage extends BasePO {
     private By zeroDigit = By.xpath("//div[@class='gridCols2X1X']//button[@class='gridCol1']");
     private By zeroDigitLatest = By.xpath("(//button[text()='0'])[2]");
     private By enter = By.xpath("//button[text()='Enter']");
+    private By enterLatest = By.xpath("(//button[text()='Enter'])[2]");
     private By timeCardRecordSuccessMsg = By.xpath("//div[text()='Your time card recorded successfully.']");
     private By OKBtn = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='OK']");
     private By gratuityAmt = By.id("txtClockOutGratuity");
     private By clockOut = By.xpath("//button[text()='Clock Out']");
     private By clockOutSuccessMsg = By.xpath("//div[text()='You have clocked out successfully.']");
     private By employeeNo = By.xpath("//div[text()='1000']");
+
+    public Element enterLatest() throws IOException, InterruptedException {
+        return $(enterLatest);
+    }
 
     public Element oneDigitLatest() throws IOException, InterruptedException {
         return $(oneDigitLatest);
