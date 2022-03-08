@@ -284,28 +284,28 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "oneDigitLatest" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
-    And the user clicks the "oneDigitLatest" element at the "ClockOutPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "zeroDigitLatest" element at the "ClockOutPage" page
+    And the user clicks the "oneDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigitLatest" element at the "ClockOutPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "zeroDigitLatest" element at the "ClockOutPage" page
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigitLatest" element at the "ClockOutPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "zeroDigitLatest" element at the "ClockOutPage" page
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigitLatest" element at the "ClockOutPage" page
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
     #Comment: the user validate the visibility of employeeNo
     And the user waits for the "employeeNo" element to be "VISIBLE" on the "ClockOutPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "enterLatest" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "enter" element at the "ClockOutPage" page
     #Comment: user click on Enter
-    And the user clicks the "enterLatest" element at the "ClockOutPage" page
+    And the user clicks the "enter" element at the "ClockOutPage" page
     #Comment: the user enter gratuity amount
     Then the user enters "#(gatuityAmt)" into the "gratuityAmt" textbox at the "ClockOutPage" page
     #Comment: user click on ClockOut
