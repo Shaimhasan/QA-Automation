@@ -117,34 +117,43 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - E
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
+    #Comment: the user validate the visibility of element
+    And the user waits for the "orderEntry" element to be "VISIBLE" on the "HomeScreenPage" page
+    #Comment: user click On the orderEntry Button
+    And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+    #Comment: the user validate the visibility of element
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: The user click on Adore header page
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "oneDigitLatest" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "oneDigitLatest" element at the "ClockInPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "zeroDigitLatest" element at the "ClockInPage" page
+    And the user clicks the "oneDigit" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigitLatest" element at the "ClockInPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "zeroDigitLatest" element at the "ClockInPage" page
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigitLatest" element at the "ClockInPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "zeroDigitLatest" element at the "ClockInPage" page
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigitLatest" element at the "ClockInPage" page
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
     #Comment: the user validate the visibility of EmployeeNum
     And the user waits for the "employeeNo" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user click on enter
-    And the user hovers over the "enterLatest" element at the "ClockInPage" page
+    And the user hovers over the "enter" element at the "ClockInPage" page
     #Comment: user click on Enter
-    And the user clicks the "enterLatest" element at the "ClockInPage" page
+    And the user clicks the "enter" element at the "ClockInPage" page
      #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user validate time record message successfully

@@ -210,28 +210,28 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Existing 
     And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "oneDigitLatest" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "oneDigitLatest" element at the "ClockInPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "zeroDigitLatest" element at the "ClockInPage" page
+    And the user clicks the "oneDigit" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigitLatest" element at the "ClockInPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "zeroDigitLatest" element at the "ClockInPage" page
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigitLatest" element at the "ClockInPage" page
-    #Comment: user click on oneDigitLatest
-    And the user hovers over the "zeroDigitLatest" element at the "ClockInPage" page
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on two digit
-    And the user clicks the "zeroDigitLatest" element at the "ClockInPage" page
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
     #Comment: the user validate the visibility of EmployeeNum
     And the user waits for the "employeeNo" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user click on enter
-    And the user hovers over the "enterLatest" element at the "ClockInPage" page
+    And the user hovers over the "enter" element at the "ClockInPage" page
     #Comment: user click on Enter
-    And the user clicks the "enterLatest" element at the "ClockInPage" page
+    And the user clicks the "enter" element at the "ClockInPage" page
      #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user validate time record message successfully
