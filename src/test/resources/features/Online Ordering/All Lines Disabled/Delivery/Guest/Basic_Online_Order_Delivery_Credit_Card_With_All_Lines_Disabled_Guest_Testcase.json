@@ -15,6 +15,7 @@
       "cardNumber": "5454545454545454",
       "cardExpiration": "022025",
       "cardCvv": "545",
+      "address": "1234 Elm St Roseville CA 95678",
       "billingAddress": "1234 Blue Oaks Blvd, Roseville",
       "zipCode": "95678",
       "phoneNo": "7999466130",
