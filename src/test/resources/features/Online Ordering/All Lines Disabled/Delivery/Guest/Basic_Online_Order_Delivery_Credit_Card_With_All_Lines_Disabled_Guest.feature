@@ -140,7 +140,7 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     #Comment: user click on ClockIn
     And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
     #Comment: user click on oneDigit
-    And the user hovers over the "oneDigitLatestoneDigitLatest" element at the "ClockInPage" page
+    And the user hovers over the "oneDigitLatest" element at the "ClockInPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigitLatest" element at the "ClockInPage" page
     #Comment: user click on oneDigit
