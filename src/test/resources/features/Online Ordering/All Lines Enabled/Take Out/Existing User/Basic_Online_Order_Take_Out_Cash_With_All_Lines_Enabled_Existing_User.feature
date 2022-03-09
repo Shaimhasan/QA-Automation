@@ -208,6 +208,8 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Existing 
     And the user hovers over the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: user validate the transaction Number
     And store text of the cell having unique rowVal comes from Data Dictionary "#(transactionNum)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
     #Comment: user validate the transaction Number
