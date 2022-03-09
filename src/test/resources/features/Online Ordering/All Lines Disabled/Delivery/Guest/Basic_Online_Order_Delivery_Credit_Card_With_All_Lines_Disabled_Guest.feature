@@ -179,6 +179,10 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: The user wait until page is loading
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: The user click on Adore header page
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
     And the user waits for the "dispatch" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
