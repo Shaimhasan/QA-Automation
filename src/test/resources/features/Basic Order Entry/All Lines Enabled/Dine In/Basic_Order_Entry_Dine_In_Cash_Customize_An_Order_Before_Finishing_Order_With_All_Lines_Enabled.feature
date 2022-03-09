@@ -132,7 +132,6 @@ Feature: Basic Order Entry - Customize an order before finishing order - with al
     And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on makeLine
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
-
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click makeline until order comes on console
