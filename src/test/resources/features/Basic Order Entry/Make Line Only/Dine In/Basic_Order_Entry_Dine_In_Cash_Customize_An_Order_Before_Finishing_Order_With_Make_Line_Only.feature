@@ -118,6 +118,7 @@ Feature: Basic Order Entry - Customize an order before finishing order - with Ma
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
