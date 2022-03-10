@@ -2,7 +2,7 @@ Feature: Online Order - Item with Make Line enabled - with all lines enabled - G
   This script is to validate Online Order - Item with Make Line enabled - with all lines enabled - Guest
 
   @issue=3051
-  @Online_Order_Item_With_MakeLine_Enabled_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_DineIn @OLO_ALE_DineIn_Guest
+  @Online_Order_Item_With_MakeLine_Enabled_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OO_ALE @OO_ALE_Guest
   Scenario: Online_Order_Item_With_MakeLine_Enabled_With_All_Lines_Enabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

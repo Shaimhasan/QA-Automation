@@ -2,7 +2,7 @@ Feature: Online Order - Item with no lines enabled - with all lines enabled - Gu
   This script is to validate Online Order - Item with no lines enabled - with all lines enabled - Guest
 
   @issue=3049
-  @Online_Order_Item_With_No_Lines_Enabled_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_DineIn @OLO_ALE_DineIn_Guest
+  @Online_Order_Item_With_No_Lines_Enabled_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OO_ALE @OO_ALE_Guest
   Scenario: Online_Order_Item_With_No_Lines_Enabled_With_All_Lines_Enabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
@@ -190,7 +190,7 @@ Feature: Online Order - Item with no lines enabled - with all lines enabled - Gu
     #Comment the user wait
     And the user waits "7000" seconds
     #Comment: User validate the adoraHeaderSVG element is present.
-    And the user order number "#(transactionNum)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
