@@ -1061,7 +1061,6 @@ public class AutoEngValidate extends BaseWebSteps {
     ) {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
-        waitOnce();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

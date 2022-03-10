@@ -29,14 +29,6 @@ Feature: Online Order - Item with Make Line enabled - with all lines enabled - G
     #Comment: User click on dine in
     And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "hawaiianPizzaP" element to be "VISIBLE" on the "HomeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "hawaiianPizzaP" element at the "HomeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
-    #Comment: User wait to visible the page
     And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
@@ -179,7 +171,7 @@ Feature: Online Order - Item with Make Line enabled - with all lines enabled - G
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click makeline until order comes on console
-    And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    And the user click makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
     #Comment: the user check order should not present at Cut and Wrap
 
@@ -196,7 +188,7 @@ Feature: Online Order - Item with Make Line enabled - with all lines enabled - G
     #Comment the user wait
     And the user waits "7000" seconds
     #Comment: User validate the adoraHeaderSVG element is present.
-    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
