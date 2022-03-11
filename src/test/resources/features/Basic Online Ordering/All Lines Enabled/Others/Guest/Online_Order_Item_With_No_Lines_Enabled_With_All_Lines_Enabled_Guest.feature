@@ -172,6 +172,8 @@ Feature: Online Order - Item with no lines enabled - with all lines enabled - Gu
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
+    #Commnet: the user wait
+    And the user waits "5000" seconds
     #Comment: user click makeline until order comes on console
     And the user click All makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
 

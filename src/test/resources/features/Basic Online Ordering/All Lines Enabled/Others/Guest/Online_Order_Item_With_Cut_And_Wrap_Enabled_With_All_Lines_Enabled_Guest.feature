@@ -173,7 +173,7 @@ Feature: Online Order - Item with Cut and Wrap enabled - with all lines enabled 
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user wait for few seconds
-    And the user waits "10000" seconds
+    And the user waits "5000" seconds
     #Comment: user click makeline until order comes on console
     And the user click All makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
 
