@@ -246,25 +246,6 @@ Feature: Online Order - Item with Prep Station and Make Line and Cut and Wrap en
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
-    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: user click on Cut and Wrap
-    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: User validate the adoraHeaderSVG element is present.
-    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
-    #Comment: user click on cut wrap based on order Number
-    And the user custom clicks on row with order number "#(orderNum1)" and category value "1" from the "table" table on the "CutAndWrapPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: User validate the adoraHeaderSVG element is present.
-    And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
-
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: user click on Adora Header
-    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: the user validate the visibility of popup
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
