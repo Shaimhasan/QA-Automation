@@ -1,9 +1,9 @@
-Feature: Online Order - Dine In Cash - item with Cut and Wrap enabled and with all lines disabled - Guest
-  This script is to validate Online Order - Dine In Cash - item with Cut and Wrap enabled and with all lines disabled - Guest
+Feature: Online Order - Dine In Cash - item with Prep Station and Cut and Wrap enabled and with all lines disabled - Guest
+  This script is to validate Online Order - Dine In Cash - item with Prep Station and Cut and Wrap enabled and with all lines disabled - Guest
 
-  @issue=2989
-  @OO_Dine_In_Cash_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Disabled_Guest @RegressionSuite @OLO @OO_ALD @OO_ALD_Guest
-  Scenario: OO_Dine_In_Cash_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Disabled_Guest_Testcase
+  @issue=2992
+  @OO_Dine_In_Cash_Item_With_Prep_Station_And_Cut_And_Wrap_Enabled_With_ALD_Guest @RegressionSuite @OLO @OO_ALD @OO_ALD_Guest
+  Scenario: OO_Dine_In_Cash_Item_With_Prep_Station_And_Cut_And_Wrap_Enabled_With_ALD_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -20,6 +20,10 @@ Feature: Online Order - Dine In Cash - item with Cut and Wrap enabled and with a
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "hawaiianPizzaP" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "hawaiianPizzaP" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "veggiePizzaC" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
@@ -100,7 +104,7 @@ Feature: Online Order - Dine In Cash - item with Cut and Wrap enabled and with a
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user click on Adore header page
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-
+    
     #Comment: the user validate the visibility of popup
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.

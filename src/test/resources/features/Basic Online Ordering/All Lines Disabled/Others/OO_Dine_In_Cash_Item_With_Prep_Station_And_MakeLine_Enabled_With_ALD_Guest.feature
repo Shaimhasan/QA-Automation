@@ -1,9 +1,9 @@
-Feature: Online Order - Dine In Cash - item with Cut and Wrap enabled and with all lines disabled - Guest
-  This script is to validate Online Order - Dine In Cash - item with Cut and Wrap enabled and with all lines disabled - Guest
+Feature: Online Order - Dine In Cash - item with Prep Station and Make Line enabled and with all lines disabled - Guest
+  This script is to validate Online Order - Dine In Cash - item with Prep Station and Make Line enabled and with all lines disabled - Guest
 
-  @issue=2989
-  @OO_Dine_In_Cash_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Disabled_Guest @RegressionSuite @OLO @OO_ALD @OO_ALD_Guest
-  Scenario: OO_Dine_In_Cash_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Disabled_Guest_Testcase
+  @issue=2991
+  @OO_Dine_In_Cash_Item_With_Prep_Station_And_MakeLine_Enabled_With_ALD_Guest @RegressionSuite @OLO @OO_ALD @OO_ALD_Guest
+  Scenario: OO_Dine_In_Cash_Item_With_Prep_Station_And_MakeLine_Enabled_With_ALD_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -21,9 +21,9 @@ Feature: Online Order - Dine In Cash - item with Cut and Wrap enabled and with a
     #Comment: User click on dine in
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "veggiePizzaC" element to be "VISIBLE" on the "HomeOLOPage" page
+    And the user waits for the "supremePizzaPM" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "veggiePizzaC" element at the "HomeOLOPage" page
+    And the user clicks the "supremePizzaPM" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
     #Comment: User click on dine in
