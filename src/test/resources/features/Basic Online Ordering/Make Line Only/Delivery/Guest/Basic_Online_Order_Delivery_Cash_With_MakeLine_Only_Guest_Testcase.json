@@ -5,18 +5,22 @@
     "staticData": {
       "firstName": "Automation",
       "amount": "33.00",
+      "amtVal": "35.30",
       "lastName": "Online Order",
       "email": "onlineorder@gmail.com",
       "reEnterEmail": "onlineorder@gmail.com",
       "orderIdXpath": "(//b[text()='",
       "DetailsClickXpath1": "(//b[text()='",
       "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button",
-      "cardNumber": "5454545454545454",
-      "cardExpiration": "022025",
-      "cardCvv": "545",
-      "billingAddress": "1234 Blue Oaks Blvd, Roseville",
-      "zipCode": "95678",
-      "phoneNo": "7999466130"
+      "address": "1234 Elm St Roseville CA 95678",
+      "timeRecordSuccessMsg": "Your time card recorded successfully.",
+      "timeClockOutSuccessMsg": "You have clocked out successfully.",
+      "orderNumberXpath1": "//b[text()='",
+      "orderNumberXpath2": "']",
+      "gatuityAmt": "0",
+      "unit": "2",
+      "orderTypeValidate": "Order Type",
+      "ASAP": "ASAP"
     },
     "dataCriteria": {
     },
