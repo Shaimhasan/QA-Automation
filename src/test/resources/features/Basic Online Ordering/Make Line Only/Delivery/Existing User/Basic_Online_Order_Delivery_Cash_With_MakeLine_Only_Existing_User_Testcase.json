@@ -1,0 +1,32 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "firstName": "Automation",
+      "amount": "33.00",
+      "amtVal": "35.30",
+      "lastName": "Online Order",
+      "email": "onlineorder@gmail.com",
+      "reEnterEmail": "onlineorder@gmail.com",
+      "orderIdXpath": "(//b[text()='",
+      "DetailsClickXpath1": "(//b[text()='",
+      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button",
+      "address": "1234 Elm St Roseville CA 95678",
+      "timeRecordSuccessMsg": "Your time card recorded successfully.",
+      "timeClockOutSuccessMsg": "You have clocked out successfully.",
+      "orderNumberXpath1": "//b[text()='",
+      "orderNumberXpath2": "']",
+      "gatuityAmt": "0",
+      "unit": "2",
+      "orderTypeValidate": "Order Type",
+      "ASAP": "ASAP"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
