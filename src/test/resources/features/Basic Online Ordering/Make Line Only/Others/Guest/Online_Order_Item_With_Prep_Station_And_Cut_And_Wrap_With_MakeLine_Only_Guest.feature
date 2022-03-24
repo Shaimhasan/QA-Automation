@@ -1,9 +1,9 @@
-Feature: Online Order - Dine In Cash - item with Prep Station and Cut and Wrap enabled and with all lines disabled - Guest
-  This script is to validate Online Order - Dine In Cash - item with Prep Station and Cut and Wrap enabled and with all lines disabled - Guest
+Feature: Online Order - Item with Prep Station and Cut and Wrap enabled - with Make Line Only - Guest
+  This script is to validate Online Order - Item with Prep Station and Cut and Wrap enabled - with Make Line Only - Guest
 
-  @issue=2992
-  @OO_Dine_In_Cash_Item_With_Prep_Station_And_Cut_And_Wrap_Enabled_With_ALD_Guest @RegressionSuite @OLO @OO_ALD @OO_ALD_Guest
-  Scenario: OO_Dine_In_Cash_Item_With_Prep_Station_And_Cut_And_Wrap_Enabled_With_ALD_Guest_Testcase
+  @issue=3013
+  @Online_Order_Item_With_Prep_Station_And_Cut_And_Wrap_With_MakeLine_Only_Guest @RegressionSuite @OLO @OO_MakeLine_Only @OO_MakeLine_Only_Others @OO_MakeLine_Only_Others_Guest
+  Scenario: Online_Order_Item_With_Prep_Station_And_Cut_And_Wrap_With_MakeLine_Only_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -100,15 +100,61 @@ Feature: Online Order - Dine In Cash - item with Prep Station and Cut and Wrap e
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
-    #Comment: the user validate the visibility of element
-    And the user waits for the "orderEntry" element to be "VISIBLE" on the "HomeScreenPage" page
-    #Comment: user click On the orderEntry Button
-    And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+    #Comment: the user click on back office
+    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
+    #Comment: the user click Setting
+    And the user clicks the "settings" element at the "SettingsPage" page
+    #Comment: the user click on Setting change
+    And the user clicks the "settingsChange" element at the "SettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "prepStationConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "Not utilizing prep station" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "makeLineConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "cutAndWrapConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "Not utilizing cut and wrap monitor" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user refresh Page
+    And the user refreshes the page
+
     #Comment: the user validate the visibility of element
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user click on Adore header page
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    
     #Comment: the user validate the visibility of popup
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
