@@ -67,7 +67,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Prep Station and Make 
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "Not utilizing cut and wrap monitor" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "Disabled" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
