@@ -67,7 +67,7 @@ Feature: Basic Order Entry - Take Out Credit Card  - with Cut and Wrap Only
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -215,7 +215,7 @@ Feature: Basic Order Entry - Take Out Credit Card  - with Cut and Wrap Only
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -229,7 +229,7 @@ Feature: Basic Order Entry - Take Out Credit Card  - with Cut and Wrap Only
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -243,7 +243,7 @@ Feature: Basic Order Entry - Take Out Credit Card  - with Cut and Wrap Only
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "By item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page

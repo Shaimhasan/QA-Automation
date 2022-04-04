@@ -1,29 +1,33 @@
-Feature: Online Order - Item with Cut and Wrap enabled - with Make Line Only - Guest
-  This script is to validate Online Order - Item with Cut and Wrap enabled - with Make Line Only - Guest
+Feature: Basic Online Order - Take Out Cash - with Prep Station and Make Line - Existing User
+  This script is to validate Basic Online Order - Take Out Cash - with Prep Station and Make Line - Existing User
 
-  @issue=3010
-  @Online_Order_Item_With_Cut_And_Wrap_Enabled_With_MakeLine_Only_Guest @RegressionSuite @OLO @OO_MakeLine_Only @OO_MakeLine_Only_Others @OO_MakeLine_Only_Others_Guest
-  Scenario: Online_Order_Item_With_Cut_And_Wrap_Enabled_With_MakeLine_Only_Guest_Testcase
+  @issue=1833
+  @Basic_Online_Order_Take_Out_Cash_With_Prep_Station_MakeLine_Existing_User @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_TakeOut @OLO_Prep_Station_And_MakeLine_TakeOut_Existing_User
+  Scenario: Basic_Online_Order_Take_Out_Cash_With_Prep_Station_MakeLine_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
     And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
-    #Comment: User click on continue as guest
-    And the user clicks the "continueAsGuest" element at the "LoginOLOPage" page
+    #Comment: Enter the Customer Email into username textbox present on Login Page
+    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
+    #Comment: Enter the Password into Station_Key textbox present on Login Page
+    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
+    #Comment: User click on Login Button
+    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user wait hover element
-    And the user hovers over the "dineIn" element at the "OrderTypeOLOPage" page
+    And the user hovers over the "takeOut" element at the "OrderTypeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "dineIn" element at the "OrderTypeOLOPage" page
+    And the user clicks the "takeOut" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "veggiePizzaC" element to be "VISIBLE" on the "HomeOLOPage" page
+    And the user waits for the "supremePizzaPM" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "veggiePizzaC" element at the "HomeOLOPage" page
+    And the user clicks the "supremePizzaPM" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
     #Comment: User click on dine in
@@ -33,21 +37,7 @@ Feature: Online Order - Item with Cut and Wrap enabled - with Make Line Only - G
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "existingCustLogin" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(lastName)" into the "lastName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter email
-    And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter re-email
-    And the user enters "#(reEnterEmail)" into the "reEnterEmail" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter ten digit Number
-    And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter 10 digit number
-    And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
-    #Comment: the user enter re enter phone
-    And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
+    And the user waits for the "customerInfo" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
     #comment: the user click on Pay In Store
     And the user clicks the "payInStore" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
@@ -105,7 +95,7 @@ Feature: Online Order - Item with Cut and Wrap enabled - with Make Line Only - G
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "Not utilizing prep station" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -143,7 +133,20 @@ Feature: Online Order - Item with Cut and Wrap enabled - with Make Line Only - G
     #Comment: the user refresh Page
     And the user refreshes the page
 
-    #Comment: the user check order should not present on Makeline
+    #Comment: user wait for visible of element
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "prepStation" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: User validate the order list element is present.
+    And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
+    #Comment: user click on prep Station
+    And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click prepstation until order comes on console
+    And the user click Single prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
@@ -155,10 +158,8 @@ Feature: Online Order - Item with Cut and Wrap enabled - with Make Line Only - G
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: the user wait
-    And the user waits "5000" seconds
     #Comment: user click makeline until order comes on console
-    And the user click All makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
+    And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
