@@ -10,9 +10,9 @@ public class SettingsChangePage extends BasePO {
 
     private By table = By.id("tbl_BO_List_ST_SET");
     private By settingTxt = By.xpath("//div[@id='div_BO_MAIN_Container_Lists']//div[@id='div_Page_Title']");
-    private By makeLineConfig = By.xpath("//td[text()='KDS - Make Line Monitor']");
-    private By prepStationConfig = By.xpath("//td[text()='KDS - Prep Station Monitor']");
-    private By cutAndWrapConfig = By.xpath("//td[text()='KDS - Cut and Wrap Configuration']");
+    private By makeLineConfig = By.xpath("//td[text()='Make Line Monitor Configuration']");
+    private By prepStationConfig = By.xpath("//td[text()='Prep station configuration']");
+    private By cutAndWrapConfig = By.xpath("//td[text()='Cut and Wrap Monitor Configuration']");
 
     public Element cutAndWrapConfig() throws IOException, InterruptedException {
         return $(cutAndWrapConfig);
