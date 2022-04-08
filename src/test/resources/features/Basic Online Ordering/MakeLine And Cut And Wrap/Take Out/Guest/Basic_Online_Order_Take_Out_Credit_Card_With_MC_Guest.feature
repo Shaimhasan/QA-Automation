@@ -1,9 +1,9 @@
-Feature: Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Guest
-  This script is to validate Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Guest
+Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap - Guest
+  This script is to validate Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap - Guest
 
-  @issue=1768
-  @Basic_Online_Order_Dine_In_Cash_With_MakeLine_And_Cut_And_Wrap_Guest @RegressionSuite @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_DineIn @OLO_MakeLine_And_Cut_And_Wrap_DineIn_Guest
-  Scenario: Basic_Online_Order_Dine_In_Cash_With_MakeLine_And_Cut_And_Wrap_Guest_Testcase
+  @issue=1771
+  @Basic_Online_Order_Take_Out_Credit_Card_With_MC_Guest @RegressionSuite @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_TakeOut @OLO_MakeLine_And_Cut_And_Wrap_TakeOut_Guest
+  Scenario: Basic_Online_Order_Take_Out_Credit_Card_With_MC_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -13,9 +13,9 @@ Feature: Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Gu
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user wait hover element
-    And the user hovers over the "dineIn" element at the "OrderTypeOLOPage" page
+    And the user hovers over the "takeOut" element at the "OrderTypeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "dineIn" element at the "OrderTypeOLOPage" page
+    And the user clicks the "takeOut" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: User click on dine in
@@ -42,16 +42,41 @@ Feature: Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Gu
     And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter re-email
     And the user enters "#(reEnterEmail)" into the "reEnterEmail" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter ten digit Number
+    #Comment: the user enter phone number
     And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter 10 digit number
     And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
     #Comment: the user enter re enter phone
     And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
-    #comment: the user click on Pay In Store
-    And the user clicks the "payInStore" element at the "ExistingCustLoginOLOPage" page
+
+    #Comment: the user click on Credit Card Information
+    And the user clicks the "creditCard" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "payInStore" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
+    And the user validates the item in the "creditCard" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
+    #Comment: the user switched to the frame
+    And the user switches to frame "cardNumber"
+    #Comment: the user enter Card Number
+    And the user enters "#(cardNumber)" into the "cardNumber" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: The user Switches out side the frame
+    And the user switches to the default window content
+    #Comment: User switches to the frame
+    And the user switches to frame "cardExpiration"
+    #Comment: the user enter Expiration date
+    And the user enters "#(cardExpiration)" into the "cardExpiration" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+    #Comment: User switches to the frame
+    And the user switches to frame "cardCvv"
+    #Comment: the user enter CVV
+    And the user enters "#(cardCvv)" into the "cardCvv" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+    #Comment: the user enter Billing Address
+    And the user enters "#(billingAddress)" into the "billingAddress" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: the user enter Billing Address
+    And the user enters "#(zipCode)" into the "zipCode" textbox at the "ExistingCustLoginOLOPage" page
+
+
     #comment: the user click on termsAndCondition
     And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user click on termsAndCondition
@@ -213,6 +238,5 @@ Feature: Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Gu
     And the user validates the data dictionary value of "#(orderNum1)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: user click Close Button
     And the user clicks the "close" element at the "OrderDetailsPage" page
-
 
 
