@@ -1,31 +1,31 @@
-Feature: Basic Online Order - Delivery Cash - with Prep Station and Make Line - Guest
-  This script is to validate Basic Online Order - Delivery Cash - with Prep Station and Make Line - Guest
+Feature: Basic Online Order - Delivery Cash - with Prep Station and Make Line - Existing User
+  This script is to validate Basic Online Order - Delivery Cash - with Prep Station and Make Line - Existing User
 
-  @issue=1778
-  @Basic_Online_Order_Delivery_Cash_With_Prep_Station_And_MakeLine_Guest @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Only_Delivery @OLO_Prep_Station_And_MakeLine_Only_Delivery_Guest
-  Scenario: Basic_Online_Order_Delivery_Cash_With_Prep_Station_And_MakeLine_Guest_Testcase
+  @issue=1835
+  @Basic_Online_Order_Delivery_Cash_With_PM_Existing_User @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Delivery @OLO_Prep_Station_And_MakeLine_Delivery_Existing_User
+  Scenario: Basic_Online_Order_Delivery_Cash_With_PM_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
     And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
-    #Comment: User click on continue as guest
-    And the user clicks the "continueAsGuest" element at the "LoginOLOPage" page
+    #Comment: Enter the Customer Email into username textbox present on Login Page
+    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
+    #Comment: Enter the Password into Station_Key textbox present on Login Page
+    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
+    #Comment: User click on Login Button
+    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user enter the address
-    And the user enters "#(address)" into the "address" textbox at the "OrderTypeOLOPage" page
+    #comment: the user click on existingAddressSelect
+    And the user clicks the "existingAddressSelect" element at the "OrderTypeOLOPage" page
+    #Comment: the user validates the checkbox is selected
+    And the user validates the item in the "existingAddressSelect" checkbox is checked at the "OrderTypeOLOPage" page "validate_Text" "HardStopOnFailure"
     #Comment: the user click continue button
     And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user validate the text
     And the user validates "Compare_Strings" that the "orderTypeValidate" element is "Equal To" "#(orderTypeValidate)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
     #Comment: the user validate the text
     And the user validates "Compare_Strings" that the "asap" element is "Equal To" "#(ASAP)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
-    #Comment: the user click continue button
-    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
-    #Comment: the user enter the address
-    And the user enters "#(unit)" into the "unit" textbox at the "OrderTypeOLOPage" page
-    #Comment: the user click continue button
-    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user click continue button
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
@@ -40,22 +40,6 @@ Feature: Basic Online Order - Delivery Cash - with Prep Station and Make Line - 
     And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "existingCustLogin" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(lastName)" into the "lastName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter email
-    And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter re-email
-    And the user enters "#(reEnterEmail)" into the "reEnterEmail" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter ten digit Number
-    And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter 10 digit number
-    And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
-    #Comment: the user enter re enter phone
-    And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
     #comment: the user click on Pay In Store
     And the user clicks the "cash" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
@@ -181,8 +165,6 @@ Feature: Basic Online Order - Delivery Cash - with Prep Station and Make Line - 
 
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user click on Adora header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
@@ -292,8 +274,6 @@ Feature: Basic Online Order - Delivery Cash - with Prep Station and Make Line - 
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
-    #Comment: the user hover the Order List
-    And the user hovers over the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading

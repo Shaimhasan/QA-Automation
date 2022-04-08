@@ -1,9 +1,9 @@
-Feature: Basic Online Order - Delivery Cash - with Prep Station and Make Line - Existing User
-  This script is to validate Basic Online Order - Delivery Cash - with Prep Station and Make Line - Existing User
+Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Make Line - Existing User
+  This script is to validate Basic Online Order - Delivery Credit Card - with Prep Station and Make Line - Existing User
 
-  @issue=1835
-  @Basic_Online_Order_Delivery_Cash_With_Prep_Station_And_MakeLine_Existing_User @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Delivery @OLO_Prep_Station_And_MakeLine_Delivery_Existing_User
-  Scenario: Basic_Online_Order_Delivery_Cash_With_Prep_Station_And_MakeLine_Existing_User_Testcase
+  @issue=1836
+  @Basic_Online_Order_Delivery_Credit_Card_With_PM_Existing_User @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Delivery @OLO_Prep_Station_And_MakeLine_Delivery_Existing_User
+  Scenario: Basic_Online_Order_Delivery_Credit_Card_With_PM_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -40,10 +40,35 @@ Feature: Basic Online Order - Delivery Cash - with Prep Station and Make Line - 
     And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
-    #comment: the user click on Pay In Store
-    And the user clicks the "cash" element at the "ExistingCustLoginOLOPage" page
+
+    #Comment: the user click on Credit Card Information
+    And the user clicks the "creditCard" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "cash" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
+    And the user validates the item in the "creditCard" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
+    #Comment: the user switched to the frame
+    And the user switches to frame "cardNumber"
+    #Comment: the user enter Card Number
+    And the user enters "#(cardNumber)" into the "cardNumber" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: The user Switches out side the frame
+    And the user switches to the default window content
+    #Comment: User switches to the frame
+    And the user switches to frame "cardExpiration"
+    #Comment: the user enter Expiration date
+    And the user enters "#(cardExpiration)" into the "cardExpiration" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+    #Comment: User switches to the frame
+    And the user switches to frame "cardCvv"
+    #Comment: the user enter CVV
+    And the user enters "#(cardCvv)" into the "cardCvv" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: The user swtiches out side the frame
+    And the user switches to the default window content
+    #Comment: the user enter Billing Address
+    And the user enters "#(billingAddress)" into the "billingAddress" textbox at the "ExistingCustLoginOLOPage" page
+    #Comment: the user enter Billing Address
+    And the user enters "#(zipCode)" into the "zipCode" textbox at the "ExistingCustLoginOLOPage" page
+
+
     #comment: the user click on termsAndCondition
     And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user click on termsAndCondition
@@ -302,7 +327,5 @@ Feature: Basic Online Order - Delivery Cash - with Prep Station and Make Line - 
     And the user validates the data dictionary value of "#(orderNum1)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: user click Close Button
     And the user clicks the "close" element at the "OrderDetailsPage" page
-
-
 
 
