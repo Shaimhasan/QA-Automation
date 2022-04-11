@@ -27,13 +27,14 @@ public class Hooks implements En {
         After(30, (Scenario scenario) -> {
             if (DriverContext.getInstance().getTechStack() != null) {
                 if (scenario.isFailed()) {
+                    System.out.println("Scenarios Status : -->"+"Scenarios Failed");
                     takeScreenShotOnFailure();
                     if (!DriverContext.getInstance().getKeepBrowserOpen())
-                        System.out.println("abc");
                         DriverFactory.getInstance().quit();
                    // theUserClosesTheBrowsers("IE");
 
             }else{
+                    System.out.println("Scenarios Status : -->"+"Scenarios Passed");
                     DriverFactory.getInstance().quit();
                  //   theUserClosesTheBrowsers("IE");
                 }
