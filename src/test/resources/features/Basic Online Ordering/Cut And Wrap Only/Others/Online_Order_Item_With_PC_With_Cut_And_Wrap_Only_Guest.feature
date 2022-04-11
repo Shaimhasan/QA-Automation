@@ -164,7 +164,7 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled - with C
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
     #Comment: user click on cut wrap based on order Number
-    And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
+    And the user custom clicks on row with order number "#(orderNum1)" and category value "1" from the "table" table on the "CutAndWrapPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: User validate the adoraHeaderSVG element is present.
