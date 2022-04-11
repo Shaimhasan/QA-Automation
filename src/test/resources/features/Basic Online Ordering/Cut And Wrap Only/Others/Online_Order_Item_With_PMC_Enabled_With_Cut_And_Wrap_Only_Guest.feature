@@ -160,7 +160,7 @@ Feature: Online Order - Item with Prep Station and Make Line and Cut and Wrap en
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: User validate the adoraHeaderSVG element is present.
-    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page

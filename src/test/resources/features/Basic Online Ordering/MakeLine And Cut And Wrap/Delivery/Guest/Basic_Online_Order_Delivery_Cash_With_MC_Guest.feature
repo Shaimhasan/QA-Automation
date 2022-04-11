@@ -162,7 +162,7 @@ Feature: Basic Online Order - Delivery Cash - with Make Line Cut and Wrap - Gues
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click makeline until order comes on console
-    And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    And the user click makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
@@ -181,7 +181,7 @@ Feature: Basic Online Order - Delivery Cash - with Make Line Cut and Wrap - Gues
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: User validate the adoraHeaderSVG element is present.
-    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
     #Comment: The user wait until page is loading
     And the user waits for the page to load

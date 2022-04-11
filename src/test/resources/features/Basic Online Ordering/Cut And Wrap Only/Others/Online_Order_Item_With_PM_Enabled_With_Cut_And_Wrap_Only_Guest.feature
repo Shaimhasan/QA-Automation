@@ -158,7 +158,7 @@ Feature: Online Order - Item with Prep Station and Make Line enabled - with Cut 
     #Comment the user wait
     And the user waits "7000" seconds
     #Comment: User validate the adoraHeaderSVG element is present.
-    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
