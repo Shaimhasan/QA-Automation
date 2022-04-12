@@ -186,13 +186,7 @@ Feature: Basic Online Order - Dine In Cash - with Prep Station and Make Line - G
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user validate the transaction Number
-    And store text of the cell having unique rowVal comes from Data Dictionary "#(transactionNum)" and columnHeader " Transaction#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "transaction_Num"
-    #Comment: user validate the transaction Number
-    And store text of the cell having unique rowVal comes from Data Dictionary "#(orderNum1)" and columnHeader " Order#" from the "tableOrderList" table at the "OrderListPage" page into the data dictionary with key "order_Num"
-    #Comment: User validate data dictionary values
-    And the user validates the data dictionary value of "#(transactionNum)" is "Equal To" data dictionary value of "#(transaction_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
-    #Comment: User validate data dictionary values
-    And the user validates the data dictionary value of "#(orderNum1)" is "Equal To" data dictionary value of "#(order_Num)" "validate_data_dictionary_values" "HardStopOnFailure"
+    And the user waits "3000" seconds
     #Comment: the user click on Details Elements
     And the user clicks the "table" element with dictionary key "#(orderNum1)" at the "OrderListPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickXpath2)"
     #Comment: the user validate the visibility of Page
