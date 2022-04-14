@@ -1,9 +1,9 @@
-Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Make Line - Guest
-  This script is to validate Basic Online Order - Dine In Credit Card - with Prep Station and Make Line - Guest
+Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Cut and Wrap - Guest
+  This script is to validate Basic Online Order - Dine In Credit Card - with Prep Station and Cut and Wrap - Guest
 
-  @issue=1775
-  @Basic_Online_Order_Dine_In_Credit_Card_With_Prep_Station_MakeLine_Only_Guest @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Only_DineIn @OLO_Prep_Station_And_MakeLine_Only_DineIn_Guest
-  Scenario: Basic_Online_Order_Dine_In_Credit_Card_With_Prep_Station_MakeLine_Only_Guest_Testcase
+  @issue=2808
+  @Basic_Online_Order_Dine_In_Credit_Card_With_PC_Guest @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_Cut_And_Wrap_DineIn @OLO_Prep_Station_And_Cut_And_Wrap_DineIn_Guest
+  Scenario: Basic_Online_Order_Dine_In_Credit_Card_With_PC_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -21,9 +21,17 @@ Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Make L
     #Comment: User click on dine in
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "supremePizzaPM" element to be "VISIBLE" on the "HomeOLOPage" page
+    And the user waits for the "hawaiianPizzaP" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "supremePizzaPM" element at the "HomeOLOPage" page
+    And the user clicks the "hawaiianPizzaP" element at the "HomeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "veggiePizzaC" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "veggiePizzaC" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
     #Comment: User click on dine in
@@ -75,7 +83,6 @@ Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Make L
     And the user enters "#(billingAddress)" into the "billingAddress" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter Billing Address
     And the user enters "#(zipCode)" into the "zipCode" textbox at the "ExistingCustLoginOLOPage" page
-
 
     #comment: the user click on termsAndCondition
     And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
@@ -144,7 +151,7 @@ Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Make L
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "Disabled" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -158,7 +165,7 @@ Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Make L
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "Disabled" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -188,13 +195,19 @@ Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Make L
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
-    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: user click on makeLine
-    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: user click makeline until order comes on console
-    And the user click makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(orderNum1)" and category value "2" from the "table" table on the "CutAndWrapPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user order number "#(orderNum1)" category value "2" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
