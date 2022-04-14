@@ -9,8 +9,8 @@ import java.io.IOException;
 public class ActDeactMajorMenusPage extends BasePO {
 
     private By availabelChkBox = By.xpath("//input[normalize-space(@id)='chk_BO_MN_MNU_AVAL_Aval']");
-    private By save = By.xpath("//button[@onclick='BO_MN_MNU_AVAL_Save();']");
-    private By cancel = By.xpath("//button[@onclick='BO_MN_MNU_AVAL_Save();']//preceding-sibling::button[text()='Cancel']");
+    private By save = By.id("btn_BO_MN_MNU_AVAL_Save");
+    private By cancel = By.id("btn_BO_MN_MNU_AVAL_Cancel");
     private By availabelChkBoxIsSelected = By.xpath("//label[@for='chk_BO_MN_MNU_AVAL_Aval']");
     private By majorMenusTextVal = By.xpath("//div[@id='div_BO_MN_MNU_AVAL_DIALOG_modal_view']//span[text()='Major Menus']");
 
