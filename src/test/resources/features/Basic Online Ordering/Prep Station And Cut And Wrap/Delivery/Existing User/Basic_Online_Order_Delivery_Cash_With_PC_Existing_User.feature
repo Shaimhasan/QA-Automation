@@ -1,19 +1,25 @@
-Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Make Line - Guest
-  This script is to validate Basic Online Order - Delivery Credit Card - with Prep Station and Make Line - Guest
+Feature: Basic Online Order - Delivery Cash - with Prep Station and Cut and Wrap - Existing User
+  This script is to validate Basic Online Order - Delivery Cash - with Prep Station and Cut and Wrap - Existing User
 
-  @issue=1779
-  @Basic_Online_Order_Delivery_Credit_Card_With_PM_Guest @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Only_Delivery @OLO_Prep_Station_And_MakeLine_Only_Delivery_Guest
-  Scenario: Basic_Online_Order_Delivery_Credit_Card_With_PM_Guest_Testcase
+  @issue=2817
+  @Basic_Online_Order_Delivery_Cash_With_PC_Existing_User @RegressionSuite @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_Delivery @OLO_Prep_Station_And_Cut_And_Wrap_Delivery_Existing_User
+  Scenario: Basic_Online_Order_Delivery_Cash_With_PC_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
     And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
-    #Comment: User click on continue as guest
-    And the user clicks the "continueAsGuest" element at the "LoginOLOPage" page
+    #Comment: Enter the Customer Email into username textbox present on Login Page
+    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
+    #Comment: Enter the Password into Station_Key textbox present on Login Page
+    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
+    #Comment: User click on Login Button
+    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user enter the address
-    And the user enters "#(address)" into the "address" textbox at the "OrderTypeOLOPage" page
+    #comment: the user click on existingAddressSelect
+    And the user clicks the "existingAddressSelect" element at the "OrderTypeOLOPage" page
+    #Comment: the user validates the checkbox is selected
+    And the user validates the item in the "existingAddressSelect" checkbox is checked at the "OrderTypeOLOPage" page "validate_Text" "HardStopOnFailure"
     #Comment: the user click continue button
     And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user validate the text
@@ -22,16 +28,18 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Make 
     And the user validates "Compare_Strings" that the "asap" element is "Equal To" "#(ASAP)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
     #Comment: the user click continue button
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
-    #Comment: the user enter the address
-    And the user enters "#(unit)" into the "unit" textbox at the "OrderTypeOLOPage" page
-    #Comment: the user click continue button
-    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user click continue button
-    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "supremePizzaPM" element to be "VISIBLE" on the "HomeOLOPage" page
+    And the user waits for the "hawaiianPizzaP" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "supremePizzaPM" element at the "HomeOLOPage" page
+    And the user clicks the "hawaiianPizzaP" element at the "HomeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "veggiePizzaC" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "veggiePizzaC" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
     #Comment: User click on dine in
@@ -40,51 +48,10 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Make 
     And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "existingCustLogin" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(lastName)" into the "lastName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter email
-    And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter re-email
-    And the user enters "#(reEnterEmail)" into the "reEnterEmail" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter phone number
-    And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter 10 digit number
-    And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
-    #Comment: the user enter re enter phone
-    And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
-
-    #Comment: the user click on Credit Card Information
-    And the user clicks the "creditCard" element at the "ExistingCustLoginOLOPage" page
+    #comment: the user click on Pay In Store
+    And the user clicks the "cash" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "creditCard" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
-    #Comment: the user switched to the frame
-    And the user switches to frame "cardNumber"
-    #Comment: the user enter Card Number
-    And the user enters "#(cardNumber)" into the "cardNumber" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: The user Switches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardExpiration"
-    #Comment: the user enter Expiration date
-    And the user enters "#(cardExpiration)" into the "cardExpiration" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardCvv"
-    #Comment: the user enter CVV
-    And the user enters "#(cardCvv)" into the "cardCvv" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: the user enter Billing Address
-    And the user enters "#(billingAddress)" into the "billingAddress" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter Billing Address
-    And the user enters "#(zipCode)" into the "zipCode" textbox at the "ExistingCustLoginOLOPage" page
-
-
+    And the user validates the item in the "cash" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
     #comment: the user click on termsAndCondition
     And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user click on termsAndCondition
@@ -152,7 +119,7 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Make 
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "Disabled" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -166,7 +133,7 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Make 
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "Disabled" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -196,18 +163,22 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Make 
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
-    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: user click on makeLine
-    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: user click makeline until order comes on console
-    And the user click makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(orderNum1)" and category value "2" from the "table" table on the "CutAndWrapPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user order number "#(orderNum1)" category value "2" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user click on Adora header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
@@ -317,8 +288,6 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Make 
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
     And the user validates the "orderList" element is present at the "AdoraHeaderPage" page "validate_order_list_present" "HardStopOnFailure"
-    #Comment: the user hover the Order List
-    And the user hovers over the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
@@ -341,5 +310,7 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Make 
     And the user validates the data dictionary value of "#(orderNum1)" is "Equal To" data dictionary value of "#(order_Number2)" "validate_data_dictionary_values" "HardStopOnFailure"
     #Comment: user click Close Button
     And the user clicks the "close" element at the "OrderDetailsPage" page
+
+
 
 
