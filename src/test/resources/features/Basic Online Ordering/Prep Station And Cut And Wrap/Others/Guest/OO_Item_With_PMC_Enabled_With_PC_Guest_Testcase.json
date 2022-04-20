@@ -1,0 +1,22 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "firstName": "Automation",
+      "amount": "30.00",
+      "lastName": "Online Order",
+      "email": "onlineorder@gmail.com",
+      "reEnterEmail": "onlineorder@gmail.com",
+      "orderIdXpath": "(//b[text()='",
+      "DetailsClickXpath1": "(//b[text()='",
+      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}

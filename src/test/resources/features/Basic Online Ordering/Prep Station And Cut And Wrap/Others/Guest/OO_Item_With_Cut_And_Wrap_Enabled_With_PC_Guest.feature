@@ -1,9 +1,9 @@
-Feature: Online Order - Item with Make Line and Cut and Wrap enabled and with Prep Station and Make Line - Guest
-  This script is to validate Online Order - Item with Make Line and Cut and Wrap enabled and with Prep Station and Make Line - Guest
+Feature: Online Order -Item with Cut and Wrap enabled - with Prep Station and Cut and Wrap - Guest
+  This script is to validate Online Order -Item with Cut and Wrap enabled - with Prep Station and Cut and Wrap - Guest
 
-  @issue=3031
-  @OO_Item_With_MC_Enabled_With_Prep_Station_And_MakeLine_Guest @RegressionSuite @OLO @OO_Prep_Station_And_MakeLine @OO_Prep_Station_And_MakeLine_Others @OO_Prep_Station_And_MakeLine_Others_Guest
-  Scenario: OO_Item_With_MC_Enabled_With_Prep_Station_And_MakeLine_Guest_Testcase
+  @issue=3045
+  @OO_Item_With_Cut_And_Wrap_Enabled_With_PC_Guest @RegressionSuite @OLO @OO_Prep_Station_And_Cut_And_Wrap @OO_Prep_Station_And_Cut_And_Wrap_Others @OO_Prep_Station_And_Cut_And_Wrap_Others_Guest
+  Scenario: OO_Item_With_Cut_And_Wrap_Enabled_With_PC_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: User wait to visible the page
@@ -21,9 +21,9 @@ Feature: Online Order - Item with Make Line and Cut and Wrap enabled and with Pr
     #Comment: User click on dine in
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "pepperoniPizzaMC" element to be "VISIBLE" on the "HomeOLOPage" page
+    And the user waits for the "veggiePizzaC" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "pepperoniPizzaMC" element at the "HomeOLOPage" page
+    And the user clicks the "veggiePizzaC" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
     #Comment: User click on dine in
@@ -119,7 +119,7 @@ Feature: Online Order - Item with Make Line and Cut and Wrap enabled and with Pr
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "Disabled" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -133,7 +133,7 @@ Feature: Online Order - Item with Make Line and Cut and Wrap enabled and with Pr
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "Disabled" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -165,13 +165,19 @@ Feature: Online Order - Item with Make Line and Cut and Wrap enabled and with Pr
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
-    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: user click on makeLine
-    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: user click makeline until order comes on console
-    And the user click makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(orderNum1)" and category value "1" from the "table" table on the "CutAndWrapPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
