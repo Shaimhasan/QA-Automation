@@ -1,7 +1,7 @@
 Feature: Basic Delete Mixture Recipe
   This script is to validate Delete Mixture Recipe
 
-  @Basic_Delete_Mixture_Recipe @RegressionSuite @BO_Mixtures_Recipe @Back_Office
+  @Basic_Delete_Mixture_Recipe @RegressionSuite @BO_Mixtures_Recipe @Inventory @Back_Office
   Scenario: Basic_Delete_Mixture_Recipe_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

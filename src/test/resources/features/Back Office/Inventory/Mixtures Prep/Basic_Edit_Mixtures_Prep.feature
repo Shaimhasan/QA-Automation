@@ -1,7 +1,7 @@
 Feature: Basic Edit Mixtures Prep
   This script is to validate Edit Mixtures Prep
 
-  @Basic_Edit_Mixtures_Prep @RegressionSuite @BO_Mixtures_Prep @Back_Office
+  @Basic_Edit_Mixtures_Prep @RegressionSuite @BO_Mixtures_Prep @Inventory @Back_Office
   Scenario: Basic_Edit_Mixtures_Prep_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

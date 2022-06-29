@@ -1,7 +1,7 @@
 Feature: Basic Delete Receiving Items
   This script is to validate Delete Receiving Items
 
-  @Basic_Delete_Receiving_Items @RegressionSuite @BO_Receiving_Items @Back_Office
+  @Basic_Delete_Receiving_Items @RegressionSuite @BO_Receiving_Items @Inventory @Back_Office
   Scenario: Basic_Delete_Receiving_Items_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

@@ -1,7 +1,7 @@
 Feature: Basic Edit SingleUseCoupons
   This script is to validate Edit SingleUseCoupons
 
-  @Basic_Edit_SingleUseCoupons @RegressionSuite @BO_SingleUseCoupons @Back_Office
+  @Basic_Edit_SingleUseCoupons @RegressionSuite @BO_SingleUseCoupons @Discounts @Back_Office
   Scenario: Basic_Edit_SingleUseCoupons_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

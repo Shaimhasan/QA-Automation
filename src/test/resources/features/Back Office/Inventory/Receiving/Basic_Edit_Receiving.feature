@@ -1,7 +1,7 @@
 Feature: Basic Edit Receiving
   This script is to validate Edit Receiving
 
-  @Basic_Edit_Receiving @RegressionSuite @BO_Receiving @Back_Office
+  @Basic_Edit_Receiving @RegressionSuite @BO_Receiving @Inventory @Back_Office
   Scenario: Basic_Edit_Receiving_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

@@ -1,7 +1,7 @@
 Feature: Basic Add Mixture Recipe
   This script is to validate Add Mixture Recipe
 
-  @Basic_Add_Mixture_Recipe @RegressionSuite @BO_Mixtures_Recipe @Back_Office
+  @Basic_Add_Mixture_Recipe @RegressionSuite @BO_Mixtures_Recipe @Inventory @Back_Office
   Scenario: Basic_Add_Mixture_Recipe_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

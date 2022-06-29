@@ -1,7 +1,7 @@
 Feature: Basic Activate Vendors
   This script is to validate Activate Vendors
 
-  @Basic_Activate_Vendors @RegressionSuite @BO_Vendors @Back_Office
+  @Basic_Activate_Vendors @RegressionSuite @BO_Vendors @Inventory @Back_Office
   Scenario: Basic_Activate_Vendors_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

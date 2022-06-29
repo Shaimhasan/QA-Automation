@@ -1,7 +1,7 @@
 Feature: Basic Delete Inventory Items
   This script is to validate Delete Inventory Items
 
-  @Basic_Delete_Inventory_Items @RegressionSuite @BO_Inventory_Items @Back_Office
+  @Basic_Delete_Inventory_Items @RegressionSuite @BO_Inventory_Items @Inventory @Back_Office
   Scenario: Basic_Delete_Inventory_Items_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

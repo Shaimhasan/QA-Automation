@@ -1,7 +1,7 @@
 Feature: Basic Delete Vendors
   This script is to validate Delete Vendors
 
-  @Basic_Delete_Vendors @RegressionSuite @BO_Vendors @Back_Office
+  @Basic_Delete_Vendors @RegressionSuite @BO_Vendors @Inventory @Back_Office
   Scenario: Basic_Delete_Vendors_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

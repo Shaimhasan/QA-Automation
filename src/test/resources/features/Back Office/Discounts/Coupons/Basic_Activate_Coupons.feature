@@ -1,7 +1,7 @@
 Feature: Basic Activate Coupons
   This script is to validate Activate Coupons
 
-  @Basic_Activate_Coupons @RegressionSuite @BO_Coupons @Back_Office
+  @Basic_Activate_Coupons @RegressionSuite @BO_Coupons @Discounts @Back_Office
   Scenario: Basic_Activate_Coupons_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

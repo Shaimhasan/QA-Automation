@@ -1,7 +1,7 @@
 Feature: Basic Delete SingleUseCoupons
   This script is to validate Delete SingleUseCoupons
 
-  @Basic_Delete_SingleUseCoupons @RegressionSuite @BO_SingleUseCoupons @Back_Office
+  @Basic_Delete_SingleUseCoupons @RegressionSuite @BO_SingleUseCoupons @Discounts @Back_Office
   Scenario: Basic_Delete_SingleUseCoupons_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

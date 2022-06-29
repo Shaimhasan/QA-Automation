@@ -1,7 +1,7 @@
 Feature: Basic Post Inventory Entry
   This script is to validate Post Inventory Entry
 
-  @Basic_Post_Inventory_Entry @RegressionSuite @BO_Inventory_Entry @Back_Office
+  @Basic_Post_Inventory_Entry @RegressionSuite @BO_Inventory_Entry @Inventory @Back_Office
   Scenario: Basic_Post_Inventory_Entry_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

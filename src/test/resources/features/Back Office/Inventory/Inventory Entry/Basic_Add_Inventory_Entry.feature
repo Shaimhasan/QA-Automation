@@ -1,7 +1,7 @@
 Feature: Basic Add Inventory Entry
   This script is to validate Add Inventory Entry
 
-  @Basic_Add_Inventory_Entry @RegressionSuite @BO_Inventory_Entry @Back_Office
+  @Basic_Add_Inventory_Entry @RegressionSuite @BO_Inventory_Entry @Inventory @Back_Office
   Scenario: Basic_Add_Inventory_Entry_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
