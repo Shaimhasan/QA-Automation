@@ -1,7 +1,7 @@
 Feature: Basic Delete Sub Categories
   This script is to validate Delete Sub Categories
 
-  @Basic_Delete_Sub_Categories @RegressionSuite @BO_Sub_Categories @Back_Office
+  @Basic_Delete_Sub_Categories @RegressionSuite @BO_Sub_Categories @Menu_Settings @Back_Office
   Scenario: Basic_Delete_Web_Categories_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

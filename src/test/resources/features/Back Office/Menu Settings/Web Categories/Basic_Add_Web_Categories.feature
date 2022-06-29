@@ -1,7 +1,7 @@
 Feature: Basic Add Web Categories
   This script is to validate Add Web Categories
 
-  @Basic_Add_Web_Categories @RegressionSuite @BO_Web_Categories @Back_Office
+  @Basic_Add_Web_Categories @RegressionSuite @BO_Web_Categories @Menu_Settings @Back_Office
   Scenario: Basic_Add_Web_Categories_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

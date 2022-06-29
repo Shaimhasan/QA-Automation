@@ -1,7 +1,7 @@
 Feature: Basic Edit Sub Categories
   This script is to validate Edit Sub Categories
 
-  @Basic_Edit_Sub_Categories @RegressionSuite @BO_Sub_Categories @Back_Office
+  @Basic_Edit_Sub_Categories @RegressionSuite @BO_Sub_Categories @Menu_Settings @Back_Office
   Scenario: Basic_Edit_Sub_Categories_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

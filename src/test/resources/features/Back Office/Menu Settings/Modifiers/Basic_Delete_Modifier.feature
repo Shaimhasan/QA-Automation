@@ -1,7 +1,7 @@
 Feature: Basic Delete Modifier
   This script is to validate Delete Modifier
 
-  @Basic_Delete_Modifier @RegressionSuite @BO_Modifier @Back_Office
+  @Basic_Delete_Modifier @RegressionSuite @BO_Modifier @Menu_Settings @Back_Office
   Scenario: Basic_Delete_Modifier_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

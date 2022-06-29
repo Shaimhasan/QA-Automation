@@ -1,7 +1,7 @@
 Feature: Basic Delete Modifier Web Categories
   This script is to validate Delete Modifier Web Categories
 
-  @Basic_Delete_Modifier_Web_Categories @RegressionSuite @BO_Modifier_Web_Categories @Back_Office
+  @Basic_Delete_Modifier_Web_Categories @RegressionSuite @BO_Modifier_Web_Categories @Menu_Settings @Back_Office
   Scenario: Basic_Delete_Modifier_POS_Categories_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

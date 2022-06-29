@@ -1,7 +1,7 @@
 Feature: Basic Add Sizes
   This script is to validate Add Sizes
 
-  @Basic_Add_Sizes_Categories @RegressionSuite @BO_Sizes @Back_Office
+  @Basic_Add_Sizes_Categories @RegressionSuite @BO_Sizes @Menu_Settings @Back_Office
   Scenario: Basic_Add_Sizes_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

@@ -1,7 +1,7 @@
 Feature: Basic DeActivate Major Menus
   This script is to validate DeActivate Major Menus
 
-  @Basic_DeActivate_Major_Menus @RegressionSuite @BO_Major_Menus @Back_Office
+  @Basic_DeActivate_Major_Menus @RegressionSuite @BO_Major_Menus @Menu_Settings @Back_Office
   Scenario: Basic_DeActivate_Major_Menus_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

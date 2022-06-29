@@ -1,7 +1,7 @@
 Feature: Basic Activate POS Categories
   This script is to validate Activate POC Categories
 
-  @Basic_Activate_POS_Categories @RegressionSuite @BO_POS_Categories @Back_Office
+  @Basic_Activate_POS_Categories @RegressionSuite @BO_POS_Categories @Menu_Settings @Back_Office
   Scenario: Basic_Activate_POS_Categories_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

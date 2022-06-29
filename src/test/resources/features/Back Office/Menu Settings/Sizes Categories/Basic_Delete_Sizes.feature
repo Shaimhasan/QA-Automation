@@ -1,7 +1,7 @@
 Feature: Basic Delete Sizes
   This script is to validate ADelete Sizes
 
-  @Basic_Delete_Sizes @RegressionSuite @BO_Sizes @Back_Office
+  @Basic_Delete_Sizes @RegressionSuite @BO_Sizes @Menu_Settings @Back_Office
   Scenario: Basic_Delete_Sizes_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

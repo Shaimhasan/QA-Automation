@@ -1,7 +1,7 @@
 Feature: Basic Activate Modifiers
   This script is to validate Activate Modifiers
 
-  @Basic_Activate_Modifiers @RegressionSuite @BO_Modifires @Back_Office
+  @Basic_Activate_Modifiers @RegressionSuite @BO_Modifires @Menu_Settings @Back_Office
   Scenario: Basic_Activate_Modifiers_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
