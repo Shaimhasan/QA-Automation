@@ -26,7 +26,7 @@ Feature: Basic Activate Coupons
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user validate the Title of the page
-    And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
+    And the user validates that the page title "Not Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click Discounts
@@ -37,6 +37,8 @@ Feature: Basic Activate Coupons
     And the user waits for the page to load
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "CouponsPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "couponsTxtPopup" element to be "VISIBLE" on the "AddCouponsPage" page
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(nameUS)" into the "nameUS" textbox at the "AddCouponsPage" page
     #Comment: the user store the text on data dictionary
