@@ -543,7 +543,6 @@ public class AutoEngValidate extends BaseWebSteps {
         if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
             if (false) {
                 assertThat(checkBoxValSelected).as(compareDesc).isFalse();
-                Assert.fail("Expecting checkbox item of to be selected in the '%s' checkbox.");
             }
         } else {
             sa().assertThat(checkBoxValSelected).as(compareDesc).isTrue();
@@ -571,7 +570,6 @@ public class AutoEngValidate extends BaseWebSteps {
             assertThat(checkBoxValSelected).as(compareDesc).isFalse();
         } else {
             sa().assertThat(checkBoxValSelected).as(compareDesc).isTrue();
-            Assert.fail("Expecting checkbox item of to be selected in the '%s' checkbox.");
             if (!checkBoxValSelected) {
                 Reporter.addStepLog(STATUS_FAIL, compareDesc);
             }
