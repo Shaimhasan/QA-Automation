@@ -130,18 +130,16 @@ Feature: Basic Online Order - Delivery Cash - with all lines disabled - Existing
     And the user hovers over the "enter" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
-     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment: the user validate the visibility of clockInPopup
+    And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user validate time record message successfully
     And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
     And the user clicks the "OKBtn" element at the "ClockInPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user click on Adore header page
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading

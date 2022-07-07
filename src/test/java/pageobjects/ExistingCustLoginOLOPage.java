@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class ExistingCustLoginOLOPage extends BasePO {
 
-    private By existingCustLogin = By.id("lbl_CHKOUT_Existing_Cust_Login");
+    private By existingCustLogin = By.xpath("//div[text()='Existing Customer Login']");
     private By firstName = By.id("txt_CHKOUT_name");
     private By lastName = By.id("txt_CHKOUT_lastname");
     private By email = By.id("eml_CHKOUT_email1");

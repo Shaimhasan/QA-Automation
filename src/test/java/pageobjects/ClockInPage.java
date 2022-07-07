@@ -19,9 +19,14 @@ public class ClockInPage extends BasePO {
     private By OKBtn = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='OK']");
     private By clockInTxtPopup = By.xpath("//div[text()='Please Enter Employee No.:']");
     private By employeeNo = By.xpath("//div[text()='1000']");
+    private By clockInPopup = By.xpath("//span[text()='Clock In']");
 
     public Element enterLatest() throws IOException, InterruptedException {
         return $(enterLatest);
+    }
+
+    public Element clockInPopup() throws IOException, InterruptedException {
+        return $(clockInPopup);
     }
 
     public Element employeeNo() throws IOException, InterruptedException {
