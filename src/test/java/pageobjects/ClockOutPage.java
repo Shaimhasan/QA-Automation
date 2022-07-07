@@ -21,6 +21,16 @@ public class ClockOutPage extends BasePO {
     private By clockOut = By.xpath("//button[text()='Clock Out']");
     private By clockOutSuccessMsg = By.xpath("//div[text()='You have clocked out successfully.']");
     private By employeeNo = By.xpath("//div[text()='1000']");
+    private By cloutOutVisible = By.xpath("//span[@class='ui-dialog-title']");
+    private By cloutOutTxtVisible = By.xpath("//span[text()='Clock Out']");
+
+    public Element cloutOutTxtVisible() throws IOException, InterruptedException {
+        return $(cloutOutTxtVisible);
+    }
+
+    public Element cloutOutVisible() throws IOException, InterruptedException {
+        return $(cloutOutVisible);
+    }
 
     public Element enterLatest() throws IOException, InterruptedException {
         return $(enterLatest);
