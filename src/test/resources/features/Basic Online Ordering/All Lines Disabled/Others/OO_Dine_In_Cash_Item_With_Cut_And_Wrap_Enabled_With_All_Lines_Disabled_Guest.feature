@@ -109,6 +109,8 @@ Feature: Online Order - Dine In Cash - item with Cut and Wrap enabled and with a
     And the user hovers over the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
+    #Comment: the user wait page to load
+    And the user waits for the "orderListVisible" element to be "VISIBLE" on the "OrderListPage" page
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user click on Details Elements

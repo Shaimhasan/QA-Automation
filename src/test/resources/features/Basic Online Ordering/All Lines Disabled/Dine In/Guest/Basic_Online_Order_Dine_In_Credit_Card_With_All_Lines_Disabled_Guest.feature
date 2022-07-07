@@ -133,7 +133,7 @@ Feature: Basic Online Order - Dine In Credit Card - with all lines disabled - Gu
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the "orderListVisible" element to be "VISIBLE" on the "OrderListPage" page
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user click on Details Elements
