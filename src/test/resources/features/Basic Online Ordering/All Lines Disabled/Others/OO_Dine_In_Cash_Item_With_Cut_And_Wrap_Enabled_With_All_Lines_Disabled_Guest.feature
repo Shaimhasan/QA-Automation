@@ -2,7 +2,7 @@ Feature: Online Order - Dine In Cash - item with Cut and Wrap enabled and with a
   This script is to validate Online Order - Dine In Cash - item with Cut and Wrap enabled and with all lines disabled - Guest
 
   @issue=2989
-  @OO_Dine_In_Cash_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Disabled_Guest @RegressionSuite @OLO @OO_ALD @OO_ALD_Guest
+  @OO_Dine_In_Cash_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Disabled_Guest @RegressionSuite @OLO @OLO_ALD @OO_ALD_Guest
   Scenario: OO_Dine_In_Cash_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Disabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

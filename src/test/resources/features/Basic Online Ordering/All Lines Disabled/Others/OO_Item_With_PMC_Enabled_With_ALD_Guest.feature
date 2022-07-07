@@ -2,7 +2,7 @@ Feature: Online Order - Dine In Cash - item with Prep Station and Make Line and 
   This script is to validate Online Order - Dine In Cash - item with Prep Station and Make Line and Cut and Wrap enabled and with all lines disabled - Guest
 
   @issue=3051
-  @OO_Item_With_PMC_Enabled_With_ALD_Guest @RegressionSuite @OLO @OO_ALD @OO_ALD_Guest
+  @OO_Item_With_PMC_Enabled_With_ALD_Guest @RegressionSuite @OLO @OLO_ALD @OO_ALD_Guest
   Scenario: OO_Item_With_PMC_Enabled_With_ALD_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
