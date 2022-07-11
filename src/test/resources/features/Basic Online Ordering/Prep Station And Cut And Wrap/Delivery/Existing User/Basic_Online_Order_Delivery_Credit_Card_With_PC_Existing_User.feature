@@ -236,8 +236,8 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Cut a
     And the user hovers over the "enter" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
-     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment: the user validate the visibility of clockInPopup
+    And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user validate time record message successfully
     And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
@@ -250,8 +250,8 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Cut a
     And the user waits for the page to load
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
-    #Comment: the user validate the visibility of clockInPopup
-    And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment : user click on orderNumber and dispatch
     And the user clicks the "table" element with dictionary key "#(orderNum1)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
     #Comment: user click on Driver o Dispatch page
