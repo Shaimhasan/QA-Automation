@@ -171,6 +171,7 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled - with M
     And the user clicks the "table" element with dictionary key "#(orderNum1)" at the "OrderListPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickXpath2)"
     #Comment: the user validate the visibility of Page
     And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
+    And the user waits "2000" seconds
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key

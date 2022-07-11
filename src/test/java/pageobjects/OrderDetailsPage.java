@@ -9,7 +9,7 @@ import java.io.IOException;
 public class OrderDetailsPage extends BasePO {
 
     private By orderDetailTxt = By.xpath("//span[text()='Order Detail']");
-    private By amount = By.xpath("//div[contains(text(),'Total ')]//following-sibling::div");
+    private By amount = By.xpath("//div[text()='Total      ']//following-sibling::div");
     private By transactionNum = By.xpath("//div[@id='divTabOrderDetailInfo']//td[text()='Transaction No.']//following-sibling::td//div");
     private By orderNum = By.xpath("//div[@id='divTabOrderDetailInfo']//td[contains(text(),'Order no')]//following-sibling::td");
     private By close = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='Close']");
