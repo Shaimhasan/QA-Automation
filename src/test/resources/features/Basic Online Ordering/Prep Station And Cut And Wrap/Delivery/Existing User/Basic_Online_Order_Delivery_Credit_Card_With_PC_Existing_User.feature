@@ -250,8 +250,8 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Cut a
     And the user waits for the page to load
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment: the user validate the visibility of clockInPopup
+    And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment : user click on orderNumber and dispatch
     And the user clicks the "table" element with dictionary key "#(orderNum1)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
     #Comment: user click on Driver o Dispatch page
@@ -271,7 +271,7 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Cut a
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the "cloutOutVisible" element to be "VISIBLE" on the "ClockOutPage" page
     #Comment: user click on oneDigit
     And the user hovers over the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
@@ -294,12 +294,14 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Cut a
     And the user hovers over the "enter" element at the "ClockOutPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockOutPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the "cloutOutVisible" element to be "VISIBLE" on the "ClockOutPage" page
     #Comment: the user enter gratuity amount
     Then the user enters "#(gatuityAmt)" into the "gratuityAmt" textbox at the "ClockOutPage" page
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "ClockOutPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the "cloutOutTxtVisible" element to be "VISIBLE" on the "ClockOutPage" page
     #Comment: user validate clock out message successfully
     And the user validates "Compare_Strings" that the "clockOutSuccessMsg" element is "Equal To" "#(timeClockOutSuccessMsg)" at the "ClockOutPage" page "validate_Clock_Out_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
