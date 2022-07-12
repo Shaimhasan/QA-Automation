@@ -2,7 +2,7 @@ Feature: Online Order - Item with Prep Station enabled and with Prep Station and
   This script is to validate Online Order - Item with Prep Station enabled and with Prep Station and Make Line - Guest
 
   @issue=3023
-  @OO_Item_With_Prep_Station_Enabled_With_Prep_Station_And_MakeLine_Guest @RegressionSuite @OLO @OO_Prep_Station_And_MakeLine @OO_Prep_Station_And_MakeLine_Others @OO_Prep_Station_And_MakeLine_Others_Guest
+  @OO_Item_With_Prep_Station_Enabled_With_Prep_Station_And_MakeLine_Guest @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OO_Prep_Station_And_MakeLine_Others @OO_Prep_Station_And_MakeLine_Others_Guest
   Scenario: OO_Item_With_Prep_Station_Enabled_With_Prep_Station_And_MakeLine_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
