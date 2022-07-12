@@ -25,7 +25,12 @@ public class AutoEngClick extends BaseWebSteps {
 
     @When("^the user disable the screenshot of every step due to notification popup$")
     public void theUserDisableScreenShotForEveryStep() {
-        setRuntimeProperties();
+        setRuntimeProperties(false);
+    }
+
+    @When("^the user enable the screenshot of every step due to notification popup$")
+    public void theUserEnableScreenShotForEveryStep() {
+        setRuntimeProperties(true);
     }
 
     @When("^the user clicks JS the \"([^\"]*)\" element at the \"([^\"]*)\" page$")

@@ -34,13 +34,13 @@ public class BaseWebSteps extends BaseStepsEngine {
         //base web steps
     }
 
-    public void setRuntimeProperties() {
+    public void setRuntimeProperties(boolean value) {
         PropertiesConfiguration props = Property.getProperties(Constants.SELENIUMRUNTIMEPATH);
 
         if (props != null) {
             String screenshotOnEveryStep = props.getString("screenshotOnEveryStep");
             if (screenshotOnEveryStep != null) {
-                screenshotOnEveryStep = "false";
+                screenshotOnEveryStep = String.valueOf(value);
                 System.setProperty("fw.screenshotOnEveryStep", screenshotOnEveryStep);
             }
         }
