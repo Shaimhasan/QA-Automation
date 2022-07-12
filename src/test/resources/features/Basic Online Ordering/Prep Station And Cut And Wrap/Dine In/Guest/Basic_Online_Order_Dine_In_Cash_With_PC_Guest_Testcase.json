@@ -3,9 +3,11 @@
     "sharedAttributes": {
     },
     "staticData": {
-      "tableNo": "automation",
-      "amount": "33.00",
-      "cash": "Cash",
+      "firstName": "Automation",
+      "lastName": "Online Order",
+      "email": "onlineorder@gmail.com",
+      "reEnterEmail": "onlineorder@gmail.com",
+      "amount": "99.00",
       "orderIdXpath": "(//b[text()='",
       "DetailsClickXpath1": "(//b[text()='",
       "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
