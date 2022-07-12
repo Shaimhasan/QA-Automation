@@ -4,6 +4,7 @@ package core;
 import common.Property;
 import common.TestContext;
 import driver.DriverFactory;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchWindowException;
@@ -32,6 +33,19 @@ public class BaseWebSteps extends BaseStepsEngine {
     public BaseWebSteps() {
         //base web steps
     }
+
+    public void setRuntimeProperties() {
+        PropertiesConfiguration props = Property.getProperties(Constants.SELENIUMRUNTIMEPATH);
+
+        if (props != null) {
+            String screenshotOnEveryStep = props.getString("screenshotOnEveryStep");
+            if (screenshotOnEveryStep != null) {
+                screenshotOnEveryStep = "false";
+                System.setProperty("fw.screenshotOnEveryStep", screenshotOnEveryStep);
+            }
+        }
+    }
+
     public void waitOnce() {
         cache.computeIfAbsent(true, x -> {
             try {
