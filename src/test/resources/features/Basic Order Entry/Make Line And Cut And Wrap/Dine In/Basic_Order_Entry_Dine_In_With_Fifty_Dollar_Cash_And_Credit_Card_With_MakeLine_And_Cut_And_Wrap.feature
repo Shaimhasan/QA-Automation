@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Dine-in fifty dollar cash and Credit Card  - with all lines disabled
   This script is to validate Dine in fifty dollar cash and credit card basic order entry
 
-  @Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_MakeLine_And_Cut_And_Wrap @RegressionSuite @BOE @BOE_ALD @BOE_ALD_DineIn
+  @Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_MakeLine_And_Cut_And_Wrap @RegressionSuite @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_DineIn
   Scenario: Basic_Order_Entry_Dine_In_With_Fifty_Dollar_Cash_And_Credit_Card_With_MakeLine_And_Cut_And_Wrap_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
