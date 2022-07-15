@@ -218,12 +218,20 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Cut and Wrap Only
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the "cloutOutVisible" element to be "VISIBLE" on the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on Enter

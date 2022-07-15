@@ -183,8 +183,8 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Prep Statio
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #Comment: the user validate the visibility of clockInPopup
+    And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user validate time record message successfully
     And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
@@ -216,23 +216,33 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Prep Statio
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the "cloutOutVisible" element to be "VISIBLE" on the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "oneDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on two digit
     And the user clicks the "zeroDigit" element at the "ClockOutPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockOutPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the "cloutOutVisible" element to be "VISIBLE" on the "ClockOutPage" page
     #Comment: the user enter gratuity amount
     Then the user enters "#(gatuityAmt)" into the "gratuityAmt" textbox at the "ClockOutPage" page
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "ClockOutPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the "cloutOutTxtVisible" element to be "VISIBLE" on the "ClockOutPage" page
     #Comment: user validate clock out message successfully
     And the user validates "Compare_Strings" that the "clockOutSuccessMsg" element is "Equal To" "#(timeClockOutSuccessMsg)" at the "ClockOutPage" page "validate_Clock_Out_Successfully" "HardStopOnFailure"
     #Comment: user click on Driver
