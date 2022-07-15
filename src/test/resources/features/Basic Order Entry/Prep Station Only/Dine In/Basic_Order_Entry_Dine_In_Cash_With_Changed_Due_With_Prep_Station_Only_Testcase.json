@@ -4,7 +4,7 @@
     },
     "staticData": {
       "tableNo": "automation",
-      "amount": "66.00",
+      "amount": "33.00",
       "cash": "Cash",
       "changedDueAmt": "-34.00",
       "orderIdXpath": "(//b[text()='",
