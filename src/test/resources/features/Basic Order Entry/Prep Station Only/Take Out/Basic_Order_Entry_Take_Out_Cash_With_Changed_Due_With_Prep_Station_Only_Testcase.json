@@ -6,7 +6,7 @@
       "tableNo": "automation",
       "amount": "33.00",
       "cash": "Cash",
-      "changedDueAmt": "-34.00",
+      "changedDueAmt": "-67.00",
       "orderIdXpath": "(//b[text()='",
       "DetailsClickXpath1": "(//b[text()='",
       "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
