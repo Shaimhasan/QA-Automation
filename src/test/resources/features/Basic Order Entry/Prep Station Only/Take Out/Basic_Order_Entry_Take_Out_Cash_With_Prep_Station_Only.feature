@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Take Out Cash  - with Prep Station Only
   This script is to validate Basic Order Entry - Take Out Cash  - with Prep Station Only
 
-  @Basic_Order_Entry_Take_Out_Cash_With_Prep_Station_Only @RegressionSuite @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_TakeOut
+  @Basic_Order_Entry_Take_Out_Cash_With_Prep_Station_Only @RegressionSuite @TakeOut @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_TakeOut
   Scenario: Basic_Order_Entry_Take_Out_Cash_With_Prep_Station_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

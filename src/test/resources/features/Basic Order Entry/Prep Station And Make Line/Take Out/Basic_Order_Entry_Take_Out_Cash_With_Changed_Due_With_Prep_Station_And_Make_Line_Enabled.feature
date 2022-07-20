@@ -2,7 +2,7 @@ Feature: Basic Order Entry - Take Out Cash - with Change Due  - with Prep Statio
   This script is to validate Basic Order Entry - Take Out Cash - with Change Due  - with Prep Station and Make Line enabled
   with 100 $Dollar
 
-  @Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_TakeOut
+  @Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @TakeOut @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_TakeOut
   Scenario: Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
