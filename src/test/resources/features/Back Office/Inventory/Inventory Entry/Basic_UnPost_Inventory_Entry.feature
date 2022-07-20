@@ -37,7 +37,7 @@ Feature: Basic UnPost Inventory Entry
     #Comment: The user wait until page is visible
     And the user waits for the "countSheetTxt" element to be "VISIBLE" on the "CountSheetPage" page
     #Comment : the user clicks and check If element present
-    And the user custom clicks If element present the "table" element with Column Name " Frequency" and value "tblRowXIN_CNT" at the "CountSheetPage" page with element 1 "delete" and element 2 "deleteOnWarning" element 3 "editBtnDisable"
+    And the user custom clicks If element present the "table" element with Column Name "Frequency" and value "tblRowXIN_CNT" at the "CountSheetPage" page with element 1 "delete" and element 2 "deleteOnWarning" element 3 "editBtnDisable"
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "CountSheetPage" page
     #Comment: the user validate the visibility of popup
@@ -70,9 +70,9 @@ Feature: Basic UnPost Inventory Entry
     #Comment: The user wait until page is visible
     And the user waits for the "inventoryEntryTxt" element to be "VISIBLE" on the "InventoryEntryPage" page
     #Comment: the user custom click if element present
-    And the user delete all rows If element present the "table" table with Column Name " Frequency" and value "#(xpathValue)" at the "InventoryEntryPage" page with FirstObjectName "unPost" and SecondObjectName "unPostOnWarning" ThirdObjectName "editBtnDisable"
+    And the user delete all rows If element present the "table" table with Column Name "Frequency" and value "#(xpathValue)" at the "InventoryEntryPage" page with FirstObjectName "unPost" and SecondObjectName "unPostOnWarning" ThirdObjectName "editBtnDisable"
     #Comment : the user clicks and check If element present
-    And the user custom clicks If element present the "table" element with Column Name " Frequency" and value "tblRowXIN_ENT" at the "InventoryEntryPage" page with element 1 "delete" and element 2 "deleteOnWarning" element 3 "editBtnDisable"
+    And the user custom clicks If element present the "table" element with Column Name "Frequency" and value "tblRowXIN_ENT" at the "InventoryEntryPage" page with element 1 "delete" and element 2 "deleteOnWarning" element 3 "editBtnDisable"
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "InventoryEntryPage" page
     #Comment: the user click on list
