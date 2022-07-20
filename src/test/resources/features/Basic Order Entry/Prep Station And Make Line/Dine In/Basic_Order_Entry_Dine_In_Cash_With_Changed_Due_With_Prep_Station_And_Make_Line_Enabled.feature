@@ -2,7 +2,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station
   This script is to validate Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station and Make Line enabled
   with 100$ Cash
 
-  @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
+  @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @DineIn @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

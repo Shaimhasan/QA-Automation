@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Dine In Cash - with Make Line and Cut and Wrap enabled
   This script is to validate Basic Order Entry - Dine In Cash - with Make Line and Cut and Wrap enabled
 
-  @Basic_Order_Entry_Dine_In_Cash_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_DineIn
+  @Basic_Order_Entry_Dine_In_Cash_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @DineIn @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Cash_With_Make_Line_And_Cut_And_Wrap_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

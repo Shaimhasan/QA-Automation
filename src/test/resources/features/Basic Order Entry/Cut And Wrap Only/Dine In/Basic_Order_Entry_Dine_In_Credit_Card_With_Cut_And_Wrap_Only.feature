@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Dine In Credit Card - with Cut and Wrap Only
   This script is to validate Basic Order Entry - Dine In Credit Card - with Cut and Wrap Only
 
-  @Basic_Order_Entry_Dine_In_Credit_Card_With_Cut_And_Wrap_Only @RegressionSuite @BOE @BOE_Cut_And_Wrap_Only @BOE_BOE_Cut_And_Wrap_Only_DineIn
+  @Basic_Order_Entry_Dine_In_Credit_Card_With_Cut_And_Wrap_Only @RegressionSuite @DineIn @BOE @BOE_Cut_And_Wrap_Only @BOE_BOE_Cut_And_Wrap_Only_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Credit_Card_With_Cut_And_Wrap_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

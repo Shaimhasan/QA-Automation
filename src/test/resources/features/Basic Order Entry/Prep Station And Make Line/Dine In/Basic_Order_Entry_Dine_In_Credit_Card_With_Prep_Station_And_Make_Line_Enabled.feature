@@ -2,7 +2,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station and Make Li
   This script is to validate Basic Order Entry - Dine In Credit Card - with Prep Station and Make Line enabled
 
   @issue=1647
-  @Basic_Order_Entry_Dine_In_Credit_Card_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
+  @Basic_Order_Entry_Dine_In_Credit_Card_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @DineIn @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Credit_Card_With_Prep_Station_And_Make_Line_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
