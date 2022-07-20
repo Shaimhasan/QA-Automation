@@ -178,7 +178,7 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Cut and Wra
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: the user validate the visibility of popup
-    And the user waits for the "bobTheDriver" element to be "VISIBLE" on the "DispatchPage" page
+    And the user waits for the page to load
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: user click on Adora Header
