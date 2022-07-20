@@ -2,7 +2,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line and Cut and 
   This script is to validate Basic Order Entry - Delivery Credit Card  - with Make Line and Cut and Wrap enabled
 
   @issue=1654
-  @Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_Delivery
+  @Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @Delivery @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_Delivery
   Scenario: Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_Make_Line_And_Cut_And_Wrap_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

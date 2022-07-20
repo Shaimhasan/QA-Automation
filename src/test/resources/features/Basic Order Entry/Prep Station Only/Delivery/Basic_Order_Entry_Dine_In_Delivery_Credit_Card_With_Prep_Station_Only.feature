@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Delivery Credit Card  - with Prep Station Only
   This script is to validate Basic Order Entry - Delivery Credit Card  - with Prep Station Only
 
-  @Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_Prep_Station_Only @RegressionSuite @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_Delivery
+  @Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_Prep_Station_Only @RegressionSuite @Delivery @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_Delivery
   Scenario: Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_Prep_Station_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
