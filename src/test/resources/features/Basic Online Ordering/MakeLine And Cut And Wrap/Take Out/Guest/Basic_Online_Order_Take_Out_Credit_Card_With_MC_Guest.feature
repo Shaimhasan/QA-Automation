@@ -2,7 +2,7 @@ Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap
   This script is to validate Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap - Guest
 
   @issue=1771
-  @Basic_Online_Order_Take_Out_Credit_Card_With_MC_Guest @RegressionSuite @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_TakeOut @OLO_MakeLine_And_Cut_And_Wrap_TakeOut_Guest
+  @Basic_Online_Order_Take_Out_Credit_Card_With_MC_Guest @RegressionSuite @TakeOut @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_TakeOut @OLO_MakeLine_And_Cut_And_Wrap_TakeOut_Guest
   Scenario: Basic_Online_Order_Take_Out_Credit_Card_With_MC_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

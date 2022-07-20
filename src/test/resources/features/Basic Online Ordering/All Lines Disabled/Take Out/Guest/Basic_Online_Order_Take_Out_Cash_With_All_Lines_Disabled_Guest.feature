@@ -2,7 +2,7 @@ Feature: Basic_Online_Order_Take_Out_Cash_With_All_Lines_Disabled_Guest_Testcase
   This script is to validate Basic_Online_Order_Take_Out_Cash_With_All_Lines_Disabled_Guest_Testcase
 
   @issue=1754
-  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Disabled_Guest @RegressionSuite @OLO @OLO_ALD @OLO_ALD_TakeOut @OLO_ALD_TakeOut_Guest
+  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Disabled_Guest @RegressionSuite @TakeOut @OLO @OLO_ALD @OLO_ALD_TakeOut @OLO_ALD_TakeOut_Guest
   Scenario: Basic_Online_Order_Take_Out_Cash_With_All_Lines_Disabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

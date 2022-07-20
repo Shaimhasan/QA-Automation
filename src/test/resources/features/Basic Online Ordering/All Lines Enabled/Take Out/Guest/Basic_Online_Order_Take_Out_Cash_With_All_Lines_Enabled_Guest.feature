@@ -2,7 +2,7 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
   This script is to validate Basic Online Order - Take Out Cash - with all lines enabled - Guest
 
   @issue=1782
-  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest @RegressionSuite @OLO @OLO_ALE @OLO_ALE_TakeOut @OLO_ALE_TakeOut_Guest
+  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest @RegressionSuite @TakeOut @OLO @OLO_ALE @OLO_ALE_TakeOut @OLO_ALE_TakeOut_Guest
   Scenario: Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

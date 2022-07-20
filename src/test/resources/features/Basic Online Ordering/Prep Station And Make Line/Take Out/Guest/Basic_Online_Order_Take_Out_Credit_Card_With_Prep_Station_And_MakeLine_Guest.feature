@@ -2,7 +2,7 @@ Feature: Basic Online Order - Take Out Credit Card - with Prep Station and Make 
   This script is to validate Basic Online Order - Take Out Credit Card - with Prep Station and Make Line - Guest
 
   @issue=1777
-  @Basic_Online_Order_Take_Out_Credit_Card_With_Prep_Station_And_MakeLine_Guest @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Only_TakeOut @OLO_Prep_Station_And_MakeLine_Only_TakeOut_Guest
+  @Basic_Online_Order_Take_Out_Credit_Card_With_Prep_Station_And_MakeLine_Guest @RegressionSuite @TakeOut @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Only_TakeOut @OLO_Prep_Station_And_MakeLine_Only_TakeOut_Guest
   Scenario: Basic_Online_Order_Take_Out_Credit_Card_With_Prep_Station_And_MakeLine_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

@@ -2,7 +2,7 @@ Feature: Basic Online Order - Take Out Cash - with all lines disabled - Existing
   This script is to validate Basic Online Order - Take Out Cash - with all lines disabled - Existing User
 
   @issue=1815
-  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Disabled_Existing_User @RegressionSuite @OLO @OLO_ALD @OLO_ALD_TakeOut @OLO_ALD_TakeOut_Existing_User
+  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Disabled_Existing_User @RegressionSuite @TakeOut @OLO @OLO_ALD @OLO_ALD_TakeOut @OLO_ALD_TakeOut_Existing_User
   Scenario: Basic_Online_Order_Take_Out_Cash_With_All_Lines_Disabled_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

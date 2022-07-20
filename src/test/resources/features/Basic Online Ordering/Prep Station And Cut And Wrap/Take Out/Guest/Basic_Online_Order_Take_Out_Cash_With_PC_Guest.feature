@@ -2,7 +2,7 @@ Feature: Basic Online Order - Take Out Cash - with Prep Station and Cut and Wrap
   This script is to validate Basic Online Order - Take Out Cash - with Prep Station and Cut and Wrap - Guest
 
   @issue=2809
-  @Basic_Online_Order_Take_Out_Cash_With_PC_Guest @RegressionSuite @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_TakeOut @OLO_Prep_Station_And_Cut_And_Wrap_TakeOut_Guest
+  @Basic_Online_Order_Take_Out_Cash_With_PC_Guest @RegressionSuite @TakeOut @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_TakeOut @OLO_Prep_Station_And_Cut_And_Wrap_TakeOut_Guest
   Scenario: Basic_Online_Order_Take_Out_Cash_With_PC_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
