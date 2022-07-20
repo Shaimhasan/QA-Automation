@@ -9,9 +9,9 @@ import java.io.IOException;
 public class ClockInPage extends BasePO {
 
     private By twoDigit = By.xpath("//div[@class='gridCols3']//button[@class='gridCol2']");
-    private By oneDigit = By.xpath("//div[@class='gridCols3']//button[@class='gridCol1']");
+    private By oneDigit = By.xpath("//div[@class='numpadGrid']//button[@class='one']");
     private By oneDigitLatest = By.xpath("(//button[text()='1'])[2]");
-    private By zeroDigit = By.xpath("//div[@class='gridCols2X1X']//button[@class='gridCol1']");
+    private By zeroDigit = By.xpath("//div[@class='numpadGrid']//button[@class='zero']");
     private By zeroDigitLatest = By.xpath("(//button[text()='0'])[2]");
     private By enter = By.xpath("//button[text()='Enter']");
     private By enterLatest = By.xpath("(//button[text()='Enter'])[2]");
