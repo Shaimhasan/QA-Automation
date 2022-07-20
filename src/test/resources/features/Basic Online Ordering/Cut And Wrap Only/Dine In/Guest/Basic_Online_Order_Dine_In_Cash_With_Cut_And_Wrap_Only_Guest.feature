@@ -2,7 +2,7 @@ Feature: Basic Online Order - Dine In Cash - with Cut and Wrap Only - Guest
   This script is to validate Basic Online Order - Dine In Cash - with Cut and Wrap Only - Guest
 
   @issue=1893
-  @Basic_Online_Order_Dine_In_Cash_With_Cut_And_Wrap_Only_Guest @RegressionSuite @OLO @OLO_Cut_And_Wrap_Only @OLO_Cut_And_Wrap_Only_DineIn @OLO_Cut_And_Wrap_Only_DineIn_Guest
+  @Basic_Online_Order_Dine_In_Cash_With_Cut_And_Wrap_Only_Guest @RegressionSuite @DineIn @OLO @OLO_Cut_And_Wrap_Only @OLO_Cut_And_Wrap_Only_DineIn @OLO_Cut_And_Wrap_Only_DineIn_Guest
   Scenario: Basic_Online_Order_Dine_In_Cash_With_Cut_And_Wrap_Only_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

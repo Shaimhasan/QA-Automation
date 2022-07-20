@@ -2,7 +2,7 @@ Feature: Basic Online Order - Dine In Credit Card - with Make Line Only - Existi
   This script is to validate Basic Online Order - Dine In Credit Card - with Make Line Only - Existing User
 
   @issue=1820
-  @Basic_Online_Order_Dine_In_Credit_Card_With_MakeLine_Only_Existing_User @RegressionSuite @OLO @OLO_MakeLine_Only @OLO_MakeLine_Only_DineIn @OLO_MakeLine_Only_DineIn_Existing_User
+  @Basic_Online_Order_Dine_In_Credit_Card_With_MakeLine_Only_Existing_User @RegressionSuite @DineIn @OLO @OLO_MakeLine_Only @OLO_MakeLine_Only_DineIn @OLO_MakeLine_Only_DineIn_Existing_User
   Scenario: Basic_Online_Order_Dine_In_Credit_Card_With_MakeLine_Only_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

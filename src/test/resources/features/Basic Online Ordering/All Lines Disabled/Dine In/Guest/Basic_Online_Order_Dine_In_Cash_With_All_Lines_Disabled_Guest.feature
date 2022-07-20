@@ -2,7 +2,7 @@ Feature: Basic Online Order - Dine In Cash - with all lines disabled - Guest
   This script is to validate Basic Online Order - Dine In Cash - with all lines disabled - Guest
 
   @Issue=1748
-  @Basic_Order_Entry_Dine_In_Cash_With_All_Lines_Disabled_Guest @RegressionSuite @OLO @OLO_ALD @OLO_ALD_DineIn @OLO_ALD_DineIn_Guest
+  @Basic_Order_Entry_Dine_In_Cash_With_All_Lines_Disabled_Guest @RegressionSuite @DineIn @OLO @OLO_ALD @OLO_ALD_DineIn @OLO_ALD_DineIn_Guest
   Scenario: Basic_Order_Entry_Dine_In_Cash_With_All_Lines_Disabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

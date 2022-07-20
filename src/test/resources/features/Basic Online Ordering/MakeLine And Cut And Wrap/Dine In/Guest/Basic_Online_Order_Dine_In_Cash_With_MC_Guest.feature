@@ -2,7 +2,7 @@ Feature: Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Gu
   This script is to validate Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Guest
 
   @issue=1768
-  @Basic_Online_Order_Dine_In_Cash_With_MC_Guest @RegressionSuite @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_DineIn @OLO_MakeLine_And_Cut_And_Wrap_DineIn_Guest
+  @Basic_Online_Order_Dine_In_Cash_With_MC_Guest @RegressionSuite @DineIn @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_DineIn @OLO_MakeLine_And_Cut_And_Wrap_DineIn_Guest
   Scenario: Basic_Online_Order_Dine_In_Cash_With_MC_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

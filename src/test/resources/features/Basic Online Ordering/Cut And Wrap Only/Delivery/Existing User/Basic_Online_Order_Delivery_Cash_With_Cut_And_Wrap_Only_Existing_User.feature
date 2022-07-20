@@ -2,7 +2,7 @@ Feature: Basic Online Order - Delivery Cash - with Cut and Wrap Only - Existing 
   This script is to validate Basic Online Order - Delivery Cash - with Cut and Wrap Only - Existing User
 
   @issue=1903
-  @Basic_Online_Order_Delivery_Cash_With_Cut_And_Wrap_Only_Existing_User @RegressionSuite @OLO @OLO_Cut_And_Wrap_Only @OLO_Cut_And_Wrap_Only_Delivery @OLO_Cut_And_Wrap_Only_Delivery_Existing_User
+  @Basic_Online_Order_Delivery_Cash_With_Cut_And_Wrap_Only_Existing_User @RegressionSuite @Delivery @OLO @OLO_Cut_And_Wrap_Only @OLO_Cut_And_Wrap_Only_Delivery @OLO_Cut_And_Wrap_Only_Delivery_Existing_User
   Scenario: Basic_Online_Order_Delivery_Cash_With_Cut_And_Wrap_Only_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

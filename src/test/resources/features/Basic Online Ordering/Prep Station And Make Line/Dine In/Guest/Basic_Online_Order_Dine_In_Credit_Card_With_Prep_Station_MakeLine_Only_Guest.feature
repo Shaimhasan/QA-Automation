@@ -2,7 +2,7 @@ Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Make L
   This script is to validate Basic Online Order - Dine In Credit Card - with Prep Station and Make Line - Guest
 
   @issue=1775
-  @Basic_Online_Order_Dine_In_Credit_Card_With_Prep_Station_MakeLine_Only_Guest @RegressionSuite @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Only_DineIn @OLO_Prep_Station_And_MakeLine_Only_DineIn_Guest
+  @Basic_Online_Order_Dine_In_Credit_Card_With_Prep_Station_MakeLine_Only_Guest @RegressionSuite @DineIn @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Only_DineIn @OLO_Prep_Station_And_MakeLine_Only_DineIn_Guest
   Scenario: Basic_Online_Order_Dine_In_Credit_Card_With_Prep_Station_MakeLine_Only_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

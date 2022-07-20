@@ -2,7 +2,7 @@ Feature: Basic Online Order - Dine In Cash - with Prep Station and Cut and Wrap 
   This script is to validate Basic Online Order - Dine In Cash - with Prep Station and Cut and Wrap - Existing User
 
   @issue=2813
-  @Basic_Online_Order_Dine_In_Cash_With_PC_Existing_User @RegressionSuite @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_DineIn @OLO_Prep_Station_And_Cut_And_Wrap_DineIn_Existing_User
+  @Basic_Online_Order_Dine_In_Cash_With_PC_Existing_User @RegressionSuite @DineIn @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_DineIn @OLO_Prep_Station_And_Cut_And_Wrap_DineIn_Existing_User
   Scenario: Basic_Online_Order_Dine_In_Cash_With_PC_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
