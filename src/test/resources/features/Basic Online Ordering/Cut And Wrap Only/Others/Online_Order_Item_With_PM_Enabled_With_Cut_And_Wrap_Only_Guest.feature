@@ -2,7 +2,7 @@ Feature: Online Order - Item with Prep Station and Make Line enabled - with Cut 
   This script is to validate Online Order - Item with Prep Station and Make Line enabled - with Cut and Wrap Only - Guest
 
   @issue=3019
-  @Online_Order_Item_With_PM_Enabled_With_Cut_And_Wrap_Only_Guest @RegressionSuite @OLO @OLO_Cut_And_Wrap_Only @OO_Cut_And_Wrap_Only_Others @OO_Cut_And_Wrap_Only_Others_Guest
+  @Online_Order_Item_With_PM_Enabled_With_Cut_And_Wrap_Only_Guest @RegressionSuite @Others @OLO @OLO_Cut_And_Wrap_Only @OO_Cut_And_Wrap_Only_Others @OO_Cut_And_Wrap_Only_Others_Guest
   Scenario: Online_Order_Item_With_PM_Enabled_With_Cut_And_Wrap_Only_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

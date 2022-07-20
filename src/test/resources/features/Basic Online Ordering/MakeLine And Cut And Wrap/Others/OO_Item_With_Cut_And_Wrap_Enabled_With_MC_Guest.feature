@@ -2,7 +2,7 @@ Feature: Online Order - Item with Cut and Wrap enabled and with Make Line and Cu
   This script is to validate Online Order - Item with Cut and Wrap enabled and with Make Line and Cut and Wrap- Guest
 
   @issue=3038
-  @OO_Item_With_Cut_And_Wrap_Enabled_With_MC_Guest @RegressionSuite @OLO @OLO_MakeLine_And_Cut_And_Wrap @OO_MakeLine_And_cut_And_Wrap_Others @OO_MakeLine_And_cut_And_Wrap_Others_Guest
+  @OO_Item_With_Cut_And_Wrap_Enabled_With_MC_Guest @RegressionSuite @Others @OLO @OLO_MakeLine_And_Cut_And_Wrap @OO_MakeLine_And_cut_And_Wrap_Others @OO_MakeLine_And_cut_And_Wrap_Others_Guest
   Scenario: OO_Item_With_Cut_And_Wrap_Enabled_With_MC_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

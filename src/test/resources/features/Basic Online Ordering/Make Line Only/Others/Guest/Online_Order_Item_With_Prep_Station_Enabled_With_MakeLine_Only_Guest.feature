@@ -2,7 +2,7 @@ Feature: Online Order - Item with Prep Station enabled - with Make Line Only - G
   This script is to validate Online Order - Item with Prep Station enabled - with Make Line Only - Guest
 
   @issue=3009
-  @Online_Order_Item_With_Prep_Station_Enabled_With_MakeLine_Only_Guest @RegressionSuite @OLO @OLO_MakeLine_Only @OO_MakeLine_Only_Others @OO_MakeLine_Only_Others_Guest
+  @Online_Order_Item_With_Prep_Station_Enabled_With_MakeLine_Only_Guest @RegressionSuite @Others @OLO @OLO_MakeLine_Only @OO_MakeLine_Only_Others @OO_MakeLine_Only_Others_Guest
   Scenario: Online_Order_Item_With_Prep_Station_Enabled_With_MakeLine_Only_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
