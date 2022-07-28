@@ -667,4 +667,8 @@ public class BaseWebSteps extends BaseStepsEngine {
         }
     }
 
+    public String removeCurrency(String dataDictionaryVal1) {
+        return dataDictionaryVal1.replaceAll("[$,]", "");
+    }
+
 }

@@ -1223,4 +1223,15 @@ public class AutoEngValidate extends BaseWebSteps {
         }
 
     }
+
+    @Then("^the user remove currency from data dictionary value \"([^\"]*)\" into the data dictionary with key \"([^\"]*)\"$")
+    public void theUserRemoveCurrency(String dataDictionaryVal1,
+                                      String dictionaryKey) {
+        dictionaryKey = parseDictionaryKey(dictionaryKey);
+        dataDictionaryVal1 = parseValue(dataDictionaryVal1);
+        String number = removeCurrency(dataDictionaryVal1);
+        TestContext.getInstance().testdataPut(dictionaryKey, number);
+        logStepMessage(String.format(STORED_VALUE, number, dictionaryKey));
+
+    }
 }
