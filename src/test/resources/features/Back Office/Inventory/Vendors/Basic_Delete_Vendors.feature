@@ -33,6 +33,8 @@ Feature: Basic Delete Vendors
     And the user clicks the "inventory" element at the "InventoryPage" page
     #Comment: the user click vendors
     And the user clicks the "vendors" element at the "InventoryPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "vendorTxt" element to be "VISIBLE" on the "VendorsPage" page
     #Comment: the user click Add vendors
     And the user clicks the "addBtn" element at the "VendorsPage" page
     #Comment: the user validate the visibility of popup
