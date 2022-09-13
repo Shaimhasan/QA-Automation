@@ -16,7 +16,7 @@ public class AddVendorsPage extends BasePO {
     private By city = By.id("txt_BO_IN_VDN_ADDEDT_City");
     private By zipCode = By.id("txt_BO_IN_VDN_ADDEDT_Zip");
     private By state = By.xpath("//select[@id='ddl_BO_IN_VDN_ADDEDT_State']");
-    private By save = By.xpath("//div[@id='div_BO_IN_VND_ADDEDT_DIALOG_modal_view']//button[text()='Save']");
+    private By save = By.id("btn_BO_IN_VND_ADDEDT_Save");
 
     public Element vendorTxt() throws IOException, InterruptedException {
         return $(vendorTxt);
