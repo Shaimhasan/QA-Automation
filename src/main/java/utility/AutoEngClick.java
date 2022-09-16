@@ -4,9 +4,11 @@ import core.BaseWebSteps;
 import core.Element;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -89,7 +91,8 @@ public class AutoEngClick extends BaseWebSteps {
                     getObject(objectName3, pageName).visible();
                 }
             } catch (Exception e) {
-                theUserClicksIfElementPresentInTableAtThePage(table, colName, value, pageName, objectName1, objectName2, objectName3);
+                Assert.fail("Error Found");
+             //   theUserClicksIfElementPresentInTableAtThePage(table, colName, value, pageName, objectName1, objectName2, objectName3);
             }
         } else {
             System.out.println("Row is empty");
@@ -124,7 +127,8 @@ public class AutoEngClick extends BaseWebSteps {
                         getObject(ThirdObjectName, pageName).visible();
                     }
                 } catch (Exception e) {
-                    theUserDeleteAllRowsElementPresentInTableAtThePage(table, colName, value, pageName, FirstObjectName, SecondObjectName, ThirdObjectName);
+                    Assert.fail("Error Found");
+                 //   theUserDeleteAllRowsElementPresentInTableAtThePage(table, colName, value, pageName, FirstObjectName, SecondObjectName, ThirdObjectName);
                 }
             }
 

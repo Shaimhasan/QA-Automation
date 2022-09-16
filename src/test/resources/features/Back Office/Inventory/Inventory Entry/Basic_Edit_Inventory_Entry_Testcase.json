@@ -17,7 +17,7 @@
       "date": "2025",
       "Weekly": "Weekly",
       "DetailsClickXpath1": "(//td[text()='",
-      "xpathValue": "//table[@id='tbl_BO_List_IN_ENT']//*[local-name()='svg' and @class='fixed_header_SelectedRow_CheckBox']/*[local-name()='path']"
+      "xpathValue": "//i[@class='icon-check']"
     },
     "dataCriteria": {
     },
