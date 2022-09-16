@@ -91,8 +91,7 @@ public class AutoEngClick extends BaseWebSteps {
                     getObject(objectName3, pageName).visible();
                 }
             } catch (Exception e) {
-                Assert.fail("Error Found");
-             //   theUserClicksIfElementPresentInTableAtThePage(table, colName, value, pageName, objectName1, objectName2, objectName3);
+                theUserClicksIfElementPresentInTableAtThePage(table, colName, value, pageName, objectName1, objectName2, objectName3);
             }
         } else {
             System.out.println("Row is empty");
@@ -127,8 +126,7 @@ public class AutoEngClick extends BaseWebSteps {
                         getObject(ThirdObjectName, pageName).visible();
                     }
                 } catch (Exception e) {
-                    Assert.fail("Error Found");
-                 //   theUserDeleteAllRowsElementPresentInTableAtThePage(table, colName, value, pageName, FirstObjectName, SecondObjectName, ThirdObjectName);
+                    theUserDeleteAllRowsElementPresentInTableAtThePage(table, colName, value, pageName, FirstObjectName, SecondObjectName, ThirdObjectName);
                 }
             }
 
