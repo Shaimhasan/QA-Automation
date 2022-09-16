@@ -14,7 +14,7 @@ public class AddRecievingPage extends BasePO {
     private By tax = By.id("txt_BO_IN_REC_ADDEDT_Tax");
     private By freight = By.id("txt_BO_IN_REC_ADDEDT_Freight");
     private By others = By.id("txt_BO_IN_REC_ADDEDT_OtherCharges");
-    private By recievingTxtPopup = By.xpath("//div[@id='div_BO_IN_REC_ADDEDT_DIALOG_modal_view']//span[text()='Receiving - Automation Vendor']");
+    private By recievingTxtPopup = By.xpath("//span[@id='div_BO_IN_REC_ADDEDT_DIALOG_Header_Title']");
     private By save = By.xpath("//button[@onclick='BO_IN_REC_ADDEDT_Save(false);']");
 
     public Element others() throws IOException, InterruptedException {
