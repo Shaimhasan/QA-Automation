@@ -1234,4 +1234,9 @@ public class AutoEngValidate extends BaseWebSteps {
         logStepMessage(String.format(STORED_VALUE, number, dictionaryKey));
 
     }
+
+    @Then("^the user wait until alert is present$")
+    public void theUserWaitValidatesThatIsPresentInTheSystemDialogPopUp() {
+        getWait().until(ExpectedConditions.alertIsPresent());
+    }
 }

@@ -9,7 +9,7 @@ import java.io.IOException;
 public class PaymentPage extends BasePO {
 
     private By cash = By.id("btn2CASHPAYMENT_1_");
-    private By credit = By.xpath("//label[text()='Credit Card']");
+    private By credit = By.xpath("//button[@data-text='Credit Card']");
     private By send = By.xpath("//span[text()='Send']");
     private By finish = By.xpath("//span[text()='Finish']");
     private By half = By.xpath("//span[text()='1/2']");
