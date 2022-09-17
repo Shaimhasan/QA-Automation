@@ -13,6 +13,11 @@ public class CreditCardPage extends BasePO {
     private By cvv = By.name("cardCvv");
     private By chargeBtn = By.id("btnCreditCardCharge");
     private By zipCode = By.id("txtCCZip");
+    private By creditCardTxt = By.xpath("//span[text()='Credit Card']");
+
+    public Element creditCardTxt() throws IOException, InterruptedException {
+        return $(creditCardTxt);
+    }
 
     public Element cardNum() throws IOException, InterruptedException {
         return $(cardNum);

@@ -107,6 +107,8 @@ Feature: Basic Order Entry - Dine-in fifty dollar cash and Credit Card  - with a
     And the user clicks the "fiftyDollar" element at the "PaymentPage" page
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
+    #Comment: the user wait the page is open
+    And the user validates the "creditCardTxt" element is visible at the "CreditCardPage" page "validate_txt" "HardStopOnFailure"
     #Comment: User switches to the frame
     And the user switches to frame "cardNumber"
      #Comment: the user enter the CreditCard Number

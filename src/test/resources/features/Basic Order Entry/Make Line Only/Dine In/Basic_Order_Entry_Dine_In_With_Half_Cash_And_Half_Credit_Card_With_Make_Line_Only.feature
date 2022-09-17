@@ -108,6 +108,8 @@ Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with
     And the user clicks the "cash" element at the "PaymentPage" page
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
+    #Comment: the user wait the page is open
+    And the user validates the "creditCardTxt" element is visible at the "CreditCardPage" page "validate_txt" "HardStopOnFailure"
     #Comment: User switches to the frame
     And the user switches to frame "cardNumber"
      #Comment: the user enter the CreditCard Number
