@@ -32,6 +32,8 @@ Feature: Basic Edit Menu Items
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click on Menu Items
     And the user clicks the "menuItems" element at the "MenuSettingPage" page
+    #Comment: the user wait untile element displayed
+    And the user validates the "menuItemTxt" element is visible at the "MenuSettingPage" page "validate_text" "HardStopOnFailure"
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup
