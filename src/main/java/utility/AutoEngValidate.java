@@ -1239,4 +1239,53 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserWaitValidatesThatIsPresentInTheSystemDialogPopUp() {
         getWait().until(ExpectedConditions.alertIsPresent());
     }
+
+    @Then("^the user clock out if already clock in$")
+    public void theUserClockOutIfAlreaydClockIn() throws InterruptedException {
+        int count = getDriver().findElements(By.xpath("//p[contains(text(),'Currently clocked in as: Driver')]")).size();
+        if (count > 0) {
+            getDriver().findElement(By.xpath("//p[contains(text(),'Currently clocked in as: Driver')]/..//following-sibling::div//button[text()='OK']")).click();
+            getDriver().findElement(By.xpath("//div[normalize-space(@class)='AdoraTopArrow']")).click();
+            Thread.sleep(2000);
+            getDriver().findElement(By.xpath("//div[text()='Clock Out']")).click();
+            getPO().waitPageToLoad();
+            getDriver().findElement(By.xpath("//span[@class='ui-dialog-title']")).isDisplayed();
+            getDriver().findElement(By.xpath("//div[@class='numpadGrid']//button[@class='one']")).click();
+            Thread.sleep(500);
+            getDriver().findElement(By.xpath("//div[@class='numpadGrid']//button[@class='zero']")).click();
+            Thread.sleep(500);
+            getDriver().findElement(By.xpath("//div[@class='numpadGrid']//button[@class='zero']")).click();
+            Thread.sleep(500);
+            getDriver().findElement(By.xpath("//div[@class='numpadGrid']//button[@class='zero']")).click();
+            Thread.sleep(500);
+            getDriver().findElement(By.xpath("//button[text()='Enter']")).click();
+            getPO().waitPageToLoad();
+            getDriver().findElement(By.id("txtClockOutGratuity")).sendKeys("0");
+            getDriver().findElement(By.xpath("//button[text()='Clock Out']")).click();
+            getPO().waitPageToLoad();
+            Thread.sleep(1000);
+            getDriver().findElement(By.xpath("//p[text()='You have clocked out successfully.']")).isDisplayed();
+            getDriver().findElement(By.xpath("//p[contains(text(),'You have clocked out successfully.')]/..//following-sibling::div//button[text()='OK']")).click();
+            Thread.sleep(1000);
+            getDriver().findElement(By.xpath("//p[contains(text(),'No printer has been defined on this station.')]/..//following-sibling::div//button[text()='OK']")).click();
+            Thread.sleep(1000);
+            getDriver().findElement(By.xpath("//div[normalize-space(@class)='AdoraTopArrow']")).click();
+            Thread.sleep(2000);
+            getDriver().findElement(By.xpath("//div[normalize-space(text())='Clock In']")).click();
+            getPO().waitPageToLoad();
+            getDriver().findElement(By.xpath("//div[text()='Please Enter Employee No.:']")).isDisplayed();
+            getDriver().findElement(By.xpath("//div[@class='numpadGrid']//button[@class='one']")).click();
+            Thread.sleep(500);
+            getDriver().findElement(By.xpath("//div[@class='numpadGrid']//button[@class='zero']")).click();
+            Thread.sleep(500);
+            getDriver().findElement(By.xpath("//div[@class='numpadGrid']//button[@class='zero']")).click();
+            Thread.sleep(500);
+            getDriver().findElement(By.xpath("//div[@class='numpadGrid']//button[@class='zero']")).click();
+            Thread.sleep(500);
+            getDriver().findElement(By.xpath("//button[text()='Enter']")).click();
+        } else {
+            System.out.println("Please Proceed");
+
+        }
+    }
 }
