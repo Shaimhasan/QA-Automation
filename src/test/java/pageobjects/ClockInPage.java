@@ -15,11 +15,11 @@ public class ClockInPage extends BasePO {
     private By zeroDigitLatest = By.xpath("(//button[text()='0'])[2]");
     private By enter = By.xpath("//button[text()='Enter']");
     private By enterLatest = By.xpath("(//button[text()='Enter'])[2]");
-    private By timeCardRecordSuccessMsg = By.xpath("//div[text()='Your time card recorded successfully.']");
-    private By OKBtn = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='OK']");
+    private By timeCardRecordSuccessMsg = By.xpath("//p[text()='Your time card recorded successfully.']");
+    private By OKBtn = By.xpath("//p[text()='Your time card recorded successfully.']/..//following-sibling::div//button[text()='OK']");
     private By clockInTxtPopup = By.xpath("//div[text()='Please Enter Employee No.:']");
     private By employeeNo = By.xpath("//div[text()='1000']");
-    private By clockInPopup = By.xpath("//span[text()='Clock In']");
+    private By clockInPopup = By.xpath("//p[text()='Your time card recorded successfully.']/..//preceding-sibling::div");
 
     public Element enterLatest() throws IOException, InterruptedException {
         return $(enterLatest);

@@ -108,6 +108,8 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
+    #Comment: user click on Driver o Printer Page
+    And the user clicks the "printerOkBtn" element at the "CommonPage" page
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
@@ -116,8 +118,10 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
     And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: user click on ClockIn
+    #Comment: the user hover
     And the user hovers over the "clockOut" element at the "AdoraHeaderPage" page
+    #Comment: the user wait
+    And the user waits "1000" seconds
     #Comment: user click on ClockOut
     And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading

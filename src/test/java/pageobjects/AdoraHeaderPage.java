@@ -16,7 +16,7 @@ public class AdoraHeaderPage extends BasePO {
     private By clockIn = By.xpath("//div[normalize-space(text())='Clock In']");
     private By dispatch = By.xpath("//div[text()='Dispatch']");
     private By dispatchLatest = By.xpath("(//div[text()='Dispatch'])[2]");
-    private By clockOut = By.xpath("//div[text()='Clock Out']");
+    private By clockOut = By.xpath("//div[normalize-space(text())='Clock Out']/../..");
     private By backOffice = By.xpath("//div[text()='Back Office']");
 
     public Element dispatchLatest() throws IOException, InterruptedException {

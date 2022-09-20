@@ -1246,7 +1246,7 @@ public class AutoEngValidate extends BaseWebSteps {
         if (count > 0) {
             getDriver().findElement(By.xpath("//p[contains(text(),'Currently clocked in as: Driver')]/..//following-sibling::div//button[text()='OK']")).click();
             getDriver().findElement(By.xpath("//div[normalize-space(@class)='AdoraTopArrow']")).click();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             getDriver().findElement(By.xpath("//div[text()='Clock Out']")).click();
             getPO().waitPageToLoad();
             getDriver().findElement(By.xpath("//span[@class='ui-dialog-title']")).isDisplayed();
@@ -1270,7 +1270,7 @@ public class AutoEngValidate extends BaseWebSteps {
             getDriver().findElement(By.xpath("//p[contains(text(),'No printer has been defined on this station.')]/..//following-sibling::div//button[text()='OK']")).click();
             Thread.sleep(1000);
             getDriver().findElement(By.xpath("//div[normalize-space(@class)='AdoraTopArrow']")).click();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             getDriver().findElement(By.xpath("//div[normalize-space(text())='Clock In']")).click();
             getPO().waitPageToLoad();
             getDriver().findElement(By.xpath("//div[text()='Please Enter Employee No.:']")).isDisplayed();

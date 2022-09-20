@@ -16,13 +16,13 @@ public class ClockOutPage extends BasePO {
     private By enter = By.xpath("//button[text()='Enter']");
     private By enterLatest = By.xpath("(//button[text()='Enter'])[2]");
     private By timeCardRecordSuccessMsg = By.xpath("//div[text()='Your time card recorded successfully.']");
-    private By OKBtn = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='OK']");
+    private By OKBtn = By.xpath("//p[text()='You have clocked out successfully.']/..//following-sibling::div//button[text()='OK']");
     private By gratuityAmt = By.id("txtClockOutGratuity");
     private By clockOut = By.xpath("//button[text()='Clock Out']");
-    private By clockOutSuccessMsg = By.xpath("//div[text()='You have clocked out successfully.']");
+    private By clockOutSuccessMsg = By.xpath("//p[text()='You have clocked out successfully.']");
     private By employeeNo = By.xpath("//div[text()='1000']");
     private By cloutOutVisible = By.xpath("//span[@class='ui-dialog-title']");
-    private By cloutOutTxtVisible = By.xpath("//span[text()='Clock Out']");
+    private By cloutOutTxtVisible = By.xpath("//p[text()='You have clocked out successfully.']/..//preceding-sibling::div");
 
     public Element cloutOutTxtVisible() throws IOException, InterruptedException {
         return $(cloutOutTxtVisible);
