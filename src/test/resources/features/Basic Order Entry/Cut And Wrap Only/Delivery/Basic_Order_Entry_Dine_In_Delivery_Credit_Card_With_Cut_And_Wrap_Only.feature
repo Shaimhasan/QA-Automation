@@ -184,7 +184,6 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Cut and Wrap Only
     #Comment: the user clock out if already clock in
     And the user clock out if already clock in
 
-
     #Comment: the user validate the visibility of clockInPopup
     And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user validate time record message successfully

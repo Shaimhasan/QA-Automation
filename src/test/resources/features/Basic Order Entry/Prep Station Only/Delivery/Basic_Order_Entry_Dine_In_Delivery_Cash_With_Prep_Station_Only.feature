@@ -153,6 +153,10 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station Only
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
+    #Comment: the user page to load
+    And the user waits for the page to load
+    #Comment: the user clock out if already clock in
+    And the user clock out if already clock in
     #Comment: the user validate the visibility of clockInPopup
     And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user validate time record message successfully

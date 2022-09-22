@@ -180,6 +180,10 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station and Make Line en
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
+    #Comment: the user page to load
+    And the user waits for the page to load
+    #Comment: the user clock out if already clock in
+    And the user clock out if already clock in
      #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user validate time record message successfully

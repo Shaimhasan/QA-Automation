@@ -157,10 +157,10 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Cut and Wra
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
-    #Comment: The user wait until page is loading
+    #Comment: the user page to load
     And the user waits for the page to load
-    #Comment: user click on Driver o Printer Page
-    And the user clicks the "printerOkBtn" element at the "CommonPage" page
+    #Comment: the user clock out if already clock in
+    And the user clock out if already clock in
 
     #Comment: the user validate the visibility of clockInPopup
     And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
