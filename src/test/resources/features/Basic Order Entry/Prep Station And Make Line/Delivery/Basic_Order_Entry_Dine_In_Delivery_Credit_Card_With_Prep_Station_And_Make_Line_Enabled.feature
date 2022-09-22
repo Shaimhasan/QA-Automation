@@ -232,6 +232,8 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Prep Station and Make 
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
+    #Comment: user click on Driver o Printer Page
+    And the user clicks the "printerOkBtn" element at the "CommonPage" page
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
