@@ -249,6 +249,11 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with all lines e
     And the user clicks the "zeroDigit" element at the "ClockInPage" page
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
+    #Comment: the user page to load
+    And the user waits for the page to load
+    #Comment: the user clock out if already clock in
+    And the user clock out if already clock in
+
     #Comment: the user validate the visibility of clockInPopup
     And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment: user validate time record message successfully
@@ -271,6 +276,8 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with all lines e
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the page to load
+    #Comment: user click on Driver o Printer Page
+    And the user clicks the "printerOkBtn" element at the "CommonPage" page
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: user click on Adora Header
