@@ -110,10 +110,10 @@ Feature: Basic Order Entry - Dine-in with cash and Credit Card  - with all lines
     And the user clicks the "fiftyDollar" element at the "PaymentPage" page
     #Comment: user click on Driver o Printer Page
     And the user clicks the "printerOkBtn" element at the "CommonPage" page
-    #Comment: the user wait the page is open
-    And the user validates the "creditCardTxt" element is visible at the "CreditCardPage" page "validate_txt" "HardStopOnFailure"
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
+    #Comment: the user wait the page is open
+    And the user validates the "creditCardTxt" element is visible at the "CreditCardPage" page "validate_txt" "HardStopOnFailure"
     #Comment: User switches to the frame
     And the user switches to frame "cardNumber"
      #Comment: the user enter the CreditCard Number
