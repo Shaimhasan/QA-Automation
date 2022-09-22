@@ -51,6 +51,8 @@ Feature: Basic Order Entry - Dine-in fifty dollar cash and Credit Card  - with a
     And the user clicks the "OK" element at the "OrderEntry" page
     #Comment: user click on fifty dollar
     And the user clicks the "fiftyDollar" element at the "PaymentPage" page
+    #Comment: user click on Driver o Printer Page
+    And the user clicks the "printerOkBtn" element at the "CommonPage" page
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
     #Comment: the user wait the page is open
