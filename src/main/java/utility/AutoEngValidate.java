@@ -1244,6 +1244,7 @@ public class AutoEngValidate extends BaseWebSteps {
     public void theUserClockOutIfAlreaydClockIn() throws InterruptedException {
         int count = getDriver().findElements(By.xpath("//p[contains(text(),'Currently clocked in as: Driver')]")).size();
         if (count > 0) {
+            System.out.println("Error Popup Found : Currently clocked in as: Driver");
             getDriver().findElement(By.xpath("//p[contains(text(),'Currently clocked in as: Driver')]/..//following-sibling::div//button[text()='OK']")).click();
             getDriver().findElement(By.xpath("//div[normalize-space(@class)='AdoraTopArrow']")).click();
             Thread.sleep(1000);
@@ -1263,6 +1264,7 @@ public class AutoEngValidate extends BaseWebSteps {
 
             int count1 = getDriver().findElements(By.xpath("//p[contains(text(),'Your are not checked in.')]")).size();
             if (count1 > 0){
+                System.out.println("Error Popup Found : Your are not checked in.");
                 getDriver().findElement(By.xpath("//p[contains(text(),'Your are not checked in.')]/..//following-sibling::div//button[text()='OK']")).click();
                 getDriver().findElement(By.xpath("//div[normalize-space(@class)='AdoraTopArrow']")).click();
                 Thread.sleep(1000);
