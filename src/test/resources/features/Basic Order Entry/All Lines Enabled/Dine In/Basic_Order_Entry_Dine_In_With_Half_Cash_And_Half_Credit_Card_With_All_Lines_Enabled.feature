@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with all lines enabled
   This script is to validate Basic Order Entry - Dine-in with half cash and half Credit Card  - with all lines enabled
 
-  @Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_All_Lines_Enabled @RegressionSuite @DineIn @BOE @BOE_ALE @BOE_ALE_DineIn
+  @Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_All_Lines_Enabled @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_ALE @BOE_ALE_DineIn
   Scenario: Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_All_Lines_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

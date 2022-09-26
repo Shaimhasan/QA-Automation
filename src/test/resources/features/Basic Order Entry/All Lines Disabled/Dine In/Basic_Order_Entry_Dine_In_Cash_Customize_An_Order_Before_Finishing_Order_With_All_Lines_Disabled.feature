@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Customize an order before finishing order - with all lines disabled
   This script is to validate Dine in cash basic customize order without lines
 
-  @Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_With_All_Lines_Disabled @RegressionSuite @DineIn @BOE @BOE_ALD @BOE_ALD_DineIn
+  @Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_With_All_Lines_Disabled @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_ALD @BOE_ALD_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_With_All_Lines_Disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

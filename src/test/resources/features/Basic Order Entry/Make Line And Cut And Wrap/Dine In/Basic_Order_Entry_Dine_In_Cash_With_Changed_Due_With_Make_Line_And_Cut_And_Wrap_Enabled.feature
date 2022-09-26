@@ -3,7 +3,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line an
    and Customer pays $100
 
   @issue=1653
-  @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @DineIn @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_DineIn
+  @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

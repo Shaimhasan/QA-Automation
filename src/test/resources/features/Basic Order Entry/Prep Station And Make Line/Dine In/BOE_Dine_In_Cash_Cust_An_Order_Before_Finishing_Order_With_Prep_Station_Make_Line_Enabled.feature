@@ -3,7 +3,7 @@ Feature: Basic Order Entry - Customize an order before finishing order - with Pr
   with Cash Only
 
   @issue=1639
-  @BOE_Dine_In_Cash_Cust_An_Order_Before_Finishing_Order_With_Prep_Station_Make_Line_Enabled @RegressionSuite @DineIn @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
+  @BOE_Dine_In_Cash_Cust_An_Order_Before_Finishing_Order_With_Prep_Station_Make_Line_Enabled @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
   Scenario: BOE_Dine_In_Cash_Cust_An_Order_Before_Finishing_Order_With_Prep_Station_Make_Line_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

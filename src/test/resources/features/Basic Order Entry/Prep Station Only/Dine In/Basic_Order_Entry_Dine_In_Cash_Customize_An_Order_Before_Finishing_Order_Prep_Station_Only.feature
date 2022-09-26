@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Customize an order before finishing order - with Prep Station Only
   This script is to validate Basic Order Entry - Customize an order before finishing order - with Prep Station Only
 
-  @Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_Prep_Station_Only @RegressionSuite @DineIn @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_DineIn
+  @Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_Prep_Station_Only @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_Prep_Station_Only @BOE_Prep_Station_Only_DineIn
   Scenario: Basic_Order_Entry_Dine_In_Cash_Customize_An_Order_Before_Finishing_Order_Prep_Station_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
