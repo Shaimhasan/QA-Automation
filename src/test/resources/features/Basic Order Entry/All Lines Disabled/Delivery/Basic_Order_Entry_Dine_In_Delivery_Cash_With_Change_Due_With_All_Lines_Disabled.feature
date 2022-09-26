@@ -118,6 +118,12 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with all lines d
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
+    #Comment: the user click on back office
+    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
