@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Delivery Credit Card  - with all lines enabled
   This script is to validate Basic Order Entry - Delivery Credit Card  - with all lines enabled
 
-  @Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_All_Lines_Enabled @RegressionSuite @Delivery @BOE @BOE_ALE @BOE_ALE_Delivery
+  @Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_All_Lines_Enabled @RegressionSuite @Delivery @BOE_Delivery @BOE @BOE_ALE @BOE_ALE_Delivery
   Scenario: Basic_Order_Entry_Dine_In_Delivery_Credit_Card_With_All_Lines_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

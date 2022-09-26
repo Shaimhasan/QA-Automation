@@ -2,7 +2,7 @@ Feature: Basic Order Entry - Delivery Cash  - with Make Line Only
   This script is to validate Basic Order Entry - Delivery Cash  - with Make Line Only
 
   @issue=1618
-  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Make_Line_Only @RegressionSuite @Delivery @BOE @BOE_Make_Line_Only @BOE_Make_Line_Only_Delivery
+  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Make_Line_Only @RegressionSuite @Delivery @BOE_Delivery @BOE @BOE_Make_Line_Only @BOE_Make_Line_Only_Delivery
   Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_Make_Line_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
   This script is to validate Dine in delivery with cash
 
-  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_All_Lines_Disabled @RegressionSuite @Delivery @BOE @BOE_ALD @BOE_ALD_Delivery
+  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_All_Lines_Disabled @RegressionSuite @Delivery @BOE_Delivery @BOE @BOE_ALD @BOE_ALD_Delivery
   Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_All_Lines_Disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
