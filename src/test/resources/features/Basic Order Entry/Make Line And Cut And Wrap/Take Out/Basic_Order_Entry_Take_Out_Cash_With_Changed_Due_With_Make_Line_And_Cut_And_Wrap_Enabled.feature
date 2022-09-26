@@ -3,7 +3,7 @@ Feature: Basic Order Entry - Take Out Cash - with Change Due  - with Make Line a
   and Customer pays $100
 
   @issue=1652
-  @Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @TakeOut @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_TakeOut
+  @Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @TakeOut @BOE_TakeOut @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_TakeOut
   Scenario: Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

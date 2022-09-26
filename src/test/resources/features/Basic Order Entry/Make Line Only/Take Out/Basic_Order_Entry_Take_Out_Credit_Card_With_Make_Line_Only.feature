@@ -2,7 +2,7 @@ Feature: Basic Order Entry - Take Out Credit Card  - with Make Line Only
   This script is to validate Basic Order Entry - Take Out Credit Card  - with Make Line Only
 
   @issue=1617
-  @Basic_Order_Entry_Take_Out_Credit_Card_With_Make_Line_Only @RegressionSuite @TakeOut @BOE @BOE_Make_Line_Only @BOE_Make_Line_Only_TakeOut
+  @Basic_Order_Entry_Take_Out_Credit_Card_With_Make_Line_Only @RegressionSuite @TakeOut @BOE_TakeOut @BOE @BOE_Make_Line_Only @BOE_Make_Line_Only_TakeOut
   Scenario: Basic_Order_Entry_Take_Out_Credit_Card_With_Make_Line_Only_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

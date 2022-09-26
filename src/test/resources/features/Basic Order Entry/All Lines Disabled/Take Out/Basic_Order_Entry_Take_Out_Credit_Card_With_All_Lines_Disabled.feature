@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Take Out Credit Card  - with all lines disabled
   This script is to validate Take out Credit Card basic order entry
 
-  @Basic_Order_Entry_Take_Out_Credit_Card_With_All_Lines_Disabled @RegressionSuite @TakeOut @BOE @BOE_ALD @BOE_ALD_TakeOut
+  @Basic_Order_Entry_Take_Out_Credit_Card_With_All_Lines_Disabled @RegressionSuite @TakeOut @BOE_TakeOut @BOE @BOE_ALD @BOE_ALD_TakeOut
   Scenario: Basic_Order_Entry_Take_Out_Credit_Card_With_All_Lines_Disabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
