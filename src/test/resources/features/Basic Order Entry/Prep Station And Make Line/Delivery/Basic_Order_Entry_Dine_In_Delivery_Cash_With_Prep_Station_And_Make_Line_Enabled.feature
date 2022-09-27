@@ -164,6 +164,12 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station and Make Line en
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user click on Adora header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
+    #Comment: the user click on back office
+    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
     #Comment: The user wait until page is loading
     And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
@@ -198,8 +204,6 @@ Feature: Basic Order Entry - Delivery Cash  - with Prep Station and Make Line en
     And the user waits for the page to load
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
-    #Comment: the user validate the visibility of clockInPopup
-    And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
     #Comment : user click on orderNumber and dispatch
     And the user clicks the "table" element with dictionary key "#(order_Number)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
     #Comment: user click on Driver o Dispatch page
