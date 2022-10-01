@@ -191,6 +191,12 @@ Feature: Basic Order Entry - Take Out Credit Card  - with Make Line and Cut and 
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
+    #Comment: the user click on back office
+    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "orderList" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: User validate the order list element is present.
