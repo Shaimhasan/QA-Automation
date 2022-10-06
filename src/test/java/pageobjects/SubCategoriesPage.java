@@ -13,7 +13,7 @@ public class SubCategoriesPage extends BasePO {
     private By table = By.id("tbl_BO_List_MN_SCT");
     private By history = By.id("btn_BO_HISTORY");
     private By delete = By.id("btn_BO_MN_SCT_Del");
-    private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+    private By deleteOnWarning = By.xpath("//div[text()='Warning']/..//button[text()='Delete']");
     private By subCatTxt = By.xpath("//div[@id='div_BO_MN_SCT_ADDEDT_DIALOG_modal_view']//span[text()='Sub Category']");
 
 

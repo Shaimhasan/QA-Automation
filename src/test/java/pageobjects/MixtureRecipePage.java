@@ -14,7 +14,7 @@ public class MixtureRecipePage extends BasePO {
     private By history = By.id("btn_BO_HISTORY");
     private By delete = By.id("btn_BO_IN_MIX_Del");
     private By warningTxt = By.xpath("//div[contains(@id,'div_Message')]//span[text()='Warning']");
-    private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+    private By deleteOnWarning = By.xpath("//div[text()='Warning']/..//button[text()='Delete']");
 
     public Element warningTxt() throws IOException, InterruptedException {
         return $(warningTxt);

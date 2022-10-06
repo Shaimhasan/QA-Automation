@@ -17,7 +17,7 @@ public class InventoryEntryPage extends BasePO {
     private By post = By.id("btn_BO_IN_ENT_Post");
     private By unPost = By.id("btn_BO_IN_ENT_UnPost");
     private By copyTo = By.id("btn_BO_IN_ENT_CopyTo");
-    private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+    private By deleteOnWarning = By.xpath("//div[text()='Warning']/..//button[text()='Delete']");
     private By inventoryEntryTxt = By.xpath("//div[text()='Inventory Entry' and @id='div_Page_Title']");
     private By validatePostPresent = By.xpath("//table[@id='tbl_BO_List_IN_ENT']//*[local-name()='svg' and @class='fixed_header_SelectedRow_CheckBox']/*[local-name()='path']");
     private By postOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Post']");

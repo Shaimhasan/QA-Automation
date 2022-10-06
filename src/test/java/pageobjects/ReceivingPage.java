@@ -13,7 +13,7 @@ public class ReceivingPage extends BasePO {
     private By table = By.id("tbl_BO_List_IN_REC");
     private By history = By.id("btn_BO_HISTORY");
     private By delete = By.id("btn_BO_IN_REC_Del");
-    private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+    private By deleteOnWarning = By.xpath("//div[text()='Warning']/..//button[text()='Delete']");
 
 
     public Element deleteOnWarning() throws IOException, InterruptedException {

@@ -47,10 +47,7 @@ Feature: Basic Add Inventory Items
     And the user enters "#(conversionFactor)" into the "conversionFactor" textbox at the "AddInventoryItemsPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "conversionFactor" element at the "AddInventoryItemsPage" page into the data dictionary with key "conversionFactor_value1"
-    #Comment: the user enter text
-    And the user enters "#(InvUnitConFactor)" into the "InvUnitConFactor" textbox at the "AddInventoryItemsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "InvUnitConFactor" element at the "AddInventoryItemsPage" page into the data dictionary with key "InvUnitConFactor_value1"
+
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddInventoryItemsPage" page
     #Comment: The user wait until page is loading
@@ -73,8 +70,7 @@ Feature: Basic Add Inventory Items
     And the user validates the data dictionary value of "#(name_value1)" is "Equal To" data dictionary value of "#(name_value2)" "validate_invoiceNum_value" "HardStopOnFailure"
     #Comment: user validate descriptionUS Value
     And the user validates the data dictionary value of "#(conversionFactor_value1)" is "Equal To" data dictionary value of "#(conversionFactor_value2)" "validate_date_value" "HardStopOnFailure"
-    #Comment: user validate Name Spanish Value
-    And the user validates the data dictionary value of "#(InvUnitConFactor_value1)" is "Equal To" data dictionary value of "#(InvUnitConFactor_value2)" "validate_tax_value" "HardStopOnFailure"
+
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditInventoryItemsPage" page
     #Comment: the user click on History Button

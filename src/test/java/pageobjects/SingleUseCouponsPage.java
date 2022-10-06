@@ -11,7 +11,7 @@ public class SingleUseCouponsPage extends BasePO {
     private By addBtn = By.xpath("//button[normalize-space(@id)='btn_BO_CP_SUC_AddNew']");
     private By editBtn = By.id("btn_BO_CP_SUC_Edit");
     private By delete = By.id("btn_BO_CP_SUC_Delete");
-    private By deleteOnWarning = By.xpath("//div[@data-title='Warning']//button[text()='Delete']");
+    private By deleteOnWarning = By.xpath("//div[text()='Warning']/..//button[text()='Delete']");
     private By export = By.id("btn_BO_CP_SUC_Export");
     private By table = By.id("tbl_BO_List_CP_SUC");
     private By history = By.id("btn_BO_HISTORY");
