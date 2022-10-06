@@ -47,10 +47,7 @@ Feature: Basic Edit Inventory Items
     And the user enters "#(conversionFactor)" into the "conversionFactor" textbox at the "AddInventoryItemsPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "conversionFactor" element at the "AddInventoryItemsPage" page into the data dictionary with key "conversionFactor_value1"
-    #Comment: the user enter text
-    And the user enters "#(InvUnitConFactor)" into the "InvUnitConFactor" textbox at the "AddInventoryItemsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "InvUnitConFactor" element at the "AddInventoryItemsPage" page into the data dictionary with key "InvUnitConFactor_value1"
+
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddInventoryItemsPage" page
     #Comment: The user wait until page is loading
