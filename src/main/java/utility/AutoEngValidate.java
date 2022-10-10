@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import reporting.Reporter;
 import validator.AssertHelper;
@@ -1339,6 +1340,20 @@ public class AutoEngValidate extends BaseWebSteps {
                 Thread.sleep(500);
                 getDriver().findElement(By.xpath("//button[text()='Enter']")).click();
             }
+        }
+    }
+
+    @Then("^the user click on OK button if error exists$")
+    public void theUserClickIfError() throws InterruptedException {
+        Thread.sleep(5000);
+        int count = getDriver().findElements(By.xpath("//p[contains(text(),'You will be prompted to let the store know your location.')]")).size();
+        if (count > 0) {
+            System.out.println("Error Popup Found : You will be prompted to let the store know your location.");
+            getDriver().findElement(By.xpath("//button[text()='Ok']")).click();
+            Thread.sleep(1000);
+        }
+        else {
+            System.out.println("Please Proceed");
         }
     }
 }

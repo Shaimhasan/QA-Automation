@@ -12,6 +12,16 @@ public class LoginOLOPage extends BasePO {
     private By loginEmail = By.xpath("//input[@id='emlLogin_Email']");
     private By loginPassword = By.xpath("//input[@id='pasLogin_Password']");
     private By loginBtn = By.xpath("//button[@id='btnLogin_Login']");
+    private By errorLocationMsg = By.xpath("//p[contains(text(),'You will be prompted to let the store know your location.')]");
+    private By OK = By.xpath("//button[text()='Ok']");
+
+    public Element OK() throws IOException, InterruptedException {
+        return $(OK);
+    }
+
+    public Element errorLocationMsg() throws IOException, InterruptedException {
+        return $(errorLocationMsg);
+    }
 
     public Element loginBtn() throws IOException, InterruptedException {
         return $(loginBtn);
