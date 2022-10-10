@@ -204,6 +204,12 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     And the user waits for the page to load
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
+    #Comment: the user click on back office
+    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
     #Comment: The user wait until page is loading
     And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
