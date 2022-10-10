@@ -6,6 +6,10 @@ Feature: Online Order - Item with Make Line and Cut and Wrap enabled - with all 
   Scenario: Online_Order_Item_With_MakeLine_And_Cut_And_Wrap_Enabled_With_All_Lines_Enabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
+    #Comment: the User wait page to load
+    And the user waits for the page to load
+    #Comment: the user Click on Error Message if Exists
+    And the user click on OK button if error exists
     #Comment: User wait to visible the page
     And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
     #Comment: User click on continue as guest
