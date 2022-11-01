@@ -1346,10 +1346,10 @@ public class AutoEngValidate extends BaseWebSteps {
     @Then("^the user click on OK button if error exists$")
     public void theUserClickIfError() throws InterruptedException {
         Thread.sleep(5000);
-        int count = getDriver().findElements(By.xpath("//p[contains(text(),'You will be prompted to let the store know your location.')]")).size();
+        int count = getDriver().findElements(By.xpath("//p[contains(text(),'please grant location access.')]")).size();
         if (count > 0) {
-            System.out.println("Error Popup Found : You will be prompted to let the store know your location.");
-            getDriver().findElement(By.xpath("//button[text()='Ok']")).click();
+            System.out.println("Error Popup Found : please grant location access.");
+            getDriver().findElement(By.xpath("//button[text()='OK']")).click();
             Thread.sleep(1000);
         }
         else {
