@@ -10,7 +10,7 @@ public class PostUnPostInventoryEntryPage extends BasePO {
 
     private By post = By.xpath("//div[@data-title='Warning']//button[text()='Post']");
     private By unPost = By.xpath("//div[@data-title='Warning']//button[text()='Un-Post']");
-    private By warningTxt = By.xpath("//div[contains(@id,'div_Message')]//span[text()='Warning']");
+    private By warningTxt = By.xpath("//div[text()='Warning']");
     private By validatePost = By.xpath("//i[@class='icon-check']");
 
     public Element validatePost() throws IOException, InterruptedException {
