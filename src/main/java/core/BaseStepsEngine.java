@@ -551,5 +551,10 @@ public class BaseStepsEngine implements En {
                 ZonedDateTime.now(ZoneOffset.UTC).minusDays(Long.parseLong(numberOfDays)).format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
         return requiredDateWithTime;
     }
+    public static String getFutureDate(String numberOfDays) {
+        String requiredDateWithTime =
+                ZonedDateTime.now(ZoneOffset.UTC).plusDays(Long.parseLong(numberOfDays)).format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        return requiredDateWithTime;
+    }
 
 }

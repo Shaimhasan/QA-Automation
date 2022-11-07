@@ -14,10 +14,11 @@
       "IdNumberExpectedValue": ": Automation Testing US",
       "IDNumberXpath3": "//td[text()='",
       "IdNumberXpath4": ": Automation Testing US']",
-      "couponNumber": "Auto",
-      "discount": "10",
-      "backGroundColor": "#4f81bd",
-      "DetailsClickXpath1": "(//td[text()='"
+      "couponNumber": "455",
+      "minOrderAmt": "4",
+      "maxOrderAmt": "5",
+      "discountAmt": "10",
+      "backGroundColor": "#4f81bd"
     },
     "dataCriteria": {
     },

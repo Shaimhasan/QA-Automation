@@ -16,8 +16,10 @@
       "IdNumberXpath4": ": Automation Testing US']",
       "DetailsClickXpath1": "(//td[text()='",
       "DetailsClickActionXpath2": ": Automation Testing US Changed TO America']//preceding-sibling::td[text()='Edit'])[1]//following-sibling::td)[5]/button",
-      "couponNumber": "Auto",
-      "discount": "10",
+      "couponNumber": "455",
+      "minOrderAmt": "4",
+      "maxOrderAmt": "5",
+      "discountAmt": "10",
       "backGroundColor": "#4f81bd"
     },
     "dataCriteria": {

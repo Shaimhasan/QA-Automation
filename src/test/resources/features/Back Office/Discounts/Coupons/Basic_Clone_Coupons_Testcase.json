@@ -20,8 +20,10 @@
       "DetailsClickXpath1": "(//td[text()='",
       "ItemNumberXpath3": "(//td[text()='",
       "ItemNumberXpath4": "']//following-sibling::td)[1]",
-      "couponNumber": "Auto",
-      "discount": "10",
+      "couponNumber": "455",
+      "minOrderAmt": "4",
+      "maxOrderAmt": "5",
+      "discountAmt": "10",
       "backGroundColor": "#4f81bd"
     },
     "dataCriteria": {

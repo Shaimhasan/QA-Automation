@@ -196,7 +196,19 @@ public class AutoEngSetSelect extends BaseWebSteps {
         value1 = parseValue(value1);
         Element textBox = getObject(objectName, pageName);
 
-        enterDateInTextBox(value1, textBox);
+        enterPastDateInTextBox(value1, textBox);
+
+        logStepMessage(String.format(ENTERED_VALUE, value1));
+    }
+
+    @When("^the user enters \"([^\"]*)\" days after with current date into the \"([^\"]*)\" textbox at the \"([^\"]*)\" page$")
+    public void theUserEntersFutureDateTextboxAtThePage(String value1,
+                                                        String objectName,
+                                                        String pageName) {
+        value1 = parseValue(value1);
+        Element textBox = getObject(objectName, pageName);
+
+        enterFutureDateInTextBox(value1, textBox);
 
         logStepMessage(String.format(ENTERED_VALUE, value1));
     }

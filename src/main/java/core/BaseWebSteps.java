@@ -359,8 +359,21 @@ public class BaseWebSteps extends BaseStepsEngine {
         }
     }
 
-    protected void enterDateInTextBox(String val1, Element textBox) {
+    protected void enterPastDateInTextBox(String val1, Element textBox) {
         String pastDates = getPastDate(val1);
+        if (textBox.getValue() != null) {
+            if (textBox.getValue().isEmpty()) {
+                textBox.sendKeys(pastDates);
+            } else {
+                textBox.sendKeysChord(pastDates);
+            }
+        } else {
+            textBox.sendKeysChord(pastDates);
+        }
+    }
+
+    protected void enterFutureDateInTextBox(String val1, Element textBox) {
+        String pastDates = getFutureDate(val1);
         if (textBox.getValue() != null) {
             if (textBox.getValue().isEmpty()) {
                 textBox.sendKeys(pastDates);

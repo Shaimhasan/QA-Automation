@@ -8,27 +8,57 @@ import java.io.IOException;
 
 public class EditCouponsPage extends BasePO {
 
-    private By nameUS = By.xpath("//div[text()='English - United States: ']//following-sibling::input[@name='CouponName']");
-    private By descriptionUS = By.xpath("//div[text()='English - United States:']//following-sibling::input[@name='CouponDescription']");
-    private By nameSpanish = By.xpath("//div[text()='Spanish - Mexico: ']//following-sibling::input[@name='CouponName']");
-    private By descriptionSpanish = By.xpath("//div[text()='Spanish - Mexico:']//following-sibling::input[@name='CouponDescription']");
-    private By couponNumber = By.id("txtCouponNo");
+    private By nameUS = By.xpath("//input[@id='txt_BO_CP_CPN_ADDEDT_Name_en-us']");
+    private By descriptionUS = By.xpath("//input[@id='txt_BO_CP_CPN_ADDEDT_Desc_en-us']");
+    private By nameSpanish = By.xpath("//input[@id='txt_BO_CP_CPN_ADDEDT_Name_sp-mx']");
+    private By descriptionSpanish = By.xpath("//input[@id='txt_BO_CP_CPN_ADDEDT_Desc_sp-mx']");
+    private By couponNumber = By.xpath("//input[@id='txt_BO_CP_CPN_ADDEDT_CouponNumber']");
     private By backGroundColor = By.id("txtCouponBackgroundColor");
-    private By discount = By.id("txtCouponDiscount");
-    private By couponsTxtPopup = By.xpath("//span[@class='ui-dialog-title']");
-    private By save = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='Save']");
-    private By cancel = By.xpath("//div[@class='ui-dialog-buttonset']//button[text()='Cancel']");
+    private By discountAmt = By.xpath("//input[@id='inp_BO_CP_CPN_ADDEDT_PricePoint_Discount_0']");
+    private By couponsTxtPopup = By.xpath("//span[@id='div_BO_CP_CPN_ADDEDT_DIALOG_Header_Title']");
+    private By save = By.xpath("//button[@id='btn_BO_CP_CPN_ADDEDT_Save']");
+    private By discountType = By.xpath("//select[@id='ddl_BO_CP_CPN_ADDEDT_DiscountType']");
+    private By minOrderAmt = By.xpath("//input[@id='txt_BO_CP_CPN_ADDEDT_MinimumOrderAmount']");
+    private By maxOrderAmt = By.xpath("//input[@id='txt_BO_CP_CPN_ADDEDT_MaximumDiscountAmount']");
+    private By startDate = By.xpath("//input[@id='inp_BO_CP_CPN_ADDEDT_PricePoint_StartDate_0']");
+    private By endDate = By.xpath("//input[@id='inp_BO_CP_CPN_ADDEDT_PricePoint_EndDate_0']");
+    private By orderTypes = By.xpath("//input[@id='chk_BO_CP_CPN_ADDEDT_OSTs_1_2']");
+    private By cancel = By.xpath("//button[@id='btn_BO_CP_CPN_ADDEDT_Cancel']");
 
     public Element cancel() throws IOException, InterruptedException {
         return $(cancel);
+    }
+
+    public Element orderTypes() throws IOException, InterruptedException {
+        return $(orderTypes);
+    }
+
+    public Element endDate() throws IOException, InterruptedException {
+        return $(endDate);
+    }
+
+    public Element startDate() throws IOException, InterruptedException {
+        return $(startDate);
+    }
+
+    public Element maxOrderAmt() throws IOException, InterruptedException {
+        return $(maxOrderAmt);
+    }
+
+    public Element minOrderAmt() throws IOException, InterruptedException {
+        return $(minOrderAmt);
+    }
+
+    public Element discountType() throws IOException, InterruptedException {
+        return $(discountType);
     }
 
     public Element couponsTxtPopup() throws IOException, InterruptedException {
         return $(couponsTxtPopup);
     }
 
-    public Element discount() throws IOException, InterruptedException {
-        return $(discount);
+    public Element discountAmt() throws IOException, InterruptedException {
+        return $(discountAmt);
     }
 
     public Element backGroundColor() throws IOException, InterruptedException {

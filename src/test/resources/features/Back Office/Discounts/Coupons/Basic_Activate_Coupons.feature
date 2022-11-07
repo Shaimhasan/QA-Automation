@@ -45,30 +45,29 @@ Feature: Basic Activate Coupons
     And store the displayed text of the "nameUS" element at the "AddCouponsPage" page into the data dictionary with key "nameUS_value1"
     #Comment: the user enter text
     And the user enters "#(descriptionUS)" into the "descriptionUS" textbox at the "AddCouponsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "descriptionUS" element at the "AddCouponsPage" page into the data dictionary with key "descriptionUS_value1"
     #Comment: the user enter text
     And the user enters "#(nameSpanish)" into the "nameSpanish" textbox at the "AddCouponsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "nameSpanish" element at the "AddCouponsPage" page into the data dictionary with key "nameSpanish_value1"
     #Comment: the user enters the name
     And the user enters "#(descriptionSpanish)" into the "descriptionSpanish" textbox at the "AddCouponsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "descriptionSpanish" element at the "AddCouponsPage" page into the data dictionary with key "descriptionSpanish_value1"
     #Comment: the user enters the couponNumber
     And the user enters "#(couponNumber)" into the "couponNumber" textbox at the "AddCouponsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "couponNumber" element at the "AddCouponsPage" page into the data dictionary with key "couponNumber_value1"
-    #Comment: the user enters the discount
-    And the user enters "#(discount)" into the "discount" textbox at the "AddCouponsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "discount" element at the "AddCouponsPage" page into the data dictionary with key "discount_value1"
-    #Comment: the user enters the backGroundColor
-    And the user enters "#(backGroundColor)" into the "backGroundColor" textbox at the "AddCouponsPage" page
-    #Comment: the user store the text on data dictionary
-    And store the displayed text of the "backGroundColor" element at the "AddCouponsPage" page into the data dictionary with key "backGroundColor_value1"
+    #Comment: the user select Discount type
+    And the user selects value "Fixed Price" from the "discountType" dropdown at the "AddCouponsPage" page
+    #Comment: the user enters the minOrderAmt
+    And the user enters "#(minOrderAmt)" into the "minOrderAmt" textbox at the "AddCouponsPage" page
+    #Comment: the user enters the minOrderAmt
+    And the user enters "#(maxOrderAmt)" into the "maxOrderAmt" textbox at the "AddCouponsPage" page
+    #Comment: the user enters the minOrderAmt
+    And the user enters "#(discountAmt)" into the "discountAmt" textbox at the "AddCouponsPage" page
+    #Comment: the user enter start date
+    And the user enters "0" days before with current date into the "startDate" textbox at the "AddCouponsPage" page
+    #Comment: the user enter futire date
+    And the user enters "2" days after with current date into the "endDate" textbox at the "AddCouponsPage" page
+    #Comment: the user select Order Types
+    And the user clicks the "orderTypes" element at the "AddCouponsPage" page
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddCouponsPage" page
+
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user click on the ID number row
