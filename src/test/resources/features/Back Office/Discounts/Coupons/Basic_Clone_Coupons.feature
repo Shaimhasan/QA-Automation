@@ -59,14 +59,27 @@ Feature: Basic Clone Coupons
     And the user enters "#(couponNumber)" into the "couponNumber" textbox at the "AddCouponsPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "couponNumber" element at the "AddCouponsPage" page into the data dictionary with key "couponNumber_value1"
-    #Comment: the user enters the discount
-    And the user enters "#(discount)" into the "discount" textbox at the "AddCouponsPage" page
+    #Comment: the user select Discount type
+    And the user selects value "Fixed Price" from the "discountType" dropdown at the "AddCouponsPage" page
+    #Comment: the user enters the minOrderAmt
+    And the user enters "#(minOrderAmt)" into the "minOrderAmt" textbox at the "AddCouponsPage" page
     #Comment: the user store the text on data dictionary
-    And store the displayed text of the "discount" element at the "AddCouponsPage" page into the data dictionary with key "discount_value1"
-    #Comment: the user enters the backGroundColor
-    And the user enters "#(backGroundColor)" into the "backGroundColor" textbox at the "AddCouponsPage" page
+    And store the displayed text of the "minOrderAmt" element at the "AddCouponsPage" page into the data dictionary with key "minOrderAmt_value1"
+    #Comment: the user enters the minOrderAmt
+    And the user enters "#(maxOrderAmt)" into the "maxOrderAmt" textbox at the "AddCouponsPage" page
     #Comment: the user store the text on data dictionary
-    And store the displayed text of the "backGroundColor" element at the "AddCouponsPage" page into the data dictionary with key "backGroundColor_value1"
+    And store the displayed text of the "maxOrderAmt" element at the "AddCouponsPage" page into the data dictionary with key "maxOrderAmt_value1"
+    #Comment: the user enters the minOrderAmt
+    And the user enters "#(discountAmt)" into the "discountAmt" textbox at the "AddCouponsPage" page
+    #Comment: the user store the text on data dictionary
+    And store the displayed text of the "discountAmt" element at the "AddCouponsPage" page into the data dictionary with key "discountAmt_value1"
+    #Comment: the user enter start date
+    And the user enters "0" days before with current date into the "startDate" textbox at the "AddCouponsPage" page
+    #Comment: the user enter futire date
+    And the user enters "2" days after with current date into the "endDate" textbox at the "AddCouponsPage" page
+    #Comment: the user select Order Types
+    And the user clicks the "orderTypes" element at the "AddCouponsPage" page
+
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddCouponsPage" page
     #Comment: The user wait until page is loading
@@ -117,6 +130,7 @@ Feature: Basic Clone Coupons
     And the user clicks the "editBtn" element at the "CouponsPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "couponsTxtPopup" element to be "VISIBLE" on the "EditCouponsPage" page
+
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "EditCouponsPage" page into the data dictionary with key "nameUS_value2"
     #Comment: the user store the text on data dictionary
@@ -127,10 +141,15 @@ Feature: Basic Clone Coupons
     And store the displayed text of the "descriptionSpanish" element at the "EditCouponsPage" page into the data dictionary with key "descriptionSpanish_value2"
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "couponNumber" element at the "EditCouponsPage" page into the data dictionary with key "couponNumber_value2"
+    #Comment: the user validate drop down value
+    And the user validates the "Fixed Price" value for "discountType" element is selected at the "AddCouponsPage" page "validate_value" "HardStopOnFailure"
     #Comment: the user store the text on data dictionary
-    And store the displayed text of the "discount" element at the "EditCouponsPage" page into the data dictionary with key "discount_value2"
+    And store the displayed text of the "minOrderAmt" element at the "EditCouponsPage" page into the data dictionary with key "minOrderAmt_value2"
     #Comment: the user store the text on data dictionary
-    And store the displayed text of the "backGroundColor" element at the "EditCouponsPage" page into the data dictionary with key "backGroundColor_value2"
+    And store the displayed text of the "maxOrderAmt" element at the "EditCouponsPage" page into the data dictionary with key "maxOrderAmt_value2"
+    #Comment: the user store the text on data dictionary
+    And store the displayed text of the "discountAmt" element at the "EditCouponsPage" page into the data dictionary with key "discountAmt_value2"
+
     #Comment: user validate Name US Value
     And the user validates the data dictionary value of "#(nameUS_value1)" is "Equal To" data dictionary value of "#(nameUS_value2)" "validate_nameUS_value" "HardStopOnFailure"
     #Comment: user validate descriptionUS Value
@@ -142,8 +161,12 @@ Feature: Basic Clone Coupons
     #Comment: user validate descriptionSpanish Value
     And the user validates the data dictionary value of "#(couponNumber_value1)" is "Equal To" data dictionary value of "#(couponNumber_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
     #Comment: user validate descriptionSpanish Value
-    And the user validates the data dictionary value of "#(discount_value1)" is "Equal To" data dictionary value of "#(discount_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
+    And the user validates the data dictionary value of "#(minOrderAmt_value1)" is "Equal To" data dictionary value of "#(minOrderAmt_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
     #Comment: user validate descriptionSpanish Value
-    And the user validates the data dictionary value of "#(backGroundColor_value1)" is "Equal To" data dictionary value of "#(backGroundColor_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
+    And the user validates the data dictionary value of "#(maxOrderAmt_value1)" is "Equal To" data dictionary value of "#(maxOrderAmt_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
+    #Comment: user validate descriptionSpanish Value
+    And the user validates the data dictionary value of "#(discountAmt_value1)" is "Equal To" data dictionary value of "#(discountAmt_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
+    #Comment: the user validate the checkbox checked
+    And the user validates the item in the "orderTypes" checkbox is checked at the "EditCouponsPage" page "validate_value" "HardStopOnFailure"
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditCouponsPage" page

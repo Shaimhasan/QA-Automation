@@ -14,8 +14,8 @@ public class CouponsPage extends BasePO {
     private By history = By.id("btn_BO_HISTORY");
     private By actAndDeact = By.id("btn_BO_CP_CPN_AVAL");
     private By cloneBtn = By.id("btn_BO_CP_CPN_Clone");
-    private By cloneConfirmationBtn = By.xpath("//div[contains(text(),'Are you sure you want to clone')]/..//following-sibling::div//button[text()='Clone']");
-    private By cloneWarningTxt = By.xpath("//span[text()='Warning']");
+    private By cloneConfirmationBtn = By.xpath("//p[contains(text(),'Are you sure you want to clone')]/..//following-sibling::div//button[text()='Clone']");
+    private By cloneWarningTxt = By.xpath("//div[text()='Warning']");
 
     public Element cloneWarningTxt() throws IOException, InterruptedException {
         return $(cloneWarningTxt);
