@@ -60,7 +60,7 @@ Feature: Basic Edit Coupons
     #Comment: the user enters the minOrderAmt
     And the user enters "#(discountAmt)" into the "discountAmt" textbox at the "AddCouponsPage" page
     #Comment: the user enter start date
-    And the user enters "0" days before with current date into the "startDate" textbox at the "AddCouponsPage" page
+    And the user enters "1" days before with current date into the "startDate" textbox at the "AddCouponsPage" page
     #Comment: the user enter futire date
     And the user enters "2" days after with current date into the "endDate" textbox at the "AddCouponsPage" page
     #Comment: the user select Order Types
