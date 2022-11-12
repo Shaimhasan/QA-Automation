@@ -16,6 +16,16 @@ public class CouponsPage extends BasePO {
     private By cloneBtn = By.id("btn_BO_CP_CPN_Clone");
     private By cloneConfirmationBtn = By.xpath("//p[contains(text(),'Are you sure you want to clone')]/..//following-sibling::div//button[text()='Clone']");
     private By cloneWarningTxt = By.xpath("//div[text()='Warning']");
+    private By delete = By.id("btn_BO_CP_CPN_Del");
+    private By deleteOnWarning = By.xpath("//div[text()='Warning']/..//button[text()='Delete']");
+
+    public Element deleteOnWarning() throws IOException, InterruptedException {
+        return $(deleteOnWarning);
+    }
+
+    public Element delete() throws IOException, InterruptedException {
+        return $(delete);
+    }
 
     public Element cloneWarningTxt() throws IOException, InterruptedException {
         return $(cloneWarningTxt);
