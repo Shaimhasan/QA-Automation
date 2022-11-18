@@ -45,7 +45,7 @@ Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Cut an
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "existingCustLogin" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
+    And the user waits for the "checkoutTxt" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
     #Comment: the user enter text
     And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter text

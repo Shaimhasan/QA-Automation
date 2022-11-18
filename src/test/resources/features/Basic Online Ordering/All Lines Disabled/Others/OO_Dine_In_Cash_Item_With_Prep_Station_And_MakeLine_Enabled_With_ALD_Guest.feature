@@ -37,7 +37,7 @@ Feature: Online Order - Dine In Cash - item with Prep Station and Make Line enab
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "existingCustLogin" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
+    And the user waits for the "checkoutTxt" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
     #Comment: the user enter text
     And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter text

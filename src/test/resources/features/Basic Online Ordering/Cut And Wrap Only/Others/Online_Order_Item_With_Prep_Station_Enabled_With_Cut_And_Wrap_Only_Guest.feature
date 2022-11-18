@@ -37,7 +37,7 @@ Feature: Online Order - Item with Prep Station enabled - with Cut and Wrap Only 
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "existingCustLogin" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
+    And the user waits for the "checkoutTxt" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
     #Comment: the user enter text
     And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter text
