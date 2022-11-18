@@ -9,6 +9,7 @@ import java.io.IOException;
 public class ExistingCustLoginOLOPage extends BasePO {
 
     private By existingCustLogin = By.xpath("//div[text()='Existing customer login']");
+    private By checkoutTxt = By.xpath("//label[text()='Checkout']");
     private By firstName = By.id("txt_CHKOUT_name");
     private By lastName = By.id("txt_CHKOUT_lastname");
     private By email = By.id("eml_CHKOUT_email1");
@@ -26,6 +27,10 @@ public class ExistingCustLoginOLOPage extends BasePO {
     private By zipCode = By.id("txt_CHKOUT_CCZip");
     private By billingAddress = By.id("txt_CHKOUT_CCAddr");
     private By customerInfo = By.xpath("//div[text()='Contact Information']");
+
+    public Element checkoutTxt() throws IOException, InterruptedException {
+        return $(checkoutTxt);
+    }
 
     public Element customerInfo() throws IOException, InterruptedException {
         return $(customerInfo);
