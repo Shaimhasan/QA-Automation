@@ -10,8 +10,8 @@ public class ActDeactVendorsPage extends BasePO {
 
 
     private By activeChkBx = By.xpath("//input[normalize-space(@id)='chk_BO_IN_VND_AVAL_Active']");
-    private By save = By.xpath("//div[@id='div_BO_IN_VND_AVAL_DIALOG_modal_view']//button[text()='Save']");
-    private By cancel = By.xpath("//div[@id='div_BO_IN_VND_AVAL_DIALOG_modal_view']//button[text()='Cancel']");
+    private By save = By.xpath("//button[@id='btn_BO_IN_VND_AVAL_Save']");
+    private By cancel = By.xpath("//button[@id='btn_BO_IN_VND_AVAL_Cancel']");
     private By actDeactTextVal = By.xpath("//div[@id='div_BO_IN_VND_AVAL_DIALOG_modal_view']//span[text()='Activate / Deactivate']");
 
     public Element activeChkBx() throws IOException, InterruptedException {

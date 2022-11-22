@@ -15,7 +15,7 @@ public class MenuItemsPage extends BasePO {
     private By history = By.id("btn_BO_HISTORY");
     private By actAndDeact = By.id("btn_BO_MN_ITM_AVAL");
     private By cloneBtn = By.id("btn_BO_MN_ITM_Clone");
-    private By cloneConfirmationBtn = By.xpath("//div[contains(text(),'Are you sure you want to clone')]/..//following-sibling::div//button[text()='Clone']");
+    private By cloneConfirmationBtn = By.xpath("//p[contains(text(),'Are you sure you want to clone')]/..//following-sibling::div//button[text()='Clone']");
     private By cloneWarningTxt = By.xpath("//div[text()='Warning']");
     private By menuItemTxt = By.xpath("//div[text()='Menu Items']");
 

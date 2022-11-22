@@ -26,12 +26,12 @@ public class EditMenuItemsPage extends BasePO {
     private By deliverySizeChkBx = By.id("chk_BO_MN_ITM_ADDEDT_Sizes_Delivery_236");
     private By defualt = By.id("rdo_BO_MN_ITM_ADDEDT_Sizes_Default_235");
     private By save = By.xpath("//button[@onclick='BO_MN_ITM_ADDEDT_Save();']");
-    private By dineInCheckBoxIsSelected = By.xpath("//label[@id='chk_BO_MN_ITM_ADDEDT_DineIn']");
-    private By TakeOutCheckBoxIsSelected = By.xpath("//label[@id='chk_BO_MN_ITM_ADDEDT_TakeOut']");
-    private By deliveryCheckBoxIsSelected = By.xpath("//label[@id='chk_BO_MN_ITM_ADDEDT_Delivery']");
-    private By dineInCheckBoxIsSelectedSize = By.xpath("//label[@id='chk_BO_MN_ITM_ADDEDT_Sizes_DineIn_235']");
-    private By TakeOutCheckBoxIsSelectedSize = By.xpath("//label[@id='chk_BO_MN_ITM_ADDEDT_Sizes_TakeOut_235']");
-    private By deliveryCheckBoxIsSelectedSize = By.xpath("//label[@id='chk_BO_MN_ITM_ADDEDT_Sizes_Delivery_235']");
+    private By dineInCheckBoxIsSelected = By.xpath("//input[normalize-space(@id)='chk_BO_MN_ITM_ADDEDT_DineIn']");
+    private By TakeOutCheckBoxIsSelected = By.xpath("//input[normalize-space(@id)='chk_BO_MN_ITM_ADDEDT_TakeOut']");
+    private By deliveryCheckBoxIsSelected = By.xpath("//input[normalize-space(@id)='chk_BO_MN_ITM_ADDEDT_Delivery']");
+    private By dineInCheckBoxIsSelectedSize = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_DineIn_0']");
+    private By TakeOutCheckBoxIsSelectedSize = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_TakeOut_0']");
+    private By deliveryCheckBoxIsSelectedSize = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_Delivery_0']");
     private By defaultSize = By.xpath("//label[@id='rdo_BO_MN_ITM_ADDEDT_Sizes_Default_235']");
     private By cancelBtn = By.xpath("//button[@onclick='BO_MN_ITM_ADDEDT_Close();']");
 
