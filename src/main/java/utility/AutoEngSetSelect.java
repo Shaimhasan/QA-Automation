@@ -139,6 +139,16 @@ public class AutoEngSetSelect extends BaseWebSteps {
         logStepMessage(String.format(ENTERED_VALUE, value));
     }
 
+    @When("^the user custom enters \"([^\"]*)\" into the \"([^\"]*)\" textbox at the \"([^\"]*)\" page$")
+    public void theUserCustomEntersIntoTheTextboxAtThePage(String value,
+                                                           String objectName,
+                                                           String pageName) {
+        value = parseValue(value);
+        Element textBox = getObject(objectName, pageName);
+        textBox.sendKeys(value);
+        logStepMessage(String.format(ENTERED_VALUE, value));
+    }
+
     @When("^the user enters dynamic email \"([^\"]*)\" and \"([^\"]*)\" into the \"([^\"]*)\" textbox at the \"([^\"]*)\" page$")
     public void theUserEntersDyanamicEmailIdIntoTheTextboxAtThePage(String value1,
                                                                     String value2,

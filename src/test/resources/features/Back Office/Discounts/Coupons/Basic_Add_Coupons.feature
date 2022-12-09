@@ -74,10 +74,14 @@ Feature: Basic Add Coupons
     And the user enters "#(discountAmt)" into the "discountAmt" textbox at the "AddCouponsPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "discountAmt" element at the "AddCouponsPage" page into the data dictionary with key "discountAmt_value1"
-    #Comment: the user enter start date
-    And the user enters "1" days before with current date into the "startDate" textbox at the "AddCouponsPage" page
-    #Comment: the user enter futire date
-    And the user enters "2" days after with current date into the "endDate" textbox at the "AddCouponsPage" page
+    #Comment: the user enters the startDate
+    And the user custom enters "#(startDate)" into the "startDate" textbox at the "AddCouponsPage" page
+    #Comment: the user enters the endDate
+    And the user custom enters "#(endDate)" into the "endDate" textbox at the "AddCouponsPage" page
+#    #Comment: the user enter start date
+#    And the user enters "1" days before with current date into the "startDate" textbox at the "AddCouponsPage" page
+#    #Comment: the user enter futire date
+#    And the user enters "2" days after with current date into the "endDate" textbox at the "AddCouponsPage" page
     #Comment: the user select Order Types
     And the user clicks the "orderTypes" element at the "AddCouponsPage" page
 

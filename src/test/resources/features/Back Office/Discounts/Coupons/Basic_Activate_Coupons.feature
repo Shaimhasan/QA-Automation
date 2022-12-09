@@ -59,10 +59,15 @@ Feature: Basic Activate Coupons
     And the user enters "#(maxOrderAmt)" into the "maxOrderAmt" textbox at the "AddCouponsPage" page
     #Comment: the user enters the minOrderAmt
     And the user enters "#(discountAmt)" into the "discountAmt" textbox at the "AddCouponsPage" page
+    And the user waits "2000" seconds
+    #Comment: the user enters the startDate
+    And the user custom enters "#(startDate)" into the "startDate" textbox at the "AddCouponsPage" page
+    #Comment: the user enters the endDate
+    And the user custom enters "#(endDate)" into the "endDate" textbox at the "AddCouponsPage" page
     #Comment: the user enter start date
-    And the user enters "1" days before with current date into the "startDate" textbox at the "AddCouponsPage" page
+    #And the user enters "1" days before with current date into the "startDate" textbox at the "AddCouponsPage" page
     #Comment: the user enter futire date
-    And the user enters "2" days after with current date into the "endDate" textbox at the "AddCouponsPage" page
+    #And the user enters "2" days after with current date into the "endDate" textbox at the "AddCouponsPage" page
     #Comment: the user select Order Types
     And the user clicks the "orderTypes" element at the "AddCouponsPage" page
     #Cooment: the user click save

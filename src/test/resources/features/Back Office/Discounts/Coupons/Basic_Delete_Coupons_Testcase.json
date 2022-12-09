@@ -18,7 +18,9 @@
       "minOrderAmt": "4",
       "maxOrderAmt": "5",
       "discountAmt": "10",
-      "backGroundColor": "#4f81bd"
+      "backGroundColor": "#4f81bd",
+      "startDate": "09122022",
+      "endDate": "12122025"
     },
     "dataCriteria": {
     },
