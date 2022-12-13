@@ -9,7 +9,7 @@ import java.io.IOException;
 public class AddRecievingPage extends BasePO {
 
     private By invoiceNum = By.id("txt_BO_IN_REC_ADDEDT_InvoiceNo");
-    private By automation = By.xpath("//div[text()='Automation Vendor']");
+    private By automation = By.xpath("//div[text()='Automation Testing1031']");
     private By date = By.id("txt_BO_IN_REC_ADDEDT_RecDate");
     private By tax = By.id("txt_BO_IN_REC_ADDEDT_Tax");
     private By freight = By.id("txt_BO_IN_REC_ADDEDT_Freight");
