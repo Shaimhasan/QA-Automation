@@ -2,7 +2,7 @@ Feature: Basic Online Order - Delivery Credit Card - with Prep Station and Cut a
   This script is to validate Basic Online Order - Delivery Credit Card - with Prep Station and Cut and Wrap - Guest
 
   @issue=2812
-  @Basic_Online_Order_Delivery_Credit_Card_With_PC_Guest @RegressionSuite @Delivery @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_Delivery @OLO_Prep_Station_And_Cut_And_Wrap_Delivery_Guest
+  @Basic_Online_Order_Delivery_Credit_Card_With_PC_Guest @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_Delivery @OLO_Prep_Station_And_Cut_And_Wrap_Delivery_Guest
   Scenario: Basic_Online_Order_Delivery_Credit_Card_With_PC_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

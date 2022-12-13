@@ -2,7 +2,7 @@ Feature: Basic Online Order - Delivery Cash - with Prep Station and Make Line - 
   This script is to validate Basic Online Order - Delivery Cash - with Prep Station and Make Line - Existing User
 
   @issue=1835
-  @Basic_Online_Order_Delivery_Cash_With_PM_Existing_User @RegressionSuite @Delivery @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Delivery @OLO_Prep_Station_And_MakeLine_Delivery_Existing_User
+  @Basic_Online_Order_Delivery_Cash_With_PM_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_Delivery @OLO_Prep_Station_And_MakeLine_Delivery_Existing_User
   Scenario: Basic_Online_Order_Delivery_Cash_With_PM_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

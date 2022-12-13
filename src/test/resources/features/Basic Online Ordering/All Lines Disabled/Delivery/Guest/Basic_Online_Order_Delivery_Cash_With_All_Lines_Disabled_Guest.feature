@@ -2,7 +2,7 @@ Feature: Basic Online Order - Delivery Cash - with all lines disabled - Guest
   This script is to validate Basic Online Order - Delivery Cash - with all lines disabled - Guest
 
   @issue=1756
-  @Basic_Online_Order_Delivery_Cash_With_All_Lines_Disabled_Guest @RegressionSuite @Delivery @OLO @OLO_ALD @OLO_ALD_Delivery @OLO_ALD_Delivery_Guest
+  @Basic_Online_Order_Delivery_Cash_With_All_Lines_Disabled_Guest @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_ALD @OLO_ALD_Delivery @OLO_ALD_Delivery_Guest
   Scenario: Basic_Online_Order_Delivery_Cash_With_All_Lines_Disabled_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"

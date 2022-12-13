@@ -2,7 +2,7 @@ Feature: Basic Online Order - Delivery Credit Card - with Make Line and Cut and 
   This script is to validate Basic Online Order - Delivery Credit Card - with Make Line and Cut and Wrap - Guest
 
   @issue=1773
-  @Basic_Online_Order_Delivery_Credit_Card_With_MC_Guest @RegressionSuite @Delivery @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_Delivery @OLO_MakeLine_And_Cut_And_Wrap_Delivery_Guest
+  @Basic_Online_Order_Delivery_Credit_Card_With_MC_Guest @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_Delivery @OLO_MakeLine_And_Cut_And_Wrap_Delivery_Guest
   Scenario: Basic_Online_Order_Delivery_Credit_Card_With_MC_Guest_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
