@@ -81,7 +81,7 @@ Feature: Online Order - Item with Prep Station enabled - with all lines enabled 
     And the user refreshes the page
 
     #Comment: User launch online ordering web application in chrome browser
-    Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
+    Given the web application "Online_Ordering_Web_URL" is launched in a "NewTab"
     #Comment: the User wait page to load
     And the user waits for the page to load
     #Comment: the user Click on Error Message if Exists
