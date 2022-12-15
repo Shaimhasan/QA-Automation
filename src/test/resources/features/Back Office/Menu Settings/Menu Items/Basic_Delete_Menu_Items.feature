@@ -1,8 +1,9 @@
-Feature: Basic Deactivate Menu Items
-  This script is to validate Deactivate Menu Items
+@BasicAddMenuItems
+Feature: Basic Delete Menu Items
+  This script is to validate Delete Menu Items
 
-  @Basic_Deactivate_Menu_Items @RegressionSuite @BO_MenuItems @Menu_Settings @Back_Office
-  Scenario: Basic_Deactivate_Menu_Items_Testcase
+  @Basic_Delete_Menu_Items @RegressionSuite @BO_MenuItems @Menu_Settings @Back_Office
+  Scenario: Basic_Delete_Menu_Items_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -39,6 +40,8 @@ Feature: Basic Deactivate Menu Items
     And the user waits for the "addMenuItemText" element to be "VISIBLE" on the "AddMenuItemsPage" page
     #Comment: the user enters the name On ADD Item
     And the user enters "#(nameUS)" into the "nameUS" textbox at the "AddMenuItemsPage" page
+    #Comment: the user store the text on data dictionary
+    And store the displayed text of the "nameUS" element at the "AddMenuItemsPage" page into the data dictionary with key "nameUS_value1"
     #Comment: the user enters the name
     And the user enters "#(webNameUS)" into the "webNameUS" textbox at the "AddMenuItemsPage" page
     #Comment: the user enters the name
@@ -69,81 +72,14 @@ Feature: Basic Deactivate Menu Items
     And the user clicks the "deliverySizeChkBx" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size default
     And the user clicks the "defualt" element at the "AddMenuItemsPage" page
-    #Cooment: the user click on small size dine in
-    And the user clicks the "dineInMediumSizeChkBx" element at the "AddMenuItemsPage" page
-    #Cooment: the user click on small size take out
-    And the user clicks the "takeOutMediumSizeChkBx" element at the "AddMenuItemsPage" page
-    #Cooment: the user click on small size delivery
-    And the user clicks the "deliveryMediumSizeChkBx" element at the "AddMenuItemsPage" page
-    #Cooment: the user click on small size default
-    And the user clicks the "defualtMedium" element at the "AddMenuItemsPage" page
     #Cooment: the user click on small size default
     And the user clicks the "save" element at the "AddMenuItemsPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
-    #Comment: the user store id
+    #Comment: the user store ID
     And store the displayed text of the "table" element at the "MenuItemsPage" page and get the dictionary key value "#(item_Number_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
-    #Comment: the user click on activate Button
-    And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
-    #Comment: the user click small Active CheckBox smallActiveChkBx
-    And the user clicks the "smallActiveChkBx" element at the "ActivateDeActicateMenuItemsPage" page
-    #Comment: the user click save Button
-    And the user clicks the "save" element at the "ActivateDeActicateMenuItemsPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: the user click on the item number row
-    And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
-    #Comment: the user click on deactivate Button
-    And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
-    #Comment: the user click small Active CheckBox
-    And the user clicks the "smallActiveChkBx" element at the "ActivateDeActicateMenuItemsPage" page
-    #Comment: the user click save Button
-    And the user clicks the "save" element at the "ActivateDeActicateMenuItemsPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: the user click on the item number row
-    And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
-    #Comment: the user click on activate Button
-    And the user clicks the "actAndDeact" element at the "MenuItemsPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "activateTxt" element to be "VISIBLE" on the "ActivateDeActicateMenuItemsPage" page
-    #Comment: user validate the check box is selected
-    And the user validates the item in the "smallActiveChkBx" checkbox is Not checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
-    #Comment: the user click on Edit Button
-    And the user clicks the "cancel" element at the "ActivateDeActicateMenuItemsPage" page
-    #Comment: the user page to load
-    And the user waits for the page to load
-    #Comment: the user click on History Button
-    And the user clicks the "history" element at the "MenuItemsPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
-    #Comment: the user validate the Activate and Deactivate
-    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "#(ActionExpectedValue)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(ActionXpath4)" and xpath2 "#(ActionXpath3)" "validate_ID_Number" "HardStopOnFailure"
-    #Comment: the user click on Details Elements
-    And the user clicks the "table" element with dictionary key "#(Id_Number)" at the "HistoryPage" page with xpath1 "#(ActionXpath1)" and xpath2 "#(ActionXpath2)"
-    #Comment: user validate the details model popup
-    And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
-    #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Size: Small - 0 - Active" "validate_Item_Changed_Details" "HardStopOnFailure"
-    #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "1" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
-    #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "True" "validate_Item_Changed_Details" "HardStopOnFailure"
-    #Comment: The user validate the chages on Hisotry Page
-    And the user validates the cell at row "1" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "False" "validate_Item_Changed_Details" "HardStopOnFailure"
-    #Comment: the user click on close button
-    And the user clicks the "close" element at the "HistoryPage" page
-    #Comment: the user click on close button
-    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
-
-     #Comment: the user click on the item number row
-    And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
     #Comment: the user click on Edit Button
     And the user clicks the "deleteBtn" element at the "MenuItemsPage" page
     #Comment: the user click on Delete Button on Warning popup
@@ -152,3 +88,17 @@ Feature: Basic Deactivate Menu Items
     And the user waits for the page to load
     #Comment: the user wait the element is disabled
     And the user waits for the "delete" element to be "DISABLED" on the "MenuItemsPage" page
+    #Comment: the user click on History Button
+    And the user clicks the "history" element at the "ModifiersPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "historyText" element to be "VISIBLE" on the "HistoryPage" page
+    #Comment: user validate the details model popup
+    And the user validates "Compare_Strings" that the "historyText" element is "Equal To" "History" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
+    #Comment append value with dictionary
+    And the user validates and append at leading any value ": " with data dictionary key "#(nameUS_value1)" and store with new dictionary key "nameUS_value1_Latest"
+    #Comment append value with dictionary
+    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Delete']" with data dictionary key "#(nameUS_value1_Latest)" and store with new dictionary key "nameUS_value1_Latest_1"
+    #Comment: the user validate the ID number in History
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Delete" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(nameUS_value1_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
+    #Comment: the user click on close button
+    And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page

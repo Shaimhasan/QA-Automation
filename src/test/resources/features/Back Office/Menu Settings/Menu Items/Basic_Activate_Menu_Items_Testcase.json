@@ -23,11 +23,11 @@
       "ActionXpath2": ": Automation Testing US']//preceding-sibling::td[text()='Activate / Deactivate'])[1]//following-sibling::td)[5]/button",
       "ActionXpath3": ": Automation Testing US']//preceding-sibling::td[text()='Activate / Deactivate'])[1]",
       "ActionXpath4": "(//td[text()='",
-      "SizeSmallActive": "Size: Small - Active",
+      "SizeSmallActive": "Size: Small - 0 - Active",
       "SizeSmallActiveChanged": "Changed",
       "SizeSmallActiveChangedOldValue": "False",
       "SizeSmallActiveChangedNewValue": "True",
-      "SizeSmallAvailable": "Size: Small - Available",
+      "SizeSmallAvailable": "Size: Small - 0 - Available",
       "SizeSmallAvailableChanged": "Changed",
       "SizeSmallAvailableChangedOldValue": "False",
       "SizeSmallAvailableChangedNewValue": "True"

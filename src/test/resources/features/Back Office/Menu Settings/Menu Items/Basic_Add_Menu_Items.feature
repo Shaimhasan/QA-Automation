@@ -160,3 +160,14 @@ Feature: Basic Add Menu Items
     And the user validates "Compare_Strings" that the "table" element is "Equal To" "#(IdNumberExpectedValue)" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(IdNumberXpath4)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on close button
     And the user clicks the "close" element at the "HistoryPage" page
+
+    #Comment: the user click on the item number row
+    And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
+    #Comment: the user click on Edit Button
+    And the user clicks the "deleteBtn" element at the "MenuItemsPage" page
+    #Comment: the user click on Delete Button on Warning popup
+    And the user clicks the "deleteOnWarning" element at the "MenuItemsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: the user wait the element is disabled
+    And the user waits for the "delete" element to be "DISABLED" on the "MenuItemsPage" page
