@@ -105,6 +105,8 @@ Feature: Basic Activate Menu Items
     And the user validates the item in the "smallActiveChkBx" checkbox is checked at the "ActivateDeActicateMenuItemsPage" page "validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click on Edit Button
     And the user clicks the "cancel" element at the "ActivateDeActicateMenuItemsPage" page
+    #Comment: the user page to load
+    And the user waits for the page to load
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup

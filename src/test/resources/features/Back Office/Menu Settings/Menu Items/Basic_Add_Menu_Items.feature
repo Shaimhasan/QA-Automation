@@ -150,6 +150,8 @@ Feature: Basic Add Menu Items
     And the user validates the item in the "defaultSize" checkbox is checked at the "EditMenuItemsPage" page "validate_radio_Btn_Selected" "HardStopOnFailure"
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditMenuItemsPage" page
+    #Comment: the user page to load
+    And the user waits for the page to load
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup
