@@ -4,7 +4,6 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Existing 
   @issue=1841
   @Basic_Online_Order_Delivery_Cash_With_All_Lines_Enabled_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_ALE @OLO_ALE_Delivery @OLO_ALE_Delivery_Existing_User
   Scenario: Basic_Online_Order_Delivery_Cash_With_All_Lines_Enabled_Existing_User_Testcase
-    #Comment: User launch online ordering web application in chrome browser
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
