@@ -4,75 +4,8 @@ Feature: Basic Online Order - Delivery Cash - with Prep Station and Cut and Wrap
   @issue=2817
   @Basic_Online_Order_Delivery_Cash_With_PC_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_Delivery @OLO_Prep_Station_And_Cut_And_Wrap_Delivery_Existing_User
   Scenario: Basic_Online_Order_Delivery_Cash_With_PC_Existing_User_Testcase
-    #Comment: User launch online ordering web application in chrome browser
-    Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
-    #Comment: the User wait page to load
-    And the user waits for the page to load
-    #Comment: the user Click on Error Message if Exists
-    And the user click on OK button if error exists
-    #Comment: User wait to visible the page
-    And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
-    #Comment: Enter the Customer Email into username textbox present on Login Page
-    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
-    #Comment: Enter the Password into Station_Key textbox present on Login Page
-    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
-    #Comment: User click on Login Button
-    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #comment: the user click on existingAddressSelect
-    And the user clicks the "existingAddressSelect" element at the "OrderTypeOLOPage" page
-    #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "existingAddressSelect" checkbox is checked at the "OrderTypeOLOPage" page "validate_Text" "HardStopOnFailure"
-    #Comment: the user click continue button
-    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user validate the text
-    And the user validates "Compare_Strings" that the "orderTypeValidate" element is "Equal To" "#(orderTypeValidate)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
-    #Comment: the user validate the text
-    And the user validates "Compare_Strings" that the "asap" element is "Equal To" "#(ASAP)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
-    #Comment: the user click continue button
-    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "hawaiianPizzaP" element to be "VISIBLE" on the "HomeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "hawaiianPizzaP" element at the "HomeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "veggiePizzaC" element to be "VISIBLE" on the "HomeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "veggiePizzaC" element at the "HomeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "checkOut" element at the "HomeOLOPage" page
-    #comment: the user click on Pay In Store
-    And the user clicks the "cash" element at the "ExistingCustLoginOLOPage" page
-    #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "cash" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
-    #comment: the user click on termsAndCondition
-    And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
-    #Comment: the user click on termsAndCondition
-    And the user clicks the "placeYourOrder" element at the "ExistingCustLoginOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "successMsg" element to be "VISIBLE" on the "OrderModelPopupOLOPage" page
-    #Comment: the user wait to store the element
-    And store the displayed text of the "tranAndOrdNo" element at the "OrderModelPopupOLOPage" page into the data dictionary with key "tranAndOrdNo1"
-    #Comment: the user substring
-    And store the sub string "#(tranAndOrdNo1)" of text with start index "15" and last index "24" into the data dictionary with key "transactionNum"
-    #Comment: the user substring
-    And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
-    #Comment: the user click on OrderModelPopupOLOPage
-    And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
-
     #Comment: Launch Adora Web URL in CHROME browser
-    Given the web application "Adora_Web_URL" is launched in a "NewTab"
+    Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
     When the user enters the user credential "#(Store_Key_AutomationStore)" into the "storeKey" textbox at the "LoginPage" page
     #Comment: Enter the Station_Key into Station_Key textbox present on Login Page
@@ -147,7 +80,75 @@ Feature: Basic Online Order - Delivery Cash - with Prep Station and Cut and Wrap
     #Comment: the user refresh Page
     And the user refreshes the page
 
-    #Comment: user wait for visible of element
+    Given the web application "Online_Ordering_Web_URL" is launched in a "NewTab"
+    #Comment: the User wait page to load
+    And the user waits for the page to load
+    #Comment: the user Click on Error Message if Exists
+    And the user click on OK button if error exists
+    #Comment: User wait to visible the page
+    And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
+    #Comment: Enter the Customer Email into username textbox present on Login Page
+    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
+    #Comment: Enter the Password into Station_Key textbox present on Login Page
+    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
+    #Comment: User click on Login Button
+    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #comment: the user click on existingAddressSelect
+    And the user clicks the "existingAddressSelect" element at the "OrderTypeOLOPage" page
+    #Comment: the user validates the checkbox is selected
+    And the user validates the item in the "existingAddressSelect" checkbox is checked at the "OrderTypeOLOPage" page "validate_Text" "HardStopOnFailure"
+    #Comment: the user click continue button
+    And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: the user validate the text
+    And the user validates "Compare_Strings" that the "orderTypeValidate" element is "Equal To" "#(orderTypeValidate)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
+    #Comment: the user validate the text
+    And the user validates "Compare_Strings" that the "asap" element is "Equal To" "#(ASAP)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
+    #Comment: the user click continue button
+    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "hawaiianPizzaP" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "hawaiianPizzaP" element at the "HomeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "veggiePizzaC" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "veggiePizzaC" element at the "HomeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "checkOut" element at the "HomeOLOPage" page
+    #comment: the user click on Pay In Store
+    And the user clicks the "cash" element at the "ExistingCustLoginOLOPage" page
+    #Comment: the user validates the checkbox is selected
+    And the user validates the item in the "cash" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
+    #comment: the user click on termsAndCondition
+    And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
+    #Comment: the user click on termsAndCondition
+    And the user clicks the "placeYourOrder" element at the "ExistingCustLoginOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "successMsg" element to be "VISIBLE" on the "OrderModelPopupOLOPage" page
+    #Comment: the user wait to store the element
+    And store the displayed text of the "tranAndOrdNo" element at the "OrderModelPopupOLOPage" page into the data dictionary with key "tranAndOrdNo1"
+    #Comment: the user substring
+    And store the sub string "#(tranAndOrdNo1)" of text with start index "15" and last index "24" into the data dictionary with key "transactionNum"
+    #Comment: the user substring
+    And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
+    #Comment: the user click on OrderModelPopupOLOPage
+    And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
+
+    #Comment: the user switched back window
+    And the user switches to window that contains "Adora"
+    #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
