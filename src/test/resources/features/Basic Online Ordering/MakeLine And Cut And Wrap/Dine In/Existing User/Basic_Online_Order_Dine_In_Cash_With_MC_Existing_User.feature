@@ -4,65 +4,8 @@ Feature: Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Ex
   @issue=1825
   @Basic_Online_Order_Dine_In_Cash_With_MC_Existing_User @RegressionSuite @DineIn @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_DineIn @OLO_MakeLine_And_Cut_And_Wrap_DineIn_Existing_User
   Scenario: Basic_Online_Order_Dine_In_Cash_With_MC_Existing_User_Testcase
-    #Comment: User launch online ordering web application in chrome browser
-    Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
-    #Comment: the User wait page to load
-    And the user waits for the page to load
-    #Comment: the user Click on Error Message if Exists
-    And the user click on OK button if error exists
-    #Comment: User wait to visible the page
-    And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
-    #Comment: Enter the Customer Email into username textbox present on Login Page
-    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
-    #Comment: Enter the Password into Station_Key textbox present on Login Page
-    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
-    #Comment: User click on Login Button
-    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user wait hover element
-    And the user hovers over the "dineIn" element at the "OrderTypeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "dineIn" element at the "OrderTypeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "pepperoniPizzaMC" element to be "VISIBLE" on the "HomeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "pepperoniPizzaMC" element at the "HomeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "checkOut" element at the "HomeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "customerInfo" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
-    #comment: the user click on Pay In Store
-    And the user clicks the "payInStore" element at the "ExistingCustLoginOLOPage" page
-    #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "payInStore" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
-    #comment: the user click on termsAndCondition
-    And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
-    #Comment: the user click on termsAndCondition
-    And the user clicks the "placeYourOrder" element at the "ExistingCustLoginOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "successMsg" element to be "VISIBLE" on the "OrderModelPopupOLOPage" page
-    #Comment: the user wait to store the element
-    And store the displayed text of the "tranAndOrdNo" element at the "OrderModelPopupOLOPage" page into the data dictionary with key "tranAndOrdNo1"
-    #Comment: the user substring
-    And store the sub string "#(tranAndOrdNo1)" of text with start index "15" and last index "24" into the data dictionary with key "transactionNum"
-    #Comment: the user substring
-    And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
-    #Comment: the user click on OrderModelPopupOLOPage
-    And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
-
     #Comment: Launch Adora Web URL in CHROME browser
-    Given the web application "Adora_Web_URL" is launched in a "NewTab"
+    Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
     When the user enters the user credential "#(Store_Key_AutomationStore)" into the "storeKey" textbox at the "LoginPage" page
     #Comment: Enter the Station_Key into Station_Key textbox present on Login Page
@@ -137,6 +80,64 @@ Feature: Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Ex
     #Comment: the user refresh Page
     And the user refreshes the page
 
+    Given the web application "Online_Ordering_Web_URL" is launched in a "NewTab"
+    #Comment: the User wait page to load
+    And the user waits for the page to load
+    #Comment: the user Click on Error Message if Exists
+    And the user click on OK button if error exists
+    #Comment: User wait to visible the page
+    And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
+    #Comment: Enter the Customer Email into username textbox present on Login Page
+    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
+    #Comment: Enter the Password into Station_Key textbox present on Login Page
+    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
+    #Comment: User click on Login Button
+    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: the user wait hover element
+    And the user hovers over the "dineIn" element at the "OrderTypeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "dineIn" element at the "OrderTypeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "pepperoniPizzaMC" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "pepperoniPizzaMC" element at the "HomeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "checkOut" element at the "HomeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "customerInfo" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
+    #comment: the user click on Pay In Store
+    And the user clicks the "payInStore" element at the "ExistingCustLoginOLOPage" page
+    #Comment: the user validates the checkbox is selected
+    And the user validates the item in the "payInStore" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
+    #comment: the user click on termsAndCondition
+    And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
+    #Comment: the user click on termsAndCondition
+    And the user clicks the "placeYourOrder" element at the "ExistingCustLoginOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "successMsg" element to be "VISIBLE" on the "OrderModelPopupOLOPage" page
+    #Comment: the user wait to store the element
+    And store the displayed text of the "tranAndOrdNo" element at the "OrderModelPopupOLOPage" page into the data dictionary with key "tranAndOrdNo1"
+    #Comment: the user substring
+    And store the sub string "#(tranAndOrdNo1)" of text with start index "15" and last index "24" into the data dictionary with key "transactionNum"
+    #Comment: the user substring
+    And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
+    #Comment: the user click on OrderModelPopupOLOPage
+    And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
+
+    #Comment: the user switched back window
+    And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
