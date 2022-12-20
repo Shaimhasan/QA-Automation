@@ -80,7 +80,7 @@ Feature: Basic Online Order - Dine In Cash - with Make Line Only - Existing User
     #Comment: the user refresh Page
     And the user refreshes the page
 
-    Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
+    Given the web application "Online_Ordering_Web_URL" is launched in a "NewTab"
     #Comment: the User wait page to load
     And the user waits for the page to load
     #Comment: the user Click on Error Message if Exists
