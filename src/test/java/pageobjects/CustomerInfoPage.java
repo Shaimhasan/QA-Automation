@@ -10,7 +10,7 @@ public class CustomerInfoPage extends BasePO {
 
     private By close = By.id("btnCustomerInfoClose");
     private By textPhone = By.id("txtPhone");
-    private By OK = By.xpath("//button[text()='OK']");
+    private By OK = By.xpath("//button[@id='btnCUSTINFOOK__']");
     private By address = By.id("divAddressInfo");
     private By customerName = By.id("txtName");
     private By custInfoId = By.xpath("//span[text()='Customer Info']");
