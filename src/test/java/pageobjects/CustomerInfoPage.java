@@ -12,8 +12,13 @@ public class CustomerInfoPage extends BasePO {
     private By textPhone = By.id("txtPhone");
     private By OK = By.xpath("//button[@id='btnCUSTINFOOK__']");
     private By address = By.id("divAddressInfo");
+    private By addressText = By.xpath("//div[text()='1328 Blue Oaks Blvd']");
     private By customerName = By.id("txtName");
     private By custInfoId = By.xpath("//span[text()='Customer Info']");
+
+    public Element addressText() throws IOException, InterruptedException {
+        return $(addressText);
+    }
 
     public Element close() throws IOException, InterruptedException {
         return $(close);
