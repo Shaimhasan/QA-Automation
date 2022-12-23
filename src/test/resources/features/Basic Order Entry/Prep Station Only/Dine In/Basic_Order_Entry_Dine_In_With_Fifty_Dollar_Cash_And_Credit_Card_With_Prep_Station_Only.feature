@@ -89,6 +89,8 @@ Feature: Basic Order Entry - Dine-in with cash and Credit Card  - with Prep Stat
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select veggiePizza
     And the user clicks the "hawaiianPizzaP" element at the "OrderEntry" page
+    #Comment: user select veggiePizza
+    And the user clicks the "hawaiianPizzaP" element at the "OrderEntry" page
     #Comment: The user selected Veggie Pizza
     And the user validates the "hawaiianPizzaPSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
