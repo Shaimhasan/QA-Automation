@@ -21,9 +21,9 @@
       "ItemNumberXpath3": "(//td[text()='",
       "ItemNumberXpath4": "']//following-sibling::td)[1]",
       "couponNumber": "455",
-      "minOrderAmt": "4",
-      "maxOrderAmt": "5",
-      "discountAmt": "10",
+      "minOrderAmt": "4.00",
+      "maxOrderAmt": "5.00",
+      "discountAmt": "10.00",
       "backGroundColor": "#4f81bd",
       "startDate": "09122022",
       "endDate": "12122025"
