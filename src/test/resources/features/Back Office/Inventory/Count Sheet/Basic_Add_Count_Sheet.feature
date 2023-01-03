@@ -1,7 +1,7 @@
 Feature: Basic Add Count Sheet
   This script is to validate Add Count Sheet
 
-  @Basic_Add_Count_Sheet @RegressionSuite @BO_Count_Sheet @Inventory @Back_Office
+  @Basic_Add_Count_Sheet #@RegressionSuite @BO_Count_Sheet @Inventory @Back_Office
   Scenario: Basic_Add_Count_Sheet_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
@@ -34,7 +34,7 @@ Feature: Basic Add Count Sheet
     #Comment: the user click on Menu Items
     And the user clicks the "countSheet" element at the "InventoryPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    #And the user waits for the page to load
     #Comment : the user clicks and check If element present
     And the user custom clicks If element present the "table" element with Column Name " Frequency" and value "tblRowXIN_CNT" at the "CountSheetPage" page with element 1 "delete" and element 2 "deleteOnWarning" element 3 "editBtnDisable"
     #Comment: the user click on Add

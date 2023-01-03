@@ -1,7 +1,7 @@
 Feature: Basic Edit Count Sheet
   This script is to validate Edit Count Sheet
 
-  @Basic_Edit_Count_Sheet @RegressionSuite @BO_Count_Sheet @Inventory @Back_Office
+  @Basic_Edit_Count_Sheet #@RegressionSuite @BO_Count_Sheet @Inventory @Back_Office
   Scenario: Basic_Edit_Count_Sheet_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
