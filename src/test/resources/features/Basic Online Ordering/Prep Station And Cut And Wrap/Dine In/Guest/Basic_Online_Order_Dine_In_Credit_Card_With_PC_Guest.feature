@@ -128,13 +128,13 @@ Feature: Basic Online Order - Dine In Credit Card - with Prep Station and Cut an
     #Comment: the user enter email
     And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter re-email
-    And the user enters "#(reEnterEmail)" into the "reEnterEmail" textbox at the "ExistingCustLoginOLOPage" page
+
     #Comment: the user enter phone number
     And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
     #Comment: the user enter 10 digit number
     And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
     #Comment: the user enter re enter phone
-    And the user enters "#(phoneNo1)" into the "reEnterPhoneNo" textbox at the "ExistingCustLoginOLOPage" page
+
 
     #Comment: the user click on Credit Card Information
     And the user clicks the "creditCard" element at the "ExistingCustLoginOLOPage" page
