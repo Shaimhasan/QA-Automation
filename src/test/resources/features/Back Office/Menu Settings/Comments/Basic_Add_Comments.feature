@@ -31,12 +31,16 @@ Feature: Basic Add Comments
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click on Menu Items
     And the user clicks the "comments" element at the "MenuSettingPage" page
+    #Comment: the user wait until element visible
+    And the user waits for the "addBtn" element to be "VISIBLE" on the "CommentsPage" page
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "CommentsPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "commentsTextPopUp" element to be "VISIBLE" on the "AddCommentsPage" page
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(comments)" into the "enterComment" textbox at the "AddCommentsPage" page
+    #Comment: the user enters the name On ADD Item
+    And the user enters dynamic UserName "#(comments)" into the "enterCommentsSpanish" textbox at the "AddCommentsPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "enterComment" element at the "AddCommentsPage" page into the data dictionary with key "comments_value1"
     #Cooment: the user click save

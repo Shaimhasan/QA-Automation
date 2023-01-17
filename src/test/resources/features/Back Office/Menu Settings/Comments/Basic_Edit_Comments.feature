@@ -37,6 +37,8 @@ Feature: Basic Edit Comments
     And the user waits for the "commentsTextPopUp" element to be "VISIBLE" on the "AddCommentsPage" page
     #Comment: the user enters the name On ADD Item
     And the user enters dynamic UserName "#(comments)" into the "enterComment" textbox at the "AddCommentsPage" page
+    #Comment: the user enters the name On ADD Item
+    And the user enters dynamic UserName "#(comments)" into the "enterCommentsSpanish" textbox at the "AddCommentsPage" page
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "enterComment" element at the "AddCommentsPage" page into the data dictionary with key "comments_value1"
     #Cooment: the user click save
