@@ -18,7 +18,8 @@
       "IdNumberXpath4": ": Automation Testing US']",
       "InvUnitConFactor": "15",
       "yieldFactor": "90",
-      "DetailsClickXpath1": "(//td[text()='"
+      "DetailsClickXpath1": "(//td[text()='",
+      "accNo": "8585"
     },
     "dataCriteria": {
     },

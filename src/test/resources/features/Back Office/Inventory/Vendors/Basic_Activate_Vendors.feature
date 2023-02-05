@@ -71,6 +71,8 @@ Feature: Basic Activate Vendors
     And the user validates the item in the "activeChkBx" checkbox is checked at the "ActDeactVendorsPage" page "Validate_CheckBx_Selected" "HardStopOnFailure"
     #Comment: the user click Add vendors
     And the user clicks the "activeChkBx" element at the "ActDeactVendorsPage" page
+    #Comment: the user enter Account No
+    And the user enters "#(accNo)" into the "accNo" textbox at the "ActDeactVendorsPage" page
     #Comment : the User click on save
     And the user clicks the "save" element at the "ActDeactVendorsPage" page
     #Comment : the User wait to page load
@@ -85,6 +87,8 @@ Feature: Basic Activate Vendors
     And the user waits for the "actDeactTextVal" element to be "VISIBLE" on the "ActDeactVendorsPage" page
     #Comment: the user click Add vendors
     And the user clicks the "activeChkBx" element at the "ActDeactVendorsPage" page
+    #Comment: the user enter Account No
+    And the user enters "#(accNo)" into the "accNo" textbox at the "ActDeactVendorsPage" page
     #Comment : the User click on save
     And the user clicks the "save" element at the "ActDeactVendorsPage" page
      #Comment : the User wait to page load
