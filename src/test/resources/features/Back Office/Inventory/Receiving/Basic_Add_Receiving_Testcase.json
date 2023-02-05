@@ -3,6 +3,12 @@
     "sharedAttributes": {
     },
     "staticData": {
+      "name": "Automation Testing",
+      "phoneNo": "4546565659",
+      "email": "abcd@gmail.com",
+      "address": "Automation Address",
+      "city": " Florida",
+      "zipCode": " 452268",
       "invoiceNum": "14",
       "ItemNumberXpath1": "//td[text()='",
       "ItemNumberXpath2": "']",
@@ -14,7 +20,9 @@
       "tax": "15",
       "freight": "10",
       "others": "45",
-      "date": "2025"
+      "date": "2025",
+      "receivingXpath1": "//div[text()='",
+      "receivingXpath2": "']"
     },
     "dataCriteria": {
     },

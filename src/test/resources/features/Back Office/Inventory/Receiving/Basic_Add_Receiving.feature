@@ -29,8 +29,43 @@ Feature: Basic Add Receiving
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
-    #Comment: the user click Discounts
+
+    #Comment: the user add new Vendors
+
     And the user clicks the "inventory" element at the "InventoryPage" page
+    #Comment: the user click vendors
+    And the user clicks the "vendors" element at the "InventoryPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "vendorTxt" element to be "VISIBLE" on the "VendorsPage" page
+    #Comment: the user click Add vendors
+    And the user clicks the "addBtn" element at the "VendorsPage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "vendorTxt" element to be "VISIBLE" on the "AddVendorsPage" page
+    #Comment : the User enters dynamic name
+    And the user enters dynamic UserName "#(name)" into the "name" textbox at the "AddVendorsPage" page
+    #Comment : the User stores the value
+    And store the displayed text of the "name" element at the "AddVendorsPage" page into the data dictionary with key "name_value1"
+    #Comment : the User enters dynamic name
+    And the user enters "#(phoneNo)" into the "phoneNo" textbox at the "AddVendorsPage" page
+    #Comment : the User enters email
+    And the user enters "#(email)" into the "email" textbox at the "AddVendorsPage" page
+    #Comment : the User enters address
+    And the user enters "#(address)" into the "address" textbox at the "AddVendorsPage" page
+    #Comment : the User enters city
+    And the user enters "#(city)" into the "city" textbox at the "AddVendorsPage" page
+     #Comment : the User enters zipCode
+    And the user enters "#(zipCode)" into the "zipCode" textbox at the "AddVendorsPage" page
+    #Comment : the User select the state
+    And the user selects value "Arkansas" from the "state" dropdown at the "AddVendorsPage" page
+    #Comment : the User click on save
+    And the user clicks the "save" element at the "AddVendorsPage" page
+    #Comment : the User wait to page load
+    And the user waits for the page to load
+    #Comment: the user click on the ID number row
+    And the user clicks the "table" element with dictionary key "#(name_value1)" at the "VendorsPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
+    #Comment: the user store the id
+    And store the displayed text of the "table" element at the "VendorsPage" page and get the dictionary key value "#(name_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
+
     #Comment: the user click on Menu Items
     And the user clicks the "receiving" element at the "InventoryPage" page
     #Comment: The user wait until page is loading
@@ -38,7 +73,7 @@ Feature: Basic Add Receiving
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "ReceivingPage" page
     #Comment: the user click on list
-    And the user clicks the "automation" element at the "AddRecievingPage" page
+    And the user clicks the "addBtn" element with dictionary key "#(name_value1)" at the "ReceivingPage" page with xpath1 "#(receivingXpath1)" and xpath2 "#(receivingXpath2)"
     #Comment: the user validate the visibility of popup
     And the user waits for the "recievingTxtPopup" element to be "VISIBLE" on the "AddRecievingPage" page
     #Comment: the user enters the name On ADD Item
