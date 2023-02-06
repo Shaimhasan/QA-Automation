@@ -19,7 +19,7 @@ public class EditPOSCategoriesPage extends BasePO {
     private By save = By.xpath("//button[@onclick='BO_MN_CAT_ADDEDT_Save();']");
     private By activeCheckBoxIsSelected = By.xpath("//label[@for='chk_BO_MN_CAT_ADDEDT_Active']");
     private By activeCheckBoxIsSelectedValidate = By.xpath("//label[@for='chk_BO_MN_CAT_ADDEDT_Active']");
-    private By cancelBtn = By.xpath("//button[@onclick='BO_MN_CAT_ADDEDT_Close();']");
+    private By cancelBtn = By.xpath("//button[@id='btn_BO_MN_CAT_ADDEDT_Cancel']");
 
     public Element activeCheckBoxIsSelectedValidate() throws IOException, InterruptedException {
         return $(activeCheckBoxIsSelectedValidate);

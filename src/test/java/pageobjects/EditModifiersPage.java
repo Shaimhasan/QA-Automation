@@ -21,7 +21,7 @@ public class EditModifiersPage extends BasePO {
     private By save = By.xpath("//button[@onclick='BO_MN_MOD_ADDEDT_Save();']");
     private By activeCheckBoxIsSelected = By.xpath("//label[@for='chk_BO_MN_MOD_ADDEDT_Active']");
     private By activeCheckBoxIsSelectedValidate = By.xpath("//label[@for='chk_BO_MN_WCT_ADDEDT_Active']");
-    private By cancelBtn = By.xpath("//button[@onclick='BO_MN_MOD_ADDEDT_Close();']");
+    private By cancelBtn = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_DIALOG_modal']//button[@id='btn_BO_MN_MOD_ADDEDT_Cancel']");
     private By modifiersCode = By.id("txt_BO_MN_MOD_ADDEDT_Code");
     private By addModifiersText = By.xpath("//div[@id='div_BO_MN_MOD_ADDEDT_DIALOG_modal_view']//span[text()='Modifier']");
 
