@@ -9,23 +9,23 @@ import java.io.IOException;
 public class ExistingCustLoginOLOPage extends BasePO {
 
     private By existingCustLogin = By.xpath("//div[text()='Existing customer login']");
-    private By checkoutTxt = By.xpath("//label[text()='Checkout']");
-    private By firstName = By.id("txt_CHKOUT_name");
-    private By lastName = By.id("txt_CHKOUT_lastname");
-    private By email = By.id("eml_CHKOUT_email1");
+    private By checkoutTxt = By.xpath("//h2[text()='Checkout']");
+    private By firstName = By.id("txt_checkout_name");
+    private By lastName = By.id("txt_checkout_last_name");
+    private By email = By.id("txt_checkout_email");
     private By reEnterEmail = By.id("eml_CHKOUT_email2");
-    private By phoneNo = By.id("tel_CHKOUT_phone1");
+    private By phoneNo = By.id("txt_checkout_phone");
     private By reEnterPhoneNo = By.id("tel_CHKOUT_phone2");
-    private By payInStore = By.id("rdo_CHKOUT_Store");
+    private By payInStore = By.id("rdo_checkout_in_store");
     private By cash = By.id("rdo_CHKOUT_Cash");
     private By termsAndCondition = By.id("chk_CHKOUT_PrivTerm");
-    private By placeYourOrder = By.id("btn_CHKOUT_Submit");
-    private By creditCard = By.id("rdo_CHKOUT_Credit");
+    private By placeYourOrder = By.id("btn_checkout_submit");
+    private By creditCard = By.id("rdo_checkout_credit");
     private By cardNumber = By.xpath("//input[@name='cardNumber']");
     private By cardExpiration = By.xpath("//input[@name='cardExpiration']");
     private By cardCvv = By.name("cardCvv");
-    private By zipCode = By.id("txt_CHKOUT_CCZip");
-    private By billingAddress = By.id("txt_CHKOUT_CCAddr");
+    private By zipCode = By.id("txt_checkout_credit_entry_billing_zip");
+    private By billingAddress = By.id("txt_checkout_credit_entry_billing_address");
     private By customerInfo = By.xpath("//div[text()='Contact Information']");
 
     public Element checkoutTxt() throws IOException, InterruptedException {

@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class AddToOrderOLOPage extends BasePO {
 
-    private By addToOrder = By.id("btn_CI_Add_to_Order");
+    private By addToOrder = By.id("btn_customize_item_add_to_order");
 
     public Element addToOrder() throws IOException, InterruptedException {
         return $(addToOrder);

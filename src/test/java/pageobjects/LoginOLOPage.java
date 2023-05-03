@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class LoginOLOPage extends BasePO {
 
-    private By continueAsGuest = By.id("btnLogin_Guest");
+    private By continueAsGuest = By.id("btn_signin_guest");
     private By loginEmail = By.xpath("//input[@id='emlLogin_Email']");
     private By loginPassword = By.xpath("//input[@id='pasLogin_Password']");
     private By loginBtn = By.xpath("//button[@id='btnLogin_Login']");

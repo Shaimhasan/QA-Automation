@@ -8,13 +8,13 @@ import java.io.IOException;
 
 public class OrderTypeOLOPage extends BasePO {
 
-    private By orderType = By.id("divOrderType_Title");
-    private By dineIn = By.id("spanOrderType_1_Name");
-    private By takeOut = By.id("spanOrderType_2_Name");
-    private By delivery = By.id("spanOrderType_3_Name");
-    private By address = By.id("txtOrderType_Address");
+    private By orderType = By.xpath("//h2[text()='Order Type']");
+    private By dineIn = By.id("span_order_type_1_name");
+    private By takeOut = By.id("span_order_type_2_name");
+    private By delivery = By.id("span_order_type_3_name");
+    private By address = By.id("txt_order_type_address");
     private By yesProceedOrder = By.id("btnMsgBoxYesNo_Yes");
-    private By continueBtn = By.xpath("//button[@id='btnOrderType_Continue']");
+    private By continueBtn = By.xpath("//button[@id='btn_order_type_continue']");
     private By unit = By.id("txtOrderType_Apt");
     private By addressDisplay = By.xpath("//option[@value='1234 Elm St Roseville CA 95678']");
     private By orderTypeValidate = By.xpath("//div[text()='Order Type']");
