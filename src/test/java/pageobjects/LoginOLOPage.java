@@ -9,9 +9,9 @@ import java.io.IOException;
 public class LoginOLOPage extends BasePO {
 
     private By continueAsGuest = By.id("btn_signin_guest");
-    private By loginEmail = By.xpath("//input[@id='emlLogin_Email']");
-    private By loginPassword = By.xpath("//input[@id='pasLogin_Password']");
-    private By loginBtn = By.xpath("//button[@id='btnLogin_Login']");
+    private By loginEmail = By.xpath("//input[@id='txt_signin_email']");
+    private By loginPassword = By.xpath("//input[@id='txt_signin_password']");
+    private By loginBtn = By.xpath("//button[@id='btn_signin_signin']");
     private By errorLocationMsg = By.xpath("//p[contains(text(),'You will be prompted to let the store know your location.')]");
     private By OK = By.xpath("//button[text()='Ok']");
 

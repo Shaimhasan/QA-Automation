@@ -17,8 +17,8 @@ public class ExistingCustLoginOLOPage extends BasePO {
     private By phoneNo = By.id("txt_checkout_phone");
     private By reEnterPhoneNo = By.id("tel_CHKOUT_phone2");
     private By payInStore = By.id("rdo_checkout_in_store");
-    private By cash = By.id("rdo_CHKOUT_Cash");
-    private By termsAndCondition = By.id("chk_CHKOUT_PrivTerm");
+    private By cash = By.id("rdo_checkout_cash");
+    private By termsAndCondition = By.id("chk_checkout_privacy_terms");
     private By placeYourOrder = By.id("btn_checkout_submit");
     private By creditCard = By.id("rdo_checkout_credit");
     private By cardNumber = By.xpath("//input[@name='cardNumber']");

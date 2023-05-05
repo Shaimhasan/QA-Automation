@@ -15,10 +15,10 @@ public class OrderTypeOLOPage extends BasePO {
     private By address = By.id("txt_order_type_address");
     private By yesProceedOrder = By.id("btnMsgBoxYesNo_Yes");
     private By continueBtn = By.xpath("//button[@id='btn_order_type_continue']");
-    private By unit = By.id("txtOrderType_Apt");
+    private By unit = By.id("txt_order_type_apt");
     private By addressDisplay = By.xpath("//option[@value='1234 Elm St Roseville CA 95678']");
     private By orderTypeValidate = By.xpath("//div[text()='Order Type']");
-    private By asap = By.xpath("//label[@id='lblOrderType_FD_Now']");
+    private By asap = By.xpath("//label[@id='lbl_order_type_time_now']");
     private By existingAddressSelect = By.xpath("//input[@id='rdoOrderType_Address_36165']");
 
     public Element existingAddressSelect() throws IOException, InterruptedException {
