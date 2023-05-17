@@ -17,7 +17,7 @@ public class OrderTypeOLOPage extends BasePO {
     private By continueBtn = By.xpath("//button[@id='btn_order_type_continue']");
     private By unit = By.id("txt_order_type_apt");
     private By addressDisplay = By.xpath("//option[@value='1234 Elm St Roseville CA 95678']");
-    private By orderTypeValidate = By.xpath("//div[text()='Order Type']");
+    private By orderTypeValidate = By.xpath("//h2[text()='Order Type']");
     private By asap = By.xpath("//label[@id='lbl_order_type_time_now']");
     private By existingAddressSelect = By.xpath("//input[@id='rdoOrderType_Address_36165']");
 
