@@ -145,7 +145,7 @@ Feature: Online Order - Item with Prep Station and Make Line and Cut and Wrap en
     #Comment: the user substring
     And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
     #Comment: the user click on OrderModelPopupOLOPage
-    And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
+
 
     #Comment: the user check order should not present on Makeline
 

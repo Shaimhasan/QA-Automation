@@ -145,7 +145,7 @@ Feature: Online Order - Item with Make Line enabled - with all lines enabled - G
     #Comment: the user substring
     And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
     #Comment: the user click on OrderModelPopupOLOPage
-    And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
+
 
     #Comment: the user validate the element should not present at the Prep station
 

@@ -145,7 +145,7 @@ Feature: Online Order - Item with Prep Station enabled - with all lines enabled 
     #Comment: the user substring
     And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
     #Comment: the user click on OrderModelPopupOLOPage
-    And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
+
 
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"

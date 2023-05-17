@@ -69,7 +69,7 @@ Feature: Online Order - Dine In Cash - item with Make Line and Cut and Wrap enab
     #Comment: the user substring
     And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
     #Comment: the user click on OrderModelPopupOLOPage
-    And the user clicks the "OK" element at the "OrderModelPopupOLOPage" page
+
 
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewTab"
