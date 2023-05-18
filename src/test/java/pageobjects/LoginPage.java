@@ -9,8 +9,8 @@ import java.io.IOException;
 public class LoginPage extends BasePO {
 
     private By storeKey = By.id("txtStoreKey");
-    private By employee_Id = By.id("txtEmployeeID");
-    private By password = By.id("txtEmployeePassword");
+    private By employee_Id = By.xpath("//input[@id='txtEmployeeID']");
+    private By password = By.xpath("//input[@id='txtEmployeePassword']");
     private By stationKey = By.id("txtStationKey");
     private By connect = By.xpath("//button[text()='Connect']");
     private By waitTillLoading = By.xpath("//div[text()='Loading Items Availability (32 of 32)... Please wait.']");
