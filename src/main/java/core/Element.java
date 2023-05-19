@@ -428,7 +428,7 @@ public class Element {
 
     public String getAttribute(String attr, int... retries) {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
