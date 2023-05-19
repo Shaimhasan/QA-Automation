@@ -1263,6 +1263,7 @@ public class AutoEngValidate extends BaseWebSteps {
             getDriver().findElement(By.xpath("//button[text()='Enter']")).click();
             getPO().waitPageToLoad();
 
+            wait(1000);
             int count1 = getDriver().findElements(By.xpath("//p[contains(text(),'Your are not checked in.')]")).size();
             if (count1 > 0){
                 System.out.println("Error Popup Found : Your are not checked in.");
