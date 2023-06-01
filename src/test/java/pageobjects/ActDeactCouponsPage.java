@@ -14,7 +14,7 @@ public class ActDeactCouponsPage extends BasePO {
     private By save = By.xpath("//button[@onclick='BO_CP_CPN_AVAL_Save();']");
     private By cancel = By.xpath("//button[@onclick='BO_CP_CPN_AVAL_Save();']//preceding-sibling::button[text()='Cancel']");
     private By paidDineInIsSelected = By.xpath("//label[@for='chk_BO_CP_CPN_AVAL_OSTs_1_1']");
-    private By couponsTextVal = By.xpath("//div[@id='div_BO_CP_CPN_AVAL_DIALOG_modal_view']//span[text()='Coupon Availability']");
+    private By couponsTextVal = By.xpath("//span[@id='div_BO_CP_CPN_AVAL_DIALOG_Header_Title']");
 
     public Element activeChkBxIsSelected() throws IOException, InterruptedException {
         return $(activeChkBxIsSelected);

@@ -133,3 +133,16 @@ Feature: Basic Activate Coupons
     And the user clicks the "close" element at the "HistoryPage" page
     #Comment: the user click on close button
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
+
+    #Comment: the user click on the ID number row
+    And the user clicks the "table" element with dictionary key "#(nameUS_value1)" at the "CouponsPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
+    #Comment: the user store the id
+    And store the displayed text of the "table" element at the "CouponsPage" page and get the dictionary key value "#(nameUS_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
+    #Comment: the user delete data
+    And the user clicks the "delete" element at the "CouponsPage" page
+    #Comment: the user click on Delete Button on Warning popup
+    And the user clicks the "deleteOnWarning" element at the "CouponsPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: the user wait the element is disabled
+    And the user waits for the "delete" element to be "DISABLED" on the "CouponsPage" page
