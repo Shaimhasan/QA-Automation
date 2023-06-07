@@ -23,7 +23,7 @@ public class EdgeDriverManager extends DriverManager {
 				WebDriverManager.edgedriver().setup();
 			}
     	}else {
-		System.setProperty("webdriver.edge.driver", getDriverPath("MicrosoftWebDriver"));
+		System.setProperty("webdriver.edge.driver", getDriverPath("msedgedriver"));
     	}
 		driver = new EdgeDriver(cap.getCap());
 	}
