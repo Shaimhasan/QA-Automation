@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -40,13 +41,13 @@ public class Element {
 
     public Element(WebDriver driver, WebElement e) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, getWaitDuration());
+        wait = new WebDriverWait(driver, Duration.ofSeconds(getWaitDuration()));
         this.element = e;
     }
 
     public Element(WebDriver driver, WebElement e, By by) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, getWaitDuration());
+        wait = new WebDriverWait(driver, Duration.ofSeconds(getWaitDuration()));
         this.element = e;
         this.by = by;
     }
@@ -55,7 +56,7 @@ public class Element {
         this.driver = driver;
         this.by = by;
         try {
-            wait = new WebDriverWait(driver, delay.length > 0 ? delay[0] : getWaitDuration());
+            wait = new WebDriverWait(driver, delay.length > 0 ? Duration.ofSeconds(delay[0]) : Duration.ofSeconds(getWaitDuration()));
             this.element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
             log.debug("element located successfully:{}", by);
         } catch (Exception e) {
@@ -69,7 +70,7 @@ public class Element {
         this.driver = driver;
         this.by = null;
         try {
-            wait = new WebDriverWait(driver, delay.length > 0 ? delay[0] : getWaitDuration());
+            wait = new WebDriverWait(driver, delay.length > 0 ? Duration.ofSeconds(delay[0]) : Duration.ofSeconds(getWaitDuration()));
             this.element = (WebElement) wait.until(exp);
         } catch (Exception e) {
             this.element = null;
@@ -1099,7 +1100,7 @@ public class Element {
         String xpathValue = "//td[text()=" + "'" + orderN + " - " + category + "'" + "]//following-sibling::td[text()='Cut & Wrapped']";
         System.out.println(xpathValue);
         try {
-            boolean value = new WebDriverWait(driver, 10).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpathValue)));
+            boolean value = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpathValue)));
             System.out.println("Return Value > " + value);
             return value;
         } catch (Exception e) {

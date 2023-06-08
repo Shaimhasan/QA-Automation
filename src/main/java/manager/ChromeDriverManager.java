@@ -64,6 +64,7 @@ public class ChromeDriverManager extends DriverManager {
             options.addArguments("--window-size=1552x840");
         }
         options.addArguments("--incognito");
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
     }
 

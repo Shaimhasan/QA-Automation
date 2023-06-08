@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class PageObject extends CommonPageObject {
 
     public PageObject(WebDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver, getWaitDuration());
+        wait = new WebDriverWait(driver, Duration.ofSeconds(getWaitDuration()));
     }
 
     public WebDriver getDriver() {
@@ -185,7 +186,7 @@ public class PageObject extends CommonPageObject {
      * Returns all element occurrences matching the supplied locator if the elements exist in DOM
      */
     public List<Element> $$(By by) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(getWaitDuration()));
         List<WebElement> els = getWait().until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
         List<Element> elements = setElements(els);
         if (!elements.isEmpty()) {
@@ -195,7 +196,7 @@ public class PageObject extends CommonPageObject {
     }
 
     public List<Element> $$(Loc type, String locator, Object[]... variables) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(getWaitDuration()));
         List<WebElement> els = getWait().until(ExpectedConditions.presenceOfAllElementsLocatedBy(getLocator(type, locator, variables)));
         List<Element> elements = setElements(els);
         if (!elements.isEmpty()) {
@@ -208,7 +209,7 @@ public class PageObject extends CommonPageObject {
      * Returns all element occurrences matching the supplied locator if the elements exist in DOM
      */
     public List<Element> $$(ExpectedCondition<List<WebElement>> exp, int... delay) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), delay.length > 0 ? delay[0] : getWaitDuration());
+        WebDriverWait wait = new WebDriverWait(getDriver(), delay.length > 0 ? Duration.ofSeconds(delay[0]) : Duration.ofSeconds(getWaitDuration()));
         List<WebElement> els = getWait().until(exp);
         List<Element> elements = setElements(els);
         if (!elements.isEmpty()) {
@@ -221,7 +222,7 @@ public class PageObject extends CommonPageObject {
      * Finds all elements within current element matching the supplied locator
      */
     public List<Element> $$(By by, By sub, int... delay) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), delay.length > 0 ? delay[0] : getWaitDuration());
+        WebDriverWait wait = new WebDriverWait(getDriver(), delay.length > 0 ? Duration.ofSeconds(delay[0]) : Duration.ofSeconds(getWaitDuration()));
         List<WebElement> els = wait.until(ExpectedConditions.presenceOfNestedElementsLocatedBy(by, sub));
         List<Element> elements = setElements(els);
         if (!elements.isEmpty()) {
@@ -263,7 +264,7 @@ public class PageObject extends CommonPageObject {
      * Returns all element occurrences matching the supplied locator if the elements exist in DOM
      */
     public List<Element> findElements(By by) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(getWaitDuration()));
         List<WebElement> els = getWait().until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
         List<Element> elements = setElements(els);
         if (!elements.isEmpty()) {
@@ -273,7 +274,7 @@ public class PageObject extends CommonPageObject {
     }
 
     public List<Element> findElements(Loc type, String locator, Object[]... variables) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), getWaitDuration());
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(getWaitDuration()));
         List<WebElement> els = getWait().until(ExpectedConditions.presenceOfAllElementsLocatedBy(getLocator(type, locator, variables)));
         List<Element> elements = setElements(els);
         if (!elements.isEmpty()) {
@@ -286,7 +287,7 @@ public class PageObject extends CommonPageObject {
      * Returns all element occurrences matching the supplied locator if the elements exist in DOM
      */
     public List<Element> findElements(ExpectedCondition<List<WebElement>> exp, int... delay) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), delay.length > 0 ? delay[0] : getWaitDuration());
+        WebDriverWait wait = new WebDriverWait(getDriver(), delay.length > 0 ? Duration.ofSeconds(delay[0]) : Duration.ofSeconds(getWaitDuration()));
         List<WebElement> els = getWait().until(exp);
         List<Element> elements = setElements(els);
         if (!elements.isEmpty()) {
@@ -299,7 +300,7 @@ public class PageObject extends CommonPageObject {
      * Finds all elements within current element matching the supplied locator
      */
     public List<Element> findElements(By by, By sub, int... delay) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), delay.length > 0 ? delay[0] : getWaitDuration());
+        WebDriverWait wait = new WebDriverWait(getDriver(), delay.length > 0 ? Duration.ofSeconds(delay[0]) : Duration.ofSeconds(getWaitDuration()));
         List<WebElement> els = wait.until(ExpectedConditions.presenceOfNestedElementsLocatedBy(by, sub));
         List<Element> elements = setElements(els);
         if (!elements.isEmpty()) {

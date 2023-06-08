@@ -4,6 +4,8 @@ import common.Property;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 import static core.Constants.SELENIUMRUNTIMEPATH;
 
 public abstract class DriverManager {
@@ -27,7 +29,7 @@ public abstract class DriverManager {
 	
 	public WebDriverWait getWait() {
 		if (wait == null){
-			wait = new WebDriverWait(driver, getWaitDuration());
+			wait = new WebDriverWait(driver, Duration.ofSeconds(getWaitDuration()));
 		}
 		return wait;
 	}
