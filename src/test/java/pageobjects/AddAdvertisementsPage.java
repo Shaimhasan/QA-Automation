@@ -13,7 +13,7 @@ public class AddAdvertisementsPage extends BasePO {
     private By cost = By.id("txt_BO_CP_AVD_ADDEDT_Cost");
     private By quantity = By.id("txt_BO_CP_AVD_ADDEDT_QTY");
     private By advertisementsTxtPopup = By.xpath("//div[@id='div_BO_CP_ADV_ADDEDT_DIALOG_modal_view']//span[text()='Advertisement']");
-    private By save = By.xpath("//button[@onclick='BO_CP_ADV_ADDEDT_Save();']");
+    private By save = By.xpath("//button[@id='btn_BO_CP_ADV_ADDEDT_Save']");
 
     public Element advertisementsTxtPopup() throws IOException, InterruptedException {
         return $(advertisementsTxtPopup);
