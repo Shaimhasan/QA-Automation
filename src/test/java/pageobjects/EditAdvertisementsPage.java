@@ -14,7 +14,7 @@ public class EditAdvertisementsPage extends BasePO {
     private By quantity = By.id("txt_BO_CP_AVD_ADDEDT_QTY");
     private By advertisementsTxtPopup = By.xpath("//div[@id='div_BO_CP_ADV_ADDEDT_DIALOG_modal_view']//span[text()='Advertisement']");
     private By save = By.xpath("//button[@onclick='BO_CP_ADV_ADDEDT_Save();']");
-    private By cancel = By.xpath("//button[@onclick='BO_CP_ADV_ADDEDT_Save();']//preceding-sibling::button");
+    private By cancel = By.xpath("//button[@id='btn_BO_CP_ADV_ADDEDT_Cancel']");
 
     public Element cancel() throws IOException, InterruptedException {
         return $(cancel);
