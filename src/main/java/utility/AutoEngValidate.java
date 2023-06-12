@@ -5,6 +5,7 @@ import core.BaseWebSteps;
 import core.Element;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -996,29 +997,34 @@ public class AutoEngValidate extends BaseWebSteps {
                                                       String attributeName,
                                                       String pageName
     ) {
-        attributeName = parseValue(attributeName);
-        expectedValue = parseValue(expectedValue);
-        String expectedValueOne = expectedValue + "_1" + "_1";
-        String expectedValueTwo = expectedValue + "_1" + "_2";
-//        String expectedValueThreee = expectedValue + "_1" + "_3";
-        System.out.println(attributeName);
-        String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        try{
+            attributeName = parseValue(attributeName);
+            expectedValue = parseValue(expectedValue);
+            String expectedValueOne = expectedValue + "_1" + "_1";
+            String expectedValueTwo = expectedValue + "_1" + "_2";
+//          String expectedValueThreee = expectedValue + "_1" + "_3";
+            System.out.println(attributeName);
+            String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
 
-        if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
-            getObject(objectName, pageName).click();
-            transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-        }
-        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
-            getObject(objectName, pageName).click();
-            //transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-        }
+            if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+                getObject(objectName, pageName).click();
+                transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            }
+            if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
+                getObject(objectName, pageName).click();
+                //transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            }
 //        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
 //            getObject(objectName, pageName).click();
 //        }
-        else {
-            getObject(objectName, pageName).click();
+            else {
+                getObject(objectName, pageName).click();
+                theUserClickMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+            }
+        } catch (StaleElementReferenceException e) {
             theUserClickMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
+
 
     }
 
