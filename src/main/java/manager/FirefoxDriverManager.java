@@ -34,9 +34,13 @@ public class FirefoxDriverManager extends DriverManager {
 		for (String variable : props.getStringArray("options." + DriverContext.getInstance().getBrowserName().replaceAll("\\s", ""))) {
 			options.addArguments(variable);
 		}
-
-		options.merge(cap.getCap());
+		if(props.getString("options.headless.firefox").equalsIgnoreCase("true")){
+			options.setHeadless(true);
+		}
+		options.addArguments("-private");
+		//options.addPreference("javascript.enabled", true);
 		driver = new FirefoxDriver(options);
+		driver.manage().window().maximize();
 	}
 
 	@Override
