@@ -6,3 +6,12 @@
         </classes>
     </test>
 </suite>
+
+<!--    IntelliJ Runtime configuration >-ea -Dcukes.env=QA -Dcukes.techstack=LOCAL_CHROME -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2 -Xmx2048m-->
+
+<!--Jenkins Configurations run tags >-DCucumber.options="&#45;&#45;tags @${PICK_SCENARIOS}" -Dcukes.env=${ENVIRONMENT} -Dcukes.techstack=${BROWSER} -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2-->
+
+<!--Jenkins Configurations run Failed Scenarios>-Dsurefire.suiteXmlFiles=src/test/resources/testsuites/${PICK_SCENARIOS}.xml -Dcukes.env=${ENVIRONMENT} -Dcukes.techstack=${BROWSER} -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2-->
+
+<!--Command: clean install ${Command}-->
+
