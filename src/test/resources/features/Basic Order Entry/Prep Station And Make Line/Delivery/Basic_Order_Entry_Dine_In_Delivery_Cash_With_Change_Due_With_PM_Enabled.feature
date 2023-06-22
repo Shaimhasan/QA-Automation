@@ -2,8 +2,8 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Prep Statio
   This script is to validate Basic Order Entry - Delivery Cash - With Change Due  - with Prep Station and Make Line enabled
   with Customer Pays 100$
 
-  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Change_Due_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @Delivery @BOE_Delivery @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_Delivery
-  Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_Change_Due_With_Prep_Station_And_Make_Line_Enabled_Testcase
+  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Change_Due_With_PM_Enabled @RegressionSuite @Delivery @BOE_Delivery @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_Delivery
+  Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_Change_Due_With_PM_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
