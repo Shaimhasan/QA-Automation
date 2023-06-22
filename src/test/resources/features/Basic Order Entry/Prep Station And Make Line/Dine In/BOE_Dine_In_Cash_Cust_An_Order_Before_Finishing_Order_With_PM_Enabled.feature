@@ -1,8 +1,10 @@
-Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with Prep Station and Make Line enabled
-  This script is to validate Basic Order Entry - Dine-in with half cash and half Credit Card  - with Prep Station and Make Line enabled
+Feature: Basic Order Entry - Customize an order before finishing order - with Prep Station and Make Line enabled
+  This script is to validate Basic Order Entry - Customize an order before finishing order - with Prep Station and Make Line enabled
+  with Cash Only
 
-  @Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_Prep_Station_Make_Line_Enabled @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_Prep_Station_Make_Line_Enabled_Testcase
+  @issue=1639
+  @BOE_Dine_In_Cash_Cust_An_Order_Before_Finishing_Order_With_PM_Enabled @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
+  Scenario: BOE_Dine_In_Cash_Cust_An_Order_Before_Finishing_Order_With_PM_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -89,50 +91,24 @@ Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select suprimePizza
     And the user clicks the "supremePizzaPM" element at the "OrderEntry" page
+    #Comment: user select panCrust
+    And the user clicks the "mediumSize" element at the "OrderEntry" page
     #Comment: The user selected Supreme Pizza
     And the user validates the "supremePizzaPMSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number
     Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
-    #Comment: user click on half cash
-    And the user clicks the "half" element at the "PaymentPage" page
-    #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
-    #Comment: user click on Driver o Printer Page
-    And the user clicks the "printerOkBtn" element at the "CommonPage" page
     #Comment: user click on credit
-    And the user clicks the "credit" element at the "PaymentPage" page
-    #Comment: the user wait the page is open
-    And the user validates the "creditCardTxt" element is visible at the "CreditCardPage" page "validate_txt" "HardStopOnFailure"
-    #Comment: User switches to the frame
-    And the user switches to frame "cardNumber"
-     #Comment: the user enter the CreditCard Number
-    Then the user enters "#(cardNum)" into the "cardNum" textbox at the "CreditCardPage" page
-    #Comment: The user Switches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardExpiration"
-     #Comment: the user enter the expiration
-    Then the user enters "#(expiration)" into the "expiration" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardCvv"
-    #Comment: the user enter the cvv
-    Then the user enters "#(cvv)" into the "cvv" textbox at the "CreditCardPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: user click on chargeBtn
-    And the user clicks the "chargeBtn" element at the "CreditCardPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user clicks the "cash" element at the "PaymentPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user validate change due popuo is present
@@ -158,6 +134,7 @@ Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with
     And the user waits for the page to load
     #Comment: user click makeline until order comes on console
     And the user click All makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
+
 
     #Comment: user wait for visible of element
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
@@ -201,8 +178,6 @@ Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with
     And the user waits for the page to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
-    #Comment: the user validate the ID number in History
-    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Credit Card" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Credit Card']" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user validate the ID number in History
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Cash" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Cash']" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements

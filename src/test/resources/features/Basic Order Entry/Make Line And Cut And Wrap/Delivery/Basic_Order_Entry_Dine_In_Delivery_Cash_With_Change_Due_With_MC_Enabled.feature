@@ -1,9 +1,10 @@
-Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station and Make Line enabled
-  This script is to validate Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station and Make Line enabled
-  with 100$ Cash
+Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Make Line and Cut and Wrap enabled
+  This script is to validate Basic Order Entry - Delivery Cash - With Change Due  - with Make Line and Cut and Wrap enabled
+  and Customer pays $100
 
-  @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Prep_Station_And_Make_Line_Enabled_Testcase
+  @issue=1651
+  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Change_Due_With_MC_Enabled @RegressionSuite @Delivery @BOE_Delivery @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_Delivery
+  Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_Change_Due_With_MC_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -42,7 +43,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "Disabled" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -70,7 +71,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station
     #Comment: the user click on Edit
     And the user clicks the "edit" element at the "EditSettingsPage" page
     #Comment: the user click on Make Line
-    And the user selects value "Disabled" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
@@ -88,65 +89,51 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
     #Comment: validate background color
     And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
-    #Comment: user select suprimePizza
-    And the user clicks the "supremePizzaPM" element at the "OrderEntry" page
-    #Comment: The user selected Supreme Pizza
-    And the user validates the "supremePizzaPMSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
+    #Comment: user select veggiePizza
+    And the user clicks the "pepperoniPizzaMC" element at the "OrderEntry" page
+    #Comment: The user selected Veggie Pizza
+    And the user validates the "pepperoniPizzaMCIsSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
     Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
+    #Comment: user click on Devilery
+    And the user clicks the "delivery" element at the "OrderEntry" page
+    #Comment: the user enter phone Number
+    Then the user enters "#(textPhone)" into the "textPhone" textbox at the "CustomerInfoPage" page
+     #Comment: The user enter at textPhone field
+    And the user sends keys "Key_enter" to the "textPhone" element on the "CustomerInfoPage" page
+    #Comment: the user wait
+    And the user waits for the "addressText" element to be "VISIBLE" on the "CustomerInfoPage" page
+    #Comment: The user save the address into dictionary key
+    And store the displayed text of the "address" element at the "CustomerInfoPage" page into the data dictionary with key "address_value"
+    #Comment: user click on Finish
+    And the user clicks the "OK" element at the "CustomerInfoPage" page
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
-    #Comment: The user can see the table menu popup
-    And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
-    #Comment: the user enter the table number
-    Then the user enters "#(tableNo)" into the "tableNo" textbox at the "OrderEntry" page
-    #Comment: user click on OK
-    And the user clicks the "OK" element at the "OrderEntry" page
-    #Comment: user click on Cash
+    #Comment: user click on hundread dollar
     And the user clicks the "hundreadDollar" element at the "PaymentPage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: The user validate change due popuo is present
-    And the user validates the "headerPopUpChangeDue" element is present at the "OrderEntry" page "validate_Change_Due_popUp" "HardStopOnFailure"
-    #Comment: The user save the transaction number into dictionary key
-    And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
-    #Comment: Validate Changed Due Amount
-    Then the user validates "Compare_Strings" that the "changeDueAmt" element is "Equal To" "#(changedDueAmt)" at the "OrderEntry" page "validate_Changed_Due_Amount" "HardStopOnFailure"
+    #Comment: The user save the transaction number into dictionary key
+    And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: user click on Close
-    And the user clicks the "close" element at the "OrderEntry" page
+    And the user clicks the "closeForDelivery" element at the "OrderEntry" page
 
-    #Comment: the user check order should not present on Makeline
+    #Comment: the user check order should not present at Cut and Wrap
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
-    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: user click on makeLine
-    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: user click makeline until order comes on console
-    And the user click All makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
-
-
-    #Comment: user wait for visible of element
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: user click on Adora Header
-    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "prepStation" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: User validate the order list element is present.
-    And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
-    #Comment: user click on prep Station
-    And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: user click prepstation until order comes on console
-    And the user click Single prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
+    #Comment the user wait
+    And the user waits "7000" seconds
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
@@ -162,6 +149,126 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station
     And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
     #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "cutAndWrap" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on Cut and Wrap
+    And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
+    #Comment: user click on cut wrap based on order Number
+    And the user custom clicks on row with order number "#(order_Number)" and category value "1" from the "table" table on the "CutAndWrapPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: User validate the adoraHeaderSVG element is present.
+    And the user order number "#(order_Number)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: The user click on Adora header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user hovers over the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user clicks the "clockIn" element at the "AdoraHeaderPage" page
+    #Comment: user click on two digit
+    And the user clicks the "oneDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockInPage" page
+    #Comment: user click on Enter
+    And the user clicks the "enter" element at the "ClockInPage" page
+    #Comment: the user page to load
+    And the user waits for the page to load
+    #Comment: the user clock out if already clock in
+    And the user clock out if already clock in
+    #Comment: the user validate the visibility of clockInPopup
+    And the user waits for the "clockInPopup" element to be "VISIBLE" on the "ClockInPage" page
+    #Comment: user validate time record message successfully
+    And the user validates "Compare_Strings" that the "timeCardRecordSuccessMsg" element is "Equal To" "#(timeRecordSuccessMsg)" at the "ClockInPage" page "validate_Time_Record_Successfully" "HardStopOnFailure"
+    #Comment: user click on Driver
+    And the user clicks the "OKBtn" element at the "ClockInPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: The user click on Adore header page
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on dispatch
+    And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment : user click on orderNumber and dispatch
+    And the user clicks the "table" element with dictionary key "#(order_Number)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
+    #Comment: user click on Driver o Dispatch page
+    And the user clicks the "bobTheDriver" element at the "DispatchPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on Driver o Printer Page
+    And the user clicks the "printerOkBtn" element at the "CommonPage" page
+    #Comment: user click on Driver o Dispatch page
+    And the user clicks the "bobTheDriver" element at the "DispatchPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
+    #Comment: the user click on back office
+    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+
+    #Comment: The user wait until page is loading
+    And the user waits for the "clockOut" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on ClockIn
+    And the user hovers over the "clockOut" element at the "AdoraHeaderPage" page
+    #Comment: user click on ClockOut
+    And the user clicks the "clockOut" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the "cloutOutVisible" element to be "VISIBLE" on the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "oneDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "oneDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on oneDigit
+    And the user hovers over the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on two digit
+    And the user clicks the "zeroDigit" element at the "ClockOutPage" page
+    #Comment: user click on Enter
+    And the user clicks the "enter" element at the "ClockOutPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the "cloutOutVisible" element to be "VISIBLE" on the "ClockOutPage" page
+    #Comment: the user enter gratuity amount
+    Then the user enters "#(gatuityAmt)" into the "gratuityAmt" textbox at the "ClockOutPage" page
+    #Comment: user click on ClockOut
+    And the user clicks the "clockOut" element at the "ClockOutPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the "cloutOutTxtVisible" element to be "VISIBLE" on the "ClockOutPage" page
+    #Comment: user validate clock out message successfully
+    And the user validates "Compare_Strings" that the "clockOutSuccessMsg" element is "Equal To" "#(timeClockOutSuccessMsg)" at the "ClockOutPage" page "validate_Clock_Out_Successfully" "HardStopOnFailure"
+    #Comment: user click on Driver
+    And the user clicks the "OKBtn" element at the "ClockOutPage" page
+
+    #Comment: the user visible element
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
@@ -182,7 +289,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station
     #Comment: the user validate the visibility of Page
     And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
     #Comment: Validate the amount
-    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
+    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amtVal)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
     And store the displayed text of the "transactionNum" element at the "OrderDetailsPage" page into the data dictionary with key "transaction_Number2"
     #Comment: The user save the order number into dictionary key
@@ -250,6 +357,5 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Prep Station
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
-
 
 

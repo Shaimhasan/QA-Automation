@@ -3,7 +3,7 @@ Feature: Basic Online Order - Dine In Cash - with Prep Station and Make Line - E
 
   @issue=1831
   @Basic_Online_Order_Dine_In_Cash_With_Prep_Station_And_MakeLine_Existing_User @RegressionSuite @DineIn @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_DineIn @OLO_Prep_Station_And_MakeLine_DineIn_Existing_User
-  Scenario: Basic_Online_Order_Dine_In_Cash_With_Prep_Station_And_MakeLine_Existing_User_Testcase
+  Scenario: Basic_Online_Order_Dine_In_Cash_With_PM_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
