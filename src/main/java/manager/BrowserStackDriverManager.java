@@ -2,6 +2,7 @@ package manager;
 
 import common.Property;
 import driver.Capabilities;
+import driver.DriverContext;
 import driver.DriverManager;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -23,14 +24,25 @@ public class BrowserStackDriverManager extends DriverManager {
 		String browserstackAccessKey = Property.getVariable("cukes.browserstackAccessKey");
 		String browserstackEndPoint = Property.getVariable("cukes.browserstackEndPoint");
 		String browserstackServerAddress = "https://"+browserstackUserName + ":" + browserstackAccessKey + browserstackEndPoint;
+		System.out.println("Address URL BrowserStack--> " + browserstackServerAddress);
 		try {
-			if (cap.getCap().getCapability("platformName").toString().equalsIgnoreCase("Android")) {
+			if (Property.getVariable("cukes.platformName").equalsIgnoreCase("Android")) {
 				cap.getCap().setCapability("automationName","uiautomator2");
 				driver = new AndroidDriver(new URL(browserstackServerAddress), cap.getCap());
-			}else if (cap.getCap().getCapability("platformName").toString().equalsIgnoreCase("iOS")) {
+			}else if (Property.getVariable("cukes.platformName").equalsIgnoreCase("iOS")) {
 				cap.getCap().setCapability("automationName","XCUITest");
 				driver = new IOSDriver(new URL(browserstackServerAddress), cap.getCap());
-			}else {
+			}else if(Property.getVariable("cukes.platformName").equalsIgnoreCase("CHROME")) {
+				cap.getCap().setCapability("os","windows");
+				cap.getCap().setCapability("os_version","11");
+				cap.getCap().setCapability("browser","chrome");
+				cap.getCap().setCapability("browser_version","113");
+				driver = new RemoteWebDriver(new URL(browserstackServerAddress), cap.getCap());
+			}else if(Property.getVariable("cukes.platformName").equalsIgnoreCase("SAFARI")) {
+				cap.getCap().setCapability("os","OS X");
+				cap.getCap().setCapability("os_version","Ventura");
+				cap.getCap().setCapability("browser","Safari");
+				cap.getCap().setCapability("browser_version","16.3");
 				driver = new RemoteWebDriver(new URL(browserstackServerAddress), cap.getCap());
 			}
 		} catch (MalformedURLException e) {

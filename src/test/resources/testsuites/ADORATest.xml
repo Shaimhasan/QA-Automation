@@ -15,3 +15,25 @@
 
 <!--Command: clean install ${Command}-->
 
+
+<!--Browser Stack Configuration-->
+
+<!--        For Chrome-->
+
+<!--        -ea -Dcukes.browserstackUserName=shaimhasan_UreOPb -Dcukes.browserstackAccessKey=hTssFgsxL21xp9aG9gvZ -Dcukes.browserstackEndPoint=@hub-cloud.browserstack.com/wd/hub -Dcukes.env=QA -Dcukes.techstack=LOCAL_BROWSERSTACK -Dcukes.platformName=CHROME -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2-->
+
+<!--        For Safari-->
+
+<!--        -ea -Dcukes.browserstackUserName=shaimhasan_UreOPb -Dcukes.browserstackAccessKey=hTssFgsxL21xp9aG9gvZ -Dcukes.browserstackEndPoint=@hub-cloud.browserstack.com/wd/hub -Dcukes.env=QA -Dcukes.techstack=LOCAL_BROWSERSTACK -Dcukes.platformName=SAFARI -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2-->
+
+<!--Browse Stack configuration as per jenkins-->
+
+<!--        For Jenkins Configuration-->
+
+<!--        -DCucumber.options="&#45;&#45;tags @${PICK_SCENARIOS}" -Dcukes.browserstackUserName=shaimhasan_UreOPb -Dcukes.browserstackAccessKey=hTssFgsxL21xp9aG9gvZ -Dcukes.browserstackEndPoint=@hub-cloud.browserstack.com/wd/hub -Dcukes.env=${ENVIRONMENT} -Dcukes.techstack=${BROWSER} -Dcukes.platformName=CHROME -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2-->
+
+<!--        Below with Choice parameter-->
+
+<!--        -DCucumber.options="&#45;&#45;tags @${PICK_SCENARIOS}" -Dcukes.browserstackUserName=${BrowserStack_UserName} -Dcukes.browserstackAccessKey=${BrowserStack_AccessKey} -Dcukes.browserstackEndPoint=${BrowserStack_EndPoint} -Dcukes.env=${ENVIRONMENT} -Dcukes.techstack=${BROWSER} -Dcukes.platformName=${BrowserStack_PlatformName} -Dorg.apache.logging.log4j.level=DEBUG -Dcukes.selenium.defaultFindRetries=2-->
+
+

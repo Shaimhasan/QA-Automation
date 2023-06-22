@@ -1,0 +1,6 @@
+[
+		{
+			"seleniumServer":"browserstack",
+			"browserName":"chromes"
+		}
+]
