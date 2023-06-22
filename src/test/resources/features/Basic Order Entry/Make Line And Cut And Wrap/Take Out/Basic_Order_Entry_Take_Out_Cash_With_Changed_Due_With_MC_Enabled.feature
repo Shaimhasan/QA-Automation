@@ -1,10 +1,10 @@
-Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line and Cut and Wrap enabled
-  This script is to validate Basic Order Entry - Dine In Cash - with Change Due  - with Make Line and Cut and Wrap enabled
-   and Customer pays $100
+Feature: Basic Order Entry - Take Out Cash - with Change Due  - with Make Line and Cut and Wrap enabled
+  This script is to validate Basic Order Entry - Take Out Cash - with Change Due  - with Make Line and Cut and Wrap enabled
+  and Customer pays $100
 
-  @issue=1653
-  @Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_DineIn
-  Scenario: Basic_Order_Entry_Dine_In_Cash_With_Changed_Due_With_Make_Line_And_Cut_And_Wrap_Enabled_Testcase
+  @issue=1652
+  @Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_MC_Enabled @RegressionSuite @TakeOut @BOE_TakeOut @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_TakeOut
+  Scenario: Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_MC_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -21,8 +21,6 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line an
     When the user enters the secure credential "#(Password)" into the "password" textbox at the "LoginPage" page
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
@@ -87,8 +85,10 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line an
 
     #Comment: user click On the orderEntry Button
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
+    #Comment: user click on Take Out
+    And the user clicks the "takeOut" element at the "OrderEntry" page
     #Comment: validate background color
-    And the user validates the background color of the "dinInColor" element is "rgba(153, 255, 204, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
+    And the user validates the background color of the "takeOutColor" element is "rgba(255, 255, 224, 1)" at the "OrderEntry" page "validate_background_color" "HardStopOnFailure"
     #Comment: user select veggiePizza
     And the user clicks the "pepperoniPizzaMC" element at the "OrderEntry" page
     #Comment: The user selected Veggie Pizza
@@ -256,7 +256,5 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line an
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
-
-
 
 
