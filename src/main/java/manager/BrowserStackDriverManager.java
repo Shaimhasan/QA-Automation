@@ -8,6 +8,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -36,6 +37,9 @@ public class BrowserStackDriverManager extends DriverManager {
 				cap.getCap().setCapability("os","windows");
 				cap.getCap().setCapability("os_version","11");
 				cap.getCap().setCapability("browser","chrome");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--start-maximized");
+				cap.getCap().setCapability(ChromeOptions.CAPABILITY, options);
 				cap.getCap().setCapability("browser_version","113");
 				driver = new RemoteWebDriver(new URL(browserstackServerAddress), cap.getCap());
 			}else if(Property.getVariable("cukes.platformName").equalsIgnoreCase("SAFARI")) {
