@@ -45,12 +45,6 @@ Feature: Basic Cancel Add Menu Items
     And store value from row "1" and column "2" from the "table" table at the "HistoryPage" page into the data dictionary with key "existingIdNumber_First"
     #Comment: the user click on close button
     And the user clicks the "close" element at the "HistoryPage" page
-    #Comment: the user refresh the page
-    And the user refreshes the page
-    #Comment: the user click on Menu Items
-    And the user clicks the "menuItems" element at the "MenuSettingPage" page
-    #Comment: the user wait untile element displayed
-    And the user validates the "menuItemTxt" element is visible at the "MenuSettingPage" page "validate_text" "HardStopOnFailure"
 
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "MenuItemsPage" page
@@ -93,6 +87,12 @@ Feature: Basic Cancel Add Menu Items
     #Comment: The user wait until page is loading
     And the user waits for the page to load
 
+    #Comment: the user refresh the page
+    And the user refreshes the page
+    #Comment: the user click on Menu Items
+    And the user clicks the "menuItems" element at the "MenuSettingPage" page
+    #Comment: the user wait untile element displayed
+    And the user validates the "menuItemTxt" element is visible at the "MenuSettingPage" page "validate_text" "HardStopOnFailure"
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup
