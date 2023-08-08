@@ -33,7 +33,7 @@ public class EditMenuItemsPage extends BasePO {
     private By TakeOutCheckBoxIsSelectedSize = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_TakeOut_0']");
     private By deliveryCheckBoxIsSelectedSize = By.xpath("//input[@id='chk_BO_MN_ITM_ADDEDT_Sizes_Delivery_0']");
     private By defaultSize = By.xpath("//label[@id='rdo_BO_MN_ITM_ADDEDT_Sizes_Default_235']");
-    private By cancelBtn = By.xpath("//button[@onclick='BO_MN_ITM_ADDEDT_Close();']");
+    private By cancelBtn = By.xpath("//button[@id='btn_BO_MN_ITM_ADDEDT_Cancel']");
 
     public Element cancelBtn() throws IOException, InterruptedException {
         return $(cancelBtn);
