@@ -1194,6 +1194,11 @@ public class Element {
      * Get table rows based on matching a col Name
      */
     public List<String> getRowValuesForGivenColumn(String colName) {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         List<Element> rows = getAllRows();
         List<String> listOfRows = new ArrayList<>();
         int colIndex = getMatchingColumnNum(colName);

@@ -16,6 +16,7 @@ import validator.ComparisonOperator;
 import validator.ComparisonType;
 
 import java.text.ParseException;
+import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -694,6 +695,43 @@ public class AutoEngValidate extends BaseWebSteps {
 
     }
 
+    @Then("^the user validates the given \"([^\"]*)\" element is present at Page within given custom time interval \"([^\"]*)\" minutes$")
+    public void theUserValidatesTheElementIsPresentAfterSomeTimeAtThePage(String objectName,
+                                                                          String timeInterval) {
+        timeInterval = parseValue(timeInterval);
+        objectName = parseValue(objectName);
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofMinutes(Long.parseLong(timeInterval)));
+        webDriverWait.until(ExpectedConditions.visibilityOf(getDriver().findElement(By.xpath(objectName))));
+    }
+
+    @Then("^the user validates the \"([^\"]*)\" elements is present at the \"([^\"]*)\" page with attribute \"([^\"]*)\" and attribute value \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserValidatesTheElementsIsPresentAtThePage(String objectName,
+                                                              String pageName,
+                                                              String attributName,
+                                                              String attributeValue,
+                                                              String validationID,
+                                                              String onFailureFlag) {
+
+        attributName = parseValue(attributName);
+        attributeValue = parseValue(attributeValue);
+        final List<Element> elementPresent = getObjects(objectName, pageName);
+        for (Element elements : elementPresent) {
+            Assert.assertEquals(elements.getAttribute(attributName), attributeValue);
+        }
+        final String compareDesc = String.format("Expecting the '%s' element to be present on the '%s' page. ", objectName, pageName);
+        TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc);
+
+        if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
+            assertThat(elementPresent).as(compareDesc).isNotNull();
+        } else {
+            sa().assertThat(elementPresent).as(compareDesc).isNotNull();
+            if (elementPresent == null) {
+                Reporter.addStepLog(STATUS_FAIL, compareDesc);
+            }
+        }
+
+    }
+
     @Then("^the user order number \"([^\"]*)\" category value \"([^\"]*)\" cut and wrap validates the \"([^\"]*)\" element is present at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserCutAndWrapValidatesTheElementIsPresentAtThePage(String orderNum,
                                                                        String categoryValue,
@@ -997,7 +1035,7 @@ public class AutoEngValidate extends BaseWebSteps {
                                                       String attributeName,
                                                       String pageName
     ) {
-        try{
+        try {
             attributeName = parseValue(attributeName);
             expectedValue = parseValue(expectedValue);
             String expectedValueOne = expectedValue + "_1" + "_1";
@@ -1270,7 +1308,7 @@ public class AutoEngValidate extends BaseWebSteps {
             getPO().waitPageToLoad();
             Thread.sleep(1000);
             int count1 = getDriver().findElements(By.xpath("//p[contains(text(),'You are not checked in.')]")).size();
-            if (count1 > 0){
+            if (count1 > 0) {
                 System.out.println("Error Popup Found : You are not checked in.");
                 getDriver().findElement(By.xpath("//p[contains(text(),'You are not checked in.')]/..//following-sibling::div//button[text()='OK']")).click();
                 getDriver().findElement(By.xpath("//div[normalize-space(@class)='AdoraTopArrow']")).click();
@@ -1319,9 +1357,7 @@ public class AutoEngValidate extends BaseWebSteps {
                 getDriver().findElement(By.xpath("//div[@class='numpadGrid']//button[@class='zero']")).click();
                 Thread.sleep(500);
                 getDriver().findElement(By.xpath("//button[text()='Enter']")).click();
-            }
-
-            else{
+            } else {
                 getDriver().findElement(By.id("txtClockOutGratuity")).sendKeys("0");
                 getDriver().findElement(By.xpath("//button[text()='Clock Out']")).click();
                 getPO().waitPageToLoad();
@@ -1357,8 +1393,7 @@ public class AutoEngValidate extends BaseWebSteps {
             System.out.println("Error Popup Found : please grant location access.");
             getDriver().findElement(By.xpath("//button[text()='OK']")).click();
             Thread.sleep(1000);
-        }
-        else {
+        } else {
             System.out.println("Please Proceed");
         }
     }
