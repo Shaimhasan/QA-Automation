@@ -695,13 +695,13 @@ public class AutoEngValidate extends BaseWebSteps {
 
     }
 
-    @Then("^the user validates the given \"([^\"]*)\" element is present at Page within given custom time interval \"([^\"]*)\" minutes$")
+    @Then("^the user validates the given \"([^\"]*)\" element is present at Page within given custom time interval \"([^\"]*)\" seconds")
     public void theUserValidatesTheElementIsPresentAfterSomeTimeAtThePage(String objectName,
                                                                           String timeInterval) {
         timeInterval = parseValue(timeInterval);
         objectName = parseValue(objectName);
-        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofMinutes(Long.parseLong(timeInterval)));
-        webDriverWait.until(ExpectedConditions.visibilityOf(getDriver().findElement(By.xpath(objectName))));
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(Long.parseLong(timeInterval)));
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(objectName)));
     }
 
     @Then("^the user validates the \"([^\"]*)\" elements is present at the \"([^\"]*)\" page with attribute \"([^\"]*)\" and attribute value \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
