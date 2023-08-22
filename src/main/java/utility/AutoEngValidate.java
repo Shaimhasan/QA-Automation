@@ -1133,6 +1133,42 @@ public class AutoEngValidate extends BaseWebSteps {
 
     }
 
+    @Then("^the user clear All makeline single pizza \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" should not found at the page \"([^\"]*)\"$")
+    public void theUserClearAllMakeLine(String objectName,
+                                        String expectedValue,
+                                        String attributeName,
+                                        String pageName
+    ) {
+        attributeName = parseValue(attributeName);
+        expectedValue = parseValue(expectedValue);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        String expectedValueOne = expectedValue + "_1" + "_1";
+        int element = getDriver().findElements(By.xpath("(//div[@name='mldisplayitem'])[1]")).size();
+        if (element>0) {
+            String transactionNumber = getDriver().findElement(By.xpath("(//div[@name='mldisplayitem'])[1]")).getAttribute(attributeName);
+            System.out.println("Transaction Number : " + transactionNumber);
+            if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+                try {
+                    Assert.fail("Scripts failed due to element present");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                getObject(objectName, pageName).displayed();
+                getObject(objectName, pageName).click();
+                theUserClickSinglePizzaNotFoundMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+            }
+        } else {
+            System.out.println("Element is Not Found");
+        }
+
+    }
+
+
     @Then("^the user click Single prepstation \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
     public void theUserClickSingleUntilElementFound(String objectName,
                                                     String expectedValue,

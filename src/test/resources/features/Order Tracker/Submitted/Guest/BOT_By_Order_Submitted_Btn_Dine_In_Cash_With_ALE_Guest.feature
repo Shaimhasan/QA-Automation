@@ -33,52 +33,52 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: the user click Setting
     And the user clicks the "settings" element at the "SettingsPage" page
-#    #Comment: the user click on Setting change
-#    And the user clicks the "settingsChange" element at the "SettingsPage" page
-#    #Comment: the user click on make line row
-#    And the user clicks the "prepStationConfig" element at the "SettingsChangePage" page
-#    #Comment: the user wait the element enable
-#    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on Edit
-#    And the user clicks the "edit" element at the "EditSettingsPage" page
-#    #Comment: the user click on Make Line
-#    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-#    #Comment: the user click on Save
-#    And the user clicks the "save" element at the "EditSettingsPage" page
-#    #Comment: the user load the page
-#    And the user waits for the page to load
-#    #Comment: the user wait the element disable
-#    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on make line row
-#    And the user clicks the "makeLineConfig" element at the "SettingsChangePage" page
-#    #Comment: the user wait the element enable
-#    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on Edit
-#    And the user clicks the "edit" element at the "EditSettingsPage" page
-#    #Comment: the user click on Make Line
-#    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-#    #Comment: the user click on Save
-#    And the user clicks the "save" element at the "EditSettingsPage" page
-#    #Comment: the user load the page
-#    And the user waits for the page to load
-#    #Comment: the user wait the element disable
-#    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on make line row
-#    And the user clicks the "cutAndWrapConfig" element at the "SettingsChangePage" page
-#    #Comment: the user wait the element enable
-#    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on Edit
-#    And the user clicks the "edit" element at the "EditSettingsPage" page
-#    #Comment: the user click on Make Line
-#    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-#    #Comment: the user click on Save
-#    And the user clicks the "save" element at the "EditSettingsPage" page
-#    #Comment: the user load the page
-#    And the user waits for the page to load
-#    #Comment: the user wait the element disable
-#    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-#    #Comment: the user refresh Page
-#    And the user refreshes the page
+    #Comment: the user click on Setting change
+    And the user clicks the "settingsChange" element at the "SettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "prepStationConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "makeLineConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "cutAndWrapConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user refresh Page
+    And the user refreshes the page
 
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewTab"
@@ -174,7 +174,7 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click makeline until order comes on console
-    And the user click All makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
+    And the user clear All makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
