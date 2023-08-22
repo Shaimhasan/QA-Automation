@@ -13,7 +13,7 @@ Feature: Basic Online Order - Dine In Cash - with Cut and Wrap Only - Existing U
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits Jquery for the page to load
     #Comment: Enter the Employee_Id into username textbox present on Login Page
     When the user enters the user credential "#(Employee_Id)" into the "employee_Id" textbox at the "LoginPage" page
     #Comment: Enter the Password into Password textbox present on Login Page

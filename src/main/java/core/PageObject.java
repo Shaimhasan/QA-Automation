@@ -34,7 +34,7 @@ public class PageObject extends CommonPageObject {
     protected WebDriverWait wait;
     protected SoftAssertions sa = null;
 
-    public PageObject(WebDriver driver){
+    public PageObject(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(getWaitDuration()));
     }
@@ -70,9 +70,17 @@ public class PageObject extends CommonPageObject {
     public PageObject waitPageToLoad() {
         domLoaded();
         jqueryLoaded();
-      //  angularLoaded();
+        //  angularLoaded();
         return this;
     }
+
+    public PageObject waitPageToJqueryLoad() {
+        domLoaded();
+        jqueryLoadedWithTime();
+        //  angularLoaded();
+        return this;
+    }
+
     public PageObject staticWait(String time) {
         try {
             Thread.sleep(Long.parseLong(time));
@@ -108,7 +116,6 @@ public class PageObject extends CommonPageObject {
 
         if ((Boolean) js.executeScript("return typeof jQuery != 'undefined'")) {
             boolean jqueryReady = (Boolean) js.executeScript("return jQuery.active==0");
-
             if (!jqueryReady) {
                 getWait().until(new ExpectedCondition<Boolean>() {
                     public Boolean apply(WebDriver d) {
@@ -118,6 +125,28 @@ public class PageObject extends CommonPageObject {
             }
             try {
                 Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void jqueryLoadedWithTime() {
+        log.debug("checking that any JQuery operations complete");
+        final JavascriptExecutor js = (JavascriptExecutor) getDriver();
+
+        if ((Boolean) js.executeScript("return typeof jQuery != 'undefined'")) {
+            boolean jqueryReady = (Boolean) js.executeScript("return jQuery.active==0");
+            if (!jqueryReady) {
+                getWait().until(new ExpectedCondition<Boolean>() {
+                    public Boolean apply(WebDriver d) {
+                        return (Boolean) js.executeScript("return window.jQuery.active === 0");
+
+                    }
+                });
+            }
+            try {
+                Thread.sleep(4000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -372,36 +401,36 @@ public class PageObject extends CommonPageObject {
         }
     }
 
-    public void switchFrame(String frameLocator,int... retries) {
+    public void switchFrame(String frameLocator, int... retries) {
         try {
             getWait().until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameLocator));
         } catch (Exception e) {
             if (!(retries.length > 0 && retries[0] == 0)) {
-                this.switchFrame(frameLocator,retries);
+                this.switchFrame(frameLocator, retries);
             } else {
                 throw e;
             }
         }
     }
 
-    public void switchFrame(By by,int... retries) {
+    public void switchFrame(By by, int... retries) {
         try {
             getWait().until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(by));
         } catch (Exception e) {
             if (!(retries.length > 0 && retries[0] == 0)) {
-                this.switchFrame(by,retries);
+                this.switchFrame(by, retries);
             } else {
                 throw e;
             }
         }
     }
 
-    public void switchFrame(Element el,int... retries) {
+    public void switchFrame(Element el, int... retries) {
         try {
             getWait().until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(el.element()));
         } catch (Exception e) {
             if (!(retries.length > 0 && retries[0] == 0)) {
-                this.switchFrame(el,retries);
+                this.switchFrame(el, retries);
             } else {
                 throw e;
             }
@@ -413,7 +442,7 @@ public class PageObject extends CommonPageObject {
     }
 
     public SoftAssertions sa() {
-        if (sa == null){
+        if (sa == null) {
             sa = new SoftAssertions();
         }
         return sa;

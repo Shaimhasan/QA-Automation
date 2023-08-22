@@ -189,6 +189,12 @@ public class AutoEngUtility extends BaseWebSteps {
     public void theUserWaitsForThePageToLoad() {
         getPO().waitPageToLoad();
     }
+
+    @When("^the user waits Jquery for the page to load$")
+    public void theUserWaitsForJqueryThePageToLoad() {
+        getPO().waitPageToJqueryLoad();
+    }
+
     @When("^the user waits \"([^\"]*)\" seconds$")
     public void theUserWaitsForSomeTime(String timeInSeconds) {
         getPO().staticWait(timeInSeconds);
