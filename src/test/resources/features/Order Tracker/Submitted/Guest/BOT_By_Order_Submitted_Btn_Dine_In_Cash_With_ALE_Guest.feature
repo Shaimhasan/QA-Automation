@@ -13,7 +13,7 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     #Comment: user click On the Connect Button
     And the user clicks the "connect" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits Jquery for the page to load
     #Comment: Enter the Employee_Id into username textbox present on Login Page
     When the user enters the user credential "#(Employee_Id)" into the "employee_Id" textbox at the "LoginPage" page
     #Comment: Enter the Password into Password textbox present on Login Page
@@ -159,8 +159,23 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
 
+    #The user should validate the order is not present at MakeLine
+
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on makeLine
+    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click makeline until order comes on console
+    And the user click All makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
+
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
