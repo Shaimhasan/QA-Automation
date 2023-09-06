@@ -172,11 +172,11 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     #Comment: the user validate the element is present
     And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
-    And the user validates the "trackerBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the "trackerUncompletedBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
-    And the user validates the "trackerOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the "trackerUncompletedOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
-    And the user validates the "trackerDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the "trackerUncompletedDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
 
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"
@@ -251,11 +251,11 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     #Comment: the user validate the element is present
     And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
-    And the user validates the "trackerBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the "trackerUncompletedBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
-    And the user validates the "trackerOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the "trackerUncompletedOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
-    And the user validates the "trackerDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the "trackerUncompletedDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup
@@ -271,11 +271,11 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     #Comment: the user validate the element is present
     And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
-    And the user validates the "trackerBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the "trackerUncompletedBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
-    And the user validates the "trackerOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the "trackerUncompletedOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
-    And the user validates the "trackerDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the "trackerUncompletedDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup
