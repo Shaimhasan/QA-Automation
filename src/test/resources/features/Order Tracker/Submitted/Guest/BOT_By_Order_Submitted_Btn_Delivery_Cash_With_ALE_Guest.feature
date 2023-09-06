@@ -1,7 +1,8 @@
 Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - Track My Order
   This script is to validate Basic Online Order - Delivery Cash - with all lines enabled - Guest - Track My Order
 
-  Scenario: Basic_Online_Order_Delivery_Cash_With_All_Lines_Enabled_Guest_TMO_Testcase
+  @BOT_By_Order_Submitted_Btn_Delivery_Cash_With_ALE_Guest @RegressionSuite @Submitted @Guest @Existing_User
+  Scenario: BOT_By_Order_Submitted_Btn_Delivery_Cash_With_ALE_Guest_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -27,56 +28,56 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
-#    #Comment: the user click on back office
-#    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
-#    #Comment: the user click Setting
-#    And the user clicks the "settings" element at the "SettingsPage" page
-#    #Comment: the user click on Setting change
-#    And the user clicks the "settingsChange" element at the "SettingsPage" page
-#    #Comment: the user click on make line row
-#    And the user clicks the "prepStationConfig" element at the "SettingsChangePage" page
-#    #Comment: the user wait the element enable
-#    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on Edit
-#    And the user clicks the "edit" element at the "EditSettingsPage" page
-#    #Comment: the user click on Make Line
-#    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-#    #Comment: the user click on Save
-#    And the user clicks the "save" element at the "EditSettingsPage" page
-#    #Comment: the user load the page
-#    And the user waits for the page to load
-#    #Comment: the user wait the element disable
-#    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on make line row
-#    And the user clicks the "makeLineConfig" element at the "SettingsChangePage" page
-#    #Comment: the user wait the element enable
-#    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on Edit
-#    And the user clicks the "edit" element at the "EditSettingsPage" page
-#    #Comment: the user click on Make Line
-#    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-#    #Comment: the user click on Save
-#    And the user clicks the "save" element at the "EditSettingsPage" page
-#    #Comment: the user load the page
-#    And the user waits for the page to load
-#    #Comment: the user wait the element disable
-#    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on make line row
-#    And the user clicks the "cutAndWrapConfig" element at the "SettingsChangePage" page
-#    #Comment: the user wait the element enable
-#    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on Edit
-#    And the user clicks the "edit" element at the "EditSettingsPage" page
-#    #Comment: the user click on Make Line
-#    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-#    #Comment: the user click on Save
-#    And the user clicks the "save" element at the "EditSettingsPage" page
-#    #Comment: the user load the page
-#    And the user waits for the page to load
-#    #Comment: the user wait the element disable
-#    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-#    #Comment: the user refresh Page
-#    And the user refreshes the page
+    #Comment: the user click on back office
+    And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
+    #Comment: the user click Setting
+    And the user clicks the "settings" element at the "SettingsPage" page
+    #Comment: the user click on Setting change
+    And the user clicks the "settingsChange" element at the "SettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "prepStationConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "makeLineConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "cutAndWrapConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user refresh Page
+    And the user refreshes the page
 
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewTab"
@@ -114,14 +115,14 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
-#    #Comment: User wait to visible the page
-#    And the user waits for the "cheesePizzaPMC" element to be "VISIBLE" on the "HomeOLOPage" page
-#    #Comment: User click on dine in
-#    And the user clicks the "cheesePizzaPMC" element at the "HomeOLOPage" page
-#    #Comment: User wait to visible the page
-#    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
-#    #Comment: User click on dine in
-#    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "cheesePizzaPMC" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "cheesePizzaPMC" element at the "HomeOLOPage" page
+    #Comment: User wait to visible the page
+    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
+    #Comment: User click on dine in
+    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
@@ -160,6 +161,22 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
     #Comment: the user click on OrderModelPopupOLOPage
     And the user clicks the "trackMyOrder" element at the "OrderModelPopupOLOPage" page
+    #Comment: the user click on OK Button
+    And the user clicks the "OK" element at the "OrderTrack" page
+    #Comment: the user wait the page open
+    And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedMakeline" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedCooking" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
 
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"
@@ -178,9 +195,10 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     #Comment: user click prepstation until order comes on console
     And the user click prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" found at the page "PrepStationPage"
 
+#The user should validate the order is not present at MakeLine
 
-
-
+    #Comment: the user switched back window
+    And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -192,8 +210,74 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click makeline until order comes on console
-    And the user click makeline "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    And the user clear All makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
 
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "prepStation" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: User validate the order list element is present.
+    And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
+    #Comment: user click on prep Station
+    And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+    #Comment: user click prepstation until order comes on console
+    And the user click prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" found at the page "PrepStationPage"
+
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on makeLine
+    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+
+    # /** Here we are validating the Track Order **/
+
+    #Comment: the user switched back window
+    And the user switches to window that contains "Automation Profile"
+    #Comment: the user wait the page open
+    And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user validate the element is present
+    And the user validates the given "#(trackerActiveMaking)" element is present at Page within given custom time interval "120" seconds
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedCooking" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user switched back window
+    And the user switches to window that contains "Adora"
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click makeline until order comes on console
+    And the user click makeline "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    #Comment: the user switched back window
+    And the user switches to window that contains "Automation Profile"
+    #Comment: the user wait the page open
+    And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user validate the element is present
+    And the user validates the given "#(trackerActiveCooking)" element is present at Page within given custom time interval "120" seconds
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user switched back window
+    And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -220,9 +304,24 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     And the user waits for the page to load
     #Comment: the user validate the cut and wrap
     And the user order number "#(orderNum1)" category value "2" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
+    #Comment: the user switched back window
+    And the user switches to window that contains "Automation Profile"
+    #Comment: the user wait the page open
+    And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user validate the element is present
+    And the user validates the given "#(trackerActiveReady)" element is present at Page within given custom time interval "120" seconds
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedBeingDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
 
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+
+    # /** Here we are validating the Delivered Track Order **/
+
+    #Comment: the user switched back window
+    And the user switches to window that contains "Adora"
     #Comment: The user click on Adora header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user click on back office
@@ -285,13 +384,38 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
+
+    #Comment: the user switched back window
+    And the user switches to window that contains "Automation Profile"
+    #Comment: the user wait the page open
+    And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user validate the element is present
+    And the user validates the given "#(trackerBeingDeliveredActive)" element is present at Page within given custom time interval "120" seconds
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedOrderArriving" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+
+    #Comment: the user switched Adora window
+    And the user switches to window that contains "Adora"
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
+
+    #Comment: the user switched Automation Profile window
+    And the user switches to window that contains "Automation Profile"
+    #Comment: the user wait the page open
+    And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user validate the element is present
+    And the user validates the given "#(trackerOrderArrivingActive)" element is present at Page within given custom time interval "120" seconds
+    #Comment: the user validate the element is present
+    And the user validates the given "#(trackerDeliveredActive)" element is present at Page within given custom time interval "120" seconds
+
+    # /** Here we are validating the Track Order **/
+
+    #Comment: the user switched Adora window
+    And the user switches to window that contains "Adora"
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-
     #Comment: the user click on back office
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
     #Comment: user click on Adora Header

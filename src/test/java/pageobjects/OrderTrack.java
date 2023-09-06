@@ -17,6 +17,21 @@ public class OrderTrack extends BasePO {
     private By trackerUncompletedMakeline = By.xpath("//li[@id='tr_status_0' and @class='tracker-uncompleted']");
     private By trackerUncompletedCooking = By.xpath("//li[@id='tr_status_1' and @class='tracker-uncompleted']");
     private By trackerUncompletedReady = By.xpath("//li[@id='tr_status_2' and @class='tracker-uncompleted']");
+    private By trackerUncompletedBeingDelivered = By.xpath("//li[@id='tr_status_3' and @class='tracker-uncompleted']");
+    private By trackerUncompletedOrderArriving = By.xpath("//li[@id='tr_status_4' and @class='tracker-uncompleted']");
+    private By trackerUncompletedDelivered = By.xpath("//li[@id='tr_status_5' and @class='tracker-uncompleted']");
+
+    public Element trackerUncompletedBeingDelivered() throws IOException, InterruptedException {
+        return $(trackerUncompletedBeingDelivered);
+    }
+
+    public Element trackerUncompletedOrderArriving() throws IOException, InterruptedException {
+        return $(trackerUncompletedOrderArriving);
+    }
+
+    public Element trackerUncompletedDelivered() throws IOException, InterruptedException {
+        return $(trackerUncompletedDelivered);
+    }
 
     public Element trackerUncompletedReady() throws IOException, InterruptedException {
         return $(trackerUncompletedReady);
