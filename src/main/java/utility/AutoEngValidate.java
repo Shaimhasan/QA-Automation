@@ -704,7 +704,7 @@ public class AutoEngValidate extends BaseWebSteps {
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(objectName)));
     }
 
-    @Then("^the user validates the \"([^\"]*)\" elements is present at the \"([^\"]*)\" page with attribute \"([^\"]*)\" and attribute value \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+    @Then("^the user validates the \"([^\"]*)\" element is present at the \"([^\"]*)\" page with attribute \"([^\"]*)\" and attribute value \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheElementsIsPresentAtThePage(String objectName,
                                                               String pageName,
                                                               String attributName,
@@ -714,10 +714,34 @@ public class AutoEngValidate extends BaseWebSteps {
 
         attributName = parseValue(attributName);
         attributeValue = parseValue(attributeValue);
-        final List<Element> elementPresent = getObjects(objectName, pageName);
-        for (Element elements : elementPresent) {
-            Assert.assertEquals(elements.getAttribute(attributName), attributeValue);
+        final Element elementPresent = getObject(objectName, pageName);
+        Assert.assertEquals(elementPresent.getAttribute(attributName), attributeValue);
+        final String compareDesc = String.format("Expecting the '%s' element to be present on the '%s' page. ", objectName, pageName);
+        TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc);
+
+        if (onFailureFlag.equals(HARD_STOP_ON_FAILURE)) {
+            assertThat(elementPresent).as(compareDesc).isNotNull();
+        } else {
+            sa().assertThat(elementPresent).as(compareDesc).isNotNull();
+            if (elementPresent == null) {
+                Reporter.addStepLog(STATUS_FAIL, compareDesc);
+            }
         }
+
+    }
+
+    @Then("^the user validates the \"([^\"]*)\" element is not present at the \"([^\"]*)\" page with attribute \"([^\"]*)\" and attribute value \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+    public void theUserValidatesTheElementsIsNotPresentAtThePage(String objectName,
+                                                              String pageName,
+                                                              String attributName,
+                                                              String attributeValue,
+                                                              String validationID,
+                                                              String onFailureFlag) {
+
+        attributName = parseValue(attributName);
+        attributeValue = parseValue(attributeValue);
+        final Element elementPresent = getObject(objectName, pageName);
+        Assert.assertNotEquals(elementPresent.getAttribute(attributName), attributeValue);
         final String compareDesc = String.format("Expecting the '%s' element to be present on the '%s' page. ", objectName, pageName);
         TestContext.getInstance().testdata().put(VALIDATION_TAG + validationID, compareDesc);
 

@@ -158,6 +158,12 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     And the user clicks the "OK" element at the "OrderTrack" page
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedMakeline" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedCooking" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
 
     #The user should validate the order is not present at MakeLine
 
@@ -208,10 +214,12 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     And the user switches to window that contains "Automation Profile"
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
-    #Comment: the user wait element is visible
-    And the user validates the "trackerUncomplete" elements is present at the "OrderTrack" page with attribute "#(attributeName)" and attribute value "#(attributeValue)" "validate_Multiple_Element_Present" "HardStopOnFailure"
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerActiveMaking)" element is present at Page within given custom time interval "120" seconds
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedCooking" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup
@@ -224,6 +232,8 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerActiveCooking)" element is present at Page within given custom time interval "120" seconds
+    #Comment: the user validate the element is present
+    And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup

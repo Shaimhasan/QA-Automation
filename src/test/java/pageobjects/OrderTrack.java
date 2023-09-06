@@ -14,10 +14,20 @@ public class OrderTrack extends BasePO {
     private By trackerActiveMaking = By.xpath("//li[@id='tr_status_0' and @class='tracker-active']//img[@alt='Notification Image for Making']");
     private By trackerActiveCooking = By.xpath("//li[@id='tr_status_1' and @class='tracker-active']//img[@alt='Notification Image for Cooking']");
     private By trackerActiveReady = By.xpath("//li[@id='tr_status_2' and @class='tracker-active']//img[@alt='Notification Image for Ready']");
-    private By trackerUncomplete = By.xpath("//li[@class='tracker-uncompleted']");
+    private By trackerUncompletedMakeline = By.xpath("//li[@id='tr_status_0' and @class='tracker-uncompleted']");
+    private By trackerUncompletedCooking = By.xpath("//li[@id='tr_status_1' and @class='tracker-uncompleted']");
+    private By trackerUncompletedReady = By.xpath("//li[@id='tr_status_2' and @class='tracker-uncompleted']");
 
-    public List<Element> trackerUncomplete() throws IOException, InterruptedException {
-        return $$(trackerUncomplete);
+    public Element trackerUncompletedReady() throws IOException, InterruptedException {
+        return $(trackerUncompletedReady);
+    }
+
+    public Element trackerUncompletedCooking() throws IOException, InterruptedException {
+        return $(trackerUncompletedCooking);
+    }
+
+    public Element trackerUncompletedMakeline() throws IOException, InterruptedException {
+        return $(trackerUncompletedMakeline);
     }
 
     public Element trackerActiveCooking() throws IOException, InterruptedException {
