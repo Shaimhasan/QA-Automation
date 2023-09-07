@@ -116,14 +116,6 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     #Comment: User click on dine in
     And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "cheesePizzaPMC" element to be "VISIBLE" on the "HomeOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "cheesePizzaPMC" element at the "HomeOLOPage" page
-    #Comment: User wait to visible the page
-    And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
-    #Comment: User click on dine in
-    And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
-    #Comment: User wait to visible the page
     And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
