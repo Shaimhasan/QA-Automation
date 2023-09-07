@@ -385,7 +385,7 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerDeliveredActive)" element is present at Page within given custom time interval "120" seconds
 
-    # /** Here we are validating the Track Order **/
+    # /** Till Here we are validating the Track Order **/
 
     #Comment: the user switched Adora window
     And the user switches to window that contains "Adora"
