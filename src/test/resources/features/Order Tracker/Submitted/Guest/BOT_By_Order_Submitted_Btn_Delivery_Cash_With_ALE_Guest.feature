@@ -178,24 +178,7 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - T
     #Comment: the user validate the element is present
     And the user validates the "trackerUncompletedDelivered" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
 
-    #Comment: the user switched back window
-    And the user switches to window that contains "Adora"
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: user click on Adora Header
-    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "prepStation" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: User validate the order list element is present.
-    And the user validates the "prepStation" element is present at the "AdoraHeaderPage" page "validate_Prep_Station_present" "HardStopOnFailure"
-    #Comment: user click on prep Station
-    And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: user click prepstation until order comes on console
-    And the user click prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" found at the page "PrepStationPage"
-
-#The user should validate the order is not present at MakeLine
+    #The user should validate the order is not present at MakeLine
 
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"
