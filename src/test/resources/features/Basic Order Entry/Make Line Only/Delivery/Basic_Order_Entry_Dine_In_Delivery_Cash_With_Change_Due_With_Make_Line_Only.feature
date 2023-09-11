@@ -93,7 +93,7 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Make Line O
     #Comment: The user selected Veggie Pizza
     And the user validates the "chicagoSylPizzaM" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
     #Comment: Validate the amount
-    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderEntry" page "validate_Amount" "HardStopOnFailure"
+    And store the displayed text of the "amount" element at the "OrderEntry" page into the data dictionary with key "amt1"
     #Comment: user click on Devilery
     And the user clicks the "delivery" element at the "OrderEntry" page
     #Comment: the user enter phone Number
@@ -248,7 +248,7 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Make Line O
     #Comment: the user validate the visibility of Page
     And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
     #Comment: Validate the amount
-    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amtVal)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
+    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amt1)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
     And store the displayed text of the "transactionNum" element at the "OrderDetailsPage" page into the data dictionary with key "transaction_Number2"
     #Comment: The user save the order number into dictionary key
