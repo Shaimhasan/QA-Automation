@@ -89,8 +89,6 @@ Feature: Basic Order Entry - Delivery Cash  - with Make Line and Cut and Wrap en
     And the user clicks the "pepperoniPizzaMC" element at the "OrderEntry" page
     #Comment: The user selected Veggie Pizza
     And the user validates the "pepperoniPizzaMCIsSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
-    #Comment: Validate the amount
-    And store the displayed text of the "amount" element at the "OrderEntry" page into the data dictionary with key "amt1"
     #Comment: user click on Devilery
     And the user clicks the "delivery" element at the "OrderEntry" page
     #Comment: the user enter phone Number
@@ -103,6 +101,8 @@ Feature: Basic Order Entry - Delivery Cash  - with Make Line and Cut and Wrap en
     And store the displayed text of the "address" element at the "CustomerInfoPage" page into the data dictionary with key "address_value"
     #Comment: user click on Finish
     And the user clicks the "OK" element at the "CustomerInfoPage" page
+	#Comment: Validate the amount
+    And store the displayed text of the "amount" element at the "OrderEntry" page into the data dictionary with key "amt1"
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
     #Comment: user click on Cash

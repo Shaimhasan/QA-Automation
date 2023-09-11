@@ -89,8 +89,6 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Prep Station and Make 
     And the user clicks the "supremePizzaPM" element at the "OrderEntry" page
     #Comment: The user selected Supreme Pizza
     And the user validates the "supremePizzaPMSelected" element is present at the "OrderEntry" page "validate_Pizza_Selected" "HardStopOnFailure"
-    #Comment: Validate the amount
-    And store the displayed text of the "amount" element at the "OrderEntry" page into the data dictionary with key "amt1"
     #Comment: user click on Devilery
     And the user clicks the "delivery" element at the "OrderEntry" page
     #Comment: the user enter phone Number
@@ -105,6 +103,8 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Prep Station and Make 
     And store the displayed text of the "address" element at the "CustomerInfoPage" page into the data dictionary with key "address_value"
     #Comment: user click on Finish
     And the user clicks the "OK" element at the "CustomerInfoPage" page
+	#Comment: Validate the amount
+    And store the displayed text of the "amount" element at the "OrderEntry" page into the data dictionary with key "amt1"
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
     #Comment: user click on credit
