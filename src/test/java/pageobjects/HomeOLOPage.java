@@ -17,6 +17,11 @@ public class HomeOLOPage extends BasePO {
     private By supremePizzaPM = By.xpath("//button[@aria-label='Supreme Pizza (P-M)']");
     private By cheesePizzaPMC = By.xpath("//button[@aria-label='Cheese Pizza (P-M-C)']");
     private By checkOut = By.id("btn_cart_checkout");
+    private By orderTotal = By.xpath("//div[@ltag='OrderTotal']//following-sibling::div");
+
+    public Element orderTotal() throws IOException, InterruptedException {
+        return $(orderTotal);
+    }
 
     public Element supremePizzaPM() throws IOException, InterruptedException {
         return $(supremePizzaPM);
