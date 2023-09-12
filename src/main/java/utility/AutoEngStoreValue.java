@@ -39,6 +39,17 @@ public class AutoEngStoreValue extends BaseWebSteps {
         logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
     }
 
+    @When("^store the displayed text without dollar of the \"([^\"]*)\" element at the \"([^\"]*)\" page into the data dictionary with key \"([^\"]*)\"$")
+    public void storeTheDisplayedTextExceptDollarOfTheElementAtThePageIntoTheDataDictionaryWithKey(String objectName,
+                                                                                       String pageName,
+                                                                                       String dictionaryKey) {
+        dictionaryKey = parseDictionaryKey(dictionaryKey);
+        String valToStore1 = getTextFromElement(getObject(objectName, pageName));
+        String valToStore = removeCurrency(valToStore1);
+        TestContext.getInstance().testdataPut(dictionaryKey, valToStore);
+        logStepMessage(String.format(STORED_VALUE, valToStore, dictionaryKey));
+    }
+
     @When("^store the sub string \"([^\"]*)\" of text with start index \"([^\"]*)\" and last index \"([^\"]*)\" into the data dictionary with key \"([^\"]*)\"$")
     public void storeTheSubStringDisplayedTextOfTheElementAtThePageIntoTheDataDictionaryWithKey(String text,
                                                                                                 String startIndex,
