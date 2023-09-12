@@ -114,7 +114,7 @@ Feature: Basic Online Order - Dine In Cash - with Make Line Only - Existing User
     #Comment: User wait to visible the page
     And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: store the value
-    And store the displayed text of the "orderTotal" element at the "HomeOLOPage" page into the data dictionary with key "amt1"
+    And store the displayed text without dollar of the "orderTotal" element at the "HomeOLOPage" page into the data dictionary with key "amt1"
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
