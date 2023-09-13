@@ -99,6 +99,36 @@ public class AutoEngClick extends BaseWebSteps {
 
     }
 
+    @When("^the user custom clicks All If element present the \"([^\"]*)\" element with Column Name \"([^\"]*)\" and value \"([^\"]*)\" at the \"([^\"]*)\" page with element 1 \"([^\"]*)\" and element 2 \"([^\"]*)\" element 3 \"([^\"]*)\"$")
+    public void theUserClicksAllIfElementPresentInTableAtThePage(String table,
+                                                              String colName,
+                                                              String value,
+                                                              String pageName,
+                                                              String objectName1,
+                                                              String objectName2,
+                                                              String objectName3) {
+        colName = parseValue(colName);
+        value = parseValue(value);
+       // List<String> allRowsWithValue = getObject(table, pageName).getRowValuesForGivenColumn(colName);
+        List<WebElement> element = getDriver().findElements(By.xpath("//tr[contains(@id,'" + value + "')]"));
+        if (!element.isEmpty()) {
+            try {
+                for (WebElement el : element) {
+                    el.click();
+                    getObject(objectName1, pageName).click();
+                    getObject(objectName2, pageName).visible();
+                    getObject(objectName2, pageName).click();
+                    getObject(objectName3, pageName).visible();
+                }
+            } catch (Exception e) {
+                theUserClicksAllIfElementPresentInTableAtThePage(table, colName, value, pageName, objectName1, objectName2, objectName3);
+            }
+        } else {
+            System.out.println("Row is empty");
+        }
+
+    }
+
     @When("^the user delete all rows If element present the \"([^\"]*)\" table with Column Name \"([^\"]*)\" and value \"([^\"]*)\" at the \"([^\"]*)\" page with FirstObjectName \"([^\"]*)\" and SecondObjectName \"([^\"]*)\" ThirdObjectName \"([^\"]*)\"$")
     public void theUserDeleteAllRowsElementPresentInTableAtThePage(String table,
                                                                    String colName,

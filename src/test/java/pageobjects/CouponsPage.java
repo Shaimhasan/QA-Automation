@@ -10,6 +10,7 @@ public class CouponsPage extends BasePO {
 
     private By addBtn = By.xpath("//button[normalize-space(@id)='btn_BO_CP_CPN_AddNew']");
     private By editBtn = By.id("btn_BO_CP_CPN_Edit");
+    private By editBtnDisable = By.xpath("//button[@id='btn_BO_CP_CPN_Edit' and @class='button-disabled ui-state-disabled']");
     private By table = By.id("tbl_BO_List_CP_CPN");
     private By history = By.id("btn_BO_HISTORY");
     private By actAndDeact = By.id("btn_BO_CP_CPN_AVAL");
@@ -18,6 +19,10 @@ public class CouponsPage extends BasePO {
     private By cloneWarningTxt = By.xpath("//div[text()='Warning']");
     private By delete = By.id("btn_BO_CP_CPN_Del");
     private By deleteOnWarning = By.xpath("//div[text()='Warning']/..//button[text()='Delete']");
+
+    public Element editBtnDisable() throws IOException, InterruptedException {
+        return $(editBtnDisable);
+    }
 
     public Element deleteOnWarning() throws IOException, InterruptedException {
         return $(deleteOnWarning);
