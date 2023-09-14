@@ -1,7 +1,7 @@
 Feature: Basic Delete Coupons
   This script is to validate Add Delete
 
-  @Basic_Delete_All_Coupons @RegressionSuite @BO_Coupons @Discounts @Back_Office
+  @Basic_Delete_All_Coupons
   Scenario: Basic_Delete_All_Coupons_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
