@@ -18,6 +18,11 @@ public class InventoryPage extends BasePO {
     private By mixtureRecipe = By.xpath("//li[text()='Mixture Recipe']");
     private By vendors = By.xpath("//li[text()='Vendors']");
     private By vendorsDeliveryDays = By.xpath("//li[text()='Vendor Delivery Days']");
+    private By waste = By.xpath("//li[text()='Waste']");
+
+    public Element waste() throws IOException, InterruptedException {
+        return $(waste);
+    }
 
     public Element vendorsDeliveryDays() throws IOException, InterruptedException {
         return $(vendorsDeliveryDays);
