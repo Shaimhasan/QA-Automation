@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Take Out Cash  - with Make Line and Cut and Wrap enabled
   This script is to validate Basic Order Entry - Take Out Cash  - with Make Line and Cut and Wrap enabled
 
-  @Basic_Order_Entry_Take_Out_Cash_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @TakeOut @BOE_TakeOut @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_TakeOut
+  @Basic_Order_Entry_Take_Out_Cash_With_Make_Line_And_Cut_And_Wrap_Enabled @RegressionSuite @TakeOut @BOE_TakeOut @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_TakeOut @Smoke_Testing
   Scenario: Basic_Order_Entry_Take_Out_Cash_With_Make_Line_And_Cut_And_Wrap_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with Make Line and Cut and Wrap enabled
   This script is to validate Basic Order Entry - Dine-in with half cash and half Credit Card  - with Make Line and Cut and Wrap enabled
 
-  @Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_MC @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_DineIn
+  @Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_MC @RegressionSuite @DineIn @BOE_DineIn @BOE @BOE_Make_Line_And_Cut_And_Wrap @BOE_Make_Line_And_Cut_And_Wrap_DineIn @Smoke_Testing
   Scenario: Basic_Order_Entry_Dine_In_With_Half_Cash_And_Half_Credit_Card_With_MC_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

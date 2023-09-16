@@ -1,7 +1,7 @@
 Feature: Basic Order Entry - Delivery Cash  - with Prep Station and Make Line enabled
   This script is to validate Basic Order Entry - Delivery Cash  - with Prep Station and Make Line enabled
 
-  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @Delivery @BOE_Delivery @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_Delivery
+  @Basic_Order_Entry_Dine_In_Delivery_Cash_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @Delivery @BOE_Delivery @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_Delivery @Smoke_Testing
   Scenario: Basic_Order_Entry_Dine_In_Delivery_Cash_With_Prep_Station_And_Make_Line_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
