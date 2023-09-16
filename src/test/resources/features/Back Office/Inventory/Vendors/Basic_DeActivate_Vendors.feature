@@ -1,7 +1,7 @@
 Feature: Basic DeActivate Vendors
   This script is to validate DeActivate Vendors
 
-  @Basic_DeActivate_Vendors @RegressionSuite @BO_Vendors @Inventory @Back_Office
+  @Basic_DeActivate_Vendors @RegressionSuite @BO_Vendors @Inventory @Back_Office @Smoke_Testing
   Scenario: Basic_DeActivate_Vendors_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

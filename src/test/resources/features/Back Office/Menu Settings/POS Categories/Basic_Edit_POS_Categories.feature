@@ -1,7 +1,7 @@
 Feature: Basic Edit POS Categories
   This script is to validate Edit POC Categories
 
-  @Basic_Edit_POS_Categories @RegressionSuite @BO_POS_Categories @Menu_Settings @Back_Office
+  @Basic_Edit_POS_Categories @RegressionSuite @BO_POS_Categories @Menu_Settings @Back_Office @Smoke_Testing
   Scenario: Basic_Edit_POS_Categories_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

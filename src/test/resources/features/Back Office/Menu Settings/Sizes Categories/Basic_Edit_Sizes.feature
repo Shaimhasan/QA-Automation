@@ -1,7 +1,7 @@
 Feature: Basic Edit Sizes
   This script is to validate Edit Sizes
 
-  @Basic_Edit_Sizes @RegressionSuite @BO_Sizes @Menu_Settings @Back_Office
+  @Basic_Edit_Sizes @RegressionSuite @BO_Sizes @Menu_Settings @Back_Office @Smoke_Testing
   Scenario: Basic_Edit_Sizes_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

@@ -1,7 +1,7 @@
 Feature: Basic Prices Edit for Price for Free Optional Modifiers
   This script is to validate Basic Prices Edit for Free Optional Modifiers
 
-  @Basic_Prices_Edit_for_Price_For_Free_Optional_Modifier @RegressionSuite @BO_Prices @Menu_Settings @Back_Office
+  @Basic_Prices_Edit_for_Price_For_Free_Optional_Modifier @RegressionSuite @BO_Prices @Menu_Settings @Back_Office @Smoke_Testing
   Scenario: Basic_Prices_Edit_for_Price_For_Free_Optional_Modifier_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

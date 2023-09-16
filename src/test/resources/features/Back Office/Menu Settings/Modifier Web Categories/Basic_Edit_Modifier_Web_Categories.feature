@@ -1,7 +1,7 @@
 Feature: Basic Edit Modifier Web Categories
   This script is to validate Edit Modifier Web Categories
 
-  @Basic_Edit_Modifier_Web_Categories @RegressionSuite @BO_Modifier_Web_Categories @Menu_Settings @Back_Office
+  @Basic_Edit_Modifier_Web_Categories @RegressionSuite @BO_Modifier_Web_Categories @Menu_Settings @Back_Office @Smoke_Testing
   Scenario: Basic_Edit_Modifier_Web_Categories_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

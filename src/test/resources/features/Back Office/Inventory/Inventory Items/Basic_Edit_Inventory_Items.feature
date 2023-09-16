@@ -1,7 +1,7 @@
 Feature: Basic Edit Inventory Items
   This script is to validate Edit Inventory Items
 
-  @Basic_Edit_Inventory_Items @RegressionSuite @BO_Inventory_Items @Inventory @Back_Office
+  @Basic_Edit_Inventory_Items @RegressionSuite @BO_Inventory_Items @Inventory @Back_Office @Smoke_Testing
   Scenario: Basic_Edit_Inventory_Items_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

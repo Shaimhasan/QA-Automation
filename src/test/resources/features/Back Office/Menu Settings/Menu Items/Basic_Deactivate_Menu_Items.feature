@@ -1,7 +1,7 @@
 Feature: Basic Deactivate Menu Items
   This script is to validate Deactivate Menu Items
 
-  @Basic_Deactivate_Menu_Items @RegressionSuite @BO_MenuItems @Menu_Settings @Back_Office
+  @Basic_Deactivate_Menu_Items @RegressionSuite @BO_MenuItems @Menu_Settings @Back_Office @Smoke_Testing
   Scenario: Basic_Deactivate_Menu_Items_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

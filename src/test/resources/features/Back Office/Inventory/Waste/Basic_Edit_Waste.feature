@@ -1,7 +1,7 @@
 Feature: Basic Edit Waste
   This script is to validate Edit Waste
 
-  @Basic_Edit_Waste @RegressionSuite @BO_Waste @Inventory @Back_Office
+  @Basic_Edit_Waste @RegressionSuite @BO_Waste @Inventory @Back_Office @Smoke_Testing
   Scenario: Basic_Edit_Waste_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

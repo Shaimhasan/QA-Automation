@@ -1,7 +1,7 @@
 Feature: Basic UnPost Inventory Entry
   This script is to validate UnPost Inventory Entry
 
-  @Basic_UnPost_Inventory_Entry @RegressionSuite @BO_Inventory_Entry @Inventory @Back_Office
+  @Basic_UnPost_Inventory_Entry @RegressionSuite @BO_Inventory_Entry @Inventory @Back_Office @Smoke_Testing
   Scenario: Basic_UnPost_Inventory_Entry_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

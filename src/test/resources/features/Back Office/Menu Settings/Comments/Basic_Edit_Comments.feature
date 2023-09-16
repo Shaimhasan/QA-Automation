@@ -1,7 +1,7 @@
 Feature: Basic Edit Comments
   This script is to validate Edit Comments
 
-  @Basic_Edit_Comments @RegressionSuite @BO_Comments @Menu_Settings @Back_Office
+  @Basic_Edit_Comments @RegressionSuite @BO_Comments @Menu_Settings @Back_Office @Smoke_Testing
   Scenario: Basic_Edit_Comments_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

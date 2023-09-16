@@ -1,7 +1,7 @@
 Feature: Basic Deactivate POS Categories
   This script is to validate Deactivate POC Categories
 
-  @Basic_Deactivate_POS_Categories @RegressionSuite @BO_POS_Categories @Menu_Settings @Back_Office
+  @Basic_Deactivate_POS_Categories @RegressionSuite @BO_POS_Categories @Menu_Settings @Back_Office @Smoke_Testing
   Scenario: Basic_Deactivate_POS_Categories_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

@@ -1,7 +1,7 @@
 Feature: Basic Edit Vendors Delivery Days
   This script is to validate Edit Vendors Delivery Days
 
-  @Basic_Edit_Vendors_Delivery_days @RegressionSuite @BO_Vendors_Delivery_Days @Inventory @Back_Office
+  @Basic_Edit_Vendors_Delivery_days @RegressionSuite @BO_Vendors_Delivery_Days @Inventory @Back_Office @Smoke_Testing
   Scenario: Basic_Edit_Vendors_Delivery_days_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

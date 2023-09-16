@@ -1,7 +1,7 @@
 Feature: Basic DeActivate Coupons
   This script is to validate DeActivate Coupons
 
-  @Basic_DeActivate_Coupons @RegressionSuite @BO_Coupons @Discounts @Back_Office
+  @Basic_DeActivate_Coupons @RegressionSuite @BO_Coupons @Discounts @Back_Office @Smoke_Testing
   Scenario: Basic_DeActivate_Coupons_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
