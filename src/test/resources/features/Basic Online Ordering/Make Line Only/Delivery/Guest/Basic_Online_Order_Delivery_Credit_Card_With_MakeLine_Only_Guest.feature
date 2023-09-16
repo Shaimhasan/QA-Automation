@@ -2,7 +2,7 @@ Feature: Basic Online Order - Delivery Credit Card - with Make Line Only - Guest
   This script is to validate Basic Online Order - Delivery Credit Card - with Make Line Only - Guest
 
   @issue=1783
-  @Basic_Online_Order_Delivery_Credit_Card_With_MakeLine_Only_Guest @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_MakeLine_Only @OLO_MakeLine_Only_Delivery @OLO_MakeLine_Only_Delivery_Guest
+  @Basic_Online_Order_Delivery_Credit_Card_With_MakeLine_Only_Guest @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_MakeLine_Only @OLO_MakeLine_Only_Delivery @OLO_MakeLine_Only_Delivery_Guest @Smoke_Testing
   Scenario: Basic_Online_Order_Delivery_Credit_Card_With_MakeLine_Only_Guest_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

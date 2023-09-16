@@ -2,7 +2,7 @@ Feature: Basic Online Order - Delivery Credit Card - with Make Line and Cut and 
   This script is to validate Basic Online Order - Delivery Credit Card - with Make Line and Cut and Wrap - Existing User
 
   @issue=1830
-  @Basic_Online_Order_Delivery_Credit_Card_With_MC_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_Delivery @OLO_MakeLine_And_Cut_And_Wrap_Delivery_Existing_User
+  @Basic_Online_Order_Delivery_Credit_Card_With_MC_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_Delivery @OLO_MakeLine_And_Cut_And_Wrap_Delivery_Existing_User @Smoke_Testing
   Scenario: Basic_Online_Order_Delivery_Credit_Card_With_MC_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

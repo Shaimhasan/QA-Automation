@@ -2,7 +2,7 @@ Feature: Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Ex
   This script is to validate Basic Online Order - Dine In Cash - with Make Line and Cut and Wrap- Existing User
 
   @issue=1825
-  @Basic_Online_Order_Dine_In_Cash_With_MC_Existing_User @RegressionSuite @DineIn @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_DineIn @OLO_MakeLine_And_Cut_And_Wrap_DineIn_Existing_User
+  @Basic_Online_Order_Dine_In_Cash_With_MC_Existing_User @RegressionSuite @DineIn @OLO @OLO_MakeLine_And_Cut_And_Wrap @OLO_MakeLine_And_Cut_And_Wrap_DineIn @OLO_MakeLine_And_Cut_And_Wrap_DineIn_Existing_User @Smoke_Testing
   Scenario: Basic_Online_Order_Dine_In_Cash_With_MC_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

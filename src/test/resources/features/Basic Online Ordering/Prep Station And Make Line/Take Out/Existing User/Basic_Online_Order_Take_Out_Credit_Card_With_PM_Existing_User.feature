@@ -2,7 +2,7 @@ Feature: Basic Online Order - Take Out Credit Card - with Prep Station and Make 
   This script is to validate Basic Online Order - Take Out Credit Card - with Prep Station and Make Line - Existing User
 
   @issue=1834
-  @Basic_Online_Order_Take_Out_Credit_Card_With_PM_Existing_User @RegressionSuite @TakeOut @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_TakeOut @OLO_Prep_Station_And_MakeLine_TakeOut_Existing_User
+  @Basic_Online_Order_Take_Out_Credit_Card_With_PM_Existing_User @RegressionSuite @TakeOut @OLO @OLO_Prep_Station_And_MakeLine @OLO_Prep_Station_And_MakeLine_TakeOut @OLO_Prep_Station_And_MakeLine_TakeOut_Existing_User @Smoke_Testing
   Scenario: Basic_Online_Order_Take_Out_Credit_Card_With_PM_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

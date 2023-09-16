@@ -2,7 +2,7 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Existing 
   This script is to validate Basic Online Order - Take Out Cash - with all lines enabled - Existing User
 
   @issue=1839
-  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Existing_User @RegressionSuite @TakeOut @OLO @OLO_ALE @OLO_ALE_TakeOut @OLO_ALE_TakeOut_Existing_User
+  @Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Existing_User @RegressionSuite @TakeOut @OLO @OLO_ALE @OLO_ALE_TakeOut @OLO_ALE_TakeOut_Existing_User @Smoke_Testing
   Scenario: Basic_Online_Order_Take_Out_Cash_With_All_Lines_Enabled_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

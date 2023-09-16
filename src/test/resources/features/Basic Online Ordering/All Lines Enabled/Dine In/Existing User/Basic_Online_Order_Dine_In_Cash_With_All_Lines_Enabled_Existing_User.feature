@@ -2,7 +2,7 @@ Feature: Basic Online Order - Dine In Cash - with all lines enabled - Existing U
   This script is to validate Basic Online Order - Dine In Cash - with all lines enabled - Existing User
 
   @issue=1837
-  @Basic_Online_Order_Dine_In_Cash_With_All_Lines_Enabled_Existing_User @RegressionSuite @DineIn @OLO @OLO_ALE @OLO_ALE_DineIn @OLO_ALE_DineIn_Existing_User
+  @Basic_Online_Order_Dine_In_Cash_With_All_Lines_Enabled_Existing_User @RegressionSuite @DineIn @OLO @OLO_ALE @OLO_ALE_DineIn @OLO_ALE_DineIn_Existing_User @Smoke_Testing
   Scenario: Basic_Online_Order_Dine_In_Cash_With_All_Lines_Enabled_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

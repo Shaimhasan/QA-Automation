@@ -2,7 +2,7 @@ Feature: Basic Online Order - Delivery Cash - with Prep Station and Cut and Wrap
   This script is to validate Basic Online Order - Delivery Cash - with Prep Station and Cut and Wrap - Existing User
 
   @issue=2817
-  @Basic_Online_Order_Delivery_Cash_With_PC_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_Delivery @OLO_Prep_Station_And_Cut_And_Wrap_Delivery_Existing_User
+  @Basic_Online_Order_Delivery_Cash_With_PC_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OLO_Prep_Station_And_Cut_And_Wrap_Delivery @OLO_Prep_Station_And_Cut_And_Wrap_Delivery_Existing_User @Smoke_Testing
   Scenario: Basic_Online_Order_Delivery_Cash_With_PC_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

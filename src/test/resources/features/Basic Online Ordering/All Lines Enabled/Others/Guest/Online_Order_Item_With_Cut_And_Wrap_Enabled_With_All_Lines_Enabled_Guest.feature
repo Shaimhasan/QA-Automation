@@ -2,7 +2,7 @@ Feature: Online Order - Item with Cut and Wrap enabled - with all lines enabled 
   This script is to validate Online Order - Item with Cut and Wrap enabled - with all lines enabled - Guest
 
   @issue=3051
-  @Online_Order_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Enabled_Guest @RegressionSuite @Others @OLO @OLO_ALE @OO_ALE_Guest
+  @Online_Order_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Enabled_Guest @RegressionSuite @Others @OLO @OLO_ALE @OO_ALE_Guest @Smoke_Testing
   Scenario: Online_Order_Item_With_Cut_And_Wrap_Enabled_With_All_Lines_Enabled_Guest_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"

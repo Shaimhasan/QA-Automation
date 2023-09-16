@@ -2,7 +2,7 @@ Feature: Online Order -Item with Prep Station and Make Line enabled - with Prep 
   This script is to validate Online Order -Item with Prep Station and Make Line enabled - with Prep Station and Cut and Wrap - Guest
 
   @issue=3047
-  @OO_Item_With_PM_Enabled_With_PC_Guest @RegressionSuite @Others @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OO_Prep_Station_And_Cut_And_Wrap_Others @OO_Prep_Station_And_Cut_And_Wrap_Others_Guest
+  @OO_Item_With_PM_Enabled_With_PC_Guest @RegressionSuite @Others @OLO @OLO_Prep_Station_And_Cut_And_Wrap @OO_Prep_Station_And_Cut_And_Wrap_Others @OO_Prep_Station_And_Cut_And_Wrap_Others_Guest @Smoke_Testing
   Scenario: OO_Item_With_PM_Enabled_With_PC_Guest_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
