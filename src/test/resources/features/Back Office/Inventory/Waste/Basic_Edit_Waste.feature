@@ -1,8 +1,8 @@
-Feature: Basic Add Waste
-  This script is to validate Add Waste
+Feature: Basic Edit Waste
+  This script is to validate Edit Waste
 
-  @Basic_Add_Waste @RegressionSuite @BO_Waste @Inventory @Back_Office
-  Scenario: Basic_Add_Waste_Testcase
+  @Basic_Edit_Waste @RegressionSuite @BO_Waste @Inventory @Back_Office
+  Scenario: Basic_Edit_Waste_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
      #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -64,14 +64,28 @@ Feature: Basic Add Waste
     And the user clicks the "editBtn" element at the "WastePage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "addWasteTxt" element to be "VISIBLE" on the "EditWastePage" page
+
+    #Comment: the user enter date
+    And the user enters "#(quantity3)" into the "quantity2" textbox at the "EditWastePage" page
+    #Comment : the User click on save
+    And the user clicks the "save" element at the "EditWastePage" page
+    #Comment: the user wait page to load
+    And the user waits for the page to load
+    #Comment: the user click on the ID number row
+    And the user clicks the "table" element with dictionary key "#(item)" at the "WastePage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
+    #Comment: the user click Add vendors
+    And the user clicks the "editBtn" element at the "WastePage" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "addWasteTxt" element to be "VISIBLE" on the "EditWastePage" page
+
     #Comment: the user validate the data
     And the user validates "Compare_Strings" that the "item" element is "Equal To" "#(item1)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
     #Comment: the user validate the data
     And the user validates "Compare_Strings" that the "quantity1" element is "Equal To" "#(quantity1)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
     #Comment: the user validate the data
-    And the user validates "Compare_Strings" that the "quantity2" element is "Equal To" "#(quantity2)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
+    And the user validates "Compare_Strings" that the "quantity2" element is "Equal To" "#(quantity3)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
     #Comment: the user validate the data
-    And the user validates "Compare_Strings" that the "totalWaste" element is "Equal To" "#(totalWaste)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
+    And the user validates "Compare_Strings" that the "totalWaste" element is "Equal To" "#(totalWaste70)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
     #Comment : the User click on Cancel
     And the user clicks the "cancel" element at the "EditWastePage" page
     #Comment: the user click on History Button
@@ -81,9 +95,32 @@ Feature: Basic Add Waste
     #Comment append value with dictionary
     And the user validates and append at leading any value ": " with data dictionary key "#(item)" and store with new dictionary key "item_value1_Latest"
     #Comment append value with dictionary
-    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Add']" with data dictionary key "#(item_value1_Latest)" and store with new dictionary key "item_value_Latest_1"
-    #Comment: the user validate the ID number in History
-    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Add" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(item_value_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
+    And the user validates and append at trailing any value "'])[1]//preceding-sibling::td[text()='Edit']//following-sibling::td)[5]" with data dictionary key "#(item_value1_Latest)" and store with new dictionary key "item_value2_Latest_1"
+    #Comment: the user click on Details Elements
+    And the user clicks the "table" element with dictionary key "#(Id_Number)" at the "HistoryPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(item_value2_Latest_1)"
+
+    #Comment: user validate the details model popup
+    And the user validates "Compare_Strings" that the "detailsText" element is "Equal To" "Details" at the "HistoryPage" page "validate_Details_model" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "1" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Unit Quantity" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "1" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "1" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(quantity2)" "validate_InvoiceNumber_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "1" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(quantity3)" "validate_InvoiceNumber_Details" "HardStopOnFailure"
+
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "2" and column "0" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Total Waste" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "2" and column "1" of the "tableDetails" table at the "HistoryPage" page "Equal To" "Changed" "validate_Item_Changed_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "2" and column "2" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(totalWaste)" "validate_InvoiceNumber_Details" "HardStopOnFailure"
+    #Comment: The user validate the chages on Hisotry Page
+    And the user validates the cell at row "2" and column "3" of the "tableDetails" table at the "HistoryPage" page "Equal To" "#(totalWaste70)" "validate_InvoiceNumber_Details" "HardStopOnFailure"
+
+    #Comment: the user click on close button
+    And the user clicks the "close" element at the "HistoryPage" page
     #Comment: the user click on close button
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
     #Comment: the user click on the ID number row

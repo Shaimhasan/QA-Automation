@@ -1,8 +1,8 @@
-Feature: Basic Add Waste
-  This script is to validate Add Waste
+Feature: Basic Delete Waste
+  This script is to validate Delete Waste
 
-  @Basic_Add_Waste @RegressionSuite @BO_Waste @Inventory @Back_Office
-  Scenario: Basic_Add_Waste_Testcase
+  @Basic_Delete_Waste @RegressionSuite @BO_Waste @Inventory @Back_Office
+  Scenario: Basic_Delete_Waste_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
      #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -55,25 +55,15 @@ Feature: Basic Add Waste
     And the user clicks the "save" element at the "AddWastePage" page
     #Comment : the User wait to page load
     And the user waits for the page to load
-
     #Comment: the user click on the ID number row
-    And the user clicks the "table" element with dictionary key "#(item)" at the "WastePage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
+    And the user clicks the "table" element with dictionary key "#(item)" at the "WastePage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id
     And store the displayed text of the "table" element at the "WastePage" page and get the dictionary key value "#(item)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
-    #Comment: the user click Add vendors
-    And the user clicks the "editBtn" element at the "WastePage" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "addWasteTxt" element to be "VISIBLE" on the "EditWastePage" page
-    #Comment: the user validate the data
-    And the user validates "Compare_Strings" that the "item" element is "Equal To" "#(item1)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
-    #Comment: the user validate the data
-    And the user validates "Compare_Strings" that the "quantity1" element is "Equal To" "#(quantity1)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
-    #Comment: the user validate the data
-    And the user validates "Compare_Strings" that the "quantity2" element is "Equal To" "#(quantity2)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
-    #Comment: the user validate the data
-    And the user validates "Compare_Strings" that the "totalWaste" element is "Equal To" "#(totalWaste)" at the "EditWastePage" page "validate_data" "HardStopOnFailure"
-    #Comment : the User click on Cancel
-    And the user clicks the "cancel" element at the "EditWastePage" page
+    #Comment: the user click on Delete Button
+    And the user clicks the "delete" element at the "WastePage" page
+    #Comment: the user click on Delete Button on Warning popup
+    And the user clicks the "deleteOnWarning" element at the "WastePage" page
+
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "VendorsPage" page
     #Comment: the user validate the visibility of popup
@@ -81,14 +71,8 @@ Feature: Basic Add Waste
     #Comment append value with dictionary
     And the user validates and append at leading any value ": " with data dictionary key "#(item)" and store with new dictionary key "item_value1_Latest"
     #Comment append value with dictionary
-    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Add']" with data dictionary key "#(item_value1_Latest)" and store with new dictionary key "item_value_Latest_1"
+    And the user validates and append at trailing any value "']//preceding-sibling::td[text()='Delete']" with data dictionary key "#(item_value1_Latest)" and store with new dictionary key "item_value_Latest_1"
     #Comment: the user validate the ID number in History
-    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Add" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(item_value_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
+    And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Delete" at the "HistoryPage" page based on datadictionary "#(Id_Number)" and xpath1 "#(IDNumberXpath3)" and xpath2 "#(item_value_Latest_1)" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on close button
     And the user clicks the "closeHistoryBtn" element at the "HistoryPage" page
-    #Comment: the user click on the ID number row
-    And the user clicks the "table" element with dictionary key "#(item)" at the "WastePage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
-    #Comment: the user click on Delete Button
-    And the user clicks the "delete" element at the "WastePage" page
-    #Comment: the user click on Delete Button on Warning popup
-    And the user clicks the "deleteOnWarning" element at the "WastePage" page

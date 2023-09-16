@@ -1,0 +1,38 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "name": "Automation Testing",
+      "phoneNo": "4546565659",
+      "email": "abcd@gmail.com",
+      "address": "Automation Address",
+      "city": " Florida",
+      "zipCode": " 452268",
+      "ItemNumberXpath1": "//td[text()='",
+      "ItemNumberXpath2": "']",
+      "IdNumberXpath1": "//td[text()='",
+      "IdNumberXpath2": "']/preceding-sibling::td",
+      "IdNumberExpectedValue": ": Automation Testing US",
+      "IDNumberXpath3": "((//td[text()='",
+      "IdNumberXpath4": ": Automation Testing US']",
+      "InvUnitConFactor": "15",
+      "yieldFactor": "90",
+      "wasteDate": "2025",
+      "item": "Automation Inventory Item",
+      "item1": " - Automation Inventory Item",
+      "quantity1": "2",
+      "quantity2": "2",
+      "quantity3": "6",
+      "totalWaste": "66",
+      "totalWaste70": "70",
+      "DetailsClickXpath1": "((//td[text()='"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
