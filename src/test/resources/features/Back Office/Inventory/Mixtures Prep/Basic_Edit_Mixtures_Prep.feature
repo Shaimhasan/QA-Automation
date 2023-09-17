@@ -40,9 +40,9 @@ Feature: Basic Edit Mixtures Prep
     #Comment: the user validate the visibility of popup
     And the user waits for the "mixturesPrepTxtPopup" element to be "VISIBLE" on the "CreateMixMixturesPrepPage" page
     #Comment: the user select the dropdown values
-    And the user selects value "Automation Mix" from the "mixtureDrpDwn" dropdown at the "CreateMixMixturesPrepPage" page
+    And the user selects value "Automation Mixture Recipe" from the "mixtureDrpDwn" dropdown at the "CreateMixMixturesPrepPage" page
     #Comment: the user validate the drop down value selected
-    And the user selects value from the "mixtureDrpDwn" dropdown equal to given value "Automation Mix" at the "CreateMixMixturesPrepPage" page
+    And the user selects value from the "mixtureDrpDwn" dropdown equal to given value "Automation Mixture Recipe" at the "CreateMixMixturesPrepPage" page
     #Comment: the user enter random number
     And the user enters random number based on Digit "900" into the "making" textbox at the "CreateMixMixturesPrepPage" page and store at dictionary key "making_value1"
     #Comment: the user enter text
