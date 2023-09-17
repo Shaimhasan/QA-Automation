@@ -25,6 +25,18 @@ public class AutoEngClick extends BaseWebSteps {
         getObject(objectName, pageName).click();
     }
 
+    @When("^the user clicks the \"([^\"]*)\" element at the \"([^\"]*)\" page If Present$")
+    public void theUserClicksTheElementIfPresentAtThePage(String objectName,
+                                                 String pageName) {
+        Boolean booleanValue = getObject(objectName, pageName).isDisplayed();
+        if(booleanValue){
+            getObject(objectName, pageName).click();
+        }
+        else {
+            System.out.println("Element is not present !! PLEASE PROCEED");
+        }
+    }
+
     @When("^the user disable the screenshot of every step due to notification popup$")
     public void theUserDisableScreenShotForEveryStep() {
         setRuntimeProperties(false);
