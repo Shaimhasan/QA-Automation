@@ -155,7 +155,7 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     #Comment: the user click on OrderModelPopupOLOPage
     And the user clicks the "trackMyOrder" element at the "OrderModelPopupOLOPage" page
     #Comment: the user click on OK Button
-    And the user clicks the "OK" element at the "OrderTrack" page
+    And the user clicks the "OK" element at the "OrderTrack" page If Present
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
     #Comment: the user validate the element is present
