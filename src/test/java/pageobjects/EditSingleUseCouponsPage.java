@@ -11,7 +11,7 @@ public class EditSingleUseCouponsPage extends BasePO {
     private By name = By.id("txt_BO_CP_SUC_ADDEDT_Name");
     private By expirationDate = By.id("txt_BO_CP_SUC_ADDEDT_ExpDate");
     private By startDate = By.id("txt_BO_CP_SUC_ADDEDT_StartDate");
-    private By couponRadioBtn = By.xpath("//input[normalize-space(@id)='rdo_BO_CP_SUC_ADDEDT_CPNs_266']");
+    private By couponRadioBtn = By.xpath("(//input[@name='rdo_BO_CP_SUC_ADDEDT_CPNs'])[1]");
     private By singleUseCouponsTxtPopup = By.xpath("//div[@id='div_BO_CP_SUC_ADDEDT_DIALOG_modal_view']//span[text()='Single Use Coupons']");
     private By save = By.xpath("//button[@onclick='BO_CP_SUC_ADDEDT_Save();']");
     private By cancel = By.xpath("//button[@onclick='BO_CP_SUC_ADDEDT_ModalClose();']");
