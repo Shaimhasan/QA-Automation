@@ -1,9 +1,9 @@
-Feature: Basic Order Entry - Take Out Cash  - with Prep Station and Make Line enabled
-  This script is to validate Basic Order Entry - Take Out Cash  - with Prep Station and Make Line enabled
+Feature: Basic Order Entry - Take Out Cash - with Change Due  - with Prep Station and Make Line enabled
+  This script is to validate Basic Order Entry - Take Out Cash - with Change Due  - with Prep Station and Make Line enabled
+  with 100 $Dollar
 
-  @issue=1646
-  @Basic_Order_Entry_Take_Out_Cash_With_Prep_Station_And_Make_Line_Enabled @RegressionSuite @TakeOut @BOE_TakeOut @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_TakeOut
-  Scenario: Basic_Order_Entry_Take_Out_Cash_With_Prep_Station_And_Make_Line_Enabled_Testcase
+  @Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_PM_Enabled @RegressionSuite @TakeOut @BOE_TakeOut @BOE @BOE_Prep_Station_And_Make_Line @BOE_Prep_Station_And_Make_Line_TakeOut
+  Scenario: Basic_Order_Entry_Take_Out_Cash_With_Changed_Due_With_PM_Enabled_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -96,8 +96,6 @@ Feature: Basic Order Entry - Take Out Cash  - with Prep Station and Make Line en
     And store the displayed text of the "amount" element at the "OrderEntry" page into the data dictionary with key "amt1"
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number
@@ -105,7 +103,7 @@ Feature: Basic Order Entry - Take Out Cash  - with Prep Station and Make Line en
     #Comment: user click on OK
     And the user clicks the "OK" element at the "OrderEntry" page
     #Comment: user click on Cash
-    And the user clicks the "cash" element at the "PaymentPage" page
+    And the user clicks the "hundreadDollar" element at the "PaymentPage" page
     #Comment: the user validate the visibility of popup
     And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user validate change due popuo is present
@@ -114,6 +112,8 @@ Feature: Basic Order Entry - Take Out Cash  - with Prep Station and Make Line en
     And store the displayed text of the "transactionNum" element at the "OrderEntry" page into the data dictionary with key "transaction_Number"
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
+    #Comment: Validate Changed Due Amount
+    Then the user validates "Compare_Strings" that the "changeDueAmt" element is "Equal To" "#(changedDueAmt)" at the "OrderEntry" page "validate_Changed_Due_Amount" "HardStopOnFailure"
     #Comment: user click on Close
     And the user clicks the "close" element at the "OrderEntry" page
 
@@ -160,8 +160,7 @@ Feature: Basic Order Entry - Take Out Cash  - with Prep Station and Make Line en
     #Comment: user click makeline until order comes on console
     And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: the user validate the visibility of popup
@@ -174,7 +173,7 @@ Feature: Basic Order Entry - Take Out Cash  - with Prep Station and Make Line en
     And the user waits for the page to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
-    #Comment: the user validate the ID number in History
+   #Comment: the user validate the ID number in History
     And the user validates Exact expected value "Compare_Strings" that the "table" element is "Equal To" "Cash" at the "OrderListPage" page based on datadictionary "#(order_Number)" and xpath1 "#(orderIdXpath)" and xpath2 "']//parent::td//following-sibling::td)[9]//div[text()='Cash']" "validate_ID_Number" "HardStopOnFailure"
     #Comment: the user click on Details Elements
     And the user clicks the "table" element with dictionary key "#(order_Number)" at the "OrderListPage" page with xpath1 "#(DetailsClickXpath1)" and xpath2 "#(DetailsClickXpath2)"
@@ -249,3 +248,5 @@ Feature: Basic Order Entry - Take Out Cash  - with Prep Station and Make Line en
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
+
+
