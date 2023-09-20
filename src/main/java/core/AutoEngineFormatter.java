@@ -57,7 +57,9 @@ public class AutoEngineFormatter implements ConcurrentEventListener {
         TestContext.getInstance().testdataPut("fw.featureName",
                                               this.testSources.getFeature((String) this.currentFeatureFile.get()).getName());
         TestContext.getInstance().testdataPut(FW_SCENARIO_NAME, event.testCase.getName());
+        System.out.println("             ");
         System.out.println("Scenarios Name --> "+ event.testCase.getName());
+        System.out.println("             ");
         TestContext.getInstance().testdataPut("fw.logFileName",
                                               String.format("%s-%s",
                                                             TestContext.getInstance().testdataGet("fw.featureName"),
