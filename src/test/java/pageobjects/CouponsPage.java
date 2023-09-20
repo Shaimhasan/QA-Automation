@@ -5,6 +5,7 @@ import core.Element;
 import org.openqa.selenium.By;
 
 import java.io.IOException;
+import java.util.List;
 
 public class CouponsPage extends BasePO {
 
@@ -19,6 +20,16 @@ public class CouponsPage extends BasePO {
     private By cloneWarningTxt = By.xpath("//div[text()='Warning']");
     private By delete = By.id("btn_BO_CP_CPN_Del");
     private By deleteOnWarning = By.xpath("//div[text()='Warning']/..//button[text()='Delete']");
+    private By selectPricePointDialogBox = By.id("div_BO_CP_CPN_SELECT_DIALOG");
+    private By deletePricePoint = By.xpath("(//div[@class='center-child']//button)[1]");
+
+    public List<Element> deletePricePoint() throws IOException, InterruptedException {
+        return $$(deletePricePoint);
+    }
+
+    public Element selectPricePointDialogBox() throws IOException, InterruptedException {
+        return $(selectPricePointDialogBox);
+    }
 
     public Element editBtnDisable() throws IOException, InterruptedException {
         return $(editBtnDisable);
