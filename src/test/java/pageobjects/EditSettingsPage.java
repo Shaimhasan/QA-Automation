@@ -11,7 +11,7 @@ public class EditSettingsPage extends BasePO {
     private By edit = By.id("btn_BO_ST_SET_Edit");
     private By settingPopupTxt = By.xpath("//div[@id='div_BO_ST_SET_EDT_DIALOG_modal_view']//span[text()='Setting']");
     private By drpDwn = By.xpath("//select[@id='ddl_BO_ST_SET_EDT']");
-    private By save = By.xpath("//div[@id='div_BO_ST_SET_EDT_DIALOG_modal_view']//button[text()='Save']");
+    private By save = By.id("btn_BO_ST_SET_EDT_Save");
 
     public Element save() throws IOException, InterruptedException {
         return $(save);
