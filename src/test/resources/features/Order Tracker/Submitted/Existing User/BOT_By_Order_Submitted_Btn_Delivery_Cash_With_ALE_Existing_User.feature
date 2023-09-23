@@ -1,7 +1,7 @@
 Feature: Basic Online Order - Delivery Cash - with all lines enabled - Existing User - Track My Order
   This script is to validate Basic Online Order - Delivery Cash - with all lines enabled - Existing User - Track My Order
 
-  @BOT_By_Order_Submitted_Btn_Delivery_Cash_With_ALE_Existing_User @RegressionSuite @Submitted @Guest @Existing_User
+  @BOT_By_Order_Submitted_Btn_Delivery_Cash_With_ALE_Existing_User @RegressionSuite @Submitted @Existing_User
   Scenario: BOT_By_Order_Submitted_Btn_Delivery_Cash_With_ALE_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
