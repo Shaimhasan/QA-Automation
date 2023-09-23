@@ -1,5 +1,5 @@
-Feature: Basic Online Order - Delivery Cash - with all lines enabled - Guest - Track My Order
-  This script is to validate Basic Online Order - Delivery Cash - with all lines enabled - Guest - Track My Order
+Feature: Basic Order Tracker - Delivery Cash - with all lines enabled - Guest - Track My Order
+  This script is to validate Basic Order Tracker - Delivery Cash - with all lines enabled - Guest - Track My Order
 
   @BOT_By_Order_Submitted_Btn_Delivery_Cash_With_ALE_Guest @RegressionSuite @Submitted @Guest @Existing_User
   Scenario: BOT_By_Order_Submitted_Btn_Delivery_Cash_With_ALE_Guest_Testcase

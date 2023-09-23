@@ -1,5 +1,5 @@
-Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
-  This script is to validate Basic Online Order - Take Out Cash - with all lines enabled - Guest
+Feature: Basic Order Tracker - Take Out Cash - with all lines enabled - Guest
+  This script is to validate Basic Order Tracker - Take Out Cash - with all lines enabled - Guest
 
   @issue=1782
   @BOT_By_Order_Submitted_Btn_Take_Out_Cash_With_ALE_Guest @RegressionSuite @Submitted @Guest
