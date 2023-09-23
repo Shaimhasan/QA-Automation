@@ -95,18 +95,16 @@ Feature: Basic Online Order - Delivery Cash - with all lines enabled - Existing 
     And the user clicks the "loginBtn" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
-    #Comment: the user enter the address
-    And the user enters "#(address)" into the "address" textbox at the "OrderTypeOLOPage" page
+   #comment: the user click on existingAddressSelect
+    And the user clicks the "existingAddressSelect" element at the "OrderTypeOLOPage" page
+    #Comment: the user validates the checkbox is selected
+    And the user validates the item in the "existingAddressSelect" checkbox is checked at the "OrderTypeOLOPage" page "validate_Text" "HardStopOnFailure"
     #Comment: the user click continue button
     And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user validate the text
     And the user validates "Compare_Strings" that the "orderTypeValidate" element is "Equal To" "#(orderTypeValidate)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
     #Comment: the user validate the text
     And the user validates "Compare_Strings" that the "asap" element is "Equal To" "#(ASAP)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
-    #Comment: the user click continue button
-    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
-    #Comment: the user enter the address
-    And the user enters "#(unit)" into the "unit" textbox at the "OrderTypeOLOPage" page
     #Comment: the user click continue button
     And the user waits for the "continueBtn" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user click continue button
