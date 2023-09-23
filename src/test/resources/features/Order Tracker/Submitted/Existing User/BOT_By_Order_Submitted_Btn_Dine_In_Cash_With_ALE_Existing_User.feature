@@ -2,8 +2,8 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
   This script is to validate Basic Order Tracker By Order Summitted Button - Dine In Cash - with all lines enabled - Guest
 
   @issue=1780
-  @BOT_By_Order_Submitted_Btn_Dine_In_Cash_With_ALE_Guest @RegressionSuite @Submitted @Guest
-  Scenario: BOT_By_Order_Submitted_Btn_Dine_In_Cash_With_ALE_Guest_Testcase
+  @BOT_By_Order_Submitted_Btn_Dine_In_Cash_With_ALE_Existing_User @RegressionSuite @Submitted @Existing_User
+  Scenario: BOT_By_Order_Submitted_Btn_Dine_In_Cash_With_ALE_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -88,8 +88,12 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     And the user click on OK button if error exists
     #Comment: User wait to visible the page
     And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
-    #Comment: User click on continue as guest
-    And the user clicks the "continueAsGuest" element at the "LoginOLOPage" page
+    #Comment: Enter the Customer Email into username textbox present on Login Page
+    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
+    #Comment: Enter the Password into Station_Key textbox present on Login Page
+    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
+    #Comment: User click on Login Button
+    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user wait hover element
