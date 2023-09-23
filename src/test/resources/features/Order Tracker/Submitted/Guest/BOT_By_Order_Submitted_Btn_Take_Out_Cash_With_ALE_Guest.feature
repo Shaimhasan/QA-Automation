@@ -297,7 +297,7 @@ Feature: Basic Online Order - Take Out Cash - with all lines enabled - Guest
     #Comment: the user validate the visibility of Page
     And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
     #Comment: Validate the amount
-    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
+    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amt1)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
     And store the displayed text of the "transactionNum" element at the "OrderDetailsPage" page into the data dictionary with key "transaction_Number2"
     #Comment: The user save the order number into dictionary key

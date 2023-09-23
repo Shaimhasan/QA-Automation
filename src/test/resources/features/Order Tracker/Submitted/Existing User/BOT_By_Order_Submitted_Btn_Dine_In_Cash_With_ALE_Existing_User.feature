@@ -122,23 +122,12 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     And the user clicks the "addToOrder" element at the "AddToOrderOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "checkOut" element to be "VISIBLE" on the "HomeOLOPage" page
+    #Comment: store the value
+    And store the displayed text without dollar of the "orderTotal" element at the "HomeOLOPage" page into the data dictionary with key "amt1"
     #Comment: User click on dine in
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "checkoutTxt" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(firstName)" into the "firstName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter text
-    And the user enters "#(lastName)" into the "lastName" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter email
-    And the user enters "#(email)" into the "email" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter re-email
-
-    #Comment: the user enter ten digit Number
-    And the user enters random Ten digit number into the "phoneNo" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter 10 digit number
-    And store the displayed text of the "phoneNo" element at the "ExistingCustLoginOLOPage" page into the data dictionary with key "phoneNo1"
-    #Comment: the user enter re enter phone
+    And the user waits for the "customerInfo" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
 
     #comment: the user click on Pay In Store
     And the user clicks the "payInStore" element at the "ExistingCustLoginOLOPage" page
@@ -298,7 +287,7 @@ Feature: Basic Order Tracker By Order Summitted Button - Dine In Cash - with all
     #Comment: the user validate the visibility of Page
     And the user waits for the "orderDetailTxt" element to be "VISIBLE" on the "OrderDetailsPage" page
     #Comment: Validate the amount
-    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amount)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
+    Then the user validates "Compare_Strings" that the "amount" element is "Equal To" "#(amt1)" at the "OrderDetailsPage" page "validate_Amount" "HardStopOnFailure"
     #Comment: The user save the transaction number into dictionary key
     And store the displayed text of the "transactionNum" element at the "OrderDetailsPage" page into the data dictionary with key "transaction_Number2"
     #Comment: The user save the order number into dictionary key
