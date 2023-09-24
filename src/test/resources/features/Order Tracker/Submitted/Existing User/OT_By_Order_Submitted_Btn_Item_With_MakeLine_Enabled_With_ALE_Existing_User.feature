@@ -1,9 +1,9 @@
-Feature: Online Tracker - Item with Prep Station enabled - with all lines enabled - Existing User
-  This script is to validate Online Tracker - Item with Prep Station enabled - with all lines enabled - Existing User
+Feature: Order Tracker - Item with Make Line enabled - with all lines enabled - Existing User
+  This script is to validate Order Tracker - Item with Make Line enabled - with all lines enabled - Existing User
 
-  @issue=3050
-  @OT_By_Order_Submitted_Btn_Item_With_Prep_Station_Enabled_With_ALE_Existing_User @RegressionSuite @Others @OLO @OLO_ALE @OO_ALE_Guest
-  Scenario: OT_By_Order_Submitted_Btn_Item_With_Prep_Station_Enabled_With_ALE_Existing_User_Testcase
+  @issue=3051
+  @OT_By_Order_Submitted_Btn_Item_With_MakeLine_Enabled_With_ALE_Existing_User @RegressionSuite @Others @OLO @OLO_ALE @OO_ALE_Guest
+  Scenario: OT_By_Order_Submitted_Btn_Item_With_MakeLine_Enabled_With_ALE_Existing_User_Testcase
     #Comment: Launch Adora Web URL in CHROME browser
     Given the web application "Adora_Web_URL" is launched in a "NewWindow"
     #Comment: Enter the Store_Key into username textbox present on Login Page
@@ -105,9 +105,9 @@ Feature: Online Tracker - Item with Prep Station enabled - with all lines enable
     #Comment: User click on dine in
     And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: User wait to visible the page
-    And the user waits for the "hawaiianPizzaP" element to be "VISIBLE" on the "HomeOLOPage" page
+    And the user waits for the "chicagoStylePizzaM" element to be "VISIBLE" on the "HomeOLOPage" page
     #Comment: User click on dine in
-    And the user clicks the "hawaiianPizzaP" element at the "HomeOLOPage" page
+    And the user clicks the "chicagoStylePizzaM" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
     #Comment: User click on dine in
@@ -151,23 +151,11 @@ Feature: Online Tracker - Item with Prep Station enabled - with all lines enable
     And the user validates the "trackerUncompletedReady" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user click on OrderModelPopupOLOPage
 
-    #The user should validate the order is not present at MakeLine
+
+    #Comment: the user validate the element should not present at the Prep station
 
     #Comment: the user switched back window
     And the user switches to window that contains "Adora"
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
-    #Comment: user click on Adora Header
-    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
-    #Comment: the user validate the visibility of popup
-    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
-    #Comment: user click on makeLine
-    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: user click makeline until order comes on console
-    And the user clear All makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
-
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -181,9 +169,7 @@ Feature: Online Tracker - Item with Prep Station enabled - with all lines enable
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click prepstation until order comes on console
-    And the user click Single prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" found at the page "PrepStationPage"
-
-    #Comment: the user check order should not present on Makeline
+    And the user click All Single Pizza prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" should not found at the page "PrepStationPage"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
@@ -195,13 +181,26 @@ Feature: Online Tracker - Item with Prep Station enabled - with all lines enable
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: the user wait
-    And the user waits "5000" seconds
     #Comment: user click makeline until order comes on console
-    And the user click All makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" should not found at the page "MakeLinePage"
+    And the user click makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+
+    #-- User validate the status changed in Track Order
+
+    #Comment: the user switched back window
+    And the user switches to window that contains "Automation Profile"
+    #Comment: the user wait the page open
+    And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user validate the element is present
+    And the user validates the given "#(trackerActiveMaking)" element is present at Page within given custom time interval "120" seconds
+    #Comment: the user validate the element is present
+    And the user validates the given "#(trackerActiveCooking)" element is present at Page within given custom time interval "120" seconds
+    #Comment: the user validate the element is present
+    And the user validates the given "#(trackerActiveReady)" element is present at Page within given custom time interval "120" seconds
 
     #Comment: the user check order should not present at Cut and Wrap
 
+    #Comment: the user switched back window
+    And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
@@ -217,19 +216,6 @@ Feature: Online Tracker - Item with Prep Station enabled - with all lines enable
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is Not present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
-    #Comment: the user switched back window
-    And the user switches to window that contains "Automation Profile"
-    #Comment: the user wait the page open
-    And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
-    #Comment: the user validate the element is present
-    And the user validates the given "#(trackerActiveMaking)" element is present at Page within given custom time interval "120" seconds
-    #Comment: the user validate the element is present
-    And the user validates the given "#(trackerActiveCooking)" element is present at Page within given custom time interval "120" seconds
-    #Comment: the user validate the element is present
-    And the user validates the given "#(trackerActiveReady)" element is present at Page within given custom time interval "120" seconds
-
-    #Comment: the user switched back window
-    And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
