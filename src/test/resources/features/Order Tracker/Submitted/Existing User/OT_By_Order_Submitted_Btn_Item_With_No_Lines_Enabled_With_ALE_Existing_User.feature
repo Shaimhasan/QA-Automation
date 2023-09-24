@@ -88,8 +88,12 @@ Feature: Online Tracker - Item with no lines enabled - with all lines enabled - 
     And the user click on OK button if error exists
     #Comment: User wait to visible the page
     And the user waits for the "continueAsGuest" element to be "VISIBLE" on the "LoginOLOPage" page
-    #Comment: User click on continue as guest
-    And the user clicks the "continueAsGuest" element at the "LoginOLOPage" page
+    #Comment: Enter the Customer Email into username textbox present on Login Page
+    When the user enters the user credential "#(customerEmail)" into the "loginEmail" textbox at the "LoginOLOPage" page
+    #Comment: Enter the Password into Station_Key textbox present on Login Page
+    When the user enters the secure credential "#(customerPassword)" into the "loginPassword" textbox at the "LoginOLOPage" page
+    #Comment: User click on Login Button
+    And the user clicks the "loginBtn" element at the "LoginOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "orderType" element to be "VISIBLE" on the "OrderTypeOLOPage" page
     #Comment: the user wait hover element
