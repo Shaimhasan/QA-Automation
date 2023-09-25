@@ -1,0 +1,25 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "firstName": "Automation",
+      "amount": "30.00",
+      "lastName": "Online Order",
+      "email": "onlineorder@gmail.com",
+      "reEnterEmail": "onlineorder@gmail.com",
+      "orderIdXpath": "(//b[text()='",
+      "DetailsClickXpath1": "(//b[text()='",
+      "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button",
+      "trackerActiveMaking": "//li[@id='tr_status_0' and @class='tracker-active']//img[@alt='Notification Image for Making']",
+      "trackerActiveCooking": "//li[@id='tr_status_1' and @class='tracker-active']//img[@alt='Notification Image for Cooking']",
+      "trackerActiveReady": "//li[@id='tr_status_2' and @class='tracker-active']//img[@alt='Notification Image for Ready']"
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
