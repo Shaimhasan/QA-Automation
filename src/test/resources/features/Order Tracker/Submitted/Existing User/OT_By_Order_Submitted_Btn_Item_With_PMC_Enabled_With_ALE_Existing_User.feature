@@ -202,6 +202,17 @@ Feature: Order Tracker - Item with Prep Station and Make Line and Cut and Wrap e
     #Comment: user click prepstation until order comes on console
     And the user click Single prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" found at the page "PrepStationPage"
 
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
+    #Comment: user click on Adora Header
+    And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
+    #Comment: the user validate the visibility of popup
+    And the user waits for the "makeLine" element to be "VISIBLE" on the "AdoraHeaderPage" page
+    #Comment: user click on makeLine
+    And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
+    #Comment: The user wait until page is loading
+    And the user waits for the page to load
+
     #/** Order status should changed at Order Tracker
     #Comment: the user switched back window
     And the user switches to window that contains "Automation Profile"
