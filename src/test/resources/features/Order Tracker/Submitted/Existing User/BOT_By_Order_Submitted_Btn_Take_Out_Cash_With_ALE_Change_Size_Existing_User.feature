@@ -109,7 +109,7 @@ Feature: Basic Order Tracker - Take Out Cash - with all lines enabled - Change S
     #Comment: User click on dine in
     And the user clicks the "automationPizzaPMC" element at the "HomeOLOPage" page
     #Comment: change the size of pizza
-    And the user selects value "size" from the "Small (Serving size 1-2 person)" dropdown at the "AddToOrderOLOPage" page
+    And the user selects value "Small (Serving size 1-2 person)" from the "size" dropdown at the "AddToOrderOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "addToOrder" element to be "VISIBLE" on the "AddToOrderOLOPage" page
     #Comment: User click on dine in
