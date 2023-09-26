@@ -250,6 +250,8 @@ Feature: Order Tracker - Item with Prep Station and Make Line enabled - with all
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerActiveReady)" element is present at Page within given custom time interval "120" seconds
 
+    #Comment: the user switched back window
+    And the user switches to window that contains "Adora"
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click on Adora Header
