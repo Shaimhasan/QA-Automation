@@ -80,7 +80,7 @@ Feature: Basic Online Order - Delivery Credit Card - with Cut and Wrap Only - Gu
     #Comment: the user refresh Page
     And the user refreshes the page
 
-#Comment: User launch online ordering web application in chrome browser
+    #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewTab"
     #Comment: the User wait page to load
     And the user waits for the page to load
@@ -100,8 +100,6 @@ Feature: Basic Online Order - Delivery Credit Card - with Cut and Wrap Only - Gu
     And the user validates "Compare_Strings" that the "orderTypeValidate" element is "Equal To" "#(orderTypeValidate)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
     #Comment: the user validate the text
     And the user validates "Compare_Strings" that the "asap" element is "Equal To" "#(ASAP)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
-    #Comment: the user click continue button
-    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: the user enter the address
     And the user enters "#(unit)" into the "unit" textbox at the "OrderTypeOLOPage" page
     #Comment: the user click continue button

@@ -99,8 +99,6 @@ Feature: Basic Online Order - Delivery Cash - with Make Line Cut and Wrap - Gues
     And the user validates "Compare_Strings" that the "orderTypeValidate" element is "Equal To" "#(orderTypeValidate)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
     #Comment: the user validate the text
     And the user validates "Compare_Strings" that the "asap" element is "Equal To" "#(ASAP)" at the "OrderTypeOLOPage" page "validate_Txt" "HardStopOnFailure"
-    #Comment: the user click continue button
-    And the user clicks the "continueBtn" element at the "OrderTypeOLOPage" page
     #Comment: the user enter the address
     And the user enters "#(unit)" into the "unit" textbox at the "OrderTypeOLOPage" page
     #Comment: the user click continue button
