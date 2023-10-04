@@ -15,7 +15,7 @@
       "address": "1234 Elm St Roseville CA 95678",
       "timeRecordSuccessMsg": "Your time card recorded successfully.",
       "timeClockOutSuccessMsg": "You have clocked out successfully.",
-      "orderNumberXpath1": "//b[text()='",
+      "orderNumberXpath1": "//b[normalize-space(text())='",
       "orderNumberXpath2": "']",
       "gatuityAmt": "0",
       "unit": "2",
@@ -24,9 +24,9 @@
       "trackerActiveMaking": "//li[@id='tr_status_0' and @class='tracker-active']//img[@alt='Notification Image for Making']",
       "trackerActiveCooking": "//li[@id='tr_status_1' and @class='tracker-active']//img[@alt='Notification Image for Cooking']",
       "trackerActiveReady": "//li[@id='tr_status_2' and @class='tracker-active']//img[@alt='Notification Image for Ready']",
-      "trackerBeingDeliveredActive": "//li[@id='tr_status_3' and @class='tracker-active']//img[@alt='Notification Image for Making']",
-      "trackerOrderArrivingActive": "//li[@id='tr_status_4' and @class='tracker-active']//img[@alt='Notification Image for Cooking']",
-      "trackerDeliveredActive": "//li[@id='tr_status_5' and @class='tracker-active']//img[@alt='Notification Image for Ready']"
+      "trackerBeingDeliveredActive": "//li[@id='tr_status_3' and @class='tracker-active']//img[@alt='Notification Image for Being Delivered']",
+      "trackerOrderArrivingActive": "//li[@id='tr_status_4' and @class='tracker-completed']//img[@alt='Notification Image for Order Arriving']",
+      "trackerDeliveredActive": "//li[@id='tr_status_5' and @class='tracker-active']//img[@alt='Notification Image for Delivered']"
     },
     "dataCriteria": {
     },
