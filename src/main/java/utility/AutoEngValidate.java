@@ -1102,7 +1102,7 @@ public class AutoEngValidate extends BaseWebSteps {
         //  String expectedValueTwo = expectedValue + "_1" + "_2";
 //        String expectedValueThreee = expectedValue + "_1" + "_3";
         System.out.println(attributeName);
-        String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        String transactionNumber = getDriver().findElement(By.xpath("(//div[@name='mldisplayitem'])[1]")).getAttribute(attributeName);
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
