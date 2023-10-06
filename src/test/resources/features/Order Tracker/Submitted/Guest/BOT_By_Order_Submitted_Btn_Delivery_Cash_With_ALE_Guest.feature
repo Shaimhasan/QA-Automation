@@ -30,52 +30,52 @@ Feature: Basic Order Tracker - Delivery Cash - with all lines enabled - Guest - 
 
     #Comment: the user click on back office
     And the user clicks the "backOffice" element at the "AdoraHeaderPage" page
-#    #Comment: the user click Setting
-#    And the user clicks the "settings" element at the "SettingsPage" page
-#    #Comment: the user click on Setting change
-#    And the user clicks the "settingsChange" element at the "SettingsPage" page
-#    #Comment: the user click on make line row
-#    And the user clicks the "prepStationConfig" element at the "SettingsChangePage" page
-#    #Comment: the user wait the element enable
-#    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on Edit
-#    And the user clicks the "edit" element at the "EditSettingsPage" page
-#    #Comment: the user click on Make Line
-#    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-#    #Comment: the user click on Save
-#    And the user clicks the "save" element at the "EditSettingsPage" page
-#    #Comment: the user load the page
-#    And the user waits for the page to load
-#    #Comment: the user wait the element disable
-#    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on make line row
-#    And the user clicks the "makeLineConfig" element at the "SettingsChangePage" page
-#    #Comment: the user wait the element enable
-#    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on Edit
-#    And the user clicks the "edit" element at the "EditSettingsPage" page
-#    #Comment: the user click on Make Line
-#    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-#    #Comment: the user click on Save
-#    And the user clicks the "save" element at the "EditSettingsPage" page
-#    #Comment: the user load the page
-#    And the user waits for the page to load
-#    #Comment: the user wait the element disable
-#    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on make line row
-#    And the user clicks the "cutAndWrapConfig" element at the "SettingsChangePage" page
-#    #Comment: the user wait the element enable
-#    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
-#    #Comment: the user click on Edit
-#    And the user clicks the "edit" element at the "EditSettingsPage" page
-#    #Comment: the user click on Make Line
-#    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
-#    #Comment: the user click on Save
-#    And the user clicks the "save" element at the "EditSettingsPage" page
-#    #Comment: the user load the page
-#    And the user waits for the page to load
-#    #Comment: the user wait the element disable
-#    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click Setting
+    And the user clicks the "settings" element at the "SettingsPage" page
+    #Comment: the user click on Setting change
+    And the user clicks the "settingsChange" element at the "SettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "prepStationConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "makeLineConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
+    #Comment: the user click on make line row
+    And the user clicks the "cutAndWrapConfig" element at the "SettingsChangePage" page
+    #Comment: the user wait the element enable
+    And the user waits for the "edit" element to be "ENABLED" on the "EditSettingsPage" page
+    #Comment: the user click on Edit
+    And the user clicks the "edit" element at the "EditSettingsPage" page
+    #Comment: the user click on Make Line
+    And the user selects value "By Item" from the "drpDwn" dropdown at the "EditSettingsPage" page
+    #Comment: the user click on Save
+    And the user clicks the "save" element at the "EditSettingsPage" page
+    #Comment: the user load the page
+    And the user waits for the page to load
+    #Comment: the user wait the element disable
+    And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
     And the user refreshes the page
 
@@ -238,7 +238,7 @@ Feature: Basic Order Tracker - Delivery Cash - with all lines enabled - Guest - 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click makeline until order comes on console
-    And the user click makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    And the user click makeline single pizza for TO "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
     #Comment: the user switched back window
     And the user switches to window that contains "Automation Profile"
     #Comment: the user wait the page open

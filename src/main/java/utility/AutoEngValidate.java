@@ -732,11 +732,11 @@ public class AutoEngValidate extends BaseWebSteps {
 
     @Then("^the user validates the \"([^\"]*)\" element is not present at the \"([^\"]*)\" page with attribute \"([^\"]*)\" and attribute value \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheElementsIsNotPresentAtThePage(String objectName,
-                                                              String pageName,
-                                                              String attributName,
-                                                              String attributeValue,
-                                                              String validationID,
-                                                              String onFailureFlag) {
+                                                                 String pageName,
+                                                                 String attributName,
+                                                                 String attributeValue,
+                                                                 String validationID,
+                                                                 String onFailureFlag) {
 
         attributName = parseValue(attributName);
         attributeValue = parseValue(attributeValue);
@@ -1099,25 +1099,34 @@ public class AutoEngValidate extends BaseWebSteps {
         attributeName = parseValue(attributeName);
         expectedValue = parseValue(expectedValue);
         String expectedValueOne = expectedValue + "_1" + "_1";
-        //  String expectedValueTwo = expectedValue + "_1" + "_2";
-//        String expectedValueThreee = expectedValue + "_1" + "_3";
+        System.out.println(attributeName);
+        String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+        if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+            getObject(objectName, pageName).click();
+        } else {
+            getObject(objectName, pageName).click();
+            theUserClickSinglePizzaMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+        }
+
+    }
+
+    @Then("^the user click makeline single pizza for TO \"([^\"]*)\" element until \"([^\"]*)\" expected value based on attribute \"([^\"]*)\" found at the page \"([^\"]*)\"$")
+    public void theUserClickSinglePizzaMakelineForTOUntilElementFound(String objectName,
+                                                                      String expectedValue,
+                                                                      String attributeName,
+                                                                      String pageName
+    ) {
+        attributeName = parseValue(attributeName);
+        expectedValue = parseValue(expectedValue);
+        String expectedValueOne = expectedValue + "_1" + "_1";
         System.out.println(attributeName);
         String transactionNumber = getDriver().findElement(By.xpath("(//div[@name='mldisplayitem'])[1]")).getAttribute(attributeName);
 
         if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
             getObject(objectName, pageName).click();
-            //  transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-        }
-//        if (expectedValueTwo.equalsIgnoreCase(transactionNumber)) {
-//            getObject(objectName, pageName).click();
-//            //transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-//        }
-//        if (expectedValueThreee.equalsIgnoreCase(transactionNumber)) {
-//            getObject(objectName, pageName).click();
-//        }
-        else {
+        } else {
             getObject(objectName, pageName).click();
-            theUserClickSinglePizzaMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+            theUserClickSinglePizzaMakelineForTOUntilElementFound(objectName, expectedValue, attributeName, pageName);
         }
 
     }
@@ -1172,7 +1181,7 @@ public class AutoEngValidate extends BaseWebSteps {
         }
         String expectedValueOne = expectedValue + "_1" + "_1";
         int element = getDriver().findElements(By.xpath("(//div[@name='mldisplayitem'])[1]")).size();
-        if (element>0) {
+        if (element > 0) {
             String transactionNumber = getDriver().findElement(By.xpath("(//div[@name='mldisplayitem'])[1]")).getAttribute(attributeName);
             System.out.println("Transaction Number : " + transactionNumber);
             if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
