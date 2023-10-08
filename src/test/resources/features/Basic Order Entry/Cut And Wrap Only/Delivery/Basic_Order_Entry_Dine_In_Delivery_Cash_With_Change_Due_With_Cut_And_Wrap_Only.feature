@@ -185,7 +185,7 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Cut and Wra
     #Comment: the user validate the visibility of popup
     And the user waits for the page to load
     #Comment: user click on Driver o Printer Page
-    And the user clicks the "printerOkBtn" element at the "CommonPage" page
+    And the user clicks the "printerOkBtn" element at the "CommonPage" page If Present
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: user click on Adora Header

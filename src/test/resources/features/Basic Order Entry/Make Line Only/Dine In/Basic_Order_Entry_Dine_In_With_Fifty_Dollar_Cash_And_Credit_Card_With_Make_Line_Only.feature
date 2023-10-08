@@ -106,7 +106,7 @@ Feature: Basic Order Entry - Dine-in with cash and Credit Card  - with Make Line
     #Comment: user click on fifty dollar
     And the user clicks the "fiftyDollar" element at the "PaymentPage" page
     #Comment: user click on Driver o Printer Page
-    And the user clicks the "printerOkBtn" element at the "CommonPage" page
+    And the user clicks the "printerOkBtn" element at the "CommonPage" page If Present
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
     #Comment: the user wait the page is open

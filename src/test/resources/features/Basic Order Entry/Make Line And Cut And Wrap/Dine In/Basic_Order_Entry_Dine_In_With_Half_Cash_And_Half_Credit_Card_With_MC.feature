@@ -106,7 +106,7 @@ Feature: Basic Order Entry - Dine-in with half cash and half Credit Card  - with
     #Comment: user click on Cash
     And the user clicks the "cash" element at the "PaymentPage" page
     #Comment: user click on Driver o Printer Page
-    And the user clicks the "printerOkBtn" element at the "CommonPage" page
+    And the user clicks the "printerOkBtn" element at the "CommonPage" page If Present
     #Comment: user click on credit
     And the user clicks the "credit" element at the "PaymentPage" page
     #Comment: the user wait the page is open

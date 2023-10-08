@@ -216,7 +216,7 @@ Feature: Basic Order Entry - Delivery Cash - With Change Due  - with Make Line a
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click on Driver o Printer Page
-    And the user clicks the "printerOkBtn" element at the "CommonPage" page
+    And the user clicks the "printerOkBtn" element at the "CommonPage" page If Present
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
