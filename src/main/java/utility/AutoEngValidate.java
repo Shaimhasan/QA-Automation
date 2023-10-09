@@ -1516,8 +1516,6 @@ public class AutoEngValidate extends BaseWebSteps {
                 Thread.sleep(3000);
                 // Click on Finish on Order Entry Page
                 getObject("finishBtn", "OrderEntry").click();
-//                Element element2 = (Element) getDriver().findElement(By.xpath("//label[text()='Finish']/.."));
-//                element2.click();
                 Thread.sleep(1000);
                 String amount = getDriver().findElement(By.xpath("//span[@id='div_OE_Payment_CollectAmount']")).getText();
                 if (amount.equalsIgnoreCase("0.00")) {
