@@ -1543,45 +1543,38 @@ public class AutoEngValidate extends BaseWebSteps {
             checkRowsPresent(rowNum, colNum, orderType, tableName, pageName);
         } else if (orderType.equalsIgnoreCase("Delivery")) {
             int size = getDriver().findElements((By.xpath(("//div[@id='divReviewOrdersOrders']//tbody//tr")))).size();
-            if (size > 0) {
-                Thread.sleep(2000);
-                getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).click();
-                Thread.sleep(1000);
-                if (getDriver().findElements(By.xpath("//button[@class='btn_dialog_box']")).size() > 0) {
-                    js.executeScript("arguments[0].click();", getDriver().findElement(By.xpath("//button[@class='btn_dialog_box']")));
-                    Thread.sleep(1000);
-                    getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).click();
+            try {
+                if (size > 0) {
                     Thread.sleep(2000);
-                }
-                getDriver().findElement(By.xpath("//div[@id='divCancelReason']//textarea")).sendKeys("Cancelling Order");
-                Thread.sleep(500);
-                js.executeScript("arguments[0].click();", getDriver().findElement(By.xpath("//button[text()='Yes (Cancel)']")));
+                    getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).click();
+                    Thread.sleep(1000);
+                    if (getDriver().findElements(By.xpath("//button[@class='btn_dialog_box']")).size() > 0) {
+                        js.executeScript("arguments[0].click();", getDriver().findElement(By.xpath("//button[@class='btn_dialog_box']")));
+                        Thread.sleep(1000);
+                        getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).click();
+                        Thread.sleep(2000);
+                    }
+                    getDriver().findElement(By.xpath("//div[@id='divCancelReason']//textarea")).sendKeys("Cancelling Order");
+                    Thread.sleep(500);
+                    js.executeScript("arguments[0].click();", getDriver().findElement(By.xpath("//button[text()='Yes (Cancel)']")));
 //                getObject("cancelTxt", "CancelOrdersPage").sendKeys("Cancelling Order");
 //                getObject("yesCancel", "CancelOrdersPage").click();
+                    getPO().waitDomToLoad();
+                    Thread.sleep(1000);
+                    clickIfElementPresent("(//div[text()='Error']/..//button)[1]");
+                    clickIfElementPresent("(//div[text()='Error']/..//button)[1]");
+                    clickIfElementPresent("(//button[@class='btn_dialog_box'])[1]");
+                    clickIfElementPresent("(//div[text()='Error']/..//button)[1]");
+                    Thread.sleep(2000);
+                    checkRowsPresent(rowNum, colNum, orderType, tableName, pageName);
+                } else {
+                    System.out.println("There is no row available in Table");
+                }
+            } catch (Exception exception) {
+                getDriver().navigate().refresh();
                 getPO().waitDomToLoad();
                 Thread.sleep(1000);
-//                List<WebElement> ele = getDriver().findElements(By.xpath("//div[text()='Error']/..//button"));
-//                for (WebElement element : ele) {
-//                    Thread.sleep(500);
-//                    JavascriptExecutor js = (JavascriptExecutor) getDriver();
-//                    js.executeScript("arguments[0].click();", element);
-//                }
-//                getDriver().findElement(By.xpath("(//p[contains(text(),'No printer has been defined on this station.')]/..//following-sibling::div//button[text()='OK'])[1]")).click();
-//                getDriver().findElement(By.xpath("(//p[contains(text(),'No printer has been defined on this station.')]/..//following-sibling::div//button[text()='OK'])[1]")).click();
-//                getDriver().findElement(By.xpath("(//button[@class='btn_dialog_box'])[1]")).click();
-//                Thread.sleep(1000);
-//                getDriver().findElement(By.xpath("(//button[@class='btn_dialog_box'])[1]")).click();
-//                Thread.sleep(1000);
-//                getDriver().findElement(By.xpath("(//button[@class='btn_dialog_box'])[1]")).click();
-//                Thread.sleep(1000);
-                clickIfElementPresent("(//div[text()='Error']/..//button)[1]");
-                clickIfElementPresent("(//div[text()='Error']/..//button)[1]");
-                clickIfElementPresent("(//button[@class='btn_dialog_box'])[1]");
-                clickIfElementPresent("(//div[text()='Error']/..//button)[1]");
-                Thread.sleep(2000);
                 checkRowsPresent(rowNum, colNum, orderType, tableName, pageName);
-            } else {
-                System.out.println("There is no row available in Table");
             }
         }
     }

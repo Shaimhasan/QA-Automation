@@ -31,6 +31,5 @@ Feature: Basic Clear Delivery Pending Order
     And the user clicks the "orderEntry" element at the "HomeScreenPage" page
     #Comment: the user check if rows available
     And the user proceed if "1" row and "8" col and "Delivery" order type "pendingOrderTable" element in table found at the page "PendingOrdersPage"
-    And the user clicks JS the "<string>" element at the "<string>" page
 
 
