@@ -48,7 +48,12 @@ public class OrderEntry extends BasePO {
     private By takeOutColor = By.id("divOrder");
     private By phoneTakeOutColor = By.id("divOrder");
     private By changeDueAmt = By.xpath("//p[text()='Change Due']//following-sibling::div");
+    private By pendingOrder = By.xpath("//label[text()='Pending Orders']//parent::button");
 
+
+    public Element pendingOrder() throws IOException, InterruptedException {
+        return $(pendingOrder);
+    }
 
     public Element supremePizzaPMSelected() throws IOException, InterruptedException {
         return $(supremePizzaPMSelected);

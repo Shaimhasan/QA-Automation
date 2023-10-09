@@ -4,6 +4,8 @@ import common.TestContext;
 import core.BaseWebSteps;
 import core.Element;
 import io.cucumber.java.en.Then;
+import org.assertj.core.api.Assumptions;
+import org.assertj.core.api.BooleanAssert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -18,6 +20,7 @@ import validator.ComparisonType;
 import java.text.ParseException;
 import java.time.Duration;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -28,6 +31,7 @@ public class AutoEngValidate extends BaseWebSteps {
     private static final String VALIDATION_TAG = "VALIDATION.";
     private static final String STATUS_FAIL = "FAIL";
     private static final String VALIDATION_FAILED = "Validation Failed: ";
+    Map<Boolean, Boolean> cache = new ConcurrentHashMap<>();
 
     @Then("^the user validates the \"([^\"]*)\" element is disabled at the \"([^\"]*)\" page \"([^\"]*)\" \"([^\"]*)\"$")
     public void theUserValidatesTheElementIsDisabledAtThePage(String objectName,
@@ -1465,5 +1469,88 @@ public class AutoEngValidate extends BaseWebSteps {
         } else {
             System.out.println("Please Proceed");
         }
+    }
+
+    @Then("^the user proceed if \"([^\"]*)\" row and \"([^\"]*)\" col and \"([^\"]*)\" order type \"([^\"]*)\" element in table found at the page \"([^\"]*)\"$")
+    public void checkRowsPresent(String rowNum,
+                                 String colNum,
+                                 String orderType,
+                                 String tableName,
+                                 String pageName) throws InterruptedException {
+
+        rowNum = parseValue(rowNum);
+        colNum = parseValue(colNum);
+        orderType = parseValue(orderType);
+        waitOnce();
+        getDriver().findElement(By.xpath("//label[text()='Pending Orders']/..")).click();
+        getWait().until(ExpectedConditions.visibilityOf(getDriver().findElement(By.xpath("//span[text()='Pending Orders']"))));
+        if (getDriver().findElement(By.xpath("//span[text()='Dine In']")).getText().equalsIgnoreCase(orderType)) {
+            getDriver().findElement(By.id("btnReviewOrdersOrderType1")).click();
+        } else if (getDriver().findElement(By.xpath("//span[text()='Take Out']")).getText().equalsIgnoreCase(orderType)) {
+            getDriver().findElement(By.id("btnReviewOrdersOrderType2")).click();
+        } else if (getDriver().findElement(By.xpath("//span[text()='Delivery']")).getText().equalsIgnoreCase(orderType)) {
+            getDriver().findElement(By.id("btnReviewOrdersOrderType3")).click();
+        }
+        int count = getObject(tableName, pageName).getDataRowCount();
+        if (count <= 1) {
+            Assumptions.assumeThat(false);
+            System.out.println("There is no Row Present in Table");
+        } else {
+            int size = getDriver().findElements((By.xpath(("//div[@id='divReviewOrdersOrders']//tbody//tr")))).size();
+            if (size > 0) {
+                //Check if Order UnLock
+                String element = getDriver().findElement(By.xpath("(//button[contains(@id,'btnPendingOrder')])[1]")).getText();
+                if (element.equalsIgnoreCase("Unlock")) {
+                    getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).click();
+                    //click to unlock
+                    getDriver().findElement(By.xpath("//button[@class='btn_dialog_box']")).click();
+                    Thread.sleep(2000);
+                    //Unlock Successfully
+                    getDriver().findElement(By.xpath("//button[@class='btn_dialog_box']")).click();
+                    Thread.sleep(1000);
+                } else {
+                    System.out.println("There is no element present for Unlock");
+                }
+                Thread.sleep(1000);
+                getObject(tableName, pageName).getDataCellElement(Integer.parseInt(rowNum), Integer.parseInt(colNum)).click();
+                Thread.sleep(3000);
+                // Click on Finish on Order Entry Page
+                getObject("finishBtn", "OrderEntry").click();
+//                Element element2 = (Element) getDriver().findElement(By.xpath("//label[text()='Finish']/.."));
+//                element2.click();
+                Thread.sleep(1000);
+                String amount = getDriver().findElement(By.xpath("//span[@id='div_OE_Payment_CollectAmount']")).getText();
+                if (amount.equalsIgnoreCase("0.00")) {
+                    getDriver().findElement(By.xpath("//span[text()='Finish']//parent::button")).click();
+                    Thread.sleep(2000);
+                    //click on OK Button of printer popup
+                    getDriver().findElement(By.xpath("//button[@class='btn_dialog_box']")).click();
+                    Thread.sleep(1000);
+                    //click on Order Number popup
+                    getDriver().findElement(By.xpath("//button[@id='btnClosePrintReceipt']")).click();
+                    Thread.sleep(1000);
+                } else {
+                    getDriver().findElement(By.xpath("//label[text()='Cash']//parent::button")).click();
+                    Thread.sleep(2000);
+                    //click on OK Button of printer popup
+                    getDriver().findElement(By.xpath("//button[@class='btn_dialog_box']")).click();
+                    Thread.sleep(1000);
+                    getDriver().findElement(By.xpath("//button[@id='btnClosePrintReceipt']")).click();
+                    Thread.sleep(1000);
+                }
+            }
+            checkRowsPresent(rowNum, colNum, orderType, tableName, pageName);
+        }
+    }
+
+    public void waitOnce() {
+        cache.computeIfAbsent(true, x -> {
+            try {
+                getPO().waitDomToLoad();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return true;
+        });
     }
 }

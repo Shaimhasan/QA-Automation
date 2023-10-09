@@ -74,6 +74,13 @@ public class PageObject extends CommonPageObject {
         return this;
     }
 
+    public PageObject waitDomToLoad() {
+        domLoaded();
+        jqueryLoaded();
+        //  angularLoaded();
+        return this;
+    }
+
     public PageObject waitPageToJqueryLoad() {
         domLoaded();
         jqueryLoadedWithTime();
