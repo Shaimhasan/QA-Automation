@@ -191,7 +191,7 @@ Feature: Basic Order Tracker - Delivery Cash - with all lines enabled - Existing
     #Comment: The user wait until page is loading
     And the user waits for the page to load
     #Comment: user click prepstation until order comes on console
-    And the user click prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" found at the page "PrepStationPage"
+    And the user click Single prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" found at the page "PrepStationPage"
 
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
@@ -210,6 +210,8 @@ Feature: Basic Order Tracker - Delivery Cash - with all lines enabled - Existing
     And the user switches to window that contains "Automation Profile"
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user refresh page
+    And the user refreshes the page
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerActiveMaking)" element is present at Page within given custom time interval "120" seconds
     #Comment: the user validate the element is present
@@ -227,11 +229,13 @@ Feature: Basic Order Tracker - Delivery Cash - with all lines enabled - Existing
     #Comment: the user validate the visibility of popup
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: user click makeline until order comes on console
-    And the user click makeline "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
+    And the user click makeline single pizza for TO "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
     #Comment: the user switched back window
     And the user switches to window that contains "Automation Profile"
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user refresh page
+    And the user refreshes the page
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerActiveCooking)" element is present at Page within given custom time interval "120" seconds
     #Comment: the user validate the element is present
@@ -264,16 +268,12 @@ Feature: Basic Order Tracker - Delivery Cash - with all lines enabled - Existing
     And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
     #Comment: The user wait until page is loading
     And the user waits for the page to load
-    #Comment: the user click on the row
-    And the user custom clicks on row with order number "#(orderNum1)" and category value "2" from the "table" table on the "CutAndWrapPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the page to load
-    #Comment: the user validate the cut and wrap
-    And the user order number "#(orderNum1)" category value "2" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
     #Comment: the user switched back window
     And the user switches to window that contains "Automation Profile"
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user refresh page
+    And the user refreshes the page
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerActiveReady)" element is present at Page within given custom time interval "120" seconds
     #Comment: the user validate the element is present
@@ -355,6 +355,8 @@ Feature: Basic Order Tracker - Delivery Cash - with all lines enabled - Existing
     And the user switches to window that contains "Automation Profile"
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user refresh page
+    And the user refreshes the page
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerBeingDeliveredActive)" element is present at Page within given custom time interval "120" seconds
     #Comment: the user validate the element is present
@@ -371,10 +373,13 @@ Feature: Basic Order Tracker - Delivery Cash - with all lines enabled - Existing
     And the user switches to window that contains "Automation Profile"
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
+    #Comment: the user refresh page
+    And the user refreshes the page
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerOrderArrivingActive)" element is present at Page within given custom time interval "120" seconds
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerDeliveredActive)" element is present at Page within given custom time interval "120" seconds
+
 
     # /** Till Here we are validating the Track Order **/
 
