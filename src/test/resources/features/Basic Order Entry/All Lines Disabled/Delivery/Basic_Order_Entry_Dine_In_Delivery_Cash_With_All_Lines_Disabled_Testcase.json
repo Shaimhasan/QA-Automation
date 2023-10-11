@@ -11,7 +11,7 @@
       "timeClockOutSuccessMsg": "You have clocked out successfully.",
       "gatuityAmt": "0",
       "orderNumberXpath1": "//b[text()=' ",
-      "orderNumberXpath2": " ']/../..",
+      "orderNumberXpath2": " ']",
       "orderIdXpath": "(//b[text()='",
       "DetailsClickXpath1": "(//b[text()='",
       "DetailsClickXpath2": "']/..//following-sibling::td)[14]//button"
