@@ -21,11 +21,11 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line On
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
@@ -46,7 +46,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line On
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -60,7 +60,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line On
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -74,7 +74,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line On
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
@@ -125,7 +125,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line On
     #Comment: user click on makeLine
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click makeline until order comes on console
     And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
@@ -140,7 +140,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line On
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user validate the ID number in History
@@ -185,7 +185,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line On
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -199,7 +199,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line On
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -213,7 +213,7 @@ Feature: Basic Order Entry - Dine In Cash - with Change Due  - with Make Line On
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page

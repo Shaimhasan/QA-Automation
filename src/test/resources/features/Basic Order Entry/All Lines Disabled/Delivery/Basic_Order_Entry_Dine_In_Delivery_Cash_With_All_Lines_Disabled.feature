@@ -22,7 +22,7 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
@@ -62,7 +62,7 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     #Comment: user click on Close
     And the user clicks the "closeForDelivery" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: The user click on Adora header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
@@ -82,7 +82,7 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
     #Comment: the user page to load
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user clock out if already clock in
     And the user clock out if already clock in
 
@@ -93,27 +93,27 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     #Comment: user click on Driver
     And the user clicks the "OKBtn" element at the "ClockInPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: The user click on Adore header page
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment : user click on orderNumber and dispatch
     And the user clicks the "table" element with dictionary key "#(order_Number)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click on Driver o Printer Page
     And the user clicks the "printerOkBtn" element at the "CommonPage" page If Present
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
 
@@ -174,7 +174,7 @@ Feature: Basic Order Entry - Delivery Cash  - with all lines disabled
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user validate the ID number in History

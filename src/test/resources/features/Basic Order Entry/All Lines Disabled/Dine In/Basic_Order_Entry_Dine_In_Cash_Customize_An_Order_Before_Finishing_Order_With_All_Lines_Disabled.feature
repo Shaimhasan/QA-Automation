@@ -20,11 +20,11 @@ Feature: Basic Order Entry - Customize an order before finishing order - with al
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
@@ -46,7 +46,7 @@ Feature: Basic Order Entry - Customize an order before finishing order - with al
     #Comment: user click on Finish
     And the user clicks the "finishBtn" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: The user can see the table menu popup
     And the user validates the "tableNoPopUpMenu" element is present at the "OrderEntry" page "validate_Table_Menu_popUp" "HardStopOnFailure"
     #Comment: the user enter the table number
@@ -74,7 +74,7 @@ Feature: Basic Order Entry - Customize an order before finishing order - with al
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user validate the ID number in History

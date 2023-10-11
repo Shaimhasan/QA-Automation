@@ -20,11 +20,11 @@ Feature: Basic Prices Edit for Price for Free Optional Modifiers
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -48,7 +48,7 @@ Feature: Basic Prices Edit for Price for Free Optional Modifiers
     #Comment: the user click on Save Button
     And the user clicks the "saveBtn" element at the "PricesRegularPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on row
     And the user clicks the "regularTextClick" element at the "PricesPage" page
     #Comment: the user click on Edit Button
@@ -74,4 +74,4 @@ Feature: Basic Prices Edit for Price for Free Optional Modifiers
     #Comment: the user click on Cancel Button
     And the user clicks the "saveBtn" element at the "PricesRegularPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load

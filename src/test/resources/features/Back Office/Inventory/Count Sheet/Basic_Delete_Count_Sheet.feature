@@ -20,11 +20,11 @@ Feature: Basic Delete Count Sheet
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -34,7 +34,7 @@ Feature: Basic Delete Count Sheet
     #Comment: the user click on Menu Items
     And the user clicks the "countSheet" element at the "InventoryPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment : the user clicks and check If element present
     And the user custom clicks If element present the "table" element with Column Name "Frequency" and value "tblRowXIN_CNT" at the "CountSheetPage" page with element 1 "delete" and element 2 "deleteOnWarning" element 3 "editBtnDisable"
     #Comment: the user click on Add
@@ -60,7 +60,7 @@ Feature: Basic Delete Count Sheet
     #Comment: the user click save
     And the user clicks the "save" element at the "AddCountSheetPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(Weekly)" at the "CountSheetPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id
@@ -70,7 +70,7 @@ Feature: Basic Delete Count Sheet
     #Comment: the user click on Delete Button on Warning popup
     And the user clicks the "deleteOnWarning" element at the "CountSheetPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element is disabled
     And the user waits for the "delete" element to be "DISABLED" on the "CountSheetPage" page
     #Comment: the user click on History Button

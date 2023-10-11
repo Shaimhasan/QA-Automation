@@ -21,11 +21,11 @@ Feature: Basic Add Coupons
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -35,7 +35,7 @@ Feature: Basic Add Coupons
     #Comment: the user click on Menu Items
     And the user clicks the "coupons" element at the "DiscountsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "CouponsPage" page
     #Comment: the user validate the visibility of popup
@@ -88,7 +88,7 @@ Feature: Basic Add Coupons
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddCouponsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(nameUS_value1)" at the "CouponsPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id
@@ -96,7 +96,7 @@ Feature: Basic Add Coupons
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "CouponsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "nameUS" element at the "EditCouponsPage" page into the data dictionary with key "nameUS_value2"
     #Comment: the user store the text on data dictionary

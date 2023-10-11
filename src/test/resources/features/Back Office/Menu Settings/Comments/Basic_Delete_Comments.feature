@@ -20,11 +20,11 @@ Feature: Basic Delete Comments
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -44,7 +44,7 @@ Feature: Basic Delete Comments
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddCommentsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(comments_value1)" at the "CommentsPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id
@@ -54,7 +54,7 @@ Feature: Basic Delete Comments
     #Comment: the user click on Delete Button on Warning popup
     And the user clicks the "deleteOnWarning" element at the "CommentsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element is disabled
     And the user waits for the "delete" element to be "DISABLED" on the "CommentsPage" page
     #Comment: the user click on History Button

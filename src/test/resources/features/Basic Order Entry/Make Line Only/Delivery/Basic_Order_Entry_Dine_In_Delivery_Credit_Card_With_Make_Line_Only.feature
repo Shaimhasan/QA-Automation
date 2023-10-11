@@ -23,7 +23,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
@@ -44,7 +44,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -58,7 +58,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -72,7 +72,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
@@ -131,7 +131,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: user click on chargeBtn
     And the user clicks the "chargeBtn" element at the "CreditCardPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: The user save the order number into dictionary key
     And store the displayed text of the "orderNum" element at the "OrderEntry" page into the data dictionary with key "order_Number"
     #Comment: The user save the transaction number into dictionary key
@@ -148,15 +148,15 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: user click on makeLine
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click makeline until order comes on console
     And the user click makeline single pizza "order" element until "#(transaction_Number)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: The user click on Adora header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the visibility of popup
     And the user waits for the "clockIn" element to be "VISIBLE" on the "AdoraHeaderPage" page
     #Comment: user click on ClockIn
@@ -174,7 +174,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
     #Comment: the user page to load
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user clock out if already clock in
     And the user clock out if already clock in
     #Comment: the user validate the visibility of clockInPopup
@@ -184,29 +184,29 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: user click on Driver
     And the user clicks the "OKBtn" element at the "ClockInPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: The user click on Adore header page
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment : user click on orderNumber and dispatch
     And the user clicks the "table" element with dictionary key "#(order_Number)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click on Driver o Printer Page
     And the user clicks the "printerOkBtn" element at the "CommonPage" page If Present
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
 
@@ -265,7 +265,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user validate the ID number in History
@@ -310,7 +310,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -324,7 +324,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -338,7 +338,7 @@ Feature: Basic Order Entry - Delivery Credit Card  - with Make Line Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page

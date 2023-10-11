@@ -76,14 +76,22 @@ public class PageObject extends CommonPageObject {
 
     public PageObject waitDomToLoad() {
         domLoaded();
-        jqueryLoaded();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //  angularLoaded();
         return this;
     }
 
     public PageObject waitPageToJqueryLoad() {
-        domLoaded();
         jqueryLoadedWithTime();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //  angularLoaded();
         return this;
     }

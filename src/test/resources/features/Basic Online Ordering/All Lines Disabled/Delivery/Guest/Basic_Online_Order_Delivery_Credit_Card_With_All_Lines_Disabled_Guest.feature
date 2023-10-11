@@ -7,7 +7,7 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: the User wait page to load
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user Click on Error Message if Exists
     And the user click on OK button if error exists
     #Comment: User wait to visible the page
@@ -129,11 +129,11 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
@@ -175,7 +175,7 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     #Comment: user click on Enter
     And the user clicks the "enter" element at the "ClockInPage" page
     #Comment: the user page to load
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user clock out if already clock in
     And the user clock out if already clock in
      #Comment: The user wait until page is loading
@@ -185,7 +185,7 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     #Comment: user click on Driver
     And the user clicks the "OKBtn" element at the "ClockInPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: The user wait until page is loading
     And the user waits for the "adoraHeaderSVG" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user click on Adore header page
@@ -195,17 +195,17 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - G
     #Comment: user click on dispatch
     And the user clicks the "dispatch" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment : user click on orderNumber and dispatch
     And the user clicks the "table" element with dictionary key "#(orderNum1)" at the "DispatchPage" page with xpath1 "#(orderNumberXpath1)" and xpath2 "#(orderNumberXpath2)"
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click on Driver o Dispatch page
     And the user clicks the "bobTheDriver" element at the "DispatchPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click on Adora Header
     And the user clicks the "adoraHeaderSVG" element at the "OrderEntry" page
 

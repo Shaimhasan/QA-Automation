@@ -20,11 +20,11 @@ Feature: Basic Copy To Inventory Entry
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -61,7 +61,7 @@ Feature: Basic Copy To Inventory Entry
     #Comment: the user click save
     And the user clicks the "save" element at the "AddCountSheetPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
 
     #Comment: the user click Discounts
     And the user clicks the "inventory" element at the "InventoryPage" page
@@ -92,7 +92,7 @@ Feature: Basic Copy To Inventory Entry
     #Comment: the user click save
     And the user clicks the "save" element at the "AddCountSheetPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
 
     #Comment: the user click Discounts
     And the user clicks the "inventory" element at the "InventoryPage" page
@@ -109,7 +109,7 @@ Feature: Basic Copy To Inventory Entry
     #Comment: the user click on list
     And the user clicks the "weekly" element at the "AddInventoryEntryPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the visibility of popup
     And the user waits for the "inventoryEntryTxtPopup" element to be "VISIBLE" on the "AddInventoryEntryPage" page
     #Comment: the user enter text
@@ -135,7 +135,7 @@ Feature: Basic Copy To Inventory Entry
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddInventoryEntryPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(Weekly)" at the "InventoryEntryPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id
@@ -153,7 +153,7 @@ Feature: Basic Copy To Inventory Entry
     #Cooment: the user click save
     And the user clicks the "save" element at the "CopyToInventoryEntryPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(Yearly)" at the "InventoryEntryPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id

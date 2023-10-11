@@ -190,6 +190,11 @@ public class AutoEngUtility extends BaseWebSteps {
         getPO().waitPageToLoad();
     }
 
+    @When("^the user waits for the dom to load$")
+    public void theUserWaitsForTheDomToLoad() {
+        getPO().waitDomToLoad();
+    }
+
     @When("^the user waits Jquery for the page to load$")
     public void theUserWaitsForJqueryThePageToLoad() {
         getPO().waitPageToJqueryLoad();

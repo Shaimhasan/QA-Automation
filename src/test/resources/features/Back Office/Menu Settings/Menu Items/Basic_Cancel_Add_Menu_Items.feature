@@ -21,11 +21,11 @@ Feature: Basic Cancel Add Menu Items
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -85,7 +85,7 @@ Feature: Basic Cancel Add Menu Items
     #Cooment: the user click on small size default
     And the user clicks the "cancelBtn" element at the "AddMenuItemsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
 
     #Comment: the user refresh the page
     And the user refreshes the page

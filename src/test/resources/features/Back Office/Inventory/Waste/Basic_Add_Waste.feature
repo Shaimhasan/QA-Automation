@@ -20,11 +20,11 @@ Feature: Basic Add Waste
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -54,7 +54,7 @@ Feature: Basic Add Waste
     #Comment : the User click on save
     And the user clicks the "save" element at the "AddWastePage" page
     #Comment : the User wait to page load
-    And the user waits for the page to load
+    And the user waits for the dom to load
 
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(item)" at the "WastePage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"

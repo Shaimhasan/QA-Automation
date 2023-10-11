@@ -22,7 +22,7 @@ Feature: Basic Order Entry - Take Out Cash - with Change Due  - with all lines d
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: user click On the orderEntry Button
@@ -72,7 +72,7 @@ Feature: Basic Order Entry - Take Out Cash - with Change Due  - with all lines d
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
    #Comment: the user validate the ID number in History

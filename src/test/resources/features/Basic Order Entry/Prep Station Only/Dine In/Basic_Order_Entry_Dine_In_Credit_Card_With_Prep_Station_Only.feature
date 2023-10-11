@@ -22,7 +22,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
@@ -43,7 +43,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -57,7 +57,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -71,7 +71,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
@@ -122,7 +122,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: user click on chargeBtn
     And the user clicks the "chargeBtn" element at the "CreditCardPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the visibility of popup
     And the user waits for the "headerPopUpChangeDue" element to be "VISIBLE" on the "OrderEntry" page
     #Comment: The user validate change due popuo is present
@@ -145,7 +145,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: user click on prep Station
     And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click prepstation until order comes on console
     And the user click Single prepstation "order" element until "#(transaction_Number)" expected value based on attribute "id" found at the page "PrepStationPage"
 
@@ -160,7 +160,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user validate the ID number in History
@@ -205,7 +205,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -219,7 +219,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -233,7 +233,7 @@ Feature: Basic Order Entry - Dine In Credit Card - with Prep Station Only
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page

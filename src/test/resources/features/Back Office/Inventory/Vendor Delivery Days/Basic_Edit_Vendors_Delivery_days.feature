@@ -20,11 +20,11 @@ Feature: Basic Edit Vendors Delivery Days
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -44,7 +44,7 @@ Feature: Basic Edit Vendors Delivery Days
     #Comment : the User click on save
     And the user clicks the "save" element at the "EditVendorDeliveryDaysPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click Add vendors
     And the user clicks the "editBtn" element at the "VendorsDeliveryDaysPage" page
     #Comment: the user validate the visibility of popup
@@ -54,4 +54,4 @@ Feature: Basic Edit Vendors Delivery Days
     #Comment : the User click on save
     And the user clicks the "save" element at the "EditVendorDeliveryDaysPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load

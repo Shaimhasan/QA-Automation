@@ -21,11 +21,11 @@ Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
@@ -46,7 +46,7 @@ Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -60,7 +60,7 @@ Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -74,7 +74,7 @@ Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
@@ -82,7 +82,7 @@ Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap
 
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewTab"
     #Comment: the User wait page to load
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user Click on Error Message if Exists
     And the user click on OK button if error exists
     #Comment: User wait to visible the page
@@ -184,7 +184,7 @@ Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap
     #Comment: user click on makeLine
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click makeline until order comes on console
     And the user click makeline single pizza "order" element until "#(transactionNum)" expected value based on attribute "data-full-key" found at the page "MakeLinePage"
 
@@ -197,13 +197,13 @@ Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap
     #Comment: user click on Cut and Wrap
     And the user clicks the "cutAndWrap" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user validates the "inOven" element is present at the "CutAndWrapPage" page "validate_In_Oven_Present" "HardStopOnFailure"
     #Comment: user click on cut wrap based on order Number
     And the user custom clicks on row with order number "#(orderNum1)" and category value "1" from the "table" table on the "CutAndWrapPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: User validate the adoraHeaderSVG element is present.
     And the user order number "#(orderNum1)" category value "1" cut and wrap validates the "table" element is present at the "CutAndWrapPage" page "validate_Cut_And_Wrap_Present" "HardStopOnFailure"
 
@@ -220,7 +220,7 @@ Feature: Basic Online Order - Take Out Credit Card - with Make Line Cut and Wrap
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user click on Details Elements

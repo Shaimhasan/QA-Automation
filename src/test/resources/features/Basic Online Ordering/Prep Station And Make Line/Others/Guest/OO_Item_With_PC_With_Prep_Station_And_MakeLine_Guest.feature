@@ -21,11 +21,11 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled and with
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
 
@@ -46,7 +46,7 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled and with
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -60,7 +60,7 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled and with
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user click on make line row
@@ -74,7 +74,7 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled and with
     #Comment: the user click on Save
     And the user clicks the "save" element at the "EditSettingsPage" page
     #Comment: the user load the page
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element disable
     And the user waits for the "edit" element to be "DISABLED" on the "EditSettingsPage" page
     #Comment: the user refresh Page
@@ -82,7 +82,7 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled and with
 
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewTab"
     #Comment: the User wait page to load
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user Click on Error Message if Exists
     And the user click on OK button if error exists
     #Comment: User wait to visible the page
@@ -168,7 +168,7 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled and with
     #Comment: user click on prep Station
     And the user clicks the "prepStation" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click prepstation until order comes on console
     And the user click Single prepstation "order" element until "#(transactionNum)" expected value based on attribute "id" found at the page "PrepStationPage"
 
@@ -183,7 +183,7 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled and with
     #Comment: user click on makeLine
     And the user clicks the "makeLine" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait
     And the user waits "5000" seconds
     #Comment: user click makeline until order comes on console
@@ -202,7 +202,7 @@ Feature: Online Order - Item with Prep Station and Cut and Wrap enabled and with
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user click on Details Elements

@@ -20,11 +20,11 @@ Feature: Basic Delete SingleUseCoupons
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -34,7 +34,7 @@ Feature: Basic Delete SingleUseCoupons
     #Comment: the user click on Menu Items
     And the user clicks the "singleUseCoupons" element at the "DiscountsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on Add
     And the user clicks the "addBtn" element at the "SingleUseCouponsPage" page
     #Comment: the user validate the visibility of popup
@@ -58,7 +58,7 @@ Feature: Basic Delete SingleUseCoupons
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddSingleUseCouponsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user store the id
     And store the displayed text of the "table" element at the "SingleUseCouponsPage" page and get the dictionary key value "#(name_value1)" based on xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)" store at dictionary with key "Id_Number"
     #Comment: the user click on Delete Button
@@ -69,7 +69,7 @@ Feature: Basic Delete SingleUseCoupons
     #Comment: the user click on Delete Button on Warning popup
     And the user clicks the "deleteOnWarning" element at the "SingleUseCouponsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element is disabled
     And the user waits for the "delete" element to be "DISABLED" on the "SingleUseCouponsPage" page
     #Comment: the user click on History Button

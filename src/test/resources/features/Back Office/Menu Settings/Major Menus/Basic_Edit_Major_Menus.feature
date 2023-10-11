@@ -20,11 +20,11 @@ Feature: Basic Edit Major Menus
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -42,7 +42,7 @@ Feature: Basic Edit Major Menus
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddMajorMenusPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(menuName_value1)" at the "MajorMenusPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user store the id
@@ -58,13 +58,13 @@ Feature: Basic Edit Major Menus
     #Cooment: the user click save
     And the user clicks the "save" element at the "EditMajorMenusPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on the ID number row
     And the user clicks the "table" element with dictionary key "#(menuName_value1_updated_1)" at the "MajorMenusPage" page with xpath1 "#(IdNumberXpath1)" and xpath2 "#(IdNumberXpath2)"
     #Comment: the user click on Edit Button
     And the user clicks the "editBtn" element at the "MajorMenusPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user store the text on data dictionary
     And store the displayed text of the "menuName" element at the "EditMajorMenusPage" page into the data dictionary with key "menuName_value2_Updated_2"
     #Comment: user validate Name US Value

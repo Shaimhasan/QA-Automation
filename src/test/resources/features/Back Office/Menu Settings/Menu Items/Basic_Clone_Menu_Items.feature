@@ -21,11 +21,11 @@ Feature: Basic Clone Menu Items
     #Comment: The user enter at passsword field
     And the user sends keys "Key_enter" to the "password" element on the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: user click On the continueToLogin Button
     And the user clicks the "continueToLogin" element at the "LoginPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user validate the Title of the page
     And the user validates that the page title "Equal To" "Adora" "validate_Title" "HardStopOnFailure"
     #Comment: the user click on back office
@@ -89,7 +89,7 @@ Feature: Basic Clone Menu Items
     #Cooment: the user click on small size default
     And the user clicks the "save" element at the "AddMenuItemsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on the item number row
     And the user clicks the "table" element with dictionary key "#(item_Number_value1)" at the "MenuItemsPage" page with xpath1 "#(ItemNumberXpath1)" and xpath2 "#(ItemNumberXpath2)"
     #Comment: the user store id
@@ -101,7 +101,7 @@ Feature: Basic Clone Menu Items
     #Comment: the user click on Clone Button
     And the user clicks the "cloneConfirmationBtn" element at the "MenuItemsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "MenuItemsPage" page
     #Comment: the user validate the visibility of popup
@@ -192,7 +192,7 @@ Feature: Basic Clone Menu Items
     #Comment: the user click on Delete Button on Warning popup
     And the user clicks the "deleteOnWarning" element at the "MenuItemsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element is disabled
     And the user waits for the "delete" element to be "DISABLED" on the "MenuItemsPage" page
 
@@ -203,6 +203,6 @@ Feature: Basic Clone Menu Items
     #Comment: the user click on Delete Button on Warning popup
     And the user clicks the "deleteOnWarning" element at the "MenuItemsPage" page
     #Comment: The user wait until page is loading
-    And the user waits for the page to load
+    And the user waits for the dom to load
     #Comment: the user wait the element is disabled
     And the user waits for the "delete" element to be "DISABLED" on the "MenuItemsPage" page
