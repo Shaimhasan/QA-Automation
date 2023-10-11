@@ -14,9 +14,9 @@ public class EditRecievingPage extends BasePO {
     private By tax = By.id("txt_BO_IN_REC_ADDEDT_Tax");
     private By freight = By.id("txt_BO_IN_REC_ADDEDT_Freight");
     private By others = By.id("txt_BO_IN_REC_ADDEDT_OtherCharges");
-    private By recievingTxtPopup = By.xpath("//span[@id='div_BO_IN_VIT_ADDEDT_DIALOG_Header_Title']");
-    private By save = By.id("btn_BO_IN_VIT_ADDEDT_Save");
-    private By cancel = By.id("btn_BO_IN_VIT_ADDEDT_Cancel");
+    private By recievingTxtPopup = By.xpath("//span[@id='div_BO_IN_REC_ADDEDT_DIALOG_Header_Title']");
+    private By save = By.id("btn_BO_IN_REC_ADDEDT_Save");
+    private By cancel = By.id("btn_BO_IN_REC_ADDEDT_Cancel");
 
     public Element cancel() throws IOException, InterruptedException {
         return $(cancel);
