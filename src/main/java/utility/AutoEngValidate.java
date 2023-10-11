@@ -1102,17 +1102,24 @@ public class AutoEngValidate extends BaseWebSteps {
                                                                  String attributeName,
                                                                  String pageName
     ) {
-        attributeName = parseValue(attributeName);
-        expectedValue = parseValue(expectedValue);
-        String expectedValueOne = expectedValue + "_1" + "_1";
-        System.out.println(attributeName);
-        String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
-        if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
-            getObject(objectName, pageName).click();
-        } else {
-            getObject(objectName, pageName).click();
-            theUserClickSinglePizzaMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+        try {
+            attributeName = parseValue(attributeName);
+            expectedValue = parseValue(expectedValue);
+            String expectedValueOne = expectedValue + "_1" + "_1";
+            System.out.println(attributeName);
+            String transactionNumber = getObject(objectName, pageName).getAttribute(attributeName);
+            if (expectedValueOne.equalsIgnoreCase(transactionNumber)) {
+                getObject(objectName, pageName).click();
+            } else {
+                getObject(objectName, pageName).click();
+                theUserClickSinglePizzaMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+            }
+        } catch (Exception e) {
+            for(int i =0 ; i<3 ; i++){
+                theUserClickSinglePizzaMakelineUntilElementFound(objectName, expectedValue, attributeName, pageName);
+            }
         }
+
 
     }
 
