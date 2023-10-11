@@ -15,7 +15,7 @@
       "timeRecordSuccessMsg": "Your time card recorded successfully.",
       "timeClockOutSuccessMsg": "You have clocked out successfully.",
       "gatuityAmt": "0",
-      "orderNumberXpath1": "//b[text()=' ",
+      "orderNumberXpath1": "//b[text()='",
       "orderNumberXpath2": "']"
     },
     "dataCriteria": {
