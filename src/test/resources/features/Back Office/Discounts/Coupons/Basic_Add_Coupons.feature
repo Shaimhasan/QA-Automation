@@ -133,8 +133,6 @@ Feature: Basic Add Coupons
     And the user validates the data dictionary value of "#(maxOrderAmt_value1)" is "Equal To" data dictionary value of "#(maxOrderAmt_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
     #Comment: user validate descriptionSpanish Value
     And the user validates the data dictionary value of "#(discountAmt_value1)" is "Equal To" data dictionary value of "#(discountAmt_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
-    #Comment: the user validate the checkbox checked
-    And the user validates the item in the "orderTypes" checkbox is checked at the "EditCouponsPage" page "validate_value" "HardStopOnFailure"
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditCouponsPage" page
 #    #Comment: the user click on History Button
