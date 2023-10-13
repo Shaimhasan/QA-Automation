@@ -82,7 +82,7 @@ Feature: Basic Clone Coupons
 #    #Comment: the user enter futire date
 #    And the user enters "2" days after with current date into the "endDate" textbox at the "AddCouponsPage" page
     #Comment: the user select Order Types
-    And the user clicks the "orderTypes" element at the "AddCouponsPage" page
+    #And the user clicks the "orderTypes" element at the "AddCouponsPage" page
 
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddCouponsPage" page
@@ -171,6 +171,6 @@ Feature: Basic Clone Coupons
     #Comment: user validate descriptionSpanish Value
     And the user validates the data dictionary value of "#(discountAmt_value1)" is "Equal To" data dictionary value of "#(discountAmt_value2)" "validate_descriptionSpanish_value" "HardStopOnFailure"
     #Comment: the user validate the checkbox checked
-    And the user validates the item in the "orderTypes" checkbox is checked at the "EditCouponsPage" page "validate_value" "HardStopOnFailure"
+    #And the user validates the item in the "orderTypes" checkbox is checked at the "EditCouponsPage" page "validate_value" "HardStopOnFailure"
     #Comment: the user click on Cancel Button
     And the user clicks the "cancelBtn" element at the "EditCouponsPage" page

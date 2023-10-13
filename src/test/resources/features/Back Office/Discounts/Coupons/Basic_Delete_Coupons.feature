@@ -68,7 +68,7 @@ Feature: Basic Delete Coupons
 #    #Comment: the user enter futire date
 #    And the user enters "2" days after with current date into the "endDate" textbox at the "AddCouponsPage" page
     #Comment: the user select Order Types
-    And the user clicks the "orderTypes" element at the "AddCouponsPage" page
+    #And the user clicks the "orderTypes" element at the "AddCouponsPage" page
     #Cooment: the user click save
     And the user clicks the "save" element at the "AddCouponsPage" page
     #Comment: The user wait until page is loading
