@@ -11,9 +11,9 @@ public class AddCountSheetPage extends BasePO {
     private By frequency = By.xpath("//select[@id='ddl_BO_IN_CNT_ADDEDT_Freq']");
     private By location = By.xpath("//select[@id='ddl_BO_IN_CNT_ADDEDT_Loc']");
     private By allItems = By.xpath("//input[normalize-space(@id)='chk_BO_IN_CNT_ADDEDT_Items_Active']");
-    private By items = By.xpath("//input[normalize-space(@id)='chk_BO_IN_CNT_ADDEDT_CountSheet_1222']");
+    private By items = By.xpath("//input[@data-text='Automation Inventory Item ']");
     private By countSheetTxtPopup = By.xpath("//div[@id='div_BO_IN_CNT_ADDEDT_DIALOG_modal_view']//span[text()='Count Sheet']");
-    private By save = By.xpath("//div[@id='div_BO_IN_CNT_ADDEDT_DIALOG']//button[text()='Save']");
+    private By save = By.id("btn_BO_IN_CNT_ADDEDT_Save");
 
 
     public Element items() throws IOException, InterruptedException {
