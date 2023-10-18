@@ -63,6 +63,8 @@ Feature: Basic Delete Waste
     And the user clicks the "delete" element at the "WastePage" page
     #Comment: the user click on Delete Button on Warning popup
     And the user clicks the "deleteOnWarning" element at the "WastePage" page
+    #the user wait DOM to load
+    And the user waits for the dom to load
 
     #Comment: the user click on History Button
     And the user clicks the "history" element at the "VendorsPage" page
