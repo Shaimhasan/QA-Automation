@@ -9,7 +9,7 @@ import java.util.List;
 
 public class OrderTrack extends BasePO {
 
-    private By OK = By.xpath("//button[text()='OK']");
+    private By OK = By.id("btn_msgbox_ok");
     private By trackYourOrderTxt = By.xpath("//h3[text()='Track Your Order']");
     private By trackerActiveMaking = By.xpath("//li[@id='tr_status_0' and @class='tracker-active']//img[@alt='Notification Image for Making']");
     private By trackerActiveCooking = By.xpath("//li[@id='tr_status_1' and @class='tracker-active']//img[@alt='Notification Image for Cooking']");

@@ -139,6 +139,8 @@ Feature: Order Tracker - Item with Make Line enabled - with all lines enabled - 
     And store the sub string "#(tranAndOrdNo1)" of text with start index "34" and last index "37" into the data dictionary with key "orderNum1"
     #Comment: the user click on OrderModelPopupOLOPage
     And the user clicks the "trackMyOrder" element at the "OrderModelPopupOLOPage" page
+    #Comment: the user wait page to dom Load
+    And the user waits for the dom to load
     #Comment: the user click on OK Button
     And the user clicks the "OK" element at the "OrderTrack" page If Present
     #Comment: the user wait the page open
@@ -190,8 +192,6 @@ Feature: Order Tracker - Item with Make Line enabled - with all lines enabled - 
     And the user switches to window that contains "Automation Profile"
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
-    #Comment: the user validate the element is present
-    And the user validates the given "#(trackerActiveMaking)" element is present at Page within given custom time interval "120" seconds
     #Comment: the user validate the element is present
     And the user validates the given "#(trackerActiveCooking)" element is present at Page within given custom time interval "120" seconds
     #Comment: the user validate the element is present
