@@ -144,7 +144,7 @@ Feature: Order Tracker - Item with Make Line enabled - with all lines enabled - 
     #Comment: the user wait the page open
     And the user waits for the "trackYourOrderTxt" element to be "VISIBLE" on the "OrderTrack" page
     #Comment: the user validate the element is present
-    And the user validates the "trackerUncompletedMakeline" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
+    And the user validates the given "#(trackerActiveMaking)" element is present at Page within given custom time interval "120" seconds
     #Comment: the user validate the element is present
     And the user validates the "trackerUncompletedCooking" element is present at the "OrderTrack" page "validate_element_present" "HardStopOnFailure"
     #Comment: the user validate the element is present
