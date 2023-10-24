@@ -1,9 +1,9 @@
-Feature: Basic Online Order - Take Out Credit Card - with all lines disabled - Existing User
-  This script is to validate Basic Online Order - Take Out Credit Card - with all lines disabled - Existing User
+Feature: Basic Online Order - Take Out Cash - with all lines disabled - Existing User
+  This script is to validate Basic Online Order - Take Out Cash - with all lines disabled - Existing User
 
-  @issue=1816
-  @Basic_Online_Order_Take_Out_Credit_Card_With_All_Lines_Disabled_Existing_User @RegressionSuite @TakeOut @OLO @OLO_ALD @OLO_ALD_TakeOut @OLO_ALD_TakeOut_Existing_User
-  Scenario: Basic_Online_Order_Take_Out_Credit_Card_With_All_Lines_Disabled_Existing_User_Testcase
+  @issue=1815
+  @Basic_Online_Order_Take_Out_Cash_With_ALD_Existing_User @RegressionSuite @TakeOut @OLO @OLO_ALD @OLO_ALD_TakeOut @OLO_ALD_TakeOut_Existing_User @Smoke_Testing
+  Scenario: Basic_Online_Order_Take_Out_Cash_With_ALD_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: the User wait page to load
@@ -52,35 +52,10 @@ Feature: Basic Online Order - Take Out Credit Card - with all lines disabled - E
     And the user clicks the "checkOut" element at the "HomeOLOPage" page
     #Comment: User wait to visible the page
     And the user waits for the "customerInfo" element to be "VISIBLE" on the "ExistingCustLoginOLOPage" page
-
-    #Comment: the user click on Credit Card Information
-    And the user clicks the "creditCard" element at the "ExistingCustLoginOLOPage" page
+    #comment: the user click on Pay In Store
+    And the user clicks the "payInStore" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user validates the checkbox is selected
-    And the user validates the item in the "creditCard" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
-    #Comment: the user switched to the frame
-    And the user switches to frame "cardNumber"
-    #Comment: the user enter Card Number
-    And the user enters "#(cardNumber)" into the "cardNumber" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: The user Switches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardExpiration"
-    #Comment: the user enter Expiration date
-    And the user enters "#(cardExpiration)" into the "cardExpiration" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: User switches to the frame
-    And the user switches to frame "cardCvv"
-    #Comment: the user enter CVV
-    And the user enters "#(cardCvv)" into the "cardCvv" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: The user swtiches out side the frame
-    And the user switches to the default window content
-    #Comment: the user enter Billing Address
-    And the user enters "#(billingAddress)" into the "billingAddress" textbox at the "ExistingCustLoginOLOPage" page
-    #Comment: the user enter Billing Address
-    And the user enters "#(zipCode)" into the "zipCode" textbox at the "ExistingCustLoginOLOPage" page
-
-
+    And the user validates the item in the "payInStore" checkbox is checked at the "ExistingCustLoginOLOPage" page "validate_Text" "HardStopOnFailure"
     #comment: the user click on termsAndCondition
     And the user clicks the "termsAndCondition" element at the "ExistingCustLoginOLOPage" page
     #Comment: the user click on termsAndCondition
@@ -129,8 +104,6 @@ Feature: Basic Online Order - Take Out Credit Card - with all lines disabled - E
     And the user hovers over the "orderList" element at the "AdoraHeaderPage" page
     #Comment: user click on Order List
     And the user clicks the "orderList" element at the "AdoraHeaderPage" page
-    #Comment: The user wait until page is loading
-    And the user waits for the dom to load
     #Comment: user validate the transaction Number
     And the user waits "3000" seconds
     #Comment: the user click on Details Elements

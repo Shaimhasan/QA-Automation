@@ -2,8 +2,8 @@ Feature: Basic Online Order - Delivery Cash - with all lines disabled - Existing
   This script is to validate Basic Online Order - Delivery Cash - with all lines disabled - Existing User
 
   @issue=1817
-  @Basic_Online_Order_Delivery_Cash_With_All_Lines_Disabled_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_ALD @OLO_ALD_Delivery @OLO_ALD_Delivery_Existing_User @Smoke_Testing
-  Scenario: Basic_Online_Order_Delivery_Cash_With_All_Lines_Disabled_Existing_User_Testcase
+  @Basic_Online_Order_Delivery_Cash_With_ALD_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_ALD @OLO_ALD_Delivery @OLO_ALD_Delivery_Existing_User @Smoke_Testing
+  Scenario: Basic_Online_Order_Delivery_Cash_With_ALD_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: the User wait page to load

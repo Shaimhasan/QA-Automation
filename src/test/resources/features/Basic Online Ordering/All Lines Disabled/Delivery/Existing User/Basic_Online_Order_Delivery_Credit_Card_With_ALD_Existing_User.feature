@@ -2,8 +2,8 @@ Feature: Basic Online Order - Delivery Credit Card - with all lines disabled - E
   This script is to validate Basic Online Order - Delivery Credit Card - with all lines disabled - Existing User
 
   @issue=1818
-  @Basic_Online_Order_Delivery_Credit_Card_With_All_Lines_Disabled_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_ALD @OLO_ALD_Delivery @OLO_ALD_Delivery_Existing_User
-  Scenario: Basic_Online_Order_Delivery_Credit_Card_With_All_Lines_Disabled_Existing_User_Testcase
+  @Basic_Online_Order_Delivery_Credit_Card_With_ALD_Existing_User @RegressionSuite @Delivery @OLO_Delivery @OLO @OLO_ALD @OLO_ALD_Delivery @OLO_ALD_Delivery_Existing_User
+  Scenario: Basic_Online_Order_Delivery_Credit_Card_With_ALD_Existing_User_Testcase
     #Comment: User launch online ordering web application in chrome browser
     Given the web application "Online_Ordering_Web_URL" is launched in a "NewWindow"
     #Comment: the User wait page to load
