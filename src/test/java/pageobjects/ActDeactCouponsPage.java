@@ -12,7 +12,7 @@ public class ActDeactCouponsPage extends BasePO {
     private By activeChkBx = By.xpath("//input[normalize-space(@id)='chk_BO_CP_CPN_AVAL_Active']");
     private By activeChkBxIsSelected = By.xpath("//label[@for='chk_BO_CP_CPN_AVAL_OSTs_1_1']");
     private By save = By.xpath("//button[@onclick='BO_CP_CPN_AVAL_Save();']");
-    private By cancel = By.xpath("//button[@onclick='BO_CP_CPN_AVAL_Save();']//preceding-sibling::button[text()='Cancel']");
+    private By cancel = By.xpath("//button[@id='btn_BO_CP_CPN_AVAL_Cancel' and text()='Close']");
     private By paidDineInIsSelected = By.xpath("//label[@for='chk_BO_CP_CPN_AVAL_OSTs_1_1']");
     private By couponsTextVal = By.xpath("//span[@id='div_BO_CP_CPN_AVAL_DIALOG_Header_Title']");
 
