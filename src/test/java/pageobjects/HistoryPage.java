@@ -50,5 +50,4 @@ public class HistoryPage extends BasePO {
         return $(table);
     }
 
-
 }

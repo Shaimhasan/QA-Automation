@@ -1,0 +1,16 @@
+{
+  "TDaaS": {
+    "sharedAttributes": {
+    },
+    "staticData": {
+      "sortingIndex": "3",
+
+    },
+    "dataCriteria": {
+    },
+    "dataOutput": [
+    ],
+    "sql": {
+    }
+  }
+}
