@@ -1,14 +1,8 @@
 package core;
 
 import com.google.common.collect.Lists;
-import common.TestContext;
-import driver.DriverContext;
-import driver.DriverFactory;
 import io.cucumber.java8.En;
-import io.cucumber.testng.CucumberFeatureWrapper;
-import io.cucumber.testng.CucumberOptions;
-import io.cucumber.testng.PickleEventWrapper;
-import io.cucumber.testng.TestNGCucumberRunner;
+import io.cucumber.testng.*;
 import io.qameta.allure.ConfigurationBuilder;
 import io.qameta.allure.Extension;
 import io.qameta.allure.ReportGenerator;
@@ -40,7 +34,6 @@ import io.qameta.allure.status.StatusChartPlugin;
 import io.qameta.allure.suites.SuitesPlugin;
 import io.qameta.allure.tags.TagsPlugin;
 import io.qameta.allure.timeline.TimelinePlugin;
-import objectmatcher.FetchPageObjects;
 import org.apache.commons.io.FileUtils;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -58,10 +51,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static io.qameta.allure.DummyReportGenerator.loadPlugins;
+
 //import static automation.library.alm.core.Constants.ALM_DEFECT_PROPERTIES_PATH_REPORT;
 
 @CucumberOptions(
-        strict = true,
+
         glue = {"utility", "hooks"}
 )
 
@@ -77,8 +72,8 @@ public class BaseTest extends common.BaseTest implements En {
     }
 
     @Test(groups = "cucumber", description = "Run Cucumber Scenarios", dataProvider = "techStackWithScenarioList")
-    public void scenario(Map<String, String> map, PickleEventWrapper pickle, CucumberFeatureWrapper cucumberFeature) throws Throwable {
-        testNGCucumberRunner.runScenario(pickle.getPickleEvent());
+    public void scenario(Map<String, String> map, PickleWrapper pickle, FeatureWrapper cucumberFeature) throws Throwable {
+        testNGCucumberRunner.runScenario(pickle.getPickle());
     }
 
     @DataProvider(name = "techStackWithScenarioList")
@@ -118,19 +113,21 @@ public class BaseTest extends common.BaseTest implements En {
     }
 
     private void onGenerateAllureReport() {
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-            public void run() {
-                try {
-                    final List<Extension> extensions = Arrays.asList(new JacksonContext(), new MarkdownContext(), new FreemarkerContext(), new RandomUidContext(), new MarkdownDescriptionsPlugin(), new RetryPlugin(), new RetryTrendPlugin(), new TagsPlugin(), new SeverityPlugin(), new OwnerPlugin(), new IdeaLinksPlugin(), new CategoriesPlugin(), new CategoriesTrendPlugin(), new HistoryPlugin(), new HistoryTrendPlugin(), new DurationPlugin(), new DurationTrendPlugin(), new StatusChartPlugin(), new TimelinePlugin(), new SuitesPlugin(), new TestsResultsPlugin(), new AttachmentsPlugin(), new MailPlugin(), new InfluxDbExportPlugin(), new PrometheusExportPlugin(), new SummaryPlugin(), new ExecutorPlugin(), new LaunchPlugin(), new Allure1Plugin(), new Allure1EnvironmentPlugin(), new Allure2Plugin(), new ReportWebPlugin());
-                    Configuration configuration = (new ConfigurationBuilder()).fromExtensions(extensions).build();
-                    Path resultDi = Paths.get("target/allure-results");
-                    Path outDir = Paths.get("target/allure-report");
-                    new ReportGenerator(configuration).generate(outDir, resultDi);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+//        Runtime.getRuntime().addShutdownHook(new Thread() {
+//            public void run() {
+//                try {
+//                    final List<Extension> extensions = Arrays.asList(new JacksonContext(), new MarkdownContext(), new FreemarkerContext(), new RandomUidContext(), new MarkdownDescriptionsPlugin(), new RetryPlugin(), new RetryTrendPlugin(), new TagsPlugin(), new SeverityPlugin(), new OwnerPlugin(), new IdeaLinksPlugin(), new CategoriesPlugin(), new CategoriesTrendPlugin(), new HistoryPlugin(), new HistoryTrendPlugin(), new DurationPlugin(), new DurationTrendPlugin(), new StatusChartPlugin(), new TimelinePlugin(), new SuitesPlugin(), new TestsResultsPlugin(), new AttachmentsPlugin(), new MailPlugin(), new InfluxDbExportPlugin(), new PrometheusExportPlugin(), new SummaryPlugin(), new ExecutorPlugin(), new LaunchPlugin(), new Allure1Plugin(), new Allure1EnvironmentPlugin(), new Allure2Plugin(), new ReportWebPlugin());
+//                    Configuration configuration = (new ConfigurationBuilder()).fromExtensions(extensions).build();
+//                    // final List<Plugin> plugins = loadPlugins();
+//                    //    Configuration configuration = (new ConfigurationBuilder()).fromExtensions(extensions).fromPlugins(plugins).build();
+//                    Path resultDi = Paths.get("target/allure-results");
+//                  //  Path outDir = Paths.get("target/allure-report");
+//                   // new ReportGenerator(configuration).generate(outDir, resultDi);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
     }
 
 }

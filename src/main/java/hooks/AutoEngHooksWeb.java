@@ -1,8 +1,8 @@
 package hooks;
 
 import common.TestContext;
+import io.cucumber.java8.Scenario;
 import objectmatcher.FetchPageObjects;
-import io.cucumber.core.api.Scenario;
 import io.cucumber.java8.En;
 
 public class AutoEngHooksWeb implements En {

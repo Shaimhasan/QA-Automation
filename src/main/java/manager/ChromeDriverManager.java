@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,7 +28,7 @@ public class ChromeDriverManager extends DriverManager {
         PropertiesConfiguration props = Property.getProperties(SELENIUMRUNTIMEPATH);
         if (Property.getVariable("cukes.webdrivermanager") != null && Property.getVariable("cukes.webdrivermanager").equalsIgnoreCase("true")) {
             if (Property.getVariable("cukes.chromeDriver") != null) {
-                WebDriverManager.chromedriver().version(Property.getVariable("cukes.chromeDriver")).setup();
+                WebDriverManager.chromedriver().driverVersion(Property.getVariable("cukes.chromeDriver")).setup();
             } else {
                 WebDriverManager.chromedriver().setup();
             }
@@ -41,13 +42,13 @@ public class ChromeDriverManager extends DriverManager {
             options.addArguments(variable);
         }
 
-        if(props.getString("options.chrome.useAutomationExtension") != null &&
-           props.getString("options.chrome.useAutomationExtension").equalsIgnoreCase("false")) {
+        if (props.getString("options.chrome.useAutomationExtension") != null &&
+                props.getString("options.chrome.useAutomationExtension").equalsIgnoreCase("false")) {
             options.setExperimentalOption("useAutomationExtension", false);
         }
 
 
-        if(Boolean.parseBoolean(props.getString("prefs.chrome.overrideDownloadSettings"))) {
+        if (Boolean.parseBoolean(props.getString("prefs.chrome.overrideDownloadSettings"))) {
             String downloadDir = Paths.get(Constants.DOWNLOADPATH).toAbsolutePath().toString();
             Map<String, Object> userPrefs = new HashMap<>();
             userPrefs.put("download.default_directory", downloadDir);
@@ -59,13 +60,16 @@ public class ChromeDriverManager extends DriverManager {
         if (DriverContext.getInstance().getBrowserName().contains("kiosk")) {
             options.addArguments("--kiosk");
         }
-        if(props.getString("options.headless.chrome").equalsIgnoreCase("true")){
-            options.setHeadless(true);
+        if (props.getString("options.headless.chrome").equalsIgnoreCase("true")) {
+            options.addArguments("--headless");
+            //    options.setHeadless(true);
             options.addArguments("--window-size=1552x840");
         }
         options.addArguments("--incognito");
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(getWaitDuration()));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(getWaitDuration()));
     }
 
     @Override

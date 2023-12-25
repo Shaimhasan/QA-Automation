@@ -9,7 +9,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.commons.validator.routines.UrlValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -50,10 +49,10 @@ public class TDaaSClient {
     }
 
     private String getBaseURL(Map<String, String> urlDetails) {
-        if(urlAttributesAvail(urlDetails) && new UrlValidator().isValid(baseTDaaSURL)) {
-            return updateURLForLOB(String.join("/", baseTDaaSURL, urlDetails.get("region"), urlDetails.get("lob"), getEnvironment(urlDetails.get("environment"))),
-                                   urlDetails.get("country"));
-        }
+//        if(urlAttributesAvail(urlDetails) && new UrlValidator().isValid(baseTDaaSURL)) {
+//            return updateURLForLOB(String.join("/", baseTDaaSURL, urlDetails.get("region"), urlDetails.get("lob"), getEnvironment(urlDetails.get("environment"))),
+//                                   urlDetails.get("country"));
+//        }
 
         return ERROR_RESPONSE;
     }
@@ -75,8 +74,8 @@ public class TDaaSClient {
     private String getEnvironment(String environment) {
         String curTestEnv = Property.getVariable("cukes.env");
 
-        if(environment.equalsIgnoreCase("All") || environment.equalsIgnoreCase(curTestEnv)) {
-            LOG.info("Using same environment as the current automation test {}",curTestEnv);
+        if (environment.equalsIgnoreCase("All") || environment.equalsIgnoreCase(curTestEnv)) {
+            LOG.info("Using same environment as the current automation test {}", curTestEnv);
             return curTestEnv;
         } else {
             LOG.warn("Using environment from the JSON, which is different than the currently running test. JSON Env: {}, Test Env: {}", environment, curTestEnv);
@@ -86,10 +85,10 @@ public class TDaaSClient {
 
     private boolean urlAttributesAvail(Map<String, String> urlDetails) {
         final Map<String, Object> emptyParams = urlDetails.entrySet()
-                                                          .stream()
-                                                          .filter(entry -> entry.getKey().matches("region|lob|environment"))
-                                                          .filter(entry -> entry.getValue().isEmpty())
-                                                          .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+                .stream()
+                .filter(entry -> entry.getKey().matches("region|lob|environment"))
+                .filter(entry -> entry.getValue().isEmpty())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
         if (!emptyParams.isEmpty()) {
             emptyParams.forEach((key, value) -> LOG.error("No value provided for {}. Unable to build TDaaS query URL", key));
             return false;
@@ -99,7 +98,7 @@ public class TDaaSClient {
     }
 
     public List<Map<String, Object>> runTDaaSQuery(String queryName, Map<String, Object> paramList) {
-        if(!baseAPICallURL.equalsIgnoreCase(ERROR_RESPONSE) && queryName != null) {
+        if (!baseAPICallURL.equalsIgnoreCase(ERROR_RESPONSE) && queryName != null) {
             final OkHttpClient client = new OkHttpClient.Builder()
                     .connectTimeout(connectionTimeout, TimeUnit.SECONDS)
                     .readTimeout(connectionTimeout, TimeUnit.SECONDS)
@@ -120,7 +119,7 @@ public class TDaaSClient {
 
                 LOG.debug("TDaaS Query returned successfully. {}. Parsing response...", response.code());
                 List<Map<String, Object>> queryResult = parseJSONResponse(response.body().charStream());
-                if(!queryResult.isEmpty()) {
+                if (!queryResult.isEmpty()) {
                     LOG.debug(getMapAsFormattedDataTable(queryResult.get(0)));
                     return queryResult;
                 }
@@ -142,10 +141,10 @@ public class TDaaSClient {
         List<Map<String, Object>> resultSetWithoutNull = new ArrayList<>();
 
         resultSet.forEach(dataRow -> resultSetWithoutNull.add(dataRow.entrySet()
-                                                                     .stream()
-                                                                     .filter(entry -> entry.getValue() != null)
-                                                                     .collect(Collectors.toMap(Map.Entry::getKey,
-                                                                                               Map.Entry::getValue))));
+                .stream()
+                .filter(entry -> entry.getValue() != null)
+                .collect(Collectors.toMap(Map.Entry::getKey,
+                        Map.Entry::getValue))));
 
         return resultSetWithoutNull;
     }
@@ -169,8 +168,7 @@ public class TDaaSClient {
             }
 
             return removeNullEntries(response);
-        }
-        catch (NullPointerException | JsonSyntaxException e) {
+        } catch (NullPointerException | JsonSyntaxException e) {
             LOG.error(e.getMessage(), e);
             return Collections.emptyList();
         }
@@ -180,7 +178,7 @@ public class TDaaSClient {
         Pattern regEx = Pattern.compile(".*(?i)(P\\d+$)");
         Matcher paramMatcher = regEx.matcher(queryParam);
 
-        if(paramMatcher.find()) {
+        if (paramMatcher.find()) {
             return paramMatcher.group(1).toLowerCase();
         } else {
             LOG.warn("Parameter not found in key: {}", queryParam);

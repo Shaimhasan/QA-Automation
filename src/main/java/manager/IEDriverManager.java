@@ -18,7 +18,7 @@ public class IEDriverManager extends DriverManager {
 		Capabilities cap = new Capabilities();
 		if (Property.getVariable("cukes.webdrivermanager") != null && Property.getVariable("cukes.webdrivermanager").equalsIgnoreCase("true")) {
 			if (Property.getVariable("cukes.ieDriver")!=null) {
-				WebDriverManager.iedriver().version(Property.getVariable("cukes.ieDriver")).setup();
+				WebDriverManager.iedriver().driverVersion(Property.getVariable("cukes.ieDriver")).setup();
 			}else {
 				WebDriverManager.iedriver().setup();
 			}

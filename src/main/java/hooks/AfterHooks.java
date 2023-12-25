@@ -2,8 +2,8 @@ package hooks;
 
 import common.Property;
 import common.TestContext;
-import io.cucumber.core.api.Scenario;
 import io.cucumber.java8.En;
+import io.cucumber.java8.Scenario;
 
 import static reporting.Reporter.addScreenCaptureFromPath;
 

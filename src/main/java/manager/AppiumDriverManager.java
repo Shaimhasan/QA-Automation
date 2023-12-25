@@ -6,7 +6,6 @@ import driver.DriverManager;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.windows.WindowsDriver;
-import io.appium.java_client.windows.WindowsElement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,7 +36,7 @@ public class AppiumDriverManager extends DriverManager {
 
 			if (cap.getCap().getCapability(PLATFORM_NAME).toString().equalsIgnoreCase("Windows")) {
 				cap.getCap().setCapability(AUTOMATION_NAME, "Windows");
-				driver = new WindowsDriver<WindowsElement>(new URL(Property.getVariable(CUKES_APPIUM_END_POINT)), cap.getCap());
+				driver = new WindowsDriver(new URL(Property.getVariable(CUKES_APPIUM_END_POINT)), cap.getCap());
 			}
 		} catch (Exception e) {
 			log.debug("Could not connect to Appium Server: {}", e.getMessage());

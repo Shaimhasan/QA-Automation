@@ -22,7 +22,7 @@ public class FirefoxDriverManager extends DriverManager {
 		PropertiesConfiguration props = Property.getProperties(SELENIUMRUNTIMEPATH);
 		if (Property.getVariable("cukes.webdrivermanager") != null && Property.getVariable("cukes.webdrivermanager").equalsIgnoreCase("true")) {
 			if (Property.getVariable("cukes.firefoxDriver") != null) {
-				WebDriverManager.firefoxdriver().version(Property.getVariable("cukes.firefoxDriver")).setup();
+				WebDriverManager.firefoxdriver().driverVersion(Property.getVariable("cukes.firefoxDriver")).setup();
 			} else {
 				WebDriverManager.firefoxdriver().setup();
 			}
@@ -35,7 +35,7 @@ public class FirefoxDriverManager extends DriverManager {
 			options.addArguments(variable);
 		}
 		if(props.getString("options.headless.firefox").equalsIgnoreCase("true")){
-			options.setHeadless(true);
+			options.addArguments("--headless");
 		}
 		options.addArguments("-private");
 		//options.addPreference("javascript.enabled", true);

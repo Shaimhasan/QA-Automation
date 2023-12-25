@@ -7,8 +7,8 @@ import common.TestContext;
 import core.BaseWebSteps;
 import core.Constants;
 import core.Element;
-import cucumber.api.PendingException;
 import driver.DriverContext;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -40,7 +40,7 @@ public class AutoEngUtility extends BaseWebSteps {
         frameName = parseValue(frameName);
 
         try {
-            getPO().switchFrame(frameName,3);
+            getPO().switchFrame(frameName, 3);
         } catch (NoSuchFrameException | TimeoutException ex) {
             try {
                 getPO().switchFrame(By.xpath("//frame[@title=" + "'" + frameName + "'" + "] | //iFrame[@title=" + "'" + frameName + "'" + "]"));
@@ -80,7 +80,7 @@ public class AutoEngUtility extends BaseWebSteps {
 
     @When("^the user switches to window that contains \"([^\"]*)\"$")
     public void theUserSwitchesToWindowContains(String windowName) throws InterruptedException {
-        switchToNamedWindow(windowName, "PARTIAL",5);
+        switchToNamedWindow(windowName, "PARTIAL", 5);
     }
 
     @When("^the user switches to the next window$")
@@ -94,7 +94,7 @@ public class AutoEngUtility extends BaseWebSteps {
 
         try {
             getDriver().switchTo().window(TestContext.getInstance().peekLastWindowHandle());
-        } catch(NoSuchWindowException e) {
+        } catch (NoSuchWindowException e) {
             long windowSwitchDelay = Integer.parseInt(System.getProperty("fw.windowSwitchDelay"));
             log.debug("Last window not found. Waiting {}ms and trying again.", windowSwitchDelay);
             Thread.sleep(windowSwitchDelay);
@@ -168,7 +168,7 @@ public class AutoEngUtility extends BaseWebSteps {
         newDictionaryKey = parseDictionaryKey(newDictionaryKey);
 
         Object originalValue = TestContext.getInstance().testdataGet(oldDictionaryKey);
-        if(originalValue != null) {
+        if (originalValue != null) {
             String formattedValue = format(originalValue.toString(), formatType);
             TestContext.getInstance().testdata().put(newDictionaryKey, formattedValue);
             logStepMessage(String.format("Formatted %s to new value of %s", originalValue, formattedValue));
@@ -236,7 +236,7 @@ public class AutoEngUtility extends BaseWebSteps {
                 break;
             default:
                 log.warn("Expected condition not found: {}. Options are CLICKABLE | VISIBLE | HIDDEN | DISPLAYED | ENABLED | DISABLED | NOT EMPTY | EMPTY",
-                         expectedCondition);
+                        expectedCondition);
         }
     }
 
@@ -248,7 +248,7 @@ public class AutoEngUtility extends BaseWebSteps {
 
     @When("^the user hovers and click over the \"([^\"]*)\" element at the \"([^\"]*)\" page$")
     public void theUserHoversOverAndClickTheElementAtThePage(String objectName,
-                                                     String pageName) {
+                                                             String pageName) {
         getObject(objectName, pageName).hover().click();
     }
 
@@ -298,7 +298,7 @@ public class AutoEngUtility extends BaseWebSteps {
         downloadHelper.setURISpecifiedInAnchorElement(downloadLink);
         File downloadedFile = downloadHelper.downloadFile("");
 
-        if(downloadedFile != null && downloadedFile.exists()) {
+        if (downloadedFile != null && downloadedFile.exists()) {
             TestContext.getInstance().testdataPut(parseDictionaryKey(dictionaryKey), downloadedFile.getAbsolutePath());
             logStepMessage(String.format("Saved file to: %s", downloadedFile.getAbsolutePath()));
         } else {
@@ -318,7 +318,7 @@ public class AutoEngUtility extends BaseWebSteps {
         downloadHelper.setURIToCurrentBrowserURL();
         File downloadedFile = downloadHelper.downloadFile(fileExtension);
 
-        if(downloadedFile != null && downloadedFile.exists()) {
+        if (downloadedFile != null && downloadedFile.exists()) {
             TestContext.getInstance().testdataPut(parseDictionaryKey(dictionaryKey), downloadedFile.getAbsolutePath());
             logStepMessage(String.format("Saved file to: %s", downloadedFile.getAbsolutePath()));
         } else {
@@ -344,7 +344,7 @@ public class AutoEngUtility extends BaseWebSteps {
     }
 
     @When("^the user scroll to the page until the object \"([^\"]*)\" is visible at the page \"([^\"]*)\"$")
-    public void theUserScrollsToElementInThePage(String objectName,String pageName)  {
+    public void theUserScrollsToElementInThePage(String objectName, String pageName) {
         getObject(objectName, pageName).scroll();
     }
 
@@ -353,7 +353,7 @@ public class AutoEngUtility extends BaseWebSteps {
         String pathToDataJson = FileHelper.findFileInPath(common.Constants.TESTDATAPATH,
                 fileName + ".json");
 
-        if(pathToDataJson != null) {
+        if (pathToDataJson != null) {
             Map<String, String> dataCriteria;
             Object jsonObject = FileHelper.getDataPOJO(pathToDataJson, Object.class);
 
@@ -371,17 +371,17 @@ public class AutoEngUtility extends BaseWebSteps {
     }
 
     @When("^the user extracts value at index \"([^\"]*)\" from the JSON array at dictionary key \"([^\"]*)\" and stores into dictionary key \"([^\"]*)\"$")
-    public void theUserExtractsValue(String index, String dictionaryKey, String newDictionaryKey)  {
+    public void theUserExtractsValue(String index, String dictionaryKey, String newDictionaryKey) {
         try {
             List<String> list = new Gson().fromJson(TestContext.getInstance().testdataGet(parseDictionaryKey(dictionaryKey)).toString(),
-                                                    List.class);
+                    List.class);
             if (!list.isEmpty()) {
                 TestContext.getInstance().testdataPut(parseDictionaryKey(newDictionaryKey), list.get(Integer.parseInt(index)));
             }
         } catch (JsonSyntaxException e) {
             logStepMessage(String.format("Did not find a JSON array. Found: %s. Error: %s",
-                                         TestContext.getInstance().testdataGet(parseDictionaryKey(dictionaryKey)),
-                                         e.getMessage()));
+                    TestContext.getInstance().testdataGet(parseDictionaryKey(dictionaryKey)),
+                    e.getMessage()));
         }
     }
 
@@ -394,9 +394,10 @@ public class AutoEngUtility extends BaseWebSteps {
 
     @When("^the user responds to challenge questions on the \"([^\"]*)\" page$")
     public void userRespondsToChallengequestions(String pageName) throws InstantiationException,
-                                                                         IllegalAccessException {
+            IllegalAccessException {
         invokePOMethod(pageName, "userRespondsToChallenge");
     }
+
     @When("^the user perform mathematical operation \"([^\"]*)\" on the value 1 \"([^\"]*)\" and value 2 \"([^\"]*)\" and store result into dictionary key \"([^\"]*)\"$")
     public void theUserPerformsMathematicalOperation(String operationPerf,
                                                      String value1,

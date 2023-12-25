@@ -5,8 +5,8 @@ import common.TestContext;
 import core.Constants;
 import driver.DriverContext;
 import driver.DriverFactory;
-import io.cucumber.core.api.Scenario;
 import io.cucumber.java8.En;
+import io.cucumber.java8.Scenario;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
 import java.io.File;
@@ -27,25 +27,25 @@ public class Hooks implements En {
         After(30, (Scenario scenario) -> {
             if (DriverContext.getInstance().getTechStack() != null) {
                 if (scenario.isFailed()) {
-                    System.out.println("Scenarios Status : -->"+"Scenarios Failed");
+                    System.out.println("Scenarios Status : -->" + "Scenarios Failed");
                     takeScreenShotOnFailure();
                     if (!DriverContext.getInstance().getKeepBrowserOpen())
                         DriverFactory.getInstance().quit();
-                   // theUserClosesTheBrowsers("IE");
+                    // theUserClosesTheBrowsers("IE");
 
-            }else{
-                    System.out.println("Scenarios Status : -->"+"Scenarios Passed");
+                } else {
+                    System.out.println("Scenarios Status : -->" + "Scenarios Passed");
                     DriverFactory.getInstance().quit();
-                 //   theUserClosesTheBrowsers("IE");
+                    //   theUserClosesTheBrowsers("IE");
                 }
 
-            if (!DriverContext.getInstance().getKeepBrowserOpen())
-                DriverFactory.getInstance().quit();
+                if (!DriverContext.getInstance().getKeepBrowserOpen())
+                    DriverFactory.getInstance().quit();
 
-            DriverFactory.getInstance().driverManager().updateResults(scenario.isFailed() ? "failed" : "passed");
-        }
-    });
-}
+                DriverFactory.getInstance().driverManager().updateResults(scenario.isFailed() ? "failed" : "passed");
+            }
+        });
+    }
 
 
     private void setRuntimeProperties() {

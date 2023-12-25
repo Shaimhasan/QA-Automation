@@ -4,22 +4,28 @@ package core;
 
 import common.PDFHelper;
 import common.TestContext;
-import cucumber.api.PickleStepTestStep;
-import cucumber.api.Result;
-import cucumber.api.event.*;
-import cucumber.runtime.formatter.TestSourcesModelProxy;
+//import cucumber.api.PickleStepTestStep;
+//import cucumber.api.Result;
+//import cucumber.api.event.*;
+//import cucumber.runtime.formatter.TestSourcesModelProxy;
 import driver.DriverFactory;
+import io.cucumber.plugin.ConcurrentEventListener;
+import io.cucumber.plugin.event.*;
+import io.qameta.allure.cucumber7jvm.testsourcemodel.TestSourcesModelProxy;
 import org.apache.logging.log4j.ThreadContext;
 import org.apache.pdfbox.pdmodel.PDDocument;
 
 import java.io.File;
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
 import static core.Screenshot.grabScreenshot;
 import static core.Screenshot.saveScreenshot;
-import static cucumber.api.Result.Type.FAILED;
-import static cucumber.api.Result.Type.PASSED;
+//import static cucumber.api.Result.Type.FAILED;
+//import static cucumber.api.Result.Type.PASSED;
+import static io.cucumber.plugin.event.Status.FAILED;
+import static io.cucumber.plugin.event.Status.PASSED;
 import static reporting.Reporter.addScreenCaptureFromPath;
 import static reporting.Reporter.getScreenshotPath;
 
@@ -49,16 +55,17 @@ public class AutoEngineFormatter implements ConcurrentEventListener {
     }
 
     private void handleFeatureStartedHandler(final TestSourceRead event) {
-        testSources.addTestSourceReadEvent(event.uri, event);
+       // testSources.addTestSourceReadEvent(event.uri, event);
+        testSources.addTestSourceReadEvent(event.getUri(),event);
     }
 
     private void handleTestCaseStarted(TestCaseStarted event) {
-        currentFeatureFile.set(event.testCase.getUri());
+        currentFeatureFile.set(String.valueOf(event.getTestCase().getUri()));
         TestContext.getInstance().testdataPut("fw.featureName",
-                                              this.testSources.getFeature((String) this.currentFeatureFile.get()).getName());
-        TestContext.getInstance().testdataPut(FW_SCENARIO_NAME, event.testCase.getName());
+                                              this.testSources.getFeature(URI.create((String) this.currentFeatureFile.get())).getName());
+        TestContext.getInstance().testdataPut(FW_SCENARIO_NAME, event.getTestCase().getName());
         System.out.println("             ");
-        System.out.println("Scenarios Name --> "+ event.testCase.getName());
+        System.out.println("Scenarios Name --> "+ event.getTestCase().getName());
         System.out.println("             ");
         TestContext.getInstance().testdataPut("fw.logFileName",
                                               String.format("%s-%s",
@@ -79,16 +86,16 @@ public class AutoEngineFormatter implements ConcurrentEventListener {
     private void handleTestStepFinished(TestStepFinished event) {
         String errorMsg = null;
 
-        if (event.result.getStatus() == FAILED) {
-            errorMsg = event.result.getErrorMessage();
+        if (event.getResult().getStatus() == FAILED) {
+            errorMsg = String.valueOf(event.getResult().getError());
         }
 
-        if (event.testStep instanceof PickleStepTestStep) {
-            final PickleStepTestStep testStep = (PickleStepTestStep) event.testStep;
+        if (event.getTestStep() instanceof PickleStepTestStep) {
+            final PickleStepTestStep testStep = (PickleStepTestStep) event.getTestStep();
 
             String stepText = getStepDescription(testStep);
-            String screenshotPath = addScreenshotToStep(stepText, event.result.getStatus());
-            String stepStatus = getStepStatus(event.result, stepText);
+            String screenshotPath = addScreenshotToStep(stepText, event.getResult());
+            String stepStatus = getStepStatus(event.getResult(), stepText);
 
         }
 
@@ -105,10 +112,10 @@ public class AutoEngineFormatter implements ConcurrentEventListener {
 
     private String getStepDescription(PickleStepTestStep testStep) {
         final String stepKeyword = Optional.ofNullable(
-                testSources.getKeywordFromSource(currentFeatureFile.get(), testStep.getStepLine()))
+                testSources.getKeywordFromSource(URI.create(currentFeatureFile.get()), testStep.getStep().getLine()))
                                            .orElse("UNDEFINED");
 
-        final String stepText = replaceDictionaryKeysWithVals(testStep.getPickleStep().getText());
+        final String stepText = replaceDictionaryKeysWithVals(testStep.getStep().getText());
         return String.format("%s %s", stepKeyword, stepText);
     }
 
@@ -134,7 +141,7 @@ public class AutoEngineFormatter implements ConcurrentEventListener {
     }
 
 
-    private String addScreenshotToStep(String stepText, Result.Type status) {
+    private String addScreenshotToStep(String stepText, Result status) {
         String screenshotPath = ERROR_RESPONSE;
 
         if (stepExecuted(status)) {
@@ -143,7 +150,7 @@ public class AutoEngineFormatter implements ConcurrentEventListener {
             } else if (!isPopUpStep(stepText) && isValidatonStep(stepText) &&
                        Boolean.parseBoolean(System.getProperty("fw.screenshotOnValidation"))) {
                 screenshotPath = takeScreenshot();
-            } else if ((status == FAILED || isSoftAssertionFailure(stepText)) &&
+            } else if ((status.getStatus() == FAILED || isSoftAssertionFailure(stepText)) &&
                        Boolean.parseBoolean(System.getProperty("fw.screenshotOnFailure"))) {
                 System.setProperty("screenshotOnFailure", "true");
                 screenshotPath = takeScreenshot();
@@ -152,8 +159,8 @@ public class AutoEngineFormatter implements ConcurrentEventListener {
         return screenshotPath;
     }
 
-    private boolean stepExecuted(Result.Type status) {
-        return status == FAILED || status == PASSED;
+    private boolean stepExecuted(Result status) {
+        return status.getStatus() == FAILED || status.getStatus() == PASSED;
     }
 
     private boolean isValidatonStep(String stepText) {
@@ -229,5 +236,4 @@ public class AutoEngineFormatter implements ConcurrentEventListener {
                                              TestContext.getInstance().testdataGet(FW_SCENARIO_NAME),
                                              stepText);
     }
-
 }

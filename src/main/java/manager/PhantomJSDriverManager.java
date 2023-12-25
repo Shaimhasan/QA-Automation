@@ -16,12 +16,12 @@ public class PhantomJSDriverManager extends DriverManager {
 	public void createDriver(){
 		 Capabilities cap = new Capabilities();
 		if (Property.getVariable("cukes.webdrivermanager") != null && Property.getVariable("cukes.webdrivermanager").equalsIgnoreCase("true")) {
-    		WebDriverManager.phantomjs().setup();
-    		if (Property.getVariable("cukes.phantomjsDriver")!=null) {
-				WebDriverManager.phantomjs().version(Property.getVariable("cukes.phantomjsDriver")).setup();
-			}else {
-				WebDriverManager.phantomjs().setup();
-			}
+//    		WebDriverManager.phantomjs().setup();
+//    		if (Property.getVariable("cukes.phantomjsDriver")!=null) {
+//				WebDriverManager.phantomjs().version(Property.getVariable("cukes.phantomjsDriver")).setup();
+//			}else {
+//				WebDriverManager.phantomjs().setup();
+//			}
     	}else {
     		System.setProperty("phantomjs.binary.path", getDriverPath("phantomjs"));		
     	}
