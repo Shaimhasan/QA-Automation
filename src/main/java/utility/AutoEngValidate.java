@@ -5,7 +5,6 @@ import core.BaseWebSteps;
 import core.Element;
 import io.cucumber.java.en.Then;
 import org.assertj.core.api.Assumptions;
-import org.assertj.core.api.BooleanAssert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
