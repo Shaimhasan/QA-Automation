@@ -27,8 +27,10 @@ public class ChromeDriverManager extends DriverManager {
     public void createDriver() {
         PropertiesConfiguration props = Property.getProperties(SELENIUMRUNTIMEPATH);
         if (Property.getVariable("cukes.webdrivermanager") != null && Property.getVariable("cukes.webdrivermanager").equalsIgnoreCase("true")) {
-            if (Property.getVariable("cukes.chromeDriver") != null) {
-                WebDriverManager.chromedriver().driverVersion(Property.getVariable("cukes.chromeDriver")).setup();
+            if (Property.getVariable("cukes.chromeDriver").equalsIgnoreCase("true")) {
+                if (Property.getVariable("cukes.chromeDriverVersion") != null) {
+                    WebDriverManager.chromedriver().driverVersion(Property.getVariable("cukes.chromeDriver")).setup();
+                }
             } else {
                 WebDriverManager.chromedriver().setup();
             }
