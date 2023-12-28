@@ -64,14 +64,13 @@ public class ChromeDriverManager extends DriverManager {
         }
         if (props.getString("options.headless.chrome").equalsIgnoreCase("true")) {
             options.addArguments("--headless");
-            //    options.setHeadless(true);
             options.addArguments("--window-size=1552x840");
         }
         options.addArguments("--incognito");
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(getWaitDuration()));
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(getWaitDuration()));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(getWaitDuration()));
+//        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(getWaitDuration()));
     }
 
     @Override
