@@ -88,7 +88,7 @@ public class PageObject extends CommonPageObject {
     public PageObject waitPageToJqueryLoad() {
         jqueryLoadedWithTime();
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
